@@ -57,7 +57,7 @@ jobs:
           set -euo pipefail
           gh attestation verify evidence/provider_probe.txt \
             --repo "${GITHUB_REPOSITORY}" \
-            --signer-workflow "${GITHUB_REPOSITORY}/.github/workflows/r2-real-provider-capture.yml@${GITHUB_REF}"
+            --signer-workflow "${GITHUB_REPOSITORY}/.github/workflows/r2-real-provider-capture.yml@${GITHUB_REF}" \
             --signer-digest "${GITHUB_SHA}" \
             --deny-self-hosted-runners \
             --format json > evidence/gh_attestation_verify_raw.json 2> evidence/gh_attestation_verify_stderr.txt
@@ -88,6 +88,7 @@ jobs:
           sha256sum evidence/* > evidence/SHA256SUMS.txt
 
       - name: Upload byte-preserving conformance evidence
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: r2-real-provider-conformance-${{ github.run_id }}-${{ github.run_attempt }}
