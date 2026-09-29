@@ -104,7 +104,7 @@ jobs:
             printf '\n' >> evidence/broad_verify_commands.txt
             gh attestation verify evidence/provider_probe.txt -R "${GITHUB_REPOSITORY}" --bundle "$bundle" --custom-trusted-root evidence/trusted_root.jsonl --cert-oidc-issuer https://token.actions.githubusercontent.com --deny-self-hosted-runners --format json > "evidence/broad_verified/result_${idx}.json"
           done
-\n          (cd evidence && find . -type f ! -name SHA256SUMS.txt -print0 | sort -z | xargs -0 sha256sum > SHA256SUMS.txt)
+          (cd evidence && find . -type f ! -name SHA256SUMS.txt -print0 | sort -z | xargs -0 sha256sum > SHA256SUMS.txt)
 
       - name: Upload byte-preserving conformance evidence
         if: always()
