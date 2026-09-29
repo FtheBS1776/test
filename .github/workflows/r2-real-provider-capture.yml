@@ -1,0 +1,90 @@
+name: R2 Real Provider Conformance Capture
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/r2-real-provider-capture.yml"
+
+permissions:
+  contents: read
+  id-token: write
+  attestations: write
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Create harmless nonclaim probe
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p evidence
+          printf '%s\n' \
+            'EXP010-R2 REAL-PROVIDER CONFORMANCE PROBE' \
+            'NONCLAIM=TRUE' \
+            'NO_BEACON=TRUE' \
+            'NO_SEED=TRUE' \
+            'NO_SCIENTIFIC_EXECUTION=TRUE' > evidence/provider_probe.txt
+          sha256sum evidence/provider_probe.txt > evidence/provider_probe.sha256
+          gh --version > evidence/gh_version.txt
+          printf '%s\n' \
+            "repository=${GITHUB_REPOSITORY}" \
+            "repository_id=${GITHUB_REPOSITORY_ID}" \
+            "workflow_ref=${GITHUB_WORKFLOW_REF}" \
+            "workflow_sha=${GITHUB_WORKFLOW_SHA}" \
+            "run_id=${GITHUB_RUN_ID}" \
+            "run_attempt=${GITHUB_RUN_ATTEMPT}" \
+            "runner_environment=github-hosted" \
+            "sha=${GITHUB_SHA}" \
+            "ref=${GITHUB_REF}" > evidence/run_context.txt
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Generate GitHub artifact attestation
+        uses: actions/attest@v4
+        with:
+          subject-path: evidence/provider_probe.txt
+
+      - name: Capture real gh verifier output and bundle
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh attestation verify evidence/provider_probe.txt \
+            --repo "${GITHUB_REPOSITORY}" \
+            --signer-workflow "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/.github/workflows/r2-real-provider-capture.yml" \
+            --deny-self-hosted-runners \
+            --format json > evidence/gh_attestation_verify_raw.json
+
+          gh attestation download evidence/provider_probe.txt \
+            --repo "${GITHUB_REPOSITORY}" \
+            --limit 100 > evidence/gh_attestation_bundle.jsonl
+
+          python3 - <<'PY'
+          import json, pathlib
+          p=pathlib.Path("evidence/gh_attestation_verify_raw.json")
+          obj=json.loads(p.read_text())
+          summary={
+              "top_level_type": type(obj).__name__,
+              "entries": len(obj) if isinstance(obj,list) else None,
+              "entry_keys": [sorted(x.keys()) for x in obj] if isinstance(obj,list) else None,
+          }
+          pathlib.Path("evidence/schema_summary.json").write_text(
+              json.dumps(summary, indent=2, sort_keys=True)+"\n"
+          )
+          PY
+
+          sha256sum evidence/* > evidence/SHA256SUMS.txt
+
+      - name: Upload byte-preserving conformance evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: r2-real-provider-conformance-${{ github.run_id }}-${{ github.run_attempt }}
+          path: evidence/
+          if-no-files-found: error
+          retention-days: 30
