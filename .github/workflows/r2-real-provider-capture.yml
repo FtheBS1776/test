@@ -87,15 +87,16 @@ jobs:
 
           mkdir -p evidence/broad_verified
           python3 - <<'PY'
-          import json, pathlib, urllib.request
+          import json, pathlib
           pages=json.loads(pathlib.Path('evidence/rest_attestation_discovery_pages.json').read_text())
           items=[x for page in pages for x in page.get('attestations',[])]
           for i,item in enumerate(items):
-              with urllib.request.urlopen(item['bundle_url'], timeout=30) as r:
-                  body=r.read(8*1024*1024+1)
+              # The REST response already carries the Sigstore bundle as structured JSON.
+              # Preserve exactly that authenticated-discovery representation for gh verification.
+              body=(json.dumps(item['bundle'], separators=(',', ':'), ensure_ascii=False)+'\\n').encode()
               if len(body)>8*1024*1024: raise SystemExit('bundle too large')
               pathlib.Path(f'evidence/broad_verified/bundle_{i}.json').write_bytes(body)
-          pathlib.Path('evidence/broad_verified/count.txt').write_text(str(len(items))+'\n')
+          pathlib.Path('evidence/broad_verified/count.txt').write_text(str(len(items))+'\\n')
           PY
           : > evidence/broad_verify_commands.txt
           for bundle in evidence/broad_verified/bundle_*.json; do
