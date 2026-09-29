@@ -85,7 +85,7 @@ jobs:
           DIGEST="$(awk '{print $1}' evidence/provider_probe.sha256)"
           gh api --paginate --slurp "repos/${GITHUB_REPOSITORY}/attestations/sha256:${DIGEST}?per_page=100" > evidence/rest_attestation_discovery_pages.json
 
-          sha256sum evidence/* > evidence/SHA256SUMS.txt
+          (cd evidence && sha256sum * > SHA256SUMS.txt)
 
       - name: Upload byte-preserving conformance evidence
         if: always()
