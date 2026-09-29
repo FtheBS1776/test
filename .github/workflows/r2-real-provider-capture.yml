@@ -57,7 +57,8 @@ jobs:
           set -euo pipefail
           gh attestation verify evidence/provider_probe.txt \
             --repo "${GITHUB_REPOSITORY}" \
-            --signer-workflow "${GITHUB_REPOSITORY}/.github/workflows/r2-real-provider-capture.yml" \
+            --signer-workflow "${GITHUB_REPOSITORY}/.github/workflows/r2-real-provider-capture.yml@${GITHUB_REF}"
+            --signer-digest "${GITHUB_SHA}" \
             --deny-self-hosted-runners \
             --format json > evidence/gh_attestation_verify_raw.json 2> evidence/gh_attestation_verify_stderr.txt
 
@@ -80,6 +81,9 @@ jobs:
               json.dumps(summary, indent=2, sort_keys=True)+"\n"
           )
           PY
+
+          DIGEST="$(awk '{print $1}' evidence/provider_probe.sha256)"
+          gh api --paginate --slurp "repos/${GITHUB_REPOSITORY}/attestations/sha256:${DIGEST}?per_page=100" > evidence/rest_attestation_discovery_pages.json
 
           sha256sum evidence/* > evidence/SHA256SUMS.txt
 
