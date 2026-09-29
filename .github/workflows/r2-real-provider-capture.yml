@@ -44,6 +44,32 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
 
+      - name: Capture fresh live OIDC execution identity (nonclaim)
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import base64, hashlib, json, os, secrets, urllib.parse, urllib.request, time, pathlib
+          url=os.environ['ACTIONS_ID_TOKEN_REQUEST_URL']; bearer=os.environ['ACTIONS_ID_TOKEN_REQUEST_TOKEN']
+          u=urllib.parse.urlsplit(url); host=(u.hostname or '').lower()
+          if u.scheme!='https' or not (host=='actions.githubusercontent.com' or host.endswith('.actions.githubusercontent.com')): raise SystemExit('bad OIDC endpoint')
+          nonce=secrets.token_urlsafe(32); aud='urn:exp010:r2:execution:'+nonce
+          q=urllib.parse.parse_qsl(u.query,keep_blank_values=True); q.append(('audience',aud))
+          target=urllib.parse.urlunsplit((u.scheme,u.netloc,u.path,urllib.parse.urlencode(q),u.fragment))
+          req=urllib.request.Request(target,headers={'Authorization':'Bearer '+bearer,'Accept':'application/json'})
+          with urllib.request.urlopen(req,timeout=15) as r: token=json.loads(r.read())['value']
+          h,p,_=token.split('.')
+          dec=lambda s:json.loads(base64.urlsafe_b64decode(s+'='*((4-len(s)%4)%4)))
+          header,claims=dec(h),dec(p); now=int(time.time())
+          required={'iss':'https://token.actions.githubusercontent.com','aud':aud,'repository':os.environ['GITHUB_REPOSITORY'],'repository_id':os.environ['GITHUB_REPOSITORY_ID'],'workflow_ref':os.environ['GITHUB_WORKFLOW_REF'],'workflow_sha':os.environ['GITHUB_WORKFLOW_SHA'],'run_id':os.environ['GITHUB_RUN_ID'],'run_attempt':os.environ['GITHUB_RUN_ATTEMPT'],'runner_environment':'github-hosted'}
+          for k,v in required.items():
+              if str(claims.get(k))!=str(v): raise SystemExit('OIDC mismatch '+k)
+          if header.get('alg')!='RS256' or header.get('typ')!='JWT' or claims['exp']<now: raise SystemExit('OIDC header/time failure')
+          safe={k:claims.get(k) for k in ['iss','repository','repository_id','repository_owner_id','workflow_ref','workflow_sha','run_id','run_attempt','runner_environment','event_name','ref','iat','nbf','exp']}
+          safe['audience_nonce_sha256']=hashlib.sha256(aud.encode()).hexdigest(); safe['jwt_header']={k:header.get(k) for k in ['alg','typ','kid']}; safe['token_preserved']=False
+          pathlib.Path('evidence/live_oidc_sanitized_claims.json').write_text(json.dumps(safe,sort_keys=True,indent=2)+'\\n')
+          PY
+
       - name: Generate GitHub artifact attestation
         uses: actions/attest@v4
         with:
