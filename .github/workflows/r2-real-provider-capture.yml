@@ -63,7 +63,9 @@ jobs:
 
           gh attestation download evidence/provider_probe.txt \
             --repo "${GITHUB_REPOSITORY}" \
-            --limit 100 > evidence/gh_attestation_download_stdout.txt 2> evidence/gh_attestation_download_stderr.txt\n          find . -maxdepth 1 -type f -name "sha256*.jsonl" -exec cp {} evidence/gh_attestation_bundle.jsonl \\;\n          gh attestation trusted-root > evidence/trusted_root.jsonl
+            --limit 100 > evidence/gh_attestation_download_stdout.txt 2> evidence/gh_attestation_download_stderr.txt
+          find . -maxdepth 1 -type f -name "sha256*.jsonl" -exec cp {} evidence/gh_attestation_bundle.jsonl \;
+          gh attestation trusted-root > evidence/trusted_root.jsonl
 
           python3 - <<'PY'
           import json, pathlib
