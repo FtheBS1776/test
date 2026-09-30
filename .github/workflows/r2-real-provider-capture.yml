@@ -70,10 +70,24 @@ jobs:
           pathlib.Path('evidence/live_oidc_sanitized_claims.json').write_text(json.dumps(safe,sort_keys=True,indent=2)+'\\n')
           PY
 
+      - name: Record pre-attestation timing marker
+        shell: bash
+        run: |
+          set -euo pipefail
+          date -u +'%Y-%m-%dT%H:%M:%S.%NZ' > evidence/timing_pre_attestation_utc.txt
+          date +%s%N > evidence/timing_pre_attestation_unix_ns.txt
+
       - name: Generate GitHub artifact attestation
         uses: actions/attest@v4
         with:
           subject-path: evidence/provider_probe.txt
+
+      - name: Record post-attestation timing marker
+        shell: bash
+        run: |
+          set -euo pipefail
+          date -u +'%Y-%m-%dT%H:%M:%S.%NZ' > evidence/timing_post_attestation_utc.txt
+          date +%s%N > evidence/timing_post_attestation_unix_ns.txt
 
       - name: Capture real gh verifier output and bundle
         shell: bash
@@ -131,6 +145,8 @@ jobs:
             printf '\n' >> evidence/broad_verify_commands.txt
             gh attestation verify evidence/provider_probe.txt -R "${GITHUB_REPOSITORY}" --bundle "$bundle" --custom-trusted-root evidence/trusted_root.jsonl --cert-oidc-issuer https://token.actions.githubusercontent.com --deny-self-hosted-runners --format json > "evidence/broad_verified/result_${idx}.json"
           done
+          date -u +'%Y-%m-%dT%H:%M:%S.%NZ' > evidence/timing_post_verification_utc.txt
+          date +%s%N > evidence/timing_post_verification_unix_ns.txt
           (cd evidence && find . -type f ! -name SHA256SUMS.txt -print0 | sort -z | xargs -0 sha256sum > SHA256SUMS.txt)
 
       - name: Upload byte-preserving conformance evidence
