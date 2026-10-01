@@ -1,0 +1,14 @@
+{
+  "gate_version": "BRAINS10-PASS184-STRICT-BLIND-REVIEW-v1",
+  "subject_files": {
+    "capability_authority.py": "f9050d5c1112bb8e3fd7166df7e2a2d225f4623c60970f57c9d5f5591caf923b",
+    "revocation_source_selection.py": "cc4e3da2ac3dd826f61c58893898cf0d9d91c5d72fbb0d300b2200da04426406",
+    "revocation_policy_transition.py": "7bb8a96c1a6558665d287f06766c415926f37368da47c06d6f87452be281c1a2",
+    "revocation_receipt.py": "c63a60cf946bcb8df772cf757566fdc18107a319a98420a0a4aa217460553177",
+    "revocation_policy_receipt_composition.py": "617803b270a15dd1fee5c7884753bee15803bcd02790516374ad23d23addb2d6",
+    "test_revocation_source_selection.py": "9766046e5457a625bd8ceb99d9ba2d14f2664b8ab272b290610539f2cf7ad6ae",
+    "test_revocation_policy_transition.py": "964cca9b65f0e3aecdcf0a8d93a853ea0518795501956351e7a9f23194bfa276",
+    "test_revocation_receipt.py": "f236fe3a11608633e308e9f07f6c9118dfed6c0c7cafe6b0c8bdf14b7a129b39",
+    "test_revocation_policy_receipt_composition.py": "48bb37df524c2188eb5b7445e1870b9afe395db63a00b5c11ea93493cb078a0d"
+  }
+}
