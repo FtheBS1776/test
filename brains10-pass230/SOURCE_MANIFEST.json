@@ -1,0 +1,10 @@
+{
+  "PRE_RESEARCH_AUDIT.md": "796dcaaf7858c3b13faaa51c3440fb1e3a1a4f7badedeb81c61f691f157e4913",
+  "README_FIRST.md": "72cf2c37cc67355f23f347fa6e033a59879fef1199875752c98d3deb1f7c640e",
+  "REPAIR_NOTES.md": "9d8e61fa775f18f021d2ef744f800aad58f22e57790e6bcba451919eab1ffbba",
+  "RESEARCH_AND_CROSSCHECK.md": "e0ea2c6a503fb9d43c4276874cbce5d4a0aa65af442f34ee831d1881c76acb26",
+  "original_gate.zip": "001a00097f98a4f8d82804d3b0dade72ad5663e3a8d5f648ecc8fb1f83497779",
+  "repaired_gate.zip": "9e78ad38390a26bd84db56b8fa468af7d6d378a7e5edabc191cf3c87fb36284b",
+  "run_evidence.py": "7dbcc09a8a51f1e8a98aeb42b2b9c87d18eaed00c2d7ea265eed45c4f67ef9c9",
+  "test_harness.py": "c458997c2b86b0cd0b1dd8beef32d756d7ffead54caadca4c2201b5382a93f01"
+}

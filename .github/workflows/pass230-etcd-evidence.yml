@@ -1,0 +1,71 @@
+name: BRAINS10 Pass 230 implementation evidence
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pass230:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    env:
+      PASS230_RUNNER_ENVIRONMENT: ${{ runner.environment }}
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - name: Initialize evidence location
+        shell: bash
+        run: |
+          mkdir "${RUNNER_TEMP}/pass230-evidence"
+          python3 - <<'PY'
+          import json, os, pathlib
+          keys = ['GITHUB_RUN_ID','GITHUB_RUN_ATTEMPT','GITHUB_SHA','GITHUB_REPOSITORY','GITHUB_WORKFLOW_REF','GITHUB_WORKFLOW_SHA']
+          p = pathlib.Path(os.environ['RUNNER_TEMP'])/'pass230-evidence'/'JOB_CONTEXT.json'
+          p.write_text(json.dumps({k:os.environ.get(k) for k in keys},indent=2)+'\n')
+          PY
+      - name: Checkout exact run commit
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          fetch-depth: 1
+      - name: Verify bound source bytes
+        shell: bash
+        run: |
+          python3 - <<'PY' > "${RUNNER_TEMP}/pass230-evidence/SOURCE_VERIFICATION.txt" 2>&1
+          import hashlib, json, pathlib
+          base = pathlib.Path('brains10-pass230')
+          manifest = base/'SOURCE_MANIFEST.json'
+          expected = '51715ff9469d79acfbe8bfa083e298c7d40be380d7658b44ffb82091d428cbf6'
+          if hashlib.sha256(manifest.read_bytes()).hexdigest() != expected:
+              raise SystemExit('SOURCE_MANIFEST_MISMATCH')
+          files = json.loads(manifest.read_text())
+          if {p.name for p in base.iterdir() if p.is_file()} != set(files)|{'SOURCE_MANIFEST.json'}:
+              raise SystemExit('SOURCE_INVENTORY_MISMATCH')
+          for name, expected_hash in files.items():
+              p = base/name
+              if pathlib.Path(name).name != name or p.is_symlink() or hashlib.sha256(p.read_bytes()).hexdigest() != expected_hash:
+                  raise SystemExit('SOURCE_MEMBER_MISMATCH '+name)
+          print('SOURCE_VERIFICATION_PASS',len(files))
+          PY
+      - name: Capture single-node implementation observations
+        shell: bash
+        run: |
+          set +e
+          python3 -B brains10-pass230/run_evidence.py \
+            --expected-manifest 51715ff9469d79acfbe8bfa083e298c7d40be380d7658b44ffb82091d428cbf6 \
+            --output "${RUNNER_TEMP}/pass230-evidence/capture" \
+            > "${RUNNER_TEMP}/pass230-evidence/WRAPPER.txt" 2>&1
+          rc=$?
+          printf '%s\n' "$rc" > "${RUNNER_TEMP}/pass230-evidence/WRAPPER_EXIT_CODE.txt"
+          exit "$rc"
+      - name: Upload raw evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: BRAINS10_PASS230_IMPLEMENTATION_${{ github.run_id }}_${{ github.run_attempt }}
+          path: ${{ runner.temp }}/pass230-evidence/
+          if-no-files-found: error
+          overwrite: false
+          retention-days: 7
