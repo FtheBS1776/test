@@ -1,6 +1,9 @@
 name: BRAINS10 Pass 219 etcd integration evidence (NONCLAIM)
 
 on:
+  push:
+    branches:
+      - nonclaim/pass219-etcd-integration-20261004
   workflow_dispatch:
 
 permissions:
