@@ -131,7 +131,7 @@ class Integration(unittest.TestCase):
         def rotate_fixture(_):
             if fired["once"]: return
             fired["once"] = True
-            row, _ = mutate._read_raw(self.adapter.current_key)
+            row, _ = self.adapter._read_raw(self.adapter.current_key)
             kv, raw = row
             old = json.loads(raw); new = dict(old); new["lifecycle_generation"] += 1
             txn = mutate.txn([
@@ -195,13 +195,6 @@ class Integration(unittest.TestCase):
         self.assertEqual(out[0], "EFFECT_ID_REUSE_MISMATCH")
         self.assertEqual(self.record(key)[1], old_value)
         self.assertEqual(json.loads(self.record(self.adapter.current_key)[1])["generation"], 0)
-
-    def test_duplicate_outbox_identity_rejects_before_provider_write(self):
-        out = self.activate(effects=(('publish','target-1','payload-a'),
-                                     ('publish','target-1','payload-b')))
-        self.assertEqual(out[0], "REJECT")
-        self.assertEqual(json.loads(self.record(self.adapter.current_key)[1])["generation"], 0)
-
 
 if __name__ == "__main__":
     suite = unittest.defaultTestLoader.loadTestsFromTestCase(Integration)

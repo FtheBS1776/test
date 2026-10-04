@@ -166,8 +166,15 @@ class EtcdLifecycleAdapter:
         response = self.gateway.range(key)
         header = self._check_header(response)
         try:
-            count = int(response["count"])
-            kvs = response["kvs"]
+            count_raw = response.get("count")
+            kvs = response.get("kvs")
+            # The etcd JSON gateway omits protobuf default-valued response fields.
+            if count_raw is None and kvs is None:
+                count, kvs = 0, []
+            elif count_raw is None or kvs is None:
+                raise ValueError("INCOMPLETE_RANGE_DEFAULTS")
+            else:
+                count = int(count_raw)
         except (KeyError, TypeError, ValueError) as e:
             raise ValueError("MALFORMED_RANGE") from e
         if count == 0:

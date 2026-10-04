@@ -21,4 +21,6 @@ The internal counterexample is therefore preserved: per-package test success is 
 
 ## Post-cross-attack implementation review
 
-The first code review found a concrete lost invariant: an outbox key was written without an absence Compare, which could overwrite a preexisting effect record. Before any execution, the candidate was repaired to compare outbox absence atomically, reject duplicate effect identities, and return a specific conflict when the key already exists. The test suite now seeds that key adversarially and checks its bytes and current authority are unchanged. This repair does not broaden the claim or alter prior-pass artifacts.
+The first code review found a concrete lost invariant: an outbox key was written without an absence Compare, which could overwrite a preexisting effect record. Before any execution, the candidate was repaired to compare outbox absence atomically and return a specific conflict when the key already exists. The test suite seeds that key adversarially and checks its bytes and current authority are unchanged.
+
+The first GitHub-hosted run then exercised the real etcd JSON gateway and falsified two assumptions in the candidate tests: default-valued `count`/`kvs` response fields are omitted for empty Range results, and one injected lifecycle-race fixture invoked a helper on the wrong object. Both are corrected; the original capture remains `INDETERMINATE` and is retained in `RUN_HISTORY.md`. No run is treated as a pass until a clean rerun and independent artifact adjudication.

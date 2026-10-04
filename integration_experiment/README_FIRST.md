@@ -9,7 +9,7 @@ This is a separately identified bounded implementation experiment. Pass 186 rema
 1. Independently compute the outer ZIP SHA-256 and compare it with the value supplied with this package.
 2. Extract into a clean directory; do not overlay it on previous files.
 3. Run `python3 VERIFY_PACKAGE.py <package.zip>`.
-4. Read, in order: `PRIOR_EXPERIENCE_AUDIT.md`, `INTERNAL_ATTACK.md`, `EXTERNAL_RESEARCH.md`, `CROSS_ATTACK.md`, `CONFORMANCE_SCOPE.md`, `SOURCE_LINEAGE.md`, and `WORKFLOW_NOTES.md`.
+4. Read, in order: `PRIOR_EXPERIENCE_AUDIT.md`, `INTERNAL_ATTACK.md`, `EXTERNAL_RESEARCH.md`, `CROSS_ATTACK.md`, `CONFORMANCE_SCOPE.md`, `SOURCE_LINEAGE.md`, `WORKFLOW_NOTES.md`, and `RUN_HISTORY.md`.
 5. For a local real-etcd rehearsal, run `python3 run_integration_evidence.py --output <new-empty-output-directory> --expected-source-manifest "$(sha256sum SOURCE_MANIFEST.json | cut -d ' ' -f1)" --release-archive <verified-etcd-v3.6.5-linux-amd64.tar.gz>`.
 6. For the GitHub evidence path, place `WORKFLOW_TEMPLATE.yml` byte-for-byte at `.github/workflows/pass219-etcd-integration.yml` on the isolated branch `nonclaim/pass219-etcd-integration-20261004`. A push to that branch runs the bounded harness; `workflow_dispatch` is included as an optional manual trigger after the workflow file exists on the default branch. Do not merge it to the default branch for this test. Retrieve and independently verify the artifact. A workflow run is evidence only after adjudication.
 
