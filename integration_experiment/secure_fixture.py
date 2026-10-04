@@ -110,16 +110,24 @@ def bootstrap_rbac(endpoint: str, context: ssl.SSLContext, namespace: str,
     steps = []
 
     def call(path, body, expected=(200,)):
-        status, _ = _post(endpoint, path, body, context)
+        status, result = _post(endpoint, path, body, context)
         steps.append({"path": path, "http_status": status})
         if status not in expected:
             raise RuntimeError("RBAC_SETUP_FAILED:" + path + ":" + str(status))
+        return result
 
     call("/v3/auth/user/add", {"name": "root", "password": root_password})
     call("/v3/auth/user/grant", {"user": "root", "role": "root"})
     call("/v3/auth/role/add", {"name": role_name})
-    call("/v3/auth/role/grant", {"name": role_name, "key": b64(prefix),
-         "range_end": b64(prefix_end(prefix)), "permType": "READWRITE"})
+    call("/v3/auth/role/grant", {"name": role_name, "perm": {
+         "key": b64(prefix), "range_end": b64(prefix_end(prefix)),
+         "permType": "READWRITE"}})
+    role = call("/v3/auth/role/get", {"role": role_name})
+    expected_perm = {"key": b64(prefix), "range_end": b64(prefix_end(prefix)),
+                     "permType": "READWRITE"}
+    if role.get("perm") != [expected_perm]:
+        raise RuntimeError("RBAC_ROLE_READBACK_MISMATCH")
+    steps[-1]["permission_readback"] = "EXACT_SINGLE_PREFIX"
     call("/v3/auth/user/add", {"name": user_name, "password": user_password})
     call("/v3/auth/user/grant", {"user": user_name, "role": role_name})
     call("/v3/auth/enable", {})

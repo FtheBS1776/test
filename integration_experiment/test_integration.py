@@ -242,8 +242,8 @@ class Integration(unittest.TestCase):
             self.gateway.range(outside)
         with self.assertRaises(ConnectionError):
             self.gateway.post("/v3/kv/put", {"key": b64(outside), "value": b64(b"must-not-write")})
-        row, _ = self.adapter._read_raw(outside)
-        self.assertIsNone(row)
+        root_response = self.root_gateway.range(outside)
+        self.assertEqual(int(root_response.get("count", "0")), 0)
         self.assertTrue(self.binding.tls)
         self.assertEqual(self.binding.auth_mode, "rbac-password")
 

@@ -5,6 +5,7 @@
 - Actions are pinned to the exact full commits previously used in the Pass 230 evidence lane. Checkout disables credential persistence; token permissions are `contents: read`.
 - The runner captures commit/run/attempt/workflow context, actual server command/version/endpoint, exact source bytes/manifest, raw JSON-gateway exchanges, test output, server logs, and all file digests. The result remains pending independent adjudication.
 - The server runs as one loopback member over HTTPS with a generated run-only CA and server certificate. V3 auth is configured with run-only random users; one test user has a narrowly bounded namespace role. The gateway bearer token is never placed in argv or durable capture. No client certificate or production credential is used.
+- Before auth is enabled, the harness reads the role back and requires exactly the expected single `READWRITE` prefix interval; an HTTP status alone does not accept the grant.
 - etcd's default simple token is documented as development/testing only; the capture makes no production auth claim. `/health` and `/metrics` are not used as RBAC evidence.
 - The test subject is distinct from the Pass 230 gate. Do not rename or substitute its evidence as a rerun of Pass 230.
 - Upload the evidence artifact even when the test step fails. Missing/partial artifact means INDETERMINATE, not success.
