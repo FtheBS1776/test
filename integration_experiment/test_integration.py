@@ -134,7 +134,7 @@ class Integration(unittest.TestCase):
         self.assertEqual(state["generation"], 1)
 
     def test_lifecycle_change_between_read_and_txn_is_stale(self):
-        mutate = Gateway(ENDPOINT)
+        mutate = Gateway(ENDPOINT, ssl_context=TLS_CONTEXT, auth_token=AUTH_TOKEN)
         fired = {"once": False}
         def rotate_fixture(_):
             if fired["once"]: return
@@ -177,7 +177,7 @@ class Integration(unittest.TestCase):
     def test_wrong_cluster_and_malformed_value_fail_closed(self):
         wrong = TestProviderBinding(ENDPOINT, "ephemeral-test-etcd", "1", self.ns, "C1")
         self.assertNotEqual(EtcdLifecycleAdapter(self.gateway, wrong, self.store).read_current(b"c", "C1")[0], "CURRENT")
-        bad = Gateway(ENDPOINT)
+        bad = Gateway(ENDPOINT, ssl_context=TLS_CONTEXT, auth_token=AUTH_TOKEN)
         self.assertIs(bad.txn([
             {"key": b64(self.adapter.current_key), "target": "MOD", "result": "EQUAL",
              "modRevision": self.record(self.adapter.current_key)[0]["mod_revision"]}

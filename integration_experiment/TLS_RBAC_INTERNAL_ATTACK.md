@@ -15,4 +15,8 @@ Completed before implementation.
 
 Run 37203215898 returned HTTP 400 for `/v3/auth/role/grant`. Its etcd server log records the decoded request with only `name` and `auth: permission not given`. The initial fixture body placed `permType`, `key`, and `range_end` at the top level; protobuf ignored those unknown fields. Therefore an HTTP success from a future grant call is not enough. The repair candidate must use the pinned v3.6.5 nested `perm` object and then independently read the role back and prove it contains exactly one `READWRITE` interval `[prefix, prefix_end)`. Keep the first failure as counterevidence.
 
+## Second execution counterexample
+
+Run 37203473079 passed TLS/RBAC setup and 16/18 tests. Both remaining cases constructed helper `Gateway` clients without the fixture CA or bearer token; requests consequently failed TLS validation and could not reach the intended transaction/client code. The repair is limited to using the existing fixture CA context and least-privilege test token for those two helper clients. Do not use the root token for the lifecycle mutation or wrong-cluster probe. Keep the failed run unchanged as counterevidence.
+
 No production provider identity, independent PKI, mTLS identity, cluster-wide resilience, physical durability, or rollback conclusion is in scope.

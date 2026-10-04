@@ -9,7 +9,7 @@ Before editing or execution, read in order:
 3. `TLS_RBAC_EXTERNAL_RESEARCH.md` — current official etcd v3.6 documentation.
 4. `TLS_RBAC_CROSS_ATTACK.md` — disposition, exact tested boundary, and HOLDs.
 5. `CONFORMANCE_SCOPE.md` — allowed claims and exclusions.
-6. `TLS_RBAC_RUN_1_COUNTEREVIDENCE.md` — first execution failure and verified artifact details.
+6. `TLS_RBAC_RUN_1_COUNTEREVIDENCE.md` and `TLS_RBAC_RUN_2_COUNTEREVIDENCE.md` — failed setup/test captures and verified artifact details.
 
 The executed workflow is `.github/workflows/pass219-etcd-tls-rbac.yml`, restricted to branch `nonclaim/pass219-etcd-tls-rbac-20261004`. It creates one loopback etcd 3.6.5 process, run-only server TLS credentials, and password-authenticated fixture RBAC. Never place passwords, bearer tokens, CA private key, server private key, or wrong-CA private key into command arguments, durable capture, artifacts, or logs.
 
