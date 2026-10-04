@@ -336,9 +336,11 @@ class EtcdLifecycleAdapter:
             header = self._check_header(txn)
         except ValueError:
             return "UNKNOWN_COMMIT", {"transition_id": transition_id, "fingerprint": fingerprint}
-        if type(txn.get("succeeded")) is not bool:
+        # The JSON gateway may omit the protobuf default `false` field.
+        succeeded = txn.get("succeeded", False)
+        if type(succeeded) is not bool:
             return "UNKNOWN_COMMIT", {"transition_id": transition_id, "fingerprint": fingerprint}
-        if txn.get("succeeded") is True:
+        if succeeded is True:
             return "OK", result
         # Compare failed. A same-ID concurrent identical winner is resolved by its receipt;
         # otherwise the exact parent was consumed or an ID was already used.
