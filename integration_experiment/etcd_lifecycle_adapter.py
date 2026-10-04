@@ -8,6 +8,7 @@ from __future__ import annotations
 import base64
 import hashlib
 import json
+import ssl
 import urllib.error
 import urllib.request
 from dataclasses import dataclass
@@ -80,28 +81,39 @@ class CurrentObservation:
 
 class Gateway:
     """Small JSON HTTP-gateway client; every Range explicitly says serializable=false."""
-    def __init__(self, endpoint: str, timeout: float = 3.0, after_txn=None):
+    def __init__(self, endpoint: str, timeout: float = 3.0, after_txn=None,
+                 ssl_context: ssl.SSLContext | None = None, auth_token: str | None = None):
         self.endpoint = endpoint.rstrip("/")
         self.timeout = timeout
         self.after_txn = after_txn
         self.before_txn = None
+        self.ssl_context = ssl_context
+        self.auth_token = auth_token
         self.requests = []
 
     def post(self, path: str, value: dict) -> dict:
         body = _canonical(value)
         self.requests.append((path, body))
         exchange = {"path": path, "request_b64": _b64(body), "response_b64": None,
-                    "transport_error": None}
+                    "transport_error": None, "authorization_present": bool(self.auth_token)}
         EXCHANGE_LOG.append(exchange)
+        headers = {"Content-Type": "application/json"}
+        if self.auth_token:
+            headers["Authorization"] = self.auth_token
         req = urllib.request.Request(self.endpoint + path, data=body,
-                                     headers={"Content-Type": "application/json"}, method="POST")
+                                     headers=headers, method="POST")
         try:
             if path == "/v3/kv/txn" and self.before_txn:
                 self.before_txn(body)
-            with urllib.request.urlopen(req, timeout=self.timeout) as response:
+            with urllib.request.urlopen(req, timeout=self.timeout,
+                                        context=self.ssl_context) as response:
                 raw = response.read()
+        except urllib.error.HTTPError as e:
+            exchange["transport_error"] = "HTTP_STATUS_" + str(e.code)
+            raise ConnectionError("HTTP_STATUS_" + str(e.code)) from e
         except (urllib.error.URLError, TimeoutError, OSError) as e:
-            exchange["transport_error"] = type(e).__name__ + ": " + str(e)
+            # Do not persist request headers or exception details from arbitrary transports.
+            exchange["transport_error"] = type(e).__name__
             raise ConnectionError(str(e)) from e
         result = json.loads(raw)
         if path == "/v3/kv/txn" and self.after_txn:

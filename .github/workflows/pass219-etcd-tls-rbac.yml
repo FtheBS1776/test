@@ -1,0 +1,40 @@
+name: BRAINS10 Pass 219 etcd HTTPS + RBAC fixture evidence (NONCLAIM)
+
+on:
+  push:
+    branches:
+      - nonclaim/pass219-etcd-tls-rbac-20261004
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tls-rbac-evidence:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout exact subject
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+
+      - name: Capture bounded HTTPS and RBAC evidence
+        id: evidence
+        shell: bash
+        run: |
+          manifest_sha256="$(sha256sum integration_experiment/SOURCE_MANIFEST.json | cut -d ' ' -f1)"
+          python3 -B integration_experiment/run_integration_evidence.py \
+            --output "${RUNNER_TEMP}/pass219-tls-rbac-evidence" \
+            --expected-source-manifest "${manifest_sha256}"
+
+      - name: Upload evidence, including incomplete captures
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: pass219-etcd-tls-rbac-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/pass219-tls-rbac-evidence/**
+          if-no-files-found: error
+          overwrite: false

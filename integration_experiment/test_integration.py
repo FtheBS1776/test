@@ -2,9 +2,11 @@ import base64
 import json
 import os
 import pathlib
+import socket
 import sys
 import threading
 import unittest
+import ssl
 
 from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
@@ -15,11 +17,16 @@ from execution_identity_reference import ExecutionEnvelope, IssuerAuthorization,
 from lifecycle_registry import RegistrySnapshot, digest_registry
 from etcd_lifecycle_adapter import (EtcdLifecycleAdapter, Gateway, TestProviderBinding,
                                     EXCHANGE_LOG, fixture_authority_state)
+from secure_fixture import tls_context
 
 
 ENDPOINT = os.environ["BRAINS10_ETCD_ENDPOINT"]
 CLUSTER_ID = os.environ["BRAINS10_ETCD_CLUSTER_ID"]
 RUN_SCOPE = os.environ.get("BRAINS10_TEST_SCOPE", "local")
+TLS_CONTEXT = tls_context(pathlib.Path(os.environ["BRAINS10_ETCD_CA_FILE"]))
+AUTH_TOKEN = os.environ["BRAINS10_ETCD_AUTH_TOKEN"]
+ROOT_TOKEN = os.environ["BRAINS10_ETCD_ROOT_TOKEN"]
+WRONG_CA_FILE = pathlib.Path(os.environ["BRAINS10_ETCD_WRONG_CA_FILE"])
 
 
 def b64(x): return base64.b64encode(x).decode("ascii")
@@ -36,8 +43,9 @@ class Integration(unittest.TestCase):
         self.snapshot = RegistrySnapshot("C1", (self.issuer,), digest_registry("C1", (self.issuer,)))
         self.store = BoundRegistryStore((self.snapshot,))
         self.binding = TestProviderBinding(ENDPOINT, "ephemeral-test-etcd", CLUSTER_ID,
-                                           self.ns, "C1", False, "none")
-        self.gateway = Gateway(ENDPOINT)
+                                           self.ns, "C1", True, "rbac-password")
+        self.gateway = Gateway(ENDPOINT, ssl_context=TLS_CONTEXT, auth_token=AUTH_TOKEN)
+        self.root_gateway = Gateway(ENDPOINT, ssl_context=TLS_CONTEXT, auth_token=ROOT_TOKEN)
         self.adapter = EtcdLifecycleAdapter(self.gateway, self.binding, self.store)
         state = fixture_authority_state(self.binding, generation=0, head_digest="HEAD-A",
             authority_config="C1", lifecycle_generation=7, registry_digest=self.snapshot.digest)
@@ -195,6 +203,49 @@ class Integration(unittest.TestCase):
         self.assertEqual(out[0], "EFFECT_ID_REUSE_MISMATCH")
         self.assertEqual(self.record(key)[1], old_value)
         self.assertEqual(json.loads(self.record(self.adapter.current_key)[1])["generation"], 0)
+
+    def test_tls_wrong_ca_is_rejected_before_gateway_use(self):
+        wrong = Gateway(ENDPOINT, ssl_context=tls_context(WRONG_CA_FILE), auth_token=AUTH_TOKEN)
+        with self.assertRaises(ConnectionError):
+            wrong.range(self.adapter.current_key)
+
+    def test_tls_wrong_hostname_and_plaintext_downgrade_are_rejected(self):
+        from urllib.parse import urlsplit
+        parts = urlsplit(ENDPOINT)
+        raw = socket.create_connection((parts.hostname, parts.port), timeout=3)
+        try:
+            with self.assertRaises(ssl.SSLCertVerificationError):
+                TLS_CONTEXT.wrap_socket(raw, server_hostname="wrong.invalid")
+        finally:
+            try: raw.close()
+            except OSError: pass
+        insecure_endpoint = ENDPOINT.replace("https://", "http://", 1)
+        downgrade = Gateway(insecure_endpoint, ssl_context=TLS_CONTEXT, auth_token=AUTH_TOKEN)
+        with self.assertRaises(ConnectionError):
+            downgrade.range(self.adapter.current_key)
+
+    def test_missing_and_invalid_bearer_tokens_fail_closed(self):
+        for token in (None, "invalid-test-token"):
+            gateway = Gateway(ENDPOINT, ssl_context=TLS_CONTEXT, auth_token=token)
+            with self.assertRaises(ConnectionError):
+                gateway.range(self.adapter.current_key)
+
+    def test_password_authentication_is_required_for_gateway_user(self):
+        import secure_fixture
+        status, _ = secure_fixture._post(ENDPOINT, "/v3/auth/authenticate",
+            {"name": os.environ["BRAINS10_ETCD_TEST_USER"], "password": "wrong-password"}, TLS_CONTEXT)
+        self.assertNotEqual(status, 200)
+
+    def test_rbac_allows_only_the_exact_namespace_prefix(self):
+        outside = (f"/brains10/pass219-etcd/{RUN_SCOPE}0escaped").encode()
+        with self.assertRaises(ConnectionError):
+            self.gateway.range(outside)
+        with self.assertRaises(ConnectionError):
+            self.gateway.post("/v3/kv/put", {"key": b64(outside), "value": b64(b"must-not-write")})
+        row, _ = self.adapter._read_raw(outside)
+        self.assertIsNone(row)
+        self.assertTrue(self.binding.tls)
+        self.assertEqual(self.binding.auth_mode, "rbac-password")
 
 if __name__ == "__main__":
     suite = unittest.defaultTestLoader.loadTestsFromTestCase(Integration)

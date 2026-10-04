@@ -6,6 +6,7 @@ import json
 import os
 import pathlib
 import re
+import secrets
 import shutil
 import signal
 import socket
@@ -15,6 +16,7 @@ import tarfile
 import tempfile
 import time
 import urllib.request
+from secure_fixture import make_certificates, tls_context, bootstrap_rbac
 
 BASE = pathlib.Path(__file__).resolve().parent
 ARCHIVE_SHA = "66bad39ed920f6fc15fd74adcb8bfd38ba9a6412f8c7852d09eb11670e88cac3"
@@ -126,6 +128,22 @@ def seal(out):
     write(out / "EVIDENCE_MANIFEST.json", files)
 
 
+def verify_no_secret_leak(out, secret_values, private_key_paths):
+    needles = [x.encode("utf-8") for x in secret_values if x]
+    needles.extend(pathlib.Path(p).read_bytes() for p in private_key_paths)
+    leaked = []
+    for path in pathlib.Path(out).rglob("*"):
+        if path.is_file():
+            raw = path.read_bytes()
+            if any(needle in raw for needle in needles):
+                leaked.append(path)
+    for path in leaked:
+        path.write_text("EVIDENCE_REDACTED_EPHEMERAL_SECRET_LEAK; original bytes removed\n")
+    if leaked:
+        raise ValueError("EPHEMERAL_SECRET_IN_EVIDENCE:" +
+                         ",".join(path.relative_to(out).as_posix() for path in leaked))
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--output", required=True)
@@ -136,7 +154,7 @@ def main():
     out.mkdir(parents=True, exist_ok=False)
     status = {"state": "INDETERMINATE", "controlling_pass": 186,
               "promotion": False, "freeze": False,
-              "claim_scope": "bounded single-member etcd API composition fixture"}
+              "claim_scope": "bounded single-member etcd 3.6.5 HTTPS + password-RBAC gateway fixture"}
     proc = None
     server_log = None
     try:
@@ -152,7 +170,7 @@ def main():
         source_manifest = json.loads((BASE / "SOURCE_MANIFEST.json").read_text())
         for name in source_manifest:
             shutil.copy2(BASE / name, source_out / name)
-        workflow = BASE.parent / ".github" / "workflows" / "pass219-etcd-integration.yml"
+        workflow = BASE.parent / ".github" / "workflows" / "pass219-etcd-tls-rbac.yml"
         if workflow.is_file():
             shutil.copy2(workflow, out / "EXECUTED_WORKFLOW.yml")
             status["workflow_sha256"] = sha(workflow)
@@ -172,19 +190,22 @@ def main():
             status["binary_sha256"] = {k: sha(work / "bin" / k) for k in BIN_SHA}
             env = {k: v for k, v in os.environ.items() if not k.startswith(("ETCD_", "ETCDCTL_"))}
             client_port, peer_port = port(), port()
-            endpoint = f"http://127.0.0.1:{client_port}"
+            endpoint = f"https://127.0.0.1:{client_port}"
             peer = f"http://127.0.0.1:{peer_port}"
             data = work / "data"
+            ca_file, server_cert_file, server_key_file = make_certificates(work / "pki")
             argv = [str(etcd), "--name", "pass219-integration", "--data-dir", str(data),
                     "--listen-client-urls", endpoint, "--advertise-client-urls", endpoint,
                     "--listen-peer-urls", peer, "--initial-advertise-peer-urls", peer,
                     "--initial-cluster", "pass219-integration=" + peer,
-                    "--initial-cluster-token", work.name, "--initial-cluster-state", "new"]
+                    "--initial-cluster-token", work.name, "--initial-cluster-state", "new",
+                    "--cert-file", str(server_cert_file), "--key-file", str(server_key_file)]
             write(out / "SERVER_COMMAND.json", argv)
             server_log = open(out / "SERVER_LOG.txt", "wb")
             proc = subprocess.Popen(argv, stdout=server_log, stderr=subprocess.STDOUT, env=env,
                                    start_new_session=True)
-            ctl = [str(etcdctl), "--endpoints=" + endpoint, "--command-timeout=3s", "--dial-timeout=2s"]
+            ctl = [str(etcdctl), "--endpoints=" + endpoint, "--cacert=" + str(ca_file),
+                   "--command-timeout=3s", "--dial-timeout=2s"]
             ready = False
             for i in range(40):
                 if proc.poll() is not None:
@@ -199,21 +220,36 @@ def main():
             command(ctl + ["endpoint", "status", "-w", "json"], out / "ENDPOINT_BEFORE.json", env)
             cluster_id = find_cluster_id(out / "ENDPOINT_BEFORE.json")
             test_scope = (context.get("GITHUB_RUN_ID", "local") + "." +
-                          context.get("GITHUB_RUN_ATTEMPT", str(os.getpid())))
+                          context.get("GITHUB_RUN_ATTEMPT", str(os.getpid())) + "." +
+                          secrets.token_hex(8))
+            namespace = "/brains10/pass219-etcd/" + test_scope
+            auth = bootstrap_rbac(endpoint, tls_context(ca_file), namespace, out, work)
+            status["tls_server_certificate_sha256"] = sha(server_cert_file)
+            status["tls_ca_certificate_sha256"] = sha(ca_file)
+            status["tls"] = "server-authenticated-https"
+            status["auth_mode"] = "password-rbac-simple-test-token"
             test_env = dict(env)
             test_env.update({"BRAINS10_ETCD_ENDPOINT": endpoint,
                              "BRAINS10_ETCD_CLUSTER_ID": cluster_id,
                              "BRAINS10_TEST_SCOPE": test_scope,
+                             "BRAINS10_ETCD_CA_FILE": str(ca_file),
+                             "BRAINS10_ETCD_WRONG_CA_FILE": auth["wrong_ca_path"],
+                             "BRAINS10_ETCD_AUTH_TOKEN": auth["user_token"],
+                             "BRAINS10_ETCD_ROOT_TOKEN": auth["root_token"],
+                             "BRAINS10_ETCD_TEST_USER": auth["user_name"],
                              "BRAINS10_EVIDENCE_DIR": str(out)})
             py = sys.executable
             rc = command([py, "-B", str(BASE / "test_integration.py")],
                          out / "TEST_RESULTS.txt", test_env, timeout=180)
             status["integration_exit_code"] = rc
+            key_paths = [p for p in work.rglob("*.key") if p.is_file()]
+            verify_no_secret_leak(out, auth["secret_values"], key_paths)
+            status["secret_and_private_key_scan"] = "PASS"
             status["server_version_exit_code"] = command([str(etcd), "--version"], out / "SERVER_VERSION.txt", env)
             status["client_version_exit_code"] = command([str(etcdctl), "version"], out / "CLIENT_VERSION.txt", env)
-            command(ctl + ["endpoint", "status", "-w", "json"], out / "ENDPOINT_AFTER.json", env)
             status.update({"endpoint": endpoint, "cluster_id": cluster_id, "member_count": 1,
-                           "tls": False, "auth_mode": "none", "namespace": "/brains10/pass219-etcd/" + test_scope})
+                           "namespace": namespace, "credentials_durable": False,
+                           "client_certificate_auth": False})
             if rc == 0 and proc.poll() is None:
                 status["state"] = "CAPTURE_COMPLETE_PENDING_ADJUDICATION"
             else:
