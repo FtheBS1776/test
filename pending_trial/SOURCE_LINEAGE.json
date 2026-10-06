@@ -1,0 +1,67 @@
+{
+  "owned_etcd.py": {
+    "source": "workspace/selected_member_control/owned_etcd.py",
+    "sha256": "65bfc320da9a920e6a0f993cc258ec4432a1150dfea666ce0bb0c134b4997de3",
+    "change": "REUSE_UNCHANGED"
+  },
+  "boundary_helpers.py": {
+    "source": "workspace/selected_member_control/boundary_helpers.py",
+    "sha256": "88f248669cbc626dcf73c356bb0525d98c0aa76296ee87ee9e45b7bf47142ec8",
+    "change": "REUSE_UNCHANGED"
+  },
+  "etcd_lifecycle_adapter.py": {
+    "source": "workspace/selected_member_control/etcd_lifecycle_adapter.py",
+    "sha256": "143ae804220a8c89a02cf13bd4b58762632e4c9e44c8317ccc42b0d6afbc567d",
+    "change": "REUSE_UNCHANGED"
+  },
+  "stateful_subject.py": {
+    "source": "workspace/selected_member_control/stateful_subject.py",
+    "sha256": "8ea005246f66fd413f00bad6cf0714e5704c23cc4255881ce659e682ce740131",
+    "change": "REUSE_UNCHANGED"
+  },
+  "execution_identity_reference.py": {
+    "source": "workspace/selected_member_control/execution_identity_reference.py",
+    "sha256": "5447f0084f222cfd340ed427e5336f3a6a9ebd388b78489cbf4d30fdd9164417",
+    "change": "REUSE_UNCHANGED"
+  },
+  "atomic_join.py": {
+    "source": "workspace/selected_member_control/atomic_join.py",
+    "sha256": "06fe603a6e23fb921d438dea78171da37520844ceb0d4ec4643e54d9edced9b1",
+    "change": "REUSE_UNCHANGED"
+  },
+  "lifecycle_registry.py": {
+    "source": "workspace/selected_member_control/lifecycle_registry.py",
+    "sha256": "7ce3a42d05cf69a0066c59a4cdff196e1fc1f5dba46a29123d9b6c2c95bce367",
+    "change": "REUSE_UNCHANGED"
+  },
+  "observer.go": {
+    "source": "workspace/selected_member_control/observer.go",
+    "sha256": "4466bb3ab2cd219463cdd7c501d5f8831654e4fcc4fc4c2b9f245a0673eac91d",
+    "change": "REUSE_UNCHANGED"
+  },
+  "SOURCE_RETRIEVAL_INDEX.json": {
+    "source": "workspace/selected_member_control/SOURCE_RETRIEVAL_INDEX.json",
+    "sha256": "3d88765a43aff80e2b89984d0ffb6d5bd8fbdd88ad7d080d8936a845788bb9d6",
+    "change": "REUSE_UNCHANGED"
+  },
+  "build_observer.py": {
+    "source": "workspace/selected_member_control/build_observer.py",
+    "sha256": "1919cf0ac6a1c3e9c44858c5ae10629514f44e8eb8cc1f80a42a91383da23a0a",
+    "change": "REUSE_UNCHANGED"
+  },
+  "prepare_runtime.py": {
+    "source": "workspace/selected_member_control/prepare_runtime.py",
+    "sha256": "5735bebe5de73933f2c3ff2289b9cbed0eecf8a79f9d2257bce381c9b5a3098d",
+    "change": "REUSE_UNCHANGED"
+  },
+  "inert_controls.py": {
+    "source": "workspace/selected_member_control/inert_controls.py",
+    "sha256": "6e5c91837e4f30ec87adc6e4a2be21c2b8d97a660c51ba77bce8f5cd4fa93b76",
+    "change": "REUSE_UNCHANGED"
+  },
+  "peer_fixture.py": {
+    "source": "workspace/stale_follower/peer_fixture.py",
+    "sha256": "8fa822ff27b2d069dad44f9c4f66004dcbaa98d65da73a9b2f7606abd33382c3",
+    "change": "REUSE_UNCHANGED"
+  }
+}

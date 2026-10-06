@@ -1,0 +1,45 @@
+name: GENIE bounded pending transaction trial (NONCLAIM)
+
+on:
+  push:
+    branches:
+      - nonclaim/etcd-pending-trial-20261006
+
+permissions:
+  contents: read
+
+jobs:
+  pending-trial:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - name: Checkout exact fixture subject
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Checkout pinned official observer dependencies
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          repository: etcd-io/etcd
+          ref: a0614505aff9b8ff469e9c59c2d979a5936d13f4
+          path: observer-upstream
+          persist-credentials: false
+      - name: Build observer and capture one owned pending transaction trial
+        env:
+          EXPECTED_SOURCE_MANIFEST: c8872b74969d49b74bd56210ee8730ea2285294cb2cf768368309a4c2ea3c2e2
+          RUNNER_ENVIRONMENT: ${{ runner.environment }}
+        shell: bash
+        run: |
+          python3 -B pending_trial/run_capture.py \
+            --output "${RUNNER_TEMP}/pending-trial-evidence" \
+            --upstream "${GITHUB_WORKSPACE}/observer-upstream" \
+            --expected-source-manifest "${EXPECTED_SOURCE_MANIFEST}"
+      - name: Preserve all returned evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: pending-trial-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/pending-trial-evidence/**
+          if-no-files-found: error
+          overwrite: false
+          retention-days: 1
