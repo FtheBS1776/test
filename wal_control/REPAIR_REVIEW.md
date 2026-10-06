@@ -1,0 +1,7 @@
+# Preserved local failures and shutdown-gate correction
+
+Local control 01 failed before provider start because copying the runtime with copyfile omitted executable mode. Restored the original binary mode; bytes/hash unchanged. Local control 02 completed activation/retry and final status but was rejected at the incorrectly assumed exit-zero shutdown gate; no WAL was accepted from that attempt.
+
+Before correction: L7 requires the real binary's declared lifecycle, L2 requires completed closure before snapshot, Genie excludes live/power-loss scope, EXP-010 preserves both failures. Initial critique: accepting any SIGTERM exit could hide an abrupt stop before flush; accepting a log without binding process exit could also be insufficient.
+
+Current exact official pkg/osutil/interrupt_unix.go at the pinned commit was independently retrieved: registered handlers run, then the process restores the default signal and sends that signal to itself, except PID 1 exits zero. server/etcdmain/etcd.go registers the server's Close handler. Therefore require (0 or -SIGTERM), the process's matching received-signal and closed-server log records for the exact data directory after the final status boundary, no forced cleanup, and completed process exit before copy. This correction does not change provider or adapter behavior and does not establish physical durability. Source hashes/blob identities added to retrieval index. A new bounded local control is necessary to validate the corrected gate, rather than treating the failed attempt as passing.

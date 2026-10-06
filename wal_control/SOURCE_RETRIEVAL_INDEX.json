@@ -1,0 +1,51 @@
+[
+  {
+    "path": "server/storage/wal/wal.go",
+    "blob_sha": "f3d7bc5f4d44b19134f7019c85414c6bb7c8fa26",
+    "sha256": "d4aa2eb53a0a01539f061caf29e2938397b397001d71cf8b29890a3db31632b3",
+    "bytes": 28514,
+    "commit": "a0614505aff9b8ff469e9c59c2d979a5936d13f4"
+  },
+  {
+    "path": "api/etcdserverpb/raft_internal.proto",
+    "blob_sha": "88b8ab5279ef4aa5a06480ca4c09baeb559d814b",
+    "sha256": "7aad3d204e061ae35eb3076241ec2cb74b11d23010bdb08119abe048f22bf4cf",
+    "bytes": 3259,
+    "commit": "a0614505aff9b8ff469e9c59c2d979a5936d13f4"
+  },
+  {
+    "path": "api/etcdserverpb/rpc.proto",
+    "blob_sha": "983dc01725f43f3ceedab25ae1ff63802ce58ae6",
+    "sha256": "c57117e8f4764667be927d862f4fb01fbf1faaf0f725bf2eecc3a523e12aacc6",
+    "bytes": 45875,
+    "commit": "a0614505aff9b8ff469e9c59c2d979a5936d13f4"
+  },
+  {
+    "path": "server/go.mod",
+    "blob_sha": "71e6319f9b44897b0daf011af8cda961c59a8d90",
+    "sha256": "fa4ea2992e6fbdb3fa1035a15f34c72f433cd6d07a180960c93c0b120f35c667",
+    "bytes": 3585,
+    "commit": "a0614505aff9b8ff469e9c59c2d979a5936d13f4"
+  },
+  {
+    "path": "tools/etcd-dump-logs/main.go",
+    "blob_sha": "f0bba446762a1f3d03904a1464a4ce524cb646bc",
+    "sha256": "ca6521ad2072789b9cc0b7a60b3880be1cc3fd6b443d6e95b8b6480964410d4a",
+    "bytes": 14162,
+    "commit": "a0614505aff9b8ff469e9c59c2d979a5936d13f4"
+  },
+  {
+    "path": "pkg/osutil/interrupt_unix.go",
+    "blob_sha": "ec9dc7b67a6023f503c31e901a37744eb0f0f87d",
+    "sha256": "d15e036f5557d46a4382f495aaab0c5da2df9ced62f6874bf79c9c21ce7166ae",
+    "bytes": 2396,
+    "commit": "a0614505aff9b8ff469e9c59c2d979a5936d13f4"
+  },
+  {
+    "path": "server/etcdmain/etcd.go",
+    "blob_sha": "16bba3736fd27c0c795bbaae6aa7c88aebd9d7fd",
+    "sha256": "940d7b40d22f846ed8fb55e2d4bf0257f7d2395adfb3e2722eed8768f7c6c2d7",
+    "bytes": 8030,
+    "commit": "a0614505aff9b8ff469e9c59c2d979a5936d13f4"
+  }
+]

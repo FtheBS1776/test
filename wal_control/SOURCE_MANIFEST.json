@@ -1,0 +1,21 @@
+{
+  "PRIOR_EXPERIENCE_AND_INITIAL_CRITIQUE.md": "f1fd0d0a519618aacce68c41bf30dd7fd7ba6e626fe8aca910e5111617033184",
+  "README_FIRST.md": "21960871db82876cefcca132b9b0f0650b026806a3891b7b1ee25e119a5adffd",
+  "REPAIR_REVIEW.md": "964e9eb38113e8b0c35bcb4980a48cc299d4f6dc834371d14391d1d9fa06b7d6",
+  "RESEARCH_AND_CROSSCHECK.md": "f444f842c123c9fee73ab7323cb6d644d318793cebca0c644822165a7be63202",
+  "SOURCE_LINEAGE.json": "ee85030e647efe1992a1f25dfa36da93e80ddce303e818e84292d7579f6a6266",
+  "SOURCE_RETRIEVAL_INDEX.json": "0fce6b17ec036ffec900242c69188fd4bb863cc8f3bdba4b2076aba670996d36",
+  "atomic_join.py": "06fe603a6e23fb921d438dea78171da37520844ceb0d4ec4643e54d9edced9b1",
+  "build_observer.py": "1919cf0ac6a1c3e9c44858c5ae10629514f44e8eb8cc1f80a42a91383da23a0a",
+  "etcd_lifecycle_adapter.py": "143ae804220a8c89a02cf13bd4b58762632e4c9e44c8317ccc42b0d6afbc567d",
+  "execution_identity_reference.py": "5447f0084f222cfd340ed427e5336f3a6a9ebd388b78489cbf4d30fdd9164417",
+  "lifecycle_registry.py": "7ce3a42d05cf69a0066c59a4cdff196e1fc1f5dba46a29123d9b6c2c95bce367",
+  "observer.go": "ff77d6c47125f314f48f8d57c265ab93f7631718b948287b4a30c04dbd83ad1d",
+  "owned_etcd.py": "65bfc320da9a920e6a0f993cc258ec4432a1150dfea666ce0bb0c134b4997de3",
+  "prepare_runtime.py": "5735bebe5de73933f2c3ff2289b9cbed0eecf8a79f9d2257bce381c9b5a3098d",
+  "raw_negative_controls.py": "d85a624611593fc578cf7ae26cfb759016dc9a6f3a63aef54d80246b5f238331",
+  "run_capture.py": "57ed609c2af6e03552cf5224b6adec9b18b1b7074099c346a32913d8bc6fc927",
+  "run_control.py": "656f97f7fd3f76a19ef21d3caf50155cb5ad5345d04cce5ac8368fcea1333524",
+  "stateful_subject.py": "8ea005246f66fd413f00bad6cf0714e5704c23cc4255881ce659e682ce740131",
+  "verify_control.py": "6274fbcfea23956d32963681ded6b2aa22e4b00f443659b6cadffc3f046911e0"
+}

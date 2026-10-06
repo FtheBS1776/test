@@ -1,0 +1,45 @@
+name: BRAINS10 read-only WAL observer control (NONCLAIM)
+
+on:
+  push:
+    branches:
+      - nonclaim/etcd-wal-control-20261006
+
+permissions:
+  contents: read
+
+jobs:
+  wal-control:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - name: Checkout exact control subject
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Checkout pinned official observer dependencies
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          repository: etcd-io/etcd
+          ref: a0614505aff9b8ff469e9c59c2d979a5936d13f4
+          path: observer-upstream
+          persist-credentials: false
+      - name: Build observer and capture committed control
+        env:
+          EXPECTED_SOURCE_MANIFEST: c475f42e494d83381c99f3fe730fe5fbc55f2e22f1217c53c49fd24335670600
+          RUNNER_ENVIRONMENT: ${{ runner.environment }}
+        shell: bash
+        run: |
+          python3 -B wal_control/run_capture.py \
+            --output "${RUNNER_TEMP}/wal-control-evidence" \
+            --upstream "${GITHUB_WORKSPACE}/observer-upstream" \
+            --expected-source-manifest "${EXPECTED_SOURCE_MANIFEST}"
+      - name: Preserve all returned evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: wal-control-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/wal-control-evidence/**
+          if-no-files-found: error
+          overwrite: false
+          retention-days: 1
