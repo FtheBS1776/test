@@ -1,0 +1,45 @@
+name: BRAINS10 selected member healthy control (NONCLAIM)
+
+on:
+  push:
+    branches:
+      - nonclaim/etcd-selected-member-20261006
+
+permissions:
+  contents: read
+
+jobs:
+  selected-member:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - name: Checkout exact fixture subject
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Checkout pinned official observer dependencies
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          repository: etcd-io/etcd
+          ref: a0614505aff9b8ff469e9c59c2d979a5936d13f4
+          path: observer-upstream
+          persist-credentials: false
+      - name: Build observer and capture healthy owned paused control
+        env:
+          EXPECTED_SOURCE_MANIFEST: 66aba4b67762e948a4cb2e8ae9f71408381fef89c038b239d83e0e326a52a810
+          RUNNER_ENVIRONMENT: ${{ runner.environment }}
+        shell: bash
+        run: |
+          python3 -B selected_member_control/run_capture.py \
+            --output "${RUNNER_TEMP}/selected-member-evidence" \
+            --upstream "${GITHUB_WORKSPACE}/observer-upstream" \
+            --expected-source-manifest "${EXPECTED_SOURCE_MANIFEST}"
+      - name: Preserve all returned evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: selected-member-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/selected-member-evidence/**
+          if-no-files-found: error
+          overwrite: false
+          retention-days: 1

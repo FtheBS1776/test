@@ -1,0 +1,47 @@
+"""Bounded GitHub observer/control capture; local independent adjudication required."""
+import argparse,hashlib,json,os,pathlib,shutil,signal,subprocess,sys
+ROOT=pathlib.Path(__file__).resolve().parent
+def save(p,v):p.write_text(json.dumps(v,indent=2,sort_keys=True)+'\n')
+def run(out,name,argv,timeout):
+ process=subprocess.Popen(argv,stdout=subprocess.PIPE,stderr=subprocess.PIPE,start_new_session=True)
+ try:stdout,stderr=process.communicate(timeout=timeout);code=process.returncode
+ except subprocess.TimeoutExpired:
+  try:os.killpg(process.pid,signal.SIGTERM)
+  except ProcessLookupError:pass
+  try:stdout,stderr=process.communicate(timeout=3)
+  except subprocess.TimeoutExpired:
+   try:os.killpg(process.pid,signal.SIGKILL)
+   except ProcessLookupError:pass
+   stdout,stderr=process.communicate(timeout=3)
+  code=124
+ (out/(name+'.stdout')).write_bytes(stdout);(out/(name+'.stderr')).write_bytes(stderr);save(out/(name+'.command.json'),{'argv':argv,'returncode':code,'timeout_seconds':timeout});return code
+def main():
+ ap=argparse.ArgumentParser();ap.add_argument('--output',required=True);ap.add_argument('--upstream',required=True);ap.add_argument('--expected-source-manifest',required=True);a=ap.parse_args();out=pathlib.Path(a.output).resolve();out.mkdir(parents=True,exist_ok=False)
+ state={'state':'INDETERMINATE','controlling_pass':186,'classification':'NONCLAIM','promotion':False,'freeze':False}
+ try:
+  data=(ROOT/'SOURCE_MANIFEST.json').read_bytes()
+  if hashlib.sha256(data).hexdigest()!=a.expected_source_manifest:raise RuntimeError('SOURCE_MANIFEST_MISMATCH')
+  manifest=json.loads(data)
+  for name,h in manifest.items():
+   if len(pathlib.PurePosixPath(name).parts)!=1 or hashlib.sha256((ROOT/name).read_bytes()).hexdigest()!=h:raise RuntimeError('SOURCE_MISMATCH_'+name)
+  source=out/'SOURCE';source.mkdir()
+  for name in list(manifest)+['SOURCE_MANIFEST.json']:shutil.copyfile(ROOT/name,source/name)
+  state['source_manifest_sha256']=a.expected_source_manifest;workflow=pathlib.Path(os.environ['GITHUB_WORKSPACE'])/'.github/workflows/etcd-selected-member.yml';shutil.copyfile(workflow,out/'EXECUTED_WORKFLOW.yml');state['workflow_sha256']=hashlib.sha256(workflow.read_bytes()).hexdigest()
+  save(out/'JOB_CONTEXT.json',{k:os.environ.get(k) for k in ['GITHUB_REPOSITORY','GITHUB_REPOSITORY_ID','GITHUB_SHA','GITHUB_RUN_ID','GITHUB_RUN_ATTEMPT','GITHUB_EVENT_NAME','GITHUB_WORKFLOW_REF','GITHUB_WORKFLOW_SHA','RUNNER_ENVIRONMENT','ImageVersion']})
+  stages=[('INERT',[sys.executable,'-B',str(ROOT/'inert_controls.py'),'--output',str(out/'inert')],20),('PREPARE',[sys.executable,'-B',str(ROOT/'prepare_runtime.py')],65),('BUILD',[sys.executable,'-B',str(ROOT/'build_observer.py'),'--upstream',a.upstream,'--output',str(out/'build')],420),('CONTROL',[sys.executable,'-B',str(ROOT/'run_selected.py'),'--output',str(out/'observations')],90),('OBSERVER',[str(out/'build/wal-observer'),str(out/'observations/snapshot')],15),('VERIFY',[sys.executable,'-B',str(ROOT/'verify_selected.py'),str(out/'observations'),str(out/'OBSERVER.stdout'),'--output',str(out/'SELECTED_VERIFICATION.json')],20)]
+  for name,argv,timeout in stages:
+   if name=='OBSERVER':
+    snapshot=out/'observations/snapshot';before={str(p.relative_to(snapshot)):hashlib.sha256(p.read_bytes()).hexdigest() for p in snapshot.rglob('*') if p.is_file()}
+    if before!=json.loads((out/'observations/SNAPSHOT_MANIFEST.json').read_text()):raise RuntimeError('OBSERVER_INPUT_BEFORE_MISMATCH')
+   state[name.lower()+'_exit_code']=run(out,name,argv,timeout)
+   if name=='OBSERVER':
+    after={str(p.relative_to(snapshot)):hashlib.sha256(p.read_bytes()).hexdigest() for p in snapshot.rglob('*') if p.is_file()}
+    save(out/'OBSERVER_INPUT_BINDING.json',{'before':before,'after':after,'unchanged':before==after,'authority_input':False})
+    if before!=after:raise RuntimeError('OBSERVER_INPUT_CHANGED')
+   if state[name.lower()+'_exit_code']!=0:raise RuntimeError(name+'_FAILED')
+  state['state']='CAPTURE_COMPLETE_PENDING_ADJUDICATION'
+ except Exception as e:state['error']=type(e).__name__+': '+str(e)
+ finally:
+  save(out/'CAPTURE_STATUS.json',state);save(out/'CAPTURE_MANIFEST.json',{str(p.relative_to(out)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(out.rglob('*')) if p.is_file() and p.name!='CAPTURE_MANIFEST.json'})
+ print(json.dumps(state));return 0 if state['state']=='CAPTURE_COMPLETE_PENDING_ADJUDICATION' else 2
+if __name__=='__main__':raise SystemExit(main())
