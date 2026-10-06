@@ -1,0 +1,37 @@
+name: BRAINS10 stale follower evidence (NONCLAIM)
+
+on:
+  push:
+    branches:
+      - nonclaim/etcd-stale-follower-20261006
+
+permissions:
+  contents: read
+
+jobs:
+  stale-follower:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Checkout exact subject
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Capture bounded evidence
+        env:
+          EXPECTED_SOURCE_MANIFEST: 96b84814da9c4d45d81fef49453a28ccd06d7d94bb2aba8fe0021f70d3e98c9a
+          RUNNER_ENVIRONMENT: ${{ runner.environment }}
+        shell: bash
+        run: |
+          python3 -B stale_follower/run_capture.py \
+            --output "${RUNNER_TEMP}/stale-follower-evidence" \
+            --expected-source-manifest "${EXPECTED_SOURCE_MANIFEST}"
+      - name: Preserve all returned evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: stale-follower-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/stale-follower-evidence/**
+          if-no-files-found: error
+          overwrite: false
+          retention-days: 1

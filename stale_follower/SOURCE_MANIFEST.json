@@ -1,0 +1,12 @@
+{
+  "CROSSCHECK.md": "732b4ac60f83cd2491bc1236d8b743933bc71ac9b1e66ee99e5f6e1c6129c56f",
+  "PREEXEC.md": "223c3b6d8b050e85020373eecef99ed2ea7b7af366927d213920a2b8c02d3e55",
+  "README_FIRST.md": "15a09c243d7e078300b38d043fd6ac79838c3fb34288fb512032eae2f79b7058",
+  "gate_inputs.py": "954034fcba4cf09cc7aa48931fa340bc95c9bdbee8ad906b850742d33de52bb5",
+  "owned_etcd.py": "65bfc320da9a920e6a0f993cc258ec4432a1150dfea666ce0bb0c134b4997de3",
+  "peer_fixture.py": "8fa822ff27b2d069dad44f9c4f66004dcbaa98d65da73a9b2f7606abd33382c3",
+  "prepare_runtime.py": "5735bebe5de73933f2c3ff2289b9cbed0eecf8a79f9d2257bce381c9b5a3098d",
+  "run_capture.py": "e2a3ab10b81af2a1e2ed877c566c53c5f5688d7fe0f80067936f938260e41a9c",
+  "run_stale.py": "8562e1d32ded3895224f15e429f14602e5f11fc83f629eefd58162da1cfd433e",
+  "verify_observations.py": "f80e79ed1c163e56133ac8394e38f69248efd6cdd79cf4c4d2e6f3e426f1a98e"
+}
