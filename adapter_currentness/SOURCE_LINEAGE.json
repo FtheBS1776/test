@@ -1,0 +1,42 @@
+{
+  "etcd_lifecycle_adapter.py": {
+    "source": "integration_experiment/etcd_lifecycle_adapter.py",
+    "sha256": "143ae804220a8c89a02cf13bd4b58762632e4c9e44c8317ccc42b0d6afbc567d",
+    "adaptation": "UNCHANGED"
+  },
+  "stateful_subject.py": {
+    "source": "integration_experiment/stateful_subject.py",
+    "sha256": "8ea005246f66fd413f00bad6cf0714e5704c23cc4255881ce659e682ce740131",
+    "adaptation": "UNCHANGED"
+  },
+  "atomic_join.py": {
+    "source": "integration_experiment/atomic_join.py",
+    "sha256": "06fe603a6e23fb921d438dea78171da37520844ceb0d4ec4643e54d9edced9b1",
+    "adaptation": "UNCHANGED"
+  },
+  "execution_identity_reference.py": {
+    "source": "integration_experiment/execution_identity_reference.py",
+    "sha256": "5447f0084f222cfd340ed427e5336f3a6a9ebd388b78489cbf4d30fdd9164417",
+    "adaptation": "UNCHANGED"
+  },
+  "lifecycle_registry.py": {
+    "source": "integration_experiment/lifecycle_registry.py",
+    "sha256": "7ce3a42d05cf69a0066c59a4cdff196e1fc1f5dba46a29123d9b6c2c95bce367",
+    "adaptation": "UNCHANGED"
+  },
+  "peer_fixture.py": {
+    "source": "stale_follower/peer_fixture.py",
+    "sha256": "8fa822ff27b2d069dad44f9c4f66004dcbaa98d65da73a9b2f7606abd33382c3",
+    "adaptation": "UNCHANGED"
+  },
+  "owned_etcd.py": {
+    "source": "stale_follower/owned_etcd.py",
+    "sha256": "65bfc320da9a920e6a0f993cc258ec4432a1150dfea666ce0bb0c134b4997de3",
+    "adaptation": "UNCHANGED"
+  },
+  "prepare_runtime.py": {
+    "source": "stale_follower/prepare_runtime.py",
+    "sha256": "5735bebe5de73933f2c3ff2289b9cbed0eecf8a79f9d2257bce381c9b5a3098d",
+    "adaptation": "UNCHANGED"
+  }
+}

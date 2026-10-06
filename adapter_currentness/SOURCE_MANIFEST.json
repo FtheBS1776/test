@@ -1,0 +1,17 @@
+{
+  "PRIOR_EXPERIENCE_AND_INITIAL_CRITIQUE.md": "184213660c39d2169fb91d541b446cabc4ffb96a3dc4c2d05f4038e44eeab5fc",
+  "README_FIRST.md": "b39ad8dec4036ebb17a46b950603d14874a9ab22f2cfcfe56b05dd38e46595e5",
+  "RESEARCH_AND_CROSSCHECK.md": "cac021cfa0d4ee2eced6c0443986a32102fa0d6fcae34e6593e29b0081acee28",
+  "SOURCE_LINEAGE.json": "e4e596083066e951bc80da9b4ce102d1461b695f44dc51b5e77d62095ad8d7b0",
+  "atomic_join.py": "06fe603a6e23fb921d438dea78171da37520844ceb0d4ec4643e54d9edced9b1",
+  "etcd_lifecycle_adapter.py": "143ae804220a8c89a02cf13bd4b58762632e4c9e44c8317ccc42b0d6afbc567d",
+  "execution_identity_reference.py": "5447f0084f222cfd340ed427e5336f3a6a9ebd388b78489cbf4d30fdd9164417",
+  "lifecycle_registry.py": "7ce3a42d05cf69a0066c59a4cdff196e1fc1f5dba46a29123d9b6c2c95bce367",
+  "owned_etcd.py": "65bfc320da9a920e6a0f993cc258ec4432a1150dfea666ce0bb0c134b4997de3",
+  "peer_fixture.py": "8fa822ff27b2d069dad44f9c4f66004dcbaa98d65da73a9b2f7606abd33382c3",
+  "prepare_runtime.py": "5735bebe5de73933f2c3ff2289b9cbed0eecf8a79f9d2257bce381c9b5a3098d",
+  "run_adapter.py": "661899c2e24d7dfa6ba54aea97a6605c26b81f527c69fabf14793d7dd4abed6b",
+  "run_capture.py": "dc67acd14a64c7348a568a7b2b4ac5cef3208855ed269205739a2c8ad2610435",
+  "stateful_subject.py": "8ea005246f66fd413f00bad6cf0714e5704c23cc4255881ce659e682ce740131",
+  "verify_observations.py": "78442ef19e4dce820a5bb008dddf40d51e7113fa7dbcc3fa85e5bf957630c898"
+}

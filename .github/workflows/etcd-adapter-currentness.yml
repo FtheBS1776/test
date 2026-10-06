@@ -1,0 +1,37 @@
+name: BRAINS10 adapter currentness evidence (NONCLAIM)
+
+on:
+  push:
+    branches:
+      - nonclaim/etcd-adapter-currentness-20261006
+
+permissions:
+  contents: read
+
+jobs:
+  adapter-currentness:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Checkout exact subject
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Capture bounded evidence
+        env:
+          EXPECTED_SOURCE_MANIFEST: 1a0ab7a760b2aa6db6c61fd45bb2e4c741762ca635cffcafeaf3431e004a748b
+          RUNNER_ENVIRONMENT: ${{ runner.environment }}
+        shell: bash
+        run: |
+          python3 -B adapter_currentness/run_capture.py \
+            --output "${RUNNER_TEMP}/adapter-currentness-evidence" \
+            --expected-source-manifest "${EXPECTED_SOURCE_MANIFEST}"
+      - name: Preserve all returned evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: adapter-currentness-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/adapter-currentness-evidence/**
+          if-no-files-found: error
+          overwrite: false
+          retention-days: 1
