@@ -1,0 +1,7 @@
+# Preserved local attempt 01 — procfs PID-view mismatch
+
+Local attempt01 completed normal activation and then failed before accepting any paused copy/trace when /proc/8/task did not exist for the actual owned subprocess PID8. The finally path resumed the provider (SIGCONT and WCONTINUED confirmed) before ordinary cleanup. Failure and process events remain retained. No failed local boundary is accepted.
+
+Independent own-process inspection compares os.getpid() with Pid/NSpid from /proc/self/status and finds that the scratch execution namespace and its procfs mount expose different PID views. The current helper deliberately addresses only the exact owned child PID and does not scan unrelated processes or guess a host PID. This is a local environmental HOLD, not a provider/adapter/trace semantic failure or a reason to relax the task-state gate.
+
+Before any workaround: L7 requires exact identity, L2 distinguishes visible process observation from execution identity, Genie rejects transfer across a mismatched namespace, EXP-010 preserves this attempt. Current Linux procfs documentation describes namespace-relative PID views. Do not add an unreviewed PID-mapping or host-process-discovery mechanism merely to make local rehearsal pass. The existing authorized standard Ubuntu hosted GitHub path is an independent permitted environment with coherent direct-child procfs views; validate the same unchanged helper there with an explicit own-process PID-view gate before starting the provider. A hosted mismatch must also fail closed.

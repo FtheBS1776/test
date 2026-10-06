@@ -1,0 +1,45 @@
+name: BRAINS10 healthy paused WAL control (NONCLAIM)
+
+on:
+  push:
+    branches:
+      - nonclaim/etcd-paused-wal-20261006
+
+permissions:
+  contents: read
+
+jobs:
+  paused-wal:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - name: Checkout exact fixture subject
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Checkout pinned official observer dependencies
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          repository: etcd-io/etcd
+          ref: a0614505aff9b8ff469e9c59c2d979a5936d13f4
+          path: observer-upstream
+          persist-credentials: false
+      - name: Build observer and capture healthy owned paused control
+        env:
+          EXPECTED_SOURCE_MANIFEST: 6cb621bc901758604cc6aec8f0250b9af6615dfc0823ac7e9d530824a596dd4f
+          RUNNER_ENVIRONMENT: ${{ runner.environment }}
+        shell: bash
+        run: |
+          python3 -B paused_wal_control/run_capture.py \
+            --output "${RUNNER_TEMP}/paused-wal-evidence" \
+            --upstream "${GITHUB_WORKSPACE}/observer-upstream" \
+            --expected-source-manifest "${EXPECTED_SOURCE_MANIFEST}"
+      - name: Preserve all returned evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: paused-wal-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/paused-wal-evidence/**
+          if-no-files-found: error
+          overwrite: false
+          retention-days: 1

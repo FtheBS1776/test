@@ -1,0 +1,57 @@
+{
+  "etcd_lifecycle_adapter.py": {
+    "source": "wal_control/etcd_lifecycle_adapter.py",
+    "sha256": "143ae804220a8c89a02cf13bd4b58762632e4c9e44c8317ccc42b0d6afbc567d",
+    "adaptation": "UNCHANGED"
+  },
+  "verify_control.py": {
+    "source": "wal_control/verify_control.py",
+    "sha256": "75041979586f6b1f76ec911f887c7a9203e2393f0478ea057d619c42a3f19a0f",
+    "adaptation": "UNCHANGED"
+  },
+  "atomic_join.py": {
+    "source": "wal_control/atomic_join.py",
+    "sha256": "06fe603a6e23fb921d438dea78171da37520844ceb0d4ec4643e54d9edced9b1",
+    "adaptation": "UNCHANGED"
+  },
+  "stateful_subject.py": {
+    "source": "wal_control/stateful_subject.py",
+    "sha256": "8ea005246f66fd413f00bad6cf0714e5704c23cc4255881ce659e682ce740131",
+    "adaptation": "UNCHANGED"
+  },
+  "owned_etcd.py": {
+    "source": "wal_control/owned_etcd.py",
+    "sha256": "65bfc320da9a920e6a0f993cc258ec4432a1150dfea666ce0bb0c134b4997de3",
+    "adaptation": "UNCHANGED"
+  },
+  "observer.go": {
+    "source": "strict_wal/observer.go",
+    "sha256": "4466bb3ab2cd219463cdd7c501d5f8831654e4fcc4fc4c2b9f245a0673eac91d",
+    "adaptation": "UNCHANGED"
+  },
+  "build_observer.py": {
+    "source": "strict_wal/build_observer.py",
+    "sha256": "1919cf0ac6a1c3e9c44858c5ae10629514f44e8eb8cc1f80a42a91383da23a0a",
+    "adaptation": "UNCHANGED"
+  },
+  "prepare_runtime.py": {
+    "source": "wal_control/prepare_runtime.py",
+    "sha256": "5735bebe5de73933f2c3ff2289b9cbed0eecf8a79f9d2257bce381c9b5a3098d",
+    "adaptation": "UNCHANGED"
+  },
+  "lifecycle_registry.py": {
+    "source": "wal_control/lifecycle_registry.py",
+    "sha256": "7ce3a42d05cf69a0066c59a4cdff196e1fc1f5dba46a29123d9b6c2c95bce367",
+    "adaptation": "UNCHANGED"
+  },
+  "execution_identity_reference.py": {
+    "source": "wal_control/execution_identity_reference.py",
+    "sha256": "5447f0084f222cfd340ed427e5336f3a6a9ebd388b78489cbf4d30fdd9164417",
+    "adaptation": "UNCHANGED"
+  },
+  "SOURCE_RETRIEVAL_INDEX.json": {
+    "source": "strict_wal/SOURCE_RETRIEVAL_INDEX.json",
+    "sha256": "3d88765a43aff80e2b89984d0ffb6d5bd8fbdd88ad7d080d8936a845788bb9d6",
+    "adaptation": "UNCHANGED"
+  }
+}
