@@ -1,0 +1,5 @@
+# Exact lookup repair audit before edit
+
+Run37484149675 attempt1 failed VERIFY with KeyError on tuple ('OWN_PID_VIEW','SELECTED_MEMBER','CONFIGURATION','SERVER_COMMANDS'). An overbroad text replacement incorrectly changed the scalar lookup d['OWN_PID_VIEW'] while adding model inputs. Capture/control/observer/inert stages completed. Preserve original source and rejected verdict unchanged.
+
+L7/L2/Genie/EXP-010 correspondence REUSE exact original source/capture/attempt scope and fail-closed rejection; ADAPT only the dictionary lookup syntax in a separately named offline checker. No predicate, authority rule, timing allowance, provider, helper, observer or execution schedule changes. The existing current primary research and cross-check already cover these predicates; this syntax defect adds no mature-domain semantic frontier. Critique: do not label GitHub success or rerun provider to hide a checker failure. Cross-check: exact one-occurrence replacement, diff review, original failure retained, complete positive adjudication and all22 rehashed model negatives must pass. Further unexpected errors remain rejections.

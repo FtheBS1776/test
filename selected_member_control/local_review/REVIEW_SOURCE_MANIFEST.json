@@ -1,0 +1,7 @@
+{
+  "local_review/LOCAL_EXTRACTION_RETRY.md": "02e9dd9e52075361adaa55f842c9bc656026fa59c684ad1421d66c3d9f865a5d",
+  "local_review/LOOKUP_REPAIR_AUDIT.md": "305fc67384dd6fdc3ba3ed35a7c40c56a2d4a53444892426d616a4d79894f981",
+  "local_review/RESULT_AND_FRONTIER.md": "625c0dc1f1a0982e78203be1af874d37a6f53f3b1d8c97256ded928348e61957",
+  "local_review/adjudicate.py": "acf3d1decbb709f8b6c07f6c22c0d9015d637b6d413677797814aec9dec47cf9",
+  "verify_selected_review.py": "1fab648f38f44d8c978afbb155593c26f8d4d4b4ca2cc4adc850b3f7365bcc1c"
+}

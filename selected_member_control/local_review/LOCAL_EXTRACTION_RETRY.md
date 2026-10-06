@@ -1,0 +1,5 @@
+# Local extraction mismatch, preserved before retry
+
+The independently verified original ZIP SHA40d8284a2a8f0d77860065e72b776650b52f37c6fe279f428c03b14abf1920d4 contains the full64000000byte WAL matching every recorded hash. A later local extracted file was47906816bytes, an exact prefix. Its modification cause is UNESTABLISHED. The mismatch was rejected, not resealed or padded. Entire rejected extraction retained separately under local_extraction_01_rejected. No inference that GitHub supplied incomplete bytes.
+
+EXP-010/L7/L2 REUSE complete attempt history and exact source-byte binding: a clean second extraction from the same independently verified original archive is a retrieval operation, not a provider rerun or a favorable timing retry. Recheck archive CRC/path/bounds, every archive member against capture inventory, selected observation inventory, source/workflow/build/context and copied WAL whole-call input before accepting any result. If the copied input changes again, retain HOLD rather than reconstruct from assumptions.
