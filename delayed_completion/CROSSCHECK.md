@@ -1,0 +1,15 @@
+# Cross-check before GitHub execution
+
+The exact new relay schedule was reviewed against PREEXEC.md and current official sources. The helper copied from the prior owned fixture is reused unchanged. No process or network outside the fixture is controlled. The runtime is pinned and local preparation rehashed it.
+
+Local attempt 01 completed all three schedules. Offline recomputation passed: control committed at revision 3; late transport-pending request committed at revision 5 after timeout and missing receipt; pending exact retry committed at revision 7, and release of the original failed Compare. Each case had one head update, one receipt, unchanged full key metadata on final replay and normal-read reconciliation. These are local preparation observations, not GitHub execution.
+
+Four semantic evidence mutations were independently rejected after recomputing the changed file's manifest digest: declaring absence NOT_COMMITTED, claiming the original succeeded after the pending retry won, moving forward before timeout, and changing full key metadata after retry. See OFFLINE_NEGATIVE_RESULTS.json. These mutations test the offline checker, not a claim of comprehensive adversarial coverage.
+
+Source cross-check found that subprocess.run timeout alone would kill only the command process and might leave its owned server child alive. Before any GitHub execution, the new wrapper was adjusted to create a fresh command process group and terminate the entire owned group on timeout, preserving raw output and error status. This carries forward the earlier repaired-harness lesson. It is a preparation correction, not an omitted failed external run.
+
+The wrapper copies and hashes exact source/context/workflow before preparing runtime, preserves setup/driver/verifier return codes and errors, and seals a manifest. Driver output directories are exclusive. The workflow is branch-restricted, standard hosted Ubuntu, pinned checkout/upload, contents:read, no secrets/cache/persistent checkout token, five-minute timeout and one-day artifact retention. Workflow bytes are separately bound by commit on retrieval; the source manifest excludes workflow to avoid a self-hash cycle.
+
+Limit the claim: delay occurs before forwarding to etcd, so this is not proof that a timed-out request already inside Raft commits later or that every transport cancels identically. Observing receipt absence at one instant does not authorize a NOT_COMMITTED claim while the operation remains pending. The exact retry case demonstrates one stable request can win while the original later rejects. The decision reads only the expected receipt/request; upstream witness is retained for adjudication and never consumed by reconciliation.
+
+No stale follower, multi-host partition, production trust, independent administration, physical power-loss or complete lifecycle adapter proof is claimed. Existing HOLDs stay separate. The continuing controller performed review and verification; no fresh external blind review is asserted. GitHub capture must be independently downloaded and adjudicated before acceptance as scoped remote observations.

@@ -1,0 +1,22 @@
+[
+  {
+    "case": "absence_not_unknown",
+    "result": "REJECTED",
+    "reason": "UNKNOWN_PRESERVED"
+  },
+  {
+    "case": "late_request_claimed_success",
+    "result": "REJECTED",
+    "reason": "ORIGINAL_OUTCOME"
+  },
+  {
+    "case": "forward_before_timeout",
+    "result": "REJECTED",
+    "reason": "DELAY_ORDER"
+  },
+  {
+    "case": "changed_retry_metadata",
+    "result": "REJECTED",
+    "reason": "RETRY_UNCHANGED"
+  }
+]

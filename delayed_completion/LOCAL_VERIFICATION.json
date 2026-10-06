@@ -1,0 +1,29 @@
+{
+  "verification": "PASS",
+  "disposition": "VERIFIED_WITHIN_TESTED_SCOPE_NONCLAIM",
+  "cases": [
+    {
+      "case": "control",
+      "head_revision": "3",
+      "original_succeeded": true,
+      "state_updates": 1
+    },
+    {
+      "case": "late_commit",
+      "head_revision": "5",
+      "original_succeeded": true,
+      "state_updates": 1
+    },
+    {
+      "case": "retry_pending",
+      "head_revision": "7",
+      "original_succeeded": false,
+      "state_updates": 1
+    }
+  ],
+  "scope": "one owned member; positive control and two transport-pending timeout schedules",
+  "controlling_pass": 186,
+  "promotion": false,
+  "freeze": false,
+  "evidence_files": 59
+}
