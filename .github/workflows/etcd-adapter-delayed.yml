@@ -1,0 +1,37 @@
+name: BRAINS10 adapter delayed completion evidence (NONCLAIM)
+
+on:
+  push:
+    branches:
+      - nonclaim/etcd-adapter-delayed-20261006
+
+permissions:
+  contents: read
+
+jobs:
+  adapter-delayed:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Checkout exact subject
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Capture bounded evidence
+        env:
+          EXPECTED_SOURCE_MANIFEST: 24330b9fff54574aa10c0857e5e1a2fc8a4d21e6aa8f53158b34f1c6afaf99cf
+          RUNNER_ENVIRONMENT: ${{ runner.environment }}
+        shell: bash
+        run: |
+          python3 -B adapter_delayed/run_capture.py \
+            --output "${RUNNER_TEMP}/adapter-delayed-evidence" \
+            --expected-source-manifest "${EXPECTED_SOURCE_MANIFEST}"
+      - name: Preserve all returned evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: adapter-delayed-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/adapter-delayed-evidence/**
+          if-no-files-found: error
+          overwrite: false
+          retention-days: 1

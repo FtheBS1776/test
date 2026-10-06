@@ -1,0 +1,17 @@
+{
+  "PRIOR_EXPERIENCE_AND_INITIAL_CRITIQUE.md": "fb9d1b7294cc1d69d9cc3b804af43f265e002ce3ecabc794850a46d8ce39dfa8",
+  "README_FIRST.md": "f887595b7810000444576eb1fa5c6a1cf1d77cfdb7fc77a989446713cb0a7304",
+  "RESEARCH_AND_CROSSCHECK.md": "9922991a5088073b632e8e5484d8414bb143d03457dafc6fd27e776600419907",
+  "SOURCE_LINEAGE.json": "f21c1f57e865f6f1f3ea3648f19f896f505e6ecc5f2c688649742699b275051a",
+  "atomic_join.py": "06fe603a6e23fb921d438dea78171da37520844ceb0d4ec4643e54d9edced9b1",
+  "etcd_lifecycle_adapter.py": "143ae804220a8c89a02cf13bd4b58762632e4c9e44c8317ccc42b0d6afbc567d",
+  "execution_identity_reference.py": "5447f0084f222cfd340ed427e5336f3a6a9ebd388b78489cbf4d30fdd9164417",
+  "lifecycle_registry.py": "7ce3a42d05cf69a0066c59a4cdff196e1fc1f5dba46a29123d9b6c2c95bce367",
+  "owned_etcd.py": "65bfc320da9a920e6a0f993cc258ec4432a1150dfea666ce0bb0c134b4997de3",
+  "prepare_runtime.py": "5735bebe5de73933f2c3ff2289b9cbed0eecf8a79f9d2257bce381c9b5a3098d",
+  "run_adapter.py": "f2d979348c752d86b0c790599bd76ab4c28d4abb92cff5ed3dbcbec885204b00",
+  "run_capture.py": "bed3d997113fdfc359a27019049727db7f9c79ce4fd769bf39e905f4a766075c",
+  "stateful_subject.py": "8ea005246f66fd413f00bad6cf0714e5704c23cc4255881ce659e682ce740131",
+  "transport_fixture.py": "ac1b9cf8eac0952a874b59b61bf732730032254836abfbae4a75e6de9a4666ae",
+  "verify_observations.py": "aa9c5c5e7a6e243ce8abbd204e688be4c79dab5211f14b039bb00ca9eaef142c"
+}

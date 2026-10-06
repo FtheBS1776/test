@@ -1,0 +1,11 @@
+# Unchanged lifecycle adapter pending completion — NONCLAIM
+
+Pass186 controls; no promotion/freeze. Read PRIOR_EXPERIENCE_AND_INITIAL_CRITIQUE.md, RESEARCH_AND_CROSSCHECK.md and SOURCE_LINEAGE.json before execution. Adapter and dependencies/owned runtime helper are copied unchanged.
+
+Two bounded owned one-member plaintext loopback schedules: hold one exact activation request before forwarding, causing a real client timeout; normal receipt reconciliation returns UNKNOWN while absent. In late_commit release then reconcile the full receipt. In retry_pending identical adapter retry commits first, release original and its Compare fails. Both end with exactly one generation update plus one receipt/global execution consumption/outbox intent at one shared revision. Final exact retries issue reads only.
+
+One fixed relay endpoint/binding per schedule and fixed constructor-owned upstream; selected Range/Txn routes and exact namespace only, bounded requests/body/socket/hold/worker lifetime, no generic proxy or external target. Upstream reply is an offline witness and never reconciliation input. This is before-upstream transport delay, not proof that work entered Raft or a production failure model. Generated signing key is fixture-only; no root/provider/custody trust. One small effect; no broader semantics.
+
+One local attempt passed offline checking and four recomputed-manifest semantic negative cases. Source manifest binds final wrapper/verifier/documentation set, separate from exact local executed snapshots. Runtime declarations are observations; no package installation or runtime substitution. Runner stage limits65/120/15seconds with owned process-group cleanup; job5minutes, small one-day artifact retention, pinned actions, contents:read, no billing changes. Failed captures remain evidence.
+
+Controller must independently verify archive/capture inventories, raw observations using locally reviewed checker, committed Git blob/source lineage, workflow/run/attempt/context and runtime declarations. Do not import returned code. Exact integrity/source identity and green status do not grant authority or independently administered production-provider evidence. Preserve all bootstrap/root/custody/recovery/rollback/multihost/physical durability HOLDs.
