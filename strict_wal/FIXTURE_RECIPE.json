@@ -1,0 +1,415 @@
+{
+  "classification": "RECONSTRUCTED_EXACT_PRIOR_OWNED_WAL_AND_SYNTHETIC_NEGATIVES_NONCLAIM",
+  "expected_adapter_request_b64": "eyJjb21wYXJlIjpbeyJrZXkiOiJMMkp5WVdsdWN6RXdMM2RoYkMxamIyNTBjbTlzTDJKeVlXbHVjekV3TFdaaGRXeDBMWHB0Tkd0NE1HVTNMMkYxZEdodmNtbDBlUzFqZFhKeVpXNTAiLCJtb2RSZXZpc2lvbiI6IjIiLCJyZXN1bHQiOiJFUVVBTCIsInRhcmdldCI6Ik1PRCJ9LHsia2V5IjoiTDJKeVlXbHVjekV3TDNkaGJDMWpiMjUwY205c0wySnlZV2x1Y3pFd0xXWmhkV3gwTFhwdE5HdDRNR1UzTDJGMWRHaHZjbWwwZVMxamRYSnlaVzUwIiwicmVzdWx0IjoiRVFVQUwiLCJ0YXJnZXQiOiJWQUxVRSIsInZhbHVlIjoiZXlKaGRYUm9iM0pwZEhsZlkyOXVabWxuSWpvaVF6RWlMQ0puWlc1bGNtRjBhVzl1SWpvd0xDSm9aV0ZrWDJScFoyVnpkQ0k2SWtoRlFVUXRRU0lzSW14cFptVmplV05zWlY5blpXNWxjbUYwYVc5dUlqbzNMQ0p3Y205MmFXUmxjbDlpYVc1a2FXNW5YMlJwWjJWemRDSTZJalkyWm1Oall6YzVNVGc1WVdZek16WmlZVEEyTVdJNU1tSTJaamRoWm1NMVpUbGxNR1ZqWlRkak9ERXdNelU1WWpaaU9Ea3dNVGcxWVdZellXWmhZbVFpTENKeVpXZHBjM1J5ZVY5a2FXZGxjM1FpT2lKak1tVTVNRFl5WWpVMllqZ3dOekU0WVdabE1UazFPVEEzTTJKalptVXpObUU0WTJJNU1qTTFNMkpsWmpZM1pUWTJNMkU0TVdFeU0yRm1OakpoWkdRNEluMD0ifSx7ImtleSI6IkwySnlZV2x1Y3pFd0wzZGhiQzFqYjI1MGNtOXNMMkp5WVdsdWN6RXdMV1poZFd4MExYcHROR3Q0TUdVM0wzUnlZVzV6YVhScGIyNHZkMkZzWDJOdmJuUnliMnhmWVdOMGFYWmhkR2x2Ymc9PSIsInJlc3VsdCI6IkVRVUFMIiwidGFyZ2V0IjoiVkVSU0lPTiIsInZlcnNpb24iOiIwIn0seyJrZXkiOiJMMkp5WVdsdWN6RXdMM2RoYkMxamIyNTBjbTlzTDJKeVlXbHVjekV3TFdaaGRXeDBMWHB0Tkd0NE1HVTNMMlY0WldOMWRHbHZiaTkzWVd4ZlkyOXVkSEp2YkY5aFkzUnBkbUYwYVc5dUxXVjRaV04xZEdsdmJnPT0iLCJyZXN1bHQiOiJFUVVBTCIsInRhcmdldCI6IlZFUlNJT04iLCJ2ZXJzaW9uIjoiMCJ9LHsia2V5IjoiTDJKeVlXbHVjekV3TDNkaGJDMWpiMjUwY205c0wySnlZV2x1Y3pFd0xXWmhkV3gwTFhwdE5HdDRNR1UzTDI5MWRHSnZlQzh4T0dWbFltTmxNVEl3TnpSak1qQXpNV05qWVRsaE56a3lZekkyWm1ZMVkySXdZalJqTVdKbVpUVTJOakV3TldJek5qZ3dZalExWXpKaE1ETXpPRFJpIiwicmVzdWx0IjoiRVFVQUwiLCJ0YXJnZXQiOiJWRVJTSU9OIiwidmVyc2lvbiI6IjAifV0sImZhaWx1cmUiOltdLCJzdWNjZXNzIjpbeyJyZXF1ZXN0UHV0Ijp7ImtleSI6IkwySnlZV2x1Y3pFd0wzZGhiQzFqYjI1MGNtOXNMMkp5WVdsdWN6RXdMV1poZFd4MExYcHROR3Q0TUdVM0wyRjFkR2h2Y21sMGVTMWpkWEp5Wlc1MCIsInZhbHVlIjoiZXlKaGRYUm9iM0pwZEhsZlkyOXVabWxuSWpvaVF6RWlMQ0puWlc1bGNtRjBhVzl1SWpveExDSm9aV0ZrWDJScFoyVnpkQ0k2SWtoRlFVUXRRaUlzSW14cFptVmplV05zWlY5blpXNWxjbUYwYVc5dUlqbzNMQ0p3Y205MmFXUmxjbDlpYVc1a2FXNW5YMlJwWjJWemRDSTZJalkyWm1Oall6YzVNVGc1WVdZek16WmlZVEEyTVdJNU1tSTJaamRoWm1NMVpUbGxNR1ZqWlRkak9ERXdNelU1WWpaaU9Ea3dNVGcxWVdZellXWmhZbVFpTENKeVpXZHBjM1J5ZVY5a2FXZGxjM1FpT2lKak1tVTVNRFl5WWpVMllqZ3dOekU0WVdabE1UazFPVEEzTTJKalptVXpObUU0WTJJNU1qTTFNMkpsWmpZM1pUWTJNMkU0TVdFeU0yRm1OakpoWkdRNEluMD0ifX0seyJyZXF1ZXN0UHV0Ijp7ImtleSI6IkwySnlZV2x1Y3pFd0wzZGhiQzFqYjI1MGNtOXNMMkp5WVdsdWN6RXdMV1poZFd4MExYcHROR3Q0TUdVM0wzUnlZVzV6YVhScGIyNHZkMkZzWDJOdmJuUnliMnhmWVdOMGFYWmhkR2x2Ymc9PSIsInZhbHVlIjoiZXlKbGJuWmxiRzl3WlY5bWFXNW5aWEp3Y21sdWRDSTZJbVl6T0RNNFpUbGhNelk1TURFNE9UZGpZVEl3WWpnNFpEVmlORGMwTmprd05HVmlZV1V4WW1SaU1XUTFZekUxWVdZM05ERXdPVFEyWldFeE1tRXhOekVpTENKbGVHVmpkWFJwYjI1ZmFXUWlPaUozWVd4ZlkyOXVkSEp2YkY5aFkzUnBkbUYwYVc5dUxXVjRaV04xZEdsdmJpSXNJbVpwYm1kbGNuQnlhVzUwSWpvaU9UQmtNalkwWVRjek5qWmxOMlJoTURobU1tWTRNR1UzWmpjek16a3hPR0poTW1KaFlqUTVNMlF3WkRJM1pEUmxZVFV3Tm1FNE1USTRaR0ZqT0dVM1l5SXNJbkpsYzNWc2RDSTZleUpoZFhSb2IzSnBkSGxmWTI5dVptbG5Jam9pUXpFaUxDSm5aVzVsY21GMGFXOXVJam94TENKb1pXRmtYMlJwWjJWemRDSTZJa2hGUVVRdFFpSjlMQ0owY21GdWMybDBhVzl1WDJsa0lqb2lkMkZzWDJOdmJuUnliMnhmWVdOMGFYWmhkR2x2YmlKOSJ9fSx7InJlcXVlc3RQdXQiOnsia2V5IjoiTDJKeVlXbHVjekV3TDNkaGJDMWpiMjUwY205c0wySnlZV2x1Y3pFd0xXWmhkV3gwTFhwdE5HdDRNR1UzTDJWNFpXTjFkR2x2Ymk5M1lXeGZZMjl1ZEhKdmJGOWhZM1JwZG1GMGFXOXVMV1Y0WldOMWRHbHZiZz09IiwidmFsdWUiOiJleUpsYm5abGJHOXdaVjltYVc1blpYSndjbWx1ZENJNkltWXpPRE00WlRsaE16WTVNREU0T1RkallUSXdZamc0WkRWaU5EYzBOamt3TkdWaVlXVXhZbVJpTVdRMVl6RTFZV1kzTkRFd09UUTJaV0V4TW1FeE56RWlMQ0psZUdWamRYUnBiMjVmYVdRaU9pSjNZV3hmWTI5dWRISnZiRjloWTNScGRtRjBhVzl1TFdWNFpXTjFkR2x2YmlJc0luUnlZVzV6YVhScGIyNWZhV1FpT2lKM1lXeGZZMjl1ZEhKdmJGOWhZM1JwZG1GMGFXOXVJbjA9In19LHsicmVxdWVzdFB1dCI6eyJrZXkiOiJMMkp5WVdsdWN6RXdMM2RoYkMxamIyNTBjbTlzTDJKeVlXbHVjekV3TFdaaGRXeDBMWHB0Tkd0NE1HVTNMMjkxZEdKdmVDOHhPR1ZsWW1ObE1USXdOelJqTWpBek1XTmpZVGxoTnpreVl6STJabVkxWTJJd1lqUmpNV0ptWlRVMk5qRXdOV0l6Tmpnd1lqUTFZekpoTURNek9EUmkiLCJ2YWx1ZSI6ImV5SmhkWFJvYjNKcGRIbGZZMjl1Wm1sbklqb2lRekVpTENKbFptWmxZM1JmYVdRaU9pSXhPR1ZsWW1ObE1USXdOelJqTWpBek1XTmpZVGxoTnpreVl6STJabVkxWTJJd1lqUmpNV0ptWlRVMk5qRXdOV0l6Tmpnd1lqUTFZekpoTURNek9EUmlJaXdpWjJWdVpYSmhkR2x2YmlJNk1Td2lhMmx1WkNJNkluQjFZbXhwYzJnaUxDSndZWGxzYjJGa0lqb2lkMkZzTFdOdmJuUnliMnd0Y0dGNWJHOWhaQ0lzSW5SaGNtZGxkQ0k2SW5kaGJDMWpiMjUwY205c0xYUmhjbWRsZENJc0luUnlZVzV6YVhScGIyNWZhV1FpT2lKM1lXeGZZMjl1ZEhKdmJGOWhZM1JwZG1GMGFXOXVJbjA9In19XX0=",
+  "expected_observer": {
+    "cluster_id": "10002814874563406111",
+    "commit_index": 7,
+    "entries": [
+      {
+        "data_b64": "CAAQABiGoqaGzLTppCciTHsiaWQiOjI4MzA5NzU5Njc4MDY3MjIzMTAsInBlZXJVUkxzIjpbImh0dHA6Ly8xMjcuMC4wLjE6NDc3ODMiXSwibmFtZSI6Im0wIn0=",
+        "index": 1,
+        "request": null,
+        "roundtrip_exact": false,
+        "sha256": "be55d047c7d4903a9d9f3390271d6ef1fd2d1b8a9be7b768d189de05cf3bbf66",
+        "term": 1,
+        "type": "EntryConfChange"
+      },
+      {
+        "data_b64": "",
+        "index": 2,
+        "request": null,
+        "roundtrip_exact": false,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "term": 2,
+        "type": "EntryNormal"
+      },
+      {
+        "data_b64": "ogYLCIKyu+uWoqiDkQGqUSgIhqKmhsy06aQnEhwKAm0wEhZodHRwOi8vMTI3LjAuMC4xOjQ0OTE5",
+        "index": 3,
+        "request": {
+          "ID": "0",
+          "alarm": null,
+          "authDisable": null,
+          "authEnable": null,
+          "authRoleAdd": null,
+          "authRoleDelete": null,
+          "authRoleGet": null,
+          "authRoleGrantPermission": null,
+          "authRoleList": null,
+          "authRoleRevokePermission": null,
+          "authStatus": null,
+          "authUserAdd": null,
+          "authUserChangePassword": null,
+          "authUserDelete": null,
+          "authUserGet": null,
+          "authUserGrantRole": null,
+          "authUserList": null,
+          "authUserRevokeRole": null,
+          "authenticate": null,
+          "clusterMemberAttrSet": {
+            "memberAttributes": {
+              "clientUrls": [
+                "http://127.0.0.1:44919"
+              ],
+              "name": "m0"
+            },
+            "memberID": "2830975967806722310"
+          },
+          "clusterVersionSet": null,
+          "compaction": null,
+          "deleteRange": null,
+          "downgradeInfoSet": null,
+          "downgradeVersionTest": null,
+          "header": {
+            "ID": "10450217081582311682",
+            "authRevision": "0",
+            "username": ""
+          },
+          "leaseCheckpoint": null,
+          "leaseGrant": null,
+          "leaseRevoke": null,
+          "put": null,
+          "range": null,
+          "txn": null,
+          "v2": null
+        },
+        "roundtrip_exact": true,
+        "sha256": "d05aece86baaf9f90ede12561c35329cad847afbe0865d40a1350555e505dc78",
+        "term": 2,
+        "type": "EntryNormal"
+      },
+      {
+        "data_b64": "ogYLCISyu+uWoqiDkQGiUQcKBTMuNi4w",
+        "index": 4,
+        "request": {
+          "ID": "0",
+          "alarm": null,
+          "authDisable": null,
+          "authEnable": null,
+          "authRoleAdd": null,
+          "authRoleDelete": null,
+          "authRoleGet": null,
+          "authRoleGrantPermission": null,
+          "authRoleList": null,
+          "authRoleRevokePermission": null,
+          "authStatus": null,
+          "authUserAdd": null,
+          "authUserChangePassword": null,
+          "authUserDelete": null,
+          "authUserGet": null,
+          "authUserGrantRole": null,
+          "authUserList": null,
+          "authUserRevokeRole": null,
+          "authenticate": null,
+          "clusterMemberAttrSet": null,
+          "clusterVersionSet": {
+            "ver": "3.6.0"
+          },
+          "compaction": null,
+          "deleteRange": null,
+          "downgradeInfoSet": null,
+          "downgradeVersionTest": null,
+          "header": {
+            "ID": "10450217081582311684",
+            "authRevision": "0",
+            "username": ""
+          },
+          "leaseCheckpoint": null,
+          "leaseGrant": null,
+          "leaseRevoke": null,
+          "put": null,
+          "range": null,
+          "txn": null,
+          "v2": null
+        },
+        "roundtrip_exact": true,
+        "sha256": "cf4a4361023f3e94596d47c25126bfe7c3d6fc60cf479ccfa0ef9eceee1b3cb8",
+        "term": 2,
+        "type": "EntryNormal"
+      },
+      {
+        "data_b64": "UgCiBgsIhrK765aiqIORAQ==",
+        "index": 5,
+        "request": {
+          "ID": "0",
+          "alarm": {
+            "action": "GET",
+            "alarm": "NONE",
+            "memberID": "0"
+          },
+          "authDisable": null,
+          "authEnable": null,
+          "authRoleAdd": null,
+          "authRoleDelete": null,
+          "authRoleGet": null,
+          "authRoleGrantPermission": null,
+          "authRoleList": null,
+          "authRoleRevokePermission": null,
+          "authStatus": null,
+          "authUserAdd": null,
+          "authUserChangePassword": null,
+          "authUserDelete": null,
+          "authUserGet": null,
+          "authUserGrantRole": null,
+          "authUserList": null,
+          "authUserRevokeRole": null,
+          "authenticate": null,
+          "clusterMemberAttrSet": null,
+          "clusterVersionSet": null,
+          "compaction": null,
+          "deleteRange": null,
+          "downgradeInfoSet": null,
+          "downgradeVersionTest": null,
+          "header": {
+            "ID": "10450217081582311686",
+            "authRevision": "0",
+            "username": ""
+          },
+          "leaseCheckpoint": null,
+          "leaseGrant": null,
+          "leaseRevoke": null,
+          "put": null,
+          "range": null,
+          "txn": null,
+          "v2": null
+        },
+        "roundtrip_exact": true,
+        "sha256": "dd2a85435220a75c8d115b2f90bfdfcc736cff54acf2da0a6e6b4b1b5ca93ca6",
+        "term": 2,
+        "type": "EntryNormal"
+      },
+      {
+        "data_b64": "Mt4DCkMaPy9icmFpbnMxMC93YWwtY29udHJvbC9icmFpbnMxMC1mYXVsdC16bTRreDBlNy9hdXRob3JpdHktY3VycmVudCAAEtECEs4CCj8vYnJhaW5zMTAvd2FsLWNvbnRyb2wvYnJhaW5zMTAtZmF1bHQtem00a3gwZTcvYXV0aG9yaXR5LWN1cnJlbnQSigJ7ImF1dGhvcml0eV9jb25maWciOiJDMSIsImdlbmVyYXRpb24iOjAsImhlYWRfZGlnZXN0IjoiSEVBRC1BIiwibGlmZWN5Y2xlX2dlbmVyYXRpb24iOjcsInByb3ZpZGVyX2JpbmRpbmdfZGlnZXN0IjoiNjZmY2NjNzkxODlhZjMzNmJhMDYxYjkyYjZmN2FmYzVlOWUwZWNlN2M4MTAzNTliNmI4OTAxODVhZjNhZmFiZCIsInJlZ2lzdHJ5X2RpZ2VzdCI6ImMyZTkwNjJiNTZiODA3MThhZmUxOTU5MDczYmNmZTM2YThjYjkyMzUzYmVmNjdlNjYzYTgxYTIzYWY2MmFkZDgifRpDCkEKPy9icmFpbnMxMC93YWwtY29udHJvbC9icmFpbnMxMC1mYXVsdC16bTRreDBlNy9hdXRob3JpdHktY3VycmVudKIGCwiHsrvrlqKog5EB",
+        "index": 6,
+        "request": {
+          "ID": "0",
+          "alarm": null,
+          "authDisable": null,
+          "authEnable": null,
+          "authRoleAdd": null,
+          "authRoleDelete": null,
+          "authRoleGet": null,
+          "authRoleGrantPermission": null,
+          "authRoleList": null,
+          "authRoleRevokePermission": null,
+          "authStatus": null,
+          "authUserAdd": null,
+          "authUserChangePassword": null,
+          "authUserDelete": null,
+          "authUserGet": null,
+          "authUserGrantRole": null,
+          "authUserList": null,
+          "authUserRevokeRole": null,
+          "authenticate": null,
+          "clusterMemberAttrSet": null,
+          "clusterVersionSet": null,
+          "compaction": null,
+          "deleteRange": null,
+          "downgradeInfoSet": null,
+          "downgradeVersionTest": null,
+          "header": {
+            "ID": "10450217081582311687",
+            "authRevision": "0",
+            "username": ""
+          },
+          "leaseCheckpoint": null,
+          "leaseGrant": null,
+          "leaseRevoke": null,
+          "put": null,
+          "range": null,
+          "txn": {
+            "compare": [
+              {
+                "key": "L2JyYWluczEwL3dhbC1jb250cm9sL2JyYWluczEwLWZhdWx0LXptNGt4MGU3L2F1dGhvcml0eS1jdXJyZW50",
+                "rangeEnd": null,
+                "result": "EQUAL",
+                "target": "VERSION",
+                "version": "0"
+              }
+            ],
+            "failure": [
+              {
+                "requestRange": {
+                  "countOnly": false,
+                  "key": "L2JyYWluczEwL3dhbC1jb250cm9sL2JyYWluczEwLWZhdWx0LXptNGt4MGU3L2F1dGhvcml0eS1jdXJyZW50",
+                  "keysOnly": false,
+                  "limit": "0",
+                  "maxCreateRevision": "0",
+                  "maxModRevision": "0",
+                  "minCreateRevision": "0",
+                  "minModRevision": "0",
+                  "rangeEnd": null,
+                  "revision": "0",
+                  "serializable": false,
+                  "sortOrder": "NONE",
+                  "sortTarget": "KEY"
+                }
+              }
+            ],
+            "success": [
+              {
+                "requestPut": {
+                  "ignoreLease": false,
+                  "ignoreValue": false,
+                  "key": "L2JyYWluczEwL3dhbC1jb250cm9sL2JyYWluczEwLWZhdWx0LXptNGt4MGU3L2F1dGhvcml0eS1jdXJyZW50",
+                  "lease": "0",
+                  "prevKv": false,
+                  "value": "eyJhdXRob3JpdHlfY29uZmlnIjoiQzEiLCJnZW5lcmF0aW9uIjowLCJoZWFkX2RpZ2VzdCI6IkhFQUQtQSIsImxpZmVjeWNsZV9nZW5lcmF0aW9uIjo3LCJwcm92aWRlcl9iaW5kaW5nX2RpZ2VzdCI6IjY2ZmNjYzc5MTg5YWYzMzZiYTA2MWI5MmI2ZjdhZmM1ZTllMGVjZTdjODEwMzU5YjZiODkwMTg1YWYzYWZhYmQiLCJyZWdpc3RyeV9kaWdlc3QiOiJjMmU5MDYyYjU2YjgwNzE4YWZlMTk1OTA3M2JjZmUzNmE4Y2I5MjM1M2JlZjY3ZTY2M2E4MWEyM2FmNjJhZGQ4In0="
+                }
+              }
+            ]
+          },
+          "v2": null
+        },
+        "roundtrip_exact": true,
+        "sha256": "4949c0f80b006eb56589fb7bd017ad913a2334746c4ca57e3e7116b06559a425",
+        "term": 2,
+        "type": "EntryNormal"
+      },
+      {
+        "data_b64": "Ms4QCkUQAho/L2JyYWluczEwL3dhbC1jb250cm9sL2JyYWluczEwLWZhdWx0LXptNGt4MGU3L2F1dGhvcml0eS1jdXJyZW50MAIK0AIQAxo/L2JyYWluczEwL3dhbC1jb250cm9sL2JyYWluczEwLWZhdWx0LXptNGt4MGU3L2F1dGhvcml0eS1jdXJyZW50OooCeyJhdXRob3JpdHlfY29uZmlnIjoiQzEiLCJnZW5lcmF0aW9uIjowLCJoZWFkX2RpZ2VzdCI6IkhFQUQtQSIsImxpZmVjeWNsZV9nZW5lcmF0aW9uIjo3LCJwcm92aWRlcl9iaW5kaW5nX2RpZ2VzdCI6IjY2ZmNjYzc5MTg5YWYzMzZiYTA2MWI5MmI2ZjdhZmM1ZTllMGVjZTdjODEwMzU5YjZiODkwMTg1YWYzYWZhYmQiLCJyZWdpc3RyeV9kaWdlc3QiOiJjMmU5MDYyYjU2YjgwNzE4YWZlMTk1OTA3M2JjZmUzNmE4Y2I5MjM1M2JlZjY3ZTY2M2E4MWEyM2FmNjJhZGQ4In0KUxpPL2JyYWluczEwL3dhbC1jb250cm9sL2JyYWluczEwLWZhdWx0LXptNGt4MGU3L3RyYW5zaXRpb24vd2FsX2NvbnRyb2xfYWN0aXZhdGlvbiAAClwaWC9icmFpbnMxMC93YWwtY29udHJvbC9icmFpbnMxMC1mYXVsdC16bTRreDBlNy9leGVjdXRpb24vd2FsX2NvbnRyb2xfYWN0aXZhdGlvbi1leGVjdXRpb24gAAp5GnUvYnJhaW5zMTAvd2FsLWNvbnRyb2wvYnJhaW5zMTAtZmF1bHQtem00a3gwZTcvb3V0Ym94LzE4ZWViY2UxMjA3NGMyMDMxY2NhOWE3OTJjMjZmZjVjYjBiNGMxYmZlNTY2MTA1YjM2ODBiNDVjMmEwMzM4NGIgABLRAhLOAgo/L2JyYWluczEwL3dhbC1jb250cm9sL2JyYWluczEwLWZhdWx0LXptNGt4MGU3L2F1dGhvcml0eS1jdXJyZW50EooCeyJhdXRob3JpdHlfY29uZmlnIjoiQzEiLCJnZW5lcmF0aW9uIjoxLCJoZWFkX2RpZ2VzdCI6IkhFQUQtQiIsImxpZmVjeWNsZV9nZW5lcmF0aW9uIjo3LCJwcm92aWRlcl9iaW5kaW5nX2RpZ2VzdCI6IjY2ZmNjYzc5MTg5YWYzMzZiYTA2MWI5MmI2ZjdhZmM1ZTllMGVjZTdjODEwMzU5YjZiODkwMTg1YWYzYWZhYmQiLCJyZWdpc3RyeV9kaWdlc3QiOiJjMmU5MDYyYjU2YjgwNzE4YWZlMTk1OTA3M2JjZmUzNmE4Y2I5MjM1M2JlZjY3ZTY2M2E4MWEyM2FmNjJhZGQ4In0SpwMSpAMKTy9icmFpbnMxMC93YWwtY29udHJvbC9icmFpbnMxMC1mYXVsdC16bTRreDBlNy90cmFuc2l0aW9uL3dhbF9jb250cm9sX2FjdGl2YXRpb24S0AJ7ImVudmVsb3BlX2ZpbmdlcnByaW50IjoiZjM4MzhlOWEzNjkwMTg5N2NhMjBiODhkNWI0NzQ2OTA0ZWJhZTFiZGIxZDVjMTVhZjc0MTA5NDZlYTEyYTE3MSIsImV4ZWN1dGlvbl9pZCI6IndhbF9jb250cm9sX2FjdGl2YXRpb24tZXhlY3V0aW9uIiwiZmluZ2VycHJpbnQiOiI5MGQyNjRhNzM2NmU3ZGEwOGYyZjgwZTdmNzMzOTE4YmEyYmFiNDkzZDBkMjdkNGVhNTA2YTgxMjhkYWM4ZTdjIiwicmVzdWx0Ijp7ImF1dGhvcml0eV9jb25maWciOiJDMSIsImdlbmVyYXRpb24iOjEsImhlYWRfZGlnZXN0IjoiSEVBRC1CIn0sInRyYW5zaXRpb25faWQiOiJ3YWxfY29udHJvbF9hY3RpdmF0aW9uIn0SlgISkwIKWC9icmFpbnMxMC93YWwtY29udHJvbC9icmFpbnMxMC1mYXVsdC16bTRreDBlNy9leGVjdXRpb24vd2FsX2NvbnRyb2xfYWN0aXZhdGlvbi1leGVjdXRpb24StgF7ImVudmVsb3BlX2ZpbmdlcnByaW50IjoiZjM4MzhlOWEzNjkwMTg5N2NhMjBiODhkNWI0NzQ2OTA0ZWJhZTFiZGIxZDVjMTVhZjc0MTA5NDZlYTEyYTE3MSIsImV4ZWN1dGlvbl9pZCI6IndhbF9jb250cm9sX2FjdGl2YXRpb24tZXhlY3V0aW9uIiwidHJhbnNpdGlvbl9pZCI6IndhbF9jb250cm9sX2FjdGl2YXRpb24ifRLsAhLpAgp1L2JyYWluczEwL3dhbC1jb250cm9sL2JyYWluczEwLWZhdWx0LXptNGt4MGU3L291dGJveC8xOGVlYmNlMTIwNzRjMjAzMWNjYTlhNzkyYzI2ZmY1Y2IwYjRjMWJmZTU2NjEwNWIzNjgwYjQ1YzJhMDMzODRiEu8BeyJhdXRob3JpdHlfY29uZmlnIjoiQzEiLCJlZmZlY3RfaWQiOiIxOGVlYmNlMTIwNzRjMjAzMWNjYTlhNzkyYzI2ZmY1Y2IwYjRjMWJmZTU2NjEwNWIzNjgwYjQ1YzJhMDMzODRiIiwiZ2VuZXJhdGlvbiI6MSwia2luZCI6InB1Ymxpc2giLCJwYXlsb2FkIjoid2FsLWNvbnRyb2wtcGF5bG9hZCIsInRhcmdldCI6IndhbC1jb250cm9sLXRhcmdldCIsInRyYW5zaXRpb25faWQiOiJ3YWxfY29udHJvbF9hY3RpdmF0aW9uIn2iBgsIi7K765aiqIORAQ==",
+        "index": 7,
+        "request": {
+          "ID": "0",
+          "alarm": null,
+          "authDisable": null,
+          "authEnable": null,
+          "authRoleAdd": null,
+          "authRoleDelete": null,
+          "authRoleGet": null,
+          "authRoleGrantPermission": null,
+          "authRoleList": null,
+          "authRoleRevokePermission": null,
+          "authStatus": null,
+          "authUserAdd": null,
+          "authUserChangePassword": null,
+          "authUserDelete": null,
+          "authUserGet": null,
+          "authUserGrantRole": null,
+          "authUserList": null,
+          "authUserRevokeRole": null,
+          "authenticate": null,
+          "clusterMemberAttrSet": null,
+          "clusterVersionSet": null,
+          "compaction": null,
+          "deleteRange": null,
+          "downgradeInfoSet": null,
+          "downgradeVersionTest": null,
+          "header": {
+            "ID": "10450217081582311691",
+            "authRevision": "0",
+            "username": ""
+          },
+          "leaseCheckpoint": null,
+          "leaseGrant": null,
+          "leaseRevoke": null,
+          "put": null,
+          "range": null,
+          "txn": {
+            "compare": [
+              {
+                "key": "L2JyYWluczEwL3dhbC1jb250cm9sL2JyYWluczEwLWZhdWx0LXptNGt4MGU3L2F1dGhvcml0eS1jdXJyZW50",
+                "modRevision": "2",
+                "rangeEnd": null,
+                "result": "EQUAL",
+                "target": "MOD"
+              },
+              {
+                "key": "L2JyYWluczEwL3dhbC1jb250cm9sL2JyYWluczEwLWZhdWx0LXptNGt4MGU3L2F1dGhvcml0eS1jdXJyZW50",
+                "rangeEnd": null,
+                "result": "EQUAL",
+                "target": "VALUE",
+                "value": "eyJhdXRob3JpdHlfY29uZmlnIjoiQzEiLCJnZW5lcmF0aW9uIjowLCJoZWFkX2RpZ2VzdCI6IkhFQUQtQSIsImxpZmVjeWNsZV9nZW5lcmF0aW9uIjo3LCJwcm92aWRlcl9iaW5kaW5nX2RpZ2VzdCI6IjY2ZmNjYzc5MTg5YWYzMzZiYTA2MWI5MmI2ZjdhZmM1ZTllMGVjZTdjODEwMzU5YjZiODkwMTg1YWYzYWZhYmQiLCJyZWdpc3RyeV9kaWdlc3QiOiJjMmU5MDYyYjU2YjgwNzE4YWZlMTk1OTA3M2JjZmUzNmE4Y2I5MjM1M2JlZjY3ZTY2M2E4MWEyM2FmNjJhZGQ4In0="
+              },
+              {
+                "key": "L2JyYWluczEwL3dhbC1jb250cm9sL2JyYWluczEwLWZhdWx0LXptNGt4MGU3L3RyYW5zaXRpb24vd2FsX2NvbnRyb2xfYWN0aXZhdGlvbg==",
+                "rangeEnd": null,
+                "result": "EQUAL",
+                "target": "VERSION",
+                "version": "0"
+              },
+              {
+                "key": "L2JyYWluczEwL3dhbC1jb250cm9sL2JyYWluczEwLWZhdWx0LXptNGt4MGU3L2V4ZWN1dGlvbi93YWxfY29udHJvbF9hY3RpdmF0aW9uLWV4ZWN1dGlvbg==",
+                "rangeEnd": null,
+                "result": "EQUAL",
+                "target": "VERSION",
+                "version": "0"
+              },
+              {
+                "key": "L2JyYWluczEwL3dhbC1jb250cm9sL2JyYWluczEwLWZhdWx0LXptNGt4MGU3L291dGJveC8xOGVlYmNlMTIwNzRjMjAzMWNjYTlhNzkyYzI2ZmY1Y2IwYjRjMWJmZTU2NjEwNWIzNjgwYjQ1YzJhMDMzODRi",
+                "rangeEnd": null,
+                "result": "EQUAL",
+                "target": "VERSION",
+                "version": "0"
+              }
+            ],
+            "failure": [],
+            "success": [
+              {
+                "requestPut": {
+                  "ignoreLease": false,
+                  "ignoreValue": false,
+                  "key": "L2JyYWluczEwL3dhbC1jb250cm9sL2JyYWluczEwLWZhdWx0LXptNGt4MGU3L2F1dGhvcml0eS1jdXJyZW50",
+                  "lease": "0",
+                  "prevKv": false,
+                  "value": "eyJhdXRob3JpdHlfY29uZmlnIjoiQzEiLCJnZW5lcmF0aW9uIjoxLCJoZWFkX2RpZ2VzdCI6IkhFQUQtQiIsImxpZmVjeWNsZV9nZW5lcmF0aW9uIjo3LCJwcm92aWRlcl9iaW5kaW5nX2RpZ2VzdCI6IjY2ZmNjYzc5MTg5YWYzMzZiYTA2MWI5MmI2ZjdhZmM1ZTllMGVjZTdjODEwMzU5YjZiODkwMTg1YWYzYWZhYmQiLCJyZWdpc3RyeV9kaWdlc3QiOiJjMmU5MDYyYjU2YjgwNzE4YWZlMTk1OTA3M2JjZmUzNmE4Y2I5MjM1M2JlZjY3ZTY2M2E4MWEyM2FmNjJhZGQ4In0="
+                }
+              },
+              {
+                "requestPut": {
+                  "ignoreLease": false,
+                  "ignoreValue": false,
+                  "key": "L2JyYWluczEwL3dhbC1jb250cm9sL2JyYWluczEwLWZhdWx0LXptNGt4MGU3L3RyYW5zaXRpb24vd2FsX2NvbnRyb2xfYWN0aXZhdGlvbg==",
+                  "lease": "0",
+                  "prevKv": false,
+                  "value": "eyJlbnZlbG9wZV9maW5nZXJwcmludCI6ImYzODM4ZTlhMzY5MDE4OTdjYTIwYjg4ZDViNDc0NjkwNGViYWUxYmRiMWQ1YzE1YWY3NDEwOTQ2ZWExMmExNzEiLCJleGVjdXRpb25faWQiOiJ3YWxfY29udHJvbF9hY3RpdmF0aW9uLWV4ZWN1dGlvbiIsImZpbmdlcnByaW50IjoiOTBkMjY0YTczNjZlN2RhMDhmMmY4MGU3ZjczMzkxOGJhMmJhYjQ5M2QwZDI3ZDRlYTUwNmE4MTI4ZGFjOGU3YyIsInJlc3VsdCI6eyJhdXRob3JpdHlfY29uZmlnIjoiQzEiLCJnZW5lcmF0aW9uIjoxLCJoZWFkX2RpZ2VzdCI6IkhFQUQtQiJ9LCJ0cmFuc2l0aW9uX2lkIjoid2FsX2NvbnRyb2xfYWN0aXZhdGlvbiJ9"
+                }
+              },
+              {
+                "requestPut": {
+                  "ignoreLease": false,
+                  "ignoreValue": false,
+                  "key": "L2JyYWluczEwL3dhbC1jb250cm9sL2JyYWluczEwLWZhdWx0LXptNGt4MGU3L2V4ZWN1dGlvbi93YWxfY29udHJvbF9hY3RpdmF0aW9uLWV4ZWN1dGlvbg==",
+                  "lease": "0",
+                  "prevKv": false,
+                  "value": "eyJlbnZlbG9wZV9maW5nZXJwcmludCI6ImYzODM4ZTlhMzY5MDE4OTdjYTIwYjg4ZDViNDc0NjkwNGViYWUxYmRiMWQ1YzE1YWY3NDEwOTQ2ZWExMmExNzEiLCJleGVjdXRpb25faWQiOiJ3YWxfY29udHJvbF9hY3RpdmF0aW9uLWV4ZWN1dGlvbiIsInRyYW5zaXRpb25faWQiOiJ3YWxfY29udHJvbF9hY3RpdmF0aW9uIn0="
+                }
+              },
+              {
+                "requestPut": {
+                  "ignoreLease": false,
+                  "ignoreValue": false,
+                  "key": "L2JyYWluczEwL3dhbC1jb250cm9sL2JyYWluczEwLWZhdWx0LXptNGt4MGU3L291dGJveC8xOGVlYmNlMTIwNzRjMjAzMWNjYTlhNzkyYzI2ZmY1Y2IwYjRjMWJmZTU2NjEwNWIzNjgwYjQ1YzJhMDMzODRi",
+                  "lease": "0",
+                  "prevKv": false,
+                  "value": "eyJhdXRob3JpdHlfY29uZmlnIjoiQzEiLCJlZmZlY3RfaWQiOiIxOGVlYmNlMTIwNzRjMjAzMWNjYTlhNzkyYzI2ZmY1Y2IwYjRjMWJmZTU2NjEwNWIzNjgwYjQ1YzJhMDMzODRiIiwiZ2VuZXJhdGlvbiI6MSwia2luZCI6InB1Ymxpc2giLCJwYXlsb2FkIjoid2FsLWNvbnRyb2wtcGF5bG9hZCIsInRhcmdldCI6IndhbC1jb250cm9sLXRhcmdldCIsInRyYW5zaXRpb25faWQiOiJ3YWxfY29udHJvbF9hY3RpdmF0aW9uIn0="
+                }
+              }
+            ]
+          },
+          "v2": null
+        },
+        "roundtrip_exact": true,
+        "sha256": "f10312d397a17fb3b5e27cdb5666787d28635f53d58be121dba81e5535645617",
+        "term": 2,
+        "type": "EntryNormal"
+      }
+    ],
+    "metadata_b64": "CIaipobMtOmkJxCf0uHCmeTI6IoB",
+    "node_id": "2830975967806722310",
+    "schema": "WAL_CONTROL_V1",
+    "scope": "POST_STOP_INITIAL_SEGMENT_COMMITTED_CONTROL",
+    "term": 2,
+    "vote": "2830975967806722310"
+  },
+  "new_provider_execution": false,
+  "original_file_bytes": 64000000,
+  "original_wal_sha256": "82488df99c676d91bbba7b80f650aae5dd809286965a847dc2de3238d4925e55",
+  "prefix_b64": "BAAAAAAAAIQIBBAAAAAAAB8AAAAAAACBCAEQmoHWyQUaFQiGoqaGzLTppCcQn9LhwpnkyOiKAQAOAAAAAAAAgggFELH53eYMGgQIABAAAABuAAAAAAAAgggCELH9144IGmQIARABGAEiXAgAEAAYhqKmhsy06aQnIkx7ImlkIjoyODMwOTc1OTY3ODA2NzIyMzEwLCJwZWVyVVJMcyI6WyJodHRwOi8vMTI3LjAuMC4xOjQ3NzgzIl0sIm5hbWUiOiJtMCJ9AAAPAAAAAAAAgQgDEN7T5gEaBggBEAAYAQAYAAAAAAAAAAgDEI6+0I8NGg4IAhCGoqaGzLTppCcYARAAAAAAAAAACAIQteiU4gEaBggAEAIYAksAAAAAAACFCAIQ2Ora0AcaQQgAEAIYAyI5ogYLCIKyu+uWoqiDkQGqUSgIhqKmhsy06aQnEhwKAm0wEhZodHRwOi8vMTI3LjAuMC4xOjQ0OTE5AAAAAAAYAAAAAAAAAAgDEM72neYCGg4IAhCGoqaGzLTppCcYAyoAAAAAAACGCAIQ1cOkyA8aIAgAEAIYBCIYogYLCISyu+uWoqiDkQGiUQcKBTMuNi4wAAAAAAAAGAAAAAAAAAAIAxC3qfHSBBoOCAIQhqKmhsy06aQnGAQiAAAAAAAAhggCEIad9fwDGhgIABACGAUiEFIAogYLCIayu+uWoqiDkQEAAAAAAAAYAAAAAAAAAAgDEMfvreELGg4IAhCGoqaGzLTppCcYBQMCAAAAAACFCAIQgdqU/Qka+AMIABACGAYi7wMy3gMKQxo/L2JyYWluczEwL3dhbC1jb250cm9sL2JyYWluczEwLWZhdWx0LXptNGt4MGU3L2F1dGhvcml0eS1jdXJyZW50IAAS0QISzgIKPy9icmFpbnMxMC93YWwtY29udHJvbC9icmFpbnMxMC1mYXVsdC16bTRreDBlNy9hdXRob3JpdHktY3VycmVudBKKAnsiYXV0aG9yaXR5X2NvbmZpZyI6IkMxIiwiZ2VuZXJhdGlvbiI6MCwiaGVhZF9kaWdlc3QiOiJIRUFELUEiLCJsaWZlY3ljbGVfZ2VuZXJhdGlvbiI6NywicHJvdmlkZXJfYmluZGluZ19kaWdlc3QiOiI2NmZjY2M3OTE4OWFmMzM2YmEwNjFiOTJiNmY3YWZjNWU5ZTBlY2U3YzgxMDM1OWI2Yjg5MDE4NWFmM2FmYWJkIiwicmVnaXN0cnlfZGlnZXN0IjoiYzJlOTA2MmI1NmI4MDcxOGFmZTE5NTkwNzNiY2ZlMzZhOGNiOTIzNTNiZWY2N2U2NjNhODFhMjNhZjYyYWRkOCJ9GkMKQQo/L2JyYWluczEwL3dhbC1jb250cm9sL2JyYWluczEwLWZhdWx0LXptNGt4MGU3L2F1dGhvcml0eS1jdXJyZW50ogYLCIeyu+uWoqiDkQEAAAAAABgAAAAAAAAACAMQw/by8wMaDggCEIaipobMtOmkJxgGcwgAAAAAAIUIAhCVxbaXCxroEAgAEAIYByLfEDLOEApFEAIaPy9icmFpbnMxMC93YWwtY29udHJvbC9icmFpbnMxMC1mYXVsdC16bTRreDBlNy9hdXRob3JpdHktY3VycmVudDACCtACEAMaPy9icmFpbnMxMC93YWwtY29udHJvbC9icmFpbnMxMC1mYXVsdC16bTRreDBlNy9hdXRob3JpdHktY3VycmVudDqKAnsiYXV0aG9yaXR5X2NvbmZpZyI6IkMxIiwiZ2VuZXJhdGlvbiI6MCwiaGVhZF9kaWdlc3QiOiJIRUFELUEiLCJsaWZlY3ljbGVfZ2VuZXJhdGlvbiI6NywicHJvdmlkZXJfYmluZGluZ19kaWdlc3QiOiI2NmZjY2M3OTE4OWFmMzM2YmEwNjFiOTJiNmY3YWZjNWU5ZTBlY2U3YzgxMDM1OWI2Yjg5MDE4NWFmM2FmYWJkIiwicmVnaXN0cnlfZGlnZXN0IjoiYzJlOTA2MmI1NmI4MDcxOGFmZTE5NTkwNzNiY2ZlMzZhOGNiOTIzNTNiZWY2N2U2NjNhODFhMjNhZjYyYWRkOCJ9ClMaTy9icmFpbnMxMC93YWwtY29udHJvbC9icmFpbnMxMC1mYXVsdC16bTRreDBlNy90cmFuc2l0aW9uL3dhbF9jb250cm9sX2FjdGl2YXRpb24gAApcGlgvYnJhaW5zMTAvd2FsLWNvbnRyb2wvYnJhaW5zMTAtZmF1bHQtem00a3gwZTcvZXhlY3V0aW9uL3dhbF9jb250cm9sX2FjdGl2YXRpb24tZXhlY3V0aW9uIAAKeRp1L2JyYWluczEwL3dhbC1jb250cm9sL2JyYWluczEwLWZhdWx0LXptNGt4MGU3L291dGJveC8xOGVlYmNlMTIwNzRjMjAzMWNjYTlhNzkyYzI2ZmY1Y2IwYjRjMWJmZTU2NjEwNWIzNjgwYjQ1YzJhMDMzODRiIAAS0QISzgIKPy9icmFpbnMxMC93YWwtY29udHJvbC9icmFpbnMxMC1mYXVsdC16bTRreDBlNy9hdXRob3JpdHktY3VycmVudBKKAnsiYXV0aG9yaXR5X2NvbmZpZyI6IkMxIiwiZ2VuZXJhdGlvbiI6MSwiaGVhZF9kaWdlc3QiOiJIRUFELUIiLCJsaWZlY3ljbGVfZ2VuZXJhdGlvbiI6NywicHJvdmlkZXJfYmluZGluZ19kaWdlc3QiOiI2NmZjY2M3OTE4OWFmMzM2YmEwNjFiOTJiNmY3YWZjNWU5ZTBlY2U3YzgxMDM1OWI2Yjg5MDE4NWFmM2FmYWJkIiwicmVnaXN0cnlfZGlnZXN0IjoiYzJlOTA2MmI1NmI4MDcxOGFmZTE5NTkwNzNiY2ZlMzZhOGNiOTIzNTNiZWY2N2U2NjNhODFhMjNhZjYyYWRkOCJ9EqcDEqQDCk8vYnJhaW5zMTAvd2FsLWNvbnRyb2wvYnJhaW5zMTAtZmF1bHQtem00a3gwZTcvdHJhbnNpdGlvbi93YWxfY29udHJvbF9hY3RpdmF0aW9uEtACeyJlbnZlbG9wZV9maW5nZXJwcmludCI6ImYzODM4ZTlhMzY5MDE4OTdjYTIwYjg4ZDViNDc0NjkwNGViYWUxYmRiMWQ1YzE1YWY3NDEwOTQ2ZWExMmExNzEiLCJleGVjdXRpb25faWQiOiJ3YWxfY29udHJvbF9hY3RpdmF0aW9uLWV4ZWN1dGlvbiIsImZpbmdlcnByaW50IjoiOTBkMjY0YTczNjZlN2RhMDhmMmY4MGU3ZjczMzkxOGJhMmJhYjQ5M2QwZDI3ZDRlYTUwNmE4MTI4ZGFjOGU3YyIsInJlc3VsdCI6eyJhdXRob3JpdHlfY29uZmlnIjoiQzEiLCJnZW5lcmF0aW9uIjoxLCJoZWFkX2RpZ2VzdCI6IkhFQUQtQiJ9LCJ0cmFuc2l0aW9uX2lkIjoid2FsX2NvbnRyb2xfYWN0aXZhdGlvbiJ9EpYCEpMCClgvYnJhaW5zMTAvd2FsLWNvbnRyb2wvYnJhaW5zMTAtZmF1bHQtem00a3gwZTcvZXhlY3V0aW9uL3dhbF9jb250cm9sX2FjdGl2YXRpb24tZXhlY3V0aW9uErYBeyJlbnZlbG9wZV9maW5nZXJwcmludCI6ImYzODM4ZTlhMzY5MDE4OTdjYTIwYjg4ZDViNDc0NjkwNGViYWUxYmRiMWQ1YzE1YWY3NDEwOTQ2ZWExMmExNzEiLCJleGVjdXRpb25faWQiOiJ3YWxfY29udHJvbF9hY3RpdmF0aW9uLWV4ZWN1dGlvbiIsInRyYW5zaXRpb25faWQiOiJ3YWxfY29udHJvbF9hY3RpdmF0aW9uIn0S7AIS6QIKdS9icmFpbnMxMC93YWwtY29udHJvbC9icmFpbnMxMC1mYXVsdC16bTRreDBlNy9vdXRib3gvMThlZWJjZTEyMDc0YzIwMzFjY2E5YTc5MmMyNmZmNWNiMGI0YzFiZmU1NjYxMDViMzY4MGI0NWMyYTAzMzg0YhLvAXsiYXV0aG9yaXR5X2NvbmZpZyI6IkMxIiwiZWZmZWN0X2lkIjoiMThlZWJjZTEyMDc0YzIwMzFjY2E5YTc5MmMyNmZmNWNiMGI0YzFiZmU1NjYxMDViMzY4MGI0NWMyYTAzMzg0YiIsImdlbmVyYXRpb24iOjEsImtpbmQiOiJwdWJsaXNoIiwicGF5bG9hZCI6IndhbC1jb250cm9sLXBheWxvYWQiLCJ0YXJnZXQiOiJ3YWwtY29udHJvbC10YXJnZXQiLCJ0cmFuc2l0aW9uX2lkIjoid2FsX2NvbnRyb2xfYWN0aXZhdGlvbiJ9ogYLCIuyu+uWoqiDkQEAAAAAABgAAAAAAAAACAMQyLz5oAYaDggCEIaipobMtOmkJxgH",
+  "prefix_bytes": 3336,
+  "prior_artifact_sha256": "d944101b1ea28e3b401f6847c55fef5c876bf85c8c1f1e1d4edb2aabf64975aa",
+  "prior_attempt": 1,
+  "prior_run": 37471981726,
+  "valid_prefix_cut": 1128,
+  "zero_suffix_bytes": 63996664
+}

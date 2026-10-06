@@ -1,0 +1,22 @@
+{
+  "status": "PASS_FOR_BOUNDED_BUILD_AND_RECONSTRUCTED_INPUT_FIXTURES",
+  "source_manifest_sha256": "d18f22a3c81d9ea30aa134d9d3b544ba1173eefddb2dfa92d5bd37343521ba92",
+  "exact_reconstruction_independently_verified": true,
+  "prior_correspondence_critique_research_crosscheck": "COMPLETE",
+  "copied_torn_tail_counterexample": "REPRODUCED; original observer returns zero, bounded history still matches",
+  "provider_execution": false,
+  "new_observer_compile": "PENDING_HOSTED_BUILD; local Go unavailable",
+  "python_source_parse": "PASS",
+  "workflow_structural_checks": "PASS",
+  "exact_retained_prior_input": true,
+  "synthetic_negative_cases": [
+    "partial_declared_frame",
+    "nonzero_after_zero_header",
+    "nonzero_frame_padding",
+    "valid_prefix_missing_target"
+  ],
+  "controlling_pass": 186,
+  "classification": "NONCLAIM",
+  "promotion": false,
+  "freeze": false
+}
