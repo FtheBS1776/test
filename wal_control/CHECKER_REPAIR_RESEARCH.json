@@ -1,0 +1,12 @@
+{
+  "repo": "gogo/protobuf",
+  "tag": "v1.3.2",
+  "commit": "b03c65ea87cdc3521ede29f62fe3ce239267c1bc",
+  "path": "jsonpb/jsonpb.go",
+  "bytes": 40857,
+  "sha256": "3d60ec8e248539c3cf074a9c01936c37df68914511f7065ef4f1baa2476ddc1d",
+  "git_blob_sha1": "e8134ec8ba32fd848b770515dcfa4eb1cabd519f",
+  "git_blob_binding": "PASS",
+  "current_protojson_documentation": "https://protobuf.dev/programming-guides/json/",
+  "retrieved_utc_date": "2026-10-06"
+}

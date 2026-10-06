@@ -11,7 +11,7 @@ def normalized(txn,proto=False):
  for c in txn['compare']:
   target=c['target'];field={'MOD':'modRevision','VALUE':'value','VERSION':'version'}.get(target);demand(field is not None,'COMPARE_TARGET')
   allowed={'key','target','result',field}|({'rangeEnd'} if proto else set());demand(set(c)==allowed,'COMPARE_FIELDS')
-  demand(c['result']=='EQUAL' and c.get('rangeEnd','')=='','COMPARE_OPERATION')
+  demand(c['result']=='EQUAL' and c.get('rangeEnd','') in (None,''),'COMPARE_OPERATION')
   b64(c['key']);val=c[field];b64(val) if field=='value' else demand(str(int(val))==str(val),'COMPARE_INTEGER')
   compares.append({'key':c['key'],'target':target,'result':'EQUAL',field:str(val)})
  puts=[]
@@ -89,7 +89,7 @@ def check(root,observer_path,negatives=True):
  demand(set(inventory(root/'snapshot'))=={'member/wal/0000000000000000-0000000000000000.wal'},'BOUNDED_SNAPSHOT_FILES')
  d=model(root,load(observer_path));result=validate(d);tests=[]
  if negatives:
-  for name in ['request_put_value','member_identity','commit_coverage','missing_target_entry','retry_metadata']:
+  for name in ['request_put_value','member_identity','commit_coverage','missing_target_entry','retry_metadata','nonempty_compare_range','missing_compare_range']:
    v=copy.deepcopy(d)
    if name=='request_put_value':
     e=next(e for e in v['observer']['entries'] if e['index']==result['entry_index']);e['request']['txn']['success'][0]['requestPut']['value']=base64.b64encode(b'altered').decode()
@@ -97,6 +97,8 @@ def check(root,observer_path,negatives=True):
    elif name=='commit_coverage':v['observer']['commit_index']-=1
    elif name=='missing_target_entry':v['observer']['entries']=[e for e in v['observer']['entries'] if e['index']!=result['entry_index']]
    elif name=='retry_metadata':v['final_outbox']['kvs'][0]['version']+=1
+   elif name=='nonempty_compare_range':next(e for e in v['observer']['entries'] if e['index']==result['entry_index'])['request']['txn']['compare'][0]['rangeEnd']='YWJj'
+   elif name=='missing_compare_range':del next(e for e in v['observer']['entries'] if e['index']==result['entry_index'])['request']['txn']['compare'][0]['rangeEnd']
    digest=hashlib.sha256(canonical(v).encode()).hexdigest()
    try:validate(v)
    except Exception as e:tests.append({'mutation':name,'recomputed_model_sha256':digest,'rejected':True,'reason':str(e)})

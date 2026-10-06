@@ -26,7 +26,7 @@ jobs:
           persist-credentials: false
       - name: Build observer and capture committed control
         env:
-          EXPECTED_SOURCE_MANIFEST: c475f42e494d83381c99f3fe730fe5fbc55f2e22f1217c53c49fd24335670600
+          EXPECTED_SOURCE_MANIFEST: 5e1706af9e6eead5de363655b36ee226016e7fa43efa8707185f651b931ae380
           RUNNER_ENVIRONMENT: ${{ runner.environment }}
         shell: bash
         run: |
