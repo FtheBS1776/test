@@ -1,0 +1,121 @@
+{
+  "adapter_txns": 2,
+  "atomic_revision": 3,
+  "captured_last_entry": 15,
+  "classification": "NONCLAIM",
+  "controlling_pass": 186,
+  "copy_to_timeout_margin_ns": 1719506685,
+  "durability_proven": false,
+  "final_applied": 19,
+  "model_negatives": [
+    {
+      "mutation": "wrong_member",
+      "reason": "RuntimeError: MEMBER_BINDING",
+      "rejected": true
+    },
+    {
+      "mutation": "wrong_pid",
+      "reason": "RuntimeError: SELECTED_CONFIG_BINDING",
+      "rejected": true
+    },
+    {
+      "mutation": "wrong_endpoint",
+      "reason": "RuntimeError: SELECTED_CONFIG_BINDING",
+      "rejected": true
+    },
+    {
+      "mutation": "wrong_leader",
+      "reason": "RuntimeError: SELECTED_ACTUAL_LEADER_TERM",
+      "rejected": true
+    },
+    {
+      "mutation": "late_copy",
+      "reason": "RuntimeError: PENDING_CAPTURE_CHRONOLOGY",
+      "rejected": true
+    },
+    {
+      "mutation": "early_pause",
+      "reason": "RuntimeError: PENDING_CAPTURE_CHRONOLOGY",
+      "rejected": true
+    },
+    {
+      "mutation": "changed_tasks",
+      "reason": "RuntimeError: STOPPED_TASKS",
+      "rejected": true
+    },
+    {
+      "mutation": "missing_hook",
+      "reason": "RuntimeError: HOOK_COMPLETION",
+      "rejected": true
+    },
+    {
+      "mutation": "wrong_gate_member",
+      "reason": "RuntimeError: EXACT_PEER_GATE",
+      "rejected": true
+    },
+    {
+      "mutation": "changed_request",
+      "reason": "RuntimeError: TXN_BINDING",
+      "rejected": true
+    },
+    {
+      "mutation": "missing_target",
+      "reason": "RuntimeError: POSITIVE_UNIQUE_PENDING_ENTRY",
+      "rejected": true
+    },
+    {
+      "mutation": "wrong_trace_request",
+      "reason": "RuntimeError: TXN_BINDING",
+      "rejected": true
+    },
+    {
+      "mutation": "wrong_trace_bytecode",
+      "reason": "RuntimeError: TRACE_CODE",
+      "rejected": true
+    },
+    {
+      "mutation": "not_timeout",
+      "reason": "RuntimeError: TXN_EXCEPTION_SEQUENCE",
+      "rejected": true
+    },
+    {
+      "mutation": "not_unknown",
+      "reason": "RuntimeError: ORDINARY_ADAPTER_OUTCOMES",
+      "rejected": true
+    },
+    {
+      "mutation": "retry_version",
+      "reason": "RuntimeError: FINAL_RETRY_METADATA_outbox",
+      "rejected": true
+    },
+    {
+      "mutation": "partial_tail",
+      "reason": "RuntimeError: STRICT_TERMINAL",
+      "rejected": true
+    },
+    {
+      "mutation": "diagnostic_authority",
+      "reason": "RuntimeError: UNKNOWN_NOT_AUTHORITY",
+      "rejected": true
+    },
+    {
+      "mutation": "relay_not_clean",
+      "reason": "RuntimeError: PEER_CLEANUP",
+      "rejected": true
+    },
+    {
+      "mutation": "already_applied",
+      "reason": "RuntimeError: DISTINCT_PRE_AND_CAPTURE_INDICES",
+      "rejected": true
+    }
+  ],
+  "pretrial_applied": 14,
+  "production_trust_proven": false,
+  "reconcile_after_heal": "UNKNOWN_COMMIT",
+  "saved_wal_commit": 14,
+  "scope": "EXACT_LOCAL_ENTRY_BEFORE_ORIGINAL_TXN_TIMEOUT_AND_SAME_IDENTITY_RECONCILIATION",
+  "selected_member_index": 1,
+  "status": "PASS",
+  "target_entry": 15,
+  "uncommittedness_proven": false
+}

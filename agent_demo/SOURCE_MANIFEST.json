@@ -1,0 +1,20 @@
+{
+  "CONTRACT_AND_PRIOR_AUDIT.md": "d22e7008655af63b105cde36792cc2c25dca0f91ed25a7ff469761e6a3a58be2",
+  "README_FIRST.md": "5679d2938bd0a834d26dd0ebbb0249a3723a379b268fedbffcbd953b0a08dec9",
+  "SOURCE_LINEAGE.json": "1bb20aa959b7b9ec6b7577d8d8add2af2de1ed3281d69c980b36b49f4ee4a54f",
+  "VERIFIED_INPUT.json": "8d3b1114663318e58d29ec56363cf8eab37a43390ef7094b7f47a00b158d2fcd",
+  "atomic_join.py": "06fe603a6e23fb921d438dea78171da37520844ceb0d4ec4643e54d9edced9b1",
+  "coordinator.py": "87506e4b4ae829406c94b268c369a732074169e18b07f4b7a16c2906129d47e8",
+  "etcd_lifecycle_adapter.py": "143ae804220a8c89a02cf13bd4b58762632e4c9e44c8317ccc42b0d6afbc567d",
+  "execution_identity_reference.py": "5447f0084f222cfd340ed427e5336f3a6a9ebd388b78489cbf4d30fdd9164417",
+  "lifecycle_registry.py": "7ce3a42d05cf69a0066c59a4cdff196e1fc1f5dba46a29123d9b6c2c95bce367",
+  "owned_etcd.py": "65bfc320da9a920e6a0f993cc258ec4432a1150dfea666ce0bb0c134b4997de3",
+  "prepare_runtime.py": "5735bebe5de73933f2c3ff2289b9cbed0eecf8a79f9d2257bce381c9b5a3098d",
+  "report_sink.py": "6a8e79e20172e03c3aa7e1c1976a3654d43cd9c04f785eec3dfc74fad4c12532",
+  "report_worker.py": "c52b56b2d533b47b74d73eb93d847f76e8e790fe726e8237cbeaa35da81a85ed",
+  "run_capture.py": "beed20a241e1485f71546f91e64b6b17f749b18c44bd2dde0dce021952665b59",
+  "run_demo.py": "f53fb517cbe68493706f6af9a8511a0efa0da00367b2d675afc02012c26cc154",
+  "stateful_subject.py": "8ea005246f66fd413f00bad6cf0714e5704c23cc4255881ce659e682ce740131",
+  "test_sink.py": "21cf7e7324745e1ee7eb015505368360579f85dc13828314518d078a96024b71",
+  "verify_demo.py": "4828a735baa159dd1f868f950b8e47c4cc0ed1a37351eb7d29dc13ae03c4f7d8"
+}
