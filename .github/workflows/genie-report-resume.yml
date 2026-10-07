@@ -1,0 +1,34 @@
+name: Genie governed report interruption and resume (NONCLAIM)
+on:
+  push:
+    branches:
+      - nonclaim/genie-report-resume-r2-20261007
+permissions:
+  contents: read
+jobs:
+  report-resume:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Checkout exact task fixture
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Execute one bounded report task and restart
+        env:
+          EXPECTED_SOURCE_MANIFEST: 9701d23c8f16cdb30489c44f27d1b9516361f8a3c1b1ff1901ef701c84b91cc0
+          RUNNER_ENVIRONMENT: ${{ runner.environment }}
+        shell: bash
+        run: |
+          python3 -B agent_demo/run_capture.py \
+            --output "${RUNNER_TEMP}/report-resume-evidence" \
+            --expected-source-manifest "${EXPECTED_SOURCE_MANIFEST}"
+      - name: Preserve all evidence including failure
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: report-resume-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/report-resume-evidence/**
+          if-no-files-found: error
+          retention-days: 1
+          overwrite: false
