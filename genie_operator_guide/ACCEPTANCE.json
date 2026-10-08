@@ -1,0 +1,27 @@
+{
+  "status": "ACCEPTED_BOUNDED_DOCUMENTATION",
+  "candidate_sha256": "ccca999ce84a57fbeffe7267aad71942818d765c6fae26bf9184de1326f9d437",
+  "revision": 2,
+  "reviewer": "root same-model controller",
+  "independent_reviewer": false,
+  "checks": {
+    "candidate_hash": true,
+    "actual_guide_command_exit": 0,
+    "existing_output_guard_exit": 1,
+    "existing_result_unchanged": true,
+    "capture_unchanged": true,
+    "semantic_replay_status": "PASS"
+  },
+  "feedback_v1": [
+    "Chain mkdir with &&",
+    "Specify tested Python 3.12",
+    "Update completed R2 milestone",
+    "Guard optional test output"
+  ],
+  "scope": "Host-assisted worker/reviewer/repair loop; not automated Genie model bridge or hostile isolation",
+  "new_provider_runs": 0,
+  "continuation_prompts_during_worker_unit": 0,
+  "new_spending_authorized": false,
+  "token_cost": "not exposed; no measured cost claim",
+  "finished_utc": "2026-10-07T05:23:58.940978+00:00"
+}
