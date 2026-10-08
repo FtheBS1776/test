@@ -1,0 +1,13 @@
+# Host invocation journal — NONCLAIM
+
+Prior bridge3168d7fb verified via saved checkpoint ZIP8cc10a58413f44e755787ff81f5cf9591f1ee991b6300a003b92fd890967fb77:35 unique safe paths, CRC/exact inventory/hashes. Reuse bridge identity/review/sink contracts; do not rerun completed etcd fixtures.
+
+Correspondence: L7 same-ID/cross-context alias -> call identity derived from entire persisted task request. L2 discovery != belief -> STARTED is permission record, not actual launch proof. UNKNOWN/retry -> no null-agent inference/no automatic redispatch. Receipt atomicity -> append observation and bind agent in same SQLite transaction. Authority/execution/observation separation -> trusted-host observations are bookkeeping, not independent signed provider receipts or authorization promotion. Historical envelopes remain unchanged.
+
+Attack before implementation: replay invocation start; response with wrong call/task/input; stale-attempt result; UNKNOWN falsely authorizes redispatch; receipt bytes change under same identity; terminal observed agent replaced; cached observed completion; tool response lost before write. Use one call per attempt and append exact host observations, bound expected call/request; monotonic observed agent, preserve UNKNOWN, fresh destination completion separate. Trusted host can fabricate evidence or bypass adapter; no security isolation or rollback-resistance claim.
+
+Runtime interface unchanged: controller alone invokes collaboration followup. Adapter durably returns INVOKE_ONCE only on first start; restart returns RECONCILE_HOST. A crash after start but before actual tool invocation remains unknown. Reconcile actual host history/output; no automatic absent-call inference or repeated model call. Existing host lifetime finite.
+
+Primary foundations unchanged SQLite transaction semantics reviewed in previous unit: BEGIN IMMEDIATE one-writer transaction and explicit rollback. No new external provider or mature-domain mechanism; add no dependency/framework. Reuse existing DB transaction, request, agent/response binding. Proportional root attacks and worker code review; shared ancestry not independent review.
+
+Useful task: model worker implements a small standalone checkpoint integrity CLI (ZIP CRC, safe paths, exact manifest with supported schemas, no execution/extraction), then root adversarially validates and adjudicates it. This replaces repeated manual checkpoint verification steps and can inspect saved Genie bundles. Task delivered locally through existing sink as accepted code text; isolated repository source publication only after review. No deployment or provider run.

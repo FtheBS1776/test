@@ -1,0 +1,15 @@
+{
+  "sha256": {
+    "journal.py": "8e5d5b2fc39dce31f2a1bce4617ec60e726dd84c5f60be914fb1eb0c1fc9e1d7",
+    "test_journal.py": "8ae563bd1fe10b8180f8c85194f251f2bff7932d6c071d4e3ea0259c23dae67d",
+    "verify_checkpoint.py": "6b3c01c598e904c9aa171d7b22995cd0eb918db2c9cabf289c1003987db737b6",
+    "test_checkpoint_cli.py": "cf581cda1dc28767726dab60ce4315c31dc456d05d92c4e9c0f8ec030b83f098",
+    "README_FIRST.md": "c26f0abb4e4223ebcc0dab8299adf003e1b5d11ae00a2d2eccf05a6d354a1967",
+    "PLAN_AND_CORRESPONDENCE.md": "39ffa66bdf5782c6bb986ec8a55f96edc578eb1b6fd1c2d19c8ac3c2bcd4d0c6",
+    "UTILITY_CONTRACT.md": "6e2c0310f4af66e1c6eecdfe9646085c5568c6dce45a117745867415653d2edb",
+    "UTILITY_ATTACK_AND_RESEARCH.md": "a752320635e0bbeb69b3bce7b48d68454fbc855c870f143b9655ce42b283ea27"
+  },
+  "base_bridge_commit": "3168d7fbf2dd2cb3d10ba0d10a266cf6452f219b",
+  "original_worker_review": "trial/INPUT_MANIFEST.json pins source_v1/journal.py",
+  "classification": "NONCLAIM"
+}

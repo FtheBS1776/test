@@ -1,0 +1,21 @@
+{
+  "status": "VERIFIED_USEFUL_HOST_TASK",
+  "classification": "NONCLAIM",
+  "task_id": "genie-checkpoint-cli-20261008",
+  "code_sha256": "6b3c01c598e904c9aa171d7b22995cd0eb918db2c9cabf289c1003987db737b6",
+  "model_attempts": 1,
+  "actual_host_observations": 1,
+  "sink_delivery_attempts": 1,
+  "sink_applications": 1,
+  "utility_checks": 29,
+  "journal_checks": 17,
+  "worker_journal_review": "original pinned journal only; root repaired consistency/replay and tested separately",
+  "source_snapshots_preserved": true,
+  "extra_user_continuation_prompts": 0,
+  "new_paid_provider_calls": 0,
+  "background_execution": false,
+  "independent_review": false,
+  "authority_promotion": false,
+  "semantic_replay": "not claimed by ZIP utility",
+  "evidence_scope": "trusted-host bookkeeping and bounded read-only integrity CLI"
+}

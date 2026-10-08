@@ -1,0 +1,5 @@
+# Utility review lane
+
+Internal attack model recorded before worker candidate: self-referential manifests, wrong outer hash, duplicate archive/JSON keys, bool-as-int sizes, changed payload/CRC, missing/unlisted members, path traversal/absolute/backslash/dot/empty/drive/directory/symlink names, malformed ZIP, quotas enforced only after decompression. Independent controller tests prepared from contract, not worker implementation; model contexts share ancestry, so no independent evidence claim.
+
+Primary sources checked: Python3.12 zipfile docs https://docs.python.org/3.12/library/zipfile.html (bad ZIP/CRC errors, archive-name handling, resource exhaustion/decompression pitfalls) and JSON docs https://docs.python.org/3.12/library/json.html (object_pairs_hook needed to detect duplicate names). Cross-check candidate implementation before executing inspected code. The utility does not extract or execute content; archive integrity is not semantic validity/authenticity. Quotas reduce workload; encrypted/unsupported compression and malformed containers remain clean rejection. No Linux pathname-authority or cross-platform confinement claim is inferred from string checks.
