@@ -1,0 +1,13 @@
+{
+  "sha256": {
+    "bridge.py": "6cbc9f8b0d6f2beb85e5e60927fbc3bf4ac21628daaf3f12c8aefd3780df4b89",
+    "test_bridge.py": "728363a85a1f1253c807d925c82dbd132e75468a31ebfa61c7cdac0bc4d8f2aa",
+    "README_FIRST.md": "66323cd85a8db054a9aad164aa110a52492a03bdc06653cce0dee513235e5a04",
+    "CORRESPONDENCE_AND_PLAN.md": "82df45a3d7fe5bff84de09a72c648a628b81d0290dd4a43de596fd335c50e9a0",
+    "reused/report_sink.py": "fe8f62eaeff8825319ea98fd76cd8bb92bc9099a5c4af24d33fecb8ac7eb4806",
+    "reused/stateful_subject.py": "8ea005246f66fd413f00bad6cf0714e5704c23cc4255881ce659e682ce740131"
+  },
+  "reuse_source_commit": "8a676ca5dddbbaff3d4e286ee3f256605a7341b6",
+  "original_review_subject": "trial/INPUT_MANIFEST.json maps source_v1 and original correspondence",
+  "classification": "NONCLAIM"
+}

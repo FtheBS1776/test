@@ -1,0 +1,23 @@
+{
+  "status": "VERIFIED_HOST_ADAPTER_TRIAL",
+  "classification": "NONCLAIM",
+  "task_id": "genie-worker-bridge-review-20261008",
+  "model_worker_attempts": 2,
+  "controller_feedback_revisions": 1,
+  "delivery_attempts": 2,
+  "sink_applications": 1,
+  "lost_ack_exit": 73,
+  "fresh_process_resume": "DUPLICATE with fresh exact readback",
+  "candidate_sha256": "126487770bbf63483eae931e5b2d733f80398eea91451935544da5cbadbc6201",
+  "targeted_checks": 25,
+  "continuation_prompts_within_unit": 0,
+  "model_invocation": "existing collaboration host tool, called by controller from persisted dispatch",
+  "standalone_model_bridge": false,
+  "background_after_turn": false,
+  "new_paid_provider_calls": 0,
+  "actual_model_token_cost": "not exposed",
+  "independent_review": false,
+  "hostile_isolation": false,
+  "original_source_review": "Worker inspected preserved v1 only; revised implementation checks by root",
+  "finished_utc": "2026-10-08T06:34:48.620083+00:00"
+}
