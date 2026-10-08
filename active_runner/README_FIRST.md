@@ -1,0 +1,11 @@
+# Active-host runner — NONCLAIM
+
+Start by verifying the evidence ZIP against its saved outer SHA256 and strict MANIFEST.json using the previously reviewed host_adapter/verify_checkpoint.py. Integrity is not authenticity or semantic acceptance. Source is published on an isolated branch; README in the checkpoint gives its immutable commit.
+
+runner.py composes the pinned queue, journal and bridge. The trusted running Work controller calls `step`, dispatches only a freshly returned INVOKE_WORKER, records its observed host response, submits the exact candidate and separately adjudicates its content. Python never invokes a model. Existing-call reconciliation never grants another invocation. There is no hidden loop or successor-run creation. Owned root must already exist; task directories derive from run/task hashes. Provisioning gaps are preserved, not overwritten or automatically finished.
+
+Serial controller operations are required. Queue/task/journal/sink transactions remain separate; no global atomic scheduler, hostile filesystem isolation, external signed invocation proof, rollback resistance or continuous host service is claimed. A gap between task request and reservation or reservation and journal yields RECONCILE_SETUP, with no new-call permission. Investigate the exact original state; missing records alone do not prove that an invocation never occurred. Budgets charge reservations even when invocation is uncertain. Exhaustion persists STOP. A stopped task permits observations, content adjudication and fresh existing-effect readback, but no new model invocation or delivery through this runner.
+
+Callbacks bind run/task/input/attempt/slot/call. Candidate routing is separate from content correctness and controller review. Exact observation replay is supported while the same attempt remains ACTIVE/HOLD, including after candidate progress; stale attempts and terminal COMPLETE entries reject at this wrapper. Underlying journal history remains preserved. COMPLETE means historical readback; use the status CLI for fresh destination evidence.
+
+Existing root/bootstrap/custody, whole-store rollback, power-loss, remote authenticity and hostile-worker isolation HOLDs remain scoped. No promotion, freeze, new spending, main merge, production deployment or EXP010 execution.

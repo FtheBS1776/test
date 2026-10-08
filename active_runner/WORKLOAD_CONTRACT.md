@@ -1,0 +1,7 @@
+# Useful read-only status contract
+
+Input: reviewed queue/journal/bridge/runner source and original review plan, bound by trial/INPUT_MANIFEST.json and task input digest. New run explicitly max1 task/max2 workflow reservations; previous run remains closed. Existing supported Work worker authors code; root separately reviews/tests exact candidate bytes before acceptance. Candidate at most12000 UTF8 bytes; no new spending or model provider.
+
+Required command: `python3.12 -B active_runner/run_status.py QUEUE RUN_ID OWNED_ROOT`. report() returns JSON diagnostics. Reject wrong run before task inspection; never schedule, reserve, complete, provision or mutate stores. Report historical queue, workflow, journal and fresh exact sink separately. Partial/missing stores UNKNOWN; altered effect MISMATCH; queue COMPLETE never substitutes for fresh evidence. No payload disclosure. Explicit owned-local/shared-host assumptions; no background/hostile isolation claims.
+
+Exit: root static review plus relevant positive/negative checks; exact accepted code delivered to existing local report inbox; fresh destination confirmation and queue stop. Do not reopen run or introduce further prerequisites after this exit. Candidate accepted unchanged,32 runner/14 status checks,1 workflow reservation/worker call/application. One separate initial source-review turn is disclosed. Revised source-level review did not execute tests. Ordinary checks remain controller-owned and shared ancestry is disclosed.
