@@ -1,0 +1,21 @@
+{
+  "status": "VERIFIED_BOUNDED_TWO_TASK_RUN",
+  "classification": "NONCLAIM",
+  "run_id": "genie-bounded-queue-20261008",
+  "tasks_completed": 2,
+  "reserved_model_calls": 2,
+  "reservation_limit": 3,
+  "actual_model_worker_calls_observed": 2,
+  "stop_reason": "ALL_TASKS_COMPLETE",
+  "policy_checks": 19,
+  "comparison_checks": 12,
+  "sink_applications": 2,
+  "fresh_destination_checks": 2,
+  "extra_user_continuation_prompts": 0,
+  "independent_review": false,
+  "worker_review_subject": "preserved original policy only; root repaired policy scope/context/request/inspection and tested",
+  "new_paid_provider_calls": 0,
+  "token_dollar_cost": "not exposed",
+  "background_execution": false,
+  "authority_promotion": false
+}

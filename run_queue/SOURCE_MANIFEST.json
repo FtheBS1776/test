@@ -1,0 +1,15 @@
+{
+  "sha256": {
+    "run_policy.py": "ac708a3b3ad4927d58ead75a89825ffcbf43fa79a34f6a606567a38d282af543",
+    "test_policy.py": "1827265c5142dbe7eff9971ce44cc35fcf6f644f7e8c0b874f9053e598f33e7a",
+    "compare_checkpoints.py": "ae9acfacb638950992495a49d338e10496610a9f98b3d03eb31ddd437eec3553",
+    "test_compare_cli.py": "137d415c0dc8d4f2caef9381bd271f4c483da26b8c51e0be315d6822d43d0168",
+    "README_FIRST.md": "43eceafdc3811d05828aa0292f0c1a81b4a62cec1691915634b5362e525d07e0",
+    "PLAN_AND_CORRESPONDENCE.md": "fecfb75098f339a8cffcdbf8ebcb033aec826fa91853ceeb6c5e45dc2b3d0d93",
+    "WORKLOAD_CONTRACT.md": "e68069ef2c3cf4ad0b931bfaae9c12033f4dbcc5dd95bbdfb53803b8bb63d3db",
+    "OPERATOR_GUIDE.md": "49271093ef09ea7a2715cc896e219ece2a5e565e6f3a301cb514be12470a475d"
+  },
+  "base_commit": "9bcef5d8d537f0db02605d9e9465f8c600f10223",
+  "original_worker_review": "source_v1/run_policy.py; original task manifest unchanged",
+  "classification": "NONCLAIM"
+}
