@@ -1,0 +1,26 @@
+{
+  "candidate_sha256": "0bd9fe288cfb051fc6ba779bce5e428a5ee9a74b5f3f8ba4bf972bf98d437e28",
+  "decision": "ACCEPT",
+  "root_frozen_checks": 10,
+  "root_supplementary_checks": 2,
+  "verifier_regressions": 29,
+  "comparison_regressions": 12,
+  "review_scope": "exact-source static same-model reviewer; root executed/adjudicated",
+  "repairs": 0,
+  "submit": "SUBMITTED before root field error; no resubmission",
+  "review": "ACCEPT",
+  "completion": {
+    "action": "TASK_COMPLETE",
+    "task_id": "genie-checkpoint-input-bound-20261009",
+    "result": {
+      "status": "COMPLETE",
+      "fresh_destination": "CONFIRMED"
+    }
+  },
+  "stop": {
+    "action": "STOP",
+    "reason": "ALL_TASKS_COMPLETE",
+    "run_id": "genie-checkpoint-input-bound-run-20261009",
+    "background_execution": false
+  }
+}

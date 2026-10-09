@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "checks": [
+    "multi_chunk_exact_boundary",
+    "multi_chunk_one_byte_excess"
+  ],
+  "count": 2,
+  "source_sha256": "0bd9fe288cfb051fc6ba779bce5e428a5ee9a74b5f3f8ba4bf972bf98d437e28",
+  "scope": "reviewer prompted root execution, separate from frozen checks"
+}

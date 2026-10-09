@@ -1,0 +1,6 @@
+{
+  "task_id": "genie-checkpoint-input-bound-20261009",
+  "goal": "Bound compressed checkpoint input before hashing and ZIP parsing",
+  "input_sha256": "6e32a58ea469a836c2326206ed64d3e7317bd85020f409b1636643f79ca826d9",
+  "max_attempts": 2
+}

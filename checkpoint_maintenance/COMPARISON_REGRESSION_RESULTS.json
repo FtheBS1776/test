@@ -1,0 +1,130 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "check": "exact_diff",
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "same_archive",
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "reverse_diff",
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "old_anchor_mismatch",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "check": "new_anchor_mismatch",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "check": "malformed_hash",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "check": "invalid_new",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "check": "invalid_old",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "check": "crc_damage_not_reported_as_diff",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "check": "unsafe_not_reported_as_diff",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "check": "empty_to_full",
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "actual_saved_checkpoints",
+      "passed": true,
+      "status": "PASS"
+    }
+  ],
+  "count": 12,
+  "code_sha256": "19660e777af6d1cb463f6f1bdcd0b0f9c95153801a87bc50ac4bc836dee8f05f",
+  "actual_comparison": {
+    "added": [
+      "JOURNAL_TEST_RESULTS_FINAL.json",
+      "JOURNAL_TEST_RESULTS_R2.json",
+      "PLAN_AND_CORRESPONDENCE.md",
+      "UTILITY_ATTACK_AND_RESEARCH.md",
+      "UTILITY_CONTRACT.md",
+      "UTILITY_TEST_RESULTS_1.json",
+      "UTILITY_TEST_RESULTS_FINAL.json",
+      "model_output/JOURNAL_REVIEW_1.md",
+      "source_v1/journal.py",
+      "source_v1/test_journal.py",
+      "trial/FRESH_DESTINATION_STATUS.json",
+      "trial/FRESH_HOST_STATUS.json",
+      "trial/HOST_CALL_1.json",
+      "trial/HOST_OBSERVATION_1.json"
+    ],
+    "changed": [
+      "GENIE_CANONICAL_ROADMAP.md",
+      "GENIE_CONTINUATION_NOTES.md",
+      "README_FIRST.md",
+      "SOURCE_MANIFEST.json",
+      "TEST_RESULTS.json",
+      "model_output/STATUS_1.json",
+      "trial/ADJUDICATION.json",
+      "trial/DISPATCH_1.json",
+      "trial/INPUT_MANIFEST.json",
+      "trial/PLAN.json",
+      "trial/PUBLICATION.json",
+      "trial/report_inbox.sqlite",
+      "trial/tasks.sqlite"
+    ],
+    "evidence_scope": "INTEGRITY_COMPARISON_ONLY",
+    "new_sha256": "5d7171daf6ffe2a658cbf2770833f3c43b4e6fb8a847ac4fae42057f5fbd653a",
+    "old_sha256": "8cc10a58413f44e755787ff81f5cf9591f1ee991b6300a003b92fd890967fb77",
+    "removed": [
+      "CORRESPONDENCE_AND_PLAN.md",
+      "TEST_RESULTS_FINAL.json",
+      "TEST_RESULTS_R2.json",
+      "TEST_RESULTS_R3.json",
+      "model_output/CANDIDATE_1.md",
+      "model_output/CANDIDATE_2.md",
+      "model_output/STATUS_2.json",
+      "source_v1/bridge.py",
+      "source_v1/test_bridge.py",
+      "trial/ACCEPTANCE.json",
+      "trial/DELIVERED_MEMO.md",
+      "trial/DELIVERY_1_LOST_ACK.json",
+      "trial/DELIVERY_2_RESUME.json",
+      "trial/DISPATCH_2.json",
+      "trial/FRESH_FINAL_STATUS.json",
+      "trial/FRESH_STATUS_AFTER_LOST_ACK.json",
+      "trial/HOST_BINDING_1.json",
+      "trial/HOST_BINDING_2.json",
+      "trial/R3_TEST_HARNESS_FAILURE.json",
+      "trial/ROOT_ATTACK_PRE_REVIEW.json"
+    ],
+    "status": "PASS",
+    "unchanged": [
+      "APPROVED_AMENDMENT.md"
+    ]
+  },
+  "saved_inputs_unchanged": true
+}

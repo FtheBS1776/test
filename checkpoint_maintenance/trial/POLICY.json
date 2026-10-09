@@ -1,0 +1,6 @@
+{
+  "run_id": "genie-checkpoint-input-bound-run-20261009",
+  "max_tasks": 1,
+  "max_model_calls": 2,
+  "effect_scope": "owned-local-report-inbox"
+}

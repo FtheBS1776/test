@@ -1,0 +1,122 @@
+{
+  "status": "PASS",
+  "count": 29,
+  "checks": [
+    {
+      "check": "valid_basic",
+      "passed": true
+    },
+    {
+      "check": "real_saved_checkpoint",
+      "passed": true
+    },
+    {
+      "check": "outer_mismatch",
+      "passed": true
+    },
+    {
+      "check": "expected_hash_not_hex",
+      "passed": true
+    },
+    {
+      "check": "wrong_payload_hash",
+      "passed": true
+    },
+    {
+      "check": "wrong_size",
+      "passed": true
+    },
+    {
+      "check": "bool_size",
+      "passed": true
+    },
+    {
+      "check": "duplicate_member",
+      "passed": true
+    },
+    {
+      "check": "duplicate_manifest",
+      "passed": true
+    },
+    {
+      "check": "json_duplicate_key",
+      "passed": true
+    },
+    {
+      "check": "extra_manifest_key",
+      "passed": true
+    },
+    {
+      "check": "unlisted_payload",
+      "passed": true
+    },
+    {
+      "check": "missing_member",
+      "passed": true
+    },
+    {
+      "check": "unsafe_name_0",
+      "passed": true
+    },
+    {
+      "check": "unsafe_name_1",
+      "passed": true
+    },
+    {
+      "check": "unsafe_name_2",
+      "passed": true
+    },
+    {
+      "check": "unsafe_name_3",
+      "passed": true
+    },
+    {
+      "check": "unsafe_name_4",
+      "passed": true
+    },
+    {
+      "check": "unsafe_name_5",
+      "passed": true
+    },
+    {
+      "check": "unsafe_name_6",
+      "passed": true
+    },
+    {
+      "check": "symlink_rejected",
+      "passed": true
+    },
+    {
+      "check": "crc_mismatch",
+      "passed": true
+    },
+    {
+      "check": "missing_manifest",
+      "passed": true
+    },
+    {
+      "check": "malformed_zip",
+      "passed": true
+    },
+    {
+      "check": "missing_file",
+      "passed": true
+    },
+    {
+      "check": "member_count_bound",
+      "passed": true
+    },
+    {
+      "check": "member_uncompressed_bound",
+      "passed": true
+    },
+    {
+      "check": "manifest_bound",
+      "passed": true
+    },
+    {
+      "check": "total_uncompressed_bound",
+      "passed": true
+    }
+  ]
+}

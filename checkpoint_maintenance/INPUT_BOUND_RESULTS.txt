@@ -1,0 +1,15 @@
+test_anchor_before_zip (__main__.BoundChecks.test_anchor_before_zip) ... ok
+test_exact_boundary (__main__.BoundChecks.test_exact_boundary) ... ok
+test_fifo_cli_bounded (__main__.BoundChecks.test_fifo_cli_bounded) ... ok
+test_growing_read_bound (__main__.BoundChecks.test_growing_read_bound) ... ok
+test_input_unchanged (__main__.BoundChecks.test_input_unchanged) ... ok
+test_nonregular_descriptor (__main__.BoundChecks.test_nonregular_descriptor) ... ok
+test_one_byte_above_preparse (__main__.BoundChecks.test_one_byte_above_preparse) ... ok
+test_production_cap (__main__.BoundChecks.test_production_cap) ... ok
+test_small_valid (__main__.BoundChecks.test_small_valid) ... ok
+test_symlink_regular_allowed (__main__.BoundChecks.test_symlink_regular_allowed) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.039s
+
+OK

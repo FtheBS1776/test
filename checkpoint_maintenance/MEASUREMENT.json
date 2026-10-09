@@ -1,0 +1,21 @@
+{
+  "contract_sha256": "04f0c01793281e4503ab1d615d446a808897245cdf5e5cc8a754db5eaf0ec568",
+  "oracle_sha256": "7bfa185e2abfec05d68b27f7bbb928ee4c341ff7d1ce3aa33d51e861a2f77371",
+  "freeze_before_author_dispatch": true,
+  "author_invocations": 1,
+  "reviewer_invocations": 1,
+  "maximum_worker_turns": 3,
+  "root_manual_work": "setup, correspondence correction, reproduction, contract/oracle, dispatch/observation, tests, adjudication/delivery, publication/persistence",
+  "labor_latency_money_tokens": "unmeasured",
+  "user_continuation_prompts_within_unit": 0,
+  "independence": "same configured model, host and shared ancestry; role separation only",
+  "historical_tests": "affected verifier/comparison tests newly run; saved historical report logs not rerun",
+  "scoped_HOLDs": "retained independently",
+  "author_repairs": 0,
+  "worker_turns_used": 2,
+  "root_interventions": [
+    "incorrect historical repository path stopped before queue setup",
+    "incorrect result field stopped after submission; same-task reconciliation",
+    "strict report schema rejected rich logs; explicit provenance projections, no parser change"
+  ]
+}

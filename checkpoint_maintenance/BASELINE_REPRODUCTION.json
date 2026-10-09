@@ -1,0 +1,13 @@
+{
+  "input_bytes": 67108991,
+  "compressed_target_cap": 67108864,
+  "baseline_sha256": "6b3c01c598e904c9aa171d7b22995cd0eb918db2c9cabf289c1003987db737b6",
+  "result": {
+    "status": "PASS",
+    "outer_sha256": "4057bb52d17a555d85755e98dddadfdea9011a69041af51d81206ba2a663ed28",
+    "payload_files": 0,
+    "total_uncompressed_bytes": 2,
+    "evidence_scope": "INTEGRITY_ONLY"
+  },
+  "scope": "defect reproduction, no archive code executed"
+}

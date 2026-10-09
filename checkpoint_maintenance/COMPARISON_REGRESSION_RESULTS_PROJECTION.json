@@ -1,0 +1,54 @@
+{
+  "status": "PASS",
+  "count": 12,
+  "checks": [
+    {
+      "check": "exact_diff",
+      "passed": true
+    },
+    {
+      "check": "same_archive",
+      "passed": true
+    },
+    {
+      "check": "reverse_diff",
+      "passed": true
+    },
+    {
+      "check": "old_anchor_mismatch",
+      "passed": true
+    },
+    {
+      "check": "new_anchor_mismatch",
+      "passed": true
+    },
+    {
+      "check": "malformed_hash",
+      "passed": true
+    },
+    {
+      "check": "invalid_new",
+      "passed": true
+    },
+    {
+      "check": "invalid_old",
+      "passed": true
+    },
+    {
+      "check": "crc_damage_not_reported_as_diff",
+      "passed": true
+    },
+    {
+      "check": "unsafe_not_reported_as_diff",
+      "passed": true
+    },
+    {
+      "check": "empty_to_full",
+      "passed": true
+    },
+    {
+      "check": "actual_saved_checkpoints",
+      "passed": true
+    }
+  ]
+}

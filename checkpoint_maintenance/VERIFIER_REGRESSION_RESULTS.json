@@ -1,0 +1,153 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "check": "valid_basic",
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "real_saved_checkpoint",
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "outer_mismatch",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "check": "expected_hash_not_hex",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "check": "wrong_payload_hash",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "check": "wrong_size",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "check": "bool_size",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "check": "duplicate_member",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "check": "duplicate_manifest",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "check": "json_duplicate_key",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "check": "extra_manifest_key",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "check": "unlisted_payload",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "check": "missing_member",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "check": "unsafe_name_0",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "check": "unsafe_name_1",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "check": "unsafe_name_2",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "check": "unsafe_name_3",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "check": "unsafe_name_4",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "check": "unsafe_name_5",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "check": "unsafe_name_6",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "check": "symlink_rejected",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "check": "crc_mismatch",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "check": "missing_manifest",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "check": "malformed_zip",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "check": "missing_file",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "check": "member_count_bound",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "check": "member_uncompressed_bound",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "check": "manifest_bound",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "check": "total_uncompressed_bound",
+      "passed": true,
+      "status": "REJECT"
+    }
+  ],
+  "count": 29,
+  "candidate_sha256": "0bd9fe288cfb051fc6ba779bce5e428a5ee9a74b5f3f8ba4bf972bf98d437e28",
+  "saved_checkpoint_unchanged": true
+}

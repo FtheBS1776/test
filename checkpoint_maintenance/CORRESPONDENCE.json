@@ -1,0 +1,16 @@
+{
+  "unchanged_AST_functions_classes": [
+    "Parser",
+    "Rejected",
+    "hash_string",
+    "main",
+    "manifest_schema",
+    "reject_constant",
+    "require",
+    "safe_name",
+    "unique_object"
+  ],
+  "only_verify_body_changed": true,
+  "frozen_inputs_unchanged": true,
+  "verifier_regression_count": 29
+}

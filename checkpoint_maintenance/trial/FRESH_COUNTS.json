@@ -1,0 +1,12 @@
+{
+  "checkpoint_maintenance/trial/queue.sqlite": {
+    "reservations": 1
+  },
+  "checkpoint_maintenance/trial/work/633b6b0ce25b5367934ba4379db7c3a053b198e81a30e2376fdb48d4269cb584/a7b1a920ce553955b8d8490dff357423c885dcbfab3c9678affd2b47a587dee9/inbox.sqlite": {
+    "applications": 1
+  },
+  "checkpoint_maintenance/trial/work/633b6b0ce25b5367934ba4379db7c3a053b198e81a30e2376fdb48d4269cb584/a7b1a920ce553955b8d8490dff357423c885dcbfab3c9678affd2b47a587dee9/task.sqlite": {
+    "host_calls": 1,
+    "host_observations": 1
+  }
+}

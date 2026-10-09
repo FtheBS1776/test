@@ -1,0 +1,166 @@
+{
+  "checkpoint_maintenance/ACTUAL_CHECKPOINT_COMPARISON.json": {
+    "sha256": "b00e7794656e3becde38b22313ea249921f32568bb9809dd80149950c254d855",
+    "size": 3200
+  },
+  "checkpoint_maintenance/ATTACK_AND_RESEARCH.md": {
+    "sha256": "7afdbe14d2c880e1a0d5ce6591601dab662da94beb57001854b05c1de90f2368",
+    "size": 1985
+  },
+  "checkpoint_maintenance/BASELINE_REPRODUCTION.json": {
+    "sha256": "33ccdef035eefad7a6602db44db83986d6421d22428d032a1e100409626ae405",
+    "size": 443
+  },
+  "checkpoint_maintenance/COMPARISON_REGRESSION_RESULTS.json": {
+    "sha256": "90c2acae0c0902cd1b6e62d371fe786ede31cbd04e133e7285004fad5d7383c1",
+    "size": 3365
+  },
+  "checkpoint_maintenance/COMPARISON_REGRESSION_RESULTS_PROJECTION.json": {
+    "sha256": "c3d86f70d88fc66d18dd2c45a89b509e18c2645604965369a6de40e8bd0a8b71",
+    "size": 895
+  },
+  "checkpoint_maintenance/CONTRACT.md": {
+    "sha256": "04f0c01793281e4503ab1d615d446a808897245cdf5e5cc8a754db5eaf0ec568",
+    "size": 2290
+  },
+  "checkpoint_maintenance/CORRESPONDENCE.json": {
+    "sha256": "be2e510fd10ac94e6ed8216e3cc560bf45467e812a89301b7d390be6311d4900",
+    "size": 312
+  },
+  "checkpoint_maintenance/CURRENT_CHECKPOINT_VERIFICATION.json": {
+    "sha256": "90858d178d29d4d7a21af8f0d171306a27b4925072d33e392d1e43cc10b32564",
+    "size": 196
+  },
+  "checkpoint_maintenance/INPUT_BOUND_RESULTS.txt": {
+    "sha256": "4e8cf1542c7af9087880b129e9e311fa0eeb2d7f2a15a86bbdd87c2581454a40",
+    "size": 863
+  },
+  "checkpoint_maintenance/INPUT_MANIFEST.json": {
+    "sha256": "6e32a58ea469a836c2326206ed64d3e7317bd85020f409b1636643f79ca826d9",
+    "size": 476
+  },
+  "checkpoint_maintenance/MEASUREMENT.json": {
+    "sha256": "3f7998396ae87a6e62975a35b4f20e2effa840481f77b0ebdd631c66dbaeb946",
+    "size": 1137
+  },
+  "checkpoint_maintenance/PRIOR_CLOSED_BEFORE.json": {
+    "sha256": "37331f5c894197b88e4eb9aa7562314115595ebd765c17c764ee3acc0188f861",
+    "size": 6948
+  },
+  "checkpoint_maintenance/PRIOR_PRESERVATION.json": {
+    "sha256": "6c5f741bcfdbe9d35dd826f6f09e474d218fe2909816bc5f04469690c64641a7",
+    "size": 100
+  },
+  "checkpoint_maintenance/README_FIRST.md": {
+    "sha256": "58af56f8505b10092ffa09125878d2d1437fa0f646d8f665e9d61d55a04deebe",
+    "size": 2693
+  },
+  "checkpoint_maintenance/REPORT_PROJECTION_PROVENANCE.json": {
+    "sha256": "bb4503cc8221e8c157ddc20a15c33e67fcf78fea59afaece96b0c0d834ba2433",
+    "size": 697
+  },
+  "checkpoint_maintenance/REUSED_BINDINGS.json": {
+    "sha256": "609eef4d655e24dd1c408ea49d262f694356092dbea11565e2fa20e2d729c56f",
+    "size": 1034
+  },
+  "checkpoint_maintenance/SETUP_INTERVENTIONS.md": {
+    "sha256": "94ea27bc603adfe1ce42f05a6a34a5ed2cac0ba2bf183109b6297c44b0633bd8",
+    "size": 1153
+  },
+  "checkpoint_maintenance/SUPPLEMENTARY_RESULTS.json": {
+    "sha256": "a379861e5403ab1c440b29aed02a8871857d85ea8e2a073a09621ef3b58a11bc",
+    "size": 287
+  },
+  "checkpoint_maintenance/VALIDATION_LOG_REPORT.json": {
+    "sha256": "857e5a7686298f5e0c3719b91107a6323d33def6bf2530b61bde1a1db1a92ca8",
+    "size": 965
+  },
+  "checkpoint_maintenance/VALIDATION_LOG_REPORT_PROJECTED.json": {
+    "sha256": "66baa93b1f56f65919f7846854feea159c3c167cd85a83c3c36474038d5210d8",
+    "size": 978
+  },
+  "checkpoint_maintenance/VERIFIER_REGRESSION_RESULTS.json": {
+    "sha256": "2efbb1ab2e1322ad4e74af75c29f2f6a0843aca84039c99ed8858bd1ff334c21",
+    "size": 2916
+  },
+  "checkpoint_maintenance/VERIFIER_REGRESSION_RESULTS_PROJECTION.json": {
+    "sha256": "2937539b96fefa8e78565729e33c97e07f70c1e61e369f43a2b12aaa15fc9b89",
+    "size": 2038
+  },
+  "checkpoint_maintenance/baseline/compare_checkpoints.py": {
+    "sha256": "ae9acfacb638950992495a49d338e10496610a9f98b3d03eb31ddd437eec3553",
+    "size": 4130
+  },
+  "checkpoint_maintenance/baseline/verify_checkpoint.py": {
+    "sha256": "6b3c01c598e904c9aa171d7b22995cd0eb918db2c9cabf289c1003987db737b6",
+    "size": 6216
+  },
+  "checkpoint_maintenance/candidate/AUTHOR_1.md": {
+    "sha256": "a28882d530f93f8ad2b6765a3682cfc99e79bd0f008be21ff84fcaaaa74cd2ab",
+    "size": 1699
+  },
+  "checkpoint_maintenance/candidate/REVIEW_1.md": {
+    "sha256": "9bb1235571018d09a1cd9b80c2cc244f316481007b645af18553929358602001",
+    "size": 4625
+  },
+  "checkpoint_maintenance/candidate/verify_checkpoint_1.py": {
+    "sha256": "0bd9fe288cfb051fc6ba779bce5e428a5ee9a74b5f3f8ba4bf972bf98d437e28",
+    "size": 6992
+  },
+  "checkpoint_maintenance/test_input_bound.py": {
+    "sha256": "7bfa185e2abfec05d68b27f7bbb928ee4c341ff7d1ce3aa33d51e861a2f77371",
+    "size": 4155
+  },
+  "checkpoint_maintenance/trial/ADJUDICATION.json": {
+    "sha256": "25c58403261490676b024cb8372900ce5c893ec825e880109075deb399da88fa",
+    "size": 800
+  },
+  "checkpoint_maintenance/trial/CANDIDATE_BINDING.json": {
+    "sha256": "68954bd5fc4b6e85c4738ba4e1bd832abf1c40210215e3c3439c6cca18def2d7",
+    "size": 190
+  },
+  "checkpoint_maintenance/trial/DISPATCH_1.json": {
+    "sha256": "d1b7f1ca6c141fe09e8d855aa1acfeb8dade101fe00f5ae12168e6333c1a44b8",
+    "size": 719
+  },
+  "checkpoint_maintenance/trial/FRESH_COUNTS.json": {
+    "sha256": "d4991cf832ebc257c4e5af660f00ef6250fff865adb35cad22ac80c3ad5ada08",
+    "size": 526
+  },
+  "checkpoint_maintenance/trial/FRESH_STATUS.json": {
+    "sha256": "a69171fc2c970a8b3a0828c55e87fd3a4451db192694a755dc1207d60cd37844",
+    "size": 1006
+  },
+  "checkpoint_maintenance/trial/HOST_EVIDENCE_1.json": {
+    "sha256": "258de7445476c4391d19b250280e568344bf469f44f9ef107fa97d0c54b90af5",
+    "size": 202
+  },
+  "checkpoint_maintenance/trial/HOST_OBSERVATION_1.json": {
+    "sha256": "d42852a49929d02423a17eb64aa239ad2f8a2857c4042d5185620c5555ff1d37",
+    "size": 11
+  },
+  "checkpoint_maintenance/trial/OBSERVE_PAYLOAD_1.json": {
+    "sha256": "a92ccf0a425d21c1865fcf3fdda2e79302253a60803ee16b1c8a2ff62c6175c5",
+    "size": 644
+  },
+  "checkpoint_maintenance/trial/PLAN.json": {
+    "sha256": "07b85e998849b7410fb5bb943d613d339b45488f3ec5af406f5b8bc3266f9108",
+    "size": 242
+  },
+  "checkpoint_maintenance/trial/POLICY.json": {
+    "sha256": "390ed23f621d09ddc9d7a1f7af587306d6b508e89ed3df3a9ea760a55b252229",
+    "size": 148
+  },
+  "checkpoint_maintenance/trial/STATUS_AFTER_ROOT_FIELD_ERROR.json": {
+    "sha256": "5ff49968747e1e70c1f32b3bacdd04cdc690794c2d15c6a182ba48a5590e93c1",
+    "size": 997
+  },
+  "host_adapter/verify_checkpoint.py": {
+    "sha256": "0bd9fe288cfb051fc6ba779bce5e428a5ee9a74b5f3f8ba4bf972bf98d437e28",
+    "size": 6992
+  },
+  "run_queue/compare_checkpoints.py": {
+    "sha256": "19660e777af6d1cb463f6f1bdcd0b0f9c95153801a87bc50ac4bc836dee8f05f",
+    "size": 4130
+  }
+}

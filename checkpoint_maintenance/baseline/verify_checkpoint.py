@@ -2,13 +2,11 @@
 import argparse
 import hashlib
 import json
-import os
 import re
 import stat
 import sys
 import zipfile
 
-MAX_ARCHIVE = 64 * 1024 * 1024
 MAX_MEMBERS = 4096
 MAX_TOTAL = 64 * 1024 * 1024
 MAX_MEMBER = 24 * 1024 * 1024
@@ -68,25 +66,13 @@ def manifest_schema(raw):
 
 def verify(path, expected):
     require(hash_string(expected), "EXPECTED_SHA256_FORMAT")
-    # Nonblocking open permits descriptor checks without waiting for a FIFO
-    # writer on Unix. It does not establish a general regular-file I/O deadline.
-    def readonly_opener(name, flags):
-        return os.open(name, flags | getattr(os, "O_NONBLOCK", 0))
-
     # Keep a single read-only descriptor for outer hashing and ZIP reading.
-    # Unbuffered reads avoid extra input read-ahead beyond the counted request.
-    with open(path, "rb", buffering=0, opener=readonly_opener) as archive:
-        metadata = os.fstat(archive.fileno())
-        require(stat.S_ISREG(metadata.st_mode), "NONREGULAR_ARCHIVE")
-        require(metadata.st_size <= MAX_ARCHIVE, "ARCHIVE_SIZE_LIMIT")
+    with open(path, "rb") as archive:
         outer = hashlib.sha256()
-        outer_bytes = 0
         while True:
-            chunk = archive.read(min(CHUNK, MAX_ARCHIVE - outer_bytes + 1))
+            chunk = archive.read(CHUNK)
             if not chunk:
                 break
-            outer_bytes += len(chunk)
-            require(outer_bytes <= MAX_ARCHIVE, "ARCHIVE_SIZE_LIMIT")
             outer.update(chunk)
         outer_sha = outer.hexdigest()
         require(outer_sha == expected, "OUTER_SHA256_MISMATCH")
