@@ -1,0 +1,14 @@
+{
+  "base_commit": "a5234188c2dc797fc64e620e1dbe6cf9ce46e2b9",
+  "classification": "NONCLAIM",
+  "engine_implementation_changed": false,
+  "reviewer_subject": "candidate1; root adjudicated candidate2",
+  "sha256": {
+    "README_FIRST.md": "93c5f02d603533f482a6a638593ce6443b2c0dfe931e69bcbe5432db2cec5660",
+    "QUICKSTART.md": "12878d78c490200cdd2b406516af42f8d0b6a6afdf63e04d6d126b7275461cdd",
+    "CLI_SMOKE.sh": "4d07bd359d3eeb7fac54c4568cf7f78ec2cbae4678be830242f4c7b6859969aa",
+    "PLAN_AND_CORRESPONDENCE.md": "ec92aa9df73f02fa86f23f6564dfc5d1dca3a2e85fd40be7d6a0cf0c221a5d4e",
+    "REVIEW_1.md": "fd3c1a57c0864585f6652c47cd51de0900b78ea1958d93cecdf69b07da407895",
+    "ACCEPTANCE.json": "9fea9da0ddb24ff39d76e0b1a094f1db110f0961465baef3f2f2bea28054d805"
+  }
+}

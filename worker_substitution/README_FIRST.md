@@ -1,0 +1,9 @@
+# Read first — second worker context and runner CLI quickstart NONCLAIM
+
+Independently verify the checkpoint outer SHA256, ZIP CRC/safe unique names and exact MANIFEST.json payload hashes/sizes before accepting state. Final source publication and verified Git blobs are in trial/PUBLICATION.json; inspect source before executing. Prior evidence remains separately saved. No completed provider/timing/lost-ack experiment is repeated.
+
+This unit replaces the author worker context through the unchanged active-host runner contract. An existing worker reviews the exact candidate; root independently checks source/command bindings, executes the exact guide CLI fixture, adjudicates content and verifies actual model-task sink. Same host/model/shared ancestry, not independent evidence, multi-provider coverage or hostile isolation. No engine implementation changed, hidden scheduler or closed-budget reset.
+
+Guide CLI fixture is deterministic NO MODEL CALL. It exercises actual stdin callback shape, candidate/review/delivery/status/stop and preservation guard in owned disposable storage; its reservations/applications are separate from the model-backed worker task. Do not count that fixture as live reasoning. Historical queue COMPLETE never replaces fresh sink readback. Incomplete setup/unknown dispatch must preserve and reconcile without fresh launch. STOP never authorizes new calls or deliveries.
+
+Serial active-host scope; no background service, concurrent stop linearization, globally atomic stores, rollback resistance or authenticated remote receipt. Existing root/bootstrap/custody, power-loss, whole-store rollback, remote authenticity and hostile-worker isolation HOLDs remain scoped. Pass186 controlling, later work NONCLAIM. No promotion/freeze/new spending/main merge/deployment or EXP010 action. Final adjudication contains exact results; candidate/reviewer self-reports alone are not acceptance.
