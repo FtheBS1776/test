@@ -1,0 +1,28 @@
+{
+  "base_commit": "147b6f54e5fb3630db5c181afcdc093202cdacc8",
+  "classification": "NONCLAIM",
+  "changed_engine_paths": [
+    "host_adapter/journal.py",
+    "run_queue/run_policy.py",
+    "active_runner/runner.py",
+    "active_runner/run_status.py"
+  ],
+  "source_sha256": {
+    "host_adapter/journal.py": "1d7825208cfac386acf0cd83b3505064de8c147ebb35fc6fe54864dd3950cc98",
+    "run_queue/run_policy.py": "e9105931aea517fe5bdcb9e1cf9065ab8b8d67cf6a91f4bb8765aefe1e5f3a63",
+    "active_runner/runner.py": "e315b0f30403028169d9bde17f73e13b618ed419ace4fb489f7c0878f2d6fd29",
+    "active_runner/run_status.py": "717461b56e191ff011c9b91330d0051f05a0ca03143883566778092e9af2b18e",
+    "journal_reuse/baseline/journal.py": "8e5d5b2fc39dce31f2a1bce4617ec60e726dd84c5f60be914fb1eb0c1fc9e1d7",
+    "journal_reuse/baseline/run_policy.py": "ac708a3b3ad4927d58ead75a89825ffcbf43fa79a34f6a606567a38d282af543",
+    "journal_reuse/baseline/runner.py": "d5450a38cf5aa4e9f6356b213fb15ddee2b751ba5101e6e17991ee6922363cd3",
+    "journal_reuse/baseline/run_status.py": "af0fdad950a7d1849ea04d5e3670acffde5d1bf4c4e9468017a29c70047327cf",
+    "journal_reuse/README_FIRST.md": "cadc4a5752d435fbac2dfa6b3d04a7393c2c6c1268e14280441d29ae5e57743d",
+    "journal_reuse/PLAN_AND_CORRESPONDENCE.md": "8bcc05d4de5c13609a81b8d70eba1791e30578a6bec01a22d9efde064b577d4a",
+    "journal_reuse/REVIEW_PLAN.md": "a4af4b90e142bbb5a38c10ff34377dbeef41249312bb7f63e6c6a088cc5a0335",
+    "journal_reuse/REVIEW_MEMO.md": "4d49969a1243e967411d1333f8827e6a30d8218d2115fa6ef03857e838fc94d1",
+    "journal_reuse/test_reuse.py": "bb25b5502d94389aba3cc5f7dc3e646ced62613c3f9678bd1574fcf6d12c1fc7",
+    "journal_reuse/EXTRACTION_CHECK.json": "7720681facfdd024a21b268b2b0a96ae34e9bf2d2b7468251fb6d330a9b2f00d",
+    "journal_reuse/CODE_REDUCTION.json": "3314513526b46763675e2d9b1b82adee12a6cfada5f3e1f384ea35faa159fa96",
+    "journal_reuse/ACCEPTANCE.json": "8d28a0fd9ffa136624cb33024248d695d5ed97ea6522c7728a7f0f71ea34a0c6"
+  }
+}

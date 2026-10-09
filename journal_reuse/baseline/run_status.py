@@ -8,7 +8,7 @@ import sqlite3
 import sys
 import types
 
-RUNNER_SHA256 = 'e315b0f30403028169d9bde17f73e13b618ed419ace4fb489f7c0878f2d6fd29'
+RUNNER_SHA256 = 'd5450a38cf5aa4e9f6356b213fb15ddee2b751ba5101e6e17991ee6922363cd3'
 SCOPE = 'TRUSTED_OWNED_LOCAL_OBSERVATION'
 
 
@@ -57,8 +57,9 @@ def unknown(reason):
     return {'status': 'UNKNOWN', 'reason': reason, 'preserve': True}
 
 
-def journal_readback(db, runner, task, plan, state, attempt):
-    b = runner.b
+def journal_readback(db, b, task, plan, state, attempt):
+    # Read-only counterpart to the pinned journal's consistency checks. The
+    # journal helper opens mode=rw; diagnostics instead use this existing ro txn.
     out = {'status': 'UNKNOWN', 'host_outcome': 'UNKNOWN', 'agent': None,
            'call_id': None, 'observation_count': 0, 'independent_proof': False}
     try:
@@ -69,19 +70,39 @@ def journal_readback(db, runner, task, plan, state, attempt):
         if call is None:
             out['reason'] = 'NO_RECORDED_HOST_CALL'
             return out
-        # Preserve diagnostic-only strict typing/goal checks. The shared journal
-        # keeps its original semantics; this adapter does not weaken diagnostics.
+        saved = db.execute('SELECT request,agent FROM attempts WHERE n=?',
+                           (attempt,)).fetchone()
         req = json.loads(call[1])
-        if type(req.get('attempt')) is not int or req.get('goal') != plan['goal']:
-            raise ValueError('DIAGNOSTIC_REQUEST_FIELDS')
-        for (body,) in db.execute('SELECT body FROM host_observations WHERE call_id=?', (call[0],)):
-            if type(json.loads(body).get('attempt')) is not int:
-                raise ValueError('DIAGNOSTIC_EVENT_ATTEMPT')
-        observed = runner.j.status_db(db)
-        if observed.get('reason') is not None:
-            raise ValueError('HOST_RECORD')
-        out.update(status='OBSERVED', **{key: observed[key] for key in
-                   ('host_outcome', 'agent', 'call_id', 'observation_count')})
+        expected = b.digest(b.canon({'kind': 'host-invoke-v1', 'request': req}))
+        if (call[0] != expected or saved is None or saved[0] != call[1]
+                or req.get('task_id') != task or type(req.get('attempt')) is not int
+                or req['attempt'] != attempt or req.get('input_sha256') != plan['input_sha256']
+                or req.get('goal') != plan['goal']):
+            raise ValueError('CALL_RECORD')
+        agents = []
+        count = 0
+        for event_hash, body in db.execute(
+                'SELECT event_hash,body FROM host_observations WHERE call_id=? ORDER BY rowid',
+                (call[0],)):
+            event = json.loads(body)
+            if (b.digest(body) != event_hash or event.get('task_id') != task
+                    or event.get('input_sha256') != plan['input_sha256']
+                    or type(event.get('attempt')) is not int or event['attempt'] != attempt
+                    or event.get('call_id') != call[0]
+                    or event.get('outcome') not in ('UNKNOWN', 'OBSERVED_ACCEPTED')):
+                raise ValueError('EVENT_RECORD')
+            if event['outcome'] == 'UNKNOWN':
+                if event.get('agent') is not None:
+                    raise ValueError('UNKNOWN_AGENT')
+            else:
+                b.ident(event.get('agent'))
+                agents.append(event['agent'])
+            count += 1
+        agent = agents[-1] if agents else None
+        if any(a != agent for a in agents) or agent != saved[1]:
+            raise ValueError('AGENT_RECORD')
+        out.update(status='OBSERVED', host_outcome='OBSERVED_ACCEPTED' if agents else 'UNKNOWN',
+                   agent=agent, call_id=call[0], observation_count=count)
         return out
     except (ValueError, TypeError, KeyError, AttributeError, sqlite3.Error):
         out.update(reason='HOST_RECORD_UNKNOWN_OR_INCONSISTENT', preserve=True)
@@ -112,7 +133,7 @@ def task_report(runner, root, run_id, task_id, saved_plan, queue_state):
                     'READY', 'WAITING_WORKER', 'REVIEW', 'REPAIR_READY', 'ACCEPTED', 'DELIVERED', 'HOLD'):
                 raise ValueError('WORKFLOW_RECORD')
             out['workflow'] = {'status': 'OBSERVED', 'state': state, 'attempt': attempt}
-            out['journal'] = journal_readback(db, runner, task, plan, state, attempt)
+            out['journal'] = journal_readback(db, b, task, plan, state, attempt)
             if state in ('ACCEPTED', 'DELIVERED'):
                 try:
                     effect = b.effect_db(db)

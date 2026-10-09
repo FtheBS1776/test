@@ -2,7 +2,7 @@
 import argparse,hashlib,json,sqlite3,sys
 from pathlib import Path
 source=Path(__file__).resolve().parents[1]/'host_adapter'/'journal.py'
-EXPECTED_JOURNAL_SHA256='1d7825208cfac386acf0cd83b3505064de8c147ebb35fc6fe54864dd3950cc98'
+EXPECTED_JOURNAL_SHA256='8e5d5b2fc39dce31f2a1bce4617ec60e726dd84c5f60be914fb1eb0c1fc9e1d7'
 if hashlib.sha256(source.read_bytes()).hexdigest()!=EXPECTED_JOURNAL_SHA256:raise ValueError('JOURNAL_SOURCE_BINDING')
 sys.path.insert(0,str(source.parent))
 import journal as j

@@ -1,0 +1,10 @@
+{
+  "old": {
+    "bytes": 9566,
+    "journal_readback_lines": 50
+  },
+  "new": {
+    "bytes": 8407,
+    "journal_readback_lines": 29
+  }
+}

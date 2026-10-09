@@ -59,33 +59,30 @@ def observe(path,n,task_id,input_sha256,call_id,outcome,agent,evidence):
   if outcome=='OBSERVED_ACCEPTED':db.execute('UPDATE attempts SET agent=? WHERE n=?',(agent,n))
   return 'RECORDED'
 
-def status_db(db):
- """Read current records using the caller-owned transaction; no writes."""
- task,plan,state,n=b.read(db)
- call=db.execute('SELECT call_id,request FROM host_calls WHERE attempt=?',(n,)).fetchone()
- attempt=db.execute('SELECT request,agent FROM attempts WHERE n=?',(n,)).fetchone()
- out={'task_id':task,'attempt':n,'workflow_state':state,'call_id':None if call is None else call[0],'host_outcome':'UNKNOWN','agent':None,'observation_count':0,'action':'RECONCILE_HOST','independent_proof':False}
- if call is None:return out
- try:
-  req=json.loads(call[1]);expected=b.digest(b.canon({'kind':'host-invoke-v1','request':req}))
-  if call[0]!=expected or attempt is None or call[1]!=attempt[0] or req.get('task_id')!=task or req.get('attempt')!=n or req.get('input_sha256')!=json.loads(plan)['input_sha256']:raise ValueError('CALL_RECORD')
-  rows=db.execute('SELECT event_hash,body FROM host_observations WHERE call_id=? ORDER BY rowid',(call[0],)).fetchall()
-  events=[]
-  for event_hash,body in rows:
-   event=json.loads(body)
-   if b.digest(body)!=event_hash or event.get('task_id')!=task or event.get('input_sha256')!=req['input_sha256'] or event.get('attempt')!=n or event.get('call_id')!=call[0] or event.get('outcome') not in ('UNKNOWN','OBSERVED_ACCEPTED'):raise ValueError('EVENT_RECORD')
-   if event['outcome']=='UNKNOWN' and event.get('agent') is not None:raise ValueError('UNKNOWN_AGENT')
-   if event['outcome']=='OBSERVED_ACCEPTED':b.ident(event.get('agent'))
-   events.append(event)
-  accepted=[e for e in events if e['outcome']=='OBSERVED_ACCEPTED']
-  agent=accepted[-1]['agent'] if accepted else None
-  if any(e['agent']!=agent for e in accepted) or agent!=attempt[1]:raise ValueError('AGENT_RECORD')
-  out.update(host_outcome='OBSERVED_ACCEPTED' if accepted else 'UNKNOWN',agent=agent,observation_count=len(events),action=('RECONCILE_EXISTING_WORKER' if state=='WAITING_WORKER' else 'FOLLOW_WORKFLOW') if accepted else 'RECONCILE_HOST')
- except (ValueError,TypeError,KeyError):out.update(host_outcome='UNKNOWN',reason='HOST_RECORD_INCONSISTENT',action='PRESERVE_AND_INSPECT')
- return out
-
 def status(path):
- with b.transaction(path,False) as db:return status_db(db)
+ with b.transaction(path,False) as db:
+  task,plan,state,n=b.read(db)
+  call=db.execute('SELECT call_id,request FROM host_calls WHERE attempt=?',(n,)).fetchone()
+  attempt=db.execute('SELECT request,agent FROM attempts WHERE n=?',(n,)).fetchone()
+  out={'task_id':task,'attempt':n,'workflow_state':state,'call_id':None if call is None else call[0],'host_outcome':'UNKNOWN','agent':None,'observation_count':0,'action':'RECONCILE_HOST','independent_proof':False}
+  if call is None:return out
+  try:
+   req=json.loads(call[1]);expected=b.digest(b.canon({'kind':'host-invoke-v1','request':req}))
+   if call[0]!=expected or attempt is None or call[1]!=attempt[0] or req.get('task_id')!=task or req.get('attempt')!=n or req.get('input_sha256')!=json.loads(plan)['input_sha256']:raise ValueError('CALL_RECORD')
+   rows=db.execute('SELECT event_hash,body FROM host_observations WHERE call_id=? ORDER BY rowid',(call[0],)).fetchall()
+   events=[]
+   for event_hash,body in rows:
+    event=json.loads(body)
+    if b.digest(body)!=event_hash or event.get('task_id')!=task or event.get('input_sha256')!=req['input_sha256'] or event.get('attempt')!=n or event.get('call_id')!=call[0] or event.get('outcome') not in ('UNKNOWN','OBSERVED_ACCEPTED'):raise ValueError('EVENT_RECORD')
+    if event['outcome']=='UNKNOWN' and event.get('agent') is not None:raise ValueError('UNKNOWN_AGENT')
+    if event['outcome']=='OBSERVED_ACCEPTED':b.ident(event.get('agent'))
+    events.append(event)
+   accepted=[e for e in events if e['outcome']=='OBSERVED_ACCEPTED']
+   agent=accepted[-1]['agent'] if accepted else None
+   if any(e['agent']!=agent for e in accepted) or agent!=attempt[1]:raise ValueError('AGENT_RECORD')
+   out.update(host_outcome='OBSERVED_ACCEPTED' if accepted else 'UNKNOWN',agent=agent,observation_count=len(events),action=('RECONCILE_EXISTING_WORKER' if state=='WAITING_WORKER' else 'FOLLOW_WORKFLOW') if accepted else 'RECONCILE_HOST')
+  except (ValueError,TypeError,KeyError):out.update(host_outcome='UNKNOWN',reason='HOST_RECORD_INCONSISTENT',action='PRESERVE_AND_INSPECT')
+  return out
 
 def main():
  ap=argparse.ArgumentParser();ap.add_argument('database');ap.add_argument('operation',choices=['provision','begin','observe','status']);a=ap.parse_args()
