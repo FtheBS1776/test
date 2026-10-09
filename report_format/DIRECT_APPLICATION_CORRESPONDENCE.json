@@ -1,0 +1,48 @@
+{
+  "exact_prior_summaries_match": true,
+  "entries": [
+    {
+      "path": "checkpoint_maintenance/VERIFIER_REGRESSION_RESULTS.json",
+      "sha256": "2efbb1ab2e1322ad4e74af75c29f2f6a0843aca84039c99ed8858bd1ff334c21",
+      "summary": {
+        "status": "PASS",
+        "count": 29,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "projection": {
+        "scope": "STATUS_COUNT_CHECK_FLAGS_ONLY",
+        "ignored_top_fields": [
+          "candidate_sha256",
+          "saved_checkpoint_unchanged"
+        ],
+        "ignored_check_fields": [
+          "status"
+        ]
+      }
+    },
+    {
+      "path": "checkpoint_maintenance/COMPARISON_REGRESSION_RESULTS.json",
+      "sha256": "90c2acae0c0902cd1b6e62d371fe786ede31cbd04e133e7285004fad5d7383c1",
+      "summary": {
+        "status": "PASS",
+        "count": 12,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "projection": {
+        "scope": "STATUS_COUNT_CHECK_FLAGS_ONLY",
+        "ignored_top_fields": [
+          "actual_comparison",
+          "code_sha256",
+          "saved_inputs_unchanged"
+        ],
+        "ignored_check_fields": [
+          "status"
+        ]
+      }
+    }
+  ],
+  "new_standalone_projection_files": 0,
+  "historical_tests_rerun": false,
+  "execution_claim": "NONE",
+  "fresh_sink_claim": "NONE"
+}

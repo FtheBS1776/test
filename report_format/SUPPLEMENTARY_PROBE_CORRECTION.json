@@ -1,0 +1,8 @@
+{
+  "initial_probe": "valid metadata nesting1500",
+  "expected": "REJECT",
+  "actual": "NO_COVERAGE/0 with metadata ignored",
+  "assessment": "root assumed unsupported nesting without checking runtime recursion limit; no contract violation established",
+  "maintained_reporter_installed_before_failure": false,
+  "recursion_limit": 1000
+}

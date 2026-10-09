@@ -1,0 +1,9 @@
+{
+  "example_command": "python3.12 -B evidence_summary/report_logs.py --output my_regression_summary.json --input checks checkpoint_maintenance/VERIFIER_REGRESSION_RESULTS.json --input checks checkpoint_maintenance/COMPARISON_REGRESSION_RESULTS.json",
+  "successful_creation_verified": true,
+  "existing_guard_exit2_preserves_exact_bytes": true,
+  "original_prefix_preserved": true,
+  "original_zero_model_fixture_not_rerun": true,
+  "new_report_sha256": "00b4ca7ea4c8d0dabe2e0ba681aabcc84724efe6e2b178dacb9f7744d8965bf6",
+  "documentation_review": "root factual/command check; exact-source model reviewer scope is reporter only"
+}

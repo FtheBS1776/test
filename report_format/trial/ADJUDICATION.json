@@ -1,0 +1,28 @@
+{
+  "candidate_sha256": "ca49d3b8b83ecccaa4c4a252686fb755c6196fa673e0ed3249a34d4b3ff1344e",
+  "decision": "ACCEPT",
+  "checks": {
+    "frozen": 23,
+    "legacy": 30,
+    "legacy_supplementary": 7,
+    "new_supplementary": 8
+  },
+  "repair_count": 0,
+  "review_scope": "same-model exact-source static review; root executes/adjudicates",
+  "submission": "SUBMITTED",
+  "review": "ACCEPT",
+  "completion": {
+    "action": "TASK_COMPLETE",
+    "task_id": "genie-direct-check-logs-20261009",
+    "result": {
+      "status": "COMPLETE",
+      "fresh_destination": "CONFIRMED"
+    }
+  },
+  "stop": {
+    "action": "STOP",
+    "reason": "ALL_TASKS_COMPLETE",
+    "run_id": "genie-direct-check-logs-run-20261009",
+    "background_execution": false
+  }
+}

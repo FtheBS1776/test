@@ -141,16 +141,3 @@ python3.12 -B evidence_summary/report_logs.py --output "${GENIE_NEW_REPORT:?Set 
 These historical examples produce NO_COVERAGE/count0, PASS/count46 and PASS/count17, each TEST_LOG_SUMMARY_ONLY. REPORT_WRITTEN/exit0 means report creation, not aggregate test acceptance or execution. FAIL and REJECT log entries remain explicit. Existing output rejects with exit2; incomplete newly-created output on write failure remains for inspection. Hashes refer to captured byte snapshots, not source authenticity, currentness or an atomic multi-file view. Use the fresh status diagnostic separately for current accepted-code sink state.
 
 The original NO MODEL CALL fixture and its earlier review/check results are preserved above. This added integration guidance is root-authored documentation; its three new command examples were checked separately, without repeating that fixture, adding model calls, resetting a closed run or changing engine contracts.
-
-
-## Direct reporting of rich check logs
-
-Use the existing reporter's explicit `checks` format for JSON logs with `status`, `count`, `checks`, and additional metadata. The original `json` format remains strict. `checks` delegates only status/count/check names/boolean flags to the unchanged parser and lists ignored top-level/per-check field names. Per-check `status` and artifact metadata are ignored assertions; a summary does not verify them or establish test execution/authenticity. Hashes bind the original captured log, not a transformed file. Zero coverage stays explicit.
-
-From the repository root, choose an output path that does not already exist:
-
-```bash
-python3.12 -B evidence_summary/report_logs.py --output my_regression_summary.json --input checks checkpoint_maintenance/VERIFIER_REGRESSION_RESULTS.json --input checks checkpoint_maintenance/COMPARISON_REGRESSION_RESULTS.json
-```
-
-These saved inputs summarize PASS/29 and PASS/12 with their original hashes. `projection.ignored_top_fields` and `projection.ignored_check_fields` identify omitted fields; metadata values are not copied. No standalone projection files or historical test rerun are required. `REPORT_WRITTEN` reports new-file creation only; inspect each entry. Existing outputs are preserved and cause exit2. Retain all scoped HOLDs and finite-host limits.

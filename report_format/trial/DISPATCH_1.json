@@ -1,0 +1,18 @@
+{
+  "action": "INVOKE_WORKER",
+  "token": {
+    "run_id": "genie-direct-check-logs-run-20261009",
+    "task_id": "genie-direct-check-logs-20261009",
+    "input_sha256": "de5ad087ce501c6d4277999e9cb4b30a2758e4182895fbccb30b603ca86d7286",
+    "attempt": 1,
+    "slot_id": "5af4182821a55a6611a797d1e600072fa0be497362fe8944adb7e54fc9fb069d",
+    "call_id": "c0cb6a9b946f2f870dc7af27c40fef9ab3b3ae1a2b0b4f3415b700595b453b9a"
+  },
+  "request": {
+    "task_id": "genie-direct-check-logs-20261009",
+    "attempt": 1,
+    "input_sha256": "de5ad087ce501c6d4277999e9cb4b30a2758e4182895fbccb30b603ca86d7286",
+    "goal": "Summarize original rich check logs with explicit ignored metadata",
+    "feedback": null
+  }
+}

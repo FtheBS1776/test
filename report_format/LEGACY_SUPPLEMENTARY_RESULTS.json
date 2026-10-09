@@ -1,0 +1,38 @@
+{
+  "candidate_sha256": "ca49d3b8b83ecccaa4c4a252686fb755c6196fa673e0ed3249a34d4b3ff1344e",
+  "checks": [
+    {
+      "check": "invalid_final_spec_before_any_open",
+      "passed": true
+    },
+    {
+      "check": "linux_fifo_without_writer_rejects",
+      "passed": true
+    },
+    {
+      "check": "hash_binds_capture_not_later_path",
+      "passed": true
+    },
+    {
+      "check": "dependency_import_uses_verified_captured_bytes",
+      "passed": true
+    },
+    {
+      "check": "dangling_output_symlink_preserved",
+      "passed": true
+    },
+    {
+      "check": "output_partial_failure_preserves_file",
+      "passed": true
+    },
+    {
+      "check": "output_close_failure_preserves_file",
+      "passed": true
+    }
+  ],
+  "count": 7,
+  "all_passed": true,
+  "scope": "reviewer-prompted supplementary checks; frozen suite unchanged; injected errors, not crash/power-loss assurance",
+  "test_source_sha256": "7dd86fe5dcebcb8d7d420a213a0109d3fe4d0a3d60acadf4656f8a27f45157f5",
+  "adaptation": "unchanged test functions, CANDIDATE host variable only; original saved results untouched"
+}

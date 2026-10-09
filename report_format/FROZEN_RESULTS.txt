@@ -1,0 +1,28 @@
+test_bool_count_rejects (__main__.ChecksFormat.test_bool_count_rejects) ... ok
+test_both_flags_invalid_projection (__main__.ChecksFormat.test_both_flags_invalid_projection) ... ok
+test_cli_direct_original_and_existing_guard (__main__.ChecksFormat.test_cli_direct_original_and_existing_guard) ... ok
+test_count_mismatch (__main__.ChecksFormat.test_count_mismatch) ... ok
+test_declared_pass_false_flag_rejects (__main__.ChecksFormat.test_declared_pass_false_flag_rejects) ... ok
+test_flag_nonbool (__main__.ChecksFormat.test_flag_nonbool) ... ok
+test_float_overflow_metadata_rejects (__main__.ChecksFormat.test_float_overflow_metadata_rejects) ... ok
+test_ignored_fields_sorted_unique (__main__.ChecksFormat.test_ignored_fields_sorted_unique) ... ok
+test_infinite_metadata_rejects (__main__.ChecksFormat.test_infinite_metadata_rejects) ... ok
+test_legacy_json_still_rejects_rich (__main__.ChecksFormat.test_legacy_json_still_rejects_rich) ... ok
+test_legacy_json_unchanged_valid (__main__.ChecksFormat.test_legacy_json_unchanged_valid) ... ok
+test_missing_core_invalid_projection (__main__.ChecksFormat.test_missing_core_invalid_projection) ... ok
+test_nan_metadata_rejects (__main__.ChecksFormat.test_nan_metadata_rejects) ... ok
+test_nested_duplicate_metadata_rejects (__main__.ChecksFormat.test_nested_duplicate_metadata_rejects) ... ok
+test_no_extras_empty_projection_names (__main__.ChecksFormat.test_no_extras_empty_projection_names) ... ok
+test_nonlist_checks_invalid_projection (__main__.ChecksFormat.test_nonlist_checks_invalid_projection) ... ok
+test_nonobject_check_invalid_projection (__main__.ChecksFormat.test_nonobject_check_invalid_projection) ... ok
+test_rejected_boolean_flag (__main__.ChecksFormat.test_rejected_boolean_flag) ... ok
+test_rich_failure (__main__.ChecksFormat.test_rich_failure) ... ok
+test_rich_pass_ignores_per_check_status (__main__.ChecksFormat.test_rich_pass_ignores_per_check_status) ... ok
+test_unknown_format_before_read (__main__.ChecksFormat.test_unknown_format_before_read) ... ok
+test_unreadable_new_format_projection_null (__main__.ChecksFormat.test_unreadable_new_format_projection_null) ... ok
+test_zero_is_no_coverage_despite_metadata (__main__.ChecksFormat.test_zero_is_no_coverage_despite_metadata) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.123s
+
+OK

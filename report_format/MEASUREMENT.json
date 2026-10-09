@@ -1,0 +1,19 @@
+{
+  "author_turns": 1,
+  "reviewer_turns": 1,
+  "maximum_worker_turns": 3,
+  "repairs_so_far": 0,
+  "root_frozen_checks": 23,
+  "legacy_regression_checks": 30,
+  "legacy_supplementary_checks": 7,
+  "user_continuation_prompts_within_unit": 0,
+  "root_manual_work": "inspection, correspondence/research, contract/oracle, queue/host dispatch-observation, source review, tests, adjudication/use/delivery, documentation/publication/persistence",
+  "effort_money_tokens_latency": "unmeasured",
+  "model_independence": "same configured model/host/ancestry, role separation only",
+  "bounded_claim": "eliminate standalone manual projection artifacts for these saved rich logs, not measured general efficiency or superiority",
+  "new_supplementary_checks": 8,
+  "author_repairs": 0,
+  "worker_turns_used": 2,
+  "root_intervention": "supplementary depth1500 expectation corrected after actual stdlib observation; candidate unchanged",
+  "documentation": "root-authored appended existing guide, no additional model turn or independent review"
+}

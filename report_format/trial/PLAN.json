@@ -1,0 +1,6 @@
+{
+  "task_id": "genie-direct-check-logs-20261009",
+  "goal": "Summarize original rich check logs with explicit ignored metadata",
+  "input_sha256": "de5ad087ce501c6d4277999e9cb4b30a2758e4182895fbccb30b603ca86d7286",
+  "max_attempts": 2
+}

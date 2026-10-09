@@ -1,0 +1,23 @@
+{
+  "unchanged_function_class_AST": [
+    "_Once",
+    "_Parser",
+    "_load_summarize",
+    "_nonblocking_opener",
+    "_rejected_summary",
+    "build_report",
+    "main"
+  ],
+  "modified_existing_functions": [
+    "_validate_inputs",
+    "_capture"
+  ],
+  "added_helpers": [
+    "_checks_summary",
+    "_finite_float",
+    "_invalid_constant",
+    "_unique_object"
+  ],
+  "frozen_inputs_unchanged": true,
+  "strict_parser_unchanged_sha256": "5e635b97b764c0f88ae8e497ca48ec76e480d677610b24915cc2e900e681d826"
+}

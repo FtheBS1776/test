@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "count": 8,
+  "checks": [
+    {
+      "check": "unicode_check_and_metadata",
+      "passed": true
+    },
+    {
+      "check": "valid_surrogate_pair_metadata",
+      "passed": true
+    },
+    {
+      "check": "escaped_lone_surrogate_metadata_rejects",
+      "passed": true
+    },
+    {
+      "check": "supported_nested_metadata1500_ignored",
+      "passed": true
+    },
+    {
+      "check": "runtime_excessive_metadata10000_rejects",
+      "passed": true
+    },
+    {
+      "check": "exact_capture_bound_valid_rich",
+      "passed": true
+    },
+    {
+      "check": "excess_capture_bound_no_hash_projection",
+      "passed": true
+    },
+    {
+      "check": "invalid_utf8_retains_original_hash_projection_null",
+      "passed": true
+    }
+  ],
+  "source_sha256": "ca49d3b8b83ecccaa4c4a252686fb755c6196fa673e0ed3249a34d4b3ff1344e",
+  "scope": "reviewer-prompted root execution, separate from23 frozen checks; runtime-specific depth observation, no universal depth/time guarantee"
+}

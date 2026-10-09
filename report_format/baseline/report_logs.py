@@ -6,7 +6,6 @@ Input logs are decoded as text and summarized, never executed.
 import argparse
 import hashlib
 import json
-import math
 import os
 from pathlib import Path
 import stat
@@ -51,7 +50,7 @@ def _validate_inputs(inputs):
         path, format = spec["path"], spec["format"]
         if type(path) is not str or not 1 <= len(path) <= 4096 or "\x00" in path:
             raise ValueError("invalid input path")
-        if type(format) is not str or format not in ("unittest", "json", "checks"):
+        if type(format) is not str or format not in ("unittest", "json"):
             raise ValueError("invalid input format")
         if path in seen:
             raise ValueError("duplicate exact input path")
@@ -70,64 +69,6 @@ def _nonblocking_opener(path, flags):
     return os.open(path, flags | getattr(os, "O_NONBLOCK", 0))
 
 
-
-def _unique_object(pairs):
-    result = {}
-    for key, value in pairs:
-        if key in result:
-            raise ValueError("duplicate JSON key")
-        result[key] = value
-    return result
-
-
-def _invalid_constant(value):
-    raise ValueError("nonstandard JSON constant")
-
-
-def _finite_float(value):
-    number = float(value)
-    if not math.isfinite(number):
-        raise ValueError("nonfinite JSON float")
-    return number
-
-
-def _checks_summary(text, summarize):
-    # Validate the complete JSON, including metadata, before extracting core.
-    # Metadata values never supply summary authority and are never echoed.
-    try:
-        data = json.loads(text, object_pairs_hook=_unique_object,
-                          parse_constant=_invalid_constant, parse_float=_finite_float)
-        json.dumps(data, ensure_ascii=False, allow_nan=False).encode("utf-8")
-        core_keys = {"status", "count", "checks"}
-        if type(data) is not dict or not core_keys <= set(data):
-            raise ValueError("missing core fields")
-        if type(data["checks"]) is not list:
-            raise ValueError("checks must be a list")
-        core_checks = []
-        ignored_check_fields = set()
-        for check in data["checks"]:
-            if type(check) is not dict or "check" not in check:
-                raise ValueError("check object required")
-            if ("passed" in check) == ("rejected" in check):
-                raise ValueError("exactly one check flag required")
-            flag = "passed" if "passed" in check else "rejected"
-            core_checks.append({"check": check["check"], flag: check[flag]})
-            ignored_check_fields.update(set(check) - {"check", flag})
-        core = {"status": data["status"], "count": data["count"], "checks": core_checks}
-        core_text = json.dumps(core, sort_keys=True, separators=(",", ":"),
-                               ensure_ascii=False, allow_nan=False)
-        projection = {
-            "scope": "STATUS_COUNT_CHECK_FLAGS_ONLY",
-            "ignored_top_fields": sorted(set(data) - core_keys),
-            "ignored_check_fields": sorted(ignored_check_fields),
-        }
-        # Preserve projection for structurally extracted cores even when the
-        # unchanged strict parser rejects status/count/name/flag consistency.
-        return summarize(core_text, "json"), projection
-    except (ValueError, TypeError, RecursionError, OverflowError):
-        return _rejected_summary(), None
-
-
 def _capture(path, format, summarize):
     entry = {
         "path": path,
@@ -137,8 +78,6 @@ def _capture(path, format, summarize):
         "read_status": "UNREADABLE",
         "summary": _rejected_summary(),
     }
-    if format == "checks":
-        entry["projection"] = None
     try:
         with open(path, "rb", opener=_nonblocking_opener) as source:
             if not stat.S_ISREG(os.fstat(source.fileno()).st_mode):
@@ -157,10 +96,7 @@ def _capture(path, format, summarize):
         entry["read_status"] = "INVALID_UTF8"
         return entry
     entry["read_status"] = "CAPTURED"
-    if format == "checks":
-        entry["summary"], entry["projection"] = _checks_summary(text, summarize)
-    else:
-        entry["summary"] = summarize(text, format)
+    entry["summary"] = summarize(text, format)
     return entry
 
 
