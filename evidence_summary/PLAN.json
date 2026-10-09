@@ -1,0 +1,6 @@
+{
+  "task_id": "genie-evidence-summary-20261009",
+  "goal": "Create bounded truthful saved-log report routine",
+  "input_sha256": "dda42c4f55346ed1d4e46df230c02eb22c98f19c6e99f35dceb23e4bab83599a",
+  "max_attempts": 2
+}

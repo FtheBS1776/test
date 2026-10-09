@@ -1,0 +1,8 @@
+{
+  "evidence_summary/CONTRACT.md": "3ec3b822e6bc3942c59033a07e747c54b21f0edd7da1c6dcaf069b7dd3855f5b",
+  "evidence_summary/CORRESPONDENCE.md": "574dfc41fc4d4083dbcbbe1d25b49bfec3d105766ab91d85d295343f314a1941",
+  "comparison_pilot/validation_summary.py": "5e635b97b764c0f88ae8e497ca48ec76e480d677610b24915cc2e900e681d826",
+  "comparison_pilot/input/zero_discovery.txt": "e70fec2825d9bf206d27463a792768195039599cb39bcca66339f47283f84cce",
+  "comparison_pilot/input/runner_status.txt": "8d667896a27925aa19e771b2b6ef9c6413093a3f8eed95efcf30f078a3adcd3e",
+  "comparison_pilot/input/direct_checks.json": "b6174abe2a49cfc879c0cf5c89cd44983acd1365748551ae5cc81fdbb4d5965d"
+}

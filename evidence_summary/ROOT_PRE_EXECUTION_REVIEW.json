@@ -1,0 +1,6 @@
+{
+  "candidate_sha256": "593804224f0c3e8ea5a8206825a6e000bca7d41b159301b09e9db0c1f066518d",
+  "static_review": "Stdlib only; verified pinned code bytes before import; no log code execution/network/install; input validation before reads; capped regular-file binary capture with Linux nonblocking open; hashes captured snapshots; exclusive report creation; no aggregate PASS or sink/execution claims. Root reviewed source before running suite.",
+  "frozen_inputs_unchanged": true,
+  "expected_owned_candidate_path_verified": true
+}

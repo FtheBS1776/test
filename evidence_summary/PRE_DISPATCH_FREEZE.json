@@ -1,0 +1,12 @@
+{
+  "sha256": {
+    "evidence_summary/CONTRACT.md": "3ec3b822e6bc3942c59033a07e747c54b21f0edd7da1c6dcaf069b7dd3855f5b",
+    "evidence_summary/CORRESPONDENCE.md": "574dfc41fc4d4083dbcbbe1d25b49bfec3d105766ab91d85d295343f314a1941",
+    "evidence_summary/acceptance.py": "0b36030d2fecf963a361c4f10182c68511ffe680a44999d6f74a5e8fa9ac4d25",
+    "evidence_summary/INPUT_MANIFEST.json": "3800cf20ca2d31592bc92787d767d6b16e934d1276fca12f4712409690169846",
+    "evidence_summary/PLAN.json": "482dd3e755035be77fdb47820e4630c5240046c20a7e7c591d4c784d20a37bda"
+  },
+  "max_author_turns": 2,
+  "max_reviewer_turns": 1,
+  "max_worker_turns": 3
+}

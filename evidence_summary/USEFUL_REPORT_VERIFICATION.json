@@ -1,0 +1,25 @@
+{
+  "fresh_report_sha256": "b6c741e62257da69b56efe9c5fc8a4c3a20e03aa54e2728f96934aac02a38a5b",
+  "bytes": 930,
+  "entries": 3,
+  "source_hashes_and_bytes_match": true,
+  "existing_report_guard": "REJECT, exact bytes unchanged",
+  "delivered_source_sha256": "593804224f0c3e8ea5a8206825a6e000bca7d41b159301b09e9db0c1f066518d",
+  "fresh_code_sink": "CONFIRMED",
+  "exact_readonly_counts": {
+    "queue.sqlite": {
+      "reservations": 1
+    },
+    "task.sqlite": {
+      "host_calls": 1,
+      "host_observations": 1,
+      "attempts": 1
+    },
+    "inbox.sqlite": {
+      "reports": 1,
+      "applications": 1
+    }
+  },
+  "sqlite_readback_bytes_unchanged": true,
+  "scope": "historical supplied logs, no rerun/authenticity/currentness or fresh log sink claim"
+}

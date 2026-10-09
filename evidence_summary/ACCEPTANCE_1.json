@@ -1,0 +1,128 @@
+{
+  "candidate_sha256": "593804224f0c3e8ea5a8206825a6e000bca7d41b159301b09e9db0c1f066518d",
+  "checks": [
+    {
+      "check": "pass",
+      "passed": true
+    },
+    {
+      "check": "failure",
+      "passed": true
+    },
+    {
+      "check": "zero",
+      "passed": true
+    },
+    {
+      "check": "malformed",
+      "passed": true
+    },
+    {
+      "check": "direct_failure",
+      "passed": true
+    },
+    {
+      "check": "exact_limit",
+      "passed": true
+    },
+    {
+      "check": "invalid_utf8_retains_full_hash",
+      "passed": true
+    },
+    {
+      "check": "oversize_has_no_full_hash",
+      "passed": true
+    },
+    {
+      "check": "missing_has_no_full_hash",
+      "passed": true
+    },
+    {
+      "check": "directory_is_unreadable",
+      "passed": true
+    },
+    {
+      "check": "mixed_preserves_order_no_aggregate",
+      "passed": true
+    },
+    {
+      "check": "actual_saved_logs",
+      "passed": true
+    },
+    {
+      "check": "api_not_list",
+      "passed": true
+    },
+    {
+      "check": "api_empty",
+      "passed": true
+    },
+    {
+      "check": "api_over_eight",
+      "passed": true
+    },
+    {
+      "check": "api_extra_key",
+      "passed": true
+    },
+    {
+      "check": "api_unknown_format",
+      "passed": true
+    },
+    {
+      "check": "api_bool_path",
+      "passed": true
+    },
+    {
+      "check": "api_empty_path",
+      "passed": true
+    },
+    {
+      "check": "api_nul_path",
+      "passed": true
+    },
+    {
+      "check": "api_duplicate_path",
+      "passed": true
+    },
+    {
+      "check": "cli_mixed_success_is_not_pass",
+      "passed": true
+    },
+    {
+      "check": "cli_existing_file",
+      "passed": true
+    },
+    {
+      "check": "cli_existing_dir",
+      "passed": true
+    },
+    {
+      "check": "cli_existing_symlink",
+      "passed": true
+    },
+    {
+      "check": "cli_no_inputs",
+      "passed": true
+    },
+    {
+      "check": "cli_duplicate_inputs",
+      "passed": true
+    },
+    {
+      "check": "cli_unknown_format",
+      "passed": true
+    },
+    {
+      "check": "cli_missing_parent",
+      "passed": true
+    },
+    {
+      "check": "dependency_pin_rejects_mutation",
+      "passed": true
+    }
+  ],
+  "count": 30,
+  "all_passed": true,
+  "scope": "finite controller report checks; no supplied-log execution or filesystem security assurance"
+}

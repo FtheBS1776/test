@@ -1,0 +1,7 @@
+# Primary-source cross-check — retrieved2026-10-09
+
+Python3.12 official built-in open documentation: https://docs.python.org/3.12/library/functions.html#open documents exclusive x creation, failure on existing path, binary byte reads and explicit text encoding/error policies. Python stat documentation: https://docs.python.org/3.12/library/stat.html#stat.S_ISREG documents regular-file mode check and other nonregular types.
+
+These support ordinary API choices, not hostile-parent/path confinement, crash durability, rollback resistance, cross-file atomicity or source-log authenticity. A post-open regular-file check does not by itself establish a deadline on a potentially blocking open; inspect the actual implementation conservatively. Root cross-check follows internal prior-experience audit and frozen finite contract; it is external primary documentation research, not independently administered evidence or a new production gate. Local Python microversion and platforms are not inferred from the documentation's version. Frozen contract/suite remain unchanged after author dispatch.
+
+Candidate uses os.O_NONBLOCK where available. https://docs.python.org/3.12/library/os.html#os.O_NONBLOCK documents this flag's Unix availability; do not infer Windows nonblocking-open behavior from Linux checks. Rejecting nonregular files does not impose a deadline on every regular-file read or establish hostile filesystem isolation.

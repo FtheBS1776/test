@@ -1,0 +1,8 @@
+{
+  "author": 1,
+  "reviewer": 1,
+  "max_author": 2,
+  "max_reviewer": 1,
+  "max_total": 3,
+  "controller_model_turns_measured": false
+}
