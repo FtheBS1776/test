@@ -1,0 +1,60 @@
+{
+  "scope": "NONCLAIM_ONE_MATCHED_TASK_PILOT",
+  "task": "read-only validation log summary",
+  "common_input_sha256": "89511291034884bdae4c98ba29b71e2dd5c0c50296d8e19d74d17918a56fc863",
+  "arms": {
+    "plain": {
+      "author_turns": 1,
+      "repairs": 0,
+      "acceptance_passed": 51,
+      "acceptance_total": 51,
+      "mistaken_acceptance_observed_in_frozen_cases": 0,
+      "unnecessary_hold_observed_in_frozen_cases": 0,
+      "common_metadata_probes_rejected": 4,
+      "common_metadata_probes_total": 4,
+      "fresh_coordinator_no_relaunch": true,
+      "fresh_delivery": "CONFIRMED",
+      "candidate_sha256": "ecfe7e6504e129ca33fd3598f9dd001634331d6a8ab19c1fa1b48469e2374a28"
+    },
+    "genie": {
+      "author_turns": 1,
+      "repairs": 0,
+      "acceptance_passed": 51,
+      "acceptance_total": 51,
+      "mistaken_acceptance_observed_in_frozen_cases": 0,
+      "unnecessary_hold_observed_in_frozen_cases": 0,
+      "common_metadata_probes_rejected": 4,
+      "common_metadata_probes_total": 4,
+      "fresh_coordinator_no_relaunch": true,
+      "fresh_delivery": "CONFIRMED",
+      "candidate_sha256": "5e635b97b764c0f88ae8e497ca48ec76e480d677610b24915cc2e900e681d826"
+    }
+  },
+  "design_reviewer_turns": 1,
+  "total_worker_turns": 3,
+  "max_worker_turns": 5,
+  "controller_model_turns_measured": false,
+  "extra_user_continuation_prompts_within_unit": 0,
+  "controller_action_categories": [
+    "define task and frozen oracle",
+    "dispatch and observe workers",
+    "read persisted state in new process",
+    "verify metadata and static source",
+    "execute acceptance and adversarial binding probes",
+    "adjudicate and deliver",
+    "fresh readback",
+    "publish and persist evidence"
+  ],
+  "exact_controller_action_count_comparable_labor_latency_tokens_money_measured": false,
+  "finding": "Tie on frozen completion checks, author turns, repairs, common binding probes and active-host coordinator continuation. No measured usefulness/superiority advantage. Genie adds persisted binding/lifecycle bookkeeping; extra controller operations not timed.",
+  "limits": [
+    "one matched task; fixed plain-first order",
+    "same model, shared host/controller/spec, potential shared environment contamination",
+    "procedural file scope; no hostile isolation",
+    "fresh coordinator process, not host death or unattended execution",
+    "finite acceptance suite does not prove parser completeness or authenticity of supplied logs",
+    "root manually executed both pipelines; no zero-labor claim",
+    "no promotion/freeze/spending/main merge/deployment/EXP010; scoped HOLDs unchanged"
+  ],
+  "maintained_utility": "Genie source copied unchanged to comparison_pilot/validation_summary.py; includes API size guard. Selection for maintenance is not an empirical superiority finding."
+}

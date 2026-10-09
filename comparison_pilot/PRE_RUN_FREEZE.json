@@ -1,0 +1,19 @@
+{
+  "sha256": {
+    "comparison_pilot/input/runner_status.txt": "8d667896a27925aa19e771b2b6ef9c6413093a3f8eed95efcf30f078a3adcd3e",
+    "comparison_pilot/input/zero_discovery.txt": "e70fec2825d9bf206d27463a792768195039599cb39bcca66339f47283f84cce",
+    "comparison_pilot/input/direct_checks.json": "b6174abe2a49cfc879c0cf5c89cd44983acd1365748551ae5cc81fdbb4d5965d",
+    "comparison_pilot/input/TASK_BRIEF.md": "cdeecfd7609889825e65c2c41fd2c3e1b088560d43ad7e7703b4b17ea2e05daf",
+    "comparison_pilot/oracle/acceptance.py": "90367249ec66eb88c0aed6a3cfa92049e333afd49cdb2fb3c64cbc1673e4e9c7",
+    "comparison_pilot/PROTOCOL.md": "8afd6a0f39c8b7fd5708bde5a2fb8dbf76fab3f86d1e7839d08af77e32a7a9e8",
+    "comparison_pilot/DESIGN_REVIEW.md": "742eedc5e45027f97d663d58fa0e1c699a50a54fc1d6787e7368f5b73139867e",
+    "comparison_pilot/BUDGET.json": "70f44595322c9a117f963e17427c3d4c6d307d2e52aa9802aa108bbc83deeec5"
+  },
+  "arm_dispatch_order": [
+    "plain",
+    "genie"
+  ],
+  "frozen_before_author_dispatch": true,
+  "randomized": false,
+  "oracle_revision_policy": "no amendments after author outcomes"
+}

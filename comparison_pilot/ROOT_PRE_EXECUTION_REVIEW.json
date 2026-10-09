@@ -1,0 +1,56 @@
+{
+  "plain": {
+    "binding": "PASS",
+    "static_review": "Stdlib only; bounded CLI reads; no input execution, network or file writes. API finite parser; exceptions reject. Root reviewed before oracle execution.",
+    "probes": [
+      {
+        "field": "task_id",
+        "rejected": true,
+        "reason": "TASK_INPUT_BINDING"
+      },
+      {
+        "field": "input_sha256",
+        "rejected": true,
+        "reason": "TASK_INPUT_BINDING"
+      },
+      {
+        "field": "attempt",
+        "rejected": true,
+        "reason": "ATTEMPT_BINDING"
+      },
+      {
+        "field": "sha256",
+        "rejected": true,
+        "reason": "CONTENT_BINDING"
+      }
+    ],
+    "sha256": "ecfe7e6504e129ca33fd3598f9dd001634331d6a8ab19c1fa1b48469e2374a28"
+  },
+  "genie": {
+    "binding": "PASS",
+    "static_review": "Stdlib only; bounded CLI reads; no input execution, network or file writes. API finite parser; exceptions reject. Root reviewed before oracle execution.",
+    "probes": [
+      {
+        "field": "task_id",
+        "rejected": true,
+        "reason": "TASK_INPUT_BINDING"
+      },
+      {
+        "field": "input_sha256",
+        "rejected": true,
+        "reason": "TASK_INPUT_BINDING"
+      },
+      {
+        "field": "attempt",
+        "rejected": true,
+        "reason": "ATTEMPT_BINDING"
+      },
+      {
+        "field": "sha256",
+        "rejected": true,
+        "reason": "CONTENT_BINDING"
+      }
+    ],
+    "sha256": "5e635b97b764c0f88ae8e497ca48ec76e480d677610b24915cc2e900e681d826"
+  }
+}

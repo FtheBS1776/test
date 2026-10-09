@@ -1,0 +1,74 @@
+{
+  "status": "PASS",
+  "count": 17,
+  "checks": [
+    {
+      "check": "concurrent_start_only_one_invoke",
+      "passed": true
+    },
+    {
+      "check": "started_not_launch_proof_or_redispatch",
+      "passed": true
+    },
+    {
+      "check": "wrong_task_start",
+      "rejected": true
+    },
+    {
+      "check": "wrong_call_result",
+      "rejected": true
+    },
+    {
+      "check": "wrong_input_result",
+      "rejected": true
+    },
+    {
+      "check": "unknown_receipt_persists_no_retry_permission",
+      "passed": true
+    },
+    {
+      "check": "observation_and_binding_atomic",
+      "passed": true
+    },
+    {
+      "check": "corrupted_observation_hash_status_unknown",
+      "passed": true
+    },
+    {
+      "check": "replace_observed_agent",
+      "rejected": true
+    },
+    {
+      "check": "downgrade_confirmed_to_unknown",
+      "rejected": true
+    },
+    {
+      "check": "old_unknown_duplicate_no_downgrade",
+      "passed": true
+    },
+    {
+      "check": "exact_observation_replay_after_submit",
+      "passed": true
+    },
+    {
+      "check": "new_stale_result_to_next_attempt",
+      "rejected": true
+    },
+    {
+      "check": "historical_exact_replay_read_only",
+      "passed": true
+    },
+    {
+      "check": "distinct_attempt_distinct_call",
+      "passed": true
+    },
+    {
+      "check": "corrupted_request_status_unknown",
+      "passed": true
+    },
+    {
+      "check": "old_call_on_current_attempt",
+      "rejected": true
+    }
+  ]
+}

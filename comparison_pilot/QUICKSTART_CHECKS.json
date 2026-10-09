@@ -1,0 +1,32 @@
+[
+  {
+    "input": "runner_status.txt",
+    "output": {
+      "status": "PASS",
+      "count": 46,
+      "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+    },
+    "exit_code": 0,
+    "input_unchanged": true
+  },
+  {
+    "input": "zero_discovery.txt",
+    "output": {
+      "status": "NO_COVERAGE",
+      "count": 0,
+      "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+    },
+    "exit_code": 1,
+    "input_unchanged": true
+  },
+  {
+    "input": "direct_checks.json",
+    "output": {
+      "status": "PASS",
+      "count": 17,
+      "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+    },
+    "exit_code": 0,
+    "input_unchanged": true
+  }
+]

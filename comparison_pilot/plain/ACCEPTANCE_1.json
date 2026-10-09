@@ -1,0 +1,774 @@
+{
+  "candidate_sha256": "ecfe7e6504e129ca33fd3598f9dd001634331d6a8ab19c1fa1b48469e2374a28",
+  "checks": 51,
+  "passed": 51,
+  "all_passed": true,
+  "results": [
+    {
+      "name": "unittest_pass",
+      "passed": true,
+      "expected": {
+        "status": "PASS",
+        "count": 3,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "PASS",
+        "count": 3,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "unittest_single",
+      "passed": true,
+      "expected": {
+        "status": "PASS",
+        "count": 1,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "PASS",
+        "count": 1,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "unittest_zero_ok",
+      "passed": true,
+      "expected": {
+        "status": "NO_COVERAGE",
+        "count": 0,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "NO_COVERAGE",
+        "count": 0,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "unittest_zero_message",
+      "passed": true,
+      "expected": {
+        "status": "NO_COVERAGE",
+        "count": 0,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "NO_COVERAGE",
+        "count": 0,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "unittest_all_skipped",
+      "passed": true,
+      "expected": {
+        "status": "NO_COVERAGE",
+        "count": 0,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "NO_COVERAGE",
+        "count": 0,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "unittest_some_skipped",
+      "passed": true,
+      "expected": {
+        "status": "PASS",
+        "count": 2,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "PASS",
+        "count": 2,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "unittest_fail",
+      "passed": true,
+      "expected": {
+        "status": "FAIL",
+        "count": 3,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "FAIL",
+        "count": 3,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "unittest_errors_skipped",
+      "passed": true,
+      "expected": {
+        "status": "FAIL",
+        "count": 2,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "FAIL",
+        "count": 2,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "unittest_both_fail",
+      "passed": true,
+      "expected": {
+        "status": "FAIL",
+        "count": 3,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "FAIL",
+        "count": 3,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "unittest_missing",
+      "passed": true,
+      "expected": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "unittest_truncated",
+      "passed": true,
+      "expected": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "unittest_substring_ok",
+      "passed": true,
+      "expected": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "unittest_duplicate_summary",
+      "passed": true,
+      "expected": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "unittest_duplicate_marker",
+      "passed": true,
+      "expected": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "unittest_duplicate_failure_key",
+      "passed": true,
+      "expected": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "unittest_impossible_failure_sum",
+      "passed": true,
+      "expected": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "unittest_too_many_skips",
+      "passed": true,
+      "expected": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "unittest_contradictory_zero_failure",
+      "passed": true,
+      "expected": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "unittest_contradictory_nonzero_no_tests",
+      "passed": true,
+      "expected": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "unittest_zero_failure_counts",
+      "passed": true,
+      "expected": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "unittest_unknown_marker",
+      "passed": true,
+      "expected": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "unittest_negative_duration",
+      "passed": true,
+      "expected": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "json_pass",
+      "passed": true,
+      "expected": {
+        "status": "PASS",
+        "count": 2,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "PASS",
+        "count": 2,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "json_fail",
+      "passed": true,
+      "expected": {
+        "status": "FAIL",
+        "count": 1,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "FAIL",
+        "count": 1,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "json_zero_PASS",
+      "passed": true,
+      "expected": {
+        "status": "NO_COVERAGE",
+        "count": 0,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "NO_COVERAGE",
+        "count": 0,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "json_zero_FAIL",
+      "passed": true,
+      "expected": {
+        "status": "NO_COVERAGE",
+        "count": 0,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "NO_COVERAGE",
+        "count": 0,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "json_bool_count",
+      "passed": true,
+      "expected": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "json_float_count",
+      "passed": true,
+      "expected": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "json_mismatched_count",
+      "passed": true,
+      "expected": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "json_false_declared_pass",
+      "passed": true,
+      "expected": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "json_true_declared_fail",
+      "passed": true,
+      "expected": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "json_integer_flag",
+      "passed": true,
+      "expected": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "json_extra_fields",
+      "passed": true,
+      "expected": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "json_empty_check_name",
+      "passed": true,
+      "expected": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "json_unstripped_name",
+      "passed": true,
+      "expected": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "json_two_flags",
+      "passed": true,
+      "expected": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "json_nonobject",
+      "passed": true,
+      "expected": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "json_duplicate_top",
+      "passed": true,
+      "expected": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "json_duplicate_nested",
+      "passed": true,
+      "expected": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "json_truncated",
+      "passed": true,
+      "expected": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "invalid_format",
+      "passed": true,
+      "expected": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "invalid_api_input",
+      "passed": true,
+      "expected": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "actual_zero_discovery.txt",
+      "passed": true,
+      "expected": {
+        "status": "NO_COVERAGE",
+        "count": 0,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "NO_COVERAGE",
+        "count": 0,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "actual_runner_status.txt",
+      "passed": true,
+      "expected": {
+        "status": "PASS",
+        "count": 46,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "PASS",
+        "count": 46,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "actual_direct_checks.json",
+      "passed": true,
+      "expected": {
+        "status": "PASS",
+        "count": 17,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "actual": {
+        "status": "PASS",
+        "count": 17,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "error": null
+    },
+    {
+      "name": "cli_valid",
+      "passed": true,
+      "exit": 0,
+      "actual": {
+        "status": "PASS",
+        "count": 2,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "expected": {
+        "status": "PASS",
+        "count": 2,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "input_unchanged": true
+    },
+    {
+      "name": "cli_zero",
+      "passed": true,
+      "exit": 1,
+      "actual": {
+        "status": "NO_COVERAGE",
+        "count": 0,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "expected": {
+        "status": "NO_COVERAGE",
+        "count": 0,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "input_unchanged": true
+    },
+    {
+      "name": "cli_failure",
+      "passed": true,
+      "exit": 1,
+      "actual": {
+        "status": "FAIL",
+        "count": 1,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "expected": {
+        "status": "FAIL",
+        "count": 1,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "input_unchanged": true
+    },
+    {
+      "name": "cli_invalid_utf8",
+      "passed": true,
+      "exit": 2,
+      "actual": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "expected": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "input_unchanged": true
+    },
+    {
+      "name": "cli_too_large",
+      "passed": true,
+      "exit": 2,
+      "actual": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "expected": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "input_unchanged": true
+    },
+    {
+      "name": "cli_missing",
+      "passed": true,
+      "exit": 2,
+      "actual": {
+        "status": "REJECT",
+        "count": null,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      }
+    }
+  ],
+  "scope": "controller-owned finite task contract; no authenticity/execution proof from input logs"
+}
