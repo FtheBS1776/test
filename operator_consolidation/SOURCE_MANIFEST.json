@@ -1,0 +1,22 @@
+{
+  "worker_substitution/QUICKSTART.md": {
+    "sha256": "a3ec9d0a3fd872b7b0e80ee1d3be3696271c1264f8ec62b30437f94cb0484006",
+    "size": 12506
+  },
+  "operator_consolidation/README_FIRST.md": {
+    "sha256": "37dc46cadcf50dc757c62b4393232c5b0ae5a321fa15ab0320d0d381e58572b8",
+    "size": 1912
+  },
+  "operator_consolidation/QUICKSTART_BEFORE.md": {
+    "sha256": "12878d78c490200cdd2b406516af42f8d0b6a6afdf63e04d6d126b7275461cdd",
+    "size": 8866
+  },
+  "operator_consolidation/COMMAND_CHECKS.json": {
+    "sha256": "3aa12fbeb685e43b4fd519a5ad4ac2091c42b7021c7f01952c7a93e1e286097e",
+    "size": 2718
+  },
+  "operator_consolidation/reports/quickstart_validation_logs.json": {
+    "sha256": "b6c741e62257da69b56efe9c5fc8a4c3a20e03aa54e2728f96934aac02a38a5b",
+    "size": 930
+  }
+}

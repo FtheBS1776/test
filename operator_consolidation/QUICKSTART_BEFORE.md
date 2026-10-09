@@ -111,33 +111,3 @@ Every CLI call in the block is a fresh subprocess. Keep the resulting files for 
 Read-only diagnostics use `python3.12 -B active_runner/run_status.py QUEUE RUN_ID OWNED_ROOT`. Top-level PASS means the diagnostic completed; inspect each task's `fresh_sink`. Queue completion is historical. Missing or partial per-task stores yield UNKNOWN in that task's report; changed sink content can be MISMATCH. A missing or unreadable queue, invalid run context or missing owned root may instead produce top-level REJECT with a nonzero exit. Separate read transactions are not an atomic cross-store snapshot.
 
 For an actual host ending or authority/dependency boundary, the queue `stop` operation takes stdin `{"reason":"HOST_ENDED"}`, `{"reason":"AUTHORITY_BOUNDARY"}` or `{"reason":"DEPENDENCY_BOUNDARY"}`. Stopped accepted work is readback-only; stopping before delivery does not authorize a new sink write. This is a serial trusted local-host prototype, not background execution, authenticated remote evidence, hostile-worker isolation or rollback resistance. Same-model reviewers share ancestry. Existing scoped HOLDs and authority boundaries remain; no promotion, freeze, deployment or EXP010 execution is implied.
-
-## Existing helpers in a real bounded task
-
-Use the queue/runner recipe above for the saved plan, bounded permissions, candidate review and exact delivery. At a newly emitted INVOKE_WORKER, the active Work controller performs the real worker call once. The CLI cannot do this call. Save the original dispatch and the actual host tool evidence as a nonempty JSON object; an UNKNOWN invocation must stay UNKNOWN and be reconciled without relaunch. After observing an accepted agent, render the existing observe envelope with observe_payload.py, compare its exact token/outcome/agent/evidence against those saved facts, then pass that envelope to the existing runner observe operation. Rendering alone never records an observation or grants permission. Submit only the bound agent's candidate; root reviews exact content/hash and chooses ACCEPT or REPAIR. Step delivers/readbacks, selects any remaining authorized READY task or persists STOP. Respect the original task/call budget throughout.
-
-The following command only renders this completed unit's historical envelope. It performs no model call or callback. Its run is closed; a rendered payload is not permission to reopen it:
-
-```bash
-python3.12 -B active_runner/observe_payload.py --dispatch observation_payload/trial/DISPATCH_1.json --evidence observation_payload/trial/HOST_EVIDENCE_1.json --outcome OBSERVED_ACCEPTED --agent /root/pilot_genie_author
-```
-
-For UNKNOWN rendering, use --outcome UNKNOWN and omit --agent. Expected malformed-input errors produce empty stdout, REJECT/PAYLOAD_RENDER_ONLY JSON on stderr and exit2. Check the renderer's exit and exact payload before applying any callback. The unchanged callback still checks persisted current state and rejects wrong or terminal bindings. Caller evidence remains a trusted-host assertion, not independent or signed execution proof.
-
-Fresh status for this completed unit is read-only; top-level PASS means diagnostic success, while the per-task fresh_sink answers current destination confirmation:
-
-```bash
-python3.12 -B active_runner/run_status.py observation_payload/trial/queue.sqlite genie-observe-payload-run-20261009 observation_payload/trial/work
-```
-
-## Summarize saved logs without rerunning them
-
-Set GENIE_NEW_REPORT to a NEW file in an existing owned directory. This command preserves the input logs and any existing output. It summarizes captured log bytes with SHA256/size per entry; it does not run tests or read the task inbox:
-
-```bash
-python3.12 -B evidence_summary/report_logs.py --output "${GENIE_NEW_REPORT:?Set a NEW report path in an existing owned directory}" --input unittest comparison_pilot/input/zero_discovery.txt --input unittest comparison_pilot/input/runner_status.txt --input json comparison_pilot/input/direct_checks.json
-```
-
-These historical examples produce NO_COVERAGE/count0, PASS/count46 and PASS/count17, each TEST_LOG_SUMMARY_ONLY. REPORT_WRITTEN/exit0 means report creation, not aggregate test acceptance or execution. FAIL and REJECT log entries remain explicit. Existing output rejects with exit2; incomplete newly-created output on write failure remains for inspection. Hashes refer to captured byte snapshots, not source authenticity, currentness or an atomic multi-file view. Use the fresh status diagnostic separately for current accepted-code sink state.
-
-The original NO MODEL CALL fixture and its earlier review/check results are preserved above. This added integration guidance is root-authored documentation; its three new command examples were checked separately, without repeating that fixture, adding model calls, resetting a closed run or changing engine contracts.

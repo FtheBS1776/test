@@ -1,0 +1,9 @@
+# Operator documentation consolidation — NONCLAIM
+
+Start with checkpoint integrity: independently verify outer SHA256, strict manifest inventory/path/hash/size and ZIP CRC before accepting state. Read the updated worker_substitution/QUICKSTART.md, this unit's COMMAND_CHECKS.json and PUBLICATION.json, preserved QUICKSTART_BEFORE.md, current observation helper evidence and canonical notes. Review source before execution. Current helper/source authority boundaries unchanged.
+
+Root appended integration guidance to the existing tested quickstart, joining real Work host invocation, observation-envelope rendering, unchanged callbacks, content review, fresh code sink readback and historical saved-log summaries. The entire original document remains an unchanged byte prefix and its NO MODEL CALL fixture block is identical. Existing historical author/reviewer dispositions apply to their original subjects; the new appendix is root-authored/factually checked documentation, not a new model-reviewed or independently reviewed subject.
+
+Three newly documented command examples checked: read-only historical observation render, fresh closed-run status and creation of one new hash-bound saved-log report. Zero model calls, new reservations or callbacks in this documentation subunit; no old fixture rerun. Source logs and closed stores unchanged. Report entries NO_COVERAGE/0,PASS/46,PASS/17 describe historical logs, not tests rerun. Existing engine callback and output guards unchanged; no new framework/component/provider.
+
+No promotion/freeze/spending/main merge/deployment/old experiment/EXP010, no budget reset or background host claim. Current host unit remains finite. Scoped root/custody/rollback/power-loss/remote-authenticity/hostile-isolation HOLDs preserved. This documentation step was completed in the same active host batch after the observation helper, without another user continuation prompt.

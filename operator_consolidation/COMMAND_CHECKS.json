@@ -1,0 +1,72 @@
+{
+  "new_command_examples_checked": 3,
+  "all_passed": true,
+  "model_calls": 0,
+  "new_queue_reservations": 0,
+  "callbacks_applied": 0,
+  "original_quickstart_prefix_unchanged": true,
+  "original_fixture_block_unchanged": true,
+  "old_fixture_not_rerun": true,
+  "closed_store_bytes_unchanged": true,
+  "read_only_render_and_fresh_status": [
+    {
+      "agent": "/root/pilot_genie_author",
+      "evidence": {
+        "result": "returned normally, accepted bounded author task",
+        "scope": "trusted Work host assertion; not signed execution receipt",
+        "target": "/root/pilot_genie_author",
+        "tool": "collaboration.followup_task"
+      },
+      "outcome": "OBSERVED_ACCEPTED",
+      "supplied": {
+        "attempt": 1,
+        "call_id": "a7d2ba8fe5366861d20e8d65dad4dd6b45dcf75d8569a6218d1b049fd62c01e6",
+        "input_sha256": "c4f57482e6f2d65fa1a90ec3dcd644df807d9e78dc04113a6f510444e574e555",
+        "run_id": "genie-observe-payload-run-20261009",
+        "slot_id": "4a45be629528bfe80c09158328f40b9b56649bd94f01045f709e4fd728230f14",
+        "task_id": "genie-observe-payload-20261009"
+      }
+    },
+    {
+      "background_execution": false,
+      "completion_claim": "Inspect each fresh_sink; queue COMPLETE is historical only",
+      "evidence_scope": "TRUSTED_OWNED_LOCAL_OBSERVATION",
+      "queue_history": {
+        "max_model_calls": 2,
+        "reserved_model_calls": 1,
+        "run_id": "genie-observe-payload-run-20261009",
+        "scope": "HISTORICAL_QUEUE_STATE_NOT_CURRENT_DESTINATION_PROOF",
+        "state": "STOPPED",
+        "stop_reason": "ALL_TASKS_COMPLETE"
+      },
+      "snapshot_scope": "Separate read transactions; no cross-store atomic snapshot",
+      "status": "PASS",
+      "tasks": [
+        {
+          "fresh_sink": {
+            "scope": "FRESH_EXACT_DESTINATION_READBACK",
+            "status": "CONFIRMED"
+          },
+          "journal": {
+            "agent": "/root/pilot_genie_author",
+            "call_id": "a7d2ba8fe5366861d20e8d65dad4dd6b45dcf75d8569a6218d1b049fd62c01e6",
+            "host_outcome": "OBSERVED_ACCEPTED",
+            "independent_proof": false,
+            "observation_count": 1,
+            "status": "OBSERVED"
+          },
+          "queue_entry_history": "COMPLETE",
+          "task_id": "genie-observe-payload-20261009",
+          "workflow": {
+            "attempt": 1,
+            "state": "DELIVERED",
+            "status": "OBSERVED"
+          }
+        }
+      ]
+    }
+  ],
+  "saved_log_report_sha256": "b6c741e62257da69b56efe9c5fc8a4c3a20e03aa54e2728f96934aac02a38a5b",
+  "source_log_hashes_match": true,
+  "scope": "root-authored documentation integration; new local report, not new test execution/authority"
+}
