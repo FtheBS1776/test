@@ -1,0 +1,7 @@
+{
+  "observation_payload/CONTRACT.md": "23b27ec4e1014b2a0658964e302e173fb3a3ce130bb7ae79f72cad4518a35b6e",
+  "observation_payload/CORRESPONDENCE.md": "776af98707114da80d1ce60878ac3774ef2163efe8d7710bc68e66cc45450c46",
+  "active_runner/runner.py": "e315b0f30403028169d9bde17f73e13b618ed419ace4fb489f7c0878f2d6fd29",
+  "host_adapter/journal.py": "1d7825208cfac386acf0cd83b3505064de8c147ebb35fc6fe54864dd3950cc98",
+  "worker_bridge/bridge.py": "6cbc9f8b0d6f2beb85e5e60927fbc3bf4ac21628daaf3f12c8aefd3780df4b89"
+}

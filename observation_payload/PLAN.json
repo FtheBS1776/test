@@ -1,0 +1,6 @@
+{
+  "task_id": "genie-observe-payload-20261009",
+  "goal": "Render bounded valid existing host observation envelopes",
+  "input_sha256": "c4f57482e6f2d65fa1a90ec3dcd644df807d9e78dc04113a6f510444e574e555",
+  "max_attempts": 2
+}

@@ -1,0 +1,164 @@
+{
+  "candidate_sha256": "92d1de6d5cda36689aa1506b03dffe8549f905e0f16e0d99fc5c89a990c578cb",
+  "checks": [
+    {
+      "check": "accepted_exact_detached_copy",
+      "passed": true
+    },
+    {
+      "check": "unknown_stays_unknown",
+      "passed": true
+    },
+    {
+      "check": "evidence_string",
+      "passed": true
+    },
+    {
+      "check": "evidence_empty",
+      "passed": true
+    },
+    {
+      "check": "evidence_nonstring_key",
+      "passed": true
+    },
+    {
+      "check": "evidence_tuple",
+      "passed": true
+    },
+    {
+      "check": "evidence_nan",
+      "passed": true
+    },
+    {
+      "check": "evidence_infinity",
+      "passed": true
+    },
+    {
+      "check": "evidence_surrogate",
+      "passed": true
+    },
+    {
+      "check": "evidence_oversize",
+      "passed": true
+    },
+    {
+      "check": "evidence_multibyte_size",
+      "passed": true
+    },
+    {
+      "check": "evidence_cycle",
+      "passed": true
+    },
+    {
+      "check": "exact_evidence_byte_limit",
+      "passed": true
+    },
+    {
+      "check": "dispatch_bool_attempt",
+      "passed": true
+    },
+    {
+      "check": "dispatch_float_attempt",
+      "passed": true
+    },
+    {
+      "check": "dispatch_wrong_input",
+      "passed": true
+    },
+    {
+      "check": "dispatch_wrong_task",
+      "passed": true
+    },
+    {
+      "check": "dispatch_attempt_mismatch",
+      "passed": true
+    },
+    {
+      "check": "dispatch_extra_token",
+      "passed": true
+    },
+    {
+      "check": "dispatch_nonhex_slot",
+      "passed": true
+    },
+    {
+      "check": "dispatch_bad_goal",
+      "passed": true
+    },
+    {
+      "check": "dispatch_bad_feedback",
+      "passed": true
+    },
+    {
+      "check": "dispatch_wrong_action",
+      "passed": true
+    },
+    {
+      "check": "unknown_with_agent",
+      "passed": true
+    },
+    {
+      "check": "accepted_no_agent",
+      "passed": true
+    },
+    {
+      "check": "accepted_unstripped_agent",
+      "passed": true
+    },
+    {
+      "check": "unsupported_outcome",
+      "passed": true
+    },
+    {
+      "check": "cli_success_readonly_exact",
+      "passed": true
+    },
+    {
+      "check": "cli_duplicate_option",
+      "passed": true
+    },
+    {
+      "check": "cli_unknown_option",
+      "passed": true
+    },
+    {
+      "check": "cli_no_arguments",
+      "passed": true
+    },
+    {
+      "check": "cli_duplicate_nested_key",
+      "passed": true
+    },
+    {
+      "check": "cli_duplicate_dispatch_key",
+      "passed": true
+    },
+    {
+      "check": "cli_invalid_utf8",
+      "passed": true
+    },
+    {
+      "check": "cli_nonstandard_constant",
+      "passed": true
+    },
+    {
+      "check": "cli_truncated_json",
+      "passed": true
+    },
+    {
+      "check": "cli_file_size_limit",
+      "passed": true
+    },
+    {
+      "check": "cli_missing_input",
+      "passed": true
+    },
+    {
+      "check": "unix_fifo_rejected_without_writer",
+      "passed": true
+    }
+  ],
+  "count": 39,
+  "all_passed": true,
+  "scope": "finite formatter checks; rendering is not execution/authority/provenance evidence"
+}

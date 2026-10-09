@@ -1,0 +1,12 @@
+{
+  "sha256": {
+    "observation_payload/CONTRACT.md": "23b27ec4e1014b2a0658964e302e173fb3a3ce130bb7ae79f72cad4518a35b6e",
+    "observation_payload/CORRESPONDENCE.md": "776af98707114da80d1ce60878ac3774ef2163efe8d7710bc68e66cc45450c46",
+    "observation_payload/INPUT_MANIFEST.json": "df8cf6ea99febfef331ff809fcb9f8db7eaa7edb703f9e8da37510eaf9e1327d",
+    "observation_payload/PLAN.json": "6d02a7817a1009a2d4f26784ea79a43825cd2840677090464e66487c21eb68d7",
+    "observation_payload/acceptance.py": "4d7fd4217aef53b0e5e7d1988be3c96f725a5b069d271e80aabcc99345ee73dc"
+  },
+  "max_author_turns": 2,
+  "max_reviewer_turns": 1,
+  "max_worker_turns": 3
+}

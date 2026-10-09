@@ -1,0 +1,5 @@
+{
+  "sha256": "92d1de6d5cda36689aa1506b03dffe8549f905e0f16e0d99fc5c89a990c578cb",
+  "static_review": "Stdlib only, no engine imports/model/network/subprocess/write/SQLite; strict exact field/type/projection checks; immutable detached canonical result; bounded regular-file read, Unix O_NONBLOCK; no code execution from inputs; output valid only after entire payload constructed; render not callback acceptance. Root reviewed before executing frozen suite.",
+  "frozen_files_unchanged": true
+}

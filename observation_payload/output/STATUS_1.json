@@ -1,0 +1,8 @@
+{
+  "attempt": 1,
+  "bytes": 6940,
+  "input_sha256": "c4f57482e6f2d65fa1a90ec3dcd644df807d9e78dc04113a6f510444e574e555",
+  "path": "observation_payload/output/observe_payload_1.py",
+  "sha256": "92d1de6d5cda36689aa1506b03dffe8549f905e0f16e0d99fc5c89a990c578cb",
+  "task_id": "genie-observe-payload-20261009"
+}

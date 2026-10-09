@@ -1,0 +1,78 @@
+{
+  "active_runner/observe_payload.py": {
+    "sha256": "92d1de6d5cda36689aa1506b03dffe8549f905e0f16e0d99fc5c89a990c578cb",
+    "size": 6940
+  },
+  "observation_payload/README_FIRST.md": {
+    "sha256": "daa8b63ff90f70b4eca0aaaad956f505c7ed366d34d8153f54237cc194621a60",
+    "size": 3837
+  },
+  "observation_payload/CONTRACT.md": {
+    "sha256": "23b27ec4e1014b2a0658964e302e173fb3a3ce130bb7ae79f72cad4518a35b6e",
+    "size": 4426
+  },
+  "observation_payload/CORRESPONDENCE.md": {
+    "sha256": "776af98707114da80d1ce60878ac3774ef2163efe8d7710bc68e66cc45450c46",
+    "size": 1690
+  },
+  "observation_payload/PRIMARY_RESEARCH.md": {
+    "sha256": "69a6ef1cf1625b94b5eef17e210c07d6f4f0d34235c3e0c363a335188ca9c212",
+    "size": 1139
+  },
+  "observation_payload/PLAN.json": {
+    "sha256": "6d02a7817a1009a2d4f26784ea79a43825cd2840677090464e66487c21eb68d7",
+    "size": 227
+  },
+  "observation_payload/INPUT_MANIFEST.json": {
+    "sha256": "df8cf6ea99febfef331ff809fcb9f8db7eaa7edb703f9e8da37510eaf9e1327d",
+    "size": 510
+  },
+  "observation_payload/PRE_DISPATCH_FREEZE.json": {
+    "sha256": "0ed9d6793784d6932d84687e25d2aca8dc46b39e7a25ef505aee534756cb32cf",
+    "size": 647
+  },
+  "observation_payload/MODEL_TURNS.json": {
+    "sha256": "bfb644da66ca1894ba4370ffe57ac88b6a47146e43f0156bf669c22e8ce568e5",
+    "size": 137
+  },
+  "observation_payload/output/observe_payload_1.py": {
+    "sha256": "92d1de6d5cda36689aa1506b03dffe8549f905e0f16e0d99fc5c89a990c578cb",
+    "size": 6940
+  },
+  "observation_payload/output/STATUS_1.json": {
+    "sha256": "30646ab02bf634bf396dcef916ee3383ab2e85293ef151e1430912d949c29f56",
+    "size": 310
+  },
+  "observation_payload/ROOT_PRE_EXECUTION_REVIEW.json": {
+    "sha256": "e2bc268210597e6476f50a6b60ca9d84646cc43739f7d13c662e0f84db31f1f6",
+    "size": 493
+  },
+  "observation_payload/CANDIDATE_REVIEW_1.md": {
+    "sha256": "a82a46646c30a46173b2e6c935527a64f0d55b3ab6086e0873fc05b68d92c69b",
+    "size": 5289
+  },
+  "observation_payload/acceptance.py": {
+    "sha256": "4d7fd4217aef53b0e5e7d1988be3c96f725a5b069d271e80aabcc99345ee73dc",
+    "size": 6072
+  },
+  "observation_payload/ACCEPTANCE_1.json": {
+    "sha256": "1c9de6e9142a009eacd1f9984a0a02acbb7f56718f6c92cc0c488a7a28b7210b",
+    "size": 3093
+  },
+  "observation_payload/supplementary_checks.py": {
+    "sha256": "171fb2ce44d1fe5811fc1c6bebfdaeb5ef707dcf620f95e4e028e91cbe03284d",
+    "size": 2335
+  },
+  "observation_payload/SUPPLEMENTARY_RESULTS.json": {
+    "sha256": "845460f47deb77ef8f6e01b58d75a43e099ad9ff518760176ad550273da7e2c6",
+    "size": 558
+  },
+  "observation_payload/PRIOR_CLOSED_UNCHANGED.json": {
+    "sha256": "b2c588be29739de6bcc2a4cbb3f8787f043b2ccdd515d96796e8f919b3a35036",
+    "size": 3574
+  },
+  "observation_payload/FINAL_RESULT.json": {
+    "sha256": "ee1b86b6add703015d5a7c6a37ba96626392abbe2078255a803f223677ff489c",
+    "size": 1530
+  }
+}

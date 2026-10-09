@@ -1,0 +1,5 @@
+# External primary cross-check — retrieved2026-10-09
+
+Python3.12 JSON documentation https://docs.python.org/3.12/library/json.html confirms object_pairs_hook supplies all object pairs, parse_constant can reject nonstandard constants, and allow_nan=False rejects nonfinite floats. ensure_ascii=False and compact sorted separators support the existing bridge's valid strict-JSON canonical UTF8 sizing. Strict tree/type validation must still reject tuples, nonstring keys and surrogates; ordinary json serialization alone is insufficient for this contract.
+
+Existing Python file/OS documentation reviewed in the preceding maintenance unit describes bounded binary reads, regular-file stat checks and Unix-only O_NONBLOCK. Reuse those scoped API choices, not a new filesystem-security claim; no general regular-file deadline/platform isolation/crash durability inferred. The source research is controller primary documentation cross-check after internal prior-experience audit, not independently administered evidential research. Candidate review/root tests must cross-check actual source. No contract/suite amendment after author dispatch.

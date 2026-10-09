@@ -1,0 +1,27 @@
+{
+  "count": 5,
+  "checks": [
+    {
+      "check": "api_evidence_subclass_rejected",
+      "passed": true
+    },
+    {
+      "check": "api_surrogate_key_rejected",
+      "passed": true
+    },
+    {
+      "check": "api_deep_recursion_normalized_reject",
+      "passed": true
+    },
+    {
+      "check": "cli_overflow_numeric_rejected",
+      "passed": true
+    },
+    {
+      "check": "cli_exact_file_byte_limit",
+      "passed": true
+    }
+  ],
+  "all_passed": true,
+  "scope": "source-review prompted finite supplementary cases; frozen39 suite unchanged"
+}

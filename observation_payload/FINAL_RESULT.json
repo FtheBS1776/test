@@ -1,0 +1,39 @@
+{
+  "scope": "NONCLAIM_TRUSTED_HOST_PAYLOAD_RENDERING",
+  "author_turns": 1,
+  "reviewer_turns": 1,
+  "max_worker_turns": 3,
+  "repairs": 0,
+  "frozen_checks": {
+    "passed": 39,
+    "total": 39
+  },
+  "supplementary_checks": {
+    "passed": 5,
+    "total": 5
+  },
+  "live_relational_probes": {
+    "wrong_input_valid_render": "callback rejects, stores unchanged",
+    "terminal_unknown_valid_render": "UNKNOWN retained, closed callback rejects, STOP/no relaunch"
+  },
+  "candidate_sha256": "92d1de6d5cda36689aa1506b03dffe8549f905e0f16e0d99fc5c89a990c578cb",
+  "review_scope": "exact unchanged candidate1 static NO_DEFECT_FOUND; root tests/adjudication",
+  "fresh_code_sink": "CONFIRMED",
+  "stop": "ALL_TASKS_COMPLETE",
+  "accepted_host_observation_rendered_and_root_verified": true,
+  "same_configured_model_host_ancestry": true,
+  "independent_execution_proof": false,
+  "rendering_grants_authority": false,
+  "prior_files_unchanged": 19,
+  "extra_user_continuation_prompts_within_unit": 0,
+  "controller_operations_manual": true,
+  "effort_latency_money_tokens_measured": false,
+  "contract_suite_unchanged": true,
+  "limits": [
+    "trusted host-selected paths and caller evidence",
+    "Unix nonblocking flag, not general IO/platform confinement",
+    "no atomic stdout publication/crash durability/rollback/currentness/authenticity",
+    "one concrete controller formatting-error path; no superiority/general reliability gain measured",
+    "no production/promotion/freeze/spending/main merge/old experiment/EXP010"
+  ]
+}

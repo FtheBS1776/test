@@ -1,0 +1,19 @@
+# Host observe payload helper — NONCLAIM
+
+Independently verify checkpoint outer SHA256, strict manifest inventory/path/hash/size and ZIP CRC before accepting state. Read CONTRACT.md, CORRESPONDENCE.md, exact candidate review, frozen and supplementary results, live probe records, adjudication and fresh status, then canonical notes. Review source before execution. Integrity does not authenticate host observations.
+
+active_runner/observe_payload.py is a small read-only formatter for the existing runner observe interface. It takes a saved original dispatch plus host evidence dict, validates shapes/types/bounds and request-token projection, and prints exactly supplied/outcome/agent/evidence. It never imports engine runtime dependencies, reads/writes ledgers, invokes models or grants invocation permission. UNKNOWN remains UNKNOWN. Syntactically valid saved records may be stale or forged: unchanged runner callback still validates actual current persisted bindings. Caller evidence remains a trusted-host assertion, not signed execution proof.
+
+From repository root, render the unit's saved accepted-observation payload:
+
+```bash
+python3.12 -B active_runner/observe_payload.py --dispatch observation_payload/trial/DISPATCH_1.json --evidence observation_payload/trial/HOST_EVIDENCE_1.json --outcome OBSERVED_ACCEPTED --agent /root/pilot_genie_author
+```
+
+This prints a historical envelope, not a new dispatch permission. The saved run is closed; do not resubmit it expecting a new observation or worker call. Render UNKNOWN by selecting --outcome UNKNOWN and omitting --agent. Expected input/shape/argument failure yields empty stdout, fixed REJECT/PAYLOAD_RENDER_ONLY JSON on stderr and exit2. Success exit0 means only rendering. Duplicate JSON keys/nonstandard constants, string evidence, mismatched task/input/attempt, unsupported or repeated flags, nonstrict JSON types and oversized canonical evidence reject. Each input file is capped64KiB, evidence canonical UTF8 capped16000 bytes. Existing engine callback contract unchanged.
+
+Actual useful use in this unit: root reviewed/tested the candidate, rendered its current author observation using the real saved dispatch and actual Work tool evidence, independently compared every payload field, then applied through unchanged callback. Correct observation recorded. A syntactically valid altered-input envelope rendered but callback rejected CALLBACK_TOKEN_BINDING with store bytes unchanged. After completion, a rendered UNKNOWN envelope remained UNKNOWN and terminal callback rejected QUEUE_TASK_BINDING; queue stayed STOP, no relaunch. Neither render is counted as independent execution evidence.
+
+Candidate1 accepted unchanged:39 frozen root checks,5 separately recorded reviewer-prompted cases and2 live relational probes. Reviewer found no defect in exact-source static scope; root tests/adjudication separate. One author andone reviewer turn,max3 worker turns,0 repairs,0 extra user continuation prompts within unit. Same model/host/ancestry; no independence or measured effort/cost/latency saving. Root manually froze inputs, invoked roles, checked bindings, ran tests, applied callback, adjudicated and persisted results.
+
+One workflow reservation/observed author call/code inbox application, fresh subprocess CONFIRMED and ALL_TASKS_COMPLETE.19 earlier closed/control/source/report files unchanged; no closed-run reset. File reads and stdout are ordinary trusted-host operations, not hostile filesystem isolation, platform-independent deadline, atomic publication, crash durability, remote authenticity or rollback assurance. A broken output channel can leave partial stdout; input-error guarantee is not atomic output publication. Scoped HOLDs remain independent. No framework/provider/install/spending/promotion/freeze/main merge/deployment/old experiment/EXP010.
