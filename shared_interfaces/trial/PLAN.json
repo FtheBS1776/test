@@ -1,0 +1,6 @@
+{
+  "task_id": "genie-shared-status-interface-20261010",
+  "goal": "Implement read-only shared status tool using existing core without a backend",
+  "input_sha256": "01eaa03d941fb4633b7505a6c8838684a60bf2d2798b3d43cd8083a6d4814426",
+  "max_attempts": 2
+}

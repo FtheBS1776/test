@@ -1,0 +1,7 @@
+{
+  "result": "ACCEPT",
+  "candidate_sha256": "362cd1314338f7d830669dfffcaac09d359fcbbf908f6f571351df7f8a9f5b96",
+  "reviewer": "/root/pilot_design_reviewer",
+  "tests": "12 focused checks; no old fixture rerun",
+  "root": "/root"
+}

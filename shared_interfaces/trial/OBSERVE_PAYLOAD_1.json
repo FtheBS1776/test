@@ -1,0 +1,19 @@
+{
+  "agent": "/root/pilot_genie_author",
+  "evidence": {
+    "returned_candidate_sha256": "362cd1314338f7d830669dfffcaac09d359fcbbf908f6f571351df7f8a9f5b96",
+    "returned_full_bindings_verified": true,
+    "scope": "same-host trusted observation",
+    "target": "/root/pilot_genie_author",
+    "tool": "collaboration.followup_task"
+  },
+  "outcome": "OBSERVED_ACCEPTED",
+  "supplied": {
+    "attempt": 1,
+    "call_id": "ea42a4c1f425077ac0b08fe329655f2709e0a78695a31f3b952ed8e9efd85b64",
+    "input_sha256": "01eaa03d941fb4633b7505a6c8838684a60bf2d2798b3d43cd8083a6d4814426",
+    "run_id": "genie-shared-status-interface-run-20261010",
+    "slot_id": "a3bbb6bda1c639d84fea068b260281915c17e5898130b2bbde22733fbb39cf80",
+    "task_id": "genie-shared-status-interface-20261010"
+  }
+}

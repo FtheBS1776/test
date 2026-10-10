@@ -1,0 +1,7 @@
+# Shared-core interfaces — bounded NONCLAIM
+
+Start here. Independently verify SOURCE_MANIFEST.json SHA256/size/Git blob hashes and the published commit/tree before accepting state. Manifest checks internal consistency, not authenticity. Read ROADMAP.md, CONTRACT.md, PRIOR_CORRESPONDENCE.md, exact SOURCE_REVIEW.md and ROOT_ADJUDICATION.md before using status_tool.py. Historical INPUT_MANIFEST binds ROADMAP.input.md original content under its then-current ROADMAP.md path; amended roadmap is later progress, not a retroactively changed task input. Candidate/final source bytes match.
+
+One Genie core with standalone/plugin interfaces is approved; hosting deferred. Only get_run_status callable surface implemented here; no MCP transport/installed plugin/backend/authentication/model provider. User-supplied arguments choose trusted-host alias only, never filesystem paths. Read USAGE.md for scope and tested example. Original prior sources/stores preserved, no old tests/fixtures/experiments rerun. Fresh trial status confirms accepted code delivery, not plugin or whole-service acceptance. Root/authenticity/custody/rollback/power-loss/hostile-isolation HOLDs remain; Pass186 controlling, later NONCLAIM. No promotion/freeze/spending/main merge/deploy/EXP010.
+
+Canonical Library versions last observed11, old upload timeout still uncertain; no retry or alternate Library write. Local newer canonical intent preserved; ROADMAP.md is a Git addendum, not a canonical replacement receipt. Root-authored docs/reviewer/model roles share host/ancestry, not independent proof.

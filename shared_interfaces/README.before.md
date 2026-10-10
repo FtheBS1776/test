@@ -56,7 +56,3 @@ Root/bootstrap/custody, whole-store rollback, physical power-loss, remote authen
 ## Immediate continuation
 
 See the [host continuation note](active_runner/HOST_CONTINUATION.md) for immediate task-to-task progression, scheduled activation and execution-host lifetime. The current active host can advance permitted runner actions without an hourly wait or another continuation prompt.
-
-## Shared core and interfaces
-
-The approved [shared-core roadmap](shared_interfaces/ROADMAP.md) retains one Genie engine for eventual standalone and plugin interfaces, with hosting deferred. The first [read-only callable status component](shared_interfaces/USAGE.md) reuses existing diagnostics; it is not an installed plugin or deployed backend. Start with its [verification notes](shared_interfaces/README_FIRST.md).

@@ -1,0 +1,6 @@
+{
+  "run_id": "genie-shared-status-interface-run-20261010",
+  "max_tasks": 1,
+  "max_model_calls": 2,
+  "effect_scope": "owned-local-report-inbox"
+}
