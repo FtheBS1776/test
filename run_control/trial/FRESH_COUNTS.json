@@ -1,0 +1,27 @@
+{
+  "run_control/trial/queue.sqlite": {
+    "run": 1,
+    "entries": 2,
+    "reservations": 3
+  },
+  "run_control/trial/work/b90cd3339e9ecb565f55d0419f273a5f396ec340411cbc4ff9759ef4695b44f1/ca24898a23bf9e72e1072f1a7518253615b0661c28ec82ca130f178af6ea3b87/inbox.sqlite": {
+    "reports": 1,
+    "applications": 1
+  },
+  "run_control/trial/work/b90cd3339e9ecb565f55d0419f273a5f396ec340411cbc4ff9759ef4695b44f1/ca24898a23bf9e72e1072f1a7518253615b0661c28ec82ca130f178af6ea3b87/task.sqlite": {
+    "task": 1,
+    "attempts": 1,
+    "host_calls": 1,
+    "host_observations": 1
+  },
+  "run_control/trial/work/b90cd3339e9ecb565f55d0419f273a5f396ec340411cbc4ff9759ef4695b44f1/2cbfe12cec20d37ce6a0aef397cdd1ea2bbcf13f2b2dc025744988047ea78b17/inbox.sqlite": {
+    "reports": 1,
+    "applications": 1
+  },
+  "run_control/trial/work/b90cd3339e9ecb565f55d0419f273a5f396ec340411cbc4ff9759ef4695b44f1/2cbfe12cec20d37ce6a0aef397cdd1ea2bbcf13f2b2dc025744988047ea78b17/task.sqlite": {
+    "task": 1,
+    "attempts": 2,
+    "host_calls": 2,
+    "host_observations": 2
+  }
+}

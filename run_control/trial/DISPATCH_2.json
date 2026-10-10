@@ -1,0 +1,18 @@
+{
+  "action": "INVOKE_WORKER",
+  "token": {
+    "run_id": "genie-host-control-run-20261010",
+    "task_id": "genie-host-control-guide-20261010",
+    "input_sha256": "82278c61a7ae880e2da5be7ef6047f363f5619c93c407106aae5087a85bacd1e",
+    "attempt": 1,
+    "slot_id": "83586549989b7869d0d373b9ebaae7643cb92fa7249fd3e6f5ea78128801c782",
+    "call_id": "cbba2509b2d7037f445bf1b9e23232da11fe6f0364a52216d0ab4f209e53f3b7"
+  },
+  "request": {
+    "task_id": "genie-host-control-guide-20261010",
+    "attempt": 1,
+    "input_sha256": "82278c61a7ae880e2da5be7ef6047f363f5619c93c407106aae5087a85bacd1e",
+    "goal": "Write useful operator guide for trusted serialhost control and bounded active continuation",
+    "feedback": null
+  }
+}

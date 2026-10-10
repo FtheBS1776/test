@@ -1,0 +1,8 @@
+{
+  "action": "TASK_COMPLETE",
+  "task_id": "genie-host-control-code-20261010",
+  "result": {
+    "status": "COMPLETE",
+    "fresh_destination": "CONFIRMED"
+  }
+}

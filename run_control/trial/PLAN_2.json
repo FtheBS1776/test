@@ -1,0 +1,6 @@
+{
+  "task_id": "genie-host-control-guide-20261010",
+  "goal": "Write useful operator guide for trusted serialhost control and bounded active continuation",
+  "input_sha256": "82278c61a7ae880e2da5be7ef6047f363f5619c93c407106aae5087a85bacd1e",
+  "max_attempts": 2
+}

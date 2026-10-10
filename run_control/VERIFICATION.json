@@ -1,0 +1,26 @@
+{
+  "source_sha256": "ecc71b088e5a7e3c0bde33b53a7e850dd769daee5b301f2f116edf956599f2d4",
+  "source_bytes": 8267,
+  "guide_sha256": "5dae5e2742bfa68be965578a5375394d183fb64cb0001dc66a97154d927cad30",
+  "guide_bytes": 8801,
+  "root_targeted_checks": 13,
+  "safe_metadata_example": true,
+  "relative_links": 5,
+  "actual_author_calls": 3,
+  "tasks_complete": 2,
+  "code_repairs": 0,
+  "guide_repairs": 1,
+  "reservations": 3,
+  "observations": 3,
+  "applications": 2,
+  "fresh_destinations": [
+    "CONFIRMED",
+    "CONFIRMED"
+  ],
+  "stop": "ALL_TASKS_COMPLETE",
+  "prior_stores_unchanged": 82,
+  "core_pins_unchanged": 12,
+  "worker_invocation_performed_by": "EXTERNAL_ACTIVE_WORK_HOST_NOT_PYTHON_FACADE",
+  "background_execution": false,
+  "independent_review": false
+}

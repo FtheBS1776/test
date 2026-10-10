@@ -63,6 +63,3 @@ The approved [shared-core roadmap](shared_interfaces/ROADMAP.md) retains one Gen
 
 
 Local operator commands are available without writing a Python snippet: [CLI read-first guide](local_cli/README_FIRST.md) and [current roadmap continuation](local_cli/ROADMAP.md). The CLI reads status or accepted results through the same reviewed core; no model dispatch, plugin/server installation or backend hosting is included.
-
-
-Trusted active hosts can now advance existing bounded runs through a separate mutating [control interface and operator guide](run_control/OPERATOR_GUIDE.md). The [current roadmap](run_control/ROADMAP.md) records a finite two-task batch, fresh results and STOP. The external host still performs worker calls and review; this interface installs no background loop or backend.

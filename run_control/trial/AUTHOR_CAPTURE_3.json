@@ -1,0 +1,14 @@
+{
+  "actual_agent": "/root/pilot_genie_author",
+  "source_sha256": "5dae5e2742bfa68be965578a5375394d183fb64cb0001dc66a97154d927cad30",
+  "source_bytes": 8801,
+  "returned_bindings": {
+    "run_id": "genie-host-control-run-20261010",
+    "task_id": "genie-host-control-guide-20261010",
+    "input_sha256": "82278c61a7ae880e2da5be7ef6047f363f5619c93c407106aae5087a85bacd1e",
+    "attempt": 2,
+    "slot_id": "8bd0d253df748a2aadb9c2f3de211b952bcbf31e23a896bb7889531dab86cf7c",
+    "call_id": "294af7f99b39319f0afd670d211caff2c109b28d40e168a23edd39f2d2b167ad"
+  },
+  "observation_scope": "TRUSTED_SAME_HOST_ACTUAL_REPAIR_RETURN_NOT_RETRY_OR_INDEPENDENT_PROOF"
+}

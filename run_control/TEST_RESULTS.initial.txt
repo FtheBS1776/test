@@ -1,0 +1,65 @@
+test_commit_then_exception (run_control.test_control.Tests.test_commit_then_exception) ... ERROR
+test_core_actions_verbatim_once (run_control.test_control.Tests.test_core_actions_verbatim_once) ... FAIL
+test_fresh_then_reconcile (run_control.test_control.Tests.test_fresh_then_reconcile) ... ok
+test_invalid_arguments_before_core (run_control.test_control.Tests.test_invalid_arguments_before_core) ... ok
+test_malformed_poststep (run_control.test_control.Tests.test_malformed_poststep) ... FAIL
+test_metadata_mutating_detached (run_control.test_control.Tests.test_metadata_mutating_detached) ... ok
+test_readonly_catalog_unchanged (run_control.test_control.Tests.test_readonly_catalog_unchanged) ... ok
+test_registry_detached (run_control.test_control.Tests.test_registry_detached) ... ok
+test_source_mismatch_before_step (run_control.test_control.Tests.test_source_mismatch_before_step) ... ok
+test_stopped_run_no_dispatch (run_control.test_control.Tests.test_stopped_run_no_dispatch) ... ok
+test_unknown_alias_before_core (run_control.test_control.Tests.test_unknown_alias_before_core) ... ok
+test_unsupported_tool (run_control.test_control.Tests.test_unsupported_tool) ... ok
+test_wrong_run_no_new_invocation (run_control.test_control.Tests.test_wrong_run_no_new_invocation) ... ERROR
+
+======================================================================
+ERROR: test_commit_then_exception (run_control.test_control.Tests.test_commit_then_exception)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/b9cf884acbd9/run_control/test_control.py", line 36, in test_commit_then_exception
+    self.assertEqual(out["action"],"UNKNOWN");self.assertTrue(out["preserve"]);self.assertFalse(out["allow_new_invocation"]);self.assertNotIn("secret",json.dumps(out))
+                     ~~~^^^^^^^^^^
+KeyError: 'action'
+
+======================================================================
+ERROR: test_wrong_run_no_new_invocation (run_control.test_control.Tests.test_wrong_run_no_new_invocation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/b9cf884acbd9/run_control/test_control.py", line 56, in test_wrong_run_no_new_invocation
+    h=m.GenieRunController({"a":{**self.registry["a"],"run_id":"other"}});out=h.call("advance_run",{"run_name":"a"});self.assertEqual(out["action"],"UNKNOWN");self.assertFalse(out["allow_new_invocation"]);self.assertEqual(list(self.work.iterdir()),[])
+                                                                                                                                      ~~~^^^^^^^^^^
+KeyError: 'action'
+
+======================================================================
+FAIL: test_core_actions_verbatim_once (run_control.test_control.Tests.test_core_actions_verbatim_once)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/b9cf884acbd9/run_control/test_control.py", line 52, in test_core_actions_verbatim_once
+    self.assertEqual(out,value);self.assertEqual(len(count),1)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'status': 'REJECT', 'reason': 'CORE_LOAD_OR_CONTEXT_FAILURE'} != {'action': 'STOP', 'reason': 'fixed', 'allow_new_invocation': False}
+- {'reason': 'CORE_LOAD_OR_CONTEXT_FAILURE', 'status': 'REJECT'}
++ {'action': 'STOP', 'allow_new_invocation': False, 'reason': 'fixed'}
+
+======================================================================
+FAIL: test_malformed_poststep (run_control.test_control.Tests.test_malformed_poststep)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/b9cf884acbd9/run_control/test_control.py", line 45, in test_malformed_poststep
+    self.assertEqual(count,[1]);self.assertEqual(out["action"],"UNKNOWN");self.assertFalse(out["allow_new_invocation"])
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [] != [1]
+
+Second list contains 1 additional elements.
+First extra element 0:
+1
+
+- []
++ [1]
+?  +
+
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.188s
+
+FAILED (failures=2, errors=2)

@@ -1,0 +1,1 @@
+Actual reviewer pilot_design_reviewer ACCEPT finalguide SHA5dae5e2742bfa68be965578a5375394d183fb64cb0001dc66a97154d927cad30,8801bytes. Archivedoriginal/exactdiff verified: only requested sentence changed, continuation conditioned on activehost actionsequence, callable installsno loop. No tests/writes. Root capture actual samehost/context review, not independentproof.

@@ -1,0 +1,59 @@
+{
+  "background_execution": false,
+  "completion_claim": "Inspect each fresh_sink; queue COMPLETE is historical only",
+  "evidence_scope": "TRUSTED_OWNED_LOCAL_OBSERVATION",
+  "queue_history": {
+    "max_model_calls": 4,
+    "reserved_model_calls": 3,
+    "run_id": "genie-host-control-run-20261010",
+    "scope": "HISTORICAL_QUEUE_STATE_NOT_CURRENT_DESTINATION_PROOF",
+    "state": "STOPPED",
+    "stop_reason": "ALL_TASKS_COMPLETE"
+  },
+  "snapshot_scope": "Separate read transactions; no cross-store atomic snapshot",
+  "status": "PASS",
+  "tasks": [
+    {
+      "fresh_sink": {
+        "scope": "FRESH_EXACT_DESTINATION_READBACK",
+        "status": "CONFIRMED"
+      },
+      "journal": {
+        "agent": "/root/pilot_genie_author",
+        "call_id": "b6b0fc40a0b7cc10263a28c11302d27bee66f82ac14c5731838218f252ceae19",
+        "host_outcome": "OBSERVED_ACCEPTED",
+        "independent_proof": false,
+        "observation_count": 1,
+        "status": "OBSERVED"
+      },
+      "queue_entry_history": "COMPLETE",
+      "task_id": "genie-host-control-code-20261010",
+      "workflow": {
+        "attempt": 1,
+        "state": "DELIVERED",
+        "status": "OBSERVED"
+      }
+    },
+    {
+      "fresh_sink": {
+        "scope": "FRESH_EXACT_DESTINATION_READBACK",
+        "status": "CONFIRMED"
+      },
+      "journal": {
+        "agent": "/root/pilot_genie_author",
+        "call_id": "294af7f99b39319f0afd670d211caff2c109b28d40e168a23edd39f2d2b167ad",
+        "host_outcome": "OBSERVED_ACCEPTED",
+        "independent_proof": false,
+        "observation_count": 1,
+        "status": "OBSERVED"
+      },
+      "queue_entry_history": "COMPLETE",
+      "task_id": "genie-host-control-guide-20261010",
+      "workflow": {
+        "attempt": 2,
+        "state": "DELIVERED",
+        "status": "OBSERVED"
+      }
+    }
+  ]
+}

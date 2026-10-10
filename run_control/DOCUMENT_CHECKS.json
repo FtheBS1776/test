@@ -1,0 +1,36 @@
+{
+  "safe_metadata_example_passed": true,
+  "progression_not_called_by_example": true,
+  "exact_one_sentence_repair": true,
+  "relative_links_checked": [
+    "../local_cli/README_FIRST.md",
+    "../shared_interfaces/status_tool.py",
+    "../worker_substitution/QUICKSTART.md",
+    "../active_runner/observe_payload.py",
+    "../active_runner/run_status.py"
+  ],
+  "example_metadata": [
+    {
+      "annotations": {
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": false,
+        "readOnlyHint": false
+      },
+      "description": "Mutate an existing trusted local run by invoking its runner step once. May provision, reserve, deliver or persist STOP. Serial host only; not idempotent. Does not invoke a worker, review candidates, retry, reset budgets or grant remote authority. Post-call UNKNOWN requires reconciliation of original state.",
+      "inputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "run_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "run_name"
+        ],
+        "type": "object"
+      },
+      "name": "advance_run"
+    }
+  ]
+}

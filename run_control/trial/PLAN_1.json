@@ -1,0 +1,6 @@
+{
+  "task_id": "genie-host-control-code-20261010",
+  "goal": "Implement trusted serialhost advance interface without changing core authority",
+  "input_sha256": "5ad1ba92c2f9e553d5b4f74e7f2410b71b71a2fb449abea641a05b2cdac1b2a6",
+  "max_attempts": 2
+}
