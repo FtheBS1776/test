@@ -1,0 +1,8 @@
+{
+  "task_id": "genie-readonly-function-adapter-20261010",
+  "input_sha256": "1d2f9c07be415524aafb19ed74e33b79580d736e354a54853bbed615c7a1d24e",
+  "author_mode": "DIRECT_HOST_NOT_GENIE_DISPATCH",
+  "max_author_turns": 2,
+  "max_reviewer_turns": 2,
+  "goal": "Format and route only accepted readonly core tools for normalized function-call consumers"
+}

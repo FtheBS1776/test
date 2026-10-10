@@ -1,0 +1,20 @@
+{
+  "core_guide_pins": {
+    "count": 12,
+    "unchanged": true
+  },
+  "frozen_inputs": {
+    "count": 9,
+    "unchanged": true
+  },
+  "new_component_tests": 16,
+  "new_model_calls": 0,
+  "new_task_reservations": 0,
+  "prior_stores": {
+    "count": 100,
+    "unchanged": true
+  },
+  "readonly_comparisons": 4,
+  "source_repairs": 0,
+  "status": "PASS"
+}

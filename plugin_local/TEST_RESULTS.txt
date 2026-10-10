@@ -1,0 +1,21 @@
+test_arguments_strict_json_before_call (plugin_local.test_adapter.Tests.test_arguments_strict_json_before_call) ... ok
+test_bad_envelope_no_fabricated_output (plugin_local.test_adapter.Tests.test_bad_envelope_no_fabricated_output) ... ok
+test_confirmed_data_and_notices_preserved (plugin_local.test_adapter.Tests.test_confirmed_data_and_notices_preserved) ... ok
+test_core_exception_sanitized_no_retry (plugin_local.test_adapter.Tests.test_core_exception_sanitized_no_retry) ... ok
+test_definitions_detached (plugin_local.test_adapter.Tests.test_definitions_detached) ... ok
+test_definitions_exact_and_strict (plugin_local.test_adapter.Tests.test_definitions_exact_and_strict) ... ok
+test_diagnostic_pass_not_promoted (plugin_local.test_adapter.Tests.test_diagnostic_pass_not_promoted) ... ok
+test_exact_correlation_detached_before_delegation (plugin_local.test_adapter.Tests.test_exact_correlation_detached_before_delegation) ... ok
+test_invalid_output_no_coercion_or_fragments (plugin_local.test_adapter.Tests.test_invalid_output_no_coercion_or_fragments) ... ok
+test_invalid_registry_and_pin (plugin_local.test_adapter.Tests.test_invalid_registry_and_pin) ... ok
+test_only_readonly_names_no_method_lookup (plugin_local.test_adapter.Tests.test_only_readonly_names_no_method_lookup) ... ok
+test_output_snapshot_preserves_dictionary_values (plugin_local.test_adapter.Tests.test_output_snapshot_preserves_dictionary_values) ... ok
+test_real_facade_rejects_path_arguments_without_store_lookup (plugin_local.test_adapter.Tests.test_real_facade_rejects_path_arguments_without_store_lookup) ... ok
+test_registry_detached (plugin_local.test_adapter.Tests.test_registry_detached) ... ok
+test_unavailable_dictionaries_unchanged (plugin_local.test_adapter.Tests.test_unavailable_dictionaries_unchanged) ... ok
+test_utf8_argument_byte_bound (plugin_local.test_adapter.Tests.test_utf8_argument_byte_bound) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.123s
+
+OK

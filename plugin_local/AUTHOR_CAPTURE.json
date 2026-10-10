@@ -1,0 +1,11 @@
+{
+  "author": "/root/pilot_genie_author",
+  "mode": "DIRECT_HOST_NOT_GENIE_DISPATCH",
+  "task_id": "genie-readonly-function-adapter-20261010",
+  "input_manifest_sha256": "1d2f9c07be415524aafb19ed74e33b79580d736e354a54853bbed615c7a1d24e",
+  "candidate_sha256": "9627bc0967e4b6115f405671be8a2c60498101e276d96062d55572537f2769d2",
+  "bytes": 5424,
+  "author_turns": 1,
+  "source_repairs": 0,
+  "workflow_reservation": null
+}

@@ -1,0 +1,53 @@
+[
+  {
+    "arguments": {
+      "run": "actual"
+    },
+    "equal_to_direct_facade": true,
+    "name": "get_run_status",
+    "reply": {
+      "call_id": "readonly-0",
+      "output": "{\"reason\":\"INVALID_ARGUMENTS\",\"status\":\"REJECT\"}",
+      "type": "function_call_output"
+    }
+  },
+  {
+    "arguments": {
+      "run": "actual",
+      "task_id": "genie-work-host-entry-20261010"
+    },
+    "equal_to_direct_facade": true,
+    "name": "get_task_result",
+    "reply": {
+      "call_id": "readonly-1",
+      "output": "{\"reason\":\"INVALID_ARGUMENTS\",\"status\":\"REJECT\"}",
+      "type": "function_call_output"
+    }
+  },
+  {
+    "arguments": {
+      "run": "actual",
+      "task_id": "genie-plugin-routing-inventory-20261010"
+    },
+    "equal_to_direct_facade": true,
+    "name": "get_task_result",
+    "reply": {
+      "call_id": "readonly-2",
+      "output": "{\"reason\":\"INVALID_ARGUMENTS\",\"status\":\"REJECT\"}",
+      "type": "function_call_output"
+    }
+  },
+  {
+    "arguments": {
+      "run": "pending",
+      "task_id": "genie-session-driver-guide-20261010"
+    },
+    "equal_to_direct_facade": true,
+    "name": "get_task_result",
+    "reply": {
+      "call_id": "readonly-3",
+      "output": "{\"reason\":\"INVALID_ARGUMENTS\",\"status\":\"REJECT\"}",
+      "type": "function_call_output"
+    }
+  }
+]

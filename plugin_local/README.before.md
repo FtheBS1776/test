@@ -79,5 +79,3 @@ The trusted host can also [record one worker observation, submission or root rev
 ### Current-host return path
 
 [Host entry checkpoint](host_return/README_FIRST.md), [host usage](host_return/USAGE.md), [plugin surface inventory](host_return/PLUGIN_ROUTING.json), and [roadmap continuation](host_return/ROADMAP.md). A fresh two-task interactive run completed both exact resultsCONFIRMED and STOPALLTASKSCOMPLETE, with actual supported author returns and separate reviews/rootdecisions. The root still bridges model tools; short ASCII transport only, no always-on or installed plugin claim. Earlier pending guide remainsUNKNOWN and untouched. New entry has9focusedchecks and explicit UNKNOWN exit3; authority/HOLD boundaries unchanged.
-
-Local read-only function adapter (NONCLAIM): [entry](plugin_local/README_FIRST.md), [usage](plugin_local/USAGE.md), [roadmap addendum](plugin_local/ROADMAP.md). No installed plugin or model API dispatch claim.
