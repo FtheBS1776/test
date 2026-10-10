@@ -1,0 +1,8 @@
+test_crossed_token_rejected_by_core_no_new_effect (run_events.test_events.Tests.test_crossed_token_rejected_by_core_no_new_effect) ... ok
+test_postcommit_exception (run_events.test_events.Tests.test_postcommit_exception) ... ok
+test_unexpected_results (run_events.test_events.Tests.test_unexpected_results) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.119s
+
+OK

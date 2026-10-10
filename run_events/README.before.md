@@ -66,6 +66,3 @@ Local operator commands are available without writing a Python snippet: [CLI rea
 
 
 Trusted active hosts can now advance existing bounded runs through a separate mutating [control interface and operator guide](run_control/OPERATOR_GUIDE.md). The [current roadmap](run_control/ROADMAP.md) records a finite two-task batch, fresh results and STOP. The external host still performs worker calls and review; this interface installs no background loop or backend.
-
-
-The trusted host can also [record one worker observation, submission or root review](run_events/USAGE.md) through the unchanged callback core. [Event-interface roadmap notes](run_events/ROADMAP.md) preserve the current scope: callback acknowledgement is not model proof or automatic review, and no host loop or backend is installed.

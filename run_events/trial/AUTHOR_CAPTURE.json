@@ -1,0 +1,14 @@
+{
+  "actual_agent": "/root/pilot_genie_author",
+  "source_sha256": "913b4d89bc5bbec0c37141f7914fd111a342d2fced80d25e404d2d25d704f760",
+  "source_bytes": 8880,
+  "returned_bindings": {
+    "run_id": "genie-host-events-run-20261010",
+    "task_id": "genie-host-events-20261010",
+    "input_sha256": "b60a8169b2601293bca984d2e8ff0833c03e3a4483cd911dae84caf2d5f7f813",
+    "attempt": 1,
+    "slot_id": "00b78af45774b042ab0c6b5d020971381eebb63e1c847c45e3fb1dcd9b155f57",
+    "call_id": "9efcb887b1ba4306186d6fa3c7d694fd95fa700a054688d6e00fbba62dd24458"
+  },
+  "scope": "TRUSTED_SAME_HOST_ACTUAL_COLLABORATION_RETURN_NOT_AUTHENTICATED_PROVENANCE"
+}

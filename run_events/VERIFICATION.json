@@ -1,0 +1,24 @@
+{
+  "source_sha256": "913b4d89bc5bbec0c37141f7914fd111a342d2fced80d25e404d2d25d704f760",
+  "source_bytes": 8880,
+  "maintained_exact_match": true,
+  "distinct_checks_passed": 15,
+  "initial_checks_passed": 12,
+  "corrected_affected_checks_passed": 3,
+  "candidate_repairs": 0,
+  "actual_author_calls": 1,
+  "reservations": 1,
+  "observations": 1,
+  "applications": 1,
+  "actual_events_via_accepted_facade": [
+    "observe",
+    "submit",
+    "review"
+  ],
+  "fresh_sink": "CONFIRMED",
+  "stop": "ALL_TASKS_COMPLETE",
+  "prior_stores_unchanged": 87,
+  "core_pins_unchanged": 12,
+  "background_execution": false,
+  "independent_review": false
+}

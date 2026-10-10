@@ -1,0 +1,17 @@
+{
+  "run_events/trial/queue.sqlite": {
+    "run": 1,
+    "entries": 1,
+    "reservations": 1
+  },
+  "run_events/trial/work/95e83a045f68a2383e86f2f3f1a962828fe21e7639d6450effeefb1dbe0670d6/37a52983a60135e92d56ce605cbfea366531526e1d2184c68f488a7998aab739/inbox.sqlite": {
+    "reports": 1,
+    "applications": 1
+  },
+  "run_events/trial/work/95e83a045f68a2383e86f2f3f1a962828fe21e7639d6450effeefb1dbe0670d6/37a52983a60135e92d56ce605cbfea366531526e1d2184c68f488a7998aab739/task.sqlite": {
+    "task": 1,
+    "attempts": 1,
+    "host_calls": 1,
+    "host_observations": 1
+  }
+}

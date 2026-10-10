@@ -1,0 +1,6 @@
+{
+  "action": "STOP",
+  "reason": "ALL_TASKS_COMPLETE",
+  "run_id": "genie-host-events-run-20261010",
+  "background_execution": false
+}

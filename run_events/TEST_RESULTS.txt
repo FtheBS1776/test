@@ -1,0 +1,47 @@
+test_alias_and_unsupported (run_events.test_events.Tests.test_alias_and_unsupported) ... ok
+test_crossed_token_rejected_by_core_no_new_effect (run_events.test_events.Tests.test_crossed_token_rejected_by_core_no_new_effect) ... ERROR
+test_detached_payload_and_once (run_events.test_events.Tests.test_detached_payload_and_once) ... ok
+test_exact_top_fields (run_events.test_events.Tests.test_exact_top_fields) ... ok
+test_invalid_json_data (run_events.test_events.Tests.test_invalid_json_data) ... ok
+test_metadata_separate (run_events.test_events.Tests.test_metadata_separate) ... ok
+test_observation_schema (run_events.test_events.Tests.test_observation_schema) ... ok
+test_payload_bounds (run_events.test_events.Tests.test_payload_bounds) ... ok
+test_postcommit_exception (run_events.test_events.Tests.test_postcommit_exception) ... ERROR
+test_real_new_task_lifecycle (run_events.test_events.Tests.test_real_new_task_lifecycle) ... ok
+test_review_schema (run_events.test_events.Tests.test_review_schema) ... ok
+test_source_failure_pre_callback (run_events.test_events.Tests.test_source_failure_pre_callback) ... ok
+test_token_exact_types_and_context (run_events.test_events.Tests.test_token_exact_types_and_context) ... ok
+test_unexpected_results (run_events.test_events.Tests.test_unexpected_results) ... ERROR
+test_utf8_exact_bounds (run_events.test_events.Tests.test_utf8_exact_bounds) ... ok
+
+======================================================================
+ERROR: test_crossed_token_rejected_by_core_no_new_effect (run_events.test_events.Tests.test_crossed_token_rejected_by_core_no_new_effect)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/b9cf884acbd9/run_events/test_events.py", line 72, in test_crossed_token_rejected_by_core_no_new_effect
+    args=self.args();args["supplied"]["call_id"]="c"*64;out=self.invoke(args);self.assertEqual(out["action"],"UNKNOWN");self.assertFalse(out["allow_new_invocation"])
+                                                                                               ~~~^^^^^^^^^^
+KeyError: 'action'
+
+======================================================================
+ERROR: test_postcommit_exception (run_events.test_events.Tests.test_postcommit_exception)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/b9cf884acbd9/run_events/test_events.py", line 54, in test_postcommit_exception
+    self.assertEqual(out["action"],"UNKNOWN");self.assertTrue(out["preserve"]);self.assertFalse(out["allow_new_invocation"]);self.assertNotIn("secret",json.dumps(out))
+                     ~~~^^^^^^^^^^
+KeyError: 'action'
+
+======================================================================
+ERROR: test_unexpected_results (run_events.test_events.Tests.test_unexpected_results)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/b9cf884acbd9/run_events/test_events.py", line 61, in test_unexpected_results
+    self.assertEqual(out["action"],"UNKNOWN");self.assertFalse(out["allow_new_invocation"])
+                     ~~~^^^^^^^^^^
+KeyError: 'action'
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.525s
+
+FAILED (errors=3)

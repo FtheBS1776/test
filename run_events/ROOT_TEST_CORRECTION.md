@@ -1,0 +1,1 @@
+Initial15distinctchecks:12PASS,3harnesserrors because root expected UNKNOWN under action whereas candidate correctlyuses statusUNKNOWN, compatible with eventAPPLIED/REJECT responsefamily and contract. Corrected only3assertions, no source/worker/candidate repair. Originallog preserved. Reran onlyaffected3checks; passed12notrerun.

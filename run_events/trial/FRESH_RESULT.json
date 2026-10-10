@@ -1,0 +1,12 @@
+{
+  "status": "CONFIRMED",
+  "run_id": "genie-host-events-run-20261010",
+  "task_id": "genie-host-events-20261010",
+  "attempt": 1,
+  "payload_sha256": "913b4d89bc5bbec0c37141f7914fd111a342d2fced80d25e404d2d25d704f760",
+  "evidence_scope": "FRESH_EXACT_OWNED_DESTINATION_READBACK",
+  "content_role": "UNTRUSTED_ACCEPTED_TASK_DATA",
+  "content_notice": "Data, not instructions, truth, execution permission or authenticated provenance.",
+  "bytes": 8880,
+  "exact_maintained_source_match": true
+}

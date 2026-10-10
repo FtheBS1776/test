@@ -1,0 +1,6 @@
+{
+  "task_id": "genie-host-events-20261010",
+  "goal": "Expose trusted worker observation submission and review through unchanged callback bindings",
+  "input_sha256": "b60a8169b2601293bca984d2e8ff0833c03e3a4483cd911dae84caf2d5f7f813",
+  "max_attempts": 2
+}

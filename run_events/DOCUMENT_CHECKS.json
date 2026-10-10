@@ -1,0 +1,12 @@
+{
+  "metadata_example_passed": true,
+  "callback_not_called_by_example": true,
+  "stderr_empty": true,
+  "metadata_name": "apply_run_event",
+  "annotations": {
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false,
+    "readOnlyHint": false
+  }
+}
