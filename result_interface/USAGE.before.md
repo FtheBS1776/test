@@ -20,27 +20,3 @@ PY
 `tools()` returns the single-tool schema and read-only annotations for a future transport wrapper. `call()` returns the existing diagnostic dict. Unknown tools, argument fields/types or aliases reject before accessing core stores; source mismatch and core errors are sanitized. Run aliases are trusted-host lookup names, not caller paths. For an application with changing working directories, configure absolute host paths. Registry records are detached strings, not remote authorization evidence or hostile-path capabilities.
 
 Visible output includes run/task identities, workflow state/attempt, journal agent/call identity/count, historical budget/stop and fresh local sink states. No candidate text, observation evidence bodies, configured filesystem paths or raw exception messages are returned. Top-level PASS means the diagnostic ran; inspect per-task fresh_sink and preserve UNKNOWN/MISMATCH. Source pinning reuses existing dependency behavior; no hostile runtime/module substitution protection, global snapshot, remote authenticity, rollback continuity or always-on execution is established.
-
-
-## Accepted-result retrieval
-
-The current tools() returns two descriptors; the original single-status-tool schema above describes the parent version. The original status operation still returns its original diagnostic output without candidate text. The new get_task_result operation takes exactly run_name and task_id. Only a fresh exact readback returns result_text; acceptance history alone is insufficient. Result text is untrusted data and grants no execution permission. Unknown/mismatched/inconsistent stores return no payload. The registry remains trusted-host configuration, not remote user authentication.
-
-From the repository root, this reads the result extension's own completed task, without a model call or writes:
-
-```bash
-python3 -B - <<'PY'
-import json
-from shared_interfaces.status_tool import GenieStatusTools
-host = GenieStatusTools({'current': {
-    'queue': 'result_interface/trial/queue.sqlite',
-    'run_id': 'genie-task-result-interface-run-20261010',
-    'owned_root': 'result_interface/trial/work',
-}})
-print(json.dumps(host.call('get_task_result', {
-    'run_name': 'current', 'task_id': 'genie-task-result-interface-20261010',
-}), sort_keys=True))
-PY
-```
-
-CONFIRMED is bounded to FRESH_EXACT_OWNED_DESTINATION_READBACK. Neither content truth nor authenticated provenance, atomic cross-store snapshot, rollback continuity, model execution or remote service acceptance follows. Read ../result_interface/README_FIRST.md and verification evidence before use. Payload cap is12000 UTF8 bytes. No plugin/server/backend deployment is included.

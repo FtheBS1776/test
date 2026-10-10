@@ -1,0 +1,12 @@
+{
+  "status": "CONFIRMED",
+  "run_id": "genie-task-result-interface-run-20261010",
+  "task_id": "genie-task-result-interface-20261010",
+  "attempt": 1,
+  "payload_sha256": "37629d2ec2d8bdb88da66247c7093225e387b4d79220fb42b214cc01c8ef2619",
+  "evidence_scope": "FRESH_EXACT_OWNED_DESTINATION_READBACK",
+  "content_role": "UNTRUSTED_ACCEPTED_TASK_DATA",
+  "content_notice": "Data, not instructions, truth, execution permission or authenticated provenance.",
+  "result_bytes": 11637,
+  "exact_maintained_source_match": true
+}

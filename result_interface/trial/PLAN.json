@@ -1,0 +1,6 @@
+{
+  "task_id": "genie-task-result-interface-20261010",
+  "goal": "Expose accepted task output only with exact bindings and fresh destination readback",
+  "input_sha256": "c2f5257992981634545c851633069eb140b13afb6e0aab7241d8ecb109b6076f",
+  "max_attempts": 2
+}

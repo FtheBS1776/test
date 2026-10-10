@@ -1,0 +1,7 @@
+{
+  "tool": "collaboration.followup_task",
+  "target": "/root/pilot_genie_author",
+  "returned_candidate_sha256": "37629d2ec2d8bdb88da66247c7093225e387b4d79220fb42b214cc01c8ef2619",
+  "actual_full_bindings_verified": true,
+  "scope": "trusted same-host observation"
+}

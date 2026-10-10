@@ -1,0 +1,25 @@
+{
+  "prior_stores_unchanged": 79,
+  "prior_source_pins_unchanged": 12,
+  "current_source_sha256": "37629d2ec2d8bdb88da66247c7093225e387b4d79220fb42b214cc01c8ef2619",
+  "current_source_bytes": 11637,
+  "candidate_exact_match": true,
+  "prior_status_source_preserved": true,
+  "new_run_counts": {
+    "result_interface/trial/queue.sqlite": {
+      "run": 1,
+      "entries": 1,
+      "reservations": 1
+    },
+    "result_interface/trial/work/c9ffa84c29f269a2f7c58c9ae43460f4dae0aa2928af2e763652d76a8e115e2a/ce6fa8e25939c80530f5363911c937bf945414c64e8f67826ab0d3bc54002e83/inbox.sqlite": {
+      "reports": 1,
+      "applications": 1
+    },
+    "result_interface/trial/work/c9ffa84c29f269a2f7c58c9ae43460f4dae0aa2928af2e763652d76a8e115e2a/ce6fa8e25939c80530f5363911c937bf945414c64e8f67826ab0d3bc54002e83/task.sqlite": {
+      "task": 1,
+      "attempts": 1,
+      "host_calls": 1,
+      "host_observations": 1
+    }
+  }
+}
