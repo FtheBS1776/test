@@ -1,0 +1,18 @@
+{
+  "action": "INVOKE_WORKER",
+  "token": {
+    "run_id": "genie-repository-entry-run-20261010",
+    "task_id": "genie-repository-entry-20261010",
+    "input_sha256": "1cb11d99a67c442ef6b8d69be9f2454cd3bce8e8b4706315e9992f9e0398ca52",
+    "attempt": 1,
+    "slot_id": "4dd8d230ac9d699e229dc1f1cbce6c9efeb439239640ec06e816b242e3570c68",
+    "call_id": "4e26fa7b2573d958d21aff79c075b3ab26e255e9e0f7499532ea497b49486444"
+  },
+  "request": {
+    "task_id": "genie-repository-entry-20261010",
+    "attempt": 1,
+    "input_sha256": "1cb11d99a67c442ef6b8d69be9f2454cd3bce8e8b4706315e9992f9e0398ca52",
+    "goal": "Replace empty repository README with grounded prototype operator map",
+    "feedback": null
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "candidate_sha256": "78b13806242c6864947ba25b811016bcdacb42b6ecac7f7b2c9d04e331e8b2d2",
+  "decision": "ACCEPT",
+  "repairs": 0,
+  "relative_links": 13,
+  "read_only_examples": 1,
+  "source": "one author/one static reviewer; root factual and mechanical adjudication separate",
+  "submission": "SUBMITTED",
+  "review": "ACCEPT",
+  "completion": {
+    "action": "TASK_COMPLETE",
+    "task_id": "genie-repository-entry-20261010",
+    "result": {
+      "status": "COMPLETE",
+      "fresh_destination": "CONFIRMED"
+    }
+  },
+  "stop": {
+    "action": "STOP",
+    "reason": "ALL_TASKS_COMPLETE",
+    "run_id": "genie-repository-entry-run-20261010",
+    "background_execution": false
+  }
+}

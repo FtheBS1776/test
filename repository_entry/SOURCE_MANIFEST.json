@@ -1,0 +1,102 @@
+{
+  "README.md": {
+    "sha256": "78b13806242c6864947ba25b811016bcdacb42b6ecac7f7b2c9d04e331e8b2d2",
+    "size": 7578
+  },
+  "repository_entry/ACCEPTANCE.md": {
+    "sha256": "726e2981cd6ae3796364efca77b37100d04698421e2b70609bca307863cb0ab1",
+    "size": 1777
+  },
+  "repository_entry/AUTHOR_1.md": {
+    "sha256": "8f825c7c748b868d2a3b2205d3db9564b2d3b067b9a2eff11a1c44a0c3a0649a",
+    "size": 1414
+  },
+  "repository_entry/CONTRACT.md": {
+    "sha256": "4aafa3b69b8dec5ff1f88e35b55c99b5f068d1410dd6fcd8058770a935c02dc3",
+    "size": 3473
+  },
+  "repository_entry/DOCUMENT_CHECKS.json": {
+    "sha256": "c71680d624e9c1cc4d2fe03fe35a9c2804ae36058eeed2f7e4ab08256ff3b48d",
+    "size": 1290
+  },
+  "repository_entry/INPUT_MANIFEST.json": {
+    "sha256": "1cb11d99a67c442ef6b8d69be9f2454cd3bce8e8b4706315e9992f9e0398ca52",
+    "size": 541
+  },
+  "repository_entry/MEASUREMENT.json": {
+    "sha256": "bd27258bc407657a2e6c2064970e8a27f5adb85d940a5a86337a127f96a002bd",
+    "size": 769
+  },
+  "repository_entry/PRESERVATION.json": {
+    "sha256": "c25a17fbc071a6c26e0f26e8ffde6e13531d894e3c034ea3cf074a906b7f4368",
+    "size": 181
+  },
+  "repository_entry/PRIOR_CORRESPONDENCE.md": {
+    "sha256": "fc2368db0448b990c96d924fa981ed18d95a45c249f50e5b24e6c35dca065dd2",
+    "size": 1653
+  },
+  "repository_entry/PRIOR_STORES_BEFORE.json": {
+    "sha256": "63a52532481ced25d3f9313e2d84605d57c569ee264a746f76c315863deabc12",
+    "size": 8149
+  },
+  "repository_entry/README_BEFORE.md": {
+    "sha256": "47d1c01107d3c18b1cce8fdf6498ad3ee227e78fb49e850c68e256558ba814d1",
+    "size": 6
+  },
+  "repository_entry/README_FIRST.md": {
+    "sha256": "b7bd6ff98f0c50ce0bdff2450a271e258a1bf659b57604f77d3dde3d8af37607",
+    "size": 2823
+  },
+  "repository_entry/REUSED_BINDINGS.json": {
+    "sha256": "5094c6974c7ef9b5db5d4890ed039f48585adf6ba55f859ce48be3e2a7d0ed72",
+    "size": 1252
+  },
+  "repository_entry/REVIEW_1.md": {
+    "sha256": "56437c2fcb08add1d037c1f66fa98c84b6313a169e2109ad8a4eacc285bddc54",
+    "size": 4950
+  },
+  "repository_entry/ROOT_FACTUAL_REVIEW.md": {
+    "sha256": "c7bf5f794f1b74dd387b759ba988ca8d285cd6ce57ba62df648f228f92b993e6",
+    "size": 1858
+  },
+  "repository_entry/candidate/README_1.md": {
+    "sha256": "78b13806242c6864947ba25b811016bcdacb42b6ecac7f7b2c9d04e331e8b2d2",
+    "size": 7578
+  },
+  "repository_entry/trial/ADJUDICATION.json": {
+    "sha256": "dae1f1d438608d554792c2b660a57b09297d37b298714ce50f5112f3dbb00f0d",
+    "size": 687
+  },
+  "repository_entry/trial/DISPATCH_1.json": {
+    "sha256": "7143927fa4792e16a5c448618515e06bff36432bcf8eca2bb0188dbeedd946ca",
+    "size": 705
+  },
+  "repository_entry/trial/FRESH_COUNTS.json": {
+    "sha256": "19e0255bae8dfe1a61c6cce00de9aabc677eb36189440d4f776f3ac77ad05db3",
+    "size": 508
+  },
+  "repository_entry/trial/FRESH_STATUS.json": {
+    "sha256": "0b24f27c7a45ffd8fba081b55ec8770babe85c50ecbe870761ade272e13615ed",
+    "size": 994
+  },
+  "repository_entry/trial/HOST_EVIDENCE_1.json": {
+    "sha256": "d56c6862d6557aa2ada858a11c63759d36fad5b4dea873f537dfcf216bcca45c",
+    "size": 209
+  },
+  "repository_entry/trial/OBSERVATION_1.json": {
+    "sha256": "d42852a49929d02423a17eb64aa239ad2f8a2857c4042d5185620c5555ff1d37",
+    "size": 11
+  },
+  "repository_entry/trial/OBSERVE_PAYLOAD_1.json": {
+    "sha256": "6df3d7f46749b95d99dcea52fd2c13822c86ff1be009a179a8e16d9201b89e1c",
+    "size": 639
+  },
+  "repository_entry/trial/PLAN.json": {
+    "sha256": "2560aeafed31fe6bc2efad1a99ab751b7d0364312e953fb9b01647a1f1d9711f",
+    "size": 240
+  },
+  "repository_entry/trial/POLICY.json": {
+    "sha256": "4233ad38119895317e02849e24dc708a07bba2dc54bf71fb773454393a76f06a",
+    "size": 142
+  }
+}

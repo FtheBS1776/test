@@ -1,0 +1,6 @@
+{
+  "task_id": "genie-repository-entry-20261010",
+  "goal": "Replace empty repository README with grounded prototype operator map",
+  "input_sha256": "1cb11d99a67c442ef6b8d69be9f2454cd3bce8e8b4706315e9992f9e0398ca52",
+  "max_attempts": 2
+}

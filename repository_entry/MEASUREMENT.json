@@ -1,0 +1,17 @@
+{
+  "scope": "repository navigation/documentation maintenance, no implementation change",
+  "author_turns": 1,
+  "reviewer_turns": 1,
+  "max_worker_turns": 3,
+  "repairs_so_far": 0,
+  "root_mechanical_checks": "13 exact relative links, bounds,1 read-only command with input-byte preservation",
+  "historical_tests_or_fixtures_rerun": false,
+  "root_factual_review": "manual exact-source against existing docs/code and approved priorities",
+  "extra_user_continuation_prompts_within_unit": 0,
+  "manual_effort_latency_money_tokens": "unmeasured",
+  "role_independence": "not established; same host/shared ancestry, no provider-diversity claim",
+  "repairs": 0,
+  "worker_turns_used": 2,
+  "fresh_document_delivery": "CONFIRMED",
+  "root_controller_errors_recorded": 0
+}

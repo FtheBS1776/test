@@ -1,0 +1,38 @@
+{
+  "candidate_sha256": "78b13806242c6864947ba25b811016bcdacb42b6ecac7f7b2c9d04e331e8b2d2",
+  "bytes": 7578,
+  "words": 963,
+  "relative_links": [
+    "worker_substitution/QUICKSTART.md",
+    "active_runner/README_FIRST.md",
+    "run_queue/run_policy.py",
+    "run_queue/OPERATOR_GUIDE.md",
+    "active_runner/runner.py",
+    "worker_bridge/bridge.py",
+    "host_adapter/journal.py",
+    "active_runner/observe_payload.py",
+    "active_runner/run_status.py",
+    "evidence_summary/report_logs.py",
+    "comparison_pilot/validation_summary.py",
+    "host_adapter/verify_checkpoint.py",
+    "run_queue/compare_checkpoints.py"
+  ],
+  "links_verified_in_pinned_tree": 13,
+  "commands": [
+    {
+      "command": "python3.12 -B comparison_pilot/validation_summary.py report_format/FROZEN_RESULTS.txt --format unittest",
+      "returncode": 0,
+      "result": {
+        "status": "PASS",
+        "count": 23,
+        "evidence_scope": "TEST_LOG_SUMMARY_ONLY"
+      },
+      "input_sha256": "5d65905295c8f4d3e546f3b0b655b96013f77fa3aebc1ffb03450d63c54f50d3",
+      "input_unchanged": true
+    }
+  ],
+  "prior_stores_unchanged": 48,
+  "sources_guides_unchanged": 12,
+  "historical_tests_fixtures_rerun": false,
+  "scope": "document bounds/navigation and read-only example, not engine conformance"
+}

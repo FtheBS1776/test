@@ -1,0 +1,9 @@
+# Root factual review of candidate1
+
+Subject78b13806242c6864947ba25b811016bcdacb42b6ecac7f7b2c9d04e331e8b2d2. Read full prose against current quickstart/runner/status/queue/formatter/reporter/verifier/parser source and approved direction. Planning/criticism/repair/adjudication retained without calling a validation log authority. Code emits actions, active Work host supplies real model calls; deterministic NO MODEL CALL recipe explicitly separate/not a prerequisite repeat. Role separation is not independent evidence/provider diversity.
+
+Request/token binds six existing fields. New permission only on freshly emitted invocation; reconciliation/UNKNOWN no relaunch. Formatter is syntax/rendering only, actual observation comes through callback and trusted host evidence. Exact content/root review separate from token routing. Repair reserves another permitted attempt; STOP and closed stores do not authorize reset/successor-budget bypass. Stopped accepted work permits current readback, not new sink write.
+
+Diagnostic PASS/history COMPLETE/local CONFIRMED distinct and limited to observation time, not future/rollback proof. Example reads saved23-test log, does not rerun tests. Rich checks projection/strict json/pinned parser/ignored metadata/raw hash/no aggregate PASS match current reporter. Capture/transaction limits and integrity-vs-authenticity distinctions retained. Canonical roadmap is in checkpoint; no nonexistent Git root roadmap link. Scoped HOLDs independent; no spending/freeze/promotion/merge/deploy/EXP010 authority. No unmeasured superiority/cost saving/background service claim.
+
+Root factual acceptance is separate from static model review and mechanical link/command verification. This is documentation maintenance; no new mechanism or production transition. No engine tests repeated. Root manual effort remains, not zero labor.
