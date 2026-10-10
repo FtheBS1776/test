@@ -1,0 +1,11 @@
+{
+  "candidate_sha256": "c0a35e699cc4ad2fd2e176fd8ab951fbab7f57f56c783230925d078b38ff8af4",
+  "candidate_bytes": 7776,
+  "maintained_exact_match": true,
+  "root_targeted_checks": 16,
+  "maintained_documented_commands": 4,
+  "prior_stores_unchanged": 82,
+  "core_pins_unchanged": 12,
+  "genie_model_dispatch_demonstrated_by_this_unit": false,
+  "independent_review": false
+}

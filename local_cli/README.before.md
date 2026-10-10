@@ -60,6 +60,3 @@ See the [host continuation note](active_runner/HOST_CONTINUATION.md) for immedia
 ## Shared core and interfaces
 
 The approved [shared-core roadmap](shared_interfaces/ROADMAP.md) retains one Genie engine for eventual standalone and plugin interfaces, with hosting deferred. The first [read-only callable status component](shared_interfaces/USAGE.md) reuses existing diagnostics; it is not an installed plugin or deployed backend. Start with its [verification notes](shared_interfaces/README_FIRST.md).
-
-
-Local operator commands are available without writing a Python snippet: [CLI read-first guide](local_cli/README_FIRST.md) and [current roadmap continuation](local_cli/ROADMAP.md). The CLI reads status or accepted results through the same reviewed core; no model dispatch, plugin/server installation or backend hosting is included.

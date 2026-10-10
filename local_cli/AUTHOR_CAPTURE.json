@@ -1,0 +1,11 @@
+{
+  "agent": "/root/pilot_genie_author",
+  "candidate": "shared_interfaces/candidate/cli.py",
+  "sha256": "c0a35e699cc4ad2fd2e176fd8ab951fbab7f57f56c783230925d078b38ff8af4",
+  "bytes": 7776,
+  "initial_author_turns": 1,
+  "repairs": 0,
+  "scope": "ACTUAL_DIRECT_HOST_AUTHOR_TURN_NOT_GENIE_GOVERNED_DISPATCH",
+  "author_report": "Only candidate written; facade verified; no code tests executed by author.",
+  "independence": false
+}

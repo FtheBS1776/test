@@ -1,0 +1,50 @@
+[
+  {
+    "argv": [
+      "--help"
+    ],
+    "exit": 0,
+    "json_output": true,
+    "stderr_empty": true
+  },
+  {
+    "argv": [
+      "tools"
+    ],
+    "exit": 0,
+    "json_output": true,
+    "stderr_empty": true
+  },
+  {
+    "argv": [
+      "status",
+      "--registry",
+      "local_cli/example_registry.json",
+      "--run",
+      "current"
+    ],
+    "exit": 0,
+    "json_output": true,
+    "stderr_empty": true,
+    "status": "PASS",
+    "fresh_sink": "CONFIRMED"
+  },
+  {
+    "argv": [
+      "result",
+      "--registry",
+      "local_cli/example_registry.json",
+      "--run",
+      "current",
+      "--task",
+      "genie-task-result-interface-20261010"
+    ],
+    "exit": 0,
+    "json_output": true,
+    "stderr_empty": true,
+    "payload_sha256": "37629d2ec2d8bdb88da66247c7093225e387b4d79220fb42b214cc01c8ef2619",
+    "content_role": "UNTRUSTED_ACCEPTED_TASK_DATA",
+    "result_bytes": 11637,
+    "exact_source_match": true
+  }
+]

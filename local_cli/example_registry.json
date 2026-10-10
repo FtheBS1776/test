@@ -1,0 +1,7 @@
+{
+  "current": {
+    "queue": "../result_interface/trial/queue.sqlite",
+    "run_id": "genie-task-result-interface-run-20261010",
+    "owned_root": "../result_interface/trial/work"
+  }
+}

@@ -1,0 +1,21 @@
+test_actual_status_and_result (local_cli.test_cli.Tests.test_actual_status_and_result) ... ok
+test_bad_config_variants (local_cli.test_cli.Tests.test_bad_config_variants) ... ok
+test_data_not_executed (local_cli.test_cli.Tests.test_data_not_executed) ... ok
+test_duplicate_keys (local_cli.test_cli.Tests.test_duplicate_keys) ... ok
+test_fifo_rejects (local_cli.test_cli.Tests.test_fifo_rejects) ... ok
+test_help_no_reads (local_cli.test_cli.Tests.test_help_no_reads) ... ok
+test_invalid_argument_no_load (local_cli.test_cli.Tests.test_invalid_argument_no_load) ... ok
+test_missing_config_sanitized (local_cli.test_cli.Tests.test_missing_config_sanitized) ... ok
+test_relative_paths (local_cli.test_cli.Tests.test_relative_paths) ... ok
+test_result_unknown_mismatch_exit_three (local_cli.test_cli.Tests.test_result_unknown_mismatch_exit_three) ... ok
+test_source_mismatch (local_cli.test_cli.Tests.test_source_mismatch) ... ok
+test_status_pass_with_unknown_sink_exit_zero (local_cli.test_cli.Tests.test_status_pass_with_unknown_sink_exit_zero) ... ok
+test_symlink_target_anchor (local_cli.test_cli.Tests.test_symlink_target_anchor) ... ok
+test_tools_no_registry_or_core (local_cli.test_cli.Tests.test_tools_no_registry_or_core) ... ok
+test_unknown_alias (local_cli.test_cli.Tests.test_unknown_alias) ... ok
+test_utf8_and_cap (local_cli.test_cli.Tests.test_utf8_and_cap) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.061s
+
+OK
