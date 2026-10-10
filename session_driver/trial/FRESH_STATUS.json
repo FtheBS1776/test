@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "queue_history": {
+    "run_id": "genie-session-driver-run-20261010",
+    "state": "RUNNING",
+    "stop_reason": null,
+    "reserved_model_calls": 2,
+    "max_model_calls": 4,
+    "scope": "HISTORICAL_QUEUE_STATE_NOT_CURRENT_DESTINATION_PROOF"
+  },
+  "tasks": [
+    {
+      "task_id": "genie-session-driver-code-20261010",
+      "queue_entry_history": "COMPLETE",
+      "workflow": {
+        "status": "OBSERVED",
+        "state": "DELIVERED",
+        "attempt": 1
+      },
+      "journal": {
+        "status": "OBSERVED",
+        "host_outcome": "OBSERVED_ACCEPTED",
+        "agent": "pilot_genie_author",
+        "call_id": "32a0da6d5f9ccc0cc85c959fca809f473cf4ff17ddda8196ea453bf666147c84",
+        "observation_count": 1,
+        "independent_proof": false
+      },
+      "fresh_sink": {
+        "status": "CONFIRMED",
+        "scope": "FRESH_EXACT_DESTINATION_READBACK"
+      }
+    },
+    {
+      "task_id": "genie-session-driver-guide-20261010",
+      "queue_entry_history": "ACTIVE",
+      "workflow": {
+        "status": "OBSERVED",
+        "state": "WAITING_WORKER",
+        "attempt": 1
+      },
+      "journal": {
+        "status": "OBSERVED",
+        "host_outcome": "UNKNOWN",
+        "agent": null,
+        "call_id": "8bc39c44646491936fcf3a685974409b94d08d49c2306b4afde6cd90deca2043",
+        "observation_count": 0,
+        "independent_proof": false
+      },
+      "fresh_sink": {
+        "status": "UNKNOWN",
+        "reason": "NO_ACCEPTED_EFFECT_OBSERVED",
+        "preserve": true
+      }
+    }
+  ],
+  "evidence_scope": "TRUSTED_OWNED_LOCAL_OBSERVATION",
+  "background_execution": false,
+  "snapshot_scope": "Separate read transactions; no cross-store atomic snapshot",
+  "completion_claim": "Inspect each fresh_sink; queue COMPLETE is historical only"
+}

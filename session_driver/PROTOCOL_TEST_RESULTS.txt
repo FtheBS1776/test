@@ -1,0 +1,23 @@
+test_binary_stdio_round_trip (session_driver.test_protocol.Supplement.test_binary_stdio_round_trip) ... ok
+test_explicit_repair_fresh_bound_attempt_then_accept (session_driver.test_protocol.Supplement.test_explicit_repair_fresh_bound_attempt_then_accept) ... FAIL
+test_request_flush_failure_suppresses_further_writes (session_driver.test_protocol.Supplement.test_request_flush_failure_suppresses_further_writes) ... ok
+
+======================================================================
+FAIL: test_explicit_repair_fresh_bound_attempt_then_accept (session_driver.test_protocol.Supplement.test_explicit_repair_fresh_bound_attempt_then_accept)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/b9cf884acbd9/session_driver/test_protocol.py", line 26, in test_explicit_repair_fresh_bound_attempt_then_accept
+    out=c.drive(reviewer=review);self.assertEqual((out['action'],out['reason']),('STOP','ALL_TASKS_COMPLETE'));self.assertEqual([a['token']['attempt'] for a in c.w],[1,2]);self.assertEqual(out['counts'],{'advances':5,'worker_hooks':2,'reviewer_hooks':2});self.assertEqual(c.runner.q.status(c.queue)['reserved_model_calls'],2)
+                                                                                                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'advances': 6, 'worker_hooks': 2, 'reviewer_hooks': 2} != {'advances': 5, 'worker_hooks': 2, 'reviewer_hooks': 2}
+- {'advances': 6, 'reviewer_hooks': 2, 'worker_hooks': 2}
+?              ^
+
++ {'advances': 5, 'reviewer_hooks': 2, 'worker_hooks': 2}
+?              ^
+
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.243s
+
+FAILED (failures=1)

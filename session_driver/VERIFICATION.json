@@ -1,0 +1,12 @@
+{
+  "prior_stores": 90,
+  "core_guide_pins": 12,
+  "code_and_guide_input_manifests_unchanged": true,
+  "source_bytes": 11969,
+  "source_sha256": "89b0fd1ef48d5460dada5cc59b25072a10ec9b5c7049af25eabbb2d4464bf9d9",
+  "distinct_new_no_model_checks": 23,
+  "candidate_repairs": 0,
+  "actual_batch": "INCOMPLETE_UNKNOWN_PRESERVED",
+  "fresh_code_result": "CONFIRMED",
+  "fresh_guide_result": "UNKNOWN"
+}

@@ -1,0 +1,6 @@
+test_explicit_repair_fresh_bound_attempt_then_accept (session_driver.test_protocol.Supplement.test_explicit_repair_fresh_bound_attempt_then_accept) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.127s
+
+OK

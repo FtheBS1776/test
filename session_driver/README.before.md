@@ -69,8 +69,3 @@ Trusted active hosts can now advance existing bounded runs through a separate mu
 
 
 The trusted host can also [record one worker observation, submission or root review](run_events/USAGE.md) through the unchanged callback core. [Event-interface roadmap notes](run_events/ROADMAP.md) preserve the current scope: callback acknowledgement is not model proof or automatic review, and no host loop or backend is installed.
-
-
-### Finite active-host driver
-
-[Driver checkpoint](session_driver/README_FIRST.md), [host API/protocol](session_driver/USAGE.md), and [roadmap continuation](session_driver/ROADMAP.md). Accepted driver sequences existing authorized work immediately with external host worker/reviewer hooks.23 focused checks passed. Actual code delivery is freshCONFIRMED; successor guide request encountered stdin EOF and remains UNKNOWN with its reservation preserved. Full two-task host demonstration is OPEN; do not replay the saved pending request. No model API, background host, backend or plugin installed; existing authority/HOLD boundaries remain unchanged.

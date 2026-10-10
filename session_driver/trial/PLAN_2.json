@@ -1,0 +1,6 @@
+{
+  "task_id": "genie-session-driver-guide-20261010",
+  "goal": "Write usable operator guide for accepted finite activehost driver and its strict local host protocol",
+  "input_sha256": "c89d87721ab005b336b99a027db34838c966be9ad708fc7b633c46cc9ac9dfa6",
+  "max_attempts": 2
+}

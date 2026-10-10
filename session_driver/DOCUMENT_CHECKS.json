@@ -1,0 +1,233 @@
+{
+  "exact_local_document_links": [
+    {
+      "document": "session_driver/USAGE.md",
+      "target": "shared_interfaces/session_driver.py"
+    },
+    {
+      "document": "session_driver/USAGE.md",
+      "target": "shared_interfaces/run_events.py"
+    },
+    {
+      "document": "session_driver/USAGE.md",
+      "target": "shared_interfaces/run_control.py"
+    },
+    {
+      "document": "session_driver/USAGE.md",
+      "target": "shared_interfaces/status_tool.py"
+    },
+    {
+      "document": "session_driver/USAGE.md",
+      "target": "session_driver/ROOT_ADJUDICATION.md"
+    },
+    {
+      "document": "session_driver/USAGE.md",
+      "target": "session_driver/TRANSPORT_BLOCKER.md"
+    },
+    {
+      "document": "session_driver/README.updated.md",
+      "target": "worker_substitution/QUICKSTART.md"
+    },
+    {
+      "document": "session_driver/README.updated.md",
+      "target": "active_runner/README_FIRST.md"
+    },
+    {
+      "document": "session_driver/README.updated.md",
+      "target": "run_queue/run_policy.py"
+    },
+    {
+      "document": "session_driver/README.updated.md",
+      "target": "run_queue/OPERATOR_GUIDE.md"
+    },
+    {
+      "document": "session_driver/README.updated.md",
+      "target": "active_runner/runner.py"
+    },
+    {
+      "document": "session_driver/README.updated.md",
+      "target": "worker_bridge/bridge.py"
+    },
+    {
+      "document": "session_driver/README.updated.md",
+      "target": "host_adapter/journal.py"
+    },
+    {
+      "document": "session_driver/README.updated.md",
+      "target": "active_runner/observe_payload.py"
+    },
+    {
+      "document": "session_driver/README.updated.md",
+      "target": "active_runner/run_status.py"
+    },
+    {
+      "document": "session_driver/README.updated.md",
+      "target": "evidence_summary/report_logs.py"
+    },
+    {
+      "document": "session_driver/README.updated.md",
+      "target": "comparison_pilot/validation_summary.py"
+    },
+    {
+      "document": "session_driver/README.updated.md",
+      "target": "host_adapter/verify_checkpoint.py"
+    },
+    {
+      "document": "session_driver/README.updated.md",
+      "target": "run_queue/compare_checkpoints.py"
+    },
+    {
+      "document": "session_driver/README.updated.md",
+      "target": "active_runner/HOST_CONTINUATION.md"
+    },
+    {
+      "document": "session_driver/README.updated.md",
+      "target": "shared_interfaces/ROADMAP.md"
+    },
+    {
+      "document": "session_driver/README.updated.md",
+      "target": "shared_interfaces/USAGE.md"
+    },
+    {
+      "document": "session_driver/README.updated.md",
+      "target": "shared_interfaces/README_FIRST.md"
+    },
+    {
+      "document": "session_driver/README.updated.md",
+      "target": "local_cli/README_FIRST.md"
+    },
+    {
+      "document": "session_driver/README.updated.md",
+      "target": "local_cli/ROADMAP.md"
+    },
+    {
+      "document": "session_driver/README.updated.md",
+      "target": "run_control/OPERATOR_GUIDE.md"
+    },
+    {
+      "document": "session_driver/README.updated.md",
+      "target": "run_control/ROADMAP.md"
+    },
+    {
+      "document": "session_driver/README.updated.md",
+      "target": "run_events/USAGE.md"
+    },
+    {
+      "document": "session_driver/README.updated.md",
+      "target": "run_events/ROADMAP.md"
+    },
+    {
+      "document": "session_driver/README.updated.md",
+      "target": "session_driver/README_FIRST.md"
+    },
+    {
+      "document": "session_driver/README.updated.md",
+      "target": "session_driver/USAGE.md"
+    },
+    {
+      "document": "session_driver/README.updated.md",
+      "target": "session_driver/ROADMAP.md"
+    },
+    {
+      "document": "session_driver/README.before.md",
+      "target": "worker_substitution/QUICKSTART.md"
+    },
+    {
+      "document": "session_driver/README.before.md",
+      "target": "active_runner/README_FIRST.md"
+    },
+    {
+      "document": "session_driver/README.before.md",
+      "target": "run_queue/run_policy.py"
+    },
+    {
+      "document": "session_driver/README.before.md",
+      "target": "run_queue/OPERATOR_GUIDE.md"
+    },
+    {
+      "document": "session_driver/README.before.md",
+      "target": "active_runner/runner.py"
+    },
+    {
+      "document": "session_driver/README.before.md",
+      "target": "worker_bridge/bridge.py"
+    },
+    {
+      "document": "session_driver/README.before.md",
+      "target": "host_adapter/journal.py"
+    },
+    {
+      "document": "session_driver/README.before.md",
+      "target": "active_runner/observe_payload.py"
+    },
+    {
+      "document": "session_driver/README.before.md",
+      "target": "active_runner/run_status.py"
+    },
+    {
+      "document": "session_driver/README.before.md",
+      "target": "evidence_summary/report_logs.py"
+    },
+    {
+      "document": "session_driver/README.before.md",
+      "target": "comparison_pilot/validation_summary.py"
+    },
+    {
+      "document": "session_driver/README.before.md",
+      "target": "host_adapter/verify_checkpoint.py"
+    },
+    {
+      "document": "session_driver/README.before.md",
+      "target": "run_queue/compare_checkpoints.py"
+    },
+    {
+      "document": "session_driver/README.before.md",
+      "target": "active_runner/HOST_CONTINUATION.md"
+    },
+    {
+      "document": "session_driver/README.before.md",
+      "target": "shared_interfaces/ROADMAP.md"
+    },
+    {
+      "document": "session_driver/README.before.md",
+      "target": "shared_interfaces/USAGE.md"
+    },
+    {
+      "document": "session_driver/README.before.md",
+      "target": "shared_interfaces/README_FIRST.md"
+    },
+    {
+      "document": "session_driver/README.before.md",
+      "target": "local_cli/README_FIRST.md"
+    },
+    {
+      "document": "session_driver/README.before.md",
+      "target": "local_cli/ROADMAP.md"
+    },
+    {
+      "document": "session_driver/README.before.md",
+      "target": "run_control/OPERATOR_GUIDE.md"
+    },
+    {
+      "document": "session_driver/README.before.md",
+      "target": "run_control/ROADMAP.md"
+    },
+    {
+      "document": "session_driver/README.before.md",
+      "target": "run_events/USAGE.md"
+    },
+    {
+      "document": "session_driver/README.before.md",
+      "target": "run_events/ROADMAP.md"
+    }
+  ],
+  "safe_maintained_api_example_output": [
+    "160000",
+    "True True"
+  ],
+  "mutating_examples_not_executed": true,
+  "root_readme_base_matches_immutable_tree": true,
+  "reviewed_docs": "ACCEPT",
+  "source_acceptance": "ACCEPT",
+  "real_host_batch_acceptance": "OPEN_UNKNOWN"
+}

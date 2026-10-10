@@ -1,0 +1,11 @@
+{
+  "base_commit": "f63e90b9b176c086ddd480e68b996a47cd0b64b1",
+  "base_tree": "7543eecfdd0f828e324b7eb132e26f3f9a9227c7",
+  "full_remote_tree": true,
+  "prior_published_blobs_verified": 40,
+  "dispatch_input_files_verified": 8,
+  "prior_stores_verified": 90,
+  "core_guide_pins_verified": 12,
+  "input_manifest_sha256": "5b020d40881ce37c19a08007e18433512c0115b83a694ee35133f569fdfc6bc8",
+  "scope": "Local SHA256 and full immutable Git tree blob correspondence; not independent authenticity or acceptance promotion"
+}

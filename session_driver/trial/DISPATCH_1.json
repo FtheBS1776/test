@@ -1,0 +1,18 @@
+{
+  "action": "INVOKE_WORKER",
+  "token": {
+    "run_id": "genie-session-driver-run-20261010",
+    "task_id": "genie-session-driver-code-20261010",
+    "input_sha256": "5b020d40881ce37c19a08007e18433512c0115b83a694ee35133f569fdfc6bc8",
+    "attempt": 1,
+    "slot_id": "fdbf2d8dd7f3aede3c39b93d9efed9bdc61dcfe56ff2ecc714666ac37344c0fb",
+    "call_id": "32a0da6d5f9ccc0cc85c959fca809f473cf4ff17ddda8196ea453bf666147c84"
+  },
+  "request": {
+    "task_id": "genie-session-driver-code-20261010",
+    "attempt": 1,
+    "input_sha256": "5b020d40881ce37c19a08007e18433512c0115b83a694ee35133f569fdfc6bc8",
+    "goal": "Implement finite activehost driver over existing governed interfaces without unsafe hook replay",
+    "feedback": null
+  }
+}

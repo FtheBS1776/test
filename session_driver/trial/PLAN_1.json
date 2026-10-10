@@ -1,0 +1,6 @@
+{
+  "task_id": "genie-session-driver-code-20261010",
+  "goal": "Implement finite activehost driver over existing governed interfaces without unsafe hook replay",
+  "input_sha256": "5b020d40881ce37c19a08007e18433512c0115b83a694ee35133f569fdfc6bc8",
+  "max_attempts": 2
+}

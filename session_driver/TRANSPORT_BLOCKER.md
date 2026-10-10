@@ -1,0 +1,7 @@
+# Observed current-host transport blocker
+
+The original trial launcher and STDOUT.jsonl/STDIN.jsonl/DRIVER_RESULT.json preserve this attempt. exec_command ran Python with ordinary pipes, returned exit0 after stdin EOF, and did not provide a live process session for feeding a host return. The driver delivered code, reserved the guide call and stopped UNKNOWN at the worker transport hook. Source has no model/provider API. Do not identify hook count as an actual author return or process exit0 as run success.
+
+Saved queue remains RUNNING with one COMPLETE code entry and one ACTIVE guide entry; guide ledger WAITING_WORKER. Core author reservation count2, actual observed code author return1, guide observations/applications0. Existing runner will reconcile this guide rather than emit replacement permission. Original pending binding is not permission to retry; no refund/reset/replay/new worker launched.
+
+The next integration work should address an actual host return path supported by the existing environment, keeping separate reviewer/root adjudication. It does not require buying hosting, adding a backend framework, selecting a provider or repeating completed source checks. A future transport design must preserve this original pending run and may not treat an absent return as permission to replay it. The successful finite fake-hook tests and code delivery do not complete the real two-task host demonstration.

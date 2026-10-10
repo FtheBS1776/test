@@ -1,0 +1,24 @@
+{
+  "reservations": 2,
+  "actual_supported_author_returns": 1,
+  "driver_worker_hook_entries": 1,
+  "driver_reviewer_hook_entries": 0,
+  "observations": 1,
+  "applications": 1,
+  "task_stores": [
+    {
+      "task_id": "genie-session-driver-code-20261010",
+      "workflow": "DELIVERED",
+      "observations": 1,
+      "sink": "session_driver/trial/work/5ed5260ea849d8dc1ce078818e033d5398001a8a401c9184c84e23dcd3b83916/af8ba88b617e1e35f816c856dbd13a7c8f6ce734c487719897ade6ceb9aaa0cb/inbox.sqlite",
+      "applications": 1
+    },
+    {
+      "task_id": "genie-session-driver-guide-20261010",
+      "workflow": "WAITING_WORKER",
+      "observations": 0,
+      "sink": "session_driver/trial/work/5ed5260ea849d8dc1ce078818e033d5398001a8a401c9184c84e23dcd3b83916/80371aa4a958dc776b2864001681486aad4c3b21e2936c0f37cac24ed5e164b1/inbox.sqlite",
+      "applications": 0
+    }
+  ]
+}

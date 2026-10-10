@@ -1,0 +1,11 @@
+{
+  "action": "UNKNOWN",
+  "reason": "DRIVER_OUTCOME_UNKNOWN",
+  "preserve": true,
+  "allow_new_invocation": false,
+  "counts": {
+    "advances": 2,
+    "worker_hooks": 1,
+    "reviewer_hooks": 0
+  }
+}

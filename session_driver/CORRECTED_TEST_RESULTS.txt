@@ -1,0 +1,7 @@
+test_two_task_automatic_sequence (session_driver.test_driver.Tests.test_two_task_automatic_sequence) ... ok
+test_notification_failure_after_delivery_preserves_effect (session_driver.test_driver.Tests.test_notification_failure_after_delivery_preserves_effect) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.233s
+
+OK

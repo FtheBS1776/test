@@ -1,0 +1,43 @@
+test_action_limit_preserves_reservation_without_reset (session_driver.test_driver.Tests.test_action_limit_preserves_reservation_without_reset) ... ok
+test_bool_token_rejected_before_any_event (session_driver.test_driver.Tests.test_bool_token_rejected_before_any_event) ... ok
+test_callback_commits_then_response_lost_no_retry (session_driver.test_driver.Tests.test_callback_commits_then_response_lost_no_retry) ... ok
+test_detached_action_cannot_replace_original_token (session_driver.test_driver.Tests.test_detached_action_cannot_replace_original_token) ... ok
+test_duplicate_submit_does_not_grant_review_hook (session_driver.test_driver.Tests.test_duplicate_submit_does_not_grant_review_hook) ... ok
+test_entire_worker_reply_before_any_event (session_driver.test_driver.Tests.test_entire_worker_reply_before_any_event) ... ok
+test_invalid_config_no_progression (session_driver.test_driver.Tests.test_invalid_config_no_progression) ... ok
+test_notification_failure_after_delivery_preserves_effect (session_driver.test_driver.Tests.test_notification_failure_after_delivery_preserves_effect) ... FAIL
+test_review_reply_bool_or_crossed_hash_no_review_effect (session_driver.test_driver.Tests.test_review_reply_bool_or_crossed_hash_no_review_effect) ... ok
+test_reviewer_exception_restart_reconcile (session_driver.test_driver.Tests.test_reviewer_exception_restart_reconcile) ... ok
+test_startup_review_no_reviewer (session_driver.test_driver.Tests.test_startup_review_no_reviewer) ... ok
+test_startup_waiting_no_worker (session_driver.test_driver.Tests.test_startup_waiting_no_worker) ... ok
+test_stdio_output_failure_no_retry (session_driver.test_driver.Tests.test_stdio_output_failure_no_retry) ... ok
+test_stdio_strict_protocol_no_resync (session_driver.test_driver.Tests.test_stdio_strict_protocol_no_resync) ... ok
+test_stopped_between_submission_and_review_no_hook (session_driver.test_driver.Tests.test_stopped_between_submission_and_review_no_hook) ... ok
+test_two_task_automatic_sequence (session_driver.test_driver.Tests.test_two_task_automatic_sequence) ... ERROR
+test_unconfirmed_task_complete_terminal (session_driver.test_driver.Tests.test_unconfirmed_task_complete_terminal) ... ok
+test_unknown_observation_no_submit (session_driver.test_driver.Tests.test_unknown_observation_no_submit) ... ok
+test_worker_exception_charged_no_retry (session_driver.test_driver.Tests.test_worker_exception_charged_no_retry) ... ok
+test_wrong_original_binding_rejected (session_driver.test_driver.Tests.test_wrong_original_binding_rejected) ... ok
+
+======================================================================
+ERROR: test_two_task_automatic_sequence (session_driver.test_driver.Tests.test_two_task_automatic_sequence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/b9cf884acbd9/session_driver/test_driver.py", line 29, in test_two_task_automatic_sequence
+    self.assertEqual((out['action'],out['reason']),('STOP','ALL_TASKS_COMPLETE'));self.assertEqual(out['counts'],{'advances':7,'worker_hooks':2,'reviewer_hooks':2});self.assertEqual([p['action']['task_id'] for p in progress],['task-1','task-2']);status=self.facade.GenieStatusTools(self.reg).call('get_run_status',{'run_name':'a'});self.assertEqual([t['fresh_sink']['status'] for t in status['tasks']],['CONFIRMED','CONFIRMED'])
+                                                                                                                                                                                       ~~~~~~~~~~~^^^^^^^^^^^
+KeyError: 'task_id'
+
+======================================================================
+FAIL: test_notification_failure_after_delivery_preserves_effect (session_driver.test_driver.Tests.test_notification_failure_after_delivery_preserves_effect)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/b9cf884acbd9/session_driver/test_driver.py", line 93, in test_notification_failure_after_delivery_preserves_effect
+    out=self.drive(notify=lost);self.unknown(out);self.assertEqual(out['counts']['advances'],3);self.assertEqual(self.facade.GenieStatusTools(self.reg).call('get_task_result',{'run_name':'a','task_id':'task-1'})['status'],'CONFIRMED')
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 3
+
+----------------------------------------------------------------------
+Ran 20 tests in 1.187s
+
+FAILED (failures=1, errors=1)
