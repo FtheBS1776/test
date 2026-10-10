@@ -1,0 +1,5 @@
+# Standalone direction clarification — NONCLAIM
+
+Read this first, independently hash the exact amended active_runner/HOST_CONTINUATION.md against SHA256 f5f5ba67532c9ef76a03d87be8c5889054851ae286f62b038e4c1b8e72b914cb (10484 bytes), then read REVIEW_AND_ADJUDICATION.md. Compare with parent3d727e500c5c185c717e17c49e1bd8c3b8d9a91c: original8112-byte prefix preserved; only one operator note changes and these two records are added. No engine source or old evidence changes. Historical host_continuation manifest binds the original parent note, not the amended note; its original candidate remains preserved.
+
+Standalone is eventual; use current Work host now. Freely runnable/model-agnostic/local-model support are targets, not implemented capabilities or universally free funded compute. Model roles and scoped authority boundaries retained. Complete canonical reads observed version11; intended local newer progress preserved, original timed-out save still uncertain/no retry. No completed tests or fixtures need rerunning for this documentation. Pass186 controlling, later NONCLAIM; no promotion/freeze/spending/main merge/deploy/EXP010.
