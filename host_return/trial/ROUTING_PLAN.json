@@ -1,0 +1,6 @@
+{
+  "task_id": "genie-plugin-routing-inventory-20261010",
+  "goal": "Inventory exact accepted shared-core surfaces for future plugin integration",
+  "input_sha256": "cf41fa161efe4e3e45e54d4fe0d65d7e29cd26748a06190741c257f5b04a5f53",
+  "max_attempts": 2
+}

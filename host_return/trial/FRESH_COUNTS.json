@@ -1,0 +1,26 @@
+{
+  "actual_supported_author_returns": 2,
+  "actual_exact_source_reviews": 2,
+  "author_reservations": 2,
+  "observations": 2,
+  "applications": 2,
+  "tasks": [
+    {
+      "task_id": "genie-work-host-entry-20261010",
+      "observations": 1,
+      "applications": 1,
+      "fresh_result": "CONFIRMED"
+    },
+    {
+      "task_id": "genie-plugin-routing-inventory-20261010",
+      "observations": 1,
+      "applications": 1,
+      "fresh_result": "CONFIRMED"
+    }
+  ],
+  "driver_counts": {
+    "advances": 7,
+    "worker_hooks": 2,
+    "reviewer_hooks": 2
+  }
+}

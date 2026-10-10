@@ -1,0 +1,11 @@
+{
+  "action": "STOP",
+  "background_execution": false,
+  "reason": "ALL_TASKS_COMPLETE",
+  "run_id": "genie-work-host-return-20261010",
+  "counts": {
+    "advances": 7,
+    "worker_hooks": 2,
+    "reviewer_hooks": 2
+  }
+}

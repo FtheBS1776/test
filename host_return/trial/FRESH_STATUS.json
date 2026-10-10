@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "queue_history": {
+    "run_id": "genie-work-host-return-20261010",
+    "state": "STOPPED",
+    "stop_reason": "ALL_TASKS_COMPLETE",
+    "reserved_model_calls": 2,
+    "max_model_calls": 4,
+    "scope": "HISTORICAL_QUEUE_STATE_NOT_CURRENT_DESTINATION_PROOF"
+  },
+  "tasks": [
+    {
+      "task_id": "genie-work-host-entry-20261010",
+      "queue_entry_history": "COMPLETE",
+      "workflow": {
+        "status": "OBSERVED",
+        "state": "DELIVERED",
+        "attempt": 1
+      },
+      "journal": {
+        "status": "OBSERVED",
+        "host_outcome": "OBSERVED_ACCEPTED",
+        "agent": "pilot_genie_author",
+        "call_id": "19acd5eca44f53f2def0e056b3eefd336d2185c17157022c8cdd9e7151366478",
+        "observation_count": 1,
+        "independent_proof": false
+      },
+      "fresh_sink": {
+        "status": "CONFIRMED",
+        "scope": "FRESH_EXACT_DESTINATION_READBACK"
+      }
+    },
+    {
+      "task_id": "genie-plugin-routing-inventory-20261010",
+      "queue_entry_history": "COMPLETE",
+      "workflow": {
+        "status": "OBSERVED",
+        "state": "DELIVERED",
+        "attempt": 1
+      },
+      "journal": {
+        "status": "OBSERVED",
+        "host_outcome": "OBSERVED_ACCEPTED",
+        "agent": "pilot_genie_author",
+        "call_id": "5365eb27bc6d64b5b7a0c5f0904bbb998c4edc1baf68b796a83aa61245ced761",
+        "observation_count": 1,
+        "independent_proof": false
+      },
+      "fresh_sink": {
+        "status": "CONFIRMED",
+        "scope": "FRESH_EXACT_DESTINATION_READBACK"
+      }
+    }
+  ],
+  "evidence_scope": "TRUSTED_OWNED_LOCAL_OBSERVATION",
+  "background_execution": false,
+  "snapshot_scope": "Separate read transactions; no cross-store atomic snapshot",
+  "completion_claim": "Inspect each fresh_sink; queue COMPLETE is historical only"
+}

@@ -1,0 +1,2 @@
+{"action":{"action":"STOP","background_execution":false,"reason":"ALL_TASKS_COMPLETE","run_id":"genie-work-host-return-20261010"},"counts":{"advances":1,"reviewer_hooks":0,"worker_hooks":0},"kind":"progress"}
+{"kind":"terminal","result":{"action":"STOP","background_execution":false,"counts":{"advances":1,"reviewer_hooks":0,"worker_hooks":0},"reason":"ALL_TASKS_COMPLETE","run_id":"genie-work-host-return-20261010"}}

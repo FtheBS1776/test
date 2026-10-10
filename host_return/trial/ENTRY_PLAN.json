@@ -1,0 +1,6 @@
+{
+  "task_id": "genie-work-host-entry-20261010",
+  "goal": "Implement explicit current-host entry reusing pinned driver and registry reader",
+  "input_sha256": "60187456ce0133a1caa19321fe2405798300b0b9d6740bf8da2f20ed867078ea",
+  "max_attempts": 2
+}

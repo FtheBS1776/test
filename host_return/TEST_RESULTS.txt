@@ -1,0 +1,14 @@
+test_bad_arguments_preentry (host_return.test_entry.Tests.test_bad_arguments_preentry) ... ok
+test_hold_reconcile_reject_exit_distinctions (host_return.test_entry.Tests.test_hold_reconcile_reject_exit_distinctions) ... ok
+test_invalid_registry_rejects_before_serve (host_return.test_entry.Tests.test_invalid_registry_rejects_before_serve) ... ok
+test_one_serve_call_normalized_registry_and_bound (host_return.test_entry.Tests.test_one_serve_call_normalized_registry_and_bound) ... ok
+test_postentry_exception_unknown_no_retry (host_return.test_entry.Tests.test_postentry_exception_unknown_no_retry) ... ok
+test_source_pin_failure_preentry (host_return.test_entry.Tests.test_source_pin_failure_preentry) ... ok
+test_stop_other_reason_is_not_success (host_return.test_entry.Tests.test_stop_other_reason_is_not_success) ... ok
+test_unknown_alias_rejects_before_serve (host_return.test_entry.Tests.test_unknown_alias_rejects_before_serve) ... ok
+test_unknown_returns_nonzero_without_output_replay (host_return.test_entry.Tests.test_unknown_returns_nonzero_without_output_replay) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.029s
+
+OK

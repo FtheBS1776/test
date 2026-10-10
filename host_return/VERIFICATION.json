@@ -1,0 +1,21 @@
+{
+  "prior_stores_unchanged": 95,
+  "core_guide_pins_unchanged": 12,
+  "frozen_inputs_unchanged": true,
+  "source_sha256": "ebb1f5dbaae00bbc6922bb4cecad10e3db7a3eccf72222883ca8437d7faed618",
+  "source_bytes": 2336,
+  "source_repairs": 0,
+  "entry_checks": 9,
+  "actual_authors": 2,
+  "separate_reviews": 2,
+  "author_reservations": 2,
+  "observations": 2,
+  "applications": 2,
+  "fresh_results": [
+    "CONFIRMED",
+    "CONFIRMED"
+  ],
+  "terminal": "STOP_ALL_TASKS_COMPLETE",
+  "original_guide": "PRESERVED_UNKNOWN_NO_REPLAY",
+  "transport_scope": "SHORT_ASCII_CURRENT_HOST_ONLY"
+}

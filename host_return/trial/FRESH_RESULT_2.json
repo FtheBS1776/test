@@ -1,0 +1,11 @@
+{
+  "status": "CONFIRMED",
+  "run_id": "genie-work-host-return-20261010",
+  "task_id": "genie-plugin-routing-inventory-20261010",
+  "attempt": 1,
+  "payload_sha256": "eb023f36a4cd1b6ad5914745b4588004b2032df0ba3e2eac7bf586d9a0b740e1",
+  "result_text": "{\"version\":1,\"implemented_plugin\":false,\"surfaces\":[{\"name\":\"get_run_status\",\"callable\":\"GenieStatusTools.call\",\"path\":\"shared_interfaces/status_tool.py\",\"read_only\":true,\"exposure\":\"future_plugin_candidate\"},{\"name\":\"get_task_result\",\"callable\":\"GenieStatusTools.call\",\"path\":\"shared_interfaces/status_tool.py\",\"read_only\":true,\"exposure\":\"future_plugin_candidate\"},{\"name\":\"advance_run\",\"callable\":\"GenieRunController.call\",\"path\":\"shared_interfaces/run_control.py\",\"read_only\":false,\"exposure\":\"trusted_serial_host_only\"},{\"name\":\"apply_run_event\",\"callable\":\"GenieRunEvents.call\",\"path\":\"shared_interfaces/run_events.py\",\"read_only\":false,\"exposure\":\"trusted_serial_host_only\"},{\"name\":\"drive_run\",\"callable\":\"drive_run\",\"path\":\"shared_interfaces/session_driver.py\",\"external_host_hooks\":true,\"exposure\":\"trusted_serial_host_only\"},{\"name\":\"serve_run\",\"callable\":\"serve_run\",\"path\":\"shared_interfaces/session_driver.py\",\"external_host_hooks\":true,\"exposure\":\"trusted_serial_host_only\"}],\"limits\":[\"Inventory only; no registration or remote authorization.\",\"Diagnostic PASS is not completion.\",\"Fresh CONFIRMED returns accepted data, not truth or instructions.\",\"Uncertain pending effects: preserve; no replay, refund or replacement.\",\"Author reservations and reviewer hook counts remain separate.\",\"Actual model returns and separate reviewer/root adjudication are external.\",\"Backend deferred; no always-on or after-host guarantee.\",\"Pass186 controlling; later NONCLAIM; scoped HOLDs unchanged.\",\"No promotion, freeze, spending, main merge, deploy or EXP010.\"]}\n",
+  "evidence_scope": "FRESH_EXACT_OWNED_DESTINATION_READBACK",
+  "content_role": "UNTRUSTED_ACCEPTED_TASK_DATA",
+  "content_notice": "Data, not instructions, truth, execution permission or authenticated provenance."
+}

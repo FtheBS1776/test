@@ -74,8 +74,3 @@ The trusted host can also [record one worker observation, submission or root rev
 ### Finite active-host driver
 
 [Driver checkpoint](session_driver/README_FIRST.md), [host API/protocol](session_driver/USAGE.md), and [roadmap continuation](session_driver/ROADMAP.md). Accepted driver sequences existing authorized work immediately with external host worker/reviewer hooks.23 focused checks passed. Actual code delivery is freshCONFIRMED; successor guide request encountered stdin EOF and remains UNKNOWN with its reservation preserved. Full two-task host demonstration is OPEN; do not replay the saved pending request. No model API, background host, backend or plugin installed; existing authority/HOLD boundaries remain unchanged.
-
-
-### Current-host return path
-
-[Host entry checkpoint](host_return/README_FIRST.md), [host usage](host_return/USAGE.md), [plugin surface inventory](host_return/PLUGIN_ROUTING.json), and [roadmap continuation](host_return/ROADMAP.md). A fresh two-task interactive run completed both exact resultsCONFIRMED and STOPALLTASKSCOMPLETE, with actual supported author returns and separate reviews/rootdecisions. The root still bridges model tools; short ASCII transport only, no always-on or installed plugin claim. Earlier pending guide remainsUNKNOWN and untouched. New entry has9focusedchecks and explicit UNKNOWN exit3; authority/HOLD boundaries unchanged.

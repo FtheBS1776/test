@@ -1,0 +1,18 @@
+{
+  "action": "INVOKE_WORKER",
+  "request": {
+    "attempt": 1,
+    "feedback": null,
+    "goal": "Inventory exact accepted shared-core surfaces for future plugin integration",
+    "input_sha256": "cf41fa161efe4e3e45e54d4fe0d65d7e29cd26748a06190741c257f5b04a5f53",
+    "task_id": "genie-plugin-routing-inventory-20261010"
+  },
+  "token": {
+    "attempt": 1,
+    "call_id": "5365eb27bc6d64b5b7a0c5f0904bbb998c4edc1baf68b796a83aa61245ced761",
+    "input_sha256": "cf41fa161efe4e3e45e54d4fe0d65d7e29cd26748a06190741c257f5b04a5f53",
+    "run_id": "genie-work-host-return-20261010",
+    "slot_id": "508421d8bf1ce67dd8ed315a737d0d1d18d4bc615faa4499ba05c62f829b26c0",
+    "task_id": "genie-plugin-routing-inventory-20261010"
+  }
+}

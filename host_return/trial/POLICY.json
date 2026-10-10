@@ -1,0 +1,6 @@
+{
+  "run_id": "genie-work-host-return-20261010",
+  "max_tasks": 2,
+  "max_model_calls": 4,
+  "effect_scope": "owned-local-report-inbox"
+}

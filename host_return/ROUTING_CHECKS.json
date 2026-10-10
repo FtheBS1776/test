@@ -1,0 +1,11 @@
+{
+  "strict_json_and_size": true,
+  "accepted_metadata_correspondence": true,
+  "six_exact_surfaces": true,
+  "sha256": "eb023f36a4cd1b6ad5914745b4588004b2032df0ba3e2eac7bf586d9a0b740e1",
+  "bytes": 1566,
+  "actual_return_ascii_lengths": [
+    3016,
+    2338
+  ]
+}
