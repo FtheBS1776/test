@@ -1,0 +1,6 @@
+{
+  "tool": "collaboration.followup_task",
+  "target": "/root/pilot_genie_author",
+  "result": "returned normally; newly reserved documentation task accepted",
+  "scope": "trusted Work host assertion; not signed execution receipt"
+}

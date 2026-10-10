@@ -1,0 +1,18 @@
+{
+  "candidate_sha256": "3b26ed43e8528885b8783d7a5657b58098932d43ee67aba7e92f828d8517ca62",
+  "bytes": 8112,
+  "relative_links": [
+    "worker_substitution/QUICKSTART.md",
+    "active_runner/README_FIRST.md",
+    "README.md",
+    "active_runner/runner.py",
+    "active_runner/observe_payload.py",
+    "active_runner/run_status.py"
+  ],
+  "source_files_unchanged": 12,
+  "previous_store_files_unchanged": 73,
+  "README_original_prefix_unchanged": true,
+  "new_commands": 0,
+  "historical_tests_fixtures_rerun": false,
+  "scope": "Documentation/source/preservation checks only; not unattended service proof"
+}

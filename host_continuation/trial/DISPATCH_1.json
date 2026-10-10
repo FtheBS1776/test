@@ -1,0 +1,18 @@
+{
+  "action": "INVOKE_WORKER",
+  "token": {
+    "run_id": "genie-host-continuation-run-20261010",
+    "task_id": "genie-host-continuation-20261010",
+    "input_sha256": "92e821691e309e4dd611508a0659b0416700be97e46f7f37126ac49ba9da3d5b",
+    "attempt": 1,
+    "slot_id": "8a64c7c768a487960c0bea0d34b5db0c16c980ffcd80c84e99a883aab1dcdf13",
+    "call_id": "744a239c7e013c18ba039f5a3689306cc26b53d849f9446c55174ece6c8818ce"
+  },
+  "request": {
+    "task_id": "genie-host-continuation-20261010",
+    "attempt": 1,
+    "input_sha256": "92e821691e309e4dd611508a0659b0416700be97e46f7f37126ac49ba9da3d5b",
+    "goal": "Clarify active host continuation versus scheduled activation and assess supported host reuse",
+    "feedback": null
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "files": {
+    "host_continuation/CONTRACT.md": "3fe49a89aac6498bf4142aa970dc2cf5d871c2d082fc9236c84433b46e6cd6e4",
+    "host_continuation/PRIOR_CORRESPONDENCE.md": "c03aba9e0efba866bca08977a35f96e75f2d67024d6d3b3363d2d9cc3796dcca",
+    "README.md": "78b13806242c6864947ba25b811016bcdacb42b6ecac7f7b2c9d04e331e8b2d2",
+    "worker_substitution/QUICKSTART.md": "c17b10c868fe6b516f835f2a6d31e12e7ef1a706377755b400a79a9f5c429cd6",
+    "active_runner/runner.py": "e315b0f30403028169d9bde17f73e13b618ed419ace4fb489f7c0878f2d6fd29"
+  },
+  "input_sha256": "92e821691e309e4dd611508a0659b0416700be97e46f7f37126ac49ba9da3d5b"
+}

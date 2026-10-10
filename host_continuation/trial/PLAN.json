@@ -1,0 +1,6 @@
+{
+  "task_id": "genie-host-continuation-20261010",
+  "goal": "Clarify active host continuation versus scheduled activation and assess supported host reuse",
+  "input_sha256": "92e821691e309e4dd611508a0659b0416700be97e46f7f37126ac49ba9da3d5b",
+  "max_attempts": 2
+}

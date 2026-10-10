@@ -1,0 +1,7 @@
+# Prior experience and internal attack
+
+Existing design reviewer and author audited the existing runner/host seam read-only before substantive external page review. Exact source functions step and callback already compose queue/journal/bridge/report inbox. No new authority mechanism is needed to continue within the active Work host. This is same host/context/ancestry, not independent provenance.
+
+L2 separates authorization, execution, observation and verification: lost host response remains UNKNOWN with charged reservation; no retry launch. Discovery does not authorize a plausible task. L7 exact execution/content identity lessons require exact tokens and separately reviewed candidate hash; role names, start events and receipts are not acceptance. Common cause remains with shared models. Historical COMPLETE/PASS is not fresh per-task sink proof. Preserve finite budgets and STOP rather than creating successors. Serial host remains an assumption; no concurrent controllers or rollback/currentness/hostile confinement assurance.
+
+Root decision: reuse the active Work host immediately. Document cadence and lifetime distinctions without a new scheduler/adapter prerequisite. Codex app-server remains a supported-protocol candidate for an accessible future host; source docs are not live access or successful model execution. No installations, credential inspection, API calls or provider experiments performed.

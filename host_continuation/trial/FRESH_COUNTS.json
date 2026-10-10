@@ -1,0 +1,12 @@
+{
+  "host_continuation/trial/queue.sqlite": {
+    "reservations": 1
+  },
+  "host_continuation/trial/work/09331170401e6e024d03e7e8b96a0f668f075e852ce9203afe1e4de22e94e4c5/70459094a4349d77851a61f1254cbd36a201b2d04d2c6854b0591759f890bb26/task.sqlite": {
+    "host_calls": 1,
+    "host_observations": 1
+  },
+  "host_continuation/trial/work/09331170401e6e024d03e7e8b96a0f668f075e852ce9203afe1e4de22e94e4c5/70459094a4349d77851a61f1254cbd36a201b2d04d2c6854b0591759f890bb26/inbox.sqlite": {
+    "applications": 1
+  }
+}

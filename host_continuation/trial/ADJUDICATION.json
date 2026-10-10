@@ -1,0 +1,19 @@
+{
+  "candidate_sha256": "3b26ed43e8528885b8783d7a5657b58098932d43ee67aba7e92f828d8517ca62",
+  "review": "ACCEPT",
+  "completion": {
+    "action": "TASK_COMPLETE",
+    "task_id": "genie-host-continuation-20261010",
+    "result": {
+      "status": "COMPLETE",
+      "fresh_destination": "CONFIRMED"
+    }
+  },
+  "stop": {
+    "action": "STOP",
+    "reason": "ALL_TASKS_COMPLETE",
+    "run_id": "genie-host-continuation-run-20261010",
+    "background_execution": false
+  },
+  "repairs": 0
+}

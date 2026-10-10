@@ -52,7 +52,3 @@ ZIP verification requires the caller's expected outer SHA-256, checks the manife
 Canonical approved roadmap and continuation documents travel in the delivered verifiable checkpoint. They are not canonical root Git files; repository evidence snapshots must not be assumed synchronized copies. Consult the delivered checkpoint with its saved caller anchor for the controlling priorities and retained history.
 
 Root/bootstrap/custody, whole-store rollback, physical power-loss, remote authenticity and hostile-worker isolation HOLDs remain scoped. They do not globally block independently authorized bounded prototype work. Trusted serial local-host operation does not establish hostile-path confinement or signed remote execution evidence. No production readiness, authority promotion, freeze, new spending, main merge, deployment or EXP010 execution is authorized by this entry point.
-
-## Immediate continuation
-
-See the [host continuation note](active_runner/HOST_CONTINUATION.md) for immediate task-to-task progression, scheduled activation and execution-host lifetime. The current active host can advance permitted runner actions without an hourly wait or another continuation prompt.
