@@ -1,7 +1,7 @@
 """Pinned Streamable-HTTP MCP transport for Genie's accepted read-only consumer.
 
 Transport only. It does not add authority, mutation, model dispatch, hosting,
-authentication, or background execution. SDK upgrades fail closed until reviewed.
+authentication, or background execution. Dependency upgrades fail closed until reviewed.
 """
 from __future__ import annotations
 
@@ -12,15 +12,45 @@ import json
 from pathlib import Path
 import types
 
-MCP_SDK_VERSION = "2.3.0"
 CONSUMER_SHA256 = "21f3fc657abb16c9ba7c9189f266cbdfeaec1dbf0ae2ca6d051caee1565ddd5d"
 SERVER_VERSION = "0.1.0-nonclaim"
+TRANSPORT_DISTRIBUTIONS = {
+    "mcp": "2.3.0",
+    "mcp-types": "2.3.0",
+    "annotated-types": "0.8.0",
+    "anyio": "4.15.1",
+    "attrs": "26.1.0",
+    "cffi": "2.1.1",
+    "click": "8.5.0",
+    "cryptography": "50.0.2",
+    "h11": "0.16.0",
+    "httpcore2": "2.13.1",
+    "httpx2": "2.13.1",
+    "idna": "3.20",
+    "jsonschema": "4.26.0",
+    "jsonschema-specifications": "2025.9.1",
+    "opentelemetry-api": "1.45.1",
+    "pycparser": "3.11",
+    "pydantic": "2.14.1",
+    "pydantic-core": "2.50.1",
+    "PyJWT": "2.15.1",
+    "python-multipart": "0.0.32",
+    "referencing": "0.37.0",
+    "rpds-py": "2026.9.1",
+    "sse-starlette": "3.5.0",
+    "starlette": "1.7.0",
+    "truststore": "0.10.4",
+    "typing-extensions": "4.16.0",
+    "typing-inspection": "0.4.4",
+    "uvicorn": "0.54.0",
+}
 
 
 def _require_sdk():
     try:
-        if metadata.version("mcp") != MCP_SDK_VERSION:
-            raise ValueError("version mismatch")
+        for distribution, expected in TRANSPORT_DISTRIBUTIONS.items():
+            if metadata.version(distribution) != expected:
+                raise ValueError("version mismatch")
         from mcp.server import Server, ServerRequestContext
         from mcp.types import (CallToolRequestParams, CallToolResult,
                                ListToolsResult, PaginatedRequestParams,
@@ -144,9 +174,11 @@ def main(argv=None):
     from shared_interfaces import cli
     runs = cli._read_registry(args.registry)
     server = build_server(runs)
-    server.run(
-        transport="streamable-http", host=args.host, port=args.port,
-        streamable_http_path="/mcp", stateless_http=True, json_response=True)
+    app = server.streamable_http_app(
+        streamable_http_path="/mcp", stateless_http=True,
+        json_response=True, host=args.host)
+    import uvicorn
+    uvicorn.run(app, host=args.host, port=args.port, log_level="error")
 
 
 if __name__ == "__main__":
