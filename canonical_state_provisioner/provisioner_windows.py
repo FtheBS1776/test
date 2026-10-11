@@ -127,6 +127,21 @@ def _validate(root, marker_mode):
         raise ProvisionError("PROVISION_STAGING_INVALID_PRESERVE") from None
 
 
+def _portable_binding(runs):
+    """Compare semantics that are supposed to survive staging->final rename."""
+    try:
+        return {
+            alias: (
+                Path(record["queue"]).name,
+                record["run_id"],
+                Path(record["owned_root"]).name,
+            )
+            for alias, record in runs.items()
+        }
+    except Exception:
+        raise ProvisionError("PROVISION_STAGING_INVALID_PRESERVE") from None
+
+
 class ProvisioningSession:
     """Single-use in-process staging capability owned by the trusted host."""
     __slots__ = ("_base", "_app", "_staging", "_final", "_state")
@@ -165,6 +180,7 @@ class ProvisioningSession:
             _validate(staging, marker_mode="absent")
             _write_marker_exclusive(staging)
             prepared = _validate(staging, marker_mode="required")
+            prepared_binding = _portable_binding(prepared)
 
             # Re-check the destination immediately before the one publish call.
             # No REPLACE_EXISTING flag is ever passed to MoveFileExW.
@@ -181,7 +197,7 @@ class ProvisioningSession:
             except Exception:
                 self._state = "PUBLISHED_UNVERIFIED"
                 raise ProvisionError("PUBLISHED_UNVERIFIED_PRESERVE") from None
-            if observed != prepared:
+            if _portable_binding(observed) != prepared_binding:
                 self._state = "PUBLISHED_UNVERIFIED"
                 raise ProvisionError("PUBLISHED_UNVERIFIED_PRESERVE")
 
