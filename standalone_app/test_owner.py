@@ -139,14 +139,14 @@ class Tests(unittest.TestCase):
         with self.assertRaisesRegex(owner.OwnerError, "^PROVISION_FINAL_EXISTS$"):
             owner.create_first_run(_spec("replacement-run"))
 
-    def test_source_chain_rejects_consumer_drift(self):
-        original = owner.MCP_CONSUMER_SHA256
-        owner.MCP_CONSUMER_SHA256 = "0" * 64
+    def test_source_chain_rejects_controller_drift(self):
+        original = owner.RUN_CONTROL_SHA256
+        owner.RUN_CONTROL_SHA256 = "0" * 64
         try:
             with self.assertRaisesRegex(owner.OwnerError, "^OWNER_SOURCE_BINDING$"):
                 owner.status("actual")
         finally:
-            owner.MCP_CONSUMER_SHA256 = original
+            owner.RUN_CONTROL_SHA256 = original
         self.assertFalse(self.app().exists())
 
 
