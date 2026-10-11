@@ -182,15 +182,34 @@ def _direct_child(root, name, kind):
         raise LiveStateError("LIVE_STATE_PATH") from None
 
 
-def load_live_runs():
-    """Validate fixed state binding and return detached absolute run records."""
-    root = _root()
-    marker_path = _direct_child(root, MARKER_NAME, "file")
-    registry_path = _direct_child(root, REGISTRY_NAME, "file")
-    marker = _strict_json(marker_path, 4096)
-    if marker != MARKER_VALUE:
+def validate_state_root(root, marker_mode="required"):
+    """Validate one already selected state root and return detached run records.
+
+    `marker_mode="required"` is the normal live-state contract. The trusted
+    local provisioner alone may use `marker_mode="absent"` while validating an
+    unpublished staging tree before it creates the provisioner-owned marker.
+    This function does not select a path and does not create/modify state.
+    """
+    if marker_mode not in ("required", "absent"):
+        raise LiveStateError("LIVE_STATE_INVALID")
+    try:
+        root = Path(root).resolve(strict=True)
+        if not root.is_dir():
+            raise ValueError("root type")
+    except Exception:
+        raise LiveStateError("LIVE_STATE_INVALID") from None
+
+    marker_lexical = root / MARKER_NAME
+    if marker_mode == "required":
+        marker_path = _direct_child(root, MARKER_NAME, "file")
+        marker = _strict_json(marker_path, 4096)
+        if marker != MARKER_VALUE:
+            raise LiveStateError("LIVE_STATE_INVALID")
+    elif os.path.lexists(marker_lexical):
+        # The marker is provisioner-owned; unpublished state may not preseed it.
         raise LiveStateError("LIVE_STATE_INVALID")
 
+    registry_path = _direct_child(root, REGISTRY_NAME, "file")
     raw_registry = _strict_json(registry_path, MAX_JSON)
     if type(raw_registry) is not dict or not raw_registry:
         raise LiveStateError("LIVE_STATE_INVALID")
@@ -219,3 +238,8 @@ def load_live_runs():
                 or normalized.get("run_id") != record["run_id"]):
             raise LiveStateError("LIVE_STATE_BINDING")
     return parsed
+
+
+def load_live_runs():
+    """Validate fixed state binding and return detached absolute run records."""
+    return validate_state_root(_root(), marker_mode="required")
