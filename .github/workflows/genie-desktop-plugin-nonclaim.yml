@@ -66,16 +66,39 @@ jobs:
           print('WINDOWS_PACKAGE_VERSION_CLOSURE_PASS', len(expected))
           '@ | & $py -
 
-      - name: Preflight exact Genie source-binding chain on Windows
+      - name: Preflight exact Genie source and real read-only calls on Windows
         run: |
           $py = 'desktop_plugin/.venv/Scripts/python.exe'
           @'
+          import hashlib
           from pathlib import Path
-          from shared_interfaces import cli, mcp_server
-          runs = cli._read_registry(Path('host_return/trial/REGISTRY.json'))
+          from shared_interfaces import cli, mcp_server, status_tool
+
+          root = Path('host_return/trial')
+          sqlite_files = sorted(root.rglob('*.sqlite'))
+          before = {str(path): hashlib.sha256(path.read_bytes()).hexdigest() for path in sqlite_files}
+
+          runs = cli._read_registry(root / 'REGISTRY.json')
+          host = status_tool.GenieStatusTools(runs)
+          status = host.call('get_run_status', {'run_name': 'actual'})
+          assert status.get('status') == 'PASS', status
+          confirmed = [
+              item for item in status.get('tasks', [])
+              if isinstance(item, dict)
+              and isinstance(item.get('fresh_sink'), dict)
+              and item['fresh_sink'].get('status') == 'CONFIRMED'
+          ]
+          assert confirmed, status
+          task_id = confirmed[0]['task_id']
+          result = host.call('get_task_result', {'run_name': 'actual', 'task_id': task_id})
+          assert result.get('status') == 'CONFIRMED', result
+          assert result.get('content_role') == 'UNTRUSTED_ACCEPTED_TASK_DATA', result
+
           server = mcp_server.build_server(runs)
           assert server is not None
-          print('WINDOWS_SOURCE_BINDING_CHAIN_PASS')
+          after = {str(path): hashlib.sha256(path.read_bytes()).hexdigest() for path in sqlite_files}
+          assert after == before, (before, after)
+          print('WINDOWS_SOURCE_AND_READONLY_CALL_CHAIN_PASS', len(sqlite_files), task_id)
           '@ | & $py -
 
       - name: Prepare deterministic seed state
