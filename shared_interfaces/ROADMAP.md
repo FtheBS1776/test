@@ -2,6 +2,28 @@
 
 User-approved architecture: one model-agnostic Genie core, accessible through a standalone app and a usable plugin. Both interfaces reuse the same reasoning, saved state, worker/reviewer roles, adjudication and bounded execution contracts. Do not create two engines or let an interface grant authority the core does not have. One LLM remains useful; additional providers are optional; common-cause/shared-model ancestry remains explicit.
 
+## Controlling live-state amendment — 2026-10-11 UTC
+
+This amendment is the current controlling interface frontier and supersedes the older table/frontier language below wherever they conflict.
+
+The Windows read-only Desktop package is no longer merely fixture-backed: a **fixed-root live-state binding mechanism is internally verified** at exact tested commit `18012ed3bb648a284124d9690fdc12344e6ba00d`, workflow run `38172329559`, job `114567355097`. The package derives `FOLDERID_LocalAppData/GenieReasoningEngine/state-v1` through the Windows Known Folder API, contains no fixture seed/bootstrap, does not use `PLUGIN_DATA` as a Genie state replica, rejects malformed/traversing/junction-escaping state, and passed real frozen stdio MCP reads while leaving both canonical test state and `PLUGIN_DATA` byte-identical. Disposition: `ACCEPT_NONCLAIM_LIVE_STATE_BINDING_PACKAGE`. Exact evidence is under `../evidence/genie-desktop-live-state-20261011/`.
+
+This does **not** mean the user's actual Genie state has been provisioned into that canonical root. CI placed historical test state there only to verify the binding mechanism and removed it afterward. Therefore the old instruction below saying the immediate frontier is ChatGPT Desktop installation is superseded.
+
+**Current immediate frontier: canonical state ownership/provisioning.** Prefer the eventual standalone Genie application as owner/provisioner of the shared canonical local state. The provisioning/migration path must not accept model-supplied arbitrary pathname authority, silently overwrite or repair ambiguous existing state, create a second synchronized state copy, or fall back to repository fixture data. Missing/ambiguous state remains fail-closed. Actual ChatGPT Desktop installation/connection comes only after real canonical user state exists and remains an explicit external user action.
+
+Current milestone replacement:
+
+| Milestone | Current state | Exit criterion |
+|---|---|---|
+| Useful governed work in current Work environment | Existing bounded runner and useful tasks completed | Continue concrete eligible tasks with review, fresh delivery and original budget/STOP limits |
+| Shared interface foundation | Read-only tools, MCP projection, stdio/HTTP transports, Windows package, and fixed-root live-state binding mechanism internally verified | Establish a trusted canonical local-state owner/provisioner without adding duplicate state authority or model-supplied path authority |
+| Standalone application | Architecture target; canonical state ownership/provisioning now the next implementation seam | Own the canonical local state and run without this particular chat, with user start/pause/resume and suitable model integration; freely runnable host, paid services optional and never required by default |
+| Usable plugin | Windows v0.2.0 fixed-root binding package internally verified; real user state not provisioned; installation/connection intentionally deferred | After real canonical state exists, explicitly install/connect in ChatGPT Desktop and verify the exact two read-only tools plus representative PASS/CONFIRMED/UNKNOWN behavior |
+| Backend hosting and public availability | DEFERRED by user | Select deployment/hosting only when needed and separately authorized; no funded free public compute guarantee |
+
+The historical sections below remain preserved as development evidence; any earlier statement that installation is the immediate next step is superseded by this amendment.
+
 | Milestone | Current state | Exit criterion |
 |---|---|---|
 | Useful governed work in current Work environment | Existing bounded runner and useful tasks completed | Continue concrete eligible tasks with review, fresh delivery and original budget/STOP limits |
@@ -67,6 +89,8 @@ Ephemeral successful CI executable identity: `1add37f928a70d02c275a133612fa353d1
 See `../desktop_plugin/README_FIRST.md`, `TEST_RESULTS.txt`, `VERIFICATION.json`, `ROOT_ADJUDICATION.md`, and `BUILD_ADOPTION.md`.
 
 ## Immediate frontier — actual local ChatGPT Desktop connection
+
+**Historical/superseded by the controlling live-state amendment above.** This section is retained to preserve development chronology; do not use it as the current next-step instruction.
 
 Internal package engineering is complete for the current read-only proof. The next meaningful product step is no longer another simulated transport or freezer experiment. It is a **real local ChatGPT Desktop installation/connection**, followed by verification that the host can start/stop the packaged stdio process and call exactly the two accepted read-only tools.
 
