@@ -1,0 +1,2 @@
+# Exact reviewed transport dependency. Runtime also refuses any other installed version.
+mcp==2.3.0
