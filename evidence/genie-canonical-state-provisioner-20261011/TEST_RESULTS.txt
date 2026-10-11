@@ -1,0 +1,74 @@
+GENIE CANONICAL WINDOWS STATE PROVISIONER — FINAL INTERNAL NONCLAIM TEST RECORD
+Date: 2026-10-11 UTC
+Tested commit: 250e9c237ef0fe1c9cfade8cccb900e05a0c7e38
+Workflow run: 38173150758
+Workflow job: 114569836417
+Platform: Windows Server 2025 / windows-2025-vs2026
+Python: exact CPython 3.12.10
+
+SCOPE
+This evidence supports only a trusted-local one-time fixed-namespace provisioner for NEW canonical Genie state. It is not an importer/migrator for the user's existing state, not an MCP/model setup API, and not a rollback/currentness or power-loss durability mechanism.
+
+STATIC / DEPENDENCY BOUNDARY
+PASS — PROVISIONER_STATIC_BOUNDARY_PASS
+PASS — provisioner adds no third-party runtime dependency
+PASS — implementation contains no MCP surface, PLUGIN_DATA use, argparse interface, source-tree copy/import path, TxF primitive, or replace-existing publication flag
+PASS — publication primitive is MoveFileExW with MOVEFILE_WRITE_THROUGH and no MOVEFILE_REPLACE_EXISTING
+PASS — PROVISIONER_IMPORT_CLOSURE_PASS
+
+INHERITED LIVE-STATE REGRESSION
+PASS — 4/4 desktop live-state binding tests
+PASS — exact marker validation
+PASS — missing root reject
+PASS — traversal/absolute/reserved-name reject
+PASS — valid fixed-root status/result reads remain read-only
+
+PROVISIONER ADVERSARIAL TESTS
+PASS — 11/11 tests
+PASS — fixed staging acquisition and second begin preservation
+PASS — concurrent begin produces exactly one staging winner
+PASS — pre-existing final state rejects without staging creation
+PASS — abandoned staging rejects and preserves bytes
+PASS — real Windows app-directory junction rejects
+PASS — incomplete staging publish rejects/preserves and does not create marker
+PASS — caller-preseeded publication marker rejects/preserves
+PASS — destination appearing before publish is never replaced
+PASS — simulated reported MoveFileEx failure yields PUBLISH_UNKNOWN_PRESERVE, keeps staging+marker, creates no final root, and closes the session
+PASS — forced post-MoveFileEx validation failure yields PUBLISHED_UNVERIFIED_PRESERVE, preserves the committed final namespace, leaves no staging namespace, and does not authorize republish
+PASS — valid publish performs one same-parent namespace move, preserves all fixture SQLite bytes, creates the exact provisioner-owned marker, and is subsequently readable by the existing accepted Genie read-only status/result surface
+PASS — after successful publish, later begin rejects PROVISION_FINAL_EXISTS and the original session is closed
+
+CROSS-ATTACK REPAIR PRESERVED
+The first implementation/test run (workflow 38172996815, job 114569366426) passed 10/10 provisioner tests but did not include a direct mutant for post-move verification failure. Internal cross-attack found that after MoveFileExW reported success, a failure while re-opening/revalidating the final directory could escape as generic PROVISION_NAMESPACE_INVALID. That understated the authority boundary because publication might already be committed.
+
+Repair commit 06897c27d4cf514acdbc883c7e074cdb290d1d76 moved every post-move verification operation under a committed-but-unverified boundary. Any such failure now becomes PUBLISHED_UNVERIFIED_PRESERVE. The final tested head 250e9c237ef0fe1c9cfade8cccb900e05a0c7e38 added the explicit mutant and passed 11/11.
+
+DESIGN / PRIOR-EXPERIENCE CORRESPONDENCE
+- fixed staging witness: .state-v1.init
+- final root: state-v1
+- both are fixed direct children of the fixed GenieReasoningEngine app namespace under FOLDERID_LocalAppData
+- no caller/model-supplied pathname selects staging/final state
+- staging is acquired by exclusive directory creation; abandoned staging is preserved as an interruption/concurrency witness
+- marker is provisioner-owned, must be absent before publish, then is created exclusively and fsynced before publication
+- same-volume namespace publication uses MoveFileExW; final root is never replaced
+- UNKNOWN or committed-but-unverified outcomes are preserved and non-retry-authorizing
+- namespace publication is not claimed to establish crash-durable currentness, rollback resistance, custody continuity, or hostile-local confinement
+
+FIXTURE ROLE
+The test suite uses host_return/trial only as deterministic content that the TEST writes into the provisioner's trusted staging workspace. The provisioner implementation itself has no source-path/import argument and performs no fixture/repository copy. Therefore the passing test does not mean historical fixture state was or should be installed as user live state.
+
+LIMITS
+This does NOT prove or perform:
+- migration/import of the user's current historical Genie state;
+- creation of actual canonical state on the user's machine;
+- standalone Genie application composition;
+- power-loss durable all-or-nothing multi-file creation;
+- rollback/currentness resistance;
+- root/custody continuity;
+- hostile local-principal/TOCTOU confinement;
+- plugin installation or ChatGPT connection;
+- model dispatch/autonomous continuation;
+- production readiness, authority promotion, freeze, main merge, or EXP010 execution.
+
+NEXT FRONTIER
+Compose this provisioner into the future standalone Genie owner so that NEW runs are created directly inside its staging capability and published into the canonical root. Existing-state migration remains a separate authority surface and must not be smuggled into the provisioner. Actual ChatGPT Desktop installation remains later, after real canonical user state exists.
