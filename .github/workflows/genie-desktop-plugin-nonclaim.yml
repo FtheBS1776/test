@@ -21,39 +21,53 @@ permissions:
 
 jobs:
   windows-package-conformance:
-    runs-on: windows-latest
+    runs-on: windows-2025
     timeout-minutes: 20
     steps:
       - name: Checkout exact branch commit
         uses: actions/checkout@v4
 
-      - name: Set up Python 3.12
+      - name: Set up exact Python 3.12.10
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: '3.12.10'
 
-      - name: Install exact reviewed MCP runtime and pinned build tools
+      - name: Create isolated exact build environment
         run: |
-          python -m pip install --disable-pip-version-check -r plugin_mcp_server/requirements.lock.txt -r desktop_plugin/build-requirements.txt
-          python -m pip check
-          python -m pip freeze
+          python -m venv desktop_plugin/.venv
+          $py = 'desktop_plugin/.venv/Scripts/python.exe'
+          & $py -m pip install --disable-pip-version-check -r plugin_mcp_server/requirements.lock.txt -r desktop_plugin/windows-build.lock.txt
+          & $py -m pip check
+          & $py -m pip freeze
 
-      - name: Verify exact MCP runtime closure
+      - name: Verify exact Windows runtime and build closures
         run: |
+          $py = 'desktop_plugin/.venv/Scripts/python.exe'
           @'
           import importlib.metadata as md
-          from shared_interfaces.mcp_server import TRANSPORT_DISTRIBUTIONS
+          from shared_interfaces.mcp_server import required_transport_distributions
+          expected = required_transport_distributions()
+          expected.update({
+              'altgraph': '0.17.5',
+              'packaging': '26.3',
+              'pefile': '2024.8.26',
+              'pyinstaller': '6.22.3',
+              'pyinstaller-hooks-contrib': '2026.8',
+              'pywin32-ctypes': '0.2.3',
+              'setuptools': '84.0.0',
+          })
           mismatches = {
-              name: (expected, md.version(name))
-              for name, expected in TRANSPORT_DISTRIBUTIONS.items()
-              if md.version(name) != expected
+              name: (version, md.version(name))
+              for name, version in expected.items()
+              if md.version(name) != version
           }
           assert not mismatches, mismatches
-          print('MCP_TRANSPORT_VERSION_CLOSURE_PASS', len(TRANSPORT_DISTRIBUTIONS))
-          '@ | python -
+          print('WINDOWS_PACKAGE_VERSION_CLOSURE_PASS', len(expected))
+          '@ | & $py -
 
       - name: Prepare deterministic seed state
         run: |
+          $py = 'desktop_plugin/.venv/Scripts/python.exe'
           @'
           import hashlib, json, shutil
           from pathlib import Path
@@ -78,11 +92,11 @@ jobs:
               json.dumps(manifest, sort_keys=True, separators=(',', ':')) + '\n',
               encoding='utf-8')
           print('SEED_MANIFEST_PASS', seed_id, len(records))
-          '@ | python -
+          '@ | & $py -
 
       - name: Build self-contained Windows stdio executable
         run: |
-          pyinstaller --clean --noconfirm --distpath desktop_plugin/build_dist --workpath desktop_plugin/build_work desktop_plugin/genie_mcp.spec
+          desktop_plugin/.venv/Scripts/pyinstaller.exe --clean --noconfirm --distpath desktop_plugin/build_dist --workpath desktop_plugin/build_work desktop_plugin/genie_mcp.spec
 
       - name: Assemble portable plugin folder
         run: |
@@ -96,7 +110,7 @@ jobs:
       - name: Exercise frozen plugin lifecycle and stdio tools
         run: |
           $env:GENIE_PLUGIN_ROOT = (Resolve-Path 'desktop_plugin/staging/genie-readonly').Path
-          python -B desktop_plugin/test_frozen.py
+          desktop_plugin/.venv/Scripts/python.exe -B desktop_plugin/test_frozen.py
 
       - name: Record ephemeral package identities
         run: |
