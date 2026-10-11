@@ -143,17 +143,30 @@ def _provision_state():
     return _existing_state(state)
 
 
+def _run_transport(registry):
+    try:
+        from shared_interfaces import mcp_server
+    except Exception:
+        raise _BootstrapReject("TRANSPORT_IMPORT") from None
+    try:
+        mcp_server.main(["--registry", str(registry), "--transport", "stdio"])
+    except ValueError:
+        # Binding/version/source failures are deterministic package incompatibility.
+        raise _BootstrapReject("TRANSPORT_BINDING") from None
+    except Exception:
+        raise _BootstrapReject("TRANSPORT_RUNTIME") from None
+
+
 def main():
     try:
         registry = _provision_state()
-        from shared_interfaces import mcp_server
-        mcp_server.main(["--registry", str(registry), "--transport", "stdio"])
+        _run_transport(registry)
         return 0
     except _BootstrapReject as exc:
+        # Fixed reason codes only: do not leak paths, result text, or internals.
         sys.stderr.write("GENIE_PLUGIN_REJECT:" + str(exc) + "\n")
         return 2
     except Exception:
-        # Avoid leaking local paths, stored result text, or dependency internals.
         sys.stderr.write("GENIE_PLUGIN_FAILURE\n")
         return 2
 
