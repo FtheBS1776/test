@@ -15,7 +15,7 @@ import types
 import live_state_windows as live
 import provisioner_windows as provision
 
-MCP_CONSUMER_SHA256 = "21f3fc657abb16c9ba7c9189f266cbdfeaec1dbf0ae2ca6d051caee1565ddd5d"
+RUN_CONTROL_SHA256 = "ecc71b088e5a7e3c0bde33b53a7e850dd769daee5b301f2f116edf956599f2d4"
 QUEUE_NAME = "queue.sqlite"
 OWNED_ROOT_NAME = "work"
 REGISTRY_NAME = "REGISTRY.json"
@@ -26,18 +26,16 @@ class OwnerError(ValueError):
 
 
 def _load_control_chain():
-    """Enter the already pinned shared-core chain without importing MCP runtime."""
+    """Enter the accepted transport-neutral controller/core source chain."""
     try:
         shared = Path(__file__).resolve().parents[1] / "shared_interfaces"
-        source = shared / "mcp_consumer.py"
+        source = shared / "run_control.py"
         raw = source.read_bytes()
-        if hashlib.sha256(raw).hexdigest() != MCP_CONSUMER_SHA256:
-            raise ValueError("consumer source mismatch")
-        consumer = types.ModuleType("_standalone_pinned_mcp_consumer")
-        consumer.__file__ = str(source)
-        exec(compile(raw, str(source), "exec"), consumer.__dict__)
-        adapter = consumer._load_adapter()
-        control = adapter._load_source("run_control.py")
+        if hashlib.sha256(raw).hexdigest() != RUN_CONTROL_SHA256:
+            raise ValueError("controller source mismatch")
+        control = types.ModuleType("_standalone_pinned_run_control")
+        control.__file__ = str(source)
+        exec(compile(raw, str(source), "exec"), control.__dict__)
         facade = control._load_facade()
         core = facade._load_core()
         runner = core.load_runner()
@@ -195,7 +193,7 @@ def create_first_run(spec):
 
 
 def status(run_name):
-    control, facade, _runner = _load_control_chain()
+    _control, facade, _runner = _load_control_chain()
     try:
         run_name = _snapshot(run_name)
         if type(run_name) is not str:
