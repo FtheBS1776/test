@@ -159,6 +159,39 @@ class Tests(unittest.TestCase):
                 provision.ProvisionError, "^PROVISION_SESSION_CLOSED$"):
             session.publish()
 
+    def test_post_move_validation_failure_is_committed_unverified(self):
+        session = provision.begin()
+        self.populate_fixture(session.workspace)
+        original_validate = live.validate_state_root
+
+        def injected(root, marker_mode="required"):
+            resolved = Path(root).resolve(strict=True)
+            if resolved.name == live.STATE_DIR:
+                raise live.LiveStateError("INJECTED_POST_MOVE_FAILURE")
+            return original_validate(root, marker_mode=marker_mode)
+
+        live.validate_state_root = injected
+        try:
+            with self.assertRaisesRegex(
+                    provision.ProvisionError, "^PUBLISHED_UNVERIFIED_PRESERVE$"):
+                session.publish()
+        finally:
+            live.validate_state_root = original_validate
+
+        self.assertTrue(self.final().is_dir())
+        self.assertFalse(self.staging().exists())
+        self.assertTrue((self.final() / live.MARKER_NAME).is_file())
+        self.assertTrue((self.final() / live.REGISTRY_NAME).is_file())
+        # The committed namespace is preserved rather than rolled back/replaced.
+        runs = original_validate(self.final(), marker_mode="required")
+        self.assertEqual(set(runs), {"actual"})
+        with self.assertRaisesRegex(
+                provision.ProvisionError, "^PROVISION_SESSION_CLOSED$"):
+            session.publish()
+        with self.assertRaisesRegex(
+                provision.ProvisionError, "^PROVISION_FINAL_EXISTS$"):
+            provision.begin()
+
     def test_valid_publish_moves_once_and_remains_readable(self):
         session = provision.begin()
         self.populate_fixture(session.workspace)
