@@ -1,0 +1,77 @@
+name: Genie canonical state provisioner NONCLAIM
+
+on:
+  push:
+    branches:
+      - nonclaim/genie-canonical-state-provisioner-20261011
+    paths:
+      - .gitattributes
+      - canonical_state_provisioner/**
+      - desktop_plugin/live_state_windows.py
+      - desktop_plugin/test_live_state_windows.py
+      - shared_interfaces/**
+      - active_runner/**
+      - run_queue/**
+      - host_adapter/**
+      - worker_bridge/**
+      - host_return/trial/**
+      - .github/workflows/genie-canonical-state-provisioner-nonclaim.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  windows-provisioner-conformance:
+    runs-on: windows-2025
+    timeout-minutes: 10
+    steps:
+      - name: Checkout exact branch commit
+        uses: actions/checkout@v4
+
+      - name: Set up exact Python 3.12.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.10'
+
+      - name: Verify stdlib-only provisioner boundary
+        run: |
+          $source = Get-Content canonical_state_provisioner/provisioner_windows.py -Raw
+          foreach ($forbidden in @('mcp.', 'PLUGIN_DATA', 'argparse', 'shutil.copytree', 'MoveFileTransacted', 'CreateFileTransacted')) {
+            if ($source.Contains($forbidden)) { throw "forbidden provisioner dependency/surface: $forbidden" }
+          }
+          if (-not $source.Contains('MoveFileExW')) { throw 'expected same-volume publish primitive missing' }
+          if (-not $source.Contains('MOVEFILE_WRITE_THROUGH')) { throw 'expected write-through flag missing' }
+          if ($source.Contains('MOVEFILE_REPLACE_EXISTING')) { throw 'replace-existing publication forbidden' }
+          Write-Output 'PROVISIONER_STATIC_BOUNDARY_PASS'
+
+      - name: Run inherited live-state binding regression
+        run: |
+          $repo = (Resolve-Path '.').Path
+          $desktop = (Resolve-Path 'desktop_plugin').Path
+          $provisioner = (Resolve-Path 'canonical_state_provisioner').Path
+          $env:PYTHONPATH = "$repo;$desktop;$provisioner"
+          python -B -m unittest -v desktop_plugin/test_live_state_windows.py
+
+      - name: Run canonical state provisioner adversarial tests
+        run: |
+          $repo = (Resolve-Path '.').Path
+          $desktop = (Resolve-Path 'desktop_plugin').Path
+          $provisioner = (Resolve-Path 'canonical_state_provisioner').Path
+          $env:PYTHONPATH = "$repo;$desktop;$provisioner"
+          python -B -m unittest -v canonical_state_provisioner/test_provisioner_windows.py
+
+      - name: Syntax and import closure smoke
+        run: |
+          $repo = (Resolve-Path '.').Path
+          $desktop = (Resolve-Path 'desktop_plugin').Path
+          $provisioner = (Resolve-Path 'canonical_state_provisioner').Path
+          $env:PYTHONPATH = "$repo;$desktop;$provisioner"
+          python -B -m py_compile desktop_plugin/live_state_windows.py canonical_state_provisioner/provisioner_windows.py
+          @'
+          import provisioner_windows
+          import live_state_windows
+          assert provisioner_windows.STAGING_DIR == '.state-v1.init'
+          assert live_state_windows.STATE_DIR == 'state-v1'
+          print('PROVISIONER_IMPORT_CLOSURE_PASS')
+          '@ | python -
