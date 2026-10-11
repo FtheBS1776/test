@@ -1,0 +1,22 @@
+{
+  "scope": "NONCLAIM_MCP_STREAMABLE_HTTP_TRANSPORT",
+  "tested_commit": "46fea87747e2a544e5888a37cfd0fbbae483d298",
+  "workflow_run_id": 38169759916,
+  "workflow_job_id": 114559708494,
+  "python": "3.12.15",
+  "dependency_closure_count": 28,
+  "pip_check": "PASS",
+  "tests_passed": 7,
+  "tests_failed": 0,
+  "real_streamable_http_probe": "PASS",
+  "saved_run_status": "PASS",
+  "sqlite_before_after": "IDENTICAL",
+  "consumer_sha256_binding": "21f3fc657abb16c9ba7c9189f266cbdfeaec1dbf0ae2ca6d051caee1565ddd5d",
+  "mcp_sdk": "2.3.0",
+  "connection_to_chatgpt": "NOT_YET_PERFORMED",
+  "cost_added": false,
+  "main_merged": false,
+  "authority_promoted": false,
+  "freeze": false,
+  "exp010_executed": false
+}
