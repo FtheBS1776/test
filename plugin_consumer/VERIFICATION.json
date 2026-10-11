@@ -1,0 +1,30 @@
+{
+  "accepted_adapter_sha256": "9627bc0967e4b6115f405671be8a2c60498101e276d96062d55572537f2769d2",
+  "consumer_bytes": 6824,
+  "consumer_sha256": "a0845bf14318cbb18f06e06b39d42b43a4d3044b889543951f4e86f636a6e7e5",
+  "existing_store_integration_cases": 4,
+  "focused_tests": {
+    "failed": 0,
+    "passed": 10
+  },
+  "integration_statuses": [
+    "PASS",
+    "CONFIRMED",
+    "CONFIRMED",
+    "UNKNOWN"
+  ],
+  "later_integration_nonclaim": true,
+  "mcp_server_started": 0,
+  "model_calls": 0,
+  "network_calls_from_unit": 0,
+  "pass186_controlling": true,
+  "plugin_installed": false,
+  "scope": "PLUGIN_CONSUMER_CONTRACT_NONCLAIM",
+  "source_repairs": 0,
+  "sqlite_files_present_in_handoff_compared": 27,
+  "sqlite_files_unchanged": true,
+  "state_writes": 0,
+  "status": "PASS",
+  "task_reservations": 0,
+  "test_harness_corrections": 1
+}

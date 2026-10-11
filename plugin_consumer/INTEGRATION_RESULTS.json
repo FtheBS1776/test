@@ -1,0 +1,39 @@
+{
+  "cases": [
+    {
+      "name": "get_run_status",
+      "run_name": "actual",
+      "status": "PASS"
+    },
+    {
+      "content_role": "UNTRUSTED_ACCEPTED_TASK_DATA",
+      "name": "get_task_result",
+      "run_name": "actual",
+      "status": "CONFIRMED",
+      "task_id": "genie-work-host-entry-20261010"
+    },
+    {
+      "content_role": "UNTRUSTED_ACCEPTED_TASK_DATA",
+      "name": "get_task_result",
+      "run_name": "actual",
+      "status": "CONFIRMED",
+      "task_id": "genie-plugin-routing-inventory-20261010"
+    },
+    {
+      "name": "get_task_result",
+      "reason": "TASK_RESULT_UNAVAILABLE",
+      "run_name": "pending",
+      "status": "UNKNOWN",
+      "task_id": "genie-session-driver-guide-20261010"
+    }
+  ],
+  "mcp_errors_for_core_states": 0,
+  "model_calls": 0,
+  "scope": "READ_ONLY_EXISTING_STORES",
+  "semantic_preservation": true,
+  "state_writes": 0,
+  "status": "PASS",
+  "task_reservations": 0,
+  "tools": 2,
+  "writes": 0
+}

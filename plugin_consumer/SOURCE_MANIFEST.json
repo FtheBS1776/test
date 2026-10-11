@@ -1,0 +1,79 @@
+{
+  "base_commit": "546af9bbe7c736f505989fa5c353df003960ebc5",
+  "base_tree": "e1fd5315d6106fb4a3dd4c6e52f4c800af1ba5c9",
+  "branch_intent": "nonclaim/genie-plugin-consumer-contract-20261011",
+  "files": [
+    {
+      "bytes": 2427,
+      "change": "ADD",
+      "path": "plugin_consumer/CONTRACT.md",
+      "sha256": "7bcf9a4dd04162d7d6b241799a966131e2599e1a49fd1cc356f040de2f20581a"
+    },
+    {
+      "bytes": 1829,
+      "change": "ADD",
+      "path": "plugin_consumer/EXTERNAL_SPEC.md",
+      "sha256": "23de74d0f97d4a4c3b4fea968e8baf1af534ccb11ad49f0c32903cedf2341ba8"
+    },
+    {
+      "bytes": 942,
+      "change": "ADD",
+      "path": "plugin_consumer/INTEGRATION_RESULTS.json",
+      "sha256": "2ccb03a6b82947041c6fc3cb5d1fb5dcd9ed23f82ca9a433c6c3ea064c7f3dfe"
+    },
+    {
+      "bytes": 3793,
+      "change": "ADD",
+      "path": "plugin_consumer/PRIOR_CORRESPONDENCE.md",
+      "sha256": "e5926b4a4dc841a6aec41ca152ff775528552766f33e91ff4e4adb583b43ce94"
+    },
+    {
+      "bytes": 1047,
+      "change": "ADD",
+      "path": "plugin_consumer/README_FIRST.md",
+      "sha256": "d604cbf56f0884ffbd3e9386029e15c65f79c2da8a2fe490768d30f5e61d92f8"
+    },
+    {
+      "bytes": 1140,
+      "change": "ADD",
+      "path": "plugin_consumer/ROADMAP.md",
+      "sha256": "6783128da74cab1dfe3ca5abe3ecbebefd5fadde97cc3ea7bee07aa390941c64"
+    },
+    {
+      "bytes": 1265,
+      "change": "ADD",
+      "path": "plugin_consumer/ROOT_ADJUDICATION.md",
+      "sha256": "bdb8a66d96dc301a0a46df125b856a1fbfd10dd5803fc29b850856b93610de87"
+    },
+    {
+      "bytes": 2084,
+      "change": "ADD",
+      "path": "plugin_consumer/SOURCE_REVIEW.md",
+      "sha256": "605097967bc3eadf8236a9c88bd939d325678832d3d185f46bb437740095465b"
+    },
+    {
+      "bytes": 899,
+      "change": "ADD",
+      "path": "plugin_consumer/TEST_RESULTS.txt",
+      "sha256": "75180879772d634e3f294a08a4630cae70ceb325343372318a4c468b92ff80ba"
+    },
+    {
+      "bytes": 841,
+      "change": "ADD",
+      "path": "plugin_consumer/VERIFICATION.json",
+      "sha256": "b5489b4c7b51800dee15ac99933550ce322e9bdf740217e602664e50cced03fe"
+    },
+    {
+      "bytes": 6824,
+      "change": "ADD",
+      "path": "plugin_consumer/consumer.py",
+      "sha256": "a0845bf14318cbb18f06e06b39d42b43a4d3044b889543951f4e86f636a6e7e5"
+    },
+    {
+      "bytes": 7406,
+      "change": "ADD",
+      "path": "plugin_consumer/test_consumer.py",
+      "sha256": "3e86d9a513f7683786f68c286499517577e0419433815b9ffeb715a4ab7973aa"
+    }
+  ]
+}

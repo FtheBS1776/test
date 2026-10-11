@@ -1,0 +1,19 @@
+Focused local consumer tests after harness correction:
+
+test_adapter_envelope_mismatch_is_wrapper_error ... ok
+test_adapter_exception_sanitized_no_retry ... ok
+test_argument_bound_before_adapter ... ok
+test_core_semantic_states_are_preserved_not_mcp_errors ... ok
+test_one_call_and_local_correlation_only ... ok
+test_source_pin_enforced ... ok
+test_tools_are_detached ... ok
+test_tools_exact_mcp_mapping_and_annotations ... ok
+test_unsupported_tool_is_adapter_data_not_wrapper_truth ... ok
+test_wrapper_rejects_non_json_before_adapter ... ok
+
+Ran 10 tests.
+PASS 10/10.
+
+Initial harness-only issue: the source-pin test was still under the test's mocked loader and therefore failed to exercise the real loader. The test harness was corrected. No source repair was required for that failure.
+
+No network, model/API call, MCP server, task reservation, state mutation or historical task replay occurred.
