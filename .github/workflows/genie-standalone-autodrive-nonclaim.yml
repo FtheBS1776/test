@@ -1,0 +1,86 @@
+name: Genie standalone autodrive NONCLAIM
+
+on:
+  push:
+    branches:
+      - nonclaim/genie-standalone-autodrive-20261011
+    paths:
+      - .gitattributes
+      - standalone_app/**
+      - canonical_state_provisioner/**
+      - desktop_plugin/live_state_windows.py
+      - shared_interfaces/**
+      - active_runner/**
+      - run_queue/**
+      - host_adapter/**
+      - worker_bridge/**
+      - .github/workflows/genie-standalone-autodrive-nonclaim.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  windows-standalone-autodrive-conformance:
+    runs-on: windows-2025
+    timeout-minutes: 10
+    steps:
+      - name: Checkout exact branch commit
+        uses: actions/checkout@v4
+
+      - name: Set up exact Python 3.12.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.10'
+
+      - name: Verify execution bridge remains provider-neutral
+        run: |
+          $bridge = Get-Content standalone_app/execution_bridge.py -Raw
+          foreach ($forbidden in @('openai', 'anthropic', 'requests', 'httpx', 'urllib.request', 'socket.', 'subprocess', 'PLUGIN_DATA', 'serve_run')) {
+            if ($bridge.Contains($forbidden)) { throw "forbidden bridge provider/network/transport surface: $forbidden" }
+          }
+          if (-not $bridge.Contains('SESSION_DRIVER_SHA256')) { throw 'session driver source binding missing' }
+          if (-not $bridge.Contains('driver.drive_run')) { throw 'accepted finite driver delegation missing' }
+          if ($bridge.Contains('while ') -or $bridge.Contains('while(')) { throw 'second orchestration loop forbidden' }
+          Write-Output 'STANDALONE_AUTODRIVE_STATIC_BOUNDARY_PASS'
+
+      - name: Run canonical provisioner regression
+        run: |
+          $repo = (Resolve-Path '.').Path
+          $desktop = (Resolve-Path 'desktop_plugin').Path
+          $provisioner = (Resolve-Path 'canonical_state_provisioner').Path
+          $standalone = (Resolve-Path 'standalone_app').Path
+          $env:PYTHONPATH = "$repo;$desktop;$provisioner;$standalone"
+          python -B -m unittest -v canonical_state_provisioner/test_provisioner_windows.py
+
+      - name: Run standalone owner regression
+        run: |
+          $repo = (Resolve-Path '.').Path
+          $desktop = (Resolve-Path 'desktop_plugin').Path
+          $provisioner = (Resolve-Path 'canonical_state_provisioner').Path
+          $standalone = (Resolve-Path 'standalone_app').Path
+          $env:PYTHONPATH = "$repo;$desktop;$provisioner;$standalone"
+          python -B -m unittest -v standalone_app/test_owner.py
+
+      - name: Run provider-neutral autodrive adversarial tests
+        run: |
+          $repo = (Resolve-Path '.').Path
+          $desktop = (Resolve-Path 'desktop_plugin').Path
+          $provisioner = (Resolve-Path 'canonical_state_provisioner').Path
+          $standalone = (Resolve-Path 'standalone_app').Path
+          $env:PYTHONPATH = "$repo;$desktop;$provisioner;$standalone"
+          python -B -m unittest -v standalone_app/test_execution_bridge.py
+
+      - name: Syntax and import closure smoke
+        run: |
+          $repo = (Resolve-Path '.').Path
+          $desktop = (Resolve-Path 'desktop_plugin').Path
+          $provisioner = (Resolve-Path 'canonical_state_provisioner').Path
+          $standalone = (Resolve-Path 'standalone_app').Path
+          $env:PYTHONPATH = "$repo;$desktop;$provisioner;$standalone"
+          python -B -m py_compile standalone_app/execution_bridge.py standalone_app/owner.py
+          @'
+          import execution_bridge
+          assert execution_bridge.SESSION_DRIVER_SHA256 == '89b0fd1ef48d5460dada5cc59b25072a10ec9b5c7049af25eabbb2d4464bf9d9'
+          print('STANDALONE_AUTODRIVE_IMPORT_CLOSURE_PASS')
+          '@ | python -
