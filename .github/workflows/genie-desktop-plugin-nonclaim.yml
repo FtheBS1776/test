@@ -7,6 +7,9 @@ on:
     paths:
       - .gitattributes
       - desktop_plugin/**
+      - '!desktop_plugin/*.md'
+      - '!desktop_plugin/TEST_RESULTS.txt'
+      - '!desktop_plugin/VERIFICATION.json'
       - shared_interfaces/**
       - active_runner/**
       - run_queue/**
