@@ -214,12 +214,13 @@ class Tests(unittest.TestCase):
 
             asyncio.run(run())
         finally:
-            process.terminate()
+            if process.poll() is None:
+                process.terminate()
             try:
-                process.wait(timeout=5)
+                process.communicate(timeout=5)
             except subprocess.TimeoutExpired:
                 process.kill()
-                process.wait(timeout=5)
+                process.communicate(timeout=5)
         self.assertEqual(_sqlite_hashes(), before)
 
 
