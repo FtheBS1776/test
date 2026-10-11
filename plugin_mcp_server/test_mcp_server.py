@@ -172,6 +172,32 @@ class Tests(unittest.TestCase):
         asyncio.run(run())
         self.assertEqual(_sqlite_hashes(), before)
 
+    def test_real_stdio_probe(self):
+        from mcp import Client, StdioServerParameters
+
+        before = _sqlite_hashes()
+        params = StdioServerParameters(
+            command=sys.executable,
+            args=[
+                "-B", "-m", "shared_interfaces.mcp_server",
+                "--registry", "host_return/trial/REGISTRY.json",
+                "--transport", "stdio",
+            ],
+            cwd=str(ROOT),
+        )
+
+        async def run():
+            async with Client(params) as client:
+                listed = await client.list_tools()
+                self.assertEqual([t.name for t in listed.tools],
+                                 ["get_run_status", "get_task_result"])
+                result = await client.call_tool(
+                    "get_run_status", {"run_name": "actual"})
+                self.assertEqual(result.structured_content.get("status"), "PASS")
+
+        asyncio.run(run())
+        self.assertEqual(_sqlite_hashes(), before)
+
     def test_real_streamable_http_probe(self):
         from mcp import Client
 
