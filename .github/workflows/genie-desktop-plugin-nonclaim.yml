@@ -65,6 +65,18 @@ jobs:
           print('WINDOWS_PACKAGE_VERSION_CLOSURE_PASS', len(expected))
           '@ | & $py -
 
+      - name: Preflight exact Genie source-binding chain on Windows
+        run: |
+          $py = 'desktop_plugin/.venv/Scripts/python.exe'
+          @'
+          from pathlib import Path
+          from shared_interfaces import cli, mcp_server
+          runs = cli._read_registry(Path('host_return/trial/REGISTRY.json'))
+          server = mcp_server.build_server(runs)
+          assert server is not None
+          print('WINDOWS_SOURCE_BINDING_CHAIN_PASS')
+          '@ | & $py -
+
       - name: Prepare deterministic seed state
         run: |
           $py = 'desktop_plugin/.venv/Scripts/python.exe'
