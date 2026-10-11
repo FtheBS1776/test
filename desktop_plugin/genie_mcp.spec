@@ -1,9 +1,8 @@
-# PyInstaller spec for the Windows local Desktop plugin runtime.
+# PyInstaller spec for the Windows local Desktop live-state plugin runtime.
 from pathlib import Path
 from PyInstaller.utils.hooks import copy_metadata
 
 ROOT = Path(SPECPATH).resolve().parent
-SEED = ROOT / "desktop_plugin" / "build_seed"
 
 runtime_sources = [
     (ROOT / "shared_interfaces" / "mcp_consumer.py", "shared_interfaces"),
@@ -21,7 +20,6 @@ runtime_sources = [
 ]
 
 datas = [(str(source), destination) for source, destination in runtime_sources]
-datas.append((str(SEED), "seed_state"))
 
 # Runtime checks use importlib.metadata, so carry the exact reviewed metadata.
 transport_distributions = [
@@ -35,10 +33,9 @@ transport_distributions = [
 for distribution in transport_distributions:
     datas += copy_metadata(distribution)
 
-# Do not collect all mcp.* modules: that imports the unused optional mcp.cli
-# surface and would add CLI-only dependencies such as typer. The approved Genie
-# core below is deliberately loaded from raw hash-pinned source data, so imports
-# used only inside that dynamic path must be named explicitly for freezing.
+# Do not collect all mcp.*: unused mcp.cli would add CLI-only dependencies.
+# Genie core below remains raw hash-pinned source data. Imports visible only
+# through that dynamic source path are named explicitly for freezing.
 hiddenimports = [
     "shared_interfaces.mcp_server",
     "shared_interfaces.cli",
@@ -50,7 +47,7 @@ hiddenimports = [
 
 a = Analysis(
     [str(ROOT / "desktop_plugin" / "entry.py")],
-    pathex=[str(ROOT)],
+    pathex=[str(ROOT), str(ROOT / "desktop_plugin")],
     binaries=[],
     datas=datas,
     hiddenimports=hiddenimports,
