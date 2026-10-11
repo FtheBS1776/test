@@ -5,6 +5,7 @@ on:
     branches:
       - nonclaim/genie-desktop-plugin-package-20261011
     paths:
+      - .gitattributes
       - desktop_plugin/**
       - shared_interfaces/**
       - active_runner/**
