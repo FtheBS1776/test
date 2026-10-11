@@ -33,16 +33,17 @@ jobs:
         with:
           python-version: '3.12.10'
 
-      - name: Verify owner surface stays local and model-free
+      - name: Verify owner surface stays local model-free and transport-neutral
         run: |
           $owner = Get-Content standalone_app/owner.py -Raw
           $cli = Get-Content standalone_app/cli.py -Raw
-          foreach ($forbidden in @('openai', 'anthropic', 'requests', 'httpx', 'urllib.request', 'socket.', 'subprocess', 'PLUGIN_DATA')) {
-            if ($owner.Contains($forbidden)) { throw "forbidden owner provider/network/runtime surface: $forbidden" }
+          foreach ($forbidden in @('openai', 'anthropic', 'requests', 'httpx', 'urllib.request', 'socket.', 'subprocess', 'PLUGIN_DATA', 'mcp_consumer', 'function_adapter')) {
+            if ($owner.Contains($forbidden)) { throw "forbidden owner provider/network/interface surface: $forbidden" }
           }
           foreach ($forbidden in @('--registry', '--queue', '--root', '--path', '--source')) {
             if ($cli.Contains($forbidden)) { throw "forbidden owner CLI pathname surface: $forbidden" }
           }
+          if (-not $owner.Contains('RUN_CONTROL_SHA256')) { throw 'direct controller source binding missing' }
           if (-not $owner.Contains('GenieRunController')) { throw 'existing controller delegation missing' }
           if (-not $owner.Contains('provision.begin()')) { throw 'canonical provisioner delegation missing' }
           Write-Output 'STANDALONE_OWNER_STATIC_BOUNDARY_PASS'
