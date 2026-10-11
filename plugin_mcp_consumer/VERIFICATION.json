@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "scope": "LOCAL_MCP_CONSUMER_PROJECTION_ONLY",
+  "source_sha256": "21f3fc657abb16c9ba7c9189f266cbdfeaec1dbf0ae2ca6d051caee1565ddd5d",
+  "accepted_adapter_sha256": "9627bc0967e4b6115f405671be8a2c60498101e276d96062d55572537f2769d2",
+  "focused_tests": 11,
+  "readonly_comparisons": 4,
+  "readonly_statuses": ["PASS", "CONFIRMED", "CONFIRMED", "UNKNOWN"],
+  "sqlite_files_checked": 27,
+  "sqlite_hashes_unchanged": true,
+  "first_pass_defects": 1,
+  "source_repairs": 1,
+  "model_calls": 0,
+  "task_reservations": 0,
+  "network_calls_from_component": 0,
+  "mcp_sdk_installed": false,
+  "mcp_server_started": false,
+  "plugin_connected": false,
+  "deployment": false
+}
