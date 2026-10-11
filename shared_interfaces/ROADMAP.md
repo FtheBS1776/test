@@ -5,12 +5,12 @@ User-approved architecture: one model-agnostic Genie core, accessible through a 
 | Milestone | Current state | Exit criterion |
 |---|---|---|
 | Useful governed work in current Work environment | Existing bounded runner and useful tasks completed | Continue concrete eligible tasks with review, fresh delivery and original budget/STOP limits |
-| Shared interface foundation | Read-only callable tools, MCP consumer projection, and local Streamable HTTP MCP server complete; connected ChatGPT plugin OPEN | Connect the accepted read-only MCP server through a supported private/reachable path and verify a real ChatGPT tool call while preserving exact Genie semantics and the external-integration policy |
+| Shared interface foundation | Read-only callable tools, MCP consumer projection, host-spawned stdio, and loopback Streamable HTTP complete; local Desktop packaging OPEN | Package the accepted stdio surface as a local ChatGPT Desktop plugin and verify host-managed launch without changing Genie semantics |
 | Standalone application | Eventual target; not implemented | Run without this particular chat, with user start/pause/resume and suitable model integration; freely runnable host, paid services optional and never required by default |
-| Usable plugin | Local server transport complete; plugin not yet connected/installed | Create the supported custom MCP connection, verify the two read-only tools in ChatGPT, and preserve authority/untrusted-data boundaries; public publication is not required |
+| Usable plugin | Local MCP transports complete; Desktop plugin package/installation not yet complete | Verify the two read-only tools through a local Desktop plugin, with the host starting/stopping Genie; preserve authority/untrusted-data boundaries and require no paid hosting |
 | Backend hosting and public availability | DEFERRED by user | Select deployment/hosting only when needed and separately authorized; no funded free public compute guarantee |
 
-Near-term interface work can reuse existing diagnostics without selecting a paid hosting platform, model backend, or second engine. A plugin request and a standalone request must retain the same meaning at the common core. Adding a plugin does not keep a terminated chat running or authorize unbounded successors.
+Near-term interface work can reuse existing diagnostics without selecting a paid hosting platform, model backend, higher subscription tier, or second engine. A plugin request and a standalone request must retain the same meaning at the common core. Adding a plugin does not keep a terminated chat running or authorize unbounded successors.
 
 ## External integration and compatibility amendment — 2026-10-11
 
@@ -26,15 +26,37 @@ Hard requirements:
 6. **Observation is not authority.** Future metrics/traces may measure cost, latency, interventions, model calls, failures, and completion, but those records remain non-authoritative unless separately bound and verified by existing Genie authority rules.
 7. **Currentness remains a scoped HOLD.** Local hashes, counters, signatures, append-only files, or historical receipts alone do not prove currentness against whole-store rollback. Any future stronger claim requires an anchor outside the rollback domain or an independently maintained witness/trust source.
 
-## MCP server transport COMPLETE — 2026-10-11 UTC
+## MCP local transports COMPLETE — 2026-10-11 UTC
 
-The accepted read-only MCP consumer is now composed into a real local Streamable HTTP server at `/mcp` on the isolated NONCLAIM branch. The official Python MCP SDK is ADAPTed only as a replaceable transport dependency. The complete observed 28-distribution transport closure is pinned and runtime-checked; dependency-version mismatch or consumer-source mismatch fails closed before server construction.
+The accepted read-only MCP consumer is now composed into two tested local transports on the isolated NONCLAIM branch:
 
-The first real HTTP probe exposed an implementation defect: the low-level MCP `Server` does not accept the high-level `.run(transport=...)` interface. That failure was preserved. The server was repaired to use `streamable_http_app()` under the pinned ASGI runner. The same evidence pass also exposed that pinning only the top-level `mcp` package allowed transitive dependency drift, so the transport closure was locked rather than relying on the resolver. A later test-harness pipe warning was also repaired. Final clean CI at tested commit `46fea87747e2a544e5888a37cfd0fbbae483d298` reports `MCP_TRANSPORT_VERSION_CLOSURE_PASS 28`, `pip check` clean, and 7/7 tests PASS, including an actual loopback Streamable HTTP client/server call against the saved `actual` run with discovered SQLite files byte-identical before/after. See `../plugin_mcp_server/README_FIRST.md`, `TEST_RESULTS.txt`, `VERIFICATION.json`, and `ROOT_ADJUDICATION.md`.
+- **host-spawned stdio**, intended for a local Desktop host that owns process startup/shutdown;
+- **loopback Streamable HTTP** at `/mcp`, retained for conformance and future portability.
 
-This proves the bounded local transport, not a connected ChatGPT plugin. No paid hosting, public ingress, model dispatch, authentication system, public submission, main merge, promotion, freeze, or EXP010 execution was added.
+The official Python MCP SDK is ADAPTed only as a replaceable transport dependency. The complete observed 28-distribution transport closure is pinned and runtime-checked; dependency-version mismatch or consumer-source mismatch fails closed before server construction.
 
-The next immediate product frontier is now the **actual private ChatGPT connection**. Current OpenAI documentation supports Secure MCP Tunnel for a local/private MCP server without exposing it to the public Internet. Prefer that no-public-ingress path if it is available under the user's existing access and does not add recurring cost. Tunnel creation/selection and custom-plugin installation are external account actions; they require explicit user action and are not silently automated from repository state. After connection, verify exactly the two read-only tools and representative PASS/CONFIRMED/UNKNOWN behavior before expanding the plugin surface.
+The first real HTTP probe exposed an implementation defect: the low-level MCP `Server` does not accept the high-level `.run(transport=...)` interface. That failure was preserved. The server was repaired to use `streamable_http_app()` under the pinned ASGI runner. The same evidence pass also exposed that pinning only the top-level `mcp` package allowed transitive dependency drift, so the transport closure was locked rather than relying on the resolver. A later test-harness pipe warning was repaired. The host-spawned stdio path was then added over the same accepted handlers.
+
+Final clean CI at tested commit `52b72cff246f9e1fe92eea694a9f9afce93ca109` reports `MCP_TRANSPORT_VERSION_CLOSURE_PASS 28`, `pip check` clean, and 8/8 tests PASS. The evidence includes a real stdio subprocess/client call and a separate real loopback Streamable HTTP call against the saved `actual` run; discovered SQLite files were byte-identical before/after both bounded probes. See `../plugin_mcp_server/README_FIRST.md`, `TEST_RESULTS.txt`, `VERIFICATION.json`, and `ROOT_ADJUDICATION.md`.
+
+This proves the bounded local transports, not an installed/connected ChatGPT plugin. No paid hosting, public ingress, model dispatch, authentication system, public submission, main merge, promotion, freeze, or EXP010 execution was added.
+
+## Immediate frontier — zero-hosting local Desktop plugin
+
+The preferred next product step is to package the accepted **stdio** transport as a local ChatGPT Desktop plugin so the host launches and stops Genie itself. This route is preferred because it avoids paid hosting, public ingress, a manually maintained server, and an architectural requirement to upgrade the user's ChatGPT plan.
+
+Package/installation design must preserve the external-integration policy:
+
+- no recurring monetary cost;
+- no routine manual dependency/version synchronization;
+- no automatic semantic upgrades;
+- same exact two read-only tools and complete structured results;
+- same explicit UNKNOWN and untrusted-result boundaries;
+- no new authority granted by plugin manifests or host metadata.
+
+Remote/web/mobile connectivity is a later optional portability frontier. Secure MCP Tunnel, a public HTTPS endpoint, ChatGPT Sites, or another hosted path must not become a prerequisite for the local plugin and remain DEFERRED unless they are needed, compatible with the user's existing access, and satisfy the cost/maintenance policy.
+
+Preparing and testing the local plugin package is authorized NONCLAIM engineering work. Actual plugin installation/connection is an external user action and requires explicit user action; repository state alone does not authorize it. After installation, verify exactly the two read-only tools and representative PASS/CONFIRMED/UNKNOWN behavior before expanding the plugin surface.
 
 Prior progress preserved: operator README7c7625273156fd80b3eb1465137245f3ab2e4915; host clarification3d727e500c5c185c717e17c49e1bd8c3b8d9a91c; freely runnable standalone directiond534881c0ce1bdf3090374b8ddb0adb321adc31e. No completed experiments rerun. Pass186 remains inherited controlling; all later integration NONCLAIM. Root/custody/rollback/power-loss/remote-authenticity/hostile-isolation HOLDs remain scoped. No promotion, freeze, main merge, spending, production deployment or EXP010.
 
@@ -44,4 +66,4 @@ Current narrow implementation: status_tool.py delegates get_run_status to the un
 
 Accepted-result retrieval extension COMPLETE (2026-10-10 UTC): get_task_result now joins get_run_status in the same callable class. Only fresh exact owned-destination CONFIRMED releases accepted text, labelled UNTRUSTED_ACCEPTED_TASK_DATA; task/plan/attempt/request/reservation-slot bindings and existing acceptance validation are checked first. UNKNOWN/MISMATCH/unavailable outcomes withhold text. Candidate SHA37629d2ec2d8bdb88da66247c7093225e387b4d79220fb42b214cc01c8ef2619,11637bytes. One author, one exact-source reviewer and separate root adjudication;0 repairs;26 focused checks plus3 distinct supplementary checks passed. One author reservation/call/observation/application, fresh delivered resultCONFIRMED,STOP ALL_TASKS_COMPLETE.79 earlier stores and12 core source pins unchanged. Original constructor/loader/status descriptor and output preserved; earlier status source/docs saved in result_interface. Separate store snapshots remain non-atomic; valid whole-store copies do not establish custody/rollback continuity. This is a local callable component, not an installed plugin, remote server or always-on model dispatch. Backend remains DEFERRED; no deployment/spending/promotion/freeze/main merge/EXP010; Pass186 and scoped HOLDs unchanged. See ../result_interface/README_FIRST.md and SOURCE_MANIFEST.json for current extension, evidence and limits. Historical shared_interfaces/SOURCE_MANIFEST.json describes the parent status unit, not amended current files.
 
-ChatGPT MCP consumer projection COMPLETE (2026-10-11 UTC): `mcp_consumer.py` pins and reuses the accepted local function adapter, projects exactly `get_run_status`/`get_task_result` into MCP-compatible read-only descriptors and returns complete adapter dictionaries as `structuredContent`. Current OpenAI plugin documentation identifies custom MCP servers as the supported live-tool plugin path. One first-pass semantic defect (invalid caller JSON reported UNKNOWN) was repaired so deterministic invalid input is REJECT while malformed/uncorrelated adapter outcomes remain UNKNOWN. Eleven focused checks and four saved read-only correspondence cases pass;27 SQLite files unchanged. No server/tunnel/hosting/authentication/plugin connection or model call was added at that stage. See `../plugin_mcp_consumer/README_FIRST.md`.
+ChatGPT MCP consumer projection COMPLETE (2026-10-11 UTC): `mcp_consumer.py` pins and reuses the accepted local function adapter, projects exactly `get_run_status`/`get_task_result` into MCP-compatible read-only descriptors and returns complete adapter dictionaries as `structuredContent`. One first-pass semantic defect (invalid caller JSON reported UNKNOWN) was repaired so deterministic invalid input is REJECT while malformed/uncorrelated adapter outcomes remain UNKNOWN. Eleven focused checks and four saved read-only correspondence cases pass;27 SQLite files unchanged. No server/hosting/authentication/plugin connection or model call was added at that stage. See `../plugin_mcp_consumer/README_FIRST.md`.
