@@ -190,16 +190,18 @@ class ProvisioningSession:
                 self._state = "UNKNOWN"
                 raise ProvisionError("PUBLISH_UNKNOWN_PRESERVE")
 
+            # The namespace move has reported success. From this point forward,
+            # ANY verification failure is a committed-but-unverified outcome;
+            # never downgrade it to an ordinary precommit namespace error.
             self._state = "MOVED"
-            final = _plain_directory(self._final, app)
             try:
+                final = _plain_directory(self._final, app)
                 observed = live.validate_state_root(final, marker_mode="required")
+                if _portable_binding(observed) != prepared_binding:
+                    raise ValueError("binding changed after publish")
             except Exception:
                 self._state = "PUBLISHED_UNVERIFIED"
                 raise ProvisionError("PUBLISHED_UNVERIFIED_PRESERVE") from None
-            if _portable_binding(observed) != prepared_binding:
-                self._state = "PUBLISHED_UNVERIFIED"
-                raise ProvisionError("PUBLISHED_UNVERIFIED_PRESERVE")
 
             self._state = "PUBLISHED"
             return {
