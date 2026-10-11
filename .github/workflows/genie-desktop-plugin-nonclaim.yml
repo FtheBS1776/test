@@ -151,7 +151,7 @@ jobs:
           $env:GENIE_PLUGIN_ROOT = (Resolve-Path 'desktop_plugin/staging/genie-readonly').Path
           desktop_plugin/.venv/Scripts/python.exe -B desktop_plugin/test_frozen.py
 
-      - name: Record ephemeral package identities
+      - name: Record package identities
         run: |
           $exe = 'desktop_plugin/staging/genie-readonly/bin/genie-mcp.exe'
           $exeHash = (Get-FileHash $exe -Algorithm SHA256).Hash.ToLower()
@@ -163,4 +163,11 @@ jobs:
           Write-Output "GENIE_DESKTOP_EXE_BYTES=$exeSize"
           Write-Output "GENIE_DESKTOP_ZIP_SHA256=$zipHash"
           Write-Output "GENIE_DESKTOP_ZIP_BYTES=$zipSize"
-          Write-Output 'PACKAGE_NOT_UPLOADED_NONCLAIM'
+
+      - name: Publish verified install package
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          path: desktop_plugin/genie-readonly-windows.zip
+          archive: false
+          if-no-files-found: error
+          retention-days: 30
