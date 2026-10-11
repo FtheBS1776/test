@@ -1,0 +1,79 @@
+name: Genie standalone owner NONCLAIM
+
+on:
+  push:
+    branches:
+      - nonclaim/genie-standalone-owner-20261011
+    paths:
+      - .gitattributes
+      - standalone_app/**
+      - canonical_state_provisioner/**
+      - desktop_plugin/live_state_windows.py
+      - shared_interfaces/**
+      - active_runner/**
+      - run_queue/**
+      - host_adapter/**
+      - worker_bridge/**
+      - .github/workflows/genie-standalone-owner-nonclaim.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  windows-standalone-owner-conformance:
+    runs-on: windows-2025
+    timeout-minutes: 10
+    steps:
+      - name: Checkout exact branch commit
+        uses: actions/checkout@v4
+
+      - name: Set up exact Python 3.12.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.10'
+
+      - name: Verify owner surface stays local and model-free
+        run: |
+          $owner = Get-Content standalone_app/owner.py -Raw
+          $cli = Get-Content standalone_app/cli.py -Raw
+          foreach ($forbidden in @('openai', 'anthropic', 'requests', 'httpx', 'urllib.request', 'socket.', 'subprocess', 'PLUGIN_DATA')) {
+            if ($owner.Contains($forbidden)) { throw "forbidden owner provider/network/runtime surface: $forbidden" }
+          }
+          foreach ($forbidden in @('--registry', '--queue', '--root', '--path', '--source')) {
+            if ($cli.Contains($forbidden)) { throw "forbidden owner CLI pathname surface: $forbidden" }
+          }
+          if (-not $owner.Contains('GenieRunController')) { throw 'existing controller delegation missing' }
+          if (-not $owner.Contains('provision.begin()')) { throw 'canonical provisioner delegation missing' }
+          Write-Output 'STANDALONE_OWNER_STATIC_BOUNDARY_PASS'
+
+      - name: Run canonical provisioner regression
+        run: |
+          $repo = (Resolve-Path '.').Path
+          $desktop = (Resolve-Path 'desktop_plugin').Path
+          $provisioner = (Resolve-Path 'canonical_state_provisioner').Path
+          $standalone = (Resolve-Path 'standalone_app').Path
+          $env:PYTHONPATH = "$repo;$desktop;$provisioner;$standalone"
+          python -B -m unittest -v canonical_state_provisioner/test_provisioner_windows.py
+
+      - name: Run standalone owner lifecycle attacks
+        run: |
+          $repo = (Resolve-Path '.').Path
+          $desktop = (Resolve-Path 'desktop_plugin').Path
+          $provisioner = (Resolve-Path 'canonical_state_provisioner').Path
+          $standalone = (Resolve-Path 'standalone_app').Path
+          $env:PYTHONPATH = "$repo;$desktop;$provisioner;$standalone"
+          python -B -m unittest -v standalone_app/test_owner.py
+
+      - name: CLI syntax and no-path smoke
+        run: |
+          $repo = (Resolve-Path '.').Path
+          $desktop = (Resolve-Path 'desktop_plugin').Path
+          $provisioner = (Resolve-Path 'canonical_state_provisioner').Path
+          $standalone = (Resolve-Path 'standalone_app').Path
+          $env:PYTHONPATH = "$repo;$desktop;$provisioner;$standalone"
+          python -B -m py_compile standalone_app/owner.py standalone_app/cli.py
+          python -B standalone_app/cli.py --help
+          python -B standalone_app/cli.py status --help
+          python -B standalone_app/cli.py advance --help
+          Write-Output 'STANDALONE_OWNER_CLI_SMOKE_PASS'
