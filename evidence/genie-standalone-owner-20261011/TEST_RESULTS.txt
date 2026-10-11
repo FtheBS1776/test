@@ -1,0 +1,71 @@
+GENIE MINIMAL STANDALONE OWNER — FINAL INTERNAL NONCLAIM TEST RECORD
+Date: 2026-10-11 UTC
+Tested commit: 624c89a30cc4d1b1e667267eb0b99022bcedba78
+Workflow run: 38173656302
+Workflow job: 114571354490
+Platform: Windows Server 2025 / windows-2025-vs2026
+Python: exact CPython 3.12.10
+
+SCOPE
+This evidence supports the first local standalone-owner lifecycle surface over the existing shared Genie core. It proves create-first-run, status, and one-step advance only. It does not invoke a model/provider, perform callbacks, run an autonomous loop, implement pause/resume, or migrate historical user state.
+
+STATIC / LAYERING BOUNDARY
+PASS — STANDALONE_OWNER_STATIC_BOUNDARY_PASS
+PASS — owner source contains no OpenAI/Anthropic/HTTP/socket/subprocess/provider execution surface
+PASS — owner does not use PLUGIN_DATA
+PASS — owner CLI exposes no registry/queue/root/path/source pathname options
+PASS — owner exact-byte pins transport-neutral run_control.py directly
+PASS — CI rejects owner dependency on mcp_consumer.py or function_adapter.py
+PASS — standalone owner and plugin therefore remain sibling interfaces over one shared core rather than depending on each other
+
+INHERITED CANONICAL PROVISIONER REGRESSION
+PASS — 11/11 canonical state provisioner tests
+PASS — committed-but-unverified and unknown-publication preservation semantics remain intact
+
+STANDALONE OWNER LIFECYCLE
+PASS — 5/5 tests
+PASS — deterministic invalid creation spec is rejected before staging acquisition; no app/staging namespace is created
+PASS — injected post-core/pre-registry creation failure preserves staging/queue/work and blocks recreate
+PASS — successful create publishes one NEW canonical run through the accepted provisioner
+PASS — successful create returns model_invoked=false
+PASS — initial and subsequent status reads delegate to existing Genie status semantics
+PASS — first advance delegates exactly once to existing GenieRunController and returns INVOKE_WORKER with the bound token/request
+PASS — first advance reserves exactly one model-call slot but invokes no model
+PASS — second advance returns RECONCILE_WORKER with allow_new_invocation=false and reserved_model_calls remains exactly 1
+PASS — published canonical root blocks replacement creation
+PASS — injected post-publish live-binding failure becomes OWNER_PUBLISHED_UNVERIFIED_PRESERVE and final state is preserved
+PASS — source-pin drift in run_control.py fails OWNER_SOURCE_BINDING before canonical namespace creation
+
+CLI
+PASS — Python syntax/compile
+PASS — top-level create/status/advance help
+PASS — no-path smoke
+The CLI is an engineering owner shell, not a final GUI/installer.
+
+PRESERVED CROSS-ATTACK REPAIR
+The first owner implementation/run (workflow 38173501477, job 114570893971, head 4fafc1d3009aec57b4611af13259dcfc0c4d5c14) passed the same functional lifecycle tests but reached run_control.py through mcp_consumer.py/function_adapter.py only as a source-binding convenience. Internal architecture cross-attack identified that as an unnecessary interface-layer coupling: the standalone owner should not depend conceptually on the plugin projection.
+
+Repair commits efb734a116a58a52299ee3faa5bd777749537afa through 624c89a30cc4d1b1e667267eb0b99022bcedba78 changed the owner to exact-byte pin run_control.py directly, updated the test/contract, and added a CI prohibition on mcp_consumer/function_adapter dependencies. The final full Windows run passed again.
+
+CURRENT BEHAVIOR
+A new run can now be created and locally advanced without this chat. When the existing controller reaches INVOKE_WORKER, this unit deliberately stops and returns the bound request/token. It does not execute a model. This is the intended authority boundary for the next provider-neutral execution adapter.
+
+LIMITS
+This does NOT establish or perform:
+- migration/import of existing user state;
+- execution on the user's physical machine;
+- creation of additional runs after the first canonical root exists;
+- pause/resume;
+- provider/model invocation;
+- automatic worker observation/candidate callbacks;
+- candidate review/adjudication loop;
+- autonomous continuation to STOP;
+- remote/authenticated worker identity;
+- rollback/currentness or crash-durability guarantees;
+- hostile local-user confinement;
+- plugin installation/connection;
+- final GUI/installer/production readiness;
+- authority promotion, freeze, main merge, or EXP010 execution.
+
+NEXT FRONTIER
+Design a provider-neutral execution bridge that consumes only an existing bound INVOKE_WORKER token/request, invokes exactly one injected provider/worker capability, records outcome through the existing host journal/callback semantics, and never invents retry permission after an uncertain invocation. Review prior host-return/Work adapter evidence first; external provider APIs remain a later adapter-specific surface.
