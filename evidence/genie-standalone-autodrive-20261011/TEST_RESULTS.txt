@@ -1,0 +1,64 @@
+GENIE STANDALONE PROVIDER-NEUTRAL AUTODRIVE — FINAL INTERNAL NONCLAIM TEST RECORD
+Date: 2026-10-11 UTC
+Tested commit: b72a5df41a28a6b9faec65d115fdf83cc7c5c846
+Workflow run: 38174048555
+Workflow job: 114572527718
+Platform: Windows Server 2025 / windows-2025-vs2026
+Python: exact CPython 3.12.10
+
+SCOPE
+This evidence supports provider-neutral finite automatic progression of a NEW canonical standalone Genie run through the already accepted session driver with injected trusted-local worker/reviewer callables. No real provider, model API, network client, credentials, billing path, daemon, or background service is added.
+
+REUSE / STATIC BOUNDARY
+PASS — STANDALONE_AUTODRIVE_STATIC_BOUNDARY_PASS
+PASS — bridge exact-byte pins accepted session_driver.py SHA-256 89b0fd1ef48d5460dada5cc59b25072a10ec9b5c7049af25eabbb2d4464bf9d9
+PASS — bridge delegates to driver.drive_run and contains no second while-loop/orchestration engine
+PASS — no OpenAI/Anthropic/HTTP/socket/subprocess/PLUGIN_DATA/serve_run provider or transport surface in the bridge
+PASS — STANDALONE_AUTODRIVE_IMPORT_CLOSURE_PASS
+
+INHERITED REGRESSIONS
+PASS — canonical provisioner 11/11
+PASS — standalone owner 5/5
+
+AUTODRIVE ADVERSARIAL TESTS
+PASS — 7/7
+PASS — happy path: one injected worker + one injected reviewer automatically progressed from fresh run through delivery to STOP / ALL_TASKS_COMPLETE without manual advance between actions
+PASS — final accepted task fresh_sink was CONFIRMED and get_task_result returned exact accepted text as UNTRUSTED_ACCEPTED_TASK_DATA
+PASS — bounded repair path: existing two-attempt policy drove worker/reviewer exactly twice (REPAIR then ACCEPT), consumed exactly two reserved calls, delivered attempt 2, and stopped ALL_TASKS_COMPLETE
+PASS — UNKNOWN worker observation recorded once, returned non-authorizing UNKNOWN, and a later drive called no worker and returned RECONCILE_WORKER with reserved calls still exactly one
+PASS — worker exception after invocation attempt returned UNKNOWN; a later drive called no worker and returned RECONCILE_WORKER with no second reservation
+PASS — mismatched worker token returned UNKNOWN; a later drive did not re-invoke worker and reservation remained exactly one
+PASS — action-limit/process boundary after worker submission returned HOLD / DRIVER_ACTION_LIMIT; a later drive did not reconstruct same-session reviewer eligibility, called neither worker nor reviewer, and returned RECONCILE_REVIEW / NO_SESSION_SUBMISSION
+PASS — session-driver source-pin drift rejects BRIDGE_SOURCE_BINDING before any worker hook or canonical namespace creation
+
+PRESERVED SEMANTICS
+- execution, observation, verification, and authority remain distinct;
+- no observation/exception/malformed return/token mismatch is never automatic retry permission;
+- original run/task/input/attempt/slot/call binding remains required;
+- reviewer authority is restricted to a candidate submitted in the same driver session; process/action-limit restart does not reconstruct that eligibility;
+- existing queue/model-call budgets remain controlling;
+- same-model/shared-provider worker/reviewer roles remain potentially common-cause and are not claimed as independent evidence roots.
+
+WARNINGS
+No test/runtime warnings were emitted by Genie code. GitHub runner cleanup emitted only its own notice that actions/checkout@v4 and actions/setup-python@v5 target deprecated Node 20 and are being forced to Node 24. This is runner/tooling noise, not Genie runtime evidence.
+
+LIMITS
+This does NOT establish or perform:
+- any real model/provider call;
+- provider API request identity/idempotency or authenticated remote invocation proof;
+- credentials or billing/cost behavior;
+- independence of worker/reviewer when backed by the same provider/model ancestry;
+- persistent reviewer eligibility across a process/session boundary;
+- always-on/background autonomy after the process exits;
+- pause/resume;
+- historical-state migration;
+- execution on the user's physical machine;
+- plugin installation/connection;
+- final GUI/installer/production readiness;
+- authority promotion, freeze, main merge, or EXP010 execution.
+
+MILESTONE INTERPRETATION
+For injected local worker/reviewer capabilities, Genie can now create a NEW canonical run and autonomously traverse bounded worker/reviewer/repair/delivery actions to STOP without requiring a human to issue repeated manual continuation commands between normal successful steps. This is not yet the same as a usable real-model standalone product because no provider adapter is installed.
+
+NEXT FRONTIER
+Provider adapter selection is now the first unavoidable external-integration choice. Evaluate current provider options against the standing cost/minimal-maintenance policy before implementation. A provider-specific adapter must map ambiguous network/provider outcomes to the existing UNKNOWN/no-retry semantics and must not weaken exact token/request bindings.
