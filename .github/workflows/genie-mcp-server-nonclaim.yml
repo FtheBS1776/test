@@ -1,0 +1,44 @@
+name: Genie MCP server NONCLAIM
+
+on:
+  push:
+    branches:
+      - nonclaim/genie-mcp-server-20261011
+    paths:
+      - shared_interfaces/mcp_server.py
+      - shared_interfaces/mcp_consumer.py
+      - shared_interfaces/function_adapter.py
+      - shared_interfaces/cli.py
+      - shared_interfaces/status_tool.py
+      - plugin_mcp_server/**
+      - .github/workflows/genie-mcp-server-nonclaim.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  transport-conformance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout exact branch commit
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install exact reviewed MCP SDK
+        run: |
+          python -m pip install --disable-pip-version-check -r plugin_mcp_server/requirements.txt
+          python - <<'PY'
+          import importlib.metadata as md
+          actual = md.version('mcp')
+          assert actual == '2.3.0', actual
+          print('MCP_SDK_VERSION_PASS', actual)
+          PY
+
+      - name: Run bounded MCP server tests
+        run: python -B -m unittest -v plugin_mcp_server.test_mcp_server
