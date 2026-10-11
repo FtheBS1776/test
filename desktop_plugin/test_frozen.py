@@ -28,6 +28,26 @@ def _env(plugin_root, plugin_data):
     return env
 
 
+def _run_build_selftest(exe, plugin_root, plugin_data):
+    env = _env(plugin_root, plugin_data)
+    env["GENIE_PLUGIN_BUILD_SELFTEST"] = "1"
+    proc = subprocess.run(
+        [str(exe)],
+        cwd=plugin_root,
+        env=env,
+        input=b"",
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        timeout=20,
+    )
+    assert proc.returncode == 0, (proc.returncode, proc.stdout, proc.stderr)
+    assert proc.stderr == b"", proc.stderr
+    assert proc.stdout in (
+        b"GENIE_PLUGIN_BUILD_SELFTEST_PASS\n",
+        b"GENIE_PLUGIN_BUILD_SELFTEST_PASS\r\n",
+    ), proc.stdout
+
+
 async def _exercise(exe, plugin_root, plugin_data):
     from mcp import Client, StdioServerParameters
 
@@ -107,6 +127,10 @@ def main():
     }
 
     with tempfile.TemporaryDirectory() as temp:
+        selftest_data = Path(temp) / "selftest"
+        selftest_data.mkdir()
+        _run_build_selftest(exe, plugin_root, selftest_data)
+
         data = Path(temp) / "data"
         data.mkdir()
         task_id = asyncio.run(_exercise(exe, plugin_root, data))
