@@ -14,9 +14,11 @@ No model/provider is invoked by this unit. If the existing controller returns `I
 
 ## Dependency / authority chain
 
-The owner does not import mutable core semantics by filename and trust them implicitly. It loads the already accepted source chain through the same exact-byte bindings used by the MCP path:
+The owner does not depend on the MCP/plugin projection and does not import mutable core semantics by filename without verification. It exact-byte pins the existing transport-neutral `run_control.py`, which then retains its already accepted internal source-binding chain:
 
-`mcp_consumer.py` (exact SHA-256) -> `function_adapter.py` -> `run_control.py` -> `status_tool.py` -> `run_status.py` -> `runner.py` -> queue/journal/bridge/reused core.
+`run_control.py` (exact SHA-256) -> `status_tool.py` -> `run_status.py` -> `runner.py` -> queue/journal/bridge/reused core.
+
+This layering is intentional: the standalone owner and plugin are sibling interfaces over one core; neither interface depends on the other.
 
 The canonical-state namespace is acquired only through `canonical_state_provisioner.begin()`.
 
@@ -32,10 +34,12 @@ No alternate queue, ledger, worker, reviewer, completion, or STOP semantics are 
 
 It accepts **no filesystem path** and no provider/model configuration.
 
+Before acquiring the one-shot staging witness, the owner performs a bounded deterministic precheck. Plan validation delegates to the existing pure queue validator. The queue has no separate pure policy validator, so policy shape/bounds are mirrored only as a non-authorizing typo precheck; the existing queue `initialize` operation remains authoritative once staging is acquired.
+
 Creation sequence:
 
-1. load the exact accepted Genie core chain;
-2. validate run alias, policy and every plan using existing core validators;
+1. load the exact accepted transport-neutral controller/core chain;
+2. precheck run alias/policy and validate every plan;
 3. acquire the fixed canonical staging capability from the accepted provisioner;
 4. create fixed direct children `queue.sqlite` and `work` inside staging;
 5. initialize the existing queue with the supplied policy;
@@ -43,9 +47,11 @@ Creation sequence:
 7. write the fixed `REGISTRY.json` mapping the supplied alias to `queue.sqlite`, the policy run ID, and `work`;
 8. re-open/validate the initialized queue through existing runner context/status semantics;
 9. publish once through the accepted canonical provisioner;
-10. re-open through the accepted fixed-root live-state binder and require exact alias/run binding.
+10. re-open through the accepted fixed-root live-state binder and require exact alias/run binding plus a real existing Genie status read.
 
 After staging acquisition, any creation failure is preserve-only. The owner does not remove staging, retry creation, substitute a different run, or silently repair partial state.
+
+After publication, any live-binding/status verification failure is `OWNER_PUBLISHED_UNVERIFIED_PRESERVE`; the canonical root is not recreated or replaced.
 
 ## Status
 
@@ -61,7 +67,7 @@ The returned `INVOKE_WORKER` token/request is data for a future separately revie
 
 ## CLI
 
-A minimal local CLI may expose `create`, `status`, and `advance` only. `create` reads its strict creation object from stdin; no pathname argument is accepted. `status`/`advance` accept only a run alias.
+A minimal local CLI exposes `create`, `status`, and `advance` only. `create` reads its strict creation object from stdin; no pathname argument is accepted. `status`/`advance` accept only a run alias.
 
 The CLI is an engineering owner shell, not the final GUI/installer. It is intended to prove that the shared core can be operated without this chat before model-provider integration is added.
 
@@ -71,6 +77,7 @@ This unit does not establish:
 
 - migration/import of historical user state;
 - creation on the user's physical machine;
+- creation of additional runs after the first canonical root exists;
 - pause/resume semantics;
 - model/provider dispatch;
 - autonomous continuation after `INVOKE_WORKER`;
