@@ -107,6 +107,14 @@ def _existing_state(state):
 def _provision_state():
     data = _strict_data_root()
     state = data / "state"
+    abandoned = [
+        path for path in data.iterdir()
+        if path.name.startswith(".state.init-")
+    ]
+    if abandoned:
+        # An earlier first-run provisioning may have entered the copy step.
+        # Do not infer rollback, cleanup, safe retry, or permission to reseed.
+        raise _BootstrapReject("PLUGIN_STATE_PARTIAL_PRESERVE")
     if state.exists():
         if not state.is_dir():
             raise _BootstrapReject("PLUGIN_STATE_PARTIAL_PRESERVE")
@@ -115,8 +123,6 @@ def _provision_state():
     seed = _bundle_root() / SEED_DIR
     seed_id, _manifest_sha = _read_seed_manifest(seed)
     temporary = data / (".state.init-" + str(os.getpid()))
-    if temporary.exists():
-        raise _BootstrapReject("PLUGIN_STATE_PARTIAL_PRESERVE")
     try:
         shutil.copytree(seed, temporary, ignore=shutil.ignore_patterns(SEED_MANIFEST))
         marker = {"state_format": STATE_FORMAT, "seeded_from": seed_id}
