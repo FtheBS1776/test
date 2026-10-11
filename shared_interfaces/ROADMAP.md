@@ -5,12 +5,28 @@ User-approved architecture: one model-agnostic Genie core, accessible through a 
 | Milestone | Current state | Exit criterion |
 |---|---|---|
 | Useful governed work in current Work environment | Existing bounded runner and useful tasks completed | Continue concrete eligible tasks with review, fresh delivery and original budget/STOP limits |
-| Shared interface foundation | First read-only callable status component complete; plugin connection OPEN | Expose a useful narrow existing operation through a transport-neutral callable surface; validate inputs and preserve core output meaning |
-| Standalone application | Eventual target; not implemented | Run without this particular chat, with user start/pause/resume and suitable model integration; freely runnable host, paid services optional |
+| Shared interface foundation | Read-only callable tools and MCP consumer projection complete; actual MCP server/plugin connection OPEN | Expose the accepted read-only operations through a supported MCP server/host connection while preserving exact Genie semantics and the external-integration policy |
+| Standalone application | Eventual target; not implemented | Run without this particular chat, with user start/pause/resume and suitable model integration; freely runnable host, paid services optional and never required by default |
 | Usable plugin | Eventual target; not installed/published | Package instructions and supported callable tools for an actual supported host; verify connected operation and preserve authority boundaries |
 | Backend hosting and public availability | DEFERRED by user | Select deployment/hosting only when needed and separately authorized; no funded free public compute guarantee |
 
 Near-term interface work can reuse existing diagnostics without selecting a server, SDK, authentication provider, model backend or hosting platform. A local callable facade is not an MCP implementation, remotely authenticated service, deployed plugin or proof of autonomous operation. A plugin request and a standalone request must retain the same meaning at the common core. Adding a plugin does not keep a terminated chat running or authorize unbounded successors.
+
+## External integration and compatibility amendment — 2026-10-11
+
+The standing policy is [EXTERNAL_INTEGRATION_POLICY.md](EXTERNAL_INTEGRATION_POLICY.md). It is a roadmap constraint, not a new runtime dependency.
+
+Hard requirements:
+
+1. **No added recurring cost by default.** Prefer free/open/local/already-included capabilities. Paid APIs, subscriptions, hosted services, metered infrastructure, or additional paid model providers remain DEFERRED unless the user explicitly authorizes spending. External adoption should reduce total cost, burden, or risk rather than add them.
+2. **No routine user-maintained synchronization.** Genie should own adapter compatibility, validation, migrations, capability checks, and state translation wherever practical. Do not design a system that requires the user to keep external dashboards, policies, versions, or state manually synchronized.
+3. **No silent semantic drift from external upgrades.** External systems are isolated behind adapters. Pin or negotiate supported versions/capabilities where possible; test candidate upgrades against existing Genie contracts before adoption. Unsupported or incompatible versions fail closed or remain unavailable without corrupting authoritative state.
+4. **Reference architectures are lessons first, dependencies only by exception.** For materially overlapping mature systems, record `REUSE`, `ADAPT`, `REJECT`, or `DEFER` before adding machinery. Studying Cedar/OPA, in-toto/SLSA, TUF, Tessera/Sigstore, Temporal/LangGraph, SPIFFE, OpenTelemetry, MCP, or A2A does not authorize installing them.
+5. **Interoperability remains layered around one core.** MCP is the current tool/plugin boundary. A2A or a bounded agent adapter is a later agent-interoperability boundary. Neither transport may grant authority the Genie core does not already authorize.
+6. **Observation is not authority.** Future metrics/traces may measure cost, latency, interventions, model calls, failures, and completion, but those records remain non-authoritative unless separately bound and verified by existing Genie authority rules.
+7. **Currentness remains a scoped HOLD.** Local hashes, counters, signatures, append-only files, or historical receipts alone do not prove currentness against whole-store rollback. Any future stronger claim requires an anchor outside the rollback domain or an independently maintained witness/trust source.
+
+The next immediate product frontier remains unchanged: compose the accepted read-only MCP projection into an actual supported MCP server/transport and prove a connected ChatGPT plugin call without selecting paid hosting, adding a second engine, or weakening existing authority semantics.
 
 Prior progress preserved: operator README7c7625273156fd80b3eb1465137245f3ab2e4915; host clarification3d727e500c5c185c717e17c49e1bd8c3b8d9a91c; freely runnable standalone directiond534881c0ce1bdf3090374b8ddb0adb321adc31e. No completed experiments rerun. Pass186 remains inherited controlling; all later integration NONCLAIM. Root/custody/rollback/power-loss/remote-authenticity/hostile-isolation HOLDs remain scoped. No promotion, freeze, main merge, spending, production deployment or EXP010.
 
