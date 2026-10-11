@@ -65,6 +65,23 @@ async def _exercise(exe, plugin_root, plugin_data):
         return task_id
 
 
+def _expect_partial_preserve(exe, plugin_root, data):
+    proc = subprocess.run(
+        [str(exe)],
+        cwd=plugin_root,
+        env=_env(plugin_root, data),
+        input=b"",
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        timeout=15,
+    )
+    assert proc.returncode == 2, (proc.returncode, proc.stdout, proc.stderr)
+    assert proc.stdout == b"", proc.stdout
+    expected_lf = b"GENIE_PLUGIN_REJECT:PLUGIN_STATE_PARTIAL_PRESERVE\n"
+    expected_crlf = b"GENIE_PLUGIN_REJECT:PLUGIN_STATE_PARTIAL_PRESERVE\r\n"
+    assert proc.stderr in (expected_lf, expected_crlf), proc.stderr
+
+
 def main():
     plugin_root = Path(os.environ["GENIE_PLUGIN_ROOT"]).resolve(strict=True)
     exe = plugin_root / "bin" / "genie-mcp.exe"
@@ -111,20 +128,23 @@ def main():
         partial = Path(temp) / "partial"
         partial.mkdir()
         (partial / "state").mkdir()
-        (partial / "state" / "unbound.txt").write_text("do not overwrite\n", encoding="utf-8")
-        proc = subprocess.run(
-            [str(exe)],
-            cwd=plugin_root,
-            env=_env(plugin_root, partial),
-            input=b"",
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            timeout=15,
-        )
-        assert proc.returncode == 2, (proc.returncode, proc.stdout, proc.stderr)
-        assert proc.stdout == b"", proc.stdout
-        assert proc.stderr == b"GENIE_PLUGIN_REJECT:PLUGIN_STATE_PARTIAL_PRESERVE\r\n" or proc.stderr == b"GENIE_PLUGIN_REJECT:PLUGIN_STATE_PARTIAL_PRESERVE\n", proc.stderr
-        assert (partial / "state" / "unbound.txt").read_text(encoding="utf-8") == "do not overwrite\n"
+        (partial / "state" / "unbound.txt").write_text(
+            "do not overwrite\n", encoding="utf-8")
+        _expect_partial_preserve(exe, plugin_root, partial)
+        assert (partial / "state" / "unbound.txt").read_text(
+            encoding="utf-8") == "do not overwrite\n"
+
+        abandoned = Path(temp) / "abandoned"
+        abandoned.mkdir()
+        abandoned_init = abandoned / ".state.init-previous"
+        abandoned_init.mkdir()
+        abandoned_file = abandoned_init / "partial.txt"
+        abandoned_file.write_text(
+            "preserve interrupted init\n", encoding="utf-8")
+        _expect_partial_preserve(exe, plugin_root, abandoned)
+        assert not (abandoned / "state").exists()
+        assert abandoned_file.read_text(
+            encoding="utf-8") == "preserve interrupted init\n"
 
     print("DESKTOP_PLUGIN_FROZEN_PASS")
     return 0
