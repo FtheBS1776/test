@@ -9,6 +9,7 @@ import argparse
 import hashlib
 import importlib.metadata as metadata
 import json
+import os
 from pathlib import Path
 import types
 
@@ -44,11 +45,19 @@ TRANSPORT_DISTRIBUTIONS = {
     "typing-inspection": "0.4.4",
     "uvicorn": "0.54.0",
 }
+WINDOWS_TRANSPORT_DISTRIBUTIONS = {"pywin32": "312"}
+
+
+def required_transport_distributions():
+    required = dict(TRANSPORT_DISTRIBUTIONS)
+    if os.name == "nt":
+        required.update(WINDOWS_TRANSPORT_DISTRIBUTIONS)
+    return required
 
 
 def _require_sdk():
     try:
-        for distribution, expected in TRANSPORT_DISTRIBUTIONS.items():
+        for distribution, expected in required_transport_distributions().items():
             if metadata.version(distribution) != expected:
                 raise ValueError("version mismatch")
         from mcp.server import Server, ServerRequestContext
