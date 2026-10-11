@@ -1,0 +1,4 @@
+# Genie source SHA-256 bindings are raw-byte bindings. Keep Python source bytes
+# identical across Windows/macOS/Linux checkouts rather than weakening verifiers
+# with platform-dependent newline normalization.
+*.py text eol=lf
