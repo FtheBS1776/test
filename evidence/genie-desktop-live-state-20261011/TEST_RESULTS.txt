@@ -1,0 +1,72 @@
+GENIE DESKTOP FIXED-ROOT LIVE-STATE BINDING PACKAGE — FINAL INTERNAL NONCLAIM TEST RECORD
+Date: 2026-10-11 UTC
+Tested commit: 18012ed3bb648a284124d9690fdc12344e6ba00d
+Workflow run: 38172329559
+Workflow job: 114567355097
+Platform: Windows Server 2025 / windows-2025-vs2026
+Python: exact CPython 3.12.10
+
+DISPOSITION TARGET
+This evidence supports only the Windows-local read-only live-state BINDING MECHANISM and package behavior against canonical-root test state. It does not claim that the user's actual Genie state has been provisioned into that root.
+
+ENVIRONMENT / DEPENDENCY CLOSURE
+PASS — isolated build virtual environment
+PASS — pip check: No broken requirements found
+PASS — WINDOWS_LIVE_STATE_VERSION_CLOSURE_PASS 36
+PASS — raw-byte Python source representation preserved by inherited .gitattributes policy
+
+FOCUSED SOURCE BINDING ATTACKS
+PASS — 4/4 focused Windows live-state source tests
+PASS — missing fixed root rejects LIVE_STATE_UNAVAILABLE
+PASS — malformed marker rejects LIVE_STATE_INVALID
+PASS — ../ traversal, absolute Windows path, and reserved device basename reject LIVE_STATE_PATH
+PASS — valid canonical-root fixture reuses the existing strict Genie registry parser
+PASS — valid source-side status returned PASS and confirmed result returned CONFIRMED with UNTRUSTED_ACCEPTED_TASK_DATA
+PASS — all five observed SQLite files were byte-identical before/after the valid source-side calls
+
+PACKAGE CONTENT BOUNDARY
+PASS — LIVE_PACKAGE_NO_FIXTURE_BOOTSTRAP_PASS
+PASS — live PyInstaller spec contains no seed_state/build_seed fixture payload
+PASS — live entrypoint contains no copytree, SEED_MANIFEST, or _provision_state path
+PASS — LIVE_PACKAGE_STAGING_EXACT_THREE_FILES_PASS
+The staged package contains only root plugin.json, root mcp.json, and bin/genie-mcp.exe.
+
+FIXED LIVE ROOT
+Production binding derives the current user's Windows FOLDERID_LocalAppData via SHGetKnownFolderPath and appends the fixed owned names GenieReasoningEngine/state-v1. The package does not accept a model/tool-supplied pathname and does not use PLUGIN_DATA as a Genie state replica.
+
+FROZEN ADVERSARIAL LIFECYCLE
+PASS — DESKTOP_PLUGIN_LIVE_STATE_FROZEN_PASS
+The frozen executable was exercised against the real Windows Known Folder location on the ephemeral CI host.
+PASS — missing canonical live state failed closed; no state was seeded into PLUGIN_DATA
+PASS — malformed exact-state marker failed closed
+PASS — registry path traversal failed closed before Genie store read
+PASS — a real Windows directory junction used as the owned_root direct child and pointing outside the fixed state root failed closed
+PASS — a valid test fixture placed at the canonical fixed root drove the frozen executable successfully
+PASS — fixed-stage frozen core self-test succeeded
+PASS — official MCP client launched the frozen executable over stdio
+PASS — exactly get_run_status and get_task_result were advertised
+PASS — get_run_status(actual) returned PASS
+PASS — confirmed task result returned CONFIRMED
+PASS — content_role remained UNTRUSTED_ACCEPTED_TASK_DATA
+PASS — result_text was not duplicated into the model-facing text block and the UNTRUSTED DATA warning remained
+PASS — a second independent MCP process launch returned the same confirmed task
+PASS — every file in the canonical test live-state root remained byte-identical across the successful frozen calls
+PASS — host-created PLUGIN_DATA sentinel/tree remained byte-identical; the plugin did not use it as Genie authority/state
+
+EPHEMERAL BUILD IDENTITIES
+Executable SHA-256: f67f46793497963fc0ae638e22c3434907d24e28740a441940b80aacd0a4ba97
+Executable bytes: 22100172
+ZIP SHA-256: cb8439cdbdcfa955d7291d37c256ebcc6a5354ad756f4029e3bd21be51dda0d7
+ZIP bytes: 21805992
+
+The workflow explicitly recorded LIVE_PACKAGE_NOT_UPLOADED_NONCLAIM. These identities bind ephemeral CI outputs only. They are not a user-delivery anchor and no package was uploaded, installed, connected, published, or merged.
+
+PRESERVED FAILURE HISTORY
+1. First dedicated live-state workflow run 38172231755 / job 114567060156 / head b413355a815ec4f10c1dd2478d3f14ff5bb48c12 failed before the frozen executable was launched. The frozen-test Python harness set PYTHONPATH only to desktop_plugin, so importing live_state_windows could not import shared_interfaces. This was a TEST-HARNESS defect, not reclassified as a product success. Repair: include both repository root and desktop_plugin in the harness search path. No live-state/confinement product code changed for this repair.
+2. The repaired run 38172329559 at exact tested head 18012ed3bb648a284124d9690fdc12344e6ba00d passed every source, no-fixture, build, staging, frozen adversarial, read-only, and identity-recording step.
+
+LIMITS / OPEN BOUNDARY
+This does NOT prove that the user's actual Genie state exists under the canonical Windows root. CI deliberately placed historical test state at the canonical root only to verify the binding mechanism, then removed it. It does not establish migration/provisioning correctness, currentness against whole-store rollback, custody continuity, hostile local-user/race confinement, remote authenticity, code-signing trust, physical-user-machine behavior, actual ChatGPT Desktop installation, production readiness, authority promotion, freeze, main merge, or EXP010 execution.
+
+NEXT FRONTIER
+The next distinct unit is canonical-state provisioning/ownership for the eventual standalone Genie application or another explicit trusted local setup path. That unit must create/populate the fixed Genie root without turning MCP/model input into pathname authority, without silently overwriting/repairing ambiguous existing state, and without pretending a historical repository fixture is live user state. Actual ChatGPT Desktop installation/connection remains an external explicit-user-action boundary after real canonical state exists.
