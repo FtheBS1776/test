@@ -1,0 +1,60 @@
+{
+  "accepted_adapter_sha256": "9627bc0967e4b6115f405671be8a2c60498101e276d96062d55572537f2769d2",
+  "base_commit": "546af9bbe7c736f505989fa5c353df003960ebc5",
+  "base_tree": "e1fd5315d6106fb4a3dd4c6e52f4c800af1ba5c9",
+  "files": {
+    "README.md": {
+      "bytes": 11156,
+      "sha256": "1e9f93cbd8d2584510d2b88b4bc4ab3f339b9d868b4cdf4cb29ff543d9644917"
+    },
+    "plugin_mcp_consumer/CONTRACT.md": {
+      "bytes": 3202,
+      "sha256": "05fc8920bd1217e82c5e4984bc74fb513fdffd955535f0861976e0108a131b82"
+    },
+    "plugin_mcp_consumer/PRIOR_CORRESPONDENCE.md": {
+      "bytes": 1895,
+      "sha256": "1dccaba656ce05fddda451eb2c2dfff795d1ab888958aef367589c9e29d15d21"
+    },
+    "plugin_mcp_consumer/README_FIRST.md": {
+      "bytes": 885,
+      "sha256": "5baa23e6ef3ea8545ea25c7fdb46af17cafd01342f711db6382494183726f314"
+    },
+    "plugin_mcp_consumer/RESEARCH.md": {
+      "bytes": 1635,
+      "sha256": "0eaf7c349995b174dd73d5af079e290ae1632dfdebaf2e36d6ffe89703754c9d"
+    },
+    "plugin_mcp_consumer/ROOT_ADJUDICATION.md": {
+      "bytes": 1670,
+      "sha256": "8eb6baeeffca2d5419fc0dea1bd4df7c1b0bd61ea3ee0363e091f7d2169dcaf6"
+    },
+    "plugin_mcp_consumer/SOURCE_REVIEW.md": {
+      "bytes": 1357,
+      "sha256": "b0e627c5740058af3dab54d487d08ade33dbd50436311a2aaeca219bc6a09b3e"
+    },
+    "plugin_mcp_consumer/TEST_RESULTS.txt": {
+      "bytes": 551,
+      "sha256": "2bff2e7c2d078871c7b99289643f69e1b4c3b657a5917019d177ddce2c29ff5c"
+    },
+    "plugin_mcp_consumer/USAGE.md": {
+      "bytes": 960,
+      "sha256": "4ea3a64d432dc3f18dc4049d2f18b402f23b3b7379bd4cb42e6371054033afa9"
+    },
+    "plugin_mcp_consumer/VERIFICATION.json": {
+      "bytes": 689,
+      "sha256": "d70eaeb4a8542cebd349dfe4c32d31d5c7e5d73dcf0f697b3a5f5a63aa1578b6"
+    },
+    "plugin_mcp_consumer/test_consumer.py": {
+      "bytes": 6784,
+      "sha256": "ebde95ef736f8a438e78f483c823dce3c5d0c7b6a3c561581acf084d979392c2"
+    },
+    "shared_interfaces/ROADMAP.md": {
+      "bytes": 6013,
+      "sha256": "fe357a0b407b48724152219322c94b7528a6905a706da6f3a17d290536528194"
+    },
+    "shared_interfaces/mcp_consumer.py": {
+      "bytes": 5683,
+      "sha256": "21f3fc657abb16c9ba7c9189f266cbdfeaec1dbf0ae2ca6d051caee1565ddd5d"
+    }
+  },
+  "scope": "NONCLAIM_MCP_CONSUMER_PROJECTION"
+}
