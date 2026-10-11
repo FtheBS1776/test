@@ -1,0 +1,10 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "genie-readonly": {
+      "type": "stdio",
+      "command": "./bin/genie-mcp.exe",
+      "cwd": "${PLUGIN_ROOT}"
+    }
+  }
+}
