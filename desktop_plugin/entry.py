@@ -17,6 +17,7 @@ STATE_FORMAT = 1
 SEED_DIR = "seed_state"
 SEED_MANIFEST = "SEED_MANIFEST.json"
 STATE_MARKER = ".genie-state.json"
+SELFTEST_ENV = "GENIE_PLUGIN_BUILD_SELFTEST"
 
 
 class _BootstrapReject(ValueError):
@@ -143,6 +144,36 @@ def _provision_state():
     return _existing_state(state)
 
 
+def _build_selftest(registry):
+    """CI-only fixed-stage probe; never prints paths, exception text, or data."""
+    try:
+        from shared_interfaces import cli, status_tool
+    except Exception:
+        raise _BootstrapReject("SELFTEST_IMPORT") from None
+    try:
+        runs = cli._read_registry(registry)
+        host = status_tool.GenieStatusTools(runs)
+    except Exception:
+        raise _BootstrapReject("SELFTEST_REGISTRY") from None
+    try:
+        core = status_tool._load_core()
+    except Exception:
+        raise _BootstrapReject("SELFTEST_CORE_LOAD") from None
+    try:
+        runner = core.load_runner()
+        if runner is None:
+            raise ValueError("runner unavailable")
+    except Exception:
+        raise _BootstrapReject("SELFTEST_RUNNER_LOAD") from None
+    try:
+        status = host.call("get_run_status", {"run_name": "actual"})
+        if type(status) is not dict or status.get("status") != "PASS":
+            raise ValueError("status unavailable")
+    except Exception:
+        raise _BootstrapReject("SELFTEST_CORE_REPORT") from None
+    sys.stdout.write("GENIE_PLUGIN_BUILD_SELFTEST_PASS\n")
+
+
 def _run_transport(registry):
     try:
         from shared_interfaces import mcp_server
@@ -160,6 +191,9 @@ def _run_transport(registry):
 def main():
     try:
         registry = _provision_state()
+        if os.environ.get(SELFTEST_ENV) == "1":
+            _build_selftest(registry)
+            return 0
         _run_transport(registry)
         return 0
     except _BootstrapReject as exc:
