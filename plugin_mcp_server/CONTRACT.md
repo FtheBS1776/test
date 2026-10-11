@@ -1,4 +1,4 @@
-# MCP server transport contract
+# MCP local transport contract
 
 ## Inputs
 
@@ -7,8 +7,8 @@ The transport accepts one trusted operator registry path at startup. The registr
 ## Source and version bindings
 
 - `shared_interfaces/mcp_consumer.py` SHA-256 must equal `21f3fc657abb16c9ba7c9189f266cbdfeaec1dbf0ae2ca6d051caee1565ddd5d`.
-- Installed Python package `mcp` must report version exactly `2.3.0`.
-- A source or SDK mismatch fails closed before the server is constructed.
+- The complete reviewed 28-distribution MCP transport dependency closure is exact-pinned and runtime-checked, including `mcp==2.3.0`.
+- A source or dependency-closure mismatch fails closed before the server is constructed.
 
 ## MCP surface
 
@@ -33,9 +33,17 @@ If the consumer projection is malformed or the transport cannot safely preserve 
 
 This fallback grants no authority or retry permission.
 
-## Transport
+## Transports
 
-The executable entry point serves MCP Streamable HTTP at `/mcp`, defaulting to loopback `127.0.0.1:8787`. It uses stateless HTTP with JSON responses because these two read-only tools require no server-to-client callback channel.
+### stdio
+
+`--transport stdio` uses the official MCP stdin/stdout transport and the same server handlers. It is intended for a local desktop host that launches and owns the child-process lifetime. No listening network port, tunnel, hosted service, or manually maintained daemon is required for this path.
+
+### Streamable HTTP
+
+The default executable path serves MCP Streamable HTTP at `/mcp`, defaulting to loopback `127.0.0.1:8787`. It uses stateless HTTP with JSON responses because these two read-only tools require no server-to-client callback channel.
+
+Both transports must preserve the same Genie-visible tool descriptors and structured results. Transport choice cannot alter authority semantics.
 
 A public deployment, Secure MCP Tunnel connection, OAuth configuration, plugin installation, or directory publication is outside this unit.
 
@@ -43,4 +51,6 @@ A public deployment, Secure MCP Tunnel connection, OAuth configuration, plugin i
 
 MCP is transport only. Tool annotations are hints and are not authorization. The Genie core remains authoritative for provenance, acceptance, UNKNOWN, currentness, STOP/budget, and all other governed state.
 
-No SDK upgrade is automatic. A candidate SDK or protocol revision must pass the external-integration policy and this unit's regression/conformance tests before the version pin changes.
+No transport dependency upgrade is automatic. A candidate SDK, transitive dependency, or protocol revision must pass the external-integration policy and this unit's regression/conformance tests before the reviewed closure changes.
+
+The preferred current product path is host-spawned stdio for a local Desktop plugin because it minimizes recurring cost and user-maintained runtime state. Streamable HTTP is retained as a tested portability boundary, not a requirement that the user keep a server running manually.
