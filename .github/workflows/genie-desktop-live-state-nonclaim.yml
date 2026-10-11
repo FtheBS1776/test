@@ -1,0 +1,114 @@
+name: Genie Desktop live-state package NONCLAIM
+
+on:
+  push:
+    branches:
+      - nonclaim/genie-desktop-live-state-20261011
+    paths:
+      - .gitattributes
+      - desktop_plugin/**
+      - shared_interfaces/**
+      - active_runner/**
+      - run_queue/**
+      - host_adapter/**
+      - worker_bridge/**
+      - host_return/trial/**
+      - plugin_mcp_server/requirements.lock.txt
+      - .github/workflows/genie-desktop-live-state-nonclaim.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  windows-live-state-conformance:
+    runs-on: windows-2025
+    timeout-minutes: 20
+    steps:
+      - name: Checkout exact branch commit
+        uses: actions/checkout@v4
+
+      - name: Set up exact Python 3.12.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.10'
+
+      - name: Create isolated exact build environment
+        run: |
+          python -m venv desktop_plugin/.venv
+          $py = 'desktop_plugin/.venv/Scripts/python.exe'
+          & $py -m pip install --disable-pip-version-check -r plugin_mcp_server/requirements.lock.txt -r desktop_plugin/windows-build.lock.txt
+          & $py -m pip check
+
+      - name: Verify exact Windows runtime and build closures
+        run: |
+          $py = 'desktop_plugin/.venv/Scripts/python.exe'
+          @'
+          import importlib.metadata as md
+          from shared_interfaces.mcp_server import required_transport_distributions
+          expected = required_transport_distributions()
+          expected.update({
+              'altgraph': '0.17.5',
+              'packaging': '26.3',
+              'pefile': '2024.8.26',
+              'pyinstaller': '6.22.3',
+              'pyinstaller-hooks-contrib': '2026.8',
+              'pywin32-ctypes': '0.2.3',
+              'setuptools': '84.0.0',
+          })
+          mismatches = {
+              name: (version, md.version(name))
+              for name, version in expected.items()
+              if md.version(name) != version
+          }
+          assert not mismatches, mismatches
+          print('WINDOWS_LIVE_STATE_VERSION_CLOSURE_PASS', len(expected))
+          '@ | & $py -
+
+      - name: Run focused live-state binding source attacks
+        run: |
+          $env:PYTHONPATH = (Resolve-Path 'desktop_plugin').Path
+          desktop_plugin/.venv/Scripts/python.exe -B -m unittest -v desktop_plugin/test_live_state_windows.py
+
+      - name: Verify live package contains no fixture bootstrap
+        run: |
+          $text = Get-Content desktop_plugin/genie_mcp.spec -Raw
+          if ($text -match 'seed_state|build_seed') { throw 'fixture data still present in live package spec' }
+          $entry = Get-Content desktop_plugin/entry.py -Raw
+          if ($entry -match 'copytree|SEED_MANIFEST|_provision_state') { throw 'fixture provisioning still present in live entrypoint' }
+          Write-Output 'LIVE_PACKAGE_NO_FIXTURE_BOOTSTRAP_PASS'
+
+      - name: Build self-contained Windows stdio executable
+        run: |
+          desktop_plugin/.venv/Scripts/pyinstaller.exe --clean --noconfirm --distpath desktop_plugin/build_dist --workpath desktop_plugin/build_work desktop_plugin/genie_mcp.spec
+
+      - name: Assemble portable plugin folder
+        run: |
+          $root = 'desktop_plugin/staging/genie-readonly'
+          New-Item -ItemType Directory -Force -Path "$root/bin" | Out-Null
+          Copy-Item desktop_plugin/package/plugin.json "$root/plugin.json"
+          Copy-Item desktop_plugin/package/mcp.json "$root/mcp.json"
+          Copy-Item desktop_plugin/build_dist/genie-mcp.exe "$root/bin/genie-mcp.exe"
+          $files = Get-ChildItem -Recurse -File $root
+          if ($files.Count -ne 3) { throw "unexpected staged file count: $($files.Count)" }
+          Write-Output 'LIVE_PACKAGE_STAGING_EXACT_THREE_FILES_PASS'
+
+      - name: Exercise frozen fixed-root live-state lifecycle and attacks
+        run: |
+          $env:GENIE_PLUGIN_ROOT = (Resolve-Path 'desktop_plugin/staging/genie-readonly').Path
+          $env:PYTHONPATH = (Resolve-Path 'desktop_plugin').Path
+          desktop_plugin/.venv/Scripts/python.exe -B desktop_plugin/test_frozen.py
+
+      - name: Record ephemeral live package identities
+        run: |
+          $exe = 'desktop_plugin/staging/genie-readonly/bin/genie-mcp.exe'
+          $exeHash = (Get-FileHash $exe -Algorithm SHA256).Hash.ToLower()
+          $exeSize = (Get-Item $exe).Length
+          Compress-Archive -Path 'desktop_plugin/staging/genie-readonly' -DestinationPath 'desktop_plugin/genie-readonly-live-windows.zip' -Force
+          $zipHash = (Get-FileHash 'desktop_plugin/genie-readonly-live-windows.zip' -Algorithm SHA256).Hash.ToLower()
+          $zipSize = (Get-Item 'desktop_plugin/genie-readonly-live-windows.zip').Length
+          Write-Output "GENIE_DESKTOP_LIVE_EXE_SHA256=$exeHash"
+          Write-Output "GENIE_DESKTOP_LIVE_EXE_BYTES=$exeSize"
+          Write-Output "GENIE_DESKTOP_LIVE_ZIP_SHA256=$zipHash"
+          Write-Output "GENIE_DESKTOP_LIVE_ZIP_BYTES=$zipSize"
+          Write-Output 'LIVE_PACKAGE_NOT_UPLOADED_NONCLAIM'
