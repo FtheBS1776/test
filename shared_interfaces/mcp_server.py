@@ -1,4 +1,4 @@
-"""Pinned Streamable-HTTP MCP transport for Genie's accepted read-only consumer.
+"""Pinned MCP transports for Genie's accepted read-only consumer.
 
 Transport only. It does not add authority, mutation, model dispatch, hosting,
 authentication, or background execution. Dependency upgrades fail closed until reviewed.
@@ -162,6 +162,8 @@ def build_server(runs):
 def _parser():
     parser = argparse.ArgumentParser(allow_abbrev=False)
     parser.add_argument("--registry", required=True)
+    parser.add_argument("--transport", choices=("streamable-http", "stdio"),
+                        default="streamable-http")
     parser.add_argument("--host", default="127.0.0.1")
     parser.add_argument("--port", type=int, default=8787)
     return parser
@@ -174,6 +176,21 @@ def main(argv=None):
     from shared_interfaces import cli
     runs = cli._read_registry(args.registry)
     server = build_server(runs)
+
+    if args.transport == "stdio":
+        import anyio
+        from mcp.server.stdio import stdio_server
+
+        async def arun():
+            async with stdio_server() as (read_stream, write_stream):
+                await server.run(
+                    read_stream,
+                    write_stream,
+                    server.create_initialization_options())
+
+        anyio.run(arun)
+        return
+
     app = server.streamable_http_app(
         streamable_http_path="/mcp", stateless_http=True,
         json_response=True, host=args.host)
