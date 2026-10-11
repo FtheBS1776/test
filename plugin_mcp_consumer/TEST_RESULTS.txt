@@ -1,0 +1,13 @@
+python3 -B plugin_mcp_consumer/test_consumer.py
+...........
+----------------------------------------------------------------------
+Ran 11 tests
+
+OK
+
+Fresh read-only correspondence after repair:
+- get_run_status(actual): PASS; equal to accepted function adapter
+- get_task_result(actual, genie-work-host-entry-20261010): CONFIRMED; equal
+- get_task_result(actual, genie-plugin-routing-inventory-20261010): CONFIRMED; equal
+- get_task_result(pending, genie-session-driver-guide-20261010): UNKNOWN; equal
+- 27 SQLite files hashed before/after; unchanged
