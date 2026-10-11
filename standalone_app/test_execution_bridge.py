@@ -95,6 +95,42 @@ class Tests(unittest.TestCase):
         self.assertEqual(result.get("result_text"), text)
         self.assertEqual(result.get("content_role"), "UNTRUSTED_ACCEPTED_TASK_DATA")
 
+    def test_action_limit_loses_session_review_eligibility_and_reconciles(self):
+        owner.create_first_run(_spec(run_id="action-limit-review"))
+        worker_calls, review_calls = [], []
+
+        # One action permits worker observation/submission but ends the driver
+        # before the next REVIEW_CANDIDATE advance. The in-memory eligibility
+        # record must not be reconstructed by a later process/drive.
+        first = bridge.drive(
+            "actual", _accepted_worker("submitted before action limit", worker_calls),
+            _accept_reviewer(review_calls), max_actions=1)
+        self.assertEqual(first.get("action"), "HOLD", first)
+        self.assertEqual(first.get("reason"), "DRIVER_ACTION_LIMIT", first)
+        self.assertIs(first.get("allow_new_invocation"), False)
+        self.assertEqual(first["counts"]["worker_hooks"], 1)
+        self.assertEqual(first["counts"]["reviewer_hooks"], 0)
+        self.assertEqual(len(worker_calls), 1)
+        self.assertEqual(review_calls, [])
+        status = owner.status("actual")
+        self.assertEqual(status["queue_history"]["reserved_model_calls"], 1)
+        self.assertEqual(status["tasks"][0]["workflow"]["state"], "REVIEW")
+
+        def forbidden_worker(_action):
+            raise AssertionError("review continuity must not relaunch worker")
+
+        def forbidden_reviewer(_action):
+            raise AssertionError("new drive must not reconstruct reviewer eligibility")
+
+        second = bridge.drive(
+            "actual", forbidden_worker, forbidden_reviewer, max_actions=8)
+        self.assertEqual(second.get("action"), "RECONCILE_REVIEW", second)
+        self.assertEqual(second.get("reason"), "NO_SESSION_SUBMISSION", second)
+        self.assertIs(second.get("allow_new_invocation"), False)
+        self.assertEqual(second["counts"]["worker_hooks"], 0)
+        self.assertEqual(second["counts"]["reviewer_hooks"], 0)
+        self.assertEqual(owner.status("actual")["queue_history"]["reserved_model_calls"], 1)
+
     def test_uncertain_worker_observation_never_retries(self):
         owner.create_first_run(_spec(run_id="unknown-observation"))
         calls = []
