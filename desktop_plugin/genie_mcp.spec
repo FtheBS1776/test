@@ -36,14 +36,16 @@ for distribution in transport_distributions:
     datas += copy_metadata(distribution)
 
 # Do not collect all mcp.* modules: that imports the unused optional mcp.cli
-# surface and would add CLI-only dependencies such as typer. Static analysis of
-# mcp_server plus this small explicit set is the reviewed runtime surface.
+# surface and would add CLI-only dependencies such as typer. The approved Genie
+# core below is deliberately loaded from raw hash-pinned source data, so imports
+# used only inside that dynamic path must be named explicitly for freezing.
 hiddenimports = [
     "shared_interfaces.mcp_server",
     "shared_interfaces.cli",
     "mcp.server",
     "mcp.server.stdio",
     "mcp.types",
+    "sqlite3",
 ]
 
 a = Analysis(
