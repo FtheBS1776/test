@@ -1,8 +1,8 @@
 GENIE LOCAL CHATGPT DESKTOP PLUGIN PACKAGE — FINAL INTERNAL NONCLAIM TEST RECORD
 Date: 2026-10-11 UTC
-Tested commit: 0578b62ea033c69601c0eaef6ab75658c0c8c8df
-Workflow run: 38171427730
-Workflow job: 114564670784
+Tested commit: edf927d168713942b1ae41a66f7b0de7d691d5bc
+Workflow run: 38171548229
+Workflow job: 114565021679
 Platform: Windows Server 2025 / windows-2025-vs2026
 Python: CPython 3.12.10
 
@@ -12,16 +12,18 @@ PASS — pip check: No broken requirements found
 PASS — WINDOWS_PACKAGE_VERSION_CLOSURE_PASS 36
 PASS — raw-byte Python source representation preserved across Windows checkout via .gitattributes
 PASS — WINDOWS_SOURCE_AND_READONLY_CALL_CHAIN_PASS 5 genie-work-host-entry-20261010
+PASS — the real unfrozen Windows read-only source path left all five observed SQLite files byte-identical
 
 DETERMINISTIC SEED
 PASS — SEED_MANIFEST_PASS host-return-trial-b67b52024e8578e9999c 31
-The bundled historical seed is an integration fixture only. It is not a currentness or continuity claim.
+The bundled historical seed is a deterministic integration fixture only. It is not current live Genie state and establishes no currentness, custody, continuity, or user-machine binding.
 
 FROZEN WINDOWS PACKAGE
 PASS — PyInstaller 6.22.3 / pyinstaller-hooks-contrib 2026.8 build
 PASS — dynamic hash-verified Genie core retained as raw source data
 PASS — dynamically required stdlib sqlite3 collected explicitly; PyInstaller hook-sqlite3.py executed
 PASS — Agent Plugins package assembled with plugin.json, mcp.json, and bin/genie-mcp.exe
+PASS — fixed-stage frozen build self-test
 PASS — DESKTOP_PLUGIN_FROZEN_PASS
 
 FROZEN LIFECYCLE COVERAGE
@@ -33,21 +35,25 @@ PASS — content_role remained UNTRUSTED_ACCEPTED_TASK_DATA
 PASS — result_text was not duplicated into model-facing text
 PASS — second launch against the same PLUGIN_DATA preserved state byte-for-byte apart from the deliberately added sentinel
 PASS — partial existing state failed closed and was preserved
-PASS — abandoned .state.init-* provisioning failed closed, created no replacement state, and preserved the interrupted bytes
+PASS — abandoned .state.init-* provisioning failed closed, created no replacement state, and preserved interrupted bytes
 
 EPHEMERAL BUILD IDENTITIES
-Executable SHA-256: 1add37f928a70d02c275a133612fa353d17b5d4b338c7a4149c8e8f47e6e0b6b
-Executable bytes: 22122614
-ZIP SHA-256: 71c92139425bb530d55132beaa791e6ebf81662f84b99ab225ab5855049c5ca0
-ZIP bytes: 21826678
+Executable SHA-256: 9a3bc47b2180ffc8ae977376994609d73b3968b4e2cc38bbed92e22b589269d8
+Executable bytes: 22130908
+ZIP SHA-256: 833b34fe4a5eaec88b303cce542b08748e81e2852d4753b37e556fb45f659f7f
+ZIP bytes: 21834765
 
-These are identities of the successful ephemeral CI build. The package was intentionally NOT uploaded, distributed, installed, or connected to ChatGPT. They are not yet user-delivery anchors.
+These identities bind the successful ephemeral CI build only. The workflow explicitly recorded PACKAGE_NOT_UPLOADED_NONCLAIM. The package was not uploaded, distributed, installed, or connected to ChatGPT and these hashes are not user-delivery anchors.
 
 PRESERVED DEFECT HISTORY
-1. Broad collect_submodules("mcp") pulled optional mcp.cli and failed because of CLI-only typer. Repair: narrow frozen MCP import surface; do not add unused typer.
-2. Windows checkout initially changed raw pinned Python bytes through CRLF conversion, causing MCP_CONSUMER_SOURCE_BINDING. Repair: preserve LF source bytes with .gitattributes; no verifier/hash weakening.
-3. A pre-repair frozen executable launched MCP but get_run_status returned REJECT/CORE_FAILURE. Exact failed head d2db494f527f1855f16d7e5be401f6545c888461 lacked sqlite3 in the frozen dynamic-import surface. Repair: collect stdlib sqlite3; no Genie semantic change and no new third-party runtime dependency.
+1. Broad collect_submodules("mcp") pulled optional mcp.cli and failed because of CLI-only typer. Repair: narrow the frozen MCP import surface; do not add unused typer.
+2. Windows checkout initially changed raw pinned Python bytes through CRLF conversion, causing MCP_CONSUMER_SOURCE_BINDING. Repair: preserve LF source bytes with .gitattributes; do not weaken verifier/hash semantics.
+3. A pre-repair frozen executable built and negotiated MCP but get_run_status returned REJECT/CORE_FAILURE. The unfrozen real Windows calls passed, isolating the defect to the freezer. Repair: explicitly collect dynamically used stdlib sqlite3; no Genie semantic change and no new third-party runtime dependency.
 4. Interrupted first-run provisioning replay was identified before acceptance. Repair: any abandoned .state.init-* fails closed with PLUGIN_STATE_PARTIAL_PRESERVE instead of silently reseeding.
+5. A .gitattributes-only repair initially did not trigger package CI because the workflow path filter omitted .gitattributes. Repair: source-representation policy is now a test-triggering input.
 
 LIMITS
-This proves internal Windows package/build/lifecycle conformance for the exact tested commit and environment. It does NOT prove actual ChatGPT Desktop installation, ChatGPT host compatibility beyond the portable Agent Plugins/stdin-stdout contract, live user-machine behavior, public distribution, code-signing trust, remote authenticity, hostile-worker isolation, whole-store rollback currentness, production readiness, authority promotion, freeze, main merge, or EXP010 execution.
+This proves internal Windows package/build/lifecycle conformance for the exact tested commit and environment. It does NOT prove actual ChatGPT Desktop installation, ChatGPT host compatibility beyond the portable Agent Plugins/stdin-stdout contract, live user-machine behavior, binding to the user's current Genie state, public distribution, code-signing trust, remote authenticity, hostile-worker isolation, whole-store rollback currentness, production readiness, authority promotion, freeze, main merge, or EXP010 execution.
+
+NEXT FRONTIER
+Before an actual install, replace the historical integration fixture as the operational bootstrap with a controlled live-state binding/import path. That path must preserve exact registry/run/store bindings, avoid implicit overwrite or repair, fail closed on partial/ambiguous state, and keep plugin code updates separate from persistent PLUGIN_DATA. Actual ChatGPT Desktop installation remains a later explicit user/account action.
