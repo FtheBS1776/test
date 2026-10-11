@@ -1,6 +1,6 @@
 # PyInstaller spec for the Windows local Desktop plugin runtime.
 from pathlib import Path
-from PyInstaller.utils.hooks import collect_submodules, copy_metadata
+from PyInstaller.utils.hooks import copy_metadata
 
 ROOT = Path(SPECPATH).resolve().parent
 SEED = ROOT / "desktop_plugin" / "build_seed"
@@ -23,21 +23,28 @@ runtime_sources = [
 datas = [(str(source), destination) for source, destination in runtime_sources]
 datas.append((str(SEED), "seed_state"))
 
+# Runtime checks use importlib.metadata, so carry the exact reviewed metadata.
 transport_distributions = [
     "mcp", "mcp-types", "annotated-types", "anyio", "attrs", "cffi", "click",
     "cryptography", "h11", "httpcore2", "httpx2", "idna", "jsonschema",
     "jsonschema-specifications", "opentelemetry-api", "pycparser", "pydantic",
     "pydantic-core", "PyJWT", "python-multipart", "referencing", "rpds-py",
     "sse-starlette", "starlette", "truststore", "typing-extensions",
-    "typing-inspection", "uvicorn",
+    "typing-inspection", "uvicorn", "pywin32",
 ]
 for distribution in transport_distributions:
     datas += copy_metadata(distribution)
 
-hiddenimports = sorted(set(
-    collect_submodules("mcp")
-    + ["shared_interfaces.mcp_server", "shared_interfaces.cli"]
-))
+# Do not collect all mcp.* modules: that imports the unused optional mcp.cli
+# surface and would add CLI-only dependencies such as typer. Static analysis of
+# mcp_server plus this small explicit set is the reviewed runtime surface.
+hiddenimports = [
+    "shared_interfaces.mcp_server",
+    "shared_interfaces.cli",
+    "mcp.server",
+    "mcp.server.stdio",
+    "mcp.types",
+]
 
 a = Analysis(
     [str(ROOT / "desktop_plugin" / "entry.py")],
@@ -48,7 +55,7 @@ a = Analysis(
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
-    excludes=[],
+    excludes=["mcp.cli", "typer"],
     noarchive=False,
 )
 pyz = PYZ(a.pure)
