@@ -1,0 +1,113 @@
+name: Genie Desktop plugin package NONCLAIM
+
+on:
+  push:
+    branches:
+      - nonclaim/genie-desktop-plugin-package-20261011
+    paths:
+      - desktop_plugin/**
+      - shared_interfaces/**
+      - active_runner/**
+      - run_queue/**
+      - host_adapter/**
+      - worker_bridge/**
+      - host_return/trial/**
+      - plugin_mcp_server/requirements.lock.txt
+      - .github/workflows/genie-desktop-plugin-nonclaim.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  windows-package-conformance:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout exact branch commit
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install exact reviewed MCP runtime and pinned build tools
+        run: |
+          python -m pip install --disable-pip-version-check -r plugin_mcp_server/requirements.lock.txt -r desktop_plugin/build-requirements.txt
+          python -m pip check
+          python -m pip freeze
+
+      - name: Verify exact MCP runtime closure
+        run: |
+          @'
+          import importlib.metadata as md
+          from shared_interfaces.mcp_server import TRANSPORT_DISTRIBUTIONS
+          mismatches = {
+              name: (expected, md.version(name))
+              for name, expected in TRANSPORT_DISTRIBUTIONS.items()
+              if md.version(name) != expected
+          }
+          assert not mismatches, mismatches
+          print('MCP_TRANSPORT_VERSION_CLOSURE_PASS', len(TRANSPORT_DISTRIBUTIONS))
+          '@ | python -
+
+      - name: Prepare deterministic seed state
+        run: |
+          @'
+          import hashlib, json, shutil
+          from pathlib import Path
+          source = Path('host_return/trial')
+          target = Path('desktop_plugin/build_seed')
+          if target.exists():
+              shutil.rmtree(target)
+          shutil.copytree(source, target)
+          records = []
+          for path in sorted(target.rglob('*')):
+              if path.is_file() and path.name != 'SEED_MANIFEST.json':
+                  raw = path.read_bytes()
+                  records.append({
+                      'path': path.relative_to(target).as_posix(),
+                      'sha256': hashlib.sha256(raw).hexdigest(),
+                      'size': len(raw),
+                  })
+          canonical = json.dumps(records, sort_keys=True, separators=(',', ':')).encode()
+          seed_id = 'host-return-trial-' + hashlib.sha256(canonical).hexdigest()[:20]
+          manifest = {'seed_id': seed_id, 'files': records}
+          (target / 'SEED_MANIFEST.json').write_text(
+              json.dumps(manifest, sort_keys=True, separators=(',', ':')) + '\n',
+              encoding='utf-8')
+          print('SEED_MANIFEST_PASS', seed_id, len(records))
+          '@ | python -
+
+      - name: Build self-contained Windows stdio executable
+        run: |
+          pyinstaller --clean --noconfirm --distpath desktop_plugin/build_dist --workpath desktop_plugin/build_work desktop_plugin/genie_mcp.spec
+
+      - name: Assemble portable plugin folder
+        run: |
+          $root = 'desktop_plugin/staging/genie-readonly'
+          New-Item -ItemType Directory -Force -Path "$root/bin" | Out-Null
+          Copy-Item desktop_plugin/package/plugin.json "$root/plugin.json"
+          Copy-Item desktop_plugin/package/mcp.json "$root/mcp.json"
+          Copy-Item desktop_plugin/build_dist/genie-mcp.exe "$root/bin/genie-mcp.exe"
+          Get-ChildItem -Recurse $root | Select-Object FullName,Length
+
+      - name: Exercise frozen plugin lifecycle and stdio tools
+        run: |
+          $env:GENIE_PLUGIN_ROOT = (Resolve-Path 'desktop_plugin/staging/genie-readonly').Path
+          python -B desktop_plugin/test_frozen.py
+
+      - name: Record ephemeral package identities
+        run: |
+          $exe = 'desktop_plugin/staging/genie-readonly/bin/genie-mcp.exe'
+          $exeHash = (Get-FileHash $exe -Algorithm SHA256).Hash.ToLower()
+          $exeSize = (Get-Item $exe).Length
+          Compress-Archive -Path 'desktop_plugin/staging/genie-readonly' -DestinationPath 'desktop_plugin/genie-readonly-windows.zip' -Force
+          $zipHash = (Get-FileHash 'desktop_plugin/genie-readonly-windows.zip' -Algorithm SHA256).Hash.ToLower()
+          $zipSize = (Get-Item 'desktop_plugin/genie-readonly-windows.zip').Length
+          Write-Output "GENIE_DESKTOP_EXE_SHA256=$exeHash"
+          Write-Output "GENIE_DESKTOP_EXE_BYTES=$exeSize"
+          Write-Output "GENIE_DESKTOP_ZIP_SHA256=$zipHash"
+          Write-Output "GENIE_DESKTOP_ZIP_BYTES=$zipSize"
+          Write-Output 'PACKAGE_NOT_UPLOADED_NONCLAIM'
