@@ -67,7 +67,9 @@ jobs:
 
       - name: Run focused live-state binding source attacks
         run: |
-          $env:PYTHONPATH = (Resolve-Path 'desktop_plugin').Path
+          $repo = (Resolve-Path '.').Path
+          $desktop = (Resolve-Path 'desktop_plugin').Path
+          $env:PYTHONPATH = "$repo;$desktop"
           desktop_plugin/.venv/Scripts/python.exe -B -m unittest -v desktop_plugin/test_live_state_windows.py
 
       - name: Verify live package contains no fixture bootstrap
@@ -96,7 +98,9 @@ jobs:
       - name: Exercise frozen fixed-root live-state lifecycle and attacks
         run: |
           $env:GENIE_PLUGIN_ROOT = (Resolve-Path 'desktop_plugin/staging/genie-readonly').Path
-          $env:PYTHONPATH = (Resolve-Path 'desktop_plugin').Path
+          $repo = (Resolve-Path '.').Path
+          $desktop = (Resolve-Path 'desktop_plugin').Path
+          $env:PYTHONPATH = "$repo;$desktop"
           desktop_plugin/.venv/Scripts/python.exe -B desktop_plugin/test_frozen.py
 
       - name: Record ephemeral live package identities
