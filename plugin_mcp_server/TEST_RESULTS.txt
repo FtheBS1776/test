@@ -1,8 +1,8 @@
 GENIE MCP SERVER TRANSPORT — FINAL NONCLAIM TEST RECORD
 Date: 2026-10-11 UTC
-Tested commit: 46fea87747e2a544e5888a37cfd0fbbae483d298
-Workflow run: 38169759916
-Workflow job: 114559708494
+Tested commit: 52b72cff246f9e1fe92eea694a9f9afce93ca109
+Workflow run: 38170021321
+Workflow job: 114560490366
 Python: CPython 3.12.15 on GitHub-hosted Ubuntu 24.04
 
 DEPENDENCY_CLOSURE
@@ -14,18 +14,21 @@ PASS — test_consumer_source_binding
 PASS — test_malformed_projection_fails_unknown
 PASS — test_metadata_and_call_in_process
 PASS — test_real_saved_status_read_only_in_process
+PASS — test_real_stdio_probe
 PASS — test_real_streamable_http_probe
 PASS — test_sdk_version_binding
 PASS — test_untrusted_result_is_not_duplicated_into_text_block
 
 RESULT
-Ran 7 tests in 2.359s
+Ran 8 tests in 1.751s
 OK
 
-The real Streamable HTTP probe started the Genie MCP server on loopback, connected with the official MCP client, listed exactly the two accepted read-only tools, called get_run_status for the saved actual run, received PASS, and verified all discovered SQLite files were byte-identical before/after the test.
+The real stdio probe launched the Genie MCP server as a child process through the official MCP client, negotiated over stdin/stdout, listed exactly the two accepted read-only tools, called get_run_status for the saved actual run, received PASS, and verified all discovered SQLite files were byte-identical before/after the test.
+
+The real Streamable HTTP probe separately started the Genie MCP server on loopback, connected with the official MCP client, listed exactly the same two tools, called get_run_status for the saved actual run, received PASS, and again verified discovered SQLite files were byte-identical before/after the test.
 
 HISTORY PRESERVED
-The first HTTP-launch run failed because the low-level MCP Server does not accept the high-level Server.run(transport=...) interface. That failure was not reclassified as success. The server was repaired to use streamable_http_app() under pinned Uvicorn, the transport dependency closure was locked, and the final clean run above passed. An intermediate passing run exposed only test-harness unclosed-pipe ResourceWarnings; test cleanup was repaired and the final run contains no such warnings.
+The first HTTP-launch run failed because the low-level MCP Server does not accept the high-level Server.run(transport=...) interface. That failure was not reclassified as success. The server was repaired to use streamable_http_app() under pinned Uvicorn, the transport dependency closure was locked, and the repaired HTTP run passed. An intermediate passing run exposed test-harness unclosed-pipe ResourceWarnings; test cleanup was repaired. A later bounded extension added host-spawned stdio transport for local desktop-plugin use; the final run above passed both transports cleanly.
 
 LIMITS
-This proves bounded local transport conformance for the tested source/dependency closure. It does not prove a connected ChatGPT plugin, public deployment, remote authenticity, hostile-worker isolation, currentness against whole-store rollback, production readiness, authority promotion, or after-host autonomy.
+This proves bounded local MCP transport conformance for the tested source/dependency closure, including host-spawned stdio and loopback Streamable HTTP. It does not prove an installed/connected ChatGPT plugin, public deployment, remote authenticity, hostile-worker isolation, currentness against whole-store rollback, production readiness, authority promotion, or after-host autonomy.
