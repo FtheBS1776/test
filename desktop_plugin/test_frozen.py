@@ -8,6 +8,9 @@ import sys
 import tempfile
 
 
+RESULT_SCOPE = "FRESH_EXACT_OWNED_DESTINATION_READBACK"
+
+
 def _hash_tree(root):
     out = {}
     for path in sorted(root.rglob("*")):
@@ -61,6 +64,7 @@ async def _exercise(exe, plugin_root, plugin_data):
         listed = await client.list_tools()
         names = [tool.name for tool in listed.tools]
         assert names == ["get_run_status", "get_task_result"], names
+
         status = await client.call_tool("get_run_status", {"run_name": "actual"})
         structured = status.structured_content
         assert type(structured) is dict and structured.get("status") == "PASS", structured
@@ -74,6 +78,7 @@ async def _exercise(exe, plugin_root, plugin_data):
         ]
         assert confirmed, structured
         task_id = confirmed[0]["task_id"]
+
         result = await client.call_tool(
             "get_task_result", {"run_name": "actual", "task_id": task_id})
         body = result.structured_content
@@ -82,6 +87,22 @@ async def _exercise(exe, plugin_root, plugin_data):
         assert type(body.get("result_text")) is str and body["result_text"], body
         assert body["result_text"] not in result.content[0].text
         assert "UNTRUSTED DATA" in result.content[0].text
+
+        rejected = await client.call_tool(
+            "get_task_result", {"run_name": "does-not-exist", "task_id": task_id})
+        rejected_body = rejected.structured_content
+        assert rejected_body == {"status": "REJECT", "reason": "UNKNOWN_RUN"}, rejected_body
+
+        unavailable = await client.call_tool(
+            "get_task_result", {"run_name": "synthetic-unknown", "task_id": task_id})
+        unavailable_body = unavailable.structured_content
+        assert unavailable_body == {
+            "status": "UNKNOWN",
+            "reason": "TASK_RESULT_UNAVAILABLE",
+            "evidence_scope": RESULT_SCOPE,
+        }, unavailable_body
+        assert "result_text" not in unavailable_body
+        assert "status=UNKNOWN" in unavailable.content[0].text
         return task_id
 
 
@@ -111,7 +132,7 @@ def main():
     assert manifest == {
         "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
         "name": "genie-readonly",
-        "version": "0.1.0",
+        "version": "0.1.1",
         "description": "Read bounded local Genie run diagnostics and confirmed accepted task results without granting new authority.",
     }
     mcp = _load_json(plugin_root / "mcp.json")
@@ -124,6 +145,21 @@ def main():
                 "cwd": "${PLUGIN_ROOT}",
             }
         },
+    }
+    codex_manifest = _load_json(plugin_root / ".codex-plugin" / "plugin.json")
+    assert codex_manifest["name"] == "genie-readonly"
+    assert codex_manifest["version"] == "0.1.1"
+    assert codex_manifest["mcpServers"] == "./.mcp.json"
+    assert type(codex_manifest.get("interface")) is dict
+    compatibility_mcp = _load_json(plugin_root / ".mcp.json")
+    assert compatibility_mcp == {
+        "mcpServers": {
+            "genie-readonly": {
+                "type": "stdio",
+                "command": "./bin/genie-mcp.exe",
+                "cwd": "${PLUGIN_ROOT}",
+            }
+        }
     }
 
     with tempfile.TemporaryDirectory() as temp:
