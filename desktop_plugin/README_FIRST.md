@@ -1,72 +1,88 @@
 # Genie local ChatGPT Desktop plugin package — NONCLAIM
 
-Status: **INTERNAL PACKAGE VERIFIED / FIXTURE-BACKED / NOT INSTALLED / NOT CONNECTED**.
+Status: **v0.1.1 REPLACEMENT CANDIDATE VERIFIED / PHYSICAL DESKTOP RETEST OPEN**.
 
-Purpose: package the already accepted two-tool read-only Genie MCP surface as a local Windows Desktop plugin with no paid hosting and no system-Python requirement.
+Purpose: package the accepted two-tool read-only Genie MCP surface as a local Windows Desktop plugin with no paid hosting and no system-Python requirement.
 
-Actual plugin installation/connection remains an external user/account action and requires explicit user action. This repository checkpoint does not install or connect anything.
+The earlier v0.1.0 package was installed/enabled by the user, but the attempted verification environment exposed zero Genie tools. That observation did not establish a physical-Desktop launch defect because the verification handoff ran through a cloud Work execution surface. The replacement candidate below hardens Desktop/Codex compatibility and adds a truthful UNKNOWN fixture; it is not yet claimed to fix the host issue until a real local Desktop session proves it.
 
-## Design
+## Package design
 
-- Portable Agent Plugins 1.0 `plugin.json` + `mcp.json`.
-- One stdio MCP server: `./bin/genie-mcp.exe`.
-- The compatible Desktop host owns process start/stop through stdio; the user does not keep a separate HTTP server running.
-- The executable packages the existing pinned Genie read-only transport/core subset plus a bounded historical seed state for deterministic integration testing.
-- On first fixture-backed launch only, the executable integrity-checks its bundled seed and provisions `${PLUGIN_DATA}/state` atomically.
-- Existing `${PLUGIN_DATA}/state` is never replaced on plugin launch/update.
-- Partial state or any abandoned `.state.init-*` first-run provisioning fails closed with `PLUGIN_STATE_PARTIAL_PRESERVE`; existing bytes are preserved rather than repaired/reseeded implicitly.
-- Package code may be replaced by a future reviewed update; persistent state remains host-managed under `PLUGIN_DATA`.
+The package carries both supported representations of the same plugin:
 
-## Current scope
+- portable Agent Plugins: root `plugin.json` + `mcp.json`;
+- OpenAI/Codex compatibility fallback: `.codex-plugin/plugin.json` + `.mcp.json`.
 
-The packaged MCP surface remains exactly:
+Both point to one stdio MCP server: `./bin/genie-mcp.exe`.
+
+The compatible local host owns process start/stop. The user does not maintain a separate HTTP server. The executable packages the existing pinned Genie read-only transport/core subset and deterministic test state. Persistent state remains under host-provided `PLUGIN_DATA`; updates must not silently replace existing state.
+
+Partial state or abandoned `.state.init-*` provisioning fails closed with `PLUGIN_STATE_PARTIAL_PRESERVE`.
+
+## MCP surface
+
+Exactly:
 
 - `get_run_status`
 - `get_task_result`
 
-The package does not add writes, model dispatch, autonomous continuation, public networking, OAuth, paid hosting, remote authority, production claims, promotion, freeze, main merge, or EXP010 execution.
+No writes, model dispatch, autonomous continuation, public networking, OAuth, paid hosting, remote authority, production claim, promotion, freeze, main merge, or EXP010 execution is added.
 
-The bundled historical seed is only a deterministic integration fixture. It is **not** the user's live Genie state, is not a currentness claim, and does not establish continuity with future live state. The fixture-backed package must not be installed or represented as though it were a live Genie integration.
+## PASS / CONFIRMED / REJECT / UNKNOWN
 
-## Internal verification
+The historical alias `actual` remains unchanged and supplies the PASS/CONFIRMED cases.
 
-Accepted tested commit: `edf927d168713942b1ae41a66f7b0de7d691d5bc`
-Workflow run/job: `38171548229` / `114565021679`
+A separate synthetic test alias `synthetic-unknown` supplies a legitimate epistemic UNKNOWN case. Its copied queue policy is rebound to distinct run ID `genie-plugin-synthetic-unknown-20261011`; its owned result root is deliberately unavailable. This proves known membership with unavailable result evidence without corrupting or reinterpreting `actual` and without using a same-ID alias shortcut.
+
+A nonexistent run remains deterministic `REJECT / UNKNOWN_RUN`; it is not mislabeled UNKNOWN.
+
+See `UNKNOWN_FIXTURE.md`.
+
+## Current internal verification
+
+Accepted replacement-candidate tested commit: `61bf2da663ea260b0b09f544b7d167d31ec55af3`
+
+Workflow run/job: `38194250230` / `114633333562`
+
 Environment: Windows Server 2025, exact CPython 3.12.10, isolated venv.
 
 Verified:
 
-- exact 36-distribution Windows runtime/build acceptance set;
-- `pip check` clean;
-- unfrozen real saved-state PASS/CONFIRMED calls with five SQLite files unchanged;
-- deterministic 31-file seed `host-return-trial-b67b52024e8578e9999c`;
-- self-contained Windows executable build;
-- fixed-stage frozen core self-test;
-- real frozen stdio MCP lifecycle (`DESKTOP_PLUGIN_FROZEN_PASS`);
+- exact 36-distribution Windows runtime/build set and clean `pip check`;
+- unchanged original Windows read-only source chain;
+- synthetic queue rebound to its own run ID with SQLite integrity PASS;
+- seed `host-return-plus-unknown-b6bb873bf6c854f2dbaa`, 32 files;
+- self-contained executable build;
+- portable plus Codex-compatible manifest assembly;
+- frozen stdio MCP lifecycle PASS;
 - exact two-tool advertisement;
-- PASS and CONFIRMED result behavior;
-- `UNTRUSTED_ACCEPTED_TASK_DATA` boundary retained and accepted task text not duplicated into model-facing text;
-- persistent state preserved over a second launch;
-- partial state and abandoned initialization both reject/preserve.
+- PASS / CONFIRMED / REJECT / UNKNOWN classification boundary;
+- `UNTRUSTED_ACCEPTED_TASK_DATA` retained and accepted text not duplicated into model-facing text;
+- persistent state preserved across relaunch;
+- partial and abandoned initialization fail closed;
+- user-delivery artifact upload and independent post-download SHA verification.
 
-Ephemeral successful CI executable:
-`9a3bc47b2180ffc8ae977376994609d73b3968b4e2cc38bbed92e22b589269d8` / 22,130,908 bytes.
+Replacement executable:
+`885ffc2b6edc6d884127b7aae6883bb524bdcbbdb6ba1f229da612ccd8526f2d` / 22,133,371 bytes.
 
-Ephemeral successful CI ZIP:
-`833b34fe4a5eaec88b303cce542b08748e81e2852d4753b37e556fb45f659f7f` / 21,834,765 bytes.
+Replacement ZIP:
+`b94b023f618dc9bfc5952482b46d28e66eb38b778ee892b6d788b612536da706` / 21,838,028 bytes.
 
-The successful workflow intentionally did **not** upload the package. These are ephemeral build identities, not a user-delivery artifact anchor.
+GitHub Actions artifact ID: `11722996512`.
 
-See `TEST_RESULTS.txt`, `VERIFICATION.json`, `BUILD_ADOPTION.md`, and `ROOT_ADJUDICATION.md` for evidence and preserved defect history.
-
-## Build policy
-
-PyInstaller is ADAPTed as a build-only dependency. The user does not install it. Build/runtime closure and Python version are pinned in CI; candidate upgrades must pass the same frozen lifecycle before adoption. The executable is unsigned during this NONCLAIM proof and must not be presented as production-trusted software.
-
-Windows is the first packaging target. Cross-platform packaging remains a later portability task and must reuse the same Genie semantics rather than fork the core.
+See `HOST_COMPAT_VERIFICATION.md`, `UNKNOWN_FIXTURE.md`, `TEST_RESULTS.txt`, `VERIFICATION.json`, `BUILD_ADOPTION.md`, and the historical adjudication records.
 
 ## Next boundary
 
-The next product frontier is **controlled live-state binding/import**. A new NONCLAIM unit must replace fixture fallback as the operational setup path with an explicit, fail-closed binding to live Genie state while preserving exact registry/run/store identities and persistent `PLUGIN_DATA` semantics.
+The next meaningful gate is a **physical ChatGPT Desktop replacement/update and a brand-new local Work/Codex session**.
 
-Only after that path is verified should the package be installed/connected in ChatGPT Desktop for a real host-driven read-only tool call. Installation/connection requires explicit user action. Remote/web/mobile access, tunnels, public HTTPS hosting, and public plugin publication remain optional later portability work.
+The local host must then demonstrate:
+
+1. exactly `get_run_status` and `get_task_result` are registered;
+2. `get_run_status({"run_name":"actual"})` returns PASS;
+3. `get_task_result` for `genie-work-host-entry-20261010` under `actual` returns CONFIRMED with the untrusted-data boundary intact;
+4. a nonexistent run returns REJECT / UNKNOWN_RUN;
+5. the known task under `synthetic-unknown` returns UNKNOWN / TASK_RESULT_UNAVAILABLE;
+6. ChatGPT Desktop starts/stops the bundled stdio process without a manually maintained server.
+
+Replacing/updating the user's installed local plugin is an external filesystem/application action. Do not claim the host issue is repaired until that real local test passes.
