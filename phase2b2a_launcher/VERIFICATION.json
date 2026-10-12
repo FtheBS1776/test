@@ -1,0 +1,146 @@
+{
+  "classification": "NONCLAIM",
+  "phase": "Genie Phase 2B2A fixture-only process-boundary candidate",
+  "correspondence_audit_completed_before_edits": true,
+  "base": {
+    "local_commit": "eef5ac5e432a0d66ab5e41c808a26cbb6712ee40",
+    "published_equivalent_commit": "196b4b8f5ec16c8dbc3bf3458d968e7965a73976",
+    "tree": "d89b516ddb17c57d781dfba01276a44651baf941"
+  },
+  "implementation_branch": "nonclaim/genie-phase-2b2a-isolation-launcher-20261012",
+  "surface": {
+    "kind": "host-internal Python fixture launcher",
+    "mcp_exposed": false,
+    "globally_registered": false,
+    "genie_mutation_or_event_imported": false,
+    "persistent_genie_store_created": false,
+    "disposable_launcher_claim_stores_created_and_deleted": true
+  },
+  "source_pins": {
+    "shared_interfaces/isolated_worker.py": "2dbefdba3f5a46c853057ef6dbedec06cdfde2297959bc8bf3d7e8ef14b8cc4f",
+    "phase2b2a_launcher/no_model_fixture.py": "09bb17ed56dbe1f844fd4909a9ee322c37607d4cc0cea61cfd3e4a0944c0179f",
+    "phase2b2a_launcher/test_isolated_worker.py": "d642e19a5d912dc20736fc7da0ab2f6159677e4e947530d0fead4a0d16712767"
+  },
+  "fixture_profile": {
+    "python_path": "C:\\Users\\aaron\\Documents\\Codex\\phase2a-venv\\Scripts\\python.exe",
+    "python_sha256": "dcdc8a4ef3c108d7d11f7a8afea50502c8f41763d118f1a94dafc90c74f1614c",
+    "python_flags": [
+      "-I",
+      "-S",
+      "-B"
+    ],
+    "fixture_sha256": "09bb17ed56dbe1f844fd4909a9ee322c37607d4cc0cea61cfd3e4a0944c0179f",
+    "request_classification": "BOUNDED_PARENT_REQUEST_UNVERIFIED_CONTENT",
+    "max_request_bytes": 65536,
+    "max_stdin_bytes": 65536,
+    "max_stdout_bytes": 65536,
+    "max_stderr_bytes": 8192,
+    "timeout_seconds": 1.0,
+    "shell": false,
+    "working_directory": "fresh non-repository directory under genie-phase2b2a-* temporary root",
+    "environment_required": {
+      "GENIE_EXECUTION_CLASS": "NO_MODEL_CALL_FIXTURE"
+    },
+    "environment_optional_windows_keys": [
+      "SystemRoot",
+      "WINDIR"
+    ],
+    "claim": {
+      "store": "disposable launcher-local SQLite",
+      "committed_before_process_entry": true,
+      "exact_schema_and_no_extra_objects": true,
+      "same_persisted_launch_id_can_spawn_again": false,
+      "fresh_launch_id_or_store_is_distinct_parent_decision": true,
+      "global_exactly_once_claim": false,
+      "rollback_or_physical_durability_claim": false
+    },
+    "handled_uncertain_result": {
+      "status": "UNKNOWN",
+      "reason": "ISOLATED_WORKER_OUTCOME_UNKNOWN",
+      "preserve": true,
+      "allow_new_invocation": false
+    },
+    "successful_result": {
+      "status": "RETURNED",
+      "classification": "UNTRUSTED_NO_MODEL_FIXTURE_OUTPUT",
+      "proposal": "NO_MODEL_CALL",
+      "model_invoked": false
+    }
+  },
+  "deferred_codex_profile": {
+    "status": "DEFERRED_NOT_EXECUTABLE",
+    "version": "0.162.1",
+    "executable_path": "C:\\Users\\aaron\\AppData\\Roaming\\npm\\node_modules\\@openai\\codex\\node_modules\\@openai\\codex-win32-x64\\vendor\\x86_64-pc-windows-msvc\\bin\\codex.exe",
+    "executable_sha256": "dd13bdb162a184fa04039488b234a8258ef9b76f84e926c505d5742b19249a6a",
+    "authentication": "NOT_PROVISIONED",
+    "model": null,
+    "effective_tool_inventory": "NOT_PROBED",
+    "process_spawned": false,
+    "provider_call_made": false
+  },
+  "tests": {
+    "phase2b2a_launcher": "27/27 passed",
+    "phase2b_events": "22/22 passed",
+    "run_events": "15/15 passed",
+    "run_control": "13/13 passed",
+    "phase2a_controller": "14/14 passed",
+    "plugin_mcp_consumer": "11/11 passed",
+    "plugin_mcp_server": "8/8 passed",
+    "total_clean_targeted_and_regression": "110/110 passed",
+    "skipped": 0
+  },
+  "independent_review": {
+    "final_code_blockers": 0,
+    "scope_limitations_documented": true,
+    "git_diff_check": "clean"
+  },
+  "integrity_equal_to_phase2a_baseline": {
+    "repository_protected_54_files": {
+      "byte_count": 215767,
+      "sha256": "ba2cd2b1fb6b1ed6c84d59b7255c1435d91a9afb68fa76c16fc8bc10bef18170"
+    },
+    "repository_historical_27_sqlite_files": {
+      "byte_count": 1024000,
+      "sha256": "56a1f0dcea069ba31a0a09f573fd927eaee4e25900bb6f1554564ffabbe33837"
+    },
+    "installed_genie_readonly_5_files": {
+      "byte_count": 22133322,
+      "sha256": "00e1057d09ea950a121f17a752c1d3934b993e785a17abcfb8959ab37d80fbef"
+    },
+    "installed_genie_readonly_state_34_files": {
+      "byte_count": 224723,
+      "sha256": "2e9437c1cadda4b81ccdc48683fcccc4688de3a5cee650ca05f8329e177e87e9"
+    }
+  },
+  "preserved_phase2a_raw_sha256": {
+    "queue.sqlite": "bd2088edb94fed6f5eedd64f871745a643ef1ef9bf2d499f4f96a10a1d13285a",
+    "inbox.sqlite": "72e695b10bbdf828a01917a84a2581325edbc1ac594ef3b07f91839ccc75529b",
+    "task.sqlite": "59c3b8f5edd2289247b0c478a8340542edff1a28885b3d4e926d68d55ae230a0",
+    "CALL_RESULT.json": "a77847a3428ac0a440a82a57f06a6fe97d21e321a6be0b1367e50051acbe92be",
+    "POST_CALL_STATE.json": "ff91334f42540aa6827b1f04398b0a9b203686e7333742261ef4911f29d3e945"
+  },
+  "claims_excluded": [
+    "semantic request sanitization or absence of secrets",
+    "hostile filesystem, OS, network, or process isolation",
+    "complete CPython, standard-library, or Windows closure pinning",
+    "descendant process-tree control",
+    "global exactly-once, rollback resistance, or physical durability",
+    "worker or reviewer model execution",
+    "authenticated provenance, content truth, quality, or independent review",
+    "callback acknowledgement, completion, delivery, or future currentness",
+    "Phase 2B2 or Phase 2C completion"
+  ],
+  "explicitly_not_performed": [
+    "live Codex child execution",
+    "authentication or provider/model use",
+    "persistent Genie run creation or mutation",
+    "advance_run or apply_run_event invocation",
+    "worker or reviewer dispatch",
+    "session_driver exposure or automatic progression",
+    "MCP surface or global Codex registration",
+    "main merge",
+    "promotion or freeze",
+    "spending",
+    "EXP010 activity"
+  ]
+}

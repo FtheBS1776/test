@@ -1,0 +1,74 @@
+{
+  "classification": "NONCLAIM",
+  "algorithm": "SHA-256",
+  "base": {
+    "local_commit": "eef5ac5e432a0d66ab5e41c808a26cbb6712ee40",
+    "published_equivalent_commit": "196b4b8f5ec16c8dbc3bf3458d968e7965a73976",
+    "tree": "d89b516ddb17c57d781dfba01276a44651baf941"
+  },
+  "manifest_self_excluded": true,
+  "file_count": 12,
+  "total_bytes": 84351,
+  "files": [
+    {
+      "path": "phase2b2a_launcher/.gitattributes",
+      "bytes": 14,
+      "sha256": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9"
+    },
+    {
+      "path": "phase2b2a_launcher/ADJUDICATION.md",
+      "bytes": 2544,
+      "sha256": "552a98a162d31f9e2cc2913741fe5e23380d96c8df682c3320ea9a836d7bb10a"
+    },
+    {
+      "path": "phase2b2a_launcher/CONTRACT.md",
+      "bytes": 3963,
+      "sha256": "13d593302b78511ab3f6929ef8274b277b2bdac352bfbcca36084a06080c9e2d"
+    },
+    {
+      "path": "phase2b2a_launcher/ISOLATION_PROFILE.md",
+      "bytes": 2858,
+      "sha256": "c72bf60b5bc18a72a522cb28bff386e2e685d9409cf68ac54c1573207ab3266a"
+    },
+    {
+      "path": "phase2b2a_launcher/PRIOR_EXPERIENCE_AUDIT.md",
+      "bytes": 4777,
+      "sha256": "7fb632d63e9f484b7c7d245eb44692d2ed0be5c0041565932100b3503dc11f35"
+    },
+    {
+      "path": "phase2b2a_launcher/README_FIRST.md",
+      "bytes": 1957,
+      "sha256": "9390b8a9d8c8ef07f6b32eda38d0c29af57d97332335b64c9721faab7ac2934f"
+    },
+    {
+      "path": "phase2b2a_launcher/ROADMAP_ADDENDUM.md",
+      "bytes": 1407,
+      "sha256": "15ccd9d28c94b4ef1a0c7867074caf344e9ef59c9778aa830aa2def24ef435a6"
+    },
+    {
+      "path": "phase2b2a_launcher/TEST_RESULTS.md",
+      "bytes": 3847,
+      "sha256": "07bdb247cd12b1138625d15550707c6c98570bc0c65d5694726b4135769dbc15"
+    },
+    {
+      "path": "phase2b2a_launcher/VERIFICATION.json",
+      "bytes": 5994,
+      "sha256": "37c241f186ca2b358ceb67100534b39e84ca9c1de49d94a4be40f8f7a6582f40"
+    },
+    {
+      "path": "phase2b2a_launcher/no_model_fixture.py",
+      "bytes": 4028,
+      "sha256": "09bb17ed56dbe1f844fd4909a9ee322c37607d4cc0cea61cfd3e4a0944c0179f"
+    },
+    {
+      "path": "phase2b2a_launcher/test_isolated_worker.py",
+      "bytes": 31111,
+      "sha256": "d642e19a5d912dc20736fc7da0ab2f6159677e4e947530d0fead4a0d16712767"
+    },
+    {
+      "path": "shared_interfaces/isolated_worker.py",
+      "bytes": 21851,
+      "sha256": "2dbefdba3f5a46c853057ef6dbedec06cdfde2297959bc8bf3d7e8ef14b8cc4f"
+    }
+  ]
+}
