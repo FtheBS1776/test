@@ -1,1 +1,0 @@
-Further host-compatibility implementation is intended to continue on `nonclaim/genie-desktop-host-compat-20261011` from this checkpoint. The delivered package lineage remains preserved for reproducibility.
