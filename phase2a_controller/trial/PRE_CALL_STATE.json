@@ -1,0 +1,68 @@
+{
+  "databases": {
+    "queue.sqlite": {
+      "entries": [
+        {
+          "completion": null,
+          "plan": "{\"goal\":\"Return one exact bound Phase 2A action and token without dispatching any worker or reviewer\",\"input_sha256\":\"b29ebf3177f65ba78b08a967d4f64a781676977d972017b19383b73283e91c44\",\"max_attempts\":1,\"task_id\":\"genie-phase2a-controller-task-20261012-5edee3378d8240dfa2d7d3cb81ffa27b\"}",
+          "reason": null,
+          "seq": 1,
+          "state": "READY",
+          "task_id": "genie-phase2a-controller-task-20261012-5edee3378d8240dfa2d7d3cb81ffa27b"
+        }
+      ],
+      "reservations": [],
+      "run": [
+        {
+          "id": 1,
+          "policy": "{\"effect_scope\":\"owned-local-report-inbox\",\"max_model_calls\":1,\"max_tasks\":1,\"run_id\":\"genie-phase2a-controller-run-20261012-c7130138b51a4ae58d338e24e78a4bcf\"}",
+          "state": "RUNNING",
+          "stop_reason": null
+        }
+      ]
+    }
+  },
+  "files": {
+    "INPUT.md": {
+      "bytes": 279,
+      "sha256": "b29ebf3177f65ba78b08a967d4f64a781676977d972017b19383b73283e91c44"
+    },
+    "PLAN.json": {
+      "bytes": 303,
+      "sha256": "a76e73a1fb16dfd47bf3b7f3327a0c93083cbaabe7a3976a1061e998edfb7d97"
+    },
+    "POLICY.json": {
+      "bytes": 177,
+      "sha256": "5e2215f3baadb974928f12100e1724084a8f58c5337c346bf9ea8df60b6437a6"
+    },
+    "REGISTRY.json": {
+      "bytes": 184,
+      "sha256": "875af0f02b1e3112689af242a4ee7d0d1024aef53fd60273458186889a551994"
+    },
+    "queue.sqlite": {
+      "bytes": 28672,
+      "sha256": "b0d4b4a2d95a4f7251f0bc9ca9dc027efb4615301a8626e074c747bccb4a12aa"
+    }
+  },
+  "input_sha256": "b29ebf3177f65ba78b08a967d4f64a781676977d972017b19383b73283e91c44",
+  "owned_files": [],
+  "plan": {
+    "goal": "Return one exact bound Phase 2A action and token without dispatching any worker or reviewer",
+    "input_sha256": "b29ebf3177f65ba78b08a967d4f64a781676977d972017b19383b73283e91c44",
+    "max_attempts": 1,
+    "task_id": "genie-phase2a-controller-task-20261012-5edee3378d8240dfa2d7d3cb81ffa27b"
+  },
+  "policy": {
+    "effect_scope": "owned-local-report-inbox",
+    "max_model_calls": 1,
+    "max_tasks": 1,
+    "run_id": "genie-phase2a-controller-run-20261012-c7130138b51a4ae58d338e24e78a4bcf"
+  },
+  "registry": {
+    "phase2a-synthetic-20261012": {
+      "owned_root": "work",
+      "queue": "queue.sqlite",
+      "run_id": "genie-phase2a-controller-run-20261012-c7130138b51a4ae58d338e24e78a4bcf"
+    }
+  }
+}

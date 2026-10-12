@@ -1,0 +1,6 @@
+{
+  "task_id": "genie-phase2a-controller-task-20261012-5edee3378d8240dfa2d7d3cb81ffa27b",
+  "goal": "Return one exact bound Phase 2A action and token without dispatching any worker or reviewer",
+  "input_sha256": "b29ebf3177f65ba78b08a967d4f64a781676977d972017b19383b73283e91c44",
+  "max_attempts": 1
+}

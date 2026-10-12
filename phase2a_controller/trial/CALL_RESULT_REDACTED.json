@@ -1,0 +1,42 @@
+{
+  "annotations": {
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false,
+    "readOnlyHint": false
+  },
+  "call_count": 1,
+  "is_error": false,
+  "retry_count": 0,
+  "structured_content": {
+    "action": "INVOKE_WORKER",
+    "request_field_names": [
+      "attempt",
+      "feedback",
+      "goal",
+      "input_sha256",
+      "task_id"
+    ],
+    "request_sha256": "32343f34a00a1f64eb3cc82406e74d6541ab1db721c642f58e78949f06709445",
+    "token_field_names": [
+      "attempt",
+      "call_id",
+      "input_sha256",
+      "run_id",
+      "slot_id",
+      "task_id"
+    ],
+    "token_sha256": "544b6e1305efcf8a5c1fdbf73d867fe4d56ac8e5c29139dd584ecdc34a1b928c"
+  },
+  "text": [
+    "Genie Phase 2A controller result; outcome=INVOKE_WORKER; bound action only; no worker dispatched"
+  ],
+  "tool_names": [
+    "advance_run"
+  ],
+  "redaction": {
+    "raw_result_published": false,
+    "raw_result_preserved_locally": true,
+    "reason": "Do not publish a potentially replayable live bound token."
+  }
+}

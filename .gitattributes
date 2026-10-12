@@ -1,4 +1,11 @@
 # Genie source SHA-256 bindings are raw-byte bindings. Keep Python source bytes
 # identical across Windows/macOS/Linux checkouts rather than weakening verifiers
 # with platform-dependent newline normalization.
+.gitattributes text eol=lf
+.gitignore text eol=lf
 *.py text eol=lf
+
+# Phase 2A evidence hashes are also raw-byte bindings. Preserve text as LF and
+# keep recorded SQLite state binary on every checkout.
+phase2a_controller/** text eol=lf
+phase2a_controller/**/*.sqlite -text

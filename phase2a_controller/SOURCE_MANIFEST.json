@@ -1,0 +1,31 @@
+{
+  "algorithm": "sha256",
+  "base_commit": "3224a6234f5a5eac36413a7ac23d5a7ae6ae93ee",
+  "files": {
+    ".gitattributes": {"bytes": 483, "sha256": "22956aa596ac74ac7acaeb27d25f403950403e0847c835d2e30ada3056512071"},
+    ".gitignore": {"bytes": 242, "sha256": "d5e1f43bdfc78ff3bf3ea34576482f1198792f02ee259bd8a1493abcb52df877"},
+    "phase2a_controller/ADJUDICATION.md": {"bytes": 2129, "sha256": "5c6e77c6cecc6a4a7fce3cd2a6588dc3169e31bfb3667b239342a5c8d128877d"},
+    "phase2a_controller/CODEX_REGISTRATION_WINDOWS.md": {"bytes": 1008, "sha256": "b2d41b82d8eb76346493c13f2dd092ef607dbd3e50255de2a81f971392e0531d"},
+    "phase2a_controller/CONTRACT.md": {"bytes": 2042, "sha256": "742a98d20f6a77bde9c80ce8a0840a78d791bad27028de3bd626462e0d5b1d35"},
+    "phase2a_controller/inspect_trial.py": {"bytes": 2016, "sha256": "258189604a870525dd7f373290586abfb0087f4055078bbedda0a361fd3db83e"},
+    "phase2a_controller/PRIOR_EXPERIENCE_AUDIT.md": {"bytes": 4508, "sha256": "cc44247edb54b87124200998af3514434445b9b38f4432128d8d9ae06f1654cc"},
+    "phase2a_controller/provision_synthetic.py": {"bytes": 2364, "sha256": "c1ffe1ce7451e4d76619fceb6de3fad1295d07072aaabfbadcbc22fcc6728ed3"},
+    "phase2a_controller/README_FIRST.md": {"bytes": 1458, "sha256": "2ad5690be0640f55ea21341813e4aad05b5e7d7f656f252303fad06a38503a50"},
+    "phase2a_controller/requirements.txt": {"bytes": 167, "sha256": "cc334f0113bacea143c55923149882d6ed0a95db2b31b63b19aab6073f617578"},
+    "phase2a_controller/ROADMAP_ADDENDUM.md": {"bytes": 912, "sha256": "c185cd51d5f99e978fff9c65912d8fcb97fc0c2a89ff730813cc297aefeff3ee"},
+    "phase2a_controller/run_pilot_once.py": {"bytes": 2255, "sha256": "dbe8b12dc418e340c34a8600edc46cc002b7f32ac20a74da8438ddb6478c7a12"},
+    "phase2a_controller/test_controller_mcp.py": {"bytes": 29067, "sha256": "9334838d0fb09cbe38d007a735fee920a2e2ff388c0e4c81fc14590fa908ec37"},
+    "phase2a_controller/TEST_RESULTS.md": {"bytes": 2931, "sha256": "6a6f0c14841dfaeddd65ce6e31ca116081ad1f71677b65ded6c5992f32444fac"},
+    "phase2a_controller/trial/CALL_RESULT_REDACTED.json": {"bytes": 1034, "sha256": "83d26e1e01f35eecd288d9613dc17ee23cf17f53f911faa1798900fdc5496ae1"},
+    "phase2a_controller/trial/INPUT.md": {"bytes": 279, "sha256": "b29ebf3177f65ba78b08a967d4f64a781676977d972017b19383b73283e91c44"},
+    "phase2a_controller/trial/PLAN.json": {"bytes": 303, "sha256": "a76e73a1fb16dfd47bf3b7f3327a0c93083cbaabe7a3976a1061e998edfb7d97"},
+    "phase2a_controller/trial/POLICY.json": {"bytes": 177, "sha256": "5e2215f3baadb974928f12100e1724084a8f58c5337c346bf9ea8df60b6437a6"},
+    "phase2a_controller/trial/POST_CALL_STATE_REDACTED.json": {"bytes": 1595, "sha256": "85333a2fb70ee26b41774c6be43bc913c4f378a81e34756adf2a0677b23e8d4b"},
+    "phase2a_controller/trial/PRE_CALL_STATE.json": {"bytes": 2478, "sha256": "dd5260bf17630313dd719dc6fa18b397d024bd75a2065ad742fd7e995a6c463b"},
+    "phase2a_controller/trial/REGISTRY.json": {"bytes": 184, "sha256": "875af0f02b1e3112689af242a4ee7d0d1024aef53fd60273458186889a551994"},
+    "phase2a_controller/VERIFICATION.json": {"bytes": 4448, "sha256": "9ea8a941cd9c5c73f689fdc2383c7532fee593f451ffc59b622556fd49520780"},
+    "phase2a_controller/verify_integrity.py": {"bytes": 2757, "sha256": "5ae4cb0286a1aa1280516f16c014c5aacf9fe18a7a8418a3b6acb9d14ccee2d5"},
+    "shared_interfaces/mcp_controller.py": {"bytes": 5511, "sha256": "fce65f7c9d0c10e8d7cbdb684c4d3fac0b46836701f334f0f372b44adbaf0bef"},
+    "shared_interfaces/mcp_controller_server.py": {"bytes": 7199, "sha256": "7dd99b4563babd3a104e645cf3854eff5d2d8059141b2c6a1fd546c273a1f0c9"}
+  }
+}

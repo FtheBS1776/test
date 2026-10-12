@@ -1,0 +1,6 @@
+{
+  "run_id": "genie-phase2a-controller-run-20261012-c7130138b51a4ae58d338e24e78a4bcf",
+  "max_tasks": 1,
+  "max_model_calls": 1,
+  "effect_scope": "owned-local-report-inbox"
+}

@@ -1,0 +1,5 @@
+# Preserve the charged Phase 2A pilot stores locally without publishing raw DBs.
+/phase2a_controller/trial/CALL_RESULT.json
+/phase2a_controller/trial/POST_CALL_STATE.json
+/phase2a_controller/trial/queue.sqlite
+/phase2a_controller/trial/work/

@@ -1,0 +1,121 @@
+{
+  "classification": "NONCLAIM",
+  "phase": "Genie Phase 2A isolated local mutation pilot",
+  "correspondence_audit_completed_before_edits": true,
+  "base": {
+    "remote_branch": "origin/nonclaim/genie-desktop-plugin-package-20261011",
+    "commit": "3224a6234f5a5eac36413a7ac23d5a7ae6ae93ee",
+    "tree": "58c8f61d9cf740943956d02e48f312e39b309aaf"
+  },
+  "implementation_branch": "nonclaim/genie-phase-2a-local-mutation-20261012",
+  "surface": {
+    "server": "shared_interfaces.mcp_controller_server",
+    "transport": "stdio",
+    "tool_names": [
+      "advance_run"
+    ],
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false
+    },
+    "global_codex_registration_changed": false,
+    "genie_readonly_changed": false
+  },
+  "source_pins": {
+    "shared_interfaces/run_control.py": "ecc71b088e5a7e3c0bde33b53a7e850dd769daee5b301f2f116edf956599f2d4",
+    "shared_interfaces/mcp_controller.py": "fce65f7c9d0c10e8d7cbdb684c4d3fac0b46836701f334f0f372b44adbaf0bef",
+    "shared_interfaces/mcp_controller_server.py": "7dd99b4563babd3a104e645cf3854eff5d2d8059141b2c6a1fd546c273a1f0c9",
+    "mcp_distribution": "2.3.0",
+    "pywin32_distribution": "312"
+  },
+  "pilot": {
+    "alias": "phase2a-synthetic-20261012",
+    "run_id": "genie-phase2a-controller-run-20261012-c7130138b51a4ae58d338e24e78a4bcf",
+    "task_id": "genie-phase2a-controller-task-20261012-5edee3378d8240dfa2d7d3cb81ffa27b",
+    "input_sha256": "b29ebf3177f65ba78b08a967d4f64a781676977d972017b19383b73283e91c44",
+    "max_tasks": 1,
+    "max_model_calls": 1,
+    "max_attempts": 1,
+    "mcp_call_count": 1,
+    "retry_count": 0,
+    "transport_is_error": false,
+    "action": "INVOKE_WORKER",
+    "attempt": 1,
+    "request_sha256": "32343f34a00a1f64eb3cc82406e74d6541ab1db721c642f58e78949f06709445",
+    "token_sha256": "544b6e1305efcf8a5c1fdbf73d867fe4d56ac8e5c29139dd584ecdc34a1b928c",
+    "slot_id_sha256": "e3fb8bf2147761413aef24ee9704a78f704a7d427a786f7448a758042e0d362b",
+    "call_id_sha256": "cd2c601bc64e589fc059e1309302438530e50b9c5696d15beefcec10f4a174f4"
+  },
+  "evidence_handling": {
+    "raw_pilot_sqlite_published": false,
+    "raw_pilot_sqlite_preserved_locally": true,
+    "raw_call_result_published": false,
+    "raw_call_result_preserved_locally": true,
+    "raw_post_call_snapshot_published": false,
+    "raw_post_call_snapshot_preserved_locally": true,
+    "published_evidence": [
+      "trial/PRE_CALL_STATE.json",
+      "trial/CALL_RESULT_REDACTED.json",
+      "trial/POST_CALL_STATE_REDACTED.json"
+    ]
+  },
+  "post_call_state": {
+    "queue_state": "RUNNING",
+    "entry_state": "ACTIVE",
+    "reservation_count": 1,
+    "task_state": "WAITING_WORKER",
+    "host_call_count": 1,
+    "host_observation_count": 0,
+    "report_count": 0,
+    "application_count": 0,
+    "agent": null,
+    "candidate": null,
+    "candidate_hash": null,
+    "review": null
+  },
+  "integrity_before_and_after_equal": {
+    "repository_protected_54_files": {
+      "byte_count": 215767,
+      "sha256": "ba2cd2b1fb6b1ed6c84d59b7255c1435d91a9afb68fa76c16fc8bc10bef18170"
+    },
+    "repository_historical_27_sqlite_files": {
+      "byte_count": 1024000,
+      "sha256": "56a1f0dcea069ba31a0a09f573fd927eaee4e25900bb6f1554564ffabbe33837"
+    },
+    "installed_genie_readonly_5_files": {
+      "byte_count": 22133322,
+      "sha256": "00e1057d09ea950a121f17a752c1d3934b993e785a17abcfb8959ab37d80fbef"
+    },
+    "installed_genie_readonly_state_34_files": {
+      "byte_count": 224723,
+      "sha256": "2e9437c1cadda4b81ccdc48683fcccc4688de3a5cee650ca05f8329e177e87e9"
+    },
+    "protected_git_diff_from_base": "clean"
+  },
+  "tests": {
+    "phase2a_controller": "14/14 passed",
+    "run_control": "13/13 passed",
+    "plugin_mcp_consumer": "11/11 passed",
+    "plugin_mcp_server": "8/8 passed",
+    "total_targeted_and_regression": "46/46 passed",
+    "legacy_status_tool": "11/12 passed; one pre-existing missing historical fixture error"
+  },
+  "explicitly_not_performed": [
+    "worker model invocation",
+    "reviewer model invocation",
+    "event callback or apply_run_event",
+    "automatic retry",
+    "refund or reset",
+    "historical run mutation",
+    "genie-readonly modification",
+    "global Codex registration modification",
+    "HTTP or remote exposure",
+    "main merge",
+    "promotion or freeze",
+    "spending",
+    "EXP010 activity",
+    "Phase 2B surface exposure"
+  ]
+}

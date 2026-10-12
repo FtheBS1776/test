@@ -1,0 +1,56 @@
+{
+  "binding_commitments": {
+    "call_id_sha256": "cd2c601bc64e589fc059e1309302438530e50b9c5696d15beefcec10f4a174f4",
+    "request_sha256": "32343f34a00a1f64eb3cc82406e74d6541ab1db721c642f58e78949f06709445",
+    "slot_id_sha256": "e3fb8bf2147761413aef24ee9704a78f704a7d427a786f7448a758042e0d362b",
+    "token_sha256": "544b6e1305efcf8a5c1fdbf73d867fe4d56ac8e5c29139dd584ecdc34a1b928c"
+  },
+  "database_files": {
+    "inbox.sqlite": {
+      "bytes": 24576,
+      "sha256": "72e695b10bbdf828a01917a84a2581325edbc1ac594ef3b07f91839ccc75529b"
+    },
+    "queue.sqlite": {
+      "bytes": 28672,
+      "sha256": "bd2088edb94fed6f5eedd64f871745a643ef1ef9bf2d499f4f96a10a1d13285a"
+    },
+    "task.sqlite": {
+      "bytes": 32768,
+      "sha256": "59c3b8f5edd2289247b0c478a8340542edff1a28885b3d4e926d68d55ae230a0"
+    }
+  },
+  "post_call_state": {
+    "agent": null,
+    "application_count": 0,
+    "attempt": 1,
+    "candidate": null,
+    "candidate_hash": null,
+    "entry_state": "ACTIVE",
+    "host_call_count": 1,
+    "host_observation_count": 0,
+    "queue_state": "RUNNING",
+    "report_count": 0,
+    "reservation_count": 1,
+    "review": null,
+    "task_state": "WAITING_WORKER"
+  },
+  "pre_to_post": {
+    "entry_state": [
+      "READY",
+      "ACTIVE"
+    ],
+    "host_call_count": [
+      0,
+      1
+    ],
+    "reservation_count": [
+      0,
+      1
+    ]
+  },
+  "redaction": {
+    "raw_post_call_snapshot_published": false,
+    "raw_post_call_snapshot_preserved_locally": true,
+    "raw_post_call_snapshot_sha256": "ff91334f42540aa6827b1f04398b0a9b203686e7333742261ef4911f29d3e945"
+  }
+}
