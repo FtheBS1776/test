@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "genie-readonly": {
+      "command": "./bin/genie-mcp.exe",
+      "args": [],
+      "cwd": "${PLUGIN_ROOT}"
+    }
+  }
+}
