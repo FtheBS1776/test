@@ -1,0 +1,13 @@
+{
+  "name": "genie-readonly",
+  "version": "0.1.1",
+  "description": "Read bounded local Genie run diagnostics and confirmed accepted task results without granting new authority.",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Genie Readonly",
+    "shortDescription": "Read bounded local Genie diagnostics and confirmed results",
+    "longDescription": "Expose exactly the accepted read-only Genie status and confirmed-result tools without granting mutation, dispatch, replay, or new authority.",
+    "category": "Productivity",
+    "capabilities": ["Read"]
+  }
+}
