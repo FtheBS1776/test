@@ -1,0 +1,84 @@
+{
+  "classification": "NONCLAIM",
+  "algorithm": "SHA-256",
+  "base": {
+    "local_commit": "ef3963766b081cc3178339e3591b66be45e3da9f",
+    "published_equivalent_commit": "d3885f4324dcc90a2cc9b2decc9e534ac838464e",
+    "tree": "c257e7a8c037cb32e405604f80c08f5e80f8434a"
+  },
+  "manifest_self_excluded": true,
+  "file_count": 14,
+  "total_bytes": 72240,
+  "files": [
+    {
+      "path": "phase2b_events/.gitattributes",
+      "bytes": 14,
+      "sha256": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9"
+    },
+    {
+      "path": "phase2b_events/ADJUDICATION.md",
+      "bytes": 2039,
+      "sha256": "13e9b574ef06dcdd5d152ae2acc713e935a6e2ed50d1f4d3fc40f67e73a50fff"
+    },
+    {
+      "path": "phase2b_events/CODEX_REGISTRATION_WINDOWS.md",
+      "bytes": 930,
+      "sha256": "9f6d29910bcdd906564130666a4c377defd0ff4c4c10b0a467a01c4a33d2bcde"
+    },
+    {
+      "path": "phase2b_events/CONTRACT.md",
+      "bytes": 2568,
+      "sha256": "ceda5caee743338338c895852b511f86fff31e55f1a816e80289df507e97827c"
+    },
+    {
+      "path": "phase2b_events/ISOLATION_GATE.md",
+      "bytes": 1834,
+      "sha256": "c0fe58d6407c6db7d64afea9e497d4cf7ac80c899c83a471c02515935b1a0bfc"
+    },
+    {
+      "path": "phase2b_events/PRIOR_EXPERIENCE_AUDIT.md",
+      "bytes": 4377,
+      "sha256": "f67cc1ed4eedd952df5cb1e5bf012a9c54e0fc0b4e5e520f7995c4fbd298b6f5"
+    },
+    {
+      "path": "phase2b_events/README_FIRST.md",
+      "bytes": 1504,
+      "sha256": "85e5497757c1e00078315e7793a71a259197e7771dfe73a3fbaf21905ca43e58"
+    },
+    {
+      "path": "phase2b_events/requirements.txt",
+      "bytes": 167,
+      "sha256": "cc334f0113bacea143c55923149882d6ed0a95db2b31b63b19aab6073f617578"
+    },
+    {
+      "path": "phase2b_events/ROADMAP_ADDENDUM.md",
+      "bytes": 1273,
+      "sha256": "446e8e95a44011572349cdc4d1957e76b8088400cbf10c4d1e570d1f9728ceea"
+    },
+    {
+      "path": "phase2b_events/TEST_RESULTS.md",
+      "bytes": 3705,
+      "sha256": "2bbaf3875010c1132314686812a9b4e73da6c214309e819a8f93c2cd255ed5be"
+    },
+    {
+      "path": "phase2b_events/test_events_mcp.py",
+      "bytes": 33724,
+      "sha256": "804734fa87bf7e3b1f7cd55bab351c22c01b4e2cc3b44c80f0ad7980ecb7f089"
+    },
+    {
+      "path": "phase2b_events/VERIFICATION.json",
+      "bytes": 4354,
+      "sha256": "aa09e1d8e212721f8e51a2c39ba6be35a6d6e7a3896f820aff320b9a7962c7ea"
+    },
+    {
+      "path": "shared_interfaces/mcp_events.py",
+      "bytes": 6225,
+      "sha256": "33bdac26577380ee473e75f0f810a1e50c4f6e2c7e33c095ed21436d8d03a8ba"
+    },
+    {
+      "path": "shared_interfaces/mcp_events_server.py",
+      "bytes": 9526,
+      "sha256": "46195dd5ab442e132faa4fee4f76639bc0cc9ad771a07e18055e647e11466e3f"
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "classification": "NONCLAIM",
+  "phase": "Genie Phase 2B1 isolated event MCP candidate",
+  "correspondence_audit_completed_before_edits": true,
+  "base": {
+    "local_commit": "ef3963766b081cc3178339e3591b66be45e3da9f",
+    "published_equivalent_commit": "d3885f4324dcc90a2cc9b2decc9e534ac838464e",
+    "tree": "c257e7a8c037cb32e405604f80c08f5e80f8434a"
+  },
+  "implementation_branch": "nonclaim/genie-phase-2b1-event-surface-20261012",
+  "surface": {
+    "server": "shared_interfaces.mcp_events_server",
+    "transport": "stdio",
+    "tool_names": [
+      "apply_run_event"
+    ],
+    "operation_values": [
+      "observe",
+      "submit",
+      "review"
+    ],
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false
+    },
+    "global_codex_registration_changed": false,
+    "genie_readonly_changed": false
+  },
+  "source_pins": {
+    "shared_interfaces/run_events.py": "913b4d89bc5bbec0c37141f7914fd111a342d2fced80d25e404d2d25d704f760",
+    "shared_interfaces/run_control.py": "ecc71b088e5a7e3c0bde33b53a7e850dd769daee5b301f2f116edf956599f2d4",
+    "shared_interfaces/mcp_events.py": "33bdac26577380ee473e75f0f810a1e50c4f6e2c7e33c095ed21436d8d03a8ba",
+    "shared_interfaces/mcp_events_server.py": "46195dd5ab442e132faa4fee4f76639bc0cc9ad771a07e18055e647e11466e3f",
+    "canonical_input_schema": "59fd685d201f46cfac160c371f25de5dc55a108c90ad3f28dcb1403331089634",
+    "mcp_distribution": "2.3.0",
+    "pywin32_distribution": "312"
+  },
+  "disposable_stdio_fixture": {
+    "persistent_run_created": false,
+    "model_invoked": false,
+    "independent_proof": false,
+    "operations": [
+      "observe:RECORDED",
+      "submit:SUBMITTED",
+      "review:ACCEPT"
+    ],
+    "post_sequence": {
+      "queue_state": "ACTIVE",
+      "reservation_count": 1,
+      "task_state": "ACCEPTED",
+      "host_call_count": 1,
+      "host_observation_count": 1,
+      "report_count": 0,
+      "application_count": 0
+    },
+    "claims_excluded": [
+      "worker or reviewer model execution",
+      "authenticated provenance",
+      "content truth or quality",
+      "independent review",
+      "task or run completion",
+      "delivery or fresh destination confirmation"
+    ]
+  },
+  "integrity_equal_to_phase2a_baseline": {
+    "repository_protected_54_files": {
+      "byte_count": 215767,
+      "sha256": "ba2cd2b1fb6b1ed6c84d59b7255c1435d91a9afb68fa76c16fc8bc10bef18170"
+    },
+    "repository_historical_27_sqlite_files": {
+      "byte_count": 1024000,
+      "sha256": "56a1f0dcea069ba31a0a09f573fd927eaee4e25900bb6f1554564ffabbe33837"
+    },
+    "installed_genie_readonly_5_files": {
+      "byte_count": 22133322,
+      "sha256": "00e1057d09ea950a121f17a752c1d3934b993e785a17abcfb8959ab37d80fbef"
+    },
+    "installed_genie_readonly_state_34_files": {
+      "byte_count": 224723,
+      "sha256": "2e9437c1cadda4b81ccdc48683fcccc4688de3a5cee650ca05f8329e177e87e9"
+    }
+  },
+  "preserved_phase2a_raw_sha256": {
+    "queue.sqlite": "bd2088edb94fed6f5eedd64f871745a643ef1ef9bf2d499f4f96a10a1d13285a",
+    "inbox.sqlite": "72e695b10bbdf828a01917a84a2581325edbc1ac594ef3b07f91839ccc75529b",
+    "task.sqlite": "59c3b8f5edd2289247b0c478a8340542edff1a28885b3d4e926d68d55ae230a0",
+    "CALL_RESULT.json": "a77847a3428ac0a440a82a57f06a6fe97d21e321a6be0b1367e50051acbe92be",
+    "POST_CALL_STATE.json": "ff91334f42540aa6827b1f04398b0a9b203686e7333742261ef4911f29d3e945"
+  },
+  "tests": {
+    "phase2b_events": "22/22 passed",
+    "run_events": "15/15 passed",
+    "run_control": "13/13 passed",
+    "phase2a_controller": "14/14 passed",
+    "plugin_mcp_consumer": "11/11 passed",
+    "plugin_mcp_server": "8/8 passed",
+    "total_clean_targeted_and_regression": "83/83 passed",
+    "supplemental_session_driver": "92/104 clean executions; 12 duplicate pre-existing Windows SQLite cleanup errors from six tests"
+  },
+  "explicitly_not_performed": [
+    "persistent Phase 2B run creation or mutation",
+    "Phase 2A run callback or replay",
+    "worker or reviewer model invocation",
+    "live Codex child process",
+    "session_driver exposure or automatic progression",
+    "global Codex registration modification",
+    "HTTP or remote exposure",
+    "main merge",
+    "promotion or freeze",
+    "spending",
+    "EXP010 activity",
+    "Phase 2B or Phase 2C completion claim"
+  ]
+}

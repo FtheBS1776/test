@@ -1,0 +1,9 @@
+# Phase 2B2 isolation gate — design only
+
+The local Codex CLI was inspected read-only at version `0.162.1`; the installed executable SHA-256 was `dd13bdb162a184fa04039488b234a8258ef9b76f84e926c505d5742b19249a6a`. Its current help supports `exec`, `--ignore-user-config` (authentication still uses `CODEX_HOME`), `--ephemeral`, `--strict-config`, `--sandbox read-only`, `--output-schema`, and feature disables. The current feature inventory includes `plugins`, `apps`, `multi_agent`, `shell_tool`, `unified_exec`, browser/computer features, hooks, skills, and workspace dependencies. Inspection did not invoke a model.
+
+Those flags are inputs to a future isolation profile, not proof of effective isolation. A live child must start in a fresh non-repository directory, ignore user config, disable plugins/apps/multi-agent and unnecessary built-in tools, use an output schema, and expose no Genie MCP registration. Parent code must retain the six-field Genie token, trusted alias, queue/root paths, and event authority. A child receives only a bounded sanitized request or candidate and returns a proposal; the parent reattaches the immutable binding after strict validation.
+
+Before any real spawn, tests must prove argument-vector launch without a shell, bounded stdin rather than prompt-in-argv, minimal environment without API keys/tokens/secrets, one durable dispatch claim, exactly one spawn, and canonical UNKNOWN/no retry for timeout/crash/nonzero/malformed/oversize/lost response. A real probe must separately record the effective child tool inventory. Read-only sandboxing is not a claim of hostile filesystem confinement, especially for nested/Windows execution.
+
+No launcher or real Codex child exists in Phase 2B1. No model usage, API key, provider call, worker observation, reviewer judgment, or spending was performed.
