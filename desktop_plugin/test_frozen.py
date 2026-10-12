@@ -8,6 +8,11 @@ import sys
 import tempfile
 
 
+UNKNOWN_ALIAS = "unknown-fixture"
+UNKNOWN_RUN_ID = "genie-plugin-unknown-fixture-20261011"
+UNKNOWN_TASK_ID = "genie-known-unavailable-fixture-20261011"
+
+
 def _hash_tree(root):
     out = {}
     for path in sorted(root.rglob("*")):
@@ -61,6 +66,7 @@ async def _exercise(exe, plugin_root, plugin_data):
         listed = await client.list_tools()
         names = [tool.name for tool in listed.tools]
         assert names == ["get_run_status", "get_task_result"], names
+
         status = await client.call_tool("get_run_status", {"run_name": "actual"})
         structured = status.structured_content
         assert type(structured) is dict and structured.get("status") == "PASS", structured
@@ -74,6 +80,7 @@ async def _exercise(exe, plugin_root, plugin_data):
         ]
         assert confirmed, structured
         task_id = confirmed[0]["task_id"]
+
         result = await client.call_tool(
             "get_task_result", {"run_name": "actual", "task_id": task_id})
         body = result.structured_content
@@ -82,6 +89,37 @@ async def _exercise(exe, plugin_root, plugin_data):
         assert type(body.get("result_text")) is str and body["result_text"], body
         assert body["result_text"] not in result.content[0].text
         assert "UNTRUSTED DATA" in result.content[0].text
+
+        unknown = await client.call_tool(
+            "get_task_result",
+            {"run_name": UNKNOWN_ALIAS, "task_id": UNKNOWN_TASK_ID},
+        )
+        unknown_body = unknown.structured_content
+        assert unknown_body == {
+            "status": "UNKNOWN",
+            "reason": "TASK_RESULT_UNAVAILABLE",
+            "evidence_scope": "FRESH_EXACT_OWNED_DESTINATION_READBACK",
+        }, unknown_body
+        assert "result_text" not in unknown_body
+
+        missing_run = await client.call_tool(
+            "get_task_result",
+            {"run_name": "not-a-real-run", "task_id": UNKNOWN_TASK_ID},
+        )
+        assert missing_run.structured_content == {
+            "status": "REJECT",
+            "reason": "UNKNOWN_RUN",
+        }, missing_run.structured_content
+
+        missing_task = await client.call_tool(
+            "get_task_result",
+            {"run_name": "actual", "task_id": "not-a-real-task"},
+        )
+        assert missing_task.structured_content == {
+            "status": "REJECT",
+            "reason": "UNKNOWN_TASK",
+        }, missing_task.structured_content
+
         return task_id
 
 
@@ -111,7 +149,7 @@ def main():
     assert manifest == {
         "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
         "name": "genie-readonly",
-        "version": "0.1.0",
+        "version": "0.1.1",
         "description": "Read bounded local Genie run diagnostics and confirmed accepted task results without granting new authority.",
     }
     mcp = _load_json(plugin_root / "mcp.json")
@@ -124,6 +162,23 @@ def main():
                 "cwd": "${PLUGIN_ROOT}",
             }
         },
+    }
+    compat_manifest = _load_json(plugin_root / ".codex-plugin" / "plugin.json")
+    assert compat_manifest == {
+        "name": "genie-readonly",
+        "version": "0.1.1",
+        "description": "Read bounded local Genie run diagnostics and confirmed accepted task results without granting new authority.",
+        "mcpServers": "./.mcp.json",
+    }
+    compat_mcp = _load_json(plugin_root / ".mcp.json")
+    assert compat_mcp == {
+        "mcpServers": {
+            "genie-readonly": {
+                "command": "./bin/genie-mcp.exe",
+                "args": [],
+                "cwd": "${PLUGIN_ROOT}",
+            }
+        }
     }
 
     with tempfile.TemporaryDirectory() as temp:
@@ -138,6 +193,9 @@ def main():
         marker = _load_json(state / ".genie-state.json")
         assert marker["state_format"] == 1
         assert type(marker["seeded_from"]) is str and marker["seeded_from"]
+        registry = _load_json(state / "REGISTRY.json")
+        assert set(registry) == {"actual", UNKNOWN_ALIAS}, registry
+        assert registry[UNKNOWN_ALIAS]["run_id"] == UNKNOWN_RUN_ID
         first = _hash_tree(state)
 
         sentinel = state / "operator-preserved.txt"
@@ -170,7 +228,7 @@ def main():
         assert abandoned_file.read_text(
             encoding="utf-8") == "preserve interrupted init\n"
 
-    print("DESKTOP_PLUGIN_FROZEN_PASS")
+    print("DESKTOP_PLUGIN_FROZEN_PASS_WITH_UNKNOWN")
     return 0
 
 
