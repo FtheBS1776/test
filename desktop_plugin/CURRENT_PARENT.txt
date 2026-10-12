@@ -1,3 +1,0 @@
-parent_branch=nonclaim/genie-desktop-plugin-package-20261011
-parent_commit=85b2eb6a1d2255d0f5a9bd64d73a1b514b068349
-scope=host-registration compatibility + identity-safe UNKNOWN fixture only
