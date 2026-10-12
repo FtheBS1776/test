@@ -1,9 +1,9 @@
-name: Genie Desktop plugin package NONCLAIM
+name: Genie Desktop plugin host compatibility NONCLAIM
 
 on:
   push:
     branches:
-      - nonclaim/genie-desktop-plugin-package-20261011
+      - nonclaim/genie-desktop-host-compat-unknown-20261011
     paths:
       - .gitattributes
       - desktop_plugin/**
@@ -104,17 +104,53 @@ jobs:
           print('WINDOWS_SOURCE_AND_READONLY_CALL_CHAIN_PASS', len(sqlite_files), task_id)
           '@ | & $py -
 
-      - name: Prepare deterministic seed state
+      - name: Prepare deterministic seed state and UNKNOWN fixture
         run: |
           $py = 'desktop_plugin/.venv/Scripts/python.exe'
           @'
-          import hashlib, json, shutil
+          import hashlib, json, shutil, sqlite3
           from pathlib import Path
+
           source = Path('host_return/trial')
           target = Path('desktop_plugin/build_seed')
           if target.exists():
               shutil.rmtree(target)
           shutil.copytree(source, target)
+
+          registry_path = target / 'REGISTRY.json'
+          registry = json.loads(registry_path.read_text(encoding='utf-8'))
+          assert set(registry) == {'actual'}, registry
+          actual_run_id = registry['actual']['run_id']
+
+          synthetic_run_id = 'genie-plugin-synthetic-unknown-20261011'
+          synthetic = target / 'synthetic_unknown'
+          synthetic.mkdir()
+          synthetic_queue = synthetic / 'queue.sqlite'
+          shutil.copy2(source / 'queue.sqlite', synthetic_queue)
+
+          with sqlite3.connect(synthetic_queue) as db:
+              row = db.execute('SELECT policy FROM run WHERE id=1').fetchone()
+              assert row is not None
+              policy = json.loads(row[0])
+              assert policy['run_id'] == actual_run_id
+              policy['run_id'] = synthetic_run_id
+              canonical = json.dumps(policy, sort_keys=True, separators=(',', ':'))
+              db.execute('UPDATE run SET policy=? WHERE id=1', (canonical,))
+              known = db.execute('SELECT task_id FROM entries ORDER BY seq LIMIT 1').fetchone()
+              assert known is not None and isinstance(known[0], str) and known[0]
+              assert db.execute('PRAGMA integrity_check').fetchone() == ('ok',)
+
+          missing_root = synthetic / 'missing-work'
+          assert not missing_root.exists()
+          registry['synthetic-unknown'] = {
+              'queue': 'synthetic_unknown/queue.sqlite',
+              'run_id': synthetic_run_id,
+              'owned_root': 'synthetic_unknown/missing-work',
+          }
+          registry_path.write_text(
+              json.dumps(registry, sort_keys=True, indent=2) + '\n',
+              encoding='utf-8')
+
           records = []
           for path in sorted(target.rglob('*')):
               if path.is_file() and path.name != 'SEED_MANIFEST.json':
@@ -125,11 +161,12 @@ jobs:
                       'size': len(raw),
                   })
           canonical = json.dumps(records, sort_keys=True, separators=(',', ':')).encode()
-          seed_id = 'host-return-trial-' + hashlib.sha256(canonical).hexdigest()[:20]
+          seed_id = 'host-return-plus-unknown-' + hashlib.sha256(canonical).hexdigest()[:20]
           manifest = {'seed_id': seed_id, 'files': records}
           (target / 'SEED_MANIFEST.json').write_text(
               json.dumps(manifest, sort_keys=True, separators=(',', ':')) + '\n',
               encoding='utf-8')
+          print('SYNTHETIC_UNKNOWN_FIXTURE_PASS', synthetic_run_id, known[0])
           print('SEED_MANIFEST_PASS', seed_id, len(records))
           '@ | & $py -
 
@@ -137,14 +174,17 @@ jobs:
         run: |
           desktop_plugin/.venv/Scripts/pyinstaller.exe --clean --noconfirm --distpath desktop_plugin/build_dist --workpath desktop_plugin/build_work desktop_plugin/genie_mcp.spec
 
-      - name: Assemble portable plugin folder
+      - name: Assemble portable plus Codex-compatible plugin folder
         run: |
           $root = 'desktop_plugin/staging/genie-readonly'
           New-Item -ItemType Directory -Force -Path "$root/bin" | Out-Null
+          New-Item -ItemType Directory -Force -Path "$root/.codex-plugin" | Out-Null
           Copy-Item desktop_plugin/package/plugin.json "$root/plugin.json"
           Copy-Item desktop_plugin/package/mcp.json "$root/mcp.json"
+          Copy-Item desktop_plugin/package/.codex-plugin/plugin.json "$root/.codex-plugin/plugin.json"
+          Copy-Item desktop_plugin/package/.mcp.json "$root/.mcp.json"
           Copy-Item desktop_plugin/build_dist/genie-mcp.exe "$root/bin/genie-mcp.exe"
-          Get-ChildItem -Recurse $root | Select-Object FullName,Length
+          Get-ChildItem -Force -Recurse $root | Select-Object FullName,Length
 
       - name: Exercise frozen plugin lifecycle and stdio tools
         run: |
