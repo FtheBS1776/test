@@ -1,0 +1,28 @@
+{
+  "classification": "NONCLAIM",
+  "frontier": "PHASE_2B2_LIVE_UNKNOWN_NONCLAIM",
+  "logical_operation_id": "55e73a140f052d840d6fbe0cb1c1710e10c5189af8a9f597a5c58fc4b6fb6d12",
+  "live_process_entries": 1,
+  "root_pid": 48008,
+  "failure_reason": "APP_SERVER_EOF",
+  "semantic_release": false,
+  "model_turn_started": false,
+  "worker_result_produced": false,
+  "retry_count": 0,
+  "preserve": true,
+  "allow_new_invocation": false,
+  "fresh_destination_status": "UNKNOWN",
+  "fresh_destination_reason": "TASK_RESULT_UNAVAILABLE",
+  "independence": "COMMON_CAUSE_SAME_HOST_SAME_PROVIDER",
+  "raw_local_evidence_published": false,
+  "raw_local_evidence_notice": "Full dispatch bindings and preserved SQLite stores remain local; only their hashes are published.",
+  "raw_local_evidence_sha256": {
+    "DISPATCH.json": "47c0b1aed6419bd94f0eb431c90ffe9d093320ff8e5097a16ae629403a24102a",
+    "LIVE_WORKER.json": "fe77f755ad69b01157569fd63c4ca7222c2ab1a1089c72f0c4f850560e459f01",
+    "POST_FAILURE_STATUS.json": "07d9ca63c503a040fe3be436d0dda6895dd12739f0dfaafe1e95d35dc7c22363",
+    "operation.sqlite.preserved": "44151b84ae944bfca5c007d062ce37b9a83cb5ef8f55db6c6db0a40b8cdc2ad1",
+    "queue.sqlite.preserved": "b827970dee777ce548654522db6e87b16b544d0d40c2cc6785389e29841d90fe",
+    "inbox.sqlite.preserved": "72e695b10bbdf828a01917a84a2581325edbc1ac594ef3b07f91839ccc75529b",
+    "task.sqlite.preserved": "43a2cd96914010183c3c5641d46d7fa2afe2c199b98d192b668f7f2831841ee9"
+  }
+}
