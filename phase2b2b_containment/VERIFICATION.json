@@ -1,0 +1,168 @@
+{
+  "classification": "NONCLAIM",
+  "phase": "Genie Phase 2B2B fixture-only Windows descendant-containment preflight",
+  "correspondence_audit_completed_before_edits": true,
+  "base": {
+    "local_commit": "dc221b2df1316e819f1ea980df838f709f5fb1c1",
+    "published_equivalent_commit": "d0ebe348188a99682966f774eea5cfcd1d9894c2",
+    "tree": "b19388bd8393df9e0022a768fe22509c76552512"
+  },
+  "implementation_branch": "nonclaim/genie-phase-2b2b-containment-preflight-20261012",
+  "surface": {
+    "kind": "host-internal fixture containment probe",
+    "windows_job_object": true,
+    "mcp_exposed": false,
+    "globally_registered": false,
+    "genie_store_read_or_mutated": false,
+    "persistent_probe_store_created": false,
+    "codex_or_model_executed": false
+  },
+  "source_pins": {
+    "shared_interfaces/windows_job.py": "a654ef455f5829a7894d6b01817a8e74c04c26f89d3c51afd38daca09be52ec0",
+    "shared_interfaces/process_containment.py": "afae468fef8f31537706559e59e42cf3f2a8bfbebaac5ec74b9f837968311727",
+    "phase2b2b_containment/process_tree_fixture.py": "43e7517997d1f0c9d97bfd03f8fa696ef52f978cb638206ca76acbacc9835389",
+    "phase2b2b_containment/test_process_containment.py": "b9732d5364b499a69de6bb27175ff8224e04f94d28c185be98fd9dc13647dab7"
+  },
+  "job_profile": {
+    "limit_flags": 8192,
+    "kill_on_job_close": true,
+    "breakaway_ok": false,
+    "silent_breakaway_ok": false,
+    "assignment_before_release": true,
+    "release_gate": "RELEASE_AFTER_JOB_ASSIGNMENT",
+    "shell": false,
+    "python_flags": ["-I", "-S", "-B"],
+    "environment_required": {
+      "GENIE_EXECUTION_CLASS": "NO_MODEL_CALL_CONTAINMENT_FIXTURE"
+    },
+    "environment_optional_windows_keys": ["SystemRoot", "WINDIR"]
+  },
+  "recorded_probe": {
+    "probe_id": "6dfd671fd8c3050494718375eb22dc80e5ba135852fcdaaa8a98ee1b64da0e00",
+    "status": "VERIFIED",
+    "classification": "NO_MODEL_FIXTURE_CONTAINMENT_EVIDENCE",
+    "active_before_release": 1,
+    "active_before_termination": 4,
+    "active_after_termination": 0,
+    "member_image_counts": {
+      "python.exe": 2,
+      "conhost.exe": 2
+    },
+    "parent_terminated": true,
+    "descendant_terminated": true,
+    "model_invoked": false,
+    "allow_new_invocation": false,
+    "complete_runtime_closure": false,
+    "hostile_preassignment_containment": false
+  },
+  "handled_uncertain_result": {
+    "status": "UNKNOWN",
+    "reason": "PROCESS_TREE_CONTAINMENT_OUTCOME_UNKNOWN",
+    "preserve": true,
+    "allow_new_invocation": false
+  },
+  "cleanup_semantics": {
+    "process_entry_attempts_per_probe_max": 1,
+    "terminate_job_object_attempts_per_probe_max": 1,
+    "uncertain_termination_fallback": "close verified kill-on-close job",
+    "live_job_members_terminated_and_owned_job_popen_member_pipe_handles_closed_before_temporary_directory_cleanup": true,
+    "temporary_directory_preserved_on_cleanup_uncertainty": true,
+    "bounded_inert_directory_cleanup_attempts_max": 20
+  },
+  "selected_runtime": {
+    "classification": "PARTIAL_SELECTED_RUNTIME_SUPPORT_SET",
+    "complete_runtime_closure": false,
+    "python_version": "3.12.14",
+    "windows_build": 22631,
+    "files": {
+      "host_python.exe": "dcdc8a4ef3c108d7d11f7a8afea50502c8f41763d118f1a94dafc90c74f1614c",
+      "child_python.exe": "d41bad46673f64e0d02f23797f53f90ccf60f27d6eda8d86dd2d4bbeae5a858c",
+      "python312.dll": "8bb70bceffd5877733a957b31c392ca027bd2f84230e00de1654f994422fa2af",
+      "python3.dll": "0366ee3d630c26ffc27bfab162648ae8c5cadc74b4b46f3e179ca70f4436cab9",
+      "_ctypes.pyd": "926df1f47c2a782ba154d6824a84aee7197a32eb6b781c2fc33120851e0fb53b",
+      "kernel32.dll": "70f1e69a1d0602ec9e02c713ff2fc1238ddc7fe02ad28fa344954dda446e5236",
+      "conhost.exe": "2266b396ef92534a2a2844438df043d4069a2ec47d4e464f55e8c1cd47124a98"
+    }
+  },
+  "tests": {
+    "phase2b2b_containment": "19/19 passed",
+    "consecutive_focused_suite_repetitions": "10/10 passed",
+    "focused_stress_aggregate": {
+      "test_method_executions": 190,
+      "malformed_report_probes": 200,
+      "injected_termination_failure_probes": 100,
+      "residual_fixture_directories": 0,
+      "duplicate_terminate_job_object_calls": 0
+    },
+    "prior_targeted_and_regression": "110/110 passed",
+    "total_clean_targeted_and_regression": "129/129 passed",
+    "skipped": 0
+  },
+  "independent_first_repair_audit": {
+    "process_containment_sha256": "b31b5ba226a90ebbeb067de14900cc879a8006e4600dcb78d7a82cd0056d78b5",
+    "test_process_containment_sha256": "90660f5a9ad4001c51a203d8e85c85cde0730d9f480a23da7ae9f5adc041790c",
+    "malformed_report_probes": 100,
+    "injected_termination_failure_probes": 50,
+    "sequential_real_probes": 105,
+    "stable_host_handle_count": 156,
+    "same_instance_contention_calls": 32,
+    "same_instance_contention_verified": 1,
+    "same_instance_contention_unknown": 31,
+    "same_instance_contention_spawns": 1,
+    "postcommit_assignment_probes": 20,
+    "postdelivery_gate_failure_probes": 10,
+    "postreport_timeout_probes": 10,
+    "kill_on_close_retained_handles_observed_terminated": 20,
+    "residual_python_processes": 0,
+    "residual_audit_roots": 0
+  },
+  "integrity_equal_to_phase2a_baseline": {
+    "repository_protected_54_files": {
+      "byte_count": 215767,
+      "sha256": "ba2cd2b1fb6b1ed6c84d59b7255c1435d91a9afb68fa76c16fc8bc10bef18170"
+    },
+    "repository_historical_27_sqlite_files": {
+      "byte_count": 1024000,
+      "sha256": "56a1f0dcea069ba31a0a09f573fd927eaee4e25900bb6f1554564ffabbe33837"
+    },
+    "installed_genie_readonly_5_files": {
+      "byte_count": 22133322,
+      "sha256": "00e1057d09ea950a121f17a752c1d3934b993e785a17abcfb8959ab37d80fbef"
+    },
+    "installed_genie_readonly_state_34_files": {
+      "byte_count": 224723,
+      "sha256": "2e9437c1cadda4b81ccdc48683fcccc4688de3a5cee650ca05f8329e177e87e9"
+    }
+  },
+  "preserved_phase2a_raw_sha256": {
+    "queue.sqlite": "bd2088edb94fed6f5eedd64f871745a643ef1ef9bf2d499f4f96a10a1d13285a",
+    "inbox.sqlite": "72e695b10bbdf828a01917a84a2581325edbc1ac594ef3b07f91839ccc75529b",
+    "task.sqlite": "59c3b8f5edd2289247b0c478a8340542edff1a28885b3d4e926d68d55ae230a0",
+    "CALL_RESULT.json": "a77847a3428ac0a440a82a57f06a6fe97d21e321a6be0b1367e50051acbe92be",
+    "POST_CALL_STATE.json": "ff91334f42540aa6827b1f04398b0a9b203686e7333742261ef4911f29d3e945"
+  },
+  "claims_excluded": [
+    "hostile pre-assignment containment or general escape resistance",
+    "filesystem, network, credential, container, or complete OS isolation",
+    "complete CPython, standard-library, Windows, or hardware closure",
+    "global exactly-once, rollback resistance, or physical durability",
+    "worker or reviewer model execution",
+    "authenticated provenance, content truth, quality, or independent review",
+    "callback acknowledgement, completion, delivery, or future currentness",
+    "actual Codex Job Object compatibility",
+    "Phase 2B2 or Phase 2C completion"
+  ],
+  "explicitly_not_performed": [
+    "live Codex child execution",
+    "authentication or provider/model use",
+    "persistent Genie run creation or mutation",
+    "advance_run or apply_run_event invocation",
+    "worker or reviewer dispatch",
+    "session_driver exposure or automatic progression",
+    "MCP surface or global Codex registration",
+    "main merge",
+    "promotion or freeze",
+    "spending",
+    "EXP010 activity"
+  ]
+}

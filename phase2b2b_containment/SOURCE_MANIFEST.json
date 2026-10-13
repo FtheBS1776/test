@@ -1,0 +1,79 @@
+{
+  "classification": "NONCLAIM",
+  "algorithm": "SHA-256",
+  "base": {
+    "local_commit": "dc221b2df1316e819f1ea980df838f709f5fb1c1",
+    "published_equivalent_commit": "d0ebe348188a99682966f774eea5cfcd1d9894c2",
+    "tree": "b19388bd8393df9e0022a768fe22509c76552512"
+  },
+  "manifest_self_excluded": true,
+  "file_count": 13,
+  "total_bytes": 93614,
+  "files": [
+    {
+      "path": "phase2b2b_containment/.gitattributes",
+      "bytes": 14,
+      "sha256": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9"
+    },
+    {
+      "path": "phase2b2b_containment/ADJUDICATION.md",
+      "bytes": 2494,
+      "sha256": "4b162aa68c76fb23af0521478a473ed3c97ce3a114862e790c36d1e50e1aa380"
+    },
+    {
+      "path": "phase2b2b_containment/CONTRACT.md",
+      "bytes": 4215,
+      "sha256": "5604c20cbb81d0c2260f9baec729fc8f197906d43924d36144cc1462adb99b6b"
+    },
+    {
+      "path": "phase2b2b_containment/PRIOR_EXPERIENCE_AUDIT.md",
+      "bytes": 4984,
+      "sha256": "3af06745868d3cc8ca20a63b83880f3c90340fa1af3b79eb6d37e049dca5203d"
+    },
+    {
+      "path": "phase2b2b_containment/README_FIRST.md",
+      "bytes": 2004,
+      "sha256": "ae4bb7af196fbc134edcd98c6dceac0f896949699143a9b5c6261f52742f68ea"
+    },
+    {
+      "path": "phase2b2b_containment/ROADMAP_ADDENDUM.md",
+      "bytes": 1402,
+      "sha256": "621a5f0e8986fdf620319feab201db500006ca472b07e2db6766bf9917af80ec"
+    },
+    {
+      "path": "phase2b2b_containment/RUNTIME_PROFILE.md",
+      "bytes": 2237,
+      "sha256": "3b67eb4860e0880107e17d5839cd54c2e0197acf16ef684d45d9e0f67ae9b49f"
+    },
+    {
+      "path": "phase2b2b_containment/TEST_RESULTS.md",
+      "bytes": 6536,
+      "sha256": "f189c32480884740ab52296ab1f05b15605d942055e6d262a156882866698865"
+    },
+    {
+      "path": "phase2b2b_containment/VERIFICATION.json",
+      "bytes": 7360,
+      "sha256": "e994e0746d218f9f6860cec7d4a81af2a4d09cc3e6c2575defd680b020129ced"
+    },
+    {
+      "path": "phase2b2b_containment/process_tree_fixture.py",
+      "bytes": 1867,
+      "sha256": "43e7517997d1f0c9d97bfd03f8fa696ef52f978cb638206ca76acbacc9835389"
+    },
+    {
+      "path": "phase2b2b_containment/test_process_containment.py",
+      "bytes": 28441,
+      "sha256": "b9732d5364b499a69de6bb27175ff8224e04f94d28c185be98fd9dc13647dab7"
+    },
+    {
+      "path": "shared_interfaces/process_containment.py",
+      "bytes": 18890,
+      "sha256": "afae468fef8f31537706559e59e42cf3f2a8bfbebaac5ec74b9f837968311727"
+    },
+    {
+      "path": "shared_interfaces/windows_job.py",
+      "bytes": 13170,
+      "sha256": "a654ef455f5829a7894d6b01817a8e74c04c26f89d3c51afd38daca09be52ec0"
+    }
+  ]
+}
