@@ -1,0 +1,27 @@
+{
+  "base": {
+    "local_commit": "f1966bd311a103698a1494e8332868fd5f79c8e6",
+    "local_tree": "14a00cbbbca86b53251d7fae75e1eafbcda7a419",
+    "published_equivalent_commit": "eb82cc103942444b24b03a2d144006261c2fa1fb",
+    "published_equivalent_tree": "16d4ebe812bac195da263f07520356a654b247cd"
+  },
+  "classification": "ALPHA_PARSER_PROBE_INCONCLUSIVE_NONCLAIM",
+  "files": {
+    "__init__.py": {"bytes": 46, "sha256": "e434b2f006654554a7cb1e34cd37a7e7c3000ce33a761634d74369ca84a2c136"},
+    "ADJUDICATION.md": {"bytes": 989, "sha256": "6b1a316ba24c8418367a361b7e70739e9e311df2108f0356db12640b816642f4"},
+    "parser_probe_decision.py": {"bytes": 2217, "sha256": "9c484ba65084b7b158e77a3bdafc88d750fce47105ae5b803ad9c948b91525ef"},
+    "PRIOR_EXPERIENCE_AUDIT.md": {"bytes": 865, "sha256": "363d54c294ff2776e9c4fc53673611e4c1570b4d7252f1516c94f490e01f0545"},
+    "PROBE_RESULT.json": {"bytes": 1209, "sha256": "e6c19244e3fcbb1b492aaf9dd770ea783603391d81346e9baf0e08d45924b5b3"},
+    "PUBLIC_EVIDENCE.json": {"bytes": 540, "sha256": "8c4387232cb59cf1f2c78dd47813e489aa3cfe890d6b855f2e47ce5b0cf2002a"},
+    "README_FIRST.md": {"bytes": 741, "sha256": "61d4df62049ad33a4eb7e0073a8e3aa4528f3f8791c0b5a5ed4c59436c27ae99"},
+    "test_parser_probe_decision.py": {"bytes": 2664, "sha256": "a3b6a0eb7afc32954caa61de30ae2b11c70dc9d664f1d1d5d0fde6eaef9b8fe0"},
+    "TEST_RESULTS.md": {"bytes": 560, "sha256": "00da47ee8478399a5cffa205bcdabb4d99e2e7f4bffb5ce453d009bb3e7c5faa"}
+  },
+  "tests": {"passed": 179, "failed": 0, "errors": 0},
+  "execution": {
+    "alpha_launches": 1,
+    "worker_or_model_turns": 0,
+    "retry_attempted": false,
+    "installation": false
+  }
+}

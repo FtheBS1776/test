@@ -1,0 +1,31 @@
+{
+  "classification": "PARSER_PROBE_INCONCLUSIVE_NONCLAIM",
+  "launch_count": 1,
+  "candidate": {
+    "package": "@openai/codex@0.163.0-alpha.11-win32-x64",
+    "sha256": "f7ab009c485749503f8c4bf848d002ed8080e4b2c9a1336e80069327e4ae951a",
+    "hash_matched_before_launch": true
+  },
+  "arguments": ["--ignore-user-config", "--version"],
+  "started": "2026-10-15T05:29:30.5104294-07:00",
+  "ended": "2026-10-15T05:29:30.9684779-07:00",
+  "exit_code": 2,
+  "normalized_output": "error: unexpected argument '--ignore-user-config' found",
+  "interpretation": "root parser rejected an exec-scoped option; exec parser remains untested",
+  "fresh_probe_home": {
+    "files_created": 3,
+    "directories_created": 3,
+    "contents": ["empty .lock", "apply_patch.bat", "applypatch.bat"],
+    "credential_material_created": false
+  },
+  "original_authentication_unchanged": true,
+  "original_configuration_unchanged": true,
+  "alpha_processes_remaining_by_get_process": 0,
+  "cim_process_query": "access denied; not used as evidence",
+  "installed": false,
+  "app_server_started": false,
+  "prompt_supplied": false,
+  "worker_or_model_turn": false,
+  "retry_attempted": false,
+  "alternate_launcher_attempted": false
+}
