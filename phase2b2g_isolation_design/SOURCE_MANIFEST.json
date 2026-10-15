@@ -1,0 +1,24 @@
+{
+  "base": {
+    "local_commit": "9a840c7808430e4f401aa7b881b06612d57e690a",
+    "local_tree": "43557ffdf8d4e08072b683edd8a64d5b36b8307d",
+    "published_equivalent_commit": "85764d02143f8ca654f46d634494dda6dadd76c1"
+  },
+  "classification": "OFFLINE_DESIGN_ONLY_NONCLAIM",
+  "files": {
+    "__init__.py": {"bytes": 55, "sha256": "4954565c35ec354a7056eb5afc266e235678a14bf207e6fb333cfc11546772fa"},
+    "ADJUDICATION.md": {"bytes": 1063, "sha256": "f2287f00b453391415da6f0cce795935158c94ef0134f5a3c0b4c751b131318b"},
+    "DECISION.json": {"bytes": 587, "sha256": "3a182da9f4d2c989b7cfa819c4e54659307002131a8db3a13d2f77c321365d8b"},
+    "DESIGN.md": {"bytes": 2915, "sha256": "6a6945c81c34e6a7347359af3a5fbf2158f8baf1a7d65cbd955e2d8e5fa0f2d8"},
+    "isolation_plan.py": {"bytes": 3723, "sha256": "a2bb4b93e6e26a1f7c2a42bf948920bbcae11f67cf478e4b3acdce7564e17092"},
+    "PRIOR_EXPERIENCE_AUDIT.md": {"bytes": 1840, "sha256": "b99996b03792e17f13c830360a8e10e1e6ddc7bb9ee674ca6612dacc34976fd2"},
+    "PUBLIC_EVIDENCE.json": {"bytes": 740, "sha256": "df8fccb2be56f50008346947da73ecd6ceab83bf81fd6403e5da0c7eb61d5be3"},
+    "README_FIRST.md": {"bytes": 856, "sha256": "7a1e8bad72b6d90fef58ddeabcef8d7476fa4411db9e4156d4614c9c5e8c8c9f"},
+    "test_isolation_plan.py": {"bytes": 4035, "sha256": "224e86ea2ed43678b570a9c439a48b5b3827b6e1c960fe943a50c5ef3e57cde9"},
+    "TEST_RESULTS.md": {"bytes": 1688, "sha256": "1cc224e3f6ce500f120570f240bf61bf8c40bc581dfe78e356069b5a5769a965"},
+    "THREAT_MODEL.md": {"bytes": 1822, "sha256": "4d77821f57f36ebe7921c707039c844e15b9f364a06f6f6fca0244a8fe48b989"}
+  },
+  "model_turns": 0,
+  "process_entries": 0,
+  "tests": {"passed": 161, "failed": 0, "skipped": 0}
+}

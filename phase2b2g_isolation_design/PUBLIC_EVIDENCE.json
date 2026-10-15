@@ -1,0 +1,23 @@
+{
+  "allow_auth_change": false,
+  "allow_codex_process_entry": false,
+  "allow_credential_copy": false,
+  "allow_model_turn": false,
+  "allow_new_invocation": false,
+  "classification": "OFFLINE_DESIGN_ONLY_NONCLAIM",
+  "credential_content_read": false,
+  "decision": "UPGRADE_OR_REBIND_THEN_VERIFY_FLAG_OFFLINE",
+  "effective_inventory_claim": "NOT_PROBED",
+  "historical_unknown_operations_preserved": true,
+  "independent_evidence": false,
+  "next_authorization": "CODEX_UPGRADE_OR_REBIND_ONLY",
+  "phase2c_entered": false,
+  "regression": {
+    "failed": 0,
+    "passed": 161,
+    "skipped": 0
+  },
+  "rejected_mechanism": "COPY_PASSWORD_EQUIVALENT_AUTH_JSON",
+  "same_host_common_cause": true,
+  "status": "DESIGN_COMPLETE_NONCLAIM"
+}

@@ -1,0 +1,15 @@
+{
+  "allow_auth_change": false,
+  "allow_codex_process_entry": false,
+  "allow_credential_copy": false,
+  "allow_model_turn": false,
+  "allow_new_invocation": false,
+  "classification": "OFFLINE_DESIGN_ONLY_NONCLAIM",
+  "current_runtime": "codex-cli 0.162.1",
+  "current_runtime_supports_ignore_user_config": false,
+  "next_authorization": "CODEX_UPGRADE_OR_REBIND_ONLY",
+  "preferred_mechanism": "USER_HOME_WITH_DOCUMENTED_CONFIG_BYPASS",
+  "preserve_prior_unknown_operations": true,
+  "rejected_mechanism": "COPY_PASSWORD_EQUIVALENT_AUTH_JSON",
+  "status": "DESIGN_BLOCKED_NONCLAIM"
+}
