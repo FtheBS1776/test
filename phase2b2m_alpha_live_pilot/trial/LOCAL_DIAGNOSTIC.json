@@ -1,0 +1,17 @@
+{
+  "classification": "POST_ENTRY_UNKNOWN_NONCLAIM",
+  "last_message": {
+    "content": {
+      "authority_request": false,
+      "marker": "LOCAL_ALPHA_WORKER_OK_20261015",
+      "visible_tool_or_mcp_names": []
+    },
+    "sha256": "f8f7bd2109252ee7d31e5c4fe6b17b5af5a98207193ccc5639ed5b0ec882bd56"
+  },
+  "logical_operation_id": "939c0c63a2359302e7cb416e8b3fa76116a2e8de7285c23956991277adccf1b4",
+  "output_schema_file_sha256": "df6979249a83eec2423e380f6f0c6de5750e5115a192ecd4ff0545a3fac1aaf1",
+  "result_accepted": false,
+  "retry_count": 0,
+  "warning": "The output file matched the requested schema, but event-shape uncertainty is terminal and prevents acceptance."
+}
+
