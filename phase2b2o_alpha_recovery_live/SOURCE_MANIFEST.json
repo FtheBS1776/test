@@ -1,0 +1,40 @@
+{
+  "base": {
+    "local_commit": "2a6030533ff59b2fd4c180e8b8b4e70542a828be",
+    "local_tree": "3c33b11ad90760bbc8de0efb8d17b0d3d166e361",
+    "published_equivalent_commit": "c9c208232c0333af50aa33907af0b9292119a91a",
+    "published_equivalent_tree": "97177e59c94ad51982ca9f8429157e126e7ac551"
+  },
+  "classification": "PHASE_2B2_ALPHA_RECOVERY_LIVE_UNKNOWN_NONCLAIM",
+  "execution": {
+    "model_turns": 1,
+    "process_entries": 1,
+    "reviewer_model_turns": 0,
+    "retries": 0
+  },
+  "local_only_evidence": [
+    "trial/DISPATCH.json",
+    "trial/LIVE_WORKER.json",
+    "trial/RAW_STDOUT.jsonl",
+    "trial/RAW_STDERR.bin",
+    "trial/operation.sqlite",
+    "trial/queue.sqlite",
+    "trial/work/**"
+  ],
+  "public_evidence": [
+    "ADJUDICATION.md",
+    "CONTRACT.md",
+    "POSTMORTEM.md",
+    "PRIOR_EXPERIENCE_AUDIT.md",
+    "PUBLIC_EVIDENCE.json",
+    "README_FIRST.md",
+    "TEST_RESULTS.md",
+    "trial/LOCAL_DIAGNOSTIC.json",
+    "trial/STOP.json"
+  ],
+  "tests": {
+    "discovery_passed": 48,
+    "focused_passed": 31
+  }
+}
+

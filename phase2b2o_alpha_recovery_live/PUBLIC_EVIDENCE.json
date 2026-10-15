@@ -1,0 +1,43 @@
+{
+  "accepted": false,
+  "allow_new_invocation": false,
+  "assignment_verified_before_semantic_release": true,
+  "classification": "PHASE_2B2_ALPHA_RECOVERY_LIVE_UNKNOWN_NONCLAIM",
+  "destination_readback": {
+    "reason": "TASK_RESULT_UNAVAILABLE",
+    "status": "UNKNOWN"
+  },
+  "event_summary": {
+    "agent_message_count": 1,
+    "classification": "UNKNOWN_EVENT_SHAPE",
+    "event_count": 5,
+    "tool_item_types": [],
+    "unknown_item_types": [
+      "error"
+    ]
+  },
+  "executable_sha256": "f7ab009c485749503f8c4bf848d002ed8080e4b2c9a1336e80069327e4ae951a",
+  "independence": "COMMON_CAUSE_SAME_HOST_SAME_PROVIDER",
+  "job_accounting_after_termination": {
+    "active_processes": 0,
+    "total_processes": 2
+  },
+  "last_message_file_sha256": "a33d3bb1fd812916b3f1b7840fc74fb58e138302e5ef302aa3dabd706b280e37",
+  "logical_operation_id": "31171aa633659ae8a16bcbac7fb8ca7876dae4a7f188cabb78d9c8fcb032c61e",
+  "model": "gpt-5.6-sol",
+  "model_turns": 1,
+  "phase2c_entered": false,
+  "preserve": true,
+  "prior_unknown_unchanged": true,
+  "raw_stdout_sha256": "32522eefa7db4403233b8c29af637da6323943fc06034d2e9a5374b834acc181",
+  "reason": "POST_ENTRY_EVENT_AND_MEMBER_IDENTITY_UNCERTAINTY",
+  "reasoning_effort": "low",
+  "reviewer_model_calls": 0,
+  "retry_count": 0,
+  "sandbox": "read-only",
+  "service_tier": "default",
+  "status": "UNKNOWN",
+  "version": "codex-cli package 0.163.0-alpha.11-win32-x64",
+  "worker_result_role": "UNTRUSTED_NOT_ACCEPTED"
+}
+

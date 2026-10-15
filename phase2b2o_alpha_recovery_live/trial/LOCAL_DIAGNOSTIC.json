@@ -1,0 +1,23 @@
+{
+  "classification": "POST_ENTRY_UNKNOWN_NONCLAIM",
+  "event_summary": {
+    "assistant_message_count": 1,
+    "classification": "UNKNOWN_EVENT_SHAPE",
+    "event_count": 5,
+    "item_types": {
+      "agent_message": 1,
+      "error": 1
+    },
+    "tool_item_types": [],
+    "unknown_item_types": [
+      "error"
+    ]
+  },
+  "last_message_file_sha256": "a33d3bb1fd812916b3f1b7840fc74fb58e138302e5ef302aa3dabd706b280e37",
+  "logical_operation_id": "31171aa633659ae8a16bcbac7fb8ca7876dae4a7f188cabb78d9c8fcb032c61e",
+  "raw_stdout_sha256": "32522eefa7db4403233b8c29af637da6323943fc06034d2e9a5374b834acc181",
+  "result_accepted": false,
+  "retry_count": 0,
+  "warning": "The fixed result matched, but a code-mode-disabled error event and uncertain post-exit member-image readback require terminal UNKNOWN."
+}
+
