@@ -1,0 +1,30 @@
+{
+  "active_after_termination": 0,
+  "active_before_termination": 4,
+  "allow_new_invocation": false,
+  "assignment_verified_before_release": true,
+  "classification": "RECOVERY_EVIDENCE_PREFLIGHT_NONCLAIM",
+  "event_count": 6,
+  "event_evidence_readback_verified": true,
+  "event_shape_classification": "UNKNOWN_EVENT_SHAPE",
+  "fixture_process_entries": 1,
+  "member_image_counts": {
+    "conhost.exe": 2,
+    "python.exe": 2
+  },
+  "model_turns": 0,
+  "operation_id": "d89252b379fc853d8933c9b4528bb94c17de1a1b3bfcd7ed2ae41b8c8731d203",
+  "phase2c_entered": false,
+  "preserve": true,
+  "prior_live_operation_reclassified": false,
+  "raw_event_bytes": 508,
+  "raw_event_sha256": "639b117583c7033340639cb10034c0a15e6d84ff31d0778bccb1d6dc9f90e55b",
+  "retry_count": 0,
+  "status": "VERIFIED",
+  "termination_attempt_count": 1,
+  "tool_item_types": [],
+  "unknown_item_types": [
+    "plan"
+  ]
+}
+

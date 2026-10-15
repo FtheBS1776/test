@@ -1,0 +1,32 @@
+{
+  "base": {
+    "local_commit": "c333527eba6de22ddb56951fb0e77a9092c8fb3d",
+    "local_tree": "84d136e531188a5a55e444c282715dfe96bee897",
+    "published_equivalent_commit": "30ec4347f28f82163f6ecb282c3d767b6ce516de",
+    "published_equivalent_tree": "5e9c1700f3c4c142d83be42642a12d64db7fa276"
+  },
+  "classification": "RECOVERY_EVIDENCE_PREFLIGHT_VERIFIED_NONCLAIM",
+  "execution": {
+    "fixture_process_entries": 1,
+    "model_turns": 0,
+    "retries": 0
+  },
+  "local_only_evidence": [
+    "trial/PREFLIGHT_RESULT.json",
+    "trial/RAW_EVENTS.jsonl"
+  ],
+  "public_evidence": [
+    "ADJUDICATION.md",
+    "CONTRACT.md",
+    "PRIOR_EXPERIENCE_AUDIT.md",
+    "PUBLIC_EVIDENCE.json",
+    "README_FIRST.md",
+    "TEST_RESULTS.md",
+    "trial/STOP.json"
+  ],
+  "tests": {
+    "discovery_passed": 43,
+    "focused_passed": 26
+  }
+}
+
