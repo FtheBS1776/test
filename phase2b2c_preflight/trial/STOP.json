@@ -1,0 +1,11 @@
+{
+  "allow_new_invocation": false,
+  "frontier": "PHASE_2B2_RECOVERY_PREFLIGHT_UNKNOWN_NONCLAIM",
+  "model_turn_count": 0,
+  "phase2b2_live_retry_entered": false,
+  "phase2c_entered": false,
+  "preserve": true,
+  "retry_count": 0,
+  "semantic_request_count": 0,
+  "status": "UNKNOWN"
+}
