@@ -1,0 +1,19 @@
+{
+  "status": "STATIC_CANDIDATE_NONCLAIM",
+  "candidate": "@openai/codex@0.163.0-alpha.11-win32-x64",
+  "archive_integrity_verified": true,
+  "archive_paths_safe": true,
+  "lifecycle_scripts": [],
+  "authenticode": "Valid OpenAI OpCo, LLC",
+  "executable_sha256": "f7ab009c485749503f8c4bf848d002ed8080e4b2c9a1336e80069327e4ae951a",
+  "required_flag_literal_present": true,
+  "installed_stable_sha256_at_closeout": "d13914ced6c7af174d8d638db938284231227312104b06a25e9608c632a7daec",
+  "installed_stable_prior_baseline_match": false,
+  "authentication_unchanged": true,
+  "configuration_unchanged": true,
+  "alpha_executed": false,
+  "installed": false,
+  "runtime_support_proven": false,
+  "effective_isolation_proven": false,
+  "next_authorization": "ONE_ALPHA_OFFLINE_PARSER_PROBE"
+}

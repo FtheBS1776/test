@@ -1,0 +1,28 @@
+{
+  "base": {
+    "local_commit": "57a3d3397776399db9562f2f66c5d8c885dd71de",
+    "local_tree": "04f797e5bbd465b2070ba3156e6878e76d58ed29",
+    "published_equivalent_commit": "0cc206925e1f9e2cc0e054ffeeaf28bc9199be1e",
+    "published_equivalent_tree": "85267cd123a7763cc73d1337393b19aa62678445"
+  },
+  "classification": "ALPHA_SUITABILITY_STATIC_AUDIT_NONCLAIM",
+  "files": {
+    "__init__.py": {"bytes": 54, "sha256": "bbf7617a6df86ec22bac20a250f4466705472be87756b8a8b34f7326603c0d09"},
+    "ADJUDICATION.md": {"bytes": 1569, "sha256": "2af4e45c39cf098a81f572a07525e1d31e78b385f7df5e671f04a487eb831cbb"},
+    "alpha_decision.py": {"bytes": 2048, "sha256": "73017a54d3bb5c592db271c3c324d5564213a66b8750c31c8260a84d881e9b59"},
+    "PRIOR_EXPERIENCE_AUDIT.md": {"bytes": 2074, "sha256": "4b05fd3cb09feba2d71778ae3f58a3d1b95c86e83e0a337360e3ef7d0bf2791d"},
+    "PUBLIC_EVIDENCE.json": {"bytes": 785, "sha256": "881e3ef881e23c2e48f2065c46a16f8f74177842f89bd4ffbed6bbacd134f029"},
+    "README_FIRST.md": {"bytes": 855, "sha256": "e8878b977f8f4bf97ceab957fb5a301afee823d018b318219abfb5b8113761d1"},
+    "STATIC_AUDIT.json": {"bytes": 2120, "sha256": "e29d41c9cad4383fd6cf6e099013c6c2c92a0aa72f508b1678c435d313e17ed8"},
+    "test_alpha_decision.py": {"bytes": 2958, "sha256": "f158ca8d51f5d99e0a798d7895afd412ed1166c5d7980c695b321b4de40fccc5"},
+    "TEST_RESULTS.md": {"bytes": 698, "sha256": "76be20ed5cfd18917820550146ca65ec0e84b418fae089494d4e23affbb36572"}
+  },
+  "tests": {"passed": 174, "failed": 0, "errors": 0},
+  "prohibited_actions": {
+    "alpha_executed": false,
+    "installed": false,
+    "authentication_changed": false,
+    "app_server_started": false,
+    "worker_or_model_turn": false
+  }
+}

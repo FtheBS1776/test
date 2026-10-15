@@ -1,0 +1,53 @@
+{
+  "classification": "STATIC_CANDIDATE_NONCLAIM",
+  "package": "@openai/codex",
+  "generic_version": "0.163.0-alpha.11",
+  "platform_version": "0.163.0-alpha.11-win32-x64",
+  "platform": {"os": "win32", "cpu": "x64"},
+  "generic_archive": {
+    "bytes": 4913,
+    "sha1": "00773caa0daf9a45e701049ff5fdf3135a8b81c4",
+    "sha512_base64": "6jJcYBHEbL74q+oszGKefc7WJ7825jaapp9L9YUdXO09BBUvgJzd1nYn7YM4p2dYFXv2J7ReuRyI4XH49Belrg==",
+    "integrity_matches_registry": true,
+    "safe_entries": 3
+  },
+  "platform_archive": {
+    "bytes": 168159573,
+    "sha1": "f4cd8043369c3f9b6506590d1b65fa45995057de",
+    "sha512_base64": "MjQ4602b1NHENLoiY34Q1Yn2nwxdhNJjXPpq8o7DUC3RoXkeht+JodJC6XdD5/CKHmgw4ThU955Pua4urd01LQ==",
+    "integrity_matches_registry": true,
+    "safe_entries": 47
+  },
+  "package_scripts": {"generic": [], "platform": []},
+  "extracted": {
+    "generic_files": 3,
+    "generic_bytes": 13269,
+    "platform_files": 47,
+    "platform_bytes": 466613411,
+    "wrapper_sha256": "61b0194f3bb6534439c8d26a3ed57d0805f84b884588b761795323eeb92fcf70",
+    "codex_exe_bytes": 342187312,
+    "codex_exe_sha256": "f7ab009c485749503f8c4bf848d002ed8080e4b2c9a1336e80069327e4ae951a"
+  },
+  "signature": {
+    "status": "Valid",
+    "subject": "CN=\"OpenAI OpCo, LLC\", O=\"OpenAI OpCo, LLC\", L=San Francisco, S=California, C=US"
+  },
+  "static_literals": {
+    "--ignore-user-config_ascii_offsets": [264323841],
+    "ignore_user_config_ascii_offsets": [269804387, 269806409],
+    "ignore-user-config_ascii_offsets": [264323843, 269804490],
+    "--ignore-user-config_utf16le_offsets": []
+  },
+  "installed_stable_observation": {
+    "sha256": "d13914ced6c7af174d8d638db938284231227312104b06a25e9608c632a7daec",
+    "bytes": 334121776,
+    "authenticode_status": "Valid",
+    "prior_baseline_sha256": "dd13bdb162a184fa04039488b234a8258ef9b76f84e926c505d5742b19249a6a",
+    "prior_baseline_match": false,
+    "interpretation": "external installed-executable state changed; no causal claim"
+  },
+  "authentication_hash_unchanged": true,
+  "configuration_hash_unchanged": true,
+  "alpha_executed": false,
+  "installed": false
+}
