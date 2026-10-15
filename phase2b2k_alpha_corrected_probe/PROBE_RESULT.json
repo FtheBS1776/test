@@ -1,0 +1,25 @@
+{
+  "classification": "EXEC_PARSER_ACCEPTED_NONCLAIM",
+  "launch_count": 1,
+  "candidate_sha256": "f7ab009c485749503f8c4bf848d002ed8080e4b2c9a1336e80069327e4ae951a",
+  "candidate_hash_matched_before_launch": true,
+  "arguments": ["exec", "--ignore-user-config", "--help"],
+  "started": "2026-10-15T05:36:26.9593553-07:00",
+  "ended": "2026-10-15T05:36:26.9830445-07:00",
+  "exit_code": 0,
+  "help_heading": "Run Codex non-interactively",
+  "help_lists_ignore_user_config": true,
+  "fresh_probe_home": {
+    "files_created": 3,
+    "directories_created": 3,
+    "contents": ["empty .lock", "apply_patch.bat", "applypatch.bat"]
+  },
+  "original_authentication_unchanged": true,
+  "original_configuration_unchanged": true,
+  "alpha_processes_remaining_by_get_process": 0,
+  "prompt_supplied": false,
+  "worker_or_model_turn": false,
+  "installed": false,
+  "app_server_started": false,
+  "runtime_isolation_proven": false
+}

@@ -1,0 +1,13 @@
+{
+  "status": "EXEC_PARSER_ACCEPTED_NONCLAIM",
+  "candidate_sha256": "f7ab009c485749503f8c4bf848d002ed8080e4b2c9a1336e80069327e4ae951a",
+  "launch_count": 1,
+  "arguments": ["exec", "--ignore-user-config", "--help"],
+  "exit_code": 0,
+  "help_lists_required_flag": true,
+  "parser_support_proven": true,
+  "runtime_isolation_proven": false,
+  "worker_or_model_turn": false,
+  "authentication_unchanged": true,
+  "configuration_unchanged": true
+}
