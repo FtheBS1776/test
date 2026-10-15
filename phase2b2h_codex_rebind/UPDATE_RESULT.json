@@ -1,0 +1,18 @@
+{
+  "alpha_observed": "0.163.0-alpha.11",
+  "alpha_selected": false,
+  "app_server_process_entries": 0,
+  "authentication_changed": false,
+  "bound_executable_changed": false,
+  "final_executable_bytes": 333479728,
+  "final_executable_sha256": "dd13bdb162a184fa04039488b234a8258ef9b76f84e926c505d5742b19249a6a",
+  "final_version": "codex-cli 0.162.1",
+  "ignore_user_config_exit_code": 2,
+  "ignore_user_config_supported": false,
+  "latest_stable_registry_version": "0.162.1",
+  "model_turns": 0,
+  "registry_integrity": "sha512-NWZdi/kxyjv/8EUGFupziGU38YyleugZRM4JXgY5XFH7FUmaFA33NZS2Bmq0HPazf7S3jJQQWsZ/jAK9jsrV3Q==",
+  "self_update_changed_installation": false,
+  "self_update_result": "INSTALL_METHOD_NOT_DETECTED",
+  "status": "REJECT_NO_SUPPORTED_STABLE_REPLACEMENT_NONCLAIM"
+}

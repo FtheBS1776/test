@@ -1,0 +1,23 @@
+{
+  "alpha_installed": false,
+  "app_server_process_entries": 0,
+  "authentication_changed": false,
+  "bound_executable_changed": false,
+  "classification": "CODEX_UPGRADE_REBIND_ONLY_NONCLAIM",
+  "credential_content_read": false,
+  "final_executable_bytes": 333479728,
+  "final_executable_sha256": "dd13bdb162a184fa04039488b234a8258ef9b76f84e926c505d5742b19249a6a",
+  "final_version": "codex-cli 0.162.1",
+  "ignore_user_config_supported": false,
+  "latest_stable_registry_version": "0.162.1",
+  "model_turns": 0,
+  "next_authorization": "ALPHA_SUITABILITY_AUDIT_OR_WAIT_FOR_NEXT_STABLE",
+  "phase2c_entered": false,
+  "regression": {
+    "failed": 0,
+    "passed": 166,
+    "skipped": 0
+  },
+  "self_update_result": "INSTALL_METHOD_NOT_DETECTED_NO_CHANGE",
+  "status": "REJECT_NO_SUPPORTED_STABLE_REPLACEMENT_NONCLAIM"
+}
