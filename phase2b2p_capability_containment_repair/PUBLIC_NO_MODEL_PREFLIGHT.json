@@ -1,0 +1,35 @@
+{
+  "accounting_after_termination": {
+    "active_processes": 0,
+    "terminated_processes": 0,
+    "total_processes": 3
+  },
+  "accounting_before_termination": {
+    "active_processes": 3,
+    "terminated_processes": 0,
+    "total_processes": 3
+  },
+  "allow_model_turn": false,
+  "allow_new_invocation": false,
+  "assignment_verified_before_gate": true,
+  "classification": "NO_MODEL_EAGER_IDENTITY_PREFLIGHT_VERIFIED",
+  "members": [
+    {
+      "image_name": "conhost.exe",
+      "image_sha256": "2266b396ef92534a2a2844438df043d4069a2ec47d4e464f55e8c1cd47124a98",
+      "observed_while_active": true
+    },
+    {
+      "image_name": "python.exe",
+      "image_sha256": "d41bad46673f64e0d02f23797f53f90ccf60f27d6eda8d86dd2d4bbeae5a858c",
+      "observed_while_active": true
+    },
+    {
+      "image_name": "python.exe",
+      "image_sha256": "d41bad46673f64e0d02f23797f53f90ccf60f27d6eda8d86dd2d4bbeae5a858c",
+      "observed_while_active": true
+    }
+  ],
+  "model_invoked": false,
+  "termination_attempt_count": 1
+}

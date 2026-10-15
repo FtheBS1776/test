@@ -1,0 +1,31 @@
+{
+  "base": {
+    "local_commit": "44e7f5e53137078e851377b440f856a32cea9dcd",
+    "local_tree": "b4003960678a42dd58f8fb5d60a21da13c75caf3",
+    "published_equivalent_commit": "572928d41969b5ae3a7d1e88947be559e63a64ce",
+    "published_equivalent_tree": "aac34af6b15d413a6ca32754d2664561b41324db"
+  },
+  "classification": "PHASE_2B2_CAPABILITY_CONTAINMENT_REPAIR_PREFLIGHT_VERIFIED_NONCLAIM",
+  "execution": {
+    "model_turns": 0,
+    "process_entries": 0,
+    "reviewer_model_turns": 0,
+    "retries": 0
+  },
+  "local_only_evidence": [
+    "NO_MODEL_PREFLIGHT.json"
+  ],
+  "public_evidence": [
+    "ADJUDICATION.md",
+    "CODEX_PATCH_CONTRACT.md",
+    "PRIOR_EXPERIENCE_AUDIT.md",
+    "PUBLIC_NO_MODEL_PREFLIGHT.json",
+    "PUBLIC_EVIDENCE.json",
+    "README_FIRST.md",
+    "TEST_RESULTS.md"
+  ],
+  "tests": {
+    "discovery_passed": 56,
+    "focused_passed": 8
+  }
+}

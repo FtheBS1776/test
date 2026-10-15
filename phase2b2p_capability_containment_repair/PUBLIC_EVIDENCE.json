@@ -1,0 +1,19 @@
+{
+  "allow_model_turn": false,
+  "allow_new_invocation": false,
+  "assignment_verified_before_gate": true,
+  "classification": "PHASE_2B2_CAPABILITY_CONTAINMENT_REPAIR_PREFLIGHT_VERIFIED_NONCLAIM",
+  "job_accounting_after_termination": {
+    "active_processes": 0,
+    "total_processes": 3
+  },
+  "member_identities_captured_while_active": 3,
+  "model_turns": 0,
+  "phase2c_entered": false,
+  "prior_unknowns_unchanged": true,
+  "process_entries": 0,
+  "reviewer_model_turns": 0,
+  "retries": 0,
+  "termination_attempt_count": 1,
+  "worker_result_created": false
+}
