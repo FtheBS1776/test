@@ -1,0 +1,26 @@
+{
+  "base": {
+    "local_commit": "fb1d52050a2d87d461709a0e39236a9028f04018",
+    "local_tree": "39750e990f5744c49953a5fdcd9fa691574d1d8a",
+    "published_equivalent_commit": "724674942f5b572217460f037d8a0a536c7925a4",
+    "published_equivalent_tree": "e6b3747a4238a98a8eca72c367d610ba7e9171b9"
+  },
+  "classification": "ALPHA_ISOLATION_PREFLIGHT_VERIFIED_NONCLAIM",
+  "files": {
+    "__init__.py": {"bytes": 62, "sha256": "0b8c9f50dab93e2d1e091042a5dfacec0a0aca4caba01f29179dd379e389a371"},
+    "ADJUDICATION.md": {"bytes": 880, "sha256": "f12b335834b1c2bed0b1d534253fd28c154059e69e552e419924a235f7b7ccc6"},
+    "alpha_isolation_preflight.py": {"bytes": 4148, "sha256": "423bcaf0c925d50a8b571b0fa5a044ffa76f81e9bbd6a6423930617db9d234c3"},
+    "CONTRACT.md": {"bytes": 817, "sha256": "3292b0016a8a3eddbc7592f57ceae4e7b0b2bbfbb6910f6b7b13f58e7fbd166f"},
+    "PRIOR_EXPERIENCE_AUDIT.md": {"bytes": 649, "sha256": "599ae19def267c1dd0708bf8fb48abf6d8c2ab37c81b7eba5d98ff33aa3db74d"},
+    "PUBLIC_EVIDENCE.json": {"bytes": 917, "sha256": "778b79fe50bc9819537254668d578f28c56928ae97e321d0b1341e6a7a6bd847"},
+    "README_FIRST.md": {"bytes": 978, "sha256": "79ef0ece787356faf5d522b8f740032f9bfde14df53ee204e195e3e5e56a7779"},
+    "run_preflight_once.py": {"bytes": 2075, "sha256": "1feac8342bd0034f9caca0a3b63767edecd3a35816df05cfd39a9739b45f2a56"},
+    "test_alpha_isolation_preflight.py": {"bytes": 2138, "sha256": "039d3a91fcc341d4104a41095510a38182ca85040879666eecf5960ecac13b22"},
+    "TEST_RESULTS.md": {"bytes": 656, "sha256": "117e24ba6a5fef1916663b32a8701515d74e5ef0a34e646b5f777744de1df9b5"},
+    "trial/preflight_operation.db": {"bytes": 12288, "sha256": "010974beb35dc94d0672702637615fc5dc9d91eb66e0ec7161d2d79052e0c214"},
+    "trial/PREFLIGHT_RESULT.json": {"bytes": 4319, "sha256": "214b22889fcddfb84a60458dbefc8d25cc5fdb4ce3c0bcaebef3c458ba2909ff"},
+    "trial/STOP.json": {"bytes": 292, "sha256": "b272ba121a6720c205fbe436dffa62e047cb98d044e1a35c2e2d1e9ba785791d"}
+  },
+  "tests": {"passed": 188, "failed": 0, "errors": 0},
+  "execution": {"process_entries": 1, "model_turns": 0, "retries": 0}
+}

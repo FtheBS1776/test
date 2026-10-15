@@ -1,0 +1,11 @@
+{
+  "allow_new_invocation": false,
+  "authenticated": false,
+  "frontier": "PHASE_2B2_ALPHA_ISOLATION_PREFLIGHT_VERIFIED_NONCLAIM",
+  "model_turn_count": 0,
+  "phase2c_entered": false,
+  "preserve": true,
+  "retry_count": 0,
+  "semantic_request_count": 0,
+  "status": "VERIFIED"
+}
