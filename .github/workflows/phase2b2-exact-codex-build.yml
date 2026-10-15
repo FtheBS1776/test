@@ -1,0 +1,71 @@
+name: Phase 2B2 exact Codex build
+
+on:
+  push:
+    branches:
+      - nonclaim/genie-phase-2b2-exact-codex-build-20261015
+    paths:
+      - phase2b2q_exact_codex_build/**
+      - .github/workflows/phase2b2-exact-codex-build.yml
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+    timeout-minutes: 90
+    steps:
+      - name: Check out evidence branch
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+
+      - name: Check out exact Codex release
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: openai/codex
+          ref: rust-v0.163.0-alpha.11
+          path: upstream
+
+      - name: Verify source identity and apply bounded patch
+        shell: pwsh
+        run: |
+          git -C upstream config core.longpaths true
+          $observed = (git -C upstream rev-parse HEAD).Trim()
+          if ($observed -ne '5425d3e625daa58eea3ad1de27c087eb3b2ffbd3') {
+            throw "Unexpected upstream commit: $observed"
+          }
+          git -C upstream apply --check "$env:GITHUB_WORKSPACE\phase2b2q_exact_codex_build\codex-no-tools-attestation.patch"
+          git -C upstream apply "$env:GITHUB_WORKSPACE\phase2b2q_exact_codex_build\codex-no-tools-attestation.patch"
+
+      - name: Install pinned Rust toolchain
+        shell: pwsh
+        run: rustup toolchain install 1.95.0 --profile minimal --component rustfmt
+
+      - name: Format, test, and build
+        shell: pwsh
+        working-directory: upstream/codex-rs
+        run: |
+          rustup override set 1.95.0
+          cargo fmt --all -- --check
+          cargo test -p codex-exec empty_capability_snapshot_precedes_buffered_turn_start
+          cargo test -p codex-exec nonempty_capability_snapshot_fails_closed
+          cargo check -p codex-cli --bin codex
+          cargo build -p codex-cli --bin codex --release
+
+      - name: Record binary identity
+        shell: pwsh
+        run: |
+          $binary = "$env:GITHUB_WORKSPACE\upstream\codex-rs\target\release\codex.exe"
+          $digest = (Get-FileHash -LiteralPath $binary -Algorithm SHA256).Hash.ToLowerInvariant()
+          Set-Content -LiteralPath "$env:GITHUB_WORKSPACE\upstream\codex-rs\target\release\codex.exe.sha256" -Value "$digest  codex.exe" -Encoding ascii
+          Write-Output "codex.exe sha256=$digest"
+
+      - name: Upload bounded build artifact
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: codex-phase2b2-no-tools-win32-x64
+          path: |
+            upstream/codex-rs/target/release/codex.exe
+            upstream/codex-rs/target/release/codex.exe.sha256
+          if-no-files-found: error
+          retention-days: 1

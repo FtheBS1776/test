@@ -1,0 +1,713 @@
+diff --git a/codex-rs/app-server-protocol/src/protocol/v2/thread.rs b/codex-rs/app-server-protocol/src/protocol/v2/thread.rs
+index 1746ceb7b..8bf73906d 100644
+--- a/codex-rs/app-server-protocol/src/protocol/v2/thread.rs
++++ b/codex-rs/app-server-protocol/src/protocol/v2/thread.rs
+@@ -163,6 +163,10 @@ pub struct ThreadStartParams {
+     #[experimental("thread/start.experimentalRawEvents")]
+     #[serde(default, skip_serializing_if = "std::ops::Not::not")]
+     pub experimental_raw_events: bool,
++    /// Internal exec-only request for an empty finalized tool inventory attestation.
++    #[experimental("thread/start.capabilitySnapshotOperationId")]
++    #[ts(optional = nullable)]
++    pub capability_snapshot_operation_id: Option<String>,
+ }
+ 
+ #[derive(Serialize, Deserialize, Debug, Default, Clone, PartialEq, JsonSchema, TS)]
+diff --git a/codex-rs/app-server/src/request_processors/thread_processor.rs b/codex-rs/app-server/src/request_processors/thread_processor.rs
+index 9563a250c..4f5b80237 100644
+--- a/codex-rs/app-server/src/request_processors/thread_processor.rs
++++ b/codex-rs/app-server/src/request_processors/thread_processor.rs
+@@ -1166,6 +1166,7 @@ impl ThreadRequestProcessor {
+             selected_capability_roots,
+             mock_experimental_field: _mock_experimental_field,
+             experimental_raw_events,
++            capability_snapshot_operation_id,
+             personality,
+             multi_agent_mode: _multi_agent_mode,
+             ephemeral,
+@@ -1265,6 +1266,7 @@ impl ThreadRequestProcessor {
+                 service_name,
+                 allow_provider_model_fallback,
+                 experimental_raw_events,
++                capability_snapshot_operation_id,
+                 request_trace,
+                 initial_config_warnings,
+             )
+@@ -1347,6 +1349,7 @@ impl ThreadRequestProcessor {
+         service_name: Option<String>,
+         allow_provider_model_fallback: bool,
+         experimental_raw_events: bool,
++        capability_snapshot_operation_id: Option<String>,
+         request_trace: Option<W3cTraceContext>,
+         initial_config_warnings: Arc<Vec<ConfigWarningNotification>>,
+     ) -> Result<(), JSONRPCErrorError> {
+@@ -1481,6 +1484,24 @@ impl ThreadRequestProcessor {
+         if !selected_capability_roots.is_empty() {
+             thread_extension_init.insert(selected_capability_roots);
+         }
++        if let Some(logical_operation_id) = capability_snapshot_operation_id {
++            if logical_operation_id.len() != 64
++                || !logical_operation_id.bytes().all(|byte| byte.is_ascii_hexdigit())
++            {
++                return Err(invalid_request(
++                    "capabilitySnapshotOperationId must be a 64-character hexadecimal digest",
++                ));
++            }
++            thread_extension_init.insert(codex_extension_api::ToolPolicy {
++                allowed_tools: Some(Vec::new()),
++                require_managed_sandbox: false,
++                require_unified_exec: false,
++                expose_additional_permissions: false,
++            });
++            thread_extension_init.insert(codex_core::CapabilitySnapshotRequest {
++                logical_operation_id: logical_operation_id.to_ascii_lowercase(),
++            });
++        }
+         let mut start_options = StartThreadOptions::new(config);
+         let reserved_thread_id = if start_options.config.ephemeral {
+             None
+diff --git a/codex-rs/core/src/capability_snapshot.rs b/codex-rs/core/src/capability_snapshot.rs
+new file mode 100644
+index 000000000..0fbe2c98a
+--- /dev/null
++++ b/codex-rs/core/src/capability_snapshot.rs
+@@ -0,0 +1,15 @@
++use serde::Serialize;
++
++pub const CAPABILITY_SNAPSHOT_MARKER_PREFIX: &str = "__CODEX_CAPABILITY_SNAPSHOT_V1__:";
++
++#[derive(Clone, Debug)]
++pub struct CapabilitySnapshotRequest {
++    pub logical_operation_id: String,
++}
++
++#[derive(Serialize)]
++pub(crate) struct CapabilitySnapshotMarker<'a> {
++    pub logical_operation_id: &'a str,
++    pub model: &'a str,
++    pub tools: &'a [String],
++}
+diff --git a/codex-rs/core/src/lib.rs b/codex-rs/core/src/lib.rs
+index 08b52fc2e..fe978934e 100644
+--- a/codex-rs/core/src/lib.rs
++++ b/codex-rs/core/src/lib.rs
+@@ -7,6 +7,9 @@
+ 
+ mod apply_patch;
+ mod apps;
++mod capability_snapshot;
++pub use capability_snapshot::CAPABILITY_SNAPSHOT_MARKER_PREFIX;
++pub use capability_snapshot::CapabilitySnapshotRequest;
+ mod client;
+ mod client_common;
+ mod model_request;
+diff --git a/codex-rs/core/src/session/mod.rs b/codex-rs/core/src/session/mod.rs
+index 9b00655ed..2abb31f97 100644
+--- a/codex-rs/core/src/session/mod.rs
++++ b/codex-rs/core/src/session/mod.rs
+@@ -3839,6 +3839,42 @@ impl Session {
+                 required_plugins,
+             )
+             .await?;
++        if let Some(request) = self.capability_snapshot_request.as_ref() {
++            let tools = step_context.tool_router.capability_tool_names();
++            if !tools.is_empty() {
++                return Err(CodexErr::InvalidRequest(format!(
++                    "no-tools capability policy produced a nonempty inventory: {}",
++                    tools.join(",")
++                ))
++                .into());
++            }
++            if !self
++                .capability_snapshot_emitted
++                .swap(true, std::sync::atomic::Ordering::SeqCst)
++            {
++                let marker = crate::capability_snapshot::CapabilitySnapshotMarker {
++                    logical_operation_id: &request.logical_operation_id,
++                    model: step_context.settings.model_info.slug.as_str(),
++                    tools: &tools,
++                };
++                let payload = serde_json::to_string(&marker).map_err(|err| {
++                    CodexErr::InvalidRequest(format!(
++                        "failed to serialize capability snapshot: {err}"
++                    ))
++                })?;
++                self.send_event(
++                    &step_context.turn,
++                    EventMsg::Warning(WarningEvent {
++                        message: format!(
++                            "{}{}",
++                            crate::CAPABILITY_SNAPSHOT_MARKER_PREFIX,
++                            payload
++                        ),
++                    }),
++                )
++                .await;
++            }
++        }
+         self.set_last_known_step_context(&step_context).await;
+         Ok(step_context)
+     }
+diff --git a/codex-rs/core/src/session/session.rs b/codex-rs/core/src/session/session.rs
+index 725f213d2..37c14b202 100644
+--- a/codex-rs/core/src/session/session.rs
++++ b/codex-rs/core/src/session/session.rs
+@@ -49,6 +49,7 @@ use codex_skills::SkillError;
+ use codex_utils_git_discovery::GitRootDiscovery;
+ use codex_utils_path::replace_path_and_deduplicate;
+ use std::sync::OnceLock;
++use std::sync::atomic::AtomicBool;
+ use tokio::sync::Semaphore;
+ 
+ type McpToolApprovalMetadataMap =
+@@ -75,6 +76,8 @@ pub(crate) struct Session {
+     pub(super) features: ManagedFeatures,
+     pub(super) isolation: codex_extension_api::SessionIsolation,
+     pub(crate) tool_policy: Arc<codex_extension_api::ToolPolicy>,
++    pub(crate) capability_snapshot_request: Option<Arc<crate::CapabilitySnapshotRequest>>,
++    pub(crate) capability_snapshot_emitted: AtomicBool,
+     pub(crate) windows_sandbox_proxy_settings_mode:
+         codex_sandboxing::WindowsSandboxProxySettingsMode,
+     pub(super) multi_agent_version: OnceLock<MultiAgentVersion>,
+@@ -1021,6 +1024,8 @@ impl Session {
+                     Arc::default()
+                 }
+             });
++        let capability_snapshot_request = thread_extension_init
++            .get::<crate::CapabilitySnapshotRequest>();
+         let mcp_thread_init = thread_extension_init.clone();
+         let thread_extension_data = codex_extension_api::ExtensionData::new_with_init(
+             thread_id.to_string(),
+@@ -1833,6 +1838,8 @@ impl Session {
+                 features: config.features.clone(),
+                 isolation,
+                 tool_policy,
++                capability_snapshot_request,
++                capability_snapshot_emitted: AtomicBool::new(false),
+                 windows_sandbox_proxy_settings_mode,
+                 multi_agent_version,
+                 mcp_refresh: McpRefresh::new(),
+diff --git a/codex-rs/core/src/session/tests.rs b/codex-rs/core/src/session/tests.rs
+index e0370838c..26e912630 100644
+--- a/codex-rs/core/src/session/tests.rs
++++ b/codex-rs/core/src/session/tests.rs
+@@ -6975,6 +6975,8 @@ pub(crate) async fn make_session_and_context() -> (Session, TurnContext) {
+ 
+         isolation: codex_extension_api::SessionIsolation::Inherit,
+         tool_policy: Arc::default(),
++        capability_snapshot_request: None,
++        capability_snapshot_emitted: AtomicBool::new(false),
+         windows_sandbox_proxy_settings_mode:
+             codex_sandboxing::WindowsSandboxProxySettingsMode::Reconcile,
+         multi_agent_version: OnceLock::from(config.multi_agent_version_from_features()),
+@@ -9243,6 +9245,8 @@ where
+ 
+         isolation: codex_extension_api::SessionIsolation::Inherit,
+         tool_policy: Arc::default(),
++        capability_snapshot_request: None,
++        capability_snapshot_emitted: AtomicBool::new(false),
+         windows_sandbox_proxy_settings_mode:
+             codex_sandboxing::WindowsSandboxProxySettingsMode::Reconcile,
+         multi_agent_version: OnceLock::from(config.multi_agent_version_from_features()),
+diff --git a/codex-rs/core/src/tools/router.rs b/codex-rs/core/src/tools/router.rs
+index a7a192815..dcaa5f5e7 100644
+--- a/codex-rs/core/src/tools/router.rs
++++ b/codex-rs/core/src/tools/router.rs
+@@ -149,6 +149,21 @@ impl ToolRouter {
+         Arc::clone(&self.model_visible_specs)
+     }
+ 
++    /// Every runtime or model-visible surface in this finalized plan.
++    pub(crate) fn capability_tool_names(&self) -> Vec<String> {
++        let mut names = std::collections::BTreeSet::new();
++        for tool in self.registry.entries() {
++            names.insert(tool.runtime.tool_name().with_default_namespace().to_string());
++        }
++        for spec in self.model_visible_specs.iter() {
++            names.insert(spec.name().to_string());
++        }
++        names.extend(self.code_mode_tool_names.values().map(|name| {
++            name.clone().with_default_namespace().to_string()
++        }));
++        names.into_iter().collect()
++    }
++
+     pub(crate) fn tool_mode(&self) -> ToolMode {
+         self.tool_mode
+     }
+diff --git a/codex-rs/exec/Cargo.toml b/codex-rs/exec/Cargo.toml
+index d5190c2ca..267313b41 100644
+--- a/codex-rs/exec/Cargo.toml
++++ b/codex-rs/exec/Cargo.toml
+@@ -48,6 +48,7 @@ codex-worktree = { workspace = true }
+ owo-colors = { workspace = true }
+ serde = { workspace = true, features = ["derive"] }
+ serde_json = { workspace = true }
++sha2 = { workspace = true }
+ supports-color = { workspace = true }
+ tokio = { workspace = true, features = [
+     "io-std",
+diff --git a/codex-rs/exec/src/cli.rs b/codex-rs/exec/src/cli.rs
+index 6a268da29..1b0edbcda 100644
+--- a/codex-rs/exec/src/cli.rs
++++ b/codex-rs/exec/src/cli.rs
+@@ -69,6 +69,19 @@ pub struct Cli {
+     )]
+     pub json: bool,
+ 
++    /// Disable every model-visible and routable tool and attest the finalized inventory.
++    #[arg(long = "no-tools", global = true, default_value_t = false)]
++    pub no_tools: bool,
++
++    /// Logical operation bound to the capability snapshot emitted in --json mode.
++    #[arg(
++        long = "capability-snapshot-operation-id",
++        value_name = "SHA256",
++        global = true,
++        requires = "no_tools"
++    )]
++    pub capability_snapshot_operation_id: Option<String>,
++
+     /// Specifies file where the last message from the agent should be written.
+     #[arg(
+         long = "output-last-message",
+diff --git a/codex-rs/exec/src/event_processor_with_jsonl_output.rs b/codex-rs/exec/src/event_processor_with_jsonl_output.rs
+index 73e0c9d91..1b6d41e05 100644
+--- a/codex-rs/exec/src/event_processor_with_jsonl_output.rs
++++ b/codex-rs/exec/src/event_processor_with_jsonl_output.rs
+@@ -23,6 +23,8 @@ pub use crate::event_processor::CodexStatus;
+ use crate::event_processor::EventProcessor;
+ use crate::event_processor::handle_last_message;
+ use crate::exec_events::AgentMessageItem;
++use crate::exec_events::CapabilitySnapshot;
++use crate::exec_events::CapabilitySnapshotEvent;
+ use crate::exec_events::CollabAgentState;
+ use crate::exec_events::CollabAgentStatus;
+ use crate::exec_events::CollabTool;
+@@ -65,6 +67,24 @@ pub struct EventProcessorWithJsonOutput {
+     last_critical_error: Option<ThreadErrorEvent>,
+     final_message: Option<String>,
+     emit_final_message_on_shutdown: bool,
++    capability_snapshot_context: Option<CapabilitySnapshotContext>,
++    capability_snapshot_seen: bool,
++    pending_turn_started: bool,
++}
++
++#[derive(Clone)]
++pub(crate) struct CapabilitySnapshotContext {
++    pub logical_operation_id: String,
++    pub executable_sha256: String,
++    pub sandbox: String,
++    pub policy_sha256: String,
++}
++
++#[derive(serde::Deserialize)]
++struct CapabilitySnapshotMarker {
++    logical_operation_id: String,
++    model: String,
++    tools: Vec<String>,
+ }
+ 
+ #[derive(Debug, Clone)]
+@@ -81,6 +101,13 @@ pub struct CollectedThreadEvents {
+ 
+ impl EventProcessorWithJsonOutput {
+     pub fn new(last_message_path: Option<PathBuf>) -> Self {
++        Self::new_with_capability_snapshot(last_message_path, None)
++    }
++
++    pub(crate) fn new_with_capability_snapshot(
++        last_message_path: Option<PathBuf>,
++        capability_snapshot_context: Option<CapabilitySnapshotContext>,
++    ) -> Self {
+         Self {
+             last_message_path,
+             next_item_id: AtomicU64::new(0),
+@@ -90,6 +117,9 @@ impl EventProcessorWithJsonOutput {
+             last_critical_error: None,
+             final_message: None,
+             emit_final_message_on_shutdown: false,
++            capability_snapshot_context,
++            capability_snapshot_seen: false,
++            pending_turn_started: false,
+         }
+     }
+ 
+@@ -407,6 +437,9 @@ impl EventProcessorWithJsonOutput {
+     }
+ 
+     pub fn collect_warning(&mut self, message: String) -> CollectedThreadEvents {
++        if let Some(encoded) = message.strip_prefix(codex_core::CAPABILITY_SNAPSHOT_MARKER_PREFIX) {
++            return self.collect_capability_snapshot(encoded);
++        }
+         CollectedThreadEvents {
+             events: vec![ThreadEvent::ItemCompleted(ItemCompletedEvent {
+                 item: ExecThreadItem {
+@@ -418,6 +451,54 @@ impl EventProcessorWithJsonOutput {
+         }
+     }
+ 
++    fn collect_capability_snapshot(&mut self, encoded: &str) -> CollectedThreadEvents {
++        let marker = serde_json::from_str::<CapabilitySnapshotMarker>(encoded);
++        let Some(context) = self.capability_snapshot_context.as_ref() else {
++            return self.capability_snapshot_error("unexpected capability snapshot marker");
++        };
++        let Ok(marker) = marker else {
++            return self.capability_snapshot_error("invalid capability snapshot marker");
++        };
++        if self.capability_snapshot_seen
++            || marker.logical_operation_id != context.logical_operation_id
++            || !marker.tools.is_empty()
++        {
++            return self.capability_snapshot_error("capability snapshot mismatch");
++        }
++        self.capability_snapshot_seen = true;
++        let mut events = vec![ThreadEvent::CapabilitySnapshot(CapabilitySnapshotEvent {
++            snapshot: CapabilitySnapshot {
++                version: 1,
++                logical_operation_id: marker.logical_operation_id,
++                executable_sha256: context.executable_sha256.clone(),
++                model: marker.model,
++                sandbox: context.sandbox.clone(),
++                policy_sha256: context.policy_sha256.clone(),
++                tool_count: 0,
++                tools: marker.tools,
++            },
++        })];
++        if self.pending_turn_started {
++            self.pending_turn_started = false;
++            events.push(ThreadEvent::TurnStarted(TurnStartedEvent {}));
++        }
++        CollectedThreadEvents {
++            events,
++            status: CodexStatus::Running,
++        }
++    }
++
++    fn capability_snapshot_error(&mut self, message: &str) -> CollectedThreadEvents {
++        let error = ThreadErrorEvent {
++            message: message.to_string(),
++        };
++        self.last_critical_error = Some(error.clone());
++        CollectedThreadEvents {
++            events: vec![ThreadEvent::Error(error)],
++            status: CodexStatus::Running,
++        }
++    }
++
+     pub fn collect_thread_events(
+         &mut self,
+         notification: ServerNotification,
+@@ -592,7 +673,11 @@ impl EventProcessorWithJsonOutput {
+                 CodexStatus::Running
+             }
+             ServerNotification::TurnStarted(_) => {
+-                events.push(ThreadEvent::TurnStarted(TurnStartedEvent {}));
++                if self.capability_snapshot_context.is_some() && !self.capability_snapshot_seen {
++                    self.pending_turn_started = true;
++                } else {
++                    events.push(ThreadEvent::TurnStarted(TurnStartedEvent {}));
++                }
+                 CodexStatus::Running
+             }
+             _ => CodexStatus::Running,
+diff --git a/codex-rs/exec/src/event_processor_with_jsonl_output_tests.rs b/codex-rs/exec/src/event_processor_with_jsonl_output_tests.rs
+index 9082f912c..a0c7379c3 100644
+--- a/codex-rs/exec/src/event_processor_with_jsonl_output_tests.rs
++++ b/codex-rs/exec/src/event_processor_with_jsonl_output_tests.rs
+@@ -90,6 +90,65 @@ fn runtime_warning_emits_a_non_fatal_error_item() {
+     );
+ }
+ 
++#[test]
++fn empty_capability_snapshot_precedes_buffered_turn_start() {
++    let context = CapabilitySnapshotContext {
++        logical_operation_id: "a".repeat(64),
++        executable_sha256: "b".repeat(64),
++        sandbox: "read-only".to_string(),
++        policy_sha256: "c".repeat(64),
++    };
++    let mut processor = EventProcessorWithJsonOutput::new_with_capability_snapshot(
++        /*last_message_path*/ None,
++        Some(context),
++    );
++    processor.pending_turn_started = true;
++    let marker = json!({
++        "logical_operation_id": "a".repeat(64),
++        "model": "gpt-5.6-sol",
++        "tools": [],
++    });
++    let collected = processor.collect_warning(format!(
++        "{}{}",
++        codex_core::CAPABILITY_SNAPSHOT_MARKER_PREFIX,
++        marker
++    ));
++
++    assert_eq!(collected.events.len(), 2);
++    let ThreadEvent::CapabilitySnapshot(event) = &collected.events[0] else {
++        panic!("expected capability snapshot");
++    };
++    assert_eq!(event.snapshot.tool_count, 0);
++    assert!(event.snapshot.tools.is_empty());
++    assert!(matches!(collected.events[1], ThreadEvent::TurnStarted(_)));
++}
++
++#[test]
++fn nonempty_capability_snapshot_fails_closed() {
++    let context = CapabilitySnapshotContext {
++        logical_operation_id: "a".repeat(64),
++        executable_sha256: "b".repeat(64),
++        sandbox: "read-only".to_string(),
++        policy_sha256: "c".repeat(64),
++    };
++    let mut processor = EventProcessorWithJsonOutput::new_with_capability_snapshot(
++        /*last_message_path*/ None,
++        Some(context),
++    );
++    let marker = json!({
++        "logical_operation_id": "a".repeat(64),
++        "model": "gpt-5.6-sol",
++        "tools": ["functions.exec_command"],
++    });
++    let collected = processor.collect_warning(format!(
++        "{}{}",
++        codex_core::CAPABILITY_SNAPSHOT_MARKER_PREFIX,
++        marker
++    ));
++
++    assert!(matches!(collected.events.as_slice(), [ThreadEvent::Error(_)]));
++}
++
+ #[test]
+ fn mcp_tool_call_result_preserves_meta_in_jsonl_event() {
+     let mut processor = EventProcessorWithJsonOutput::new(/*last_message_path*/ None);
+diff --git a/codex-rs/exec/src/exec_events.rs b/codex-rs/exec/src/exec_events.rs
+index 06565c097..08035ebdf 100644
+--- a/codex-rs/exec/src/exec_events.rs
++++ b/codex-rs/exec/src/exec_events.rs
+@@ -12,6 +12,9 @@ pub enum ThreadEvent {
+     /// Emitted when a new thread is started as the first event.
+     #[serde(rename = "thread.started")]
+     ThreadStarted(ThreadStartedEvent),
++    /// Finalized empty tool inventory, emitted before `turn.started` in JSONL.
++    #[serde(rename = "capability.snapshot")]
++    CapabilitySnapshot(CapabilitySnapshotEvent),
+     /// Emitted when a turn is started by sending a new prompt to the model.
+     /// A turn encompasses all events that happen while agent is processing the prompt.
+     #[serde(rename = "turn.started")]
+@@ -36,6 +39,23 @@ pub enum ThreadEvent {
+     Error(ThreadErrorEvent),
+ }
+ 
++#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, TS)]
++pub struct CapabilitySnapshotEvent {
++    pub snapshot: CapabilitySnapshot,
++}
++
++#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, TS)]
++pub struct CapabilitySnapshot {
++    pub version: u8,
++    pub logical_operation_id: String,
++    pub executable_sha256: String,
++    pub model: String,
++    pub sandbox: String,
++    pub policy_sha256: String,
++    pub tool_count: usize,
++    pub tools: Vec<String>,
++}
++
+ #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, TS)]
+ pub struct ThreadStartedEvent {
+     /// The identified of the new thread. Can be used to resume the thread later.
+diff --git a/codex-rs/exec/src/lib.rs b/codex-rs/exec/src/lib.rs
+index f97ce4273..7c488024b 100644
+--- a/codex-rs/exec/src/lib.rs
++++ b/codex-rs/exec/src/lib.rs
+@@ -117,6 +117,8 @@ pub use event_processor_with_jsonl_output::CodexStatus;
+ pub use event_processor_with_jsonl_output::CollectedThreadEvents;
+ pub use event_processor_with_jsonl_output::EventProcessorWithJsonOutput;
+ pub use exec_events::AgentMessageItem;
++pub use exec_events::CapabilitySnapshot;
++pub use exec_events::CapabilitySnapshotEvent;
+ pub use exec_events::CollabAgentState;
+ pub use exec_events::CollabAgentStatus;
+ pub use exec_events::CollabTool;
+@@ -150,6 +152,8 @@ pub use exec_events::TurnStartedEvent;
+ pub use exec_events::Usage;
+ pub use exec_events::WebSearchItem;
+ use serde_json::Value;
++use sha2::Digest;
++use sha2::Sha256;
+ use std::collections::HashMap;
+ use std::future::Future;
+ use std::io::IsTerminal;
+@@ -234,6 +238,7 @@ struct ExecRunArgs {
+     stderr_with_ansi: bool,
+     thread_source: ThreadSource,
+     cyber_access_program: Option<codex_app_server_protocol::CyberAccessProgram>,
++    capability_snapshot_operation_id: Option<String>,
+ }
+ 
+ struct ManagedExecWorktree {
+@@ -277,10 +282,23 @@ pub async fn run_main(cli: Cli, arg0_paths: Arg0DispatchPaths) -> anyhow::Result
+         color,
+         last_message_file,
+         json: json_mode,
++        no_tools,
++        capability_snapshot_operation_id,
+         prompt,
+         output_schema: output_schema_path,
+         mut config_overrides,
+     } = cli;
++    if no_tools != capability_snapshot_operation_id.is_some() {
++        anyhow::bail!(
++            "--no-tools and --capability-snapshot-operation-id must be supplied together"
++        );
++    }
++    if no_tools && command.is_some() {
++        anyhow::bail!("--no-tools is supported only for a fresh exec session");
++    }
++    if no_tools && !json_mode {
++        anyhow::bail!("--no-tools requires --json capability attestation output");
++    }
+     if cyber_access_program.is_some() {
+         match command.as_ref() {
+             Some(ExecCommand::Review(_)) => {
+@@ -771,6 +789,7 @@ pub async fn run_main(cli: Cli, arg0_paths: Arg0DispatchPaths) -> anyhow::Result
+         stderr_with_ansi,
+         thread_source: thread_source.map(Into::into).unwrap_or(ThreadSource::User),
+         cyber_access_program: cyber_access_program.map(Into::into),
++        capability_snapshot_operation_id,
+     })
+     .instrument(exec_span)
+     .await
+@@ -873,6 +892,7 @@ async fn run_exec_session(args: ExecRunArgs) -> anyhow::Result<()> {
+         stderr_with_ansi,
+         thread_source,
+         cyber_access_program,
++        capability_snapshot_operation_id,
+     } = args;
+ 
+     if config.features.enabled(Feature::CliDaybreak)
+@@ -889,7 +909,10 @@ async fn run_exec_session(args: ExecRunArgs) -> anyhow::Result<()> {
+     }
+ 
+     let mut event_processor: Box<dyn EventProcessor> = match json_mode {
+-        true => Box::new(EventProcessorWithJsonOutput::new(last_message_file.clone())),
++        true => Box::new(EventProcessorWithJsonOutput::new_with_capability_snapshot(
++            last_message_file.clone(),
++            capability_snapshot_context(&config, capability_snapshot_operation_id.as_deref())?,
++        )),
+         _ => Box::new(EventProcessorWithHumanOutput::create_with_ansi(
+             stderr_with_ansi,
+             &config,
+@@ -1055,7 +1078,13 @@ async fn run_exec_session(args: ExecRunArgs) -> anyhow::Result<()> {
+                 .unwrap_or(false);
+             (session_configured.thread_id, session_configured)
+         } else {
+-            let response = start_thread(&client, &mut request_ids, &config, &thread_source)
++            let response = start_thread(
++                &client,
++                &mut request_ids,
++                &config,
++                &thread_source,
++                capability_snapshot_operation_id.as_deref(),
++            )
+                 .await
+                 .map_err(anyhow::Error::msg)?;
+             let session_configured =
+@@ -1151,7 +1180,13 @@ async fn run_exec_session(args: ExecRunArgs) -> anyhow::Result<()> {
+             .unwrap_or(false);
+         (session_configured.thread_id, session_configured)
+     } else {
+-        let response = start_thread(&client, &mut request_ids, &config, &thread_source)
++        let response = start_thread(
++            &client,
++            &mut request_ids,
++            &config,
++            &thread_source,
++            capability_snapshot_operation_id.as_deref(),
++        )
+             .await
+             .map_err(anyhow::Error::msg)?;
+         let session_configured = session_configured_from_thread_start_response(&response, &config)
+@@ -1412,8 +1447,13 @@ async fn start_thread(
+     request_ids: &mut RequestIdSequencer,
+     config: &Config,
+     thread_source: &ThreadSource,
++    capability_snapshot_operation_id: Option<&str>,
+ ) -> Result<ThreadStartResponse, String> {
+-    let mut params = thread_start_params_from_config(config, thread_source);
++    let mut params = thread_start_params_from_config(
++        config,
++        thread_source,
++        capability_snapshot_operation_id,
++    );
+     loop {
+         match client
+             .request_typed(ClientRequest::ThreadStart {
+@@ -1439,6 +1479,7 @@ async fn start_thread(
+ fn thread_start_params_from_config(
+     config: &Config,
+     thread_source: &ThreadSource,
++    capability_snapshot_operation_id: Option<&str>,
+ ) -> ThreadStartParams {
+     let permissions = permissions_selection_from_config(config);
+     let sandbox = permissions.is_none().then(|| {
+@@ -1461,6 +1502,7 @@ fn thread_start_params_from_config(
+         daybreak_enabled: (config.daybreak_enabled && !config.ephemeral).then_some(true),
+         history_mode: (!config.ephemeral).then_some(ThreadHistoryMode::Paginated),
+         thread_source: Some(thread_source.clone()),
++        capability_snapshot_operation_id: capability_snapshot_operation_id.map(str::to_string),
+         ..ThreadStartParams::default()
+     }
+ }
+@@ -1535,6 +1577,48 @@ fn sandbox_mode_from_permission_profile(
+     }
+ }
+ 
++fn capability_snapshot_context(
++    config: &Config,
++    logical_operation_id: Option<&str>,
++) -> anyhow::Result<Option<event_processor_with_jsonl_output::CapabilitySnapshotContext>> {
++    let Some(logical_operation_id) = logical_operation_id else {
++        return Ok(None);
++    };
++    anyhow::ensure!(
++        logical_operation_id.len() == 64
++            && logical_operation_id.bytes().all(|byte| byte.is_ascii_hexdigit()),
++        "capability snapshot operation id must be a 64-character hexadecimal digest"
++    );
++    let sandbox = sandbox_mode_from_permission_profile(
++        &config.permissions.effective_permission_profile(),
++        config.cwd.as_path(),
++    )
++    .ok_or_else(|| anyhow::anyhow!("capability snapshot requires a concrete sandbox mode"))?
++    .to_string();
++    let executable = std::env::current_exe()?;
++    let mut source = std::fs::File::open(executable)?;
++    let mut hasher = Sha256::new();
++    let mut buffer = [0_u8; 1024 * 1024];
++    loop {
++        let read = source.read(&mut buffer)?;
++        if read == 0 {
++            break;
++        }
++        hasher.update(&buffer[..read]);
++    }
++    Ok(Some(
++        event_processor_with_jsonl_output::CapabilitySnapshotContext {
++            logical_operation_id: logical_operation_id.to_ascii_lowercase(),
++            executable_sha256: format!("{:x}", hasher.finalize()),
++            sandbox,
++            policy_sha256: format!(
++                "{:x}",
++                Sha256::digest(br#"{"allowed_tools":[]}"#)
++            ),
++        },
++    ))
++}
++
+ async fn send_request_with_response<T>(
+     client: &InProcessAppServerClient,
+     request: ClientRequest,
