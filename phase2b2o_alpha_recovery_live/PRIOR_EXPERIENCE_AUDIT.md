@@ -10,4 +10,3 @@
 
 The prior live `UNKNOWN` is neither retried nor repaired in place. This is a new
 authorized logical operation whose own uncertainty would also be terminal.
-

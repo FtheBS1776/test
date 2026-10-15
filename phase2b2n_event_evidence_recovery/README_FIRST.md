@@ -14,4 +14,3 @@ dispatch, historical mutation, retry, or Phase 2C progression occurred.
 
 This repairs future observability only. It does not reclassify the sealed live
 pilot and does not authorize another live turn.
-

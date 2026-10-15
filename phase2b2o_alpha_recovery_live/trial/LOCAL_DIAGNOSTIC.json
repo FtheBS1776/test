@@ -20,4 +20,3 @@
   "retry_count": 0,
   "warning": "The fixed result matched, but a code-mode-disabled error event and uncertain post-exit member-image readback require terminal UNKNOWN."
 }
-

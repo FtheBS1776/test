@@ -1,0 +1,47 @@
+{
+  "allow_new_invocation": false,
+  "evidence": {
+    "assignment_verified_before_semantic_release": true,
+    "binding": {
+      "agent": "codex-alpha-recovery-worker",
+      "executable": "C:\\Users\\aaron\\Documents\\Codex\\phase2b2-alpha-audit-20261015\\win32-x64\\package\\vendor\\x86_64-pc-windows-msvc\\bin\\codex.exe",
+      "executable_sha256": "f7ab009c485749503f8c4bf848d002ed8080e4b2c9a1336e80069327e4ae951a",
+      "kind": "genie-phase2b2-alpha-recovery-worker-v1",
+      "model": "gpt-5.6-sol",
+      "output_schema_sha256": "183c29e2fe5e9eb22315b957d158b7dc30289cdf333744c88c47ad7e361843ac",
+      "reasoning_effort": "low",
+      "sandbox": "read-only",
+      "semantic_request_sha256": "f9107ab588c3f8e328d029e6f1523d54a300ed42fb1dd5c5654ca5a494240b50",
+      "service_tier": "default",
+      "token": {
+        "attempt": 1,
+        "call_id": "f5404432c2db60736496a231d047a4ad202614f56e56706b247103e603ceb20e",
+        "input_sha256": "951421f4c93f2d52ee1216be2432a54b9dd8a774823f07c72f3739d5fe4c4e8b",
+        "run_id": "genie-phase2b2-alpha-recovery-run-20261015-6c418d",
+        "slot_id": "f240e0b1cd497bda6d756c117e6bef1488a07b74f4884d957b9aa9d4f24002fb",
+        "task_id": "genie-phase2b2-alpha-recovery-task-20261015-74b93e"
+      },
+      "version": "codex-cli package 0.163.0-alpha.11-win32-x64"
+    },
+    "failure_accounting_after_termination": {
+      "active_processes": 0,
+      "terminated_processes": 0,
+      "total_processes": 2
+    },
+    "failure_class": "PermissionError",
+    "failure_member_evidence_uncertain": true,
+    "failure_reason": "[WinError 31] QueryFullProcessImageNameW failed",
+    "failure_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "failure_stdout_sha256": "32522eefa7db4403233b8c29af637da6323943fc06034d2e9a5374b834acc181",
+    "failure_termination_attempt_count": 1,
+    "logical_operation_id": "31171aa633659ae8a16bcbac7fb8ca7876dae4a7f188cabb78d9c8fcb032c61e",
+    "process_entry": true,
+    "retry_count": 0,
+    "root_pid": 27872,
+    "semantic_release": true
+  },
+  "logical_operation_id": "31171aa633659ae8a16bcbac7fb8ca7876dae4a7f188cabb78d9c8fcb032c61e",
+  "preserve": true,
+  "reason": "POST_ENTRY_UNCERTAINTY",
+  "status": "UNKNOWN"
+}

@@ -520,7 +520,7 @@ index 06565c097..08035ebdf 100644
  pub struct ThreadStartedEvent {
      /// The identified of the new thread. Can be used to resume the thread later.
 diff --git a/codex-rs/exec/src/lib.rs b/codex-rs/exec/src/lib.rs
-index f97ce4273..7c488024b 100644
+index f97ce4273..535a4f243 100644
 --- a/codex-rs/exec/src/lib.rs
 +++ b/codex-rs/exec/src/lib.rs
 @@ -117,6 +117,8 @@ pub use event_processor_with_jsonl_output::CodexStatus;
@@ -662,7 +662,7 @@ index f97ce4273..7c488024b 100644
          ..ThreadStartParams::default()
      }
  }
-@@ -1535,6 +1577,48 @@ fn sandbox_mode_from_permission_profile(
+@@ -1535,6 +1577,53 @@ fn sandbox_mode_from_permission_profile(
      }
  }
  
@@ -678,11 +678,16 @@ index f97ce4273..7c488024b 100644
 +            && logical_operation_id.bytes().all(|byte| byte.is_ascii_hexdigit()),
 +        "capability snapshot operation id must be a 64-character hexadecimal digest"
 +    );
-+    let sandbox = sandbox_mode_from_permission_profile(
++    let sandbox = match sandbox_mode_from_permission_profile(
 +        &config.permissions.effective_permission_profile(),
 +        config.cwd.as_path(),
 +    )
 +    .ok_or_else(|| anyhow::anyhow!("capability snapshot requires a concrete sandbox mode"))?
++    {
++        codex_app_server_protocol::SandboxMode::ReadOnly => "read-only",
++        codex_app_server_protocol::SandboxMode::WorkspaceWrite => "workspace-write",
++        codex_app_server_protocol::SandboxMode::DangerFullAccess => "danger-full-access",
++    }
 +    .to_string();
 +    let executable = std::env::current_exe()?;
 +    let mut source = std::fs::File::open(executable)?;

@@ -1,0 +1,54 @@
+{
+  "operation_ledger": [
+    [
+      "55e73a140f052d840d6fbe0cb1c1710e10c5189af8a9f597a5c58fc4b6fb6d12",
+      "UNKNOWN",
+      1,
+      0
+    ]
+  ],
+  "run": {
+    "background_execution": false,
+    "completion_claim": "Inspect each fresh_sink; queue COMPLETE is historical only",
+    "evidence_scope": "TRUSTED_OWNED_LOCAL_OBSERVATION",
+    "queue_history": {
+      "max_model_calls": 1,
+      "reserved_model_calls": 1,
+      "run_id": "genie-phase2b2-live-run-20261013-a17c9e",
+      "scope": "HISTORICAL_QUEUE_STATE_NOT_CURRENT_DESTINATION_PROOF",
+      "state": "RUNNING",
+      "stop_reason": null
+    },
+    "snapshot_scope": "Separate read transactions; no cross-store atomic snapshot",
+    "status": "PASS",
+    "tasks": [
+      {
+        "fresh_sink": {
+          "preserve": true,
+          "reason": "NO_ACCEPTED_EFFECT_OBSERVED",
+          "status": "UNKNOWN"
+        },
+        "journal": {
+          "agent": null,
+          "call_id": "50ac904e70c0b309db117cb61697d5a5c215edc58b5114cf07f443c467045c2a",
+          "host_outcome": "UNKNOWN",
+          "independent_proof": false,
+          "observation_count": 0,
+          "status": "OBSERVED"
+        },
+        "queue_entry_history": "ACTIVE",
+        "task_id": "genie-phase2b2-live-task-20261013-f34d21",
+        "workflow": {
+          "attempt": 1,
+          "state": "WAITING_WORKER",
+          "status": "OBSERVED"
+        }
+      }
+    ]
+  },
+  "task": {
+    "evidence_scope": "FRESH_EXACT_OWNED_DESTINATION_READBACK",
+    "reason": "TASK_RESULT_UNAVAILABLE",
+    "status": "UNKNOWN"
+  }
+}

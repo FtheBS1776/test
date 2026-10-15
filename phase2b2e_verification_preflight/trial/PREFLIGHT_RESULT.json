@@ -1,0 +1,57 @@
+{
+  "allow_new_invocation": false,
+  "evidence": {
+    "assignment_verified_before_protocol": true,
+    "binding": {
+      "command_sha256": "e2e448d72bcdb122008baedcbb672106c19b812f549b427fbf6b74aa27537b6f",
+      "executable": "C:\\Users\\aaron\\AppData\\Roaming\\npm\\node_modules\\@openai\\codex\\node_modules\\@openai\\codex-win32-x64\\vendor\\x86_64-pc-windows-msvc\\bin\\codex.exe",
+      "executable_sha256": "dd13bdb162a184fa04039488b234a8258ef9b76f84e926c505d5742b19249a6a",
+      "kind": "genie-phase2b2-recovery-preflight-v1",
+      "model_catalog_target": "gpt-5.6-sol",
+      "operation_context": "phase2b2-recovery-verification-preflight-20261015-authorized-once-v1",
+      "protocol_request_methods": [
+        "initialize",
+        "config/read",
+        "mcpServerStatus/list",
+        "model/list"
+      ],
+      "reasoning_effort_catalog_target": "low",
+      "sandbox": "read-only",
+      "semantic_request_count": 0,
+      "service_tier_config": "default",
+      "thread_start_count": 0,
+      "turn_start_count": 0,
+      "version": "codex-cli 0.162.1"
+    },
+    "failure_accounting_after_termination": {
+      "active_processes": 0,
+      "terminated_processes": 0,
+      "total_processes": 7
+    },
+    "failure_class": "RuntimeError",
+    "failure_member_evidence_uncertain": true,
+    "failure_process_exit_code": 11052,
+    "failure_reason": "EFFECTIVE_MCP_INVENTORY_NONEMPTY",
+    "failure_stderr_excerpt": "",
+    "failure_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "job_termination_attempt_count": 1,
+    "model_turn_started": false,
+    "operation_id": "b2321feff8b148eea319fd0557e4294e2469a79843d75beaaa86f897d650fce5",
+    "process_entry_attempted": true,
+    "protocol_requests_sent": [
+      "initialize",
+      "config/read",
+      "mcpServerStatus/list",
+      "model/list"
+    ],
+    "retry_count": 0,
+    "root_pid": 40416,
+    "semantic_request_count": 0,
+    "thread_start_count": 0,
+    "turn_start_count": 0
+  },
+  "operation_id": "b2321feff8b148eea319fd0557e4294e2469a79843d75beaaa86f897d650fce5",
+  "preserve": true,
+  "reason": "POST_ENTRY_UNCERTAINTY",
+  "status": "UNKNOWN"
+}

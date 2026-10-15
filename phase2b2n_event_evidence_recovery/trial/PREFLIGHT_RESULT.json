@@ -1,0 +1,64 @@
+{
+  "accounting_after_termination": {
+    "active_processes": 0,
+    "terminated_processes": 0,
+    "total_processes": 4
+  },
+  "accounting_before_termination": {
+    "active_processes": 4,
+    "terminated_processes": 0,
+    "total_processes": 4
+  },
+  "allow_new_invocation": false,
+  "assignment_verified_before_release": true,
+  "classification": "RECOVERY_EVIDENCE_PREFLIGHT_NONCLAIM",
+  "event_evidence_readback_verified": true,
+  "event_summary": {
+    "assistant_message_count": 1,
+    "classification": "UNKNOWN_EVENT_SHAPE",
+    "event_count": 6,
+    "event_types": {
+      "item.completed": 3,
+      "thread.started": 1,
+      "turn.completed": 1,
+      "turn.started": 1
+    },
+    "item_types": {
+      "agent_message": 1,
+      "plan": 1,
+      "reasoning": 1
+    },
+    "tool_item_types": [],
+    "unknown_item_types": [
+      "plan"
+    ]
+  },
+  "members": [
+    {
+      "image": "C:\\Users\\aaron\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "sha256": "d41bad46673f64e0d02f23797f53f90ccf60f27d6eda8d86dd2d4bbeae5a858c"
+    },
+    {
+      "image": "C:\\Users\\aaron\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "sha256": "d41bad46673f64e0d02f23797f53f90ccf60f27d6eda8d86dd2d4bbeae5a858c"
+    },
+    {
+      "image": "C:\\Windows\\System32\\conhost.exe",
+      "sha256": "2266b396ef92534a2a2844438df043d4069a2ec47d4e464f55e8c1cd47124a98"
+    },
+    {
+      "image": "C:\\Windows\\System32\\conhost.exe",
+      "sha256": "2266b396ef92534a2a2844438df043d4069a2ec47d4e464f55e8c1cd47124a98"
+    }
+  ],
+  "model_invoked": false,
+  "operation_id": "d89252b379fc853d8933c9b4528bb94c17de1a1b3bfcd7ed2ae41b8c8731d203",
+  "preserve": true,
+  "process_entry": true,
+  "raw_event_bytes": 508,
+  "raw_event_sha256": "639b117583c7033340639cb10034c0a15e6d84ff31d0778bccb1d6dc9f90e55b",
+  "retry_count": 0,
+  "semantic_release": true,
+  "status": "VERIFIED",
+  "termination_attempt_count": 1
+}

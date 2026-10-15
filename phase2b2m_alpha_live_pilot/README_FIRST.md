@@ -15,4 +15,3 @@ matched the fixed schema, but the JSON event shape could not be authoritatively
 reconciled and the failure path had not retained raw JSONL. The result was not
 submitted or accepted. The durable operation forbids a retry. This does not
 establish general sandboxing, independent provenance, or Phase 2C readiness.
-

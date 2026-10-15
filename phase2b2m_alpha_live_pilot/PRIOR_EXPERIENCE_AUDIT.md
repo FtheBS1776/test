@@ -13,4 +13,3 @@
 The prior no-auth app-server inventory preflight remains supporting evidence,
 not proof that the authenticated exec surface is identical. The live turn must
 therefore preserve its NONCLAIM classification and record any uncertainty.
-

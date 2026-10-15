@@ -1,0 +1,45 @@
+{
+  "allow_new_invocation": false,
+  "evidence": {
+    "assignment_verified_before_semantic_release": true,
+    "binding": {
+      "agent": "codex-alpha-exec-worker",
+      "executable": "C:\\Users\\aaron\\Documents\\Codex\\phase2b2-alpha-audit-20261015\\win32-x64\\package\\vendor\\x86_64-pc-windows-msvc\\bin\\codex.exe",
+      "executable_sha256": "f7ab009c485749503f8c4bf848d002ed8080e4b2c9a1336e80069327e4ae951a",
+      "kind": "genie-phase2b2-alpha-exec-worker-v1",
+      "model": "gpt-5.6-sol",
+      "output_schema_sha256": "3d3ddfce9a28227c98e859911701da335b239014bf87210015187a72b8652072",
+      "reasoning_effort": "low",
+      "sandbox": "read-only",
+      "semantic_request_sha256": "4e2036fd10cbf67a166d726f3747f376191fca7ac4da0bd36329bd5ee631045e",
+      "service_tier": "default",
+      "token": {
+        "attempt": 1,
+        "call_id": "891a1d66cef7c924ab39fc477383525faf439f366b0d7dd5171f4d189c50093d",
+        "input_sha256": "e15efb16e9d1a110e968d449f002803327b950f467647d29d1a29d0e34e22574",
+        "run_id": "genie-phase2b2-alpha-live-run-20261015-5a20c8",
+        "slot_id": "e43f15c993b74038f936a8687dde14c3e047a5a6c134c12c1fc2b9ed64c9c6ac",
+        "task_id": "genie-phase2b2-alpha-live-task-20261015-8c51d7"
+      },
+      "version": "codex-cli package 0.163.0-alpha.11-win32-x64"
+    },
+    "failure_accounting_after_termination": {
+      "active_processes": 0,
+      "terminated_processes": 0,
+      "total_processes": 2
+    },
+    "failure_class": "RuntimeError",
+    "failure_observed_member_count": 2,
+    "failure_reason": "EVENT_SHAPE_OR_TOOL_ACTIVITY",
+    "failure_termination_attempted_once": true,
+    "logical_operation_id": "939c0c63a2359302e7cb416e8b3fa76116a2e8de7285c23956991277adccf1b4",
+    "process_entry": true,
+    "retry_count": 0,
+    "root_pid": 56684,
+    "semantic_release": true
+  },
+  "logical_operation_id": "939c0c63a2359302e7cb416e8b3fa76116a2e8de7285c23956991277adccf1b4",
+  "preserve": true,
+  "reason": "POST_ENTRY_UNCERTAINTY",
+  "status": "UNKNOWN"
+}

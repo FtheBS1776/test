@@ -1,0 +1,9 @@
+{
+  "captured_at": "2026-10-15T01:16:38.5824041-07:00",
+  "root_pid": 40416,
+  "root_pid_present": false,
+  "scratch_directory": "genie-phase2b2c-preflight-t_92mo7q",
+  "scratch_entry_count": 0,
+  "authority": "fresh Windows process-table and filesystem readback",
+  "scope": "root PID absence and scratch emptiness only; not complete Job-member provenance"
+}

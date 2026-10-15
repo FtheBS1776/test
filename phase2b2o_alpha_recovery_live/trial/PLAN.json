@@ -1,0 +1,6 @@
+{
+  "goal": "Produce one bounded data-only alpha recovery worker result.",
+  "input_sha256": "951421f4c93f2d52ee1216be2432a54b9dd8a774823f07c72f3739d5fe4c4e8b",
+  "max_attempts": 1,
+  "task_id": "genie-phase2b2-alpha-recovery-task-20261015-74b93e"
+}

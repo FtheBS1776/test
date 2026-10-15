@@ -1,0 +1,18 @@
+{
+  "action": "INVOKE_WORKER",
+  "request": {
+    "attempt": 1,
+    "feedback": null,
+    "goal": "Produce one bounded data-only worker result.",
+    "input_sha256": "fd764d47279231c372e7ed96815c0293f73e95037febe95c08eb0db76840dd05",
+    "task_id": "genie-phase2b2-live-task-20261013-f34d21"
+  },
+  "token": {
+    "attempt": 1,
+    "call_id": "50ac904e70c0b309db117cb61697d5a5c215edc58b5114cf07f443c467045c2a",
+    "input_sha256": "fd764d47279231c372e7ed96815c0293f73e95037febe95c08eb0db76840dd05",
+    "run_id": "genie-phase2b2-live-run-20261013-a17c9e",
+    "slot_id": "7d623cb28e0bea65745a027f92b6f90bd8ef0fd4d983c2ec3238f42bbbcfef1f",
+    "task_id": "genie-phase2b2-live-task-20261013-f34d21"
+  }
+}

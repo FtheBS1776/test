@@ -16,4 +16,3 @@
   not accepted because JSONL event-shape evidence was unresolved.
 - Fresh destination readback: `UNKNOWN / TASK_RESULT_UNAVAILABLE`.
 - Phase 2C entered: false.
-

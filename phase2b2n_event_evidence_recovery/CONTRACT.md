@@ -8,4 +8,3 @@ terminated once with zero active members afterward.
 It may not invoke Codex, authenticate, access a network, consume allowance,
 retry the sealed live operation, dispatch a reviewer, apply Genie events, mutate
 historical runs, authorize another live turn, or enter Phase 2C.
-

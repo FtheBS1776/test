@@ -1,0 +1,18 @@
+{
+  "action": "INVOKE_WORKER",
+  "request": {
+    "attempt": 1,
+    "feedback": null,
+    "goal": "Produce one bounded data-only alpha worker result.",
+    "input_sha256": "e15efb16e9d1a110e968d449f002803327b950f467647d29d1a29d0e34e22574",
+    "task_id": "genie-phase2b2-alpha-live-task-20261015-8c51d7"
+  },
+  "token": {
+    "attempt": 1,
+    "call_id": "891a1d66cef7c924ab39fc477383525faf439f366b0d7dd5171f4d189c50093d",
+    "input_sha256": "e15efb16e9d1a110e968d449f002803327b950f467647d29d1a29d0e34e22574",
+    "run_id": "genie-phase2b2-alpha-live-run-20261015-5a20c8",
+    "slot_id": "e43f15c993b74038f936a8687dde14c3e047a5a6c134c12c1fc2b9ed64c9c6ac",
+    "task_id": "genie-phase2b2-alpha-live-task-20261015-8c51d7"
+  }
+}

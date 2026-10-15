@@ -1,0 +1,129 @@
+{
+  "allow_new_invocation": false,
+  "classification": "NONCLAIM",
+  "evidence": {
+    "accounting_after_termination": {
+      "active_processes": 0,
+      "terminated_processes": 0,
+      "total_processes": 2
+    },
+    "accounting_before_termination": {
+      "active_processes": 2,
+      "terminated_processes": 0,
+      "total_processes": 2
+    },
+    "assignment_verified_before_protocol": true,
+    "binding": {
+      "command_sha256": "d676d25bfb605edd90d6ddcb4cae228a62d1d93338c52732c6e2f7d12b5a4b1e",
+      "executable": "C:\\Users\\aaron\\Documents\\Codex\\phase2b2-alpha-audit-20261015\\win32-x64\\package\\vendor\\x86_64-pc-windows-msvc\\bin\\codex.exe",
+      "executable_sha256": "f7ab009c485749503f8c4bf848d002ed8080e4b2c9a1336e80069327e4ae951a",
+      "kind": "genie-phase2b2-alpha-isolation-preflight-v1",
+      "model_catalog_target": "gpt-5.6-sol",
+      "operation_context": "phase2b2-alpha-isolation-preflight-20261015-v1",
+      "protocol_request_methods": [
+        "initialize",
+        "config/read",
+        "mcpServerStatus/list",
+        "model/list"
+      ],
+      "reasoning_effort_catalog_target": "low",
+      "sandbox": "read-only",
+      "semantic_request_count": 0,
+      "service_tier_config": "default",
+      "thread_start_count": 0,
+      "turn_start_count": 0,
+      "version": "codex-cli package 0.163.0-alpha.11-win32-x64"
+    },
+    "effective_inventory": {
+      "apps_default_enabled": false,
+      "disabled_features": [
+        "apps",
+        "plugins",
+        "plugin_sharing",
+        "recommended_plugins",
+        "multi_agent",
+        "multi_agent_v2",
+        "multi_agent_v2_dynamic_tools",
+        "remote_plugin",
+        "auth_elicitation",
+        "tool_call_mcp_elicitation",
+        "browser_use",
+        "browser_use_external",
+        "browser_use_full_cdp_access",
+        "computer_use",
+        "in_app_browser",
+        "image_generation",
+        "hooks",
+        "shell_tool",
+        "shell_snapshot",
+        "shell_snapshot_v2",
+        "unified_exec",
+        "unified_exec_tty",
+        "view_image",
+        "workspace_dependencies",
+        "skill_search",
+        "skill_mcp_dependency_install",
+        "tool_suggest",
+        "daemon_auto_start",
+        "worktrees",
+        "code_mode",
+        "code_mode_host",
+        "code_mode_tool_search",
+        "sleep_tool",
+        "system_proxy_fallback",
+        "network_proxy",
+        "standalone_web_search",
+        "request_permissions_tool",
+        "enable_mcp_apps",
+        "codex_apps_mcp_2026_07_28",
+        "mcp_2026_07_28"
+      ],
+      "mcp_server_count": 0,
+      "mcp_tool_count": 0,
+      "sandbox_mode": "read-only"
+    },
+    "inventory_observation": {
+      "configured_server_count": 0,
+      "next_cursor_present": false,
+      "observed_disabled_feature_count": 40,
+      "status_item_count": 0
+    },
+    "job_termination_attempt_count": 1,
+    "members": [
+      {
+        "image": "C:\\Users\\aaron\\Documents\\Codex\\phase2b2-alpha-audit-20261015\\win32-x64\\package\\vendor\\x86_64-pc-windows-msvc\\bin\\codex.exe",
+        "image_sha256": "f7ab009c485749503f8c4bf848d002ed8080e4b2c9a1336e80069327e4ae951a",
+        "pid": 38808
+      },
+      {
+        "image": "C:\\Windows\\System32\\conhost.exe",
+        "image_sha256": "2266b396ef92534a2a2844438df043d4069a2ec47d4e464f55e8c1cd47124a98",
+        "pid": 45224
+      }
+    ],
+    "model_inventory": {
+      "model": "gpt-5.6-sol",
+      "model_match_count": 1,
+      "reasoning_effort": "low"
+    },
+    "model_turn_started": false,
+    "operation_id": "90e7dad8042e38f4b03587f205e32eb401bd95cd62be3e4aebeb3a21105a6066",
+    "process_entry_attempted": true,
+    "protocol_requests_sent": [
+      "initialize",
+      "config/read",
+      "mcpServerStatus/list",
+      "model/list"
+    ],
+    "retry_count": 0,
+    "root_pid": 38808,
+    "semantic_release": false,
+    "semantic_request_count": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "thread_start_count": 0,
+    "turn_start_count": 0
+  },
+  "operation_id": "90e7dad8042e38f4b03587f205e32eb401bd95cd62be3e4aebeb3a21105a6066",
+  "preserve": true,
+  "status": "VERIFIED"
+}

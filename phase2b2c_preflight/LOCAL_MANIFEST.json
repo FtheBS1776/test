@@ -1,0 +1,23 @@
+{
+  "algorithm": "SHA-256",
+  "classification": "NONCLAIM",
+  "file_count": 13,
+  "total_bytes": 38155,
+  "manifest_self_excluded": true,
+  "raw_evidence_publication": false,
+  "files": [
+    {"path":"phase2b2c_preflight/ADJUDICATION.md","bytes":863,"sha256":"e9f5e1da131dd501b6da58ddf5a66cc5e49cb743a17a4afa2cb8a74d6a2b139d"},
+    {"path":"phase2b2c_preflight/CONTRACT.md","bytes":1074,"sha256":"feda2740f99f02d21174104732023eae5d91c56693f89a5daed32d210e1292b2"},
+    {"path":"phase2b2c_preflight/PRIOR_EXPERIENCE_AUDIT.md","bytes":739,"sha256":"895bf9f0840e7cd3c2dfd3974f32d30a6da22e0540591842f30a1727a4f3b131"},
+    {"path":"phase2b2c_preflight/PUBLIC_EVIDENCE.json","bytes":998,"sha256":"d0d7feff84f072b6bef4cfa9ad94e1a27e502f6f0a72bea5d1ee7dfc4b04d034"},
+    {"path":"phase2b2c_preflight/README_FIRST.md","bytes":606,"sha256":"3e8abede7a6daf569d5685beb2ad474a80567bfa7877812ee1dd2f4461225370"},
+    {"path":"phase2b2c_preflight/recovery_preflight.py","bytes":12522,"sha256":"bc6d756f1436c7d7c633e342919f683858502644d6fecadb7ca2c522b000d1a0"},
+    {"path":"phase2b2c_preflight/run_preflight_once.py","bytes":1894,"sha256":"73af9278594049f89ff4ae20bc841779ba12eefe5e977f55816a696bf99bffa7"},
+    {"path":"phase2b2c_preflight/test_recovery_preflight.py","bytes":3118,"sha256":"15fa80754d31d07263bb9db371846a658afd60e51c6bd4fe419fc75d67f57362"},
+    {"path":"phase2b2c_preflight/TEST_RESULTS.md","bytes":1541,"sha256":"b713fc7b099a98ea3c278e036eb14187095a0df8c8894995060c0233c4b5f942"},
+    {"path":"phase2b2c_preflight/trial/OS_PROCESS_READBACK.json","bytes":191,"sha256":"7fe6de2fb3c03a0bcd8983115e7e7f3f2e08c09b24a960e7c7a349999e6810f0"},
+    {"path":"phase2b2c_preflight/trial/preflight_operation.db","bytes":12288,"sha256":"6ba23b717b05b09f8490010f102e25ecaa2b9670caad7614f3062cbc6d084fa6"},
+    {"path":"phase2b2c_preflight/trial/PREFLIGHT_RESULT.json","bytes":2024,"sha256":"73aefa241130b244ca006f983d0ae56eeba756154ebbfdd691f7eaa3e0827257"},
+    {"path":"phase2b2c_preflight/trial/STOP.json","bytes":297,"sha256":"c7eef8c76fb7c48e746be02c70be5c94164862ca9ccf80e5cdc4070344ecd25e"}
+  ]
+}

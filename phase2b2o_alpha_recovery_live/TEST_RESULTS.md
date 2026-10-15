@@ -15,4 +15,3 @@
 - Operation status: terminal `UNKNOWN`, preserve true, new invocation false.
 - Fresh destination: `UNKNOWN / TASK_RESULT_UNAVAILABLE`.
 - Reviewer model calls: 0. Phase 2C entered: false.
-

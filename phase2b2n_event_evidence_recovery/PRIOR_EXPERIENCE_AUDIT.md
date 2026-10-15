@@ -9,4 +9,3 @@
 
 The prior matching last-message file cannot cure the sealed live uncertainty.
 This preflight repairs future observability only and cannot reclassify history.
-

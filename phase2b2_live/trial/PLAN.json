@@ -1,0 +1,6 @@
+{
+  "goal": "Produce one bounded data-only worker result.",
+  "input_sha256": "fd764d47279231c372e7ed96815c0293f73e95037febe95c08eb0db76840dd05",
+  "max_attempts": 1,
+  "task_id": "genie-phase2b2-live-task-20261013-f34d21"
+}

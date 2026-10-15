@@ -16,4 +16,3 @@ uncertainty after process entry is terminal `UNKNOWN`, with preservation,
 `allow_new_invocation=false`, and no retry, refund, reset, replacement, or
 alternate launcher. Worker output remains untrusted until fresh destination
 readback. Same-host/provider evidence is common-cause and non-independent.
-

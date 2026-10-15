@@ -1,0 +1,6 @@
+{"thread_id":"fixture-thread","type":"thread.started"}
+{"type":"turn.started"}
+{"item":{"text":"fixture","type":"reasoning"},"type":"item.completed"}
+{"item":{"text":"fixture-unknown","type":"plan"},"type":"item.completed"}
+{"item":{"text":"{\"authority_request\": false, \"marker\": \"NO_MODEL_EVENT_FIXTURE_20261015\", \"visible_tool_or_mcp_names\": []}","type":"agent_message"},"type":"item.completed"}
+{"descendant_pid":42444,"model_invoked":false,"type":"turn.completed","usage":{"fixture":true}}

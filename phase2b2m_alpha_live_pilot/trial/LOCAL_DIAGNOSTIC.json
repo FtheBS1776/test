@@ -14,4 +14,3 @@
   "retry_count": 0,
   "warning": "The output file matched the requested schema, but event-shape uncertainty is terminal and prevents acceptance."
 }
-

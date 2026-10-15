@@ -14,4 +14,3 @@
   processes; all image hashes matched the retained runtime profile.
 - Active members before/after one termination: 4/0.
 - Result: `VERIFIED`, classification `RECOVERY_EVIDENCE_PREFLIGHT_NONCLAIM`.
-

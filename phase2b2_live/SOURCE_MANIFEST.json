@@ -1,0 +1,39 @@
+{
+  "algorithm": "SHA-256",
+  "classification": "NONCLAIM",
+  "file_count": 25,
+  "manifest_self_excluded": true,
+  "total_bytes": 153704,
+  "frontier_parent": {
+    "branch": "nonclaim/genie-phase-2b2b-containment-preflight-20261012",
+    "commit": "c147d06b242539cb80da5e8ca115828acfef954b",
+    "tree": "ae0f5bc4e3b2c1ce01b43f83a4ea3abfbf97d219"
+  },
+  "files": [
+    {"path":"phase2b2_live/ADJUDICATION.md","bytes":980,"sha256":"00acce4c744dfea5142dd7a6910c6a687c65f7bd0c8cabe1667702a0b0dd8c43"},
+    {"path":"phase2b2_live/CONTRACT.md","bytes":1562,"sha256":"458002247ed5a13949b722d963f2b181a41184ca7466c5a9fb036827b9c32cce"},
+    {"path":"phase2b2_live/inspect_trial.py","bytes":1408,"sha256":"a37f3b75f6abc23a41dffba298a62c827601bce36e7769ce598371c8c731b6dd"},
+    {"path":"phase2b2_live/PRIOR_EXPERIENCE_AUDIT.md","bytes":1887,"sha256":"a84fe9cf926236aa2b15b0c793f2bfa5b1e152d94a8aafd444001304f60d759e"},
+    {"path":"phase2b2_live/PUBLIC_EVIDENCE.json","bytes":1476,"sha256":"d6cf065cd583dd2203c54640bb049677b9c0b51e7078ae74ef86bf271093bfbe"},
+    {"path":"phase2b2_live/provision_synthetic.py","bytes":1758,"sha256":"06ad1f45a6997f08e9ec44941f8e98c59b0c485f7b02304568cbe950986a16e2"},
+    {"path":"phase2b2_live/README_FIRST.md","bytes":813,"sha256":"1c7da9cfc26c9ee8b33a06cf2469265ed8210500775711a7569e8e971c66b8e8"},
+    {"path":"phase2b2_live/run_live_pilot.py","bytes":5962,"sha256":"6bb6abb6119adbcc87c32dc6131f4aa164e14c67df2b1a16f710faaa79cbc68e"},
+    {"path":"phase2b2_live/test_live_codex_worker.py","bytes":6366,"sha256":"a555675486b6542f73c7396a208908536c2f3f95701404a69b6770c7f24ccf8a"},
+    {"path":"phase2b2_live/TEST_RESULTS.md","bytes":2683,"sha256":"d6b467233a6980a2e0bc58a746e20688461cbb6b254a83dd3e9de81b38d1f96d"},
+    {"path":"phase2b2_live/trial/DISPATCH.json","bytes":721,"sha256":"47c0b1aed6419bd94f0eb431c90ffe9d093320ff8e5097a16ae629403a24102a"},
+    {"path":"phase2b2_live/trial/INPUT.md","bytes":80,"sha256":"fd764d47279231c372e7ed96815c0293f73e95037febe95c08eb0db76840dd05"},
+    {"path":"phase2b2_live/trial/LIVE_WORKER.json","bytes":1775,"sha256":"fe77f755ad69b01157569fd63c4ca7222c2ab1a1089c72f0c4f850560e459f01"},
+    {"path":"phase2b2_live/trial/operation.sqlite.preserved","bytes":12288,"sha256":"44151b84ae944bfca5c007d062ce37b9a83cb5ef8f55db6c6db0a40b8cdc2ad1"},
+    {"path":"phase2b2_live/trial/OS_PROCESS_READBACK.json","bytes":179,"sha256":"7808b5ab50dbad17dd3d072b5be8c2e11dce566f52399229ec9e896113cc1b33"},
+    {"path":"phase2b2_live/trial/PLAN.json","bytes":225,"sha256":"f29f977570589a0bf0827724e2f210ef12519fa069d45aa5f9407f46fcef2c04"},
+    {"path":"phase2b2_live/trial/POLICY.json","bytes":146,"sha256":"b01f0656f562e6655aa38bbdb352b5b17f844d6b0ed07a99085f84e17a5e25bf"},
+    {"path":"phase2b2_live/trial/POST_FAILURE_STATUS.json","bytes":1566,"sha256":"07d9ca63c503a040fe3be436d0dda6895dd12739f0dfaafe1e95d35dc7c22363"},
+    {"path":"phase2b2_live/trial/PRESERVED_STATE_MANIFEST.json","bytes":1179,"sha256":"5d62644149b357a23376815884c5146d64662b2c7f3adf06da91e0c6316438aa"},
+    {"path":"phase2b2_live/trial/queue.sqlite.preserved","bytes":28672,"sha256":"b827970dee777ce548654522db6e87b16b544d0d40c2cc6785389e29841d90fe"},
+    {"path":"phase2b2_live/trial/REGISTRY.json","bytes":159,"sha256":"7e13c625257b034a107dd25b437395e7235ea3c089afd20b0a8cd1efa5ff9f6b"},
+    {"path":"phase2b2_live/trial/STOP.json","bytes":160,"sha256":"78a1545e0736b4d2b937dffb545c971fe4a58e872072657278ef034e373e6a0b"},
+    {"path":"phase2b2_live/trial/work/1bd07a3a44268742520fb55a1ba0967d6fab8a37defa8fe4459d12cfc183d10c/aeb78032f952edb176dfbdcf4db8442e98c5f29cc6c10277b843644d8d65e12c/inbox.sqlite.preserved","bytes":24576,"sha256":"72e695b10bbdf828a01917a84a2581325edbc1ac594ef3b07f91839ccc75529b"},
+    {"path":"phase2b2_live/trial/work/1bd07a3a44268742520fb55a1ba0967d6fab8a37defa8fe4459d12cfc183d10c/aeb78032f952edb176dfbdcf4db8442e98c5f29cc6c10277b843644d8d65e12c/task.sqlite.preserved","bytes":32768,"sha256":"43a2cd96914010183c3c5641d46d7fa2afe2c199b98d192b668f7f2831841ee9"},
+    {"path":"shared_interfaces/live_codex_worker.py","bytes":24315,"sha256":"65020be05ea04cba2097849d483b6e8d7ca74e0c2a7818192907c701b8cf51b6"}
+  ]
+}

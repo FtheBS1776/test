@@ -5,6 +5,7 @@
 - Rust toolchain: `1.95.0`
 - Target: `x86_64-pc-windows-msvc`
 - Package/binary: `codex-cli` / `codex.exe`
+- Build profile: debug (bounded pilot only; no production or performance claim)
 - Capability policy: canonical JSON `{"allowed_tools":[]}`
 - Workflow permissions: repository contents read-only
 - Artifact retention: one day

@@ -14,4 +14,3 @@ The recovery repair succeeded in retaining raw streams, making the event cause
 fully diagnosable. A future design would need to snapshot image identity at first
 observation and explicitly adjudicate the exact fail-closed code-mode event.
 Neither change can reclassify or replay this operation.
-

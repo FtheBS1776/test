@@ -19,4 +19,3 @@ retry. The prior live `UNKNOWN` is unchanged.
 
 No further launch, Phase 2C progression, main merge, promotion/freeze, new
 spending, production claim, or EXP010 activity occurred.
-

@@ -1,0 +1,28 @@
+{
+  "content_rewritten": false,
+  "packaging": "Original SQLite bytes renamed with .preserved suffix after final read-only inspection so accepted historical *.sqlite integrity scope remains unchanged.",
+  "preserve": true,
+  "allow_new_invocation": false,
+  "files": [
+    {
+      "bytes": 12288,
+      "path": "operation.sqlite.preserved",
+      "sha256": "44151b84ae944bfca5c007d062ce37b9a83cb5ef8f55db6c6db0a40b8cdc2ad1"
+    },
+    {
+      "bytes": 28672,
+      "path": "queue.sqlite.preserved",
+      "sha256": "b827970dee777ce548654522db6e87b16b544d0d40c2cc6785389e29841d90fe"
+    },
+    {
+      "bytes": 24576,
+      "path": "work/1bd07a3a44268742520fb55a1ba0967d6fab8a37defa8fe4459d12cfc183d10c/aeb78032f952edb176dfbdcf4db8442e98c5f29cc6c10277b843644d8d65e12c/inbox.sqlite.preserved",
+      "sha256": "72e695b10bbdf828a01917a84a2581325edbc1ac594ef3b07f91839ccc75529b"
+    },
+    {
+      "bytes": 32768,
+      "path": "work/1bd07a3a44268742520fb55a1ba0967d6fab8a37defa8fe4459d12cfc183d10c/aeb78032f952edb176dfbdcf4db8442e98c5f29cc6c10277b843644d8d65e12c/task.sqlite.preserved",
+      "sha256": "43a2cd96914010183c3c5641d46d7fa2afe2c199b98d192b668f7f2831841ee9"
+    }
+  ]
+}

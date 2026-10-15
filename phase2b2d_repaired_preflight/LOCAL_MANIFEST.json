@@ -1,0 +1,11 @@
+{
+  "classification": "LOCAL_FULL_EVIDENCE_NONCLAIM",
+  "operation_id": "d8de3ff965dd993c1a62eb31107b9d27f6e73bb38a6b9d33790fcdbdc994d883",
+  "files": [
+    {"path": "trial/OS_PROCESS_READBACK.json", "bytes": 360, "sha256": "dfa5a5b3258be6be1e1f7e7a047fe928d886d7dd142c5ff479d9af239eadd223"},
+    {"path": "trial/PREFLIGHT_RESULT.json", "bytes": 2049, "sha256": "bb1f68d574eef9893db304da8c6fab6d0e4d9a8c2a1d14c57466a1fb969bedd0"},
+    {"path": "trial/STOP.json", "bytes": 306, "sha256": "59e84192f2331adb53fc30c6853fe5dbcb8cf5b0cd0ddda048be52c9919baed4"},
+    {"path": "trial/preflight_operation.db", "bytes": 12288, "sha256": "70455a510d137e10bdb244ef356e55cdc78078fbb1779397403bd3422626b898"}
+  ],
+  "publication_rule": "Do not publish the raw ledger, runner, tests, OS readback, or raw result. Publish only reviewed sanitized narrative and PUBLIC_EVIDENCE.json."
+}

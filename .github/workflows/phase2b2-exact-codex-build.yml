@@ -47,17 +47,16 @@ jobs:
         run: |
           rustup override set 1.95.0
           cargo fmt --all -- --check
-          cargo test -p codex-exec empty_capability_snapshot_precedes_buffered_turn_start
-          cargo test -p codex-exec nonempty_capability_snapshot_fails_closed
-          cargo check -p codex-cli --bin codex
-          cargo build -p codex-cli --bin codex --release
+          cargo test -p codex-exec --lib empty_capability_snapshot_precedes_buffered_turn_start
+          cargo test -p codex-exec --lib nonempty_capability_snapshot_fails_closed
+          cargo build -p codex-cli --bin codex
 
       - name: Record binary identity
         shell: pwsh
         run: |
-          $binary = "$env:GITHUB_WORKSPACE\upstream\codex-rs\target\release\codex.exe"
+          $binary = "$env:GITHUB_WORKSPACE\upstream\codex-rs\target\debug\codex.exe"
           $digest = (Get-FileHash -LiteralPath $binary -Algorithm SHA256).Hash.ToLowerInvariant()
-          Set-Content -LiteralPath "$env:GITHUB_WORKSPACE\upstream\codex-rs\target\release\codex.exe.sha256" -Value "$digest  codex.exe" -Encoding ascii
+          Set-Content -LiteralPath "$env:GITHUB_WORKSPACE\upstream\codex-rs\target\debug\codex.exe.sha256" -Value "$digest  codex.exe" -Encoding ascii
           Write-Output "codex.exe sha256=$digest"
 
       - name: Upload bounded build artifact
@@ -65,7 +64,7 @@ jobs:
         with:
           name: codex-phase2b2-no-tools-win32-x64
           path: |
-            upstream/codex-rs/target/release/codex.exe
-            upstream/codex-rs/target/release/codex.exe.sha256
+            upstream/codex-rs/target/debug/codex.exe
+            upstream/codex-rs/target/debug/codex.exe.sha256
           if-no-files-found: error
           retention-days: 1

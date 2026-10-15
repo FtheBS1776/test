@@ -11,4 +11,3 @@ lookup for the two captured members.
 The candidate was never accepted and the fresh destination remains empty. Stop
 before Phase 2C; neither this operation nor the earlier live `UNKNOWN` may be
 rerun or reclassified.
-

@@ -14,4 +14,3 @@ fixture invoked no model and received no authentication or Genie authority.
 The prior live logical operation remains terminal `UNKNOWN`, preserved, and
 non-retryable. Its matching last-message file remains untrusted and unaccepted.
 No new live turn or Phase 2C activity is authorized by this result.
-

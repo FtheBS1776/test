@@ -1,0 +1,38 @@
+{
+  "allow_new_invocation": false,
+  "evidence": {
+    "binding": {
+      "agent": "codex-live-worker",
+      "executable": "C:\\Users\\aaron\\AppData\\Roaming\\npm\\node_modules\\@openai\\codex\\node_modules\\@openai\\codex-win32-x64\\vendor\\x86_64-pc-windows-msvc\\bin\\codex.exe",
+      "executable_sha256": "dd13bdb162a184fa04039488b234a8258ef9b76f84e926c505d5742b19249a6a",
+      "kind": "genie-phase2b2-live-worker-v1",
+      "model": "gpt-5.6-sol",
+      "output_schema_sha256": "5425d348ea2c3cf492a0bd8d8421598c7af4a2fb7017be40091180d917fb5afd",
+      "reasoning_effort": "low",
+      "sandbox": "read-only",
+      "semantic_request_sha256": "a715d2d8ea5ed2d3901933dc5667e02f01c5b1d4fcd1a3573d9cbaf1cf6502d4",
+      "service_tier": "default",
+      "token": {
+        "attempt": 1,
+        "call_id": "50ac904e70c0b309db117cb61697d5a5c215edc58b5114cf07f443c467045c2a",
+        "input_sha256": "fd764d47279231c372e7ed96815c0293f73e95037febe95c08eb0db76840dd05",
+        "run_id": "genie-phase2b2-live-run-20261013-a17c9e",
+        "slot_id": "7d623cb28e0bea65745a027f92b6f90bd8ef0fd4d983c2ec3238f42bbbcfef1f",
+        "task_id": "genie-phase2b2-live-task-20261013-f34d21"
+      },
+      "version": "codex-cli 0.162.1"
+    },
+    "failure_class": "RuntimeError",
+    "failure_reason": "APP_SERVER_EOF",
+    "failure_termination_attempted_once": true,
+    "logical_operation_id": "55e73a140f052d840d6fbe0cb1c1710e10c5189af8a9f597a5c58fc4b6fb6d12",
+    "process_entry": true,
+    "retry_count": 0,
+    "root_pid": 48008,
+    "semantic_release": false
+  },
+  "logical_operation_id": "55e73a140f052d840d6fbe0cb1c1710e10c5189af8a9f597a5c58fc4b6fb6d12",
+  "preserve": true,
+  "reason": "POST_ENTRY_UNCERTAINTY",
+  "status": "UNKNOWN"
+}

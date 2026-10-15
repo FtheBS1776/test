@@ -15,4 +15,3 @@ terminal with no retry, replacement, alternate launcher, refund, or reset. A
 candidate can be accepted only after two-path output agreement, zero observed
 tool activity, exact containment evidence, and fresh destination readback. No
 reviewer model, Phase 2C, main merge, promotion/freeze, spending, or EXP010.
-
