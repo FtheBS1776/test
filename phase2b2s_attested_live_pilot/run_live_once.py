@@ -129,4 +129,17 @@ def main(argv=None):
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    try:
+        raise SystemExit(main())
+    except BaseException as exc:
+        # Once LIVE_WORKER exists, a model/process effect has been attempted.
+        # Any later uncertainty is terminal and may never become a replay.
+        if ((TRIAL / "LIVE_WORKER.json").exists()
+                and not (TRIAL / "STOP.json").exists()):
+            write_once("STOP.json", {
+                "frontier": "PHASE_2B2_ATTESTED_POST_ENTRY_UNKNOWN_NONCLAIM",
+                "failure_class": type(exc).__name__,
+                "failure_reason": str(exc)[:200],
+                "preserve": True, "allow_new_invocation": False,
+                "retry_count": 0, "phase2c_entered": False})
+        raise
