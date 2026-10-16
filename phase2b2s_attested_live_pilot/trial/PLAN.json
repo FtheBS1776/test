@@ -1,0 +1,6 @@
+{
+  "goal": "Produce one bounded data-only attested Phase 2B2 worker result.",
+  "input_sha256": "fd8e8d42ba311de8e05759c08365808eee770dc0a2402511d22264ecede144da",
+  "max_attempts": 1,
+  "task_id": "genie-phase2b2-attested-task-20261016-c4e713"
+}

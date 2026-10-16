@@ -105,6 +105,15 @@ class AttestedWorkerTests(unittest.TestCase):
         self.assertTrue(result["preserve"])
         self.assertFalse(result["allow_new_invocation"])
 
+    def test_fresh_synthetic_plan_binds_exact_input(self):
+        trial = Path(__file__).resolve().parent / "trial"
+        plan = json.loads((trial / "PLAN.json").read_text(encoding="utf-8"))
+        self.assertEqual(plan["input_sha256"], hashlib.sha256(
+            (trial / "INPUT.md").read_bytes()).hexdigest())
+        self.assertEqual(plan["max_attempts"], 1)
+        self.assertFalse((trial / "queue.sqlite").exists())
+        self.assertFalse((trial / "operation.sqlite").exists())
+
 
 if __name__ == "__main__":
     unittest.main()
