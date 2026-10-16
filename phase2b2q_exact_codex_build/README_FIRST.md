@@ -13,5 +13,5 @@ public deployment, tunnel, or recurring task.
 The workflow is deliberately branch-scoped and one-shot.  It checks the exact
 upstream commit, applies the patch, formats and tests the changed execution
 path, builds `codex.exe` on a clean Windows runner, records its SHA-256 digest,
-and retains the artifact for one day.  Building the binary is not authorization
+and retains the artifact for seven days.  Building the binary is not authorization
 to run a model turn.

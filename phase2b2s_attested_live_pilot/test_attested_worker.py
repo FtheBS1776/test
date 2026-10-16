@@ -1,5 +1,6 @@
 import json
 import hashlib
+import ast
 from pathlib import Path
 import tempfile
 import unittest
@@ -113,6 +114,20 @@ class AttestedWorkerTests(unittest.TestCase):
         self.assertEqual(plan["max_attempts"], 1)
         self.assertFalse((trial / "queue.sqlite").exists())
         self.assertFalse((trial / "operation.sqlite").exists())
+
+    def test_worker_module_imports_no_genie_authority_surface(self):
+        tree = ast.parse(Path(subject.__file__).read_text(encoding="utf-8"))
+        imported = set()
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Import):
+                imported.update(alias.name for alias in node.names)
+            elif isinstance(node, ast.ImportFrom) and node.module:
+                imported.add(node.module)
+        for forbidden in ("shared_interfaces.run_control",
+                          "shared_interfaces.run_events",
+                          "shared_interfaces.status_tool",
+                          "session_driver", "run_queue"):
+            self.assertNotIn(forbidden, imported)
 
 
 if __name__ == "__main__":
