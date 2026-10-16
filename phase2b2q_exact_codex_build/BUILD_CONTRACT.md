@@ -8,7 +8,7 @@
 - Build profile: debug (bounded pilot only; no production or performance claim)
 - Capability policy: canonical JSON `{"allowed_tools":[]}`
 - Workflow permissions: repository contents read-only
-- Artifact retention: one day
+- Artifact retention: seven days
 - Model turns: zero
 
 The artifact must not be used unless the workflow succeeds, the downloaded

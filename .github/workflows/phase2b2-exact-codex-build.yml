@@ -67,4 +67,4 @@ jobs:
             upstream/codex-rs/target/debug/codex.exe
             upstream/codex-rs/target/debug/codex.exe.sha256
           if-no-files-found: error
-          retention-days: 1
+          retention-days: 7
