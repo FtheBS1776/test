@@ -112,8 +112,13 @@ class AttestedWorkerTests(unittest.TestCase):
         self.assertEqual(plan["input_sha256"], hashlib.sha256(
             (trial / "INPUT.md").read_bytes()).hexdigest())
         self.assertEqual(plan["max_attempts"], 1)
-        self.assertFalse((trial / "queue.sqlite").exists())
-        self.assertFalse((trial / "operation.sqlite").exists())
+        if (trial / "queue.sqlite").exists():
+            stop = json.loads((trial / "STOP.json").read_text(encoding="utf-8"))
+            self.assertEqual(stop["frontier"],
+                             "PHASE_2B2_ATTESTED_LIVE_COMPLETE_NONCLAIM")
+            self.assertTrue((trial / "operation.sqlite").exists())
+        else:
+            self.assertFalse((trial / "operation.sqlite").exists())
 
     def test_worker_module_imports_no_genie_authority_surface(self):
         tree = ast.parse(Path(subject.__file__).read_text(encoding="utf-8"))

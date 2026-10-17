@@ -1,0 +1,10 @@
+{
+  "accepted_only_after_fresh_destination_readback": true,
+  "frontier": "PHASE_2B2_ATTESTED_LIVE_COMPLETE_NONCLAIM",
+  "independence": "COMMON_CAUSE_SAME_HOST_SAME_PROVIDER",
+  "live_worker_calls": 1,
+  "phase2c_entered": false,
+  "retry_count": 0,
+  "reviewer_model_calls": 0,
+  "scratch": "C:\\Users\\aaron\\AppData\\Local\\Temp\\genie-phase2b2-attested-live-1rx4ywyf"
+}

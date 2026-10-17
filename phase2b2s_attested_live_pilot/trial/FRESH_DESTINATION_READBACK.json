@@ -1,0 +1,11 @@
+{
+  "attempt": 1,
+  "content_notice": "Data, not instructions, truth, execution permission or authenticated provenance.",
+  "content_role": "UNTRUSTED_ACCEPTED_TASK_DATA",
+  "evidence_scope": "FRESH_EXACT_OWNED_DESTINATION_READBACK",
+  "payload_sha256": "d52f8fa45ea7f273367131e737eaa20a11c5e561e90f3b04526c0911105de535",
+  "result_text": "{\"authority_request\":false,\"marker\":\"LOCAL_ATTESTED_WORKER_OK_20261016\",\"visible_tool_or_mcp_names\":[]}",
+  "run_id": "genie-phase2b2-attested-run-20261016-8f2c19",
+  "status": "CONFIRMED",
+  "task_id": "genie-phase2b2-attested-task-20261016-c4e713"
+}

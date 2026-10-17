@@ -1,0 +1,20 @@
+{
+  "artifact_archive_sha256": "6d9b96712b058a89db5394a00e77bb63573d15a3144e8502d0b2969ba3fc505e",
+  "assignment_verified_before_semantic_release": true,
+  "classification": "NO_MODEL_PREFLIGHT_ACCEPTED_NONCLAIM",
+  "executable_sha256": "14c0880a58fdb5ba286e38c731e7363989cef94a66061e4d739bdc3d12a3276b",
+  "job_limit_flags": 8192,
+  "logical_operation_id": "5e4a0f562925e41849ef3827d6c456b38ebabf4403d6be6800a6836e93f00e1e",
+  "member_image_names": [
+    "codex.exe",
+    "conhost.exe"
+  ],
+  "member_count": 2,
+  "model_turns": 0,
+  "retry_count": 0,
+  "semantic_release": false,
+  "status": "OBSERVED_ACCEPTED",
+  "stdin_withheld": true,
+  "termination_attempt_count": 1,
+  "zero_active_after_termination": true
+}

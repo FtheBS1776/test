@@ -1,0 +1,18 @@
+{
+  "action": "INVOKE_WORKER",
+  "request": {
+    "attempt": 1,
+    "feedback": null,
+    "goal": "Produce one bounded data-only attested Phase 2B2 worker result.",
+    "input_sha256": "fd8e8d42ba311de8e05759c08365808eee770dc0a2402511d22264ecede144da",
+    "task_id": "genie-phase2b2-attested-task-20261016-c4e713"
+  },
+  "token": {
+    "attempt": 1,
+    "call_id": "2374ac1454278328945d87a12d7a3e2779bc205d7fcb77e30c2877eb8e845266",
+    "input_sha256": "fd8e8d42ba311de8e05759c08365808eee770dc0a2402511d22264ecede144da",
+    "run_id": "genie-phase2b2-attested-run-20261016-8f2c19",
+    "slot_id": "f0f77c824ad19ca4588de50b808489dd6b2fec524b0ad3106b207db81a64b76b",
+    "task_id": "genie-phase2b2-attested-task-20261016-c4e713"
+  }
+}

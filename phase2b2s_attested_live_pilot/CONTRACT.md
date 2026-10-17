@@ -20,3 +20,11 @@ cross-checked against a separately read destination file, and task acceptance
 requires a later fresh Genie destination readback. All worker output remains
 untrusted data. Same-host/same-provider evidence remains common-cause and
 non-independent.
+
+## Sealed outcome
+
+The one authorized execution completed on 2026-10-16. The final capability
+snapshot reported zero tools and matched the bound executable, logical
+operation, model, sandbox, and policy digests. The result was accepted only
+after fresh destination readback. This outcome does not widen the contract or
+authorize Phase 2C.

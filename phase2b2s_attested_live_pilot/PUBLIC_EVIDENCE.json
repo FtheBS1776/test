@@ -1,0 +1,31 @@
+{
+  "accepted_only_after_fresh_destination_readback": true,
+  "artifact_archive_sha256": "6d9b96712b058a89db5394a00e77bb63573d15a3144e8502d0b2969ba3fc505e",
+  "assignment_verified_before_semantic_release": true,
+  "capability_snapshot": {
+    "executable_sha256": "14c0880a58fdb5ba286e38c731e7363989cef94a66061e4d739bdc3d12a3276b",
+    "logical_operation_id": "1c1d3ee6fe0d4469f4de32cc1f54867928799154f95ebc50dd34e97c9f5ff4e1",
+    "model": "gpt-5.6-sol",
+    "policy_sha256": "3f4f5cab877f5729ec36c4a29500aacdecba839adcbd36edd0cd9774a86e2c0b",
+    "sandbox": "read-only",
+    "tool_count": 0,
+    "tools": [],
+    "version": 1
+  },
+  "destination_payload_sha256": "d52f8fa45ea7f273367131e737eaa20a11c5e561e90f3b04526c0911105de535",
+  "fresh_destination_status": "CONFIRMED",
+  "independence": "COMMON_CAUSE_SAME_HOST_SAME_PROVIDER",
+  "live_worker_calls": 1,
+  "member_image_names": [
+    "codex.exe",
+    "conhost.exe"
+  ],
+  "model_turns": 1,
+  "phase2c_entered": false,
+  "retry_count": 0,
+  "reviewer_model_calls": 0,
+  "status": "PHASE_2B2_ATTESTED_LIVE_COMPLETE_NONCLAIM",
+  "termination_attempt_count": 1,
+  "tool_activity_count": 0,
+  "zero_active_after_exit_and_termination": true
+}

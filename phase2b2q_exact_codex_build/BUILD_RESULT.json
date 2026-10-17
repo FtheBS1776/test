@@ -1,0 +1,13 @@
+{
+  "artifact_archive_sha256": "6d9b96712b058a89db5394a00e77bb63573d15a3144e8502d0b2969ba3fc505e",
+  "artifact_expires_at": "2026-10-23T22:29:19Z",
+  "artifact_id": 12079475549,
+  "artifact_name": "codex-phase2b2-no-tools-win32-x64",
+  "conclusion": "success",
+  "executable_sha256": "14c0880a58fdb5ba286e38c731e7363989cef94a66061e4d739bdc3d12a3276b",
+  "head_sha": "72ce3ad36ae8a03e3954df591325ff6fd91f419d",
+  "model_turns": 0,
+  "run_id": 38972902845,
+  "upstream_commit": "5425d3e625daa58eea3ad1de27c087eb3b2ffbd3",
+  "upstream_tag": "rust-v0.163.0-alpha.11"
+}

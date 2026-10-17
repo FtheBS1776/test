@@ -1,0 +1,3 @@
+trial/RAW_STDOUT.bin -text
+trial/RAW_STDERR.bin -text
+trial/*.sqlite -text

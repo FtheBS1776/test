@@ -1,1 +1,6 @@
 trial/INPUT.md text eol=lf
+trial/LAST_MESSAGE.json -text
+trial/RAW_STDOUT.jsonl -text
+trial/RAW_STDERR.bin -text
+trial/*.sqlite -text
+trial/**/*.sqlite -text
