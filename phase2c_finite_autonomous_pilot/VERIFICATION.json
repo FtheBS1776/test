@@ -1,0 +1,48 @@
+{
+  "classification": "PHASE_2_COMPLETE_NONCLAIM",
+  "fresh_destination_statuses": [
+    "CONFIRMED",
+    "CONFIRMED"
+  ],
+  "independence": "COMMON_CAUSE_SAME_HOST_SAME_PROVIDER",
+  "json_stream_is_sole_authority": false,
+  "operations": [
+    {
+      "active_after_termination": 0,
+      "call_id": "60651496af1048dbf4bb61942f0e8b147025cd395bf3b0ba57e84640a597975c",
+      "ledger_state": "OBSERVED_ACCEPTED",
+      "logical_operation_id": "65028980f3c89c64bab3d0fd0bc9eed1810b9f443968a72f175261efbf1a3242",
+      "members": [
+        "codex.exe",
+        "conhost.exe"
+      ],
+      "task_id": "genie-phase2c-finite-task-1-20261016",
+      "tool_count": 0
+    },
+    {
+      "active_after_termination": 0,
+      "call_id": "401cb59f42b68bd5fc13ae477ae5b3b0d7b3f55266166e333751db996f74bc5d",
+      "ledger_state": "OBSERVED_ACCEPTED",
+      "logical_operation_id": "571eeb961ddb070fdb27d8d5321b6b00cf9f61f7c8b422427b3840990271399f",
+      "members": [
+        "codex.exe",
+        "conhost.exe"
+      ],
+      "task_id": "genie-phase2c-finite-task-2-20261016",
+      "tool_count": 0
+    }
+  ],
+  "progress_actions": [
+    "INVOKE_WORKER",
+    "REVIEW_CANDIDATE",
+    "TASK_COMPLETE",
+    "INVOKE_WORKER",
+    "REVIEW_CANDIDATE",
+    "TASK_COMPLETE",
+    "STOP"
+  ],
+  "retry_count": 0,
+  "reviewer_model_calls": 0,
+  "status": "PASS",
+  "worker_model_calls": 2
+}

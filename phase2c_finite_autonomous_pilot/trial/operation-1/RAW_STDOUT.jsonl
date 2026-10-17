@@ -1,0 +1,6 @@
+{"type":"thread.started","thread_id":"01a14775-ca3a-7a32-9149-f473a754489f"}
+{"type":"capability.snapshot","snapshot":{"version":1,"logical_operation_id":"65028980f3c89c64bab3d0fd0bc9eed1810b9f443968a72f175261efbf1a3242","executable_sha256":"14c0880a58fdb5ba286e38c731e7363989cef94a66061e4d739bdc3d12a3276b","model":"gpt-5.6-sol","sandbox":"read-only","policy_sha256":"3f4f5cab877f5729ec36c4a29500aacdecba839adcbd36edd0cd9774a86e2c0b","tool_count":0,"tools":[]}}
+{"type":"item.completed","item":{"id":"item_0","type":"error","message":"Code Mode is unavailable because code-mode host is disabled. Code mode will fail closed; enable `features.code_mode_host` and install `codex-code-mode-host`."}}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_1","type":"agent_message","text":"{\"authority_request\":false,\"marker\":\"LOCAL_ATTESTED_WORKER_OK_20261016\",\"visible_tool_or_mcp_names\":[]}"}}
+{"type":"turn.completed","usage":{"input_tokens":4921,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":38,"reasoning_output_tokens":0}}

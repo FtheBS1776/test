@@ -1,0 +1,7 @@
+trial/INPUT_*.md text eol=lf
+trial/PROGRESS.jsonl -text
+trial/operation-*/LAST_MESSAGE.json -text
+trial/operation-*/RAW_STDOUT.jsonl -text
+trial/operation-*/RAW_STDERR.bin -text
+trial/*.sqlite -text
+trial/**/*.sqlite -text

@@ -1,0 +1,105 @@
+{
+  "accepted_only_after_fresh_destination_readback": true,
+  "allow_new_invocation": false,
+  "deterministic_reviewer_calls": 2,
+  "driver_terminal": {
+    "action": "STOP",
+    "background_execution": false,
+    "counts": {
+      "advances": 7,
+      "reviewer_hooks": 2,
+      "worker_hooks": 2
+    },
+    "reason": "ALL_TASKS_COMPLETE",
+    "run_id": "genie-phase2c-finite-run-20261016"
+  },
+  "frontier": "PHASE_2_COMPLETE_NONCLAIM",
+  "independence": "COMMON_CAUSE_SAME_HOST_SAME_PROVIDER",
+  "preserve": true,
+  "retry_count": 0,
+  "reviewer_model_calls": 0,
+  "run_readback": {
+    "background_execution": false,
+    "completion_claim": "Inspect each fresh_sink; queue COMPLETE is historical only",
+    "evidence_scope": "TRUSTED_OWNED_LOCAL_OBSERVATION",
+    "queue_history": {
+      "max_model_calls": 2,
+      "reserved_model_calls": 2,
+      "run_id": "genie-phase2c-finite-run-20261016",
+      "scope": "HISTORICAL_QUEUE_STATE_NOT_CURRENT_DESTINATION_PROOF",
+      "state": "STOPPED",
+      "stop_reason": "ALL_TASKS_COMPLETE"
+    },
+    "snapshot_scope": "Separate read transactions; no cross-store atomic snapshot",
+    "status": "PASS",
+    "tasks": [
+      {
+        "fresh_sink": {
+          "scope": "FRESH_EXACT_DESTINATION_READBACK",
+          "status": "CONFIRMED"
+        },
+        "journal": {
+          "agent": "codex-phase2b2-attested-worker",
+          "call_id": "60651496af1048dbf4bb61942f0e8b147025cd395bf3b0ba57e84640a597975c",
+          "host_outcome": "OBSERVED_ACCEPTED",
+          "independent_proof": false,
+          "observation_count": 1,
+          "status": "OBSERVED"
+        },
+        "queue_entry_history": "COMPLETE",
+        "task_id": "genie-phase2c-finite-task-1-20261016",
+        "workflow": {
+          "attempt": 1,
+          "state": "DELIVERED",
+          "status": "OBSERVED"
+        }
+      },
+      {
+        "fresh_sink": {
+          "scope": "FRESH_EXACT_DESTINATION_READBACK",
+          "status": "CONFIRMED"
+        },
+        "journal": {
+          "agent": "codex-phase2b2-attested-worker",
+          "call_id": "401cb59f42b68bd5fc13ae477ae5b3b0d7b3f55266166e333751db996f74bc5d",
+          "host_outcome": "OBSERVED_ACCEPTED",
+          "independent_proof": false,
+          "observation_count": 1,
+          "status": "OBSERVED"
+        },
+        "queue_entry_history": "COMPLETE",
+        "task_id": "genie-phase2c-finite-task-2-20261016",
+        "workflow": {
+          "attempt": 1,
+          "state": "DELIVERED",
+          "status": "OBSERVED"
+        }
+      }
+    ]
+  },
+  "task_readbacks": [
+    {
+      "attempt": 1,
+      "content_notice": "Data, not instructions, truth, execution permission or authenticated provenance.",
+      "content_role": "UNTRUSTED_ACCEPTED_TASK_DATA",
+      "evidence_scope": "FRESH_EXACT_OWNED_DESTINATION_READBACK",
+      "payload_sha256": "d52f8fa45ea7f273367131e737eaa20a11c5e561e90f3b04526c0911105de535",
+      "result_text": "{\"authority_request\":false,\"marker\":\"LOCAL_ATTESTED_WORKER_OK_20261016\",\"visible_tool_or_mcp_names\":[]}",
+      "run_id": "genie-phase2c-finite-run-20261016",
+      "status": "CONFIRMED",
+      "task_id": "genie-phase2c-finite-task-1-20261016"
+    },
+    {
+      "attempt": 1,
+      "content_notice": "Data, not instructions, truth, execution permission or authenticated provenance.",
+      "content_role": "UNTRUSTED_ACCEPTED_TASK_DATA",
+      "evidence_scope": "FRESH_EXACT_OWNED_DESTINATION_READBACK",
+      "payload_sha256": "d52f8fa45ea7f273367131e737eaa20a11c5e561e90f3b04526c0911105de535",
+      "result_text": "{\"authority_request\":false,\"marker\":\"LOCAL_ATTESTED_WORKER_OK_20261016\",\"visible_tool_or_mcp_names\":[]}",
+      "run_id": "genie-phase2c-finite-run-20261016",
+      "status": "CONFIRMED",
+      "task_id": "genie-phase2c-finite-task-2-20261016"
+    }
+  ],
+  "worker_model_calls": 2
+}

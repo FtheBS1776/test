@@ -1,0 +1,10 @@
+{
+  "classification": "PHASE2C_NO_MODEL_PREFLIGHT_ACCEPTED_NONCLAIM",
+  "codex_executable": "C:\\Users\\aaron\\Documents\\Codex\\g2a\\.phase2b2-artifact-12079475549\\expanded\\codex.exe",
+  "codex_executable_sha256": "14c0880a58fdb5ba286e38c731e7363989cef94a66061e4d739bdc3d12a3276b",
+  "driver_sha256": "89b0fd1ef48d5460dada5cc59b25072a10ec9b5c7049af25eabbb2d4464bf9d9",
+  "model_turns": 0,
+  "reviewer_fixture_calls": 2,
+  "status": "OBSERVED_ACCEPTED",
+  "worker_fixture_calls": 2
+}

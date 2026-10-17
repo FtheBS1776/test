@@ -1,0 +1,92 @@
+{
+  "agent": "codex-phase2b2-attested-worker",
+  "allow_new_invocation": false,
+  "evidence": {
+    "accounting_after_bounded_exit": {
+      "active_processes": 0,
+      "terminated_processes": 0,
+      "total_processes": 2
+    },
+    "accounting_after_termination": {
+      "active_processes": 0,
+      "terminated_processes": 0,
+      "total_processes": 2
+    },
+    "allow_new_invocation": false,
+    "artifact_checksum_readback_verified": true,
+    "assignment_verified_before_semantic_release": true,
+    "binding": {
+      "agent": "codex-phase2b2-attested-worker",
+      "executable": "C:\\Users\\aaron\\Documents\\Codex\\g2a\\.phase2b2-artifact-12079475549\\expanded\\codex.exe",
+      "executable_sha256": "14c0880a58fdb5ba286e38c731e7363989cef94a66061e4d739bdc3d12a3276b",
+      "kind": "genie-phase2b2-attested-live-worker-v1",
+      "model": "gpt-5.6-sol",
+      "output_schema_sha256": "b873db17c6ec450549f8b862ea4ec95be204c3d00a0c575ed97816ed6f2437d2",
+      "policy_sha256": "3f4f5cab877f5729ec36c4a29500aacdecba839adcbd36edd0cd9774a86e2c0b",
+      "reasoning_effort": "low",
+      "sandbox": "read-only",
+      "semantic_request_sha256": "abf71599551b6cff0be161457ac539db64782ad06b40c3c29fc0b8ab9bf1b1e2",
+      "service_tier": "default",
+      "source_commit": "5425d3e625daa58eea3ad1de27c087eb3b2ffbd3",
+      "source_tag": "rust-v0.163.0-alpha.11",
+      "token": {
+        "attempt": 1,
+        "call_id": "401cb59f42b68bd5fc13ae477ae5b3b0d7b3f55266166e333751db996f74bc5d",
+        "input_sha256": "79a5eebd9f7832b5c9f7f66d146e0fd1cdef333ecdf1dafa2e19ef05e36bf1e8",
+        "run_id": "genie-phase2c-finite-run-20261016",
+        "slot_id": "158e161e0f0a1f2385c988e420b13fbb6e8212d24a1d6bd65b21d2f4cb18ad20",
+        "task_id": "genie-phase2c-finite-task-2-20261016"
+      }
+    },
+    "capability_attestation": {
+      "advisory_count": 1,
+      "snapshot": {
+        "executable_sha256": "14c0880a58fdb5ba286e38c731e7363989cef94a66061e4d739bdc3d12a3276b",
+        "logical_operation_id": "571eeb961ddb070fdb27d8d5321b6b00cf9f61f7c8b422427b3840990271399f",
+        "model": "gpt-5.6-sol",
+        "policy_sha256": "3f4f5cab877f5729ec36c4a29500aacdecba839adcbd36edd0cd9774a86e2c0b",
+        "sandbox": "read-only",
+        "tool_count": 0,
+        "tools": [],
+        "version": 1
+      },
+      "tool_item_types": []
+    },
+    "last_message_sha256": "d52f8fa45ea7f273367131e737eaa20a11c5e561e90f3b04526c0911105de535",
+    "logical_operation_id": "571eeb961ddb070fdb27d8d5321b6b00cf9f61f7c8b422427b3840990271399f",
+    "members": [
+      {
+        "image": "C:\\Users\\aaron\\Documents\\Codex\\g2a\\.phase2b2-artifact-12079475549\\expanded\\codex.exe",
+        "image_sha256": "14c0880a58fdb5ba286e38c731e7363989cef94a66061e4d739bdc3d12a3276b",
+        "observed_while_active": true,
+        "pid": 47200
+      },
+      {
+        "image": "C:\\Windows\\System32\\conhost.exe",
+        "image_sha256": "2266b396ef92534a2a2844438df043d4069a2ec47d4e464f55e8c1cd47124a98",
+        "observed_while_active": true,
+        "pid": 54960
+      }
+    ],
+    "preserve": true,
+    "process_entry": true,
+    "raw_stream_readback_verified": true,
+    "retry_count": 0,
+    "root_pid": 47200,
+    "semantic_release": true,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "4c5dffe2e99e2bafdbf7d8258fbfc98321c19fe9c7418bbbdc014d61248cec80",
+    "termination_attempt_count": 1,
+    "tool_activity_count": 0,
+    "untrusted_result": {
+      "authority_request": false,
+      "marker": "LOCAL_ATTESTED_WORKER_OK_20261016",
+      "visible_tool_or_mcp_names": []
+    },
+    "untrusted_result_sha256": "d52f8fa45ea7f273367131e737eaa20a11c5e561e90f3b04526c0911105de535"
+  },
+  "logical_operation_id": "571eeb961ddb070fdb27d8d5321b6b00cf9f61f7c8b422427b3840990271399f",
+  "preserve": true,
+  "result_text": "{\"authority_request\":false,\"marker\":\"LOCAL_ATTESTED_WORKER_OK_20261016\",\"visible_tool_or_mcp_names\":[]}",
+  "status": "OBSERVED_ACCEPTED"
+}

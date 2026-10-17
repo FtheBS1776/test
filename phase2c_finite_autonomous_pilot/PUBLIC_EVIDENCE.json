@@ -1,0 +1,28 @@
+{
+  "classification": "PHASE_2_COMPLETE_NONCLAIM",
+  "codex_executable_sha256": "14c0880a58fdb5ba286e38c731e7363989cef94a66061e4d739bdc3d12a3276b",
+  "driver_terminal": {
+    "action": "STOP",
+    "advances": 7,
+    "reason": "ALL_TASKS_COMPLETE"
+  },
+  "fresh_destination_statuses": [
+    "CONFIRMED",
+    "CONFIRMED"
+  ],
+  "independence": "COMMON_CAUSE_SAME_HOST_SAME_PROVIDER",
+  "logical_operation_ids": [
+    "65028980f3c89c64bab3d0fd0bc9eed1810b9f443968a72f175261efbf1a3242",
+    "571eeb961ddb070fdb27d8d5321b6b00cf9f61f7c8b422427b3840990271399f"
+  ],
+  "model": "gpt-5.6-sol",
+  "no_model_preflight": "OBSERVED_ACCEPTED",
+  "reviewer_model_calls": 0,
+  "retry_count": 0,
+  "sandbox": "read-only",
+  "tool_counts": [
+    0,
+    0
+  ],
+  "worker_model_calls": 2
+}
