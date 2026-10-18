@@ -14,6 +14,12 @@ This package is a local Windows stdio process, not a remotely hosted connector. 
 
 The next compatibility observation must identify the actual Windows host/client version, exact reviewed package/config bytes, local execution/connection and the advertised two read-only tools. Preserve missing/invalid canonical-state rejection; do not seed a fixture, provision a replacement or use a root override to make a connection appear successful. This chat has no native user-computer access and exposes no Genie MCP tool. Hosted VM/SDK passes do not supply those missing observations. No installation, connection, binary publication, account change or remote hosting was performed here. This read-only plugin lane is separate from R13 model dispatch through the existing active host.
 
+## Reported actual-host inventory — 2026-10-18
+
+A user-pasted read-only inventory reports Windows 11 Home 23H2 (NT 10.0.22631.6199), ChatGPT Desktop 26.1013.40934/build20770, OpenAI.Codex package 26.1013.4894.0, enabled stdio registration and exactly the two Genie tool names visible. Its executable SHA256 `c45a34d56bb161e195b8b49fa11c5b0cac57e340974d8c7fe02133c20c2828f5` exactly matches the preserved v0.1.1 delivery in `HOST_COMPAT_VERIFICATION_20261011.md`. Case normalization changes digest notation only.
+
+This narrows reported host identity/tool visibility for the historical fixture-backed package. It does not validate the repaired v0.2.0 live-state candidate on that machine. No Genie tool was invoked in the reported inventory; current data, package/config hashes and effective runtime cwd remain unverified. Keep the installed binary/cache unchanged; do not relabel historical fixture results as live state. The normalized inventory and exact comparison are in `repair_validation/HOST_INVENTORY_COMPARISON_20261018.json`. User-specific profile paths are redacted in that record; the chat retains the original report. This is trusted-host/user-reported evidence, not signed or independent attestation.
+
 ## Historical fixture-backed package record (superseded)
 
 The following record describes its original source/binary, not the current live-state candidate.

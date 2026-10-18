@@ -733,3 +733,28 @@ The original quickstart no-model fixture block is byte-identical and not rerun.
 No new subsystem, alternative roadmap, authority mechanism, paid capacity,
 installation/connection, binary publication, master write, scientific execution,
 main merge, deployment, promotion or governance freeze.
+
+
+2026-10-18 — reported actual-host inventory and exact historical comparison
+Source: user-pasted read-only inventory from the selected remote laptop session.
+No host operation was performed by this cloud session. Reported Windows 11 Home
+23H2/NT10.0.22631.6199; Desktop26.1013.40934/build20770; OpenAI.Codex package
+26.1013.4894.0; production/up-to-date assertions remain user-reported facts.
+Normalized selected report and limitations captured in
+repair_validation/HOST_INVENTORY_COMPARISON_20261018.json, profile path redacted.
+Reported EXE SHA256 (case normalized) equals preserved v0.1.1 executable
+c45a34d56bb161e195b8b49fa11c5b0cac57e340974d8c7fe02133c20c2828f5
+in HOST_COMPAT_VERIFICATION_20261011.md, source a98d1178, historical ZIP b3945f3b.
+Both exact tool names reportedly visible, no tool invoked. This narrows host
+registration visibility for the historical fixture-backed package only; it is
+not an execution receipt, config/package match, live-data confirmation, signed
+host attestation or current v0.2.0 package compatibility pass. Effective runtime
+cwd remains UNKNOWN. Existing legacy/canonical state not inspected here.
+No old fixture/tool/pilot rerun is necessary to establish this hash comparison.
+Current runtime/pins/build/config and all protected historical files unchanged.
+Next safe read-only preparation: compare the existing four package manifest
+hashes and actual registration fields, inspect only existence/type of bounded
+legacy/canonical state locations, preserve all old bytes. Do not launch the
+fixture-backed binary or overwrite/import state to imitate a current live bind.
+Current candidate delivery/registration/installation is not established by this
+report and remains a separate action from this read-only inventory.

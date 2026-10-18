@@ -1,0 +1,58 @@
+{
+  "classification": "USER_REPORTED_HOST_INVENTORY_NOT_INDEPENDENT_ATTESTATION",
+  "reported_date_local": "2026-10-18",
+  "reported_effect_scope": {
+    "no_launch": true,
+    "no_modification": true,
+    "no_install": true,
+    "no_credential_or_environment_value_display": true,
+    "no_genie_tool_call": true
+  },
+  "versions": {
+    "windows_reported": "Windows 11 Home 23H2",
+    "nt_reported": "10.0.22631.6199",
+    "legacy_registry_product_name_reported": "Windows 10 Home",
+    "desktop_reported": "26.1013.40934",
+    "desktop_build_reported": "20770",
+    "channel_reported": "production",
+    "package_identity_reported": "OpenAI.Codex",
+    "package_version_reported": "26.1013.4894.0",
+    "updater_reported": "up to date"
+  },
+  "installed_genie": {
+    "configured_enabled_reported": true,
+    "metadata_version_reported": "0.1.1",
+    "transport_reported": "stdio",
+    "command_redacted_user_profile": "<user-profile>\\.codex\\plugins\\genie-readonly\\bin\\genie-mcp.exe",
+    "args_reported": [],
+    "manifest_cwd_literal_reported": "${PLUGIN_ROOT}",
+    "effective_runtime_cwd": "UNKNOWN",
+    "executable_exists_reported": true,
+    "sha256_reported": "C45A34D56BB161E195B8B49FA11C5B0CAC57E340974D8C7FE02133C20C2828F5",
+    "sha256_normalized": "c45a34d56bb161e195b8b49fa11c5b0cac57e340974d8c7fe02133c20c2828f5"
+  },
+  "visible_tools_reported": [
+    "mcp__genie_readonly__get_run_status",
+    "mcp__genie_readonly__get_task_result"
+  ],
+  "comparison": {
+    "executable_match": true,
+    "expected_executable_sha256": "c45a34d56bb161e195b8b49fa11c5b0cac57e340974d8c7fe02133c20c2828f5",
+    "historical_metadata_version": "0.1.1",
+    "historical_source_commit": "a98d11782443a1084518a910d1b4196c07974ea9",
+    "historical_zip_sha256": "b3945f3b107d178ac99634b12666631191c80359f8456fde2f0a076c83251bbb",
+    "reference_path": "desktop_plugin/HOST_COMPAT_VERIFICATION_20261011.md",
+    "reference_sha256": "1fc1f70539fdbbda76d6424ade3446f664a6cde2313b54ea1f127432430d71a0",
+    "result": "REPORTED_EXE_MATCHES_HISTORICAL_FIXTURE_PACKAGE_NOT_CURRENT_LIVE_STATE_CANDIDATE"
+  },
+  "limits": [
+    "Source is the user-pasted host inventory; this session did not measure the laptop.",
+    "Executable comparison is exact after hexadecimal case normalization; package/config files have not been independently matched.",
+    "Visible tool names are reported host visibility, not execution, fresh data, or authenticated currentness.",
+    "No current v0.2.0 live-state package installation or invocation established.",
+    "No historical fixture readout is evidence of current live Genie state.",
+    "Effective working directory and existing legacy/canonical state remain unknown.",
+    "No authority promotion, merge, deployment, spending, scientific execution or master-roadmap write."
+  ],
+  "device_identity_scope": "Existing user-selected connected laptop; device alias omitted from public repository record."
+}
