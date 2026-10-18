@@ -1,5 +1,61 @@
 # Genie: bounded reasoning and work orchestration
 
+## Current isolated recovery candidate — 2026-10-18 UTC
+
+This section is the current **source-candidate** view under the one master roadmap. It supersedes older next-action wording below, not historical evidence. It does not mutate the canonical master roadmap, grant production authority, or claim that every archived script is supported by this candidate.
+
+Base: `ad508c63024087d0d38f489f6b42ee7c5f9af662`, tree `2b1bad31e09f6c3bd98e1aa22e85640fec547b50`. The selected standalone owner/bridge, Windows binder and provisioner sources are reused from `fa4e291cfd1aa7147f39f359008f8d74a2f69798`; the divergent branch was not merged. Source imports, policy validation, material binding, stop behavior and transitive source pins are reconciled in this candidate. Its exact changed bytes and test logs travel with the recovery source package.
+
+### Current capability and owner correspondence
+
+| Scope | Maintained owner / supported evidence | Disposition and remaining gap |
+|---|---|---|
+| R01 status/frontiers | This current section, existing master process | Last accessible master snapshot is v11; intended Oct11 additions do not prove an uncertain save. No master write or save retry. Phase2C and separate standalone source history remain NONCLAIM. |
+| R02 ownership/configuration | Existing queue, shared driver, shared MCP consumer, standalone owner | Current quote policy and source materials are explicit; candidate/archived code is historical evidence, not an alternate maintained route. Unknown outside consumers remain a coverage gap. |
+| R03 review compatibility | PilotHooks + active events/driver/bridge | Local candidate tests exercise the actual producer. Bound invalid schema is REPAIR; token/hash/unknown-decision failures remain UNKNOWN. Valid ACCEPT and bounded REPAIR retained. Fresh independent review pending. |
+| R04 containment claim | Phase2C CONTRACT / attested adapter | Corrected to CREATE_NO_WINDOW, then verified Job assignment before semantic input. No pre-assignment suspension or hostile-worker assurance claim. |
+| R05 nonmutating inspection | Phase2C verify_sealed.py | Default inspection returns data without evidence writes. Explicit reports require a new external path; copied input manifests remain unchanged. Original verifier/result history preserved. |
+| R06 resource lifetime | Existing driver tests | Two nonclosing SQLite sites repaired; duplicate imported test execution removed. Linux tests pass; exact six historical Windows failures and native revalidation remain unresolved. |
+| R07 cost admission | run_queue.run_policy, one existing queue database | Default denies unknown/unapproved cost. Immutable provisioned role quotes, modes and limits govern same-queue durable action reservations. Author/repair/reviewer hooks admit before entry. Public unbounded Codex adapters deny before process entry. Actual paid/provider-bounded operation remains unavailable. |
+| R08 MCP overlap | shared_interfaces/mcp_consumer.py, existing server route | Combine strict input types and argument bound with retained correlation, source pins and untrusted labels. Preserve structured-only consumer semantics expected by the server; alternate source/history retained. No universal superiority claim. |
+| R09 package identity | Exact source candidate / historical host report | Historical b3945f3b107d178ac99634b12666631191c80359f8456fde2f0a076c83251bbb package has only its reported Windows Codex CLI 0.162.1 read-only route evidence. It does not contain these repairs. No new binary build, installation, SDK/server or user-machine compatibility claim. |
+| R10 supported composition | Reused standalone bridge -> same driver | Injected-state tests bind goal/materials, preserve identity, stop and exact saved-result readback. Stop blocks future dispatch, not an already entered hook. Native Windows namespace/publication remains untested here. |
+| R11 premise/revision meaning | Existing evidence/transition contracts; task contract below | Input/output text is data. Premise statuses, support and dependent revisions must be explicit in useful task review. General runtime premise tracking is not established by this repair. |
+| R12 historical lessons | Actual checks named below | Typed identity, uncertainty, common cause, historical restoration limits and separation of observation from authority are applied to current decisions. No science HOLD is inferred away. |
+| R13 useful whole-system task | Existing useful-task milestone | This recovery produces usable source/evidence analysis, but deterministic hook replay is not an autonomous LLM research demonstration. Park that demonstration until an actual permitted cost-bounded model/host path is available. |
+| R14 actionable continuation | This section + exact diff/test record | Use current reasons and owners, then historical records as needed. No new dashboard, status authority or persistent enforcement service. |
+| R15 leanness/performance | Existing tests and owners | One driver, one cost owner, one maintained consumer. Removed 20 duplicate test executions while retaining 23 distinct driver/protocol methods. No measured end-to-end speedup or invoice saving is claimed. |
+
+### Selected composition and effective controls
+
+- Supported checked environment: Linux, Python 3.12.14, local standard-library code, temporary owned SQLite stores and deterministic no-model hooks. Native Windows binder/provisioner source is retained; Linux injection is not Windows validation.
+- `drive_run(..., costs=...)` and standalone `drive(..., costs=..., materials=...)` are trusted local host APIs. Unknown cost fails closed before a hook. Zero cost must match an explicitly provisioned quote; included capacity is not assumed free.
+- Fresh queue policies may include `cost_policy={mode, limit_micro_usd, authorization_ref, quotes}`. Modes are `DISABLE_ALL` (default), `ENABLE_LIMITED`, `ENABLE_ALL`. Quotes map role to exact `{max_micro_usd, quote_ref}`. Monetary values are integer micro-USD. Limited/all configurations in tests are simulations, not spending authorization. No actual paid configuration is installed.
+- Monetary records extend the existing queue transaction owner in `cost_actions`; they are not another service/database. Replay never grants a second entry; uncertainty remains reserved. There is no reset/refund/migration API. Old queues without this table are preserved and denied dispatch, while read-only inspection remains available.
+- Quote provenance and bound correctness are trusted-host preconditions, not authenticated provider evidence. Arbitrary callables, malicious host bypass, external historical scripts, restored whole stores and provider invoices are not made safe by a string quote reference. New tool/service/runner integrations must use this same admission owner before being supported. No paid fallback is installed.
+- Current public Codex adapters lack an enforceable total-exposure contract and return `LIVE_COST_BOUND_UNAVAILABLE` before process/ledger entry. Their former post-entry public-route test is replaced by a pre-entry-denial test; old code/test history and Windows evidence remain in Git.
+- Standalone materials are a detached task-ID/text mapping covering the selected queue. UTF-8 bytes must match the original plan input hash (maximum 1 MiB per task); both worker and reviewer receive the same `UNTRUSTED_TASK_INPUT`. No model-supplied path selects a source file.
+- Read-only plugin status/result projection retains two tools. The MCP SDK is not installed in this runtime; no SDK install, server launch or updated binary-host test was performed.
+
+### Decision-specific lessons and remaining holds
+
+Exact typed identity and same-ID aliasing lessons are exercised by R03 token/hash checks and R07 quote/replay binding. UNKNOWN preserves original call/reservation identities; lost review acknowledgement does not roll back a committed REPAIR. Restored copies may be readable, but do not establish live currentness or rollback resistance. Same-thread author/reviewer/controller roles remain common-cause; changed model labels are not independence.
+
+The direct L7 v5.64 frozen successor record and post-freeze audit support artifact-specific FROZEN status for candidate `ed7e5b610463b70fe9b3526d5bb065e4c65b7448b5dcec50e699d90b90473168`. The newer Brains14 summary says PREFREEZE; that contradiction remains visible, with the exact artifact record controlling that artifact. No new L7 or Genie freeze is made here.
+
+Pass186 remains the inherited baseline; later integration stays NONCLAIM. Independent trust/currentness, whole-store rollback, physical power loss, hostile-worker isolation, provider identity/custody and EXP010/LMR science HOLDs remain scoped and unresolved.
+
+### Useful reasoning obligations and next eligible work
+
+A supplied-document deliverable must separate supported, proposed, rejected and unresolved premises; identify source/claim relations and common ancestry; consider a competing interpretation; and name which dependent conclusions a revision affects. These are review obligations, not a new ontology or an automatic claim-promotion mechanism. An accepted report remains `UNTRUSTED_ACCEPTED_TASK_DATA`.
+
+Current decisive results are in `REPAIR_TEST_RESULTS.txt`. Older manifests/test logs remain historical, tied to their original bytes; they are not expected to match repaired source. The R03 v2 review record is retained as a predecessor record, not a second current status authority.
+
+Eligible follow-up: fresh independent review of the exact combined candidate; Windows validation of affected cleanup/native paths; then a reviewed, actually bounded permitted model adapter and one useful research/evidence task. No live-pilot rerun, paid call, new provider/runner capacity, main merge, deployment, production promotion, freeze, canonical master save or scientific execution is authorized by this source package. Missing external capabilities are parked; unrelated safe repair work need not wait.
+
+---
+
+
 Genie is a model-agnostic prototype for governed planning, criticism, candidate production, repair and adjudication. It supports useful bounded work with one configured LLM and an active trusted ChatGPT Work controller. Author, reviewer and root/controller roles can share that model, host and ancestry; separate role names do not establish evidential independence or provider diversity.
 
 Start with the [operator quickstart](worker_substitution/QUICKSTART.md) for exact CLI syntax and callback fields, then the [active-host scope](active_runner/README_FIRST.md). The quickstart's deterministic **NO MODEL CALL** fixture simulates callbacks; it is separate from actual host worker calls. Its historical recipe creates files and is not a prerequisite to repeat before using the tools.

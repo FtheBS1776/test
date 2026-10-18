@@ -54,55 +54,17 @@ class AttestedWorkerTests(unittest.TestCase):
                           "token", "callback"):
             self.assertNotIn(forbidden, lowered)
 
-    def test_post_entry_assignment_failure_is_unknown_without_retry(self):
-        class BrokenJob:
-            def __init__(self):
-                self.terminated = 0
-            def limit_flags(self):
-                return subject.JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE
-            def assign_process(self, _process):
-                raise OSError("assignment failed")
-            def terminate(self, _code):
-                self.terminated += 1
-            def wait_for_active(self, _expected, _timeout):
-                return True
-            def accounting(self):
-                return {"total_processes": 1, "active_processes": 0}
-            def close(self):
-                pass
-
-        class Stream:
-            def close(self):
-                pass
-
-        class Process:
-            pid = 123
-            _handle = 456
-            stdin = stdout = stderr = Stream()
-
+    def test_unknown_live_cost_stops_before_process_entry_or_ledger_creation(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
-            artifact, scratch, evidence = (root / "artifact",
-                                            root / "scratch",
-                                            root / "evidence")
-            artifact.mkdir()
-            scratch.mkdir()
-            evidence.mkdir()
-            raw = b"binary"
-            (artifact / "codex.exe").write_bytes(raw)
-            digest = hashlib.sha256(raw).hexdigest()
-            (artifact / "codex.exe.sha256").write_text(
-                f"{digest}  codex.exe\n", encoding="ascii")
-            with mock.patch.object(subject, "WindowsJob", BrokenJob), \
-                    mock.patch.object(subject.subprocess, "Popen",
-                                      return_value=Process()) as popen:
-                result = subject.run_once(
-                    token=TOKEN, artifact_directory=artifact,
-                    codex_home=root, working_directory=scratch,
-                    ledger_path=evidence / "operation.sqlite",
-                    evidence_directory=evidence)
-        self.assertEqual(popen.call_count, 1)
-        self.assertEqual(result["status"], "UNKNOWN")
+            with mock.patch.object(subject.subprocess, "Popen") as popen:
+                result = subject.run_once(token=TOKEN, artifact_directory=root,
+                    codex_home=root, working_directory=root,
+                    ledger_path=root / "operation.sqlite", evidence_directory=root)
+            popen.assert_not_called()
+            self.assertEqual(list(root.iterdir()), [])
+        self.assertEqual(result["status"], "REJECT")
+        self.assertEqual(result["reason"], "LIVE_COST_BOUND_UNAVAILABLE")
         self.assertTrue(result["preserve"])
         self.assertFalse(result["allow_new_invocation"])
 
@@ -131,7 +93,7 @@ class AttestedWorkerTests(unittest.TestCase):
         for forbidden in ("shared_interfaces.run_control",
                           "shared_interfaces.run_events",
                           "shared_interfaces.status_tool",
-                          "session_driver", "run_queue"):
+                          "session_driver"):
             self.assertNotIn(forbidden, imported)
 
 

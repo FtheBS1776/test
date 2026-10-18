@@ -10,7 +10,7 @@ from pathlib import Path
 import secrets
 import types
 
-ADAPTER_SHA256 = "9627bc0967e4b6115f405671be8a2c60498101e276d96062d55572537f2769d2"
+ADAPTER_SHA256 = "36dbf3e9a9317e974c8f21a69555835c947f1fa73a1f2ff32e733f70ca478413"
 NAMES = ("get_run_status", "get_task_result")
 TITLES = {
     "get_run_status": "Get Genie run status",
@@ -42,7 +42,9 @@ def _load_adapter():
         raise ValueError("ADAPTER_SOURCE_BINDING") from None
 
 
-def _snapshot(value):
+def _snapshot(value, control):
+    if not control._json_tree(value, set()):
+        raise ValueError("strict JSON required")
     raw = json.dumps(value, sort_keys=True, separators=(",", ":"),
                      ensure_ascii=False, allow_nan=False)
     raw.encode("utf-8", errors="strict")
@@ -62,11 +64,11 @@ def _constant(_value):
     raise ValueError("nonfinite number")
 
 
-def _decode_object(text):
+def _decode_object(text, control):
     value = json.loads(text, object_pairs_hook=_pairs, parse_constant=_constant)
     if type(value) is not dict:
         raise ValueError("dictionary required")
-    return _snapshot(value)
+    return _snapshot(value, control)
 
 
 def _unknown():
@@ -82,6 +84,8 @@ class GenieMcpReadonlyConsumer:
         try:
             adapter = _load_adapter()
             self._adapter = adapter.GenieFunctionAdapter(runs)
+            self._control = self._adapter._control
+            self._argument_limit = adapter.ARGUMENT_LIMIT
         except Exception:
             raise ValueError("ADAPTER_SOURCE_BINDING_OR_REGISTRY") from None
 
@@ -108,7 +112,7 @@ class GenieMcpReadonlyConsumer:
                     "inputSchema": item["parameters"],
                     "annotations": dict(ANNOTATIONS),
                 })
-            return _snapshot(projected)
+            return _snapshot(projected, self._control)
         except Exception:
             raise ValueError("INVALID_MCP_TOOL_METADATA") from None
 
@@ -117,10 +121,11 @@ class GenieMcpReadonlyConsumer:
         if type(name) is not str or name not in NAMES or type(arguments) is not dict:
             return {"structuredContent": {"status": "REJECT", "reason": "INVALID_TOOL_CALL"}}
         try:
-            detached = _snapshot(arguments)
+            detached = _snapshot(arguments, self._control)
             encoded = json.dumps(detached, sort_keys=True, separators=(",", ":"),
                                  ensure_ascii=False, allow_nan=False)
-            encoded.encode("utf-8", errors="strict")
+            if len(encoded.encode("utf-8", errors="strict")) > self._argument_limit:
+                raise ValueError("argument bound")
         except Exception:
             return {"structuredContent": {"status": "REJECT", "reason": "INVALID_ARGUMENTS"}}
         try:
@@ -137,7 +142,7 @@ class GenieMcpReadonlyConsumer:
                     or reply["call_id"] != correlation
                     or type(reply["output"]) is not str):
                 return _unknown()
-            result = _decode_object(reply["output"])
+            result = _decode_object(reply["output"], self._control)
             if "result_text" in result:
                 if (result.get("content_role") != "UNTRUSTED_ACCEPTED_TASK_DATA"
                         or type(result.get("content_notice")) is not str

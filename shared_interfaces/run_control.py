@@ -10,7 +10,7 @@ import math
 from pathlib import Path
 import types
 
-FACADE_SHA256 = "37629d2ec2d8bdb88da66247c7093225e387b4d79220fb42b214cc01c8ef2619"
+FACADE_SHA256 = "c7bdd7b8b97077aeccb5831466a4d4071b391e5657a9cc449eb0d70a1ea84798"
 TOKEN_KEYS = {"run_id", "task_id", "input_sha256", "attempt", "slot_id", "call_id"}
 REQUEST_KEYS = {"task_id", "input_sha256", "attempt", "goal", "feedback"}
 ACTIONS = {

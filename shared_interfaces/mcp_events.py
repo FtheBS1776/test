@@ -11,7 +11,7 @@ from pathlib import Path
 import types
 
 
-RUN_EVENTS_SHA256 = "913b4d89bc5bbec0c37141f7914fd111a342d2fced80d25e404d2d25d704f760"
+RUN_EVENTS_SHA256 = "b150fef78663421b3ddf3f88267e33c5adeea5615d86275d5be35b4c88f28871"
 INPUT_SCHEMA_SHA256 = "59fd685d201f46cfac160c371f25de5dc55a108c90ad3f28dcb1403331089634"
 NAME = "apply_run_event"
 TITLE = "Apply one bound Genie run event"

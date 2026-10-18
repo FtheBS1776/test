@@ -71,15 +71,29 @@ class PilotHooks:
 
     def reviewer(self, action):
         from phase2b2s_attested_live_pilot.attested_worker import EXPECTED_RESULT
+        from shared_interfaces.session_driver import _unique_object, _invalid_constant
         self.reviewer_calls += 1
         candidate = action.get("candidate")
         candidate_hash = hashlib.sha256(candidate.encode()).hexdigest()
-        accepted = (candidate_hash == action.get("candidate_sha256")
-                    and json.loads(candidate) == EXPECTED_RESULT)
+        bound = candidate_hash == action.get("candidate_sha256")
+        try:
+            # Reuse the driver's strict JSON boundary; Python object equality
+            # alone also equates 0 with False and would weaken this schema.
+            decoded = (json.loads(candidate, object_pairs_hook=_unique_object,
+                                  parse_constant=_invalid_constant) if bound else None)
+            matches = bound and json.dumps(decoded, sort_keys=True, allow_nan=False) == json.dumps(
+                EXPECTED_RESULT, sort_keys=True, allow_nan=False)
+        except (TypeError, ValueError):
+            matches = False
+        # A hash-bound candidate that misses this task's schema is repairable
+        # feedback under the existing controller contract. A hash mismatch is
+        # an identity failure; leave it as REJECT so the driver fails closed.
+        decision = "ACCEPT" if matches else "REPAIR" if bound else "REJECT"
         return {"token": action["token"], "candidate_hash": candidate_hash,
-                "decision": "ACCEPT" if accepted else "REJECT",
-                "reason": "BOUNDED_SCHEMA_MATCH_COMMON_CAUSE" if accepted
-                          else "BOUNDED_SCHEMA_MISMATCH"}
+                "decision": decision,
+                "reason": "BOUNDED_SCHEMA_MATCH_COMMON_CAUSE" if matches
+                          else "BOUNDED_SCHEMA_MISMATCH" if bound
+                          else "CANDIDATE_HASH_MISMATCH"}
 
 
 def main(argv=None):

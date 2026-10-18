@@ -1,27 +1,29 @@
 """New driver boundary checks. Fake hooks only: NO MODEL CALL."""
 import copy,hashlib,importlib.util,io,json,pathlib,sqlite3,tempfile,unittest
 from unittest.mock import patch
+from contextlib import closing
 ROOT=pathlib.Path(__file__).resolve().parents[1]
-s=importlib.util.spec_from_file_location('driver_candidate',ROOT/'shared_interfaces/candidate/session_driver.py');m=importlib.util.module_from_spec(s);s.loader.exec_module(m)
+s=importlib.util.spec_from_file_location('driver_candidate',ROOT/'shared_interfaces/session_driver.py');m=importlib.util.module_from_spec(s);s.loader.exec_module(m)
+COSTS={role:{"max_micro_usd":0,"quote_ref":"DETERMINISTIC_NO_MODEL_FIXTURE"} for role in ("author","repair","reviewer")}
 class Tests(unittest.TestCase):
  def setUp(self):
   self.tmp=tempfile.TemporaryDirectory();self.addCleanup(self.tmp.cleanup);self.home=pathlib.Path(self.tmp.name);self.queue=self.home/'queue.sqlite';self.work=self.home/'work';self.work.mkdir()
   self.events=m._load_events();self.control=self.events._load_control();self.facade=self.control._load_facade();self.runner=self.facade._load_core().load_runner();self.run='driver-new-test';self.reg={'a':{'queue':str(self.queue),'run_id':self.run,'owned_root':str(self.work)}}
-  self.runner.q.initialize(self.queue,{'run_id':self.run,'max_tasks':2,'max_model_calls':4,'effect_scope':'owned-local-report-inbox'})
+  self.runner.q.initialize(self.queue,{'run_id':self.run,'max_tasks':2,'max_model_calls':4,'effect_scope':'owned-local-report-inbox','cost_policy':{"mode":"DISABLE_ALL","limit_micro_usd":0,"authorization_ref":None,"quotes":COSTS}})
   self.runner.q.enqueue(self.queue,{'task_id':'task-1','goal':'new driver boundary data','input_sha256':'a'*64,'max_attempts':2});self.w=[];self.r=[]
  def worker(self,a):
   self.w.append(copy.deepcopy(a));return {'token':copy.deepcopy(a['token']),'outcome':'OBSERVED_ACCEPTED','agent':'fake-test-worker','evidence':{'scope':'NO_MODEL_CALL'},'text':'accepted new test data'}
  def reviewer(self,a):
   self.r.append(copy.deepcopy(a));return {'token':copy.deepcopy(a['token']),'candidate_hash':a['candidate_sha256'],'decision':'ACCEPT','reason':'EXACT_TEST_DATA'}
- def drive(self,**kw):
-  with patch.object(m,'_load_events',return_value=self.events),patch.object(self.events,'_load_control',return_value=self.control),patch.object(self.control,'_load_facade',return_value=self.facade):return m.drive_run(self.reg,'a',kw.pop('worker',self.worker),kw.pop('reviewer',self.reviewer),**kw)
+ def drive(self,costs=COSTS,**kw):
+  with patch.object(m,'_load_events',return_value=self.events),patch.object(self.events,'_load_control',return_value=self.control),patch.object(self.control,'_load_facade',return_value=self.facade):return m.drive_run(self.reg,'a',kw.pop('worker',self.worker),kw.pop('reviewer',self.reviewer),costs=COSTS,**kw)
  def advance(self):return self.control.GenieRunController(self.reg).call('advance_run',{'run_name':'a'})
  def event(self,a,op,payload):return self.events.GenieRunEvents(self.reg).call('apply_run_event',{'run_name':'a','operation':op,'supplied':a['token'],'payload':payload})
  def seed_review(self):
   a=self.advance();r=self.worker(a);self.event(a,'observe',{k:r[k] for k in ('outcome','agent','evidence')});self.event(a,'submit',{k:r[k] for k in ('agent','text')});return a
  def observations(self):
   _,p,_=self.runner.paths(self.work,self.run,'task-1')
-  with sqlite3.connect(p) as db:return db.execute('SELECT count(*) FROM host_observations').fetchone()[0]
+  with closing(sqlite3.connect(p)) as db:return db.execute('SELECT count(*) FROM host_observations').fetchone()[0]
  def unknown(self,out):
   self.assertEqual(out['action'],'UNKNOWN');self.assertTrue(out['preserve']);self.assertFalse(out['allow_new_invocation'])
  def test_two_task_automatic_sequence(self):
@@ -56,7 +58,7 @@ class Tests(unittest.TestCase):
    try:
     def bad(a):r=case.reviewer(a);r['token']['attempt']=True if mode=='bool' else r['token']['attempt'];r['candidate_hash']='d'*64 if mode=='hash' else r['candidate_hash'];return r
     case.unknown(case.drive(reviewer=bad));_,p,_=case.runner.paths(case.work,case.run,'task-1')
-    with sqlite3.connect(p) as db:case.assertIsNone(db.execute('SELECT review FROM attempts').fetchone()[0])
+    with closing(sqlite3.connect(p)) as db:case.assertIsNone(db.execute('SELECT review FROM attempts').fetchone()[0])
    finally:case.doCleanups()
  def test_unknown_observation_no_submit(self):
   def worker(a):return {'token':a['token'],'outcome':'UNKNOWN','agent':None,'evidence':{'scope':'unknown fake return'},'text':None}
@@ -94,7 +96,7 @@ class Tests(unittest.TestCase):
   out=self.drive(notify=lost);self.unknown(out);self.assertEqual(out['counts']['advances'],3);self.assertEqual(self.facade.GenieStatusTools(self.reg).call('get_task_result',{'run_name':'a','task_id':'task-1'})['status'],'CONFIRMED')
  def serve(self,raw,output=None):
   output=output or io.StringIO()
-  with patch.object(m,'_load_events',return_value=self.events),patch.object(self.events,'_load_control',return_value=self.control),patch.object(self.control,'_load_facade',return_value=self.facade):out=m.serve_run(self.reg,'a',io.StringIO(raw),output)
+  with patch.object(m,'_load_events',return_value=self.events),patch.object(self.events,'_load_control',return_value=self.control),patch.object(self.control,'_load_facade',return_value=self.facade):out=m.serve_run(self.reg,'a',io.StringIO(raw),output,costs=COSTS)
   return out,output
  def test_stdio_strict_protocol_no_resync(self):
   for raw in ('', '{"kind":"worker_return","kind":"worker_return","reply":{}}\n','{"kind":"review_decision","reply":{}}\n','{"kind":"worker_return","reply":{"x":NaN}}\n','{"kind":"worker_return","reply":{"x":"\\ud800"}}\n','x'*160001+'\n'):

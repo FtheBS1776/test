@@ -1,15 +1,16 @@
 """Distinct transport/repair checks; fake hooks, NO MODEL CALL."""
 import io,json,unittest
 from unittest.mock import patch
-from session_driver.test_driver import Tests,m
+from session_driver import test_driver as driver_tests
+m = driver_tests.m
 class Supplement(unittest.TestCase):
- def setUp(self):self.case=Tests();self.case.setUp();self.addCleanup(self.case.doCleanups)
+ def setUp(self):self.case=driver_tests.Tests();self.case.setUp();self.addCleanup(self.case.doCleanups)
  def test_binary_stdio_round_trip(self):
   c=self.case;writer=io.BytesIO()
   class Reader:
    def readline(s,n):
     a=json.loads(writer.getvalue().splitlines()[-1]);kind=a['kind'];reply=c.worker(a['action']) if kind=='worker_request' else c.reviewer(a['action']);return (json.dumps({'kind':'worker_return' if kind=='worker_request' else 'review_decision','reply':reply})+'\n').encode()
-  with patch.object(m,'_load_events',return_value=c.events),patch.object(c.events,'_load_control',return_value=c.control),patch.object(c.control,'_load_facade',return_value=c.facade):out=m.serve_run(c.reg,'a',Reader(),writer)
+  with patch.object(m,'_load_events',return_value=c.events),patch.object(c.events,'_load_control',return_value=c.control),patch.object(c.control,'_load_facade',return_value=c.facade):out=m.serve_run(c.reg,'a',Reader(),writer,costs=driver_tests.COSTS)
   self.assertEqual((out['action'],out['reason']),('STOP','ALL_TASKS_COMPLETE'));lines=[json.loads(x) for x in writer.getvalue().splitlines()];self.assertEqual([x['kind'] for x in lines].count('worker_request'),1);self.assertEqual([x['kind'] for x in lines].count('review_request'),1);self.assertEqual(lines[-1],{'kind':'terminal','result':out})
  def test_request_flush_failure_suppresses_further_writes(self):
   c=self.case

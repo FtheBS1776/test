@@ -1,0 +1,284 @@
+Python 3.12.14; SQLite 3.53.1; Linux x86_64
+All provider/live worker hooks disabled or deterministic fixtures.
+
+COMMAND: /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -B -m unittest phase2c_finite_autonomous_pilot.test_phase2c phase2c_finite_autonomous_pilot.test_verify_readonly session_driver.test_r03_review_semantics session_driver.test_driver session_driver.test_protocol run_queue.test_cost_admission plugin_mcp_consumer.test_consumer plugin_mcp_consumer.test_repair standalone_app.test_repair_composition phase2b2s_attested_live_pilot.test_attested_worker -v
+test_each_worker_gets_distinct_ledger_and_exact_task_binding (phase2c_finite_autonomous_pilot.test_phase2c.Phase2CTests.test_each_worker_gets_distinct_ledger_and_exact_task_binding) ... ok
+test_plans_are_two_exact_single_attempt_task_bindings (phase2c_finite_autonomous_pilot.test_phase2c.Phase2CTests.test_plans_are_two_exact_single_attempt_task_bindings) ... ok
+test_reviewer_repairs_bound_schema_mismatch_but_rejects_hash_mismatch (phase2c_finite_autonomous_pilot.test_phase2c.Phase2CTests.test_reviewer_repairs_bound_schema_mismatch_but_rejects_hash_mismatch) ... ok
+test_worker_bound_and_unknown_are_fail_closed (phase2c_finite_autonomous_pilot.test_phase2c.Phase2CTests.test_worker_bound_and_unknown_are_fail_closed) ... ok
+test_default_inspection_preserves_every_input_byte_and_name (phase2c_finite_autonomous_pilot.test_verify_readonly.ReadonlyVerificationTests.test_default_inspection_preserves_every_input_byte_and_name) ... ok
+test_explicit_external_report_is_exclusive_and_input_is_unchanged (phase2c_finite_autonomous_pilot.test_verify_readonly.ReadonlyVerificationTests.test_explicit_external_report_is_exclusive_and_input_is_unchanged) ... ok
+test_external_symlink_to_input_cannot_overwrite (phase2c_finite_autonomous_pilot.test_verify_readonly.ReadonlyVerificationTests.test_external_symlink_to_input_cannot_overwrite) ... ok
+test_internal_report_paths_cannot_create_or_overwrite (phase2c_finite_autonomous_pilot.test_verify_readonly.ReadonlyVerificationTests.test_internal_report_paths_cannot_create_or_overwrite) ... ok
+test_invalid_copy_is_not_repaired_or_rewritten (phase2c_finite_autonomous_pilot.test_verify_readonly.ReadonlyVerificationTests.test_invalid_copy_is_not_repaired_or_rewritten) ... ok
+test_lost_review_ack_keeps_charge_and_stops_without_repair_invocation (session_driver.test_r03_review_semantics.R03ReviewSemanticsTests.test_lost_review_ack_keeps_charge_and_stops_without_repair_invocation) ... ok
+test_real_reviewer_accepts_valid_candidate (session_driver.test_r03_review_semantics.R03ReviewSemanticsTests.test_real_reviewer_accepts_valid_candidate) ... ok
+test_real_reviewer_invalid_candidates_hold_without_acceptance_or_new_call (session_driver.test_r03_review_semantics.R03ReviewSemanticsTests.test_real_reviewer_invalid_candidates_hold_without_acceptance_or_new_call) ... ok
+test_real_reviewer_repair_cannot_bypass_call_budget (session_driver.test_r03_review_semantics.R03ReviewSemanticsTests.test_real_reviewer_repair_cannot_bypass_call_budget) ... ok
+test_real_reviewer_repair_uses_only_existing_attempt_and_call_permission (session_driver.test_r03_review_semantics.R03ReviewSemanticsTests.test_real_reviewer_repair_uses_only_existing_attempt_and_call_permission) ... ok
+test_review_token_or_hash_mismatch_is_unknown_without_new_call (session_driver.test_r03_review_semantics.R03ReviewSemanticsTests.test_review_token_or_hash_mismatch_is_unknown_without_new_call) ... ok
+test_action_limit_preserves_reservation_without_reset (session_driver.test_driver.Tests.test_action_limit_preserves_reservation_without_reset) ... ok
+test_bool_token_rejected_before_any_event (session_driver.test_driver.Tests.test_bool_token_rejected_before_any_event) ... ok
+test_callback_commits_then_response_lost_no_retry (session_driver.test_driver.Tests.test_callback_commits_then_response_lost_no_retry) ... ok
+test_detached_action_cannot_replace_original_token (session_driver.test_driver.Tests.test_detached_action_cannot_replace_original_token) ... ok
+test_duplicate_submit_does_not_grant_review_hook (session_driver.test_driver.Tests.test_duplicate_submit_does_not_grant_review_hook) ... ok
+test_entire_worker_reply_before_any_event (session_driver.test_driver.Tests.test_entire_worker_reply_before_any_event) ... ok
+test_invalid_config_no_progression (session_driver.test_driver.Tests.test_invalid_config_no_progression) ... ok
+test_notification_failure_after_delivery_preserves_effect (session_driver.test_driver.Tests.test_notification_failure_after_delivery_preserves_effect) ... ok
+test_review_reply_bool_or_crossed_hash_no_review_effect (session_driver.test_driver.Tests.test_review_reply_bool_or_crossed_hash_no_review_effect) ... ok
+test_reviewer_exception_restart_reconcile (session_driver.test_driver.Tests.test_reviewer_exception_restart_reconcile) ... ok
+test_startup_review_no_reviewer (session_driver.test_driver.Tests.test_startup_review_no_reviewer) ... ok
+test_startup_waiting_no_worker (session_driver.test_driver.Tests.test_startup_waiting_no_worker) ... ok
+test_stdio_output_failure_no_retry (session_driver.test_driver.Tests.test_stdio_output_failure_no_retry) ... ok
+test_stdio_strict_protocol_no_resync (session_driver.test_driver.Tests.test_stdio_strict_protocol_no_resync) ... ok
+test_stopped_between_submission_and_review_no_hook (session_driver.test_driver.Tests.test_stopped_between_submission_and_review_no_hook) ... ok
+test_two_task_automatic_sequence (session_driver.test_driver.Tests.test_two_task_automatic_sequence) ... ok
+test_unconfirmed_task_complete_terminal (session_driver.test_driver.Tests.test_unconfirmed_task_complete_terminal) ... ok
+test_unknown_observation_no_submit (session_driver.test_driver.Tests.test_unknown_observation_no_submit) ... ok
+test_worker_exception_charged_no_retry (session_driver.test_driver.Tests.test_worker_exception_charged_no_retry) ... ok
+test_wrong_original_binding_rejected (session_driver.test_driver.Tests.test_wrong_original_binding_rejected) ... ok
+test_binary_stdio_round_trip (session_driver.test_protocol.Supplement.test_binary_stdio_round_trip) ... ok
+test_explicit_repair_fresh_bound_attempt_then_accept (session_driver.test_protocol.Supplement.test_explicit_repair_fresh_bound_attempt_then_accept) ... ok
+test_request_flush_failure_suppresses_further_writes (session_driver.test_protocol.Supplement.test_request_flush_failure_suppresses_further_writes) ... ok
+test_caller_cannot_substitute_a_zero_cost_quote_or_reinitialize_balance (run_queue.test_cost_admission.CostAdmissionTests.test_caller_cannot_substitute_a_zero_cost_quote_or_reinitialize_balance) ... ok
+test_default_unknown_author_cost_makes_zero_hook_calls (run_queue.test_cost_admission.CostAdmissionTests.test_default_unknown_author_cost_makes_zero_hook_calls) ... ok
+test_disabled_positive_cost_does_not_dispatch (run_queue.test_cost_admission.CostAdmissionTests.test_disabled_positive_cost_does_not_dispatch) ... ok
+test_enable_all_still_requires_known_bound_and_explicit_policy (run_queue.test_cost_admission.CostAdmissionTests.test_enable_all_still_requires_known_bound_and_explicit_policy) ... ok
+test_legacy_cost_schema_is_preserved_and_denied (run_queue.test_cost_admission.CostAdmissionTests.test_legacy_cost_schema_is_preserved_and_denied) ... ok
+test_limited_concurrent_roles_share_one_durable_budget (run_queue.test_cost_admission.CostAdmissionTests.test_limited_concurrent_roles_share_one_durable_budget) ... ok
+test_no_approved_zero_quote_means_no_free_call (run_queue.test_cost_admission.CostAdmissionTests.test_no_approved_zero_quote_means_no_free_call) ... ok
+test_replay_alias_and_wrong_token_grant_no_new_admission (run_queue.test_cost_admission.CostAdmissionTests.test_replay_alias_and_wrong_token_grant_no_new_admission) ... ok
+test_unbounded_live_adapters_stop_before_process_or_ledger_entry (run_queue.test_cost_admission.CostAdmissionTests.test_unbounded_live_adapters_stop_before_process_or_ledger_entry) ... ok
+test_unknown_hook_outcome_keeps_reserved_money_and_stable_call (run_queue.test_cost_admission.CostAdmissionTests.test_unknown_hook_outcome_keeps_reserved_money_and_stable_call) ... ok
+test_unknown_reviewer_cost_cannot_enter_reviewer (run_queue.test_cost_admission.CostAdmissionTests.test_unknown_reviewer_cost_cannot_enter_reviewer) ... ok
+test_adapter_source_binding (plugin_mcp_consumer.test_consumer.Tests.test_adapter_source_binding) ... ok
+test_argument_snapshot_and_strict_json (plugin_mcp_consumer.test_consumer.Tests.test_argument_snapshot_and_strict_json) ... ok
+test_bad_adapter_metadata_rejected (plugin_mcp_consumer.test_consumer.Tests.test_bad_adapter_metadata_rejected) ... ok
+test_correlation_mismatch_unknown_no_retry (plugin_mcp_consumer.test_consumer.Tests.test_correlation_mismatch_unknown_no_retry) ... ok
+test_duplicate_json_output_rejected (plugin_mcp_consumer.test_consumer.Tests.test_duplicate_json_output_rejected) ... ok
+test_invalid_call_no_delegation (plugin_mcp_consumer.test_consumer.Tests.test_invalid_call_no_delegation) ... ok
+test_malformed_outputs_unknown (plugin_mcp_consumer.test_consumer.Tests.test_malformed_outputs_unknown) ... ok
+test_one_delegation_and_complete_result (plugin_mcp_consumer.test_consumer.Tests.test_one_delegation_and_complete_result) ... ok
+test_tools_detached (plugin_mcp_consumer.test_consumer.Tests.test_tools_detached) ... ok
+test_tools_exact_projection (plugin_mcp_consumer.test_consumer.Tests.test_tools_exact_projection) ... ok
+test_untrusted_result_notice_required (plugin_mcp_consumer.test_consumer.Tests.test_untrusted_result_notice_required) ... ok
+test_exact_argument_bound_delegates_once_without_semantic_rewrite (plugin_mcp_consumer.test_repair.RepairTests.test_exact_argument_bound_delegates_once_without_semantic_rewrite) ... ok
+test_non_json_types_reject_before_adapter_entry (plugin_mcp_consumer.test_repair.RepairTests.test_non_json_types_reject_before_adapter_entry) ... ok
+test_oversized_utf8_arguments_reject_before_adapter_entry (plugin_mcp_consumer.test_repair.RepairTests.test_oversized_utf8_arguments_reject_before_adapter_entry) ... ok
+test_bad_source_pin_stops_before_binding_or_hook (standalone_app.test_repair_composition.CompositionTests.test_bad_source_pin_stops_before_binding_or_hook) ... ok
+test_binder_failure_does_not_fallback_or_invoke (standalone_app.test_repair_composition.CompositionTests.test_binder_failure_does_not_fallback_or_invoke) ... ok
+test_disposable_snapshot_is_inspectable_without_replay_or_currentness_claim (standalone_app.test_repair_composition.CompositionTests.test_disposable_snapshot_is_inspectable_without_replay_or_currentness_claim) ... ok
+test_exact_goal_materials_identity_and_saved_result_cross_one_driver (standalone_app.test_repair_composition.CompositionTests.test_exact_goal_materials_identity_and_saved_result_cross_one_driver) ... ok
+test_material_mismatch_or_missing_coverage_stops_before_reservation (standalone_app.test_repair_composition.CompositionTests.test_material_mismatch_or_missing_coverage_stops_before_reservation) ... ok
+test_operator_stop_requires_no_model_and_prevents_next_dispatch (standalone_app.test_repair_composition.CompositionTests.test_operator_stop_requires_no_model_and_prevents_next_dispatch) ... ok
+test_unknown_hook_remains_charged_and_is_not_reassigned (standalone_app.test_repair_composition.CompositionTests.test_unknown_hook_remains_charged_and_is_not_reassigned) ... ok
+test_command_binds_exact_empty_capability_operation (phase2b2s_attested_live_pilot.test_attested_worker.AttestedWorkerTests.test_command_binds_exact_empty_capability_operation) ... ok
+test_fresh_synthetic_plan_binds_exact_input (phase2b2s_attested_live_pilot.test_attested_worker.AttestedWorkerTests.test_fresh_synthetic_plan_binds_exact_input) ... ok
+test_logical_identity_binds_every_dispatch_token_field (phase2b2s_attested_live_pilot.test_attested_worker.AttestedWorkerTests.test_logical_identity_binds_every_dispatch_token_field) ... ok
+test_result_parser_rejects_duplicate_stale_or_malformed_output (phase2b2s_attested_live_pilot.test_attested_worker.AttestedWorkerTests.test_result_parser_rejects_duplicate_stale_or_malformed_output) ... ok
+test_semantic_request_contains_no_genie_authority_or_paths (phase2b2s_attested_live_pilot.test_attested_worker.AttestedWorkerTests.test_semantic_request_contains_no_genie_authority_or_paths) ... ok
+test_unknown_live_cost_stops_before_process_entry_or_ledger_creation (phase2b2s_attested_live_pilot.test_attested_worker.AttestedWorkerTests.test_unknown_live_cost_stops_before_process_entry_or_ledger_creation) ... ok
+test_worker_module_imports_no_genie_authority_surface (phase2b2s_attested_live_pilot.test_attested_worker.AttestedWorkerTests.test_worker_module_imports_no_genie_authority_surface) ... ok
+
+----------------------------------------------------------------------
+Ran 77 tests in 6.213s
+
+OK
+EXIT_CODE: 0
+
+COMMAND: /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -B run_queue/test_policy.py
+{
+  "status": "PASS",
+  "count": 19,
+  "checks": [
+    {
+      "check": "bool_budget",
+      "rejected": true
+    },
+    {
+      "check": "incomplete_queue_preserved",
+      "rejected": true
+    },
+    {
+      "check": "explicit_queue_schema_inspection",
+      "passed": true
+    },
+    {
+      "check": "plan_alias",
+      "rejected": true
+    },
+    {
+      "check": "task_limit",
+      "rejected": true
+    },
+    {
+      "check": "concurrent_reservation_one_charge",
+      "passed": true
+    },
+    {
+      "check": "changed_duplicate_request",
+      "rejected": true
+    },
+    {
+      "check": "unregistered_task",
+      "rejected": true
+    },
+    {
+      "check": "wrong_input",
+      "rejected": true
+    },
+    {
+      "check": "wrong_run_reservation",
+      "rejected": true
+    },
+    {
+      "check": "uncertain_call_charged_no_refund_or_redispatch",
+      "passed": true
+    },
+    {
+      "check": "stopped_new_enqueue",
+      "rejected": true
+    },
+    {
+      "check": "scoped_hold_does_not_block_independent_task",
+      "passed": true
+    },
+    {
+      "check": "acceptance_without_destination_not_complete",
+      "passed": true
+    },
+    {
+      "check": "wrong_run_completion",
+      "rejected": true
+    },
+    {
+      "check": "completion_wrong_reserved_feedback",
+      "rejected": true
+    },
+    {
+      "check": "fresh_readback_completes_only_matching_task",
+      "passed": true
+    },
+    {
+      "check": "cached_completion_requires_fresh_destination",
+      "passed": true
+    },
+    {
+      "check": "exhausted_budget_still_allows_existing_task_reconciliation",
+      "passed": true
+    }
+  ]
+}
+EXIT_CODE: 0
+
+COMMAND: /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -B worker_bridge/test_bridge.py
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "check": "missing_ledger_no_provision",
+      "rejected": true
+    },
+    {
+      "check": "incomplete_provisioning_preserved",
+      "rejected": true
+    },
+    {
+      "check": "changed_reused_dependency_rejected",
+      "passed": true
+    },
+    {
+      "check": "task_alias",
+      "rejected": true
+    },
+    {
+      "check": "dispatch_replay_no_blind_redispatch",
+      "passed": true
+    },
+    {
+      "check": "candidate_before_agent_binding",
+      "rejected": true
+    },
+    {
+      "check": "cross_task_binding",
+      "rejected": true
+    },
+    {
+      "check": "cross_task_candidate",
+      "rejected": true
+    },
+    {
+      "check": "wrong_input_candidate",
+      "rejected": true
+    },
+    {
+      "check": "agent_alias",
+      "rejected": true
+    },
+    {
+      "check": "concurrent_same_candidate_one_result",
+      "passed": true
+    },
+    {
+      "check": "candidate_alias",
+      "rejected": true
+    },
+    {
+      "check": "cross_task_review",
+      "rejected": true
+    },
+    {
+      "check": "wrong_input_review",
+      "rejected": true
+    },
+    {
+      "check": "review_wrong_hash",
+      "rejected": true
+    },
+    {
+      "check": "unaccepted_delivery",
+      "rejected": true
+    },
+    {
+      "check": "stale_candidate",
+      "rejected": true
+    },
+    {
+      "check": "stale_review",
+      "rejected": true
+    },
+    {
+      "check": "review_alias",
+      "rejected": true
+    },
+    {
+      "check": "lost_ack_preserves_pending",
+      "passed": true
+    },
+    {
+      "check": "fresh_process_resume_one_destination_application",
+      "passed": true
+    },
+    {
+      "check": "cached_completion_missing_destination_unknown",
+      "passed": true
+    },
+    {
+      "check": "missing_sink_not_recreated",
+      "rejected": true
+    },
+    {
+      "check": "damaged_review_binding",
+      "rejected": true
+    },
+    {
+      "check": "bounded_repair_no_infinite_loop",
+      "passed": true
+    }
+  ],
+  "count": 25
+}
+EXIT_CODE: 0
+
+COMMAND: git diff --check
+EXIT_CODE: 0

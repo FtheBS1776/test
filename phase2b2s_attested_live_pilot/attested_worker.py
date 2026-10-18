@@ -139,6 +139,18 @@ def _assistant_result(raw):
 def run_once(*, token, artifact_directory, codex_home, working_directory,
              ledger_path, evidence_directory, timeout_seconds=240):
     """Enter exactly one live process and one model turn; never replay it."""
+    # The current Codex CLI profile has no reviewed, enforceable total-charge
+    # bound. Keep this public paid-capable path unavailable, even if a caller
+    # labels it free. A later bounded adapter must use this same queue owner.
+    from run_queue import run_policy as admission
+    denied = admission.admit_action(None, token, "author", "worker", None, None)
+    if denied["action"] != "ADMIT_ONCE":
+        return {"status": "REJECT", "reason": "LIVE_COST_BOUND_UNAVAILABLE",
+                "process_entry": False, "preserve": True,
+                "allow_new_invocation": False,
+                "evidence": {"process_entry": False, "retry_count": 0,
+                             "preserve": True, "allow_new_invocation": False}}
+
     evidence = {"process_entry": False, "semantic_release": False,
                 "retry_count": 0, "preserve": True,
                 "allow_new_invocation": False}

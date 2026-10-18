@@ -8,7 +8,7 @@ import sqlite3
 import sys
 import types
 
-RUNNER_SHA256 = 'e315b0f30403028169d9bde17f73e13b618ed419ace4fb489f7c0878f2d6fd29'
+RUNNER_SHA256 = 'f683491cd184ac10e555ad41b96b44c9e690948de761653bc96894c43656dc86'
 SCOPE = 'TRUSTED_OWNED_LOCAL_OBSERVATION'
 
 
@@ -149,6 +149,7 @@ def report(queue, run_id, root):
         count = db.execute('SELECT count(*) FROM reservations').fetchone()[0]
         history = {'run_id': run_id, 'state': run_state, 'stop_reason': stop_reason,
                    'reserved_model_calls': count, 'max_model_calls': policy['max_model_calls'],
+                   'cost_admission': runner.q.cost_status(db, policy),
                    'scope': 'HISTORICAL_QUEUE_STATE_NOT_CURRENT_DESTINATION_PROOF'}
     if not Path(root).is_dir():
         raise ValueError('OWNED_ROOT_MUST_EXIST')

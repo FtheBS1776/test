@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 import sys
 import types
-EVENTS_SHA256 = "913b4d89bc5bbec0c37141f7914fd111a342d2fced80d25e404d2d25d704f760"
+EVENTS_SHA256 = "b150fef78663421b3ddf3f88267e33c5adeea5615d86275d5be35b4c88f28871"
 LINE_LIMIT = 160000
 def _load_events():
     directory = next((p for p in Path(__file__).resolve().parents
@@ -49,7 +49,13 @@ def _applied(result, operation, allowed):
     return (type(result) is dict and result.get("status") == "APPLIED"
             and result.get("operation") == operation
             and type(result.get("result")) is str and result["result"] in allowed)
-def drive_run(runs, run_name, worker, reviewer, max_actions=64, notify=None):
+def _admit(runner, record, token, role, operation_id, costs):
+    quote = costs.get(role)
+    if type(quote) is not dict or set(quote) != {"max_micro_usd", "quote_ref"}:
+        quote = {"max_micro_usd": None, "quote_ref": None}
+    return runner.q.admit_action(record[0], token, role, operation_id,
+                                 quote["max_micro_usd"], quote["quote_ref"])
+def drive_run(runs, run_name, worker, reviewer, max_actions=64, notify=None, costs=None):
     counts = {"advances": 0, "worker_hooks": 0, "reviewer_hooks": 0}
     if (type(max_actions) is not int or not 1 <= max_actions <= 128
             or type(run_name) is not str or not callable(worker) or not callable(reviewer)
@@ -68,6 +74,9 @@ def drive_run(runs, run_name, worker, reviewer, max_actions=64, notify=None):
         facade = control._load_facade()
         core = facade._load_core()
         runner = core.load_runner()
+        costs = {} if costs is None else _copy(control, costs)
+        if type(costs) is not dict:
+            raise ValueError("COST_CONFIGURATION")
     except Exception:
         return _terminal({"action": "REJECT", "reason": "DRIVER_SETUP_FAILURE"}, counts)
     eligible = {}
@@ -86,6 +95,10 @@ def drive_run(runs, run_name, worker, reviewer, max_actions=64, notify=None):
                 stopped = _running(core, runner, record)
                 if stopped:
                     return _terminal(stopped, counts)
+                role = "author" if token["attempt"] == 1 else "repair"
+                admission = _admit(runner, record, token, role, "worker", costs)
+                if admission.get("action") != "ADMIT_ONCE":
+                    return _terminal(admission, counts)
                 counts["worker_hooks"] += 1
                 reply = _copy(control, worker(_copy(control, original)))
                 if (not control._fields(reply, {"token", "outcome", "agent", "evidence", "text"})
@@ -129,6 +142,10 @@ def drive_run(runs, run_name, worker, reviewer, max_actions=64, notify=None):
                 stopped = _running(core, runner, record)
                 if stopped:
                     return _terminal(stopped, counts)
+                admission = _admit(runner, record, token, "reviewer",
+                                   "review:" + original["candidate_sha256"], costs)
+                if admission.get("action") != "ADMIT_ONCE":
+                    return _terminal(admission, counts)
                 counts["reviewer_hooks"] += 1
                 reply = _copy(control, reviewer(_copy(control, original)))
                 if (not control._fields(reply, {"token", "candidate_hash", "decision", "reason"})
@@ -171,7 +188,7 @@ def _unique_object(pairs):
     return result
 def _invalid_constant(value):
     raise ValueError("NONSTANDARD_JSON_CONSTANT")
-def serve_run(runs, run_name, input_stream=None, output_stream=None, max_actions=64):
+def serve_run(runs, run_name, input_stream=None, output_stream=None, max_actions=64, costs=None):
     reader = input_stream if input_stream is not None else sys.stdin.buffer
     writer = output_stream if output_stream is not None else sys.stdout.buffer
     failed = False
@@ -216,7 +233,7 @@ def serve_run(runs, run_name, input_stream=None, output_stream=None, max_actions
     result = drive_run(runs, run_name,
                        lambda a: exchange(a, "worker_request", "worker_return"),
                        lambda a: exchange(a, "review_request", "review_decision"),
-                       max_actions=max_actions, notify=emit)
+                       max_actions=max_actions, notify=emit, costs=costs)
     if not failed:
         try:
             emit({"kind": "terminal", "result": result})

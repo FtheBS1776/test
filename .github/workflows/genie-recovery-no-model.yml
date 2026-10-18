@@ -1,0 +1,64 @@
+name: Genie recovery no-model validation
+
+on:
+  push:
+    branches:
+      - repair/genie-recovery-validation-20261018
+
+permissions:
+  contents: read
+
+# Standard hosted runners on this PUBLIC repository are free. No cache,
+# artifact upload, model/provider credentials, pilot or scientific execution.
+jobs:
+  windows-repair:
+    runs-on: windows-2025
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.10'
+      - name: Verify platform and exact source
+        shell: pwsh
+        run: |
+          python -c "import os,sys; assert os.name == 'nt'; print(sys.version)"
+          git rev-parse HEAD
+          git rev-parse 'HEAD^{tree}'
+      - name: No-model repair and native publication checks
+        run: >-
+          python -B -m unittest -v
+          phase2c_finite_autonomous_pilot.test_phase2c
+          phase2c_finite_autonomous_pilot.test_verify_readonly
+          session_driver.test_r03_review_semantics
+          session_driver.test_driver
+          session_driver.test_protocol
+          run_queue.test_cost_admission
+          plugin_mcp_consumer.test_consumer
+          plugin_mcp_consumer.test_repair
+          standalone_app.test_repair_composition
+          phase2b2s_attested_live_pilot.test_attested_worker
+          canonical_state_provisioner.test_provisioner_windows
+          desktop_plugin.test_live_state_windows
+          standalone_app.test_owner
+      - name: Existing queue and bridge checks
+        run: |
+          python -B run_queue/test_policy.py
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -B worker_bridge/test_bridge.py
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+  sdk-transport:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.10'
+      - name: Install unchanged exact MCP closure
+        run: |
+          python -m pip install --disable-pip-version-check -r plugin_mcp_server/requirements.lock.txt
+          python -m pip check
+      - name: No-model SDK transport checks
+        run: python -B -m unittest -v plugin_mcp_server.test_mcp_server

@@ -31,3 +31,10 @@ The correlation ID is not a Genie run/task/attempt/call authority token, not dur
 10. No network, SDK, model call, server, authentication, store mutation, old task replay, canonical save retry, deployment, spending, promotion/freeze/main merge, or EXP010 action.
 
 Pass186 remains inherited controlling; this unit is later NONCLAIM. Root/bootstrap/custody, rollback, physical power loss, remote authenticity, hostile-worker isolation, real MCP connectivity, host lifetime and unattended execution remain outside this unit.
+
+
+## Recovery candidate consolidation (R08)
+
+Maintain the existing shared consumer/server route. Before delegation, use the accepted adapter's strict JSON-tree predicate and its 8192-byte argument limit; do not coerce tuple values or non-string keys. Core REJECT/UNKNOWN remain structured data; malformed/correlated wrapper outcomes remain sanitized UNKNOWN. The server's existing safe-text projection remains the text surface; this consumer does not add the alternate wrapper's duplicated text or isError shape.
+
+An eight-case corpus compared the exact shared baseline at ad508c63024087d0d38f489f6b42ee7c5f9af662, alternate at b6aa50858737a1f613ea36cbfacaba2486649448, and candidate with a deterministic adapter double. This compares boundary behavior, not real-host compatibility or complete downstream semantics. Both alternatives passed a valid call; the alternate rejected tuple/non-string-key/oversized inputs before delegation while the baseline delegated. The shared baseline withheld unlabeled task text while the alternate projected it. Both checked duplicate replies/correlation with their different declared wrapper-error contracts. Candidate combines the applicable safeguards under one owner. Alternate source and historical evidence remain unchanged; this is not a universal winner or performance claim.

@@ -9,8 +9,8 @@ from pathlib import Path
 import types
 
 PINS = {
-    "run_control.py": "ecc71b088e5a7e3c0bde33b53a7e850dd769daee5b301f2f116edf956599f2d4",
-    "cli.py": "c0a35e699cc4ad2fd2e176fd8ab951fbab7f57f56c783230925d078b38ff8af4",
+    "run_control.py": "43958f98ce3dfd01de019df70bb14dfd9135f87f41b58171b3224a97bf8c2b65",
+    "cli.py": "34cf1c27b3f1dbc683fc524d65f2ef415f1230d3b3825f1e006bfe8d3a152169",
 }
 NAMES = ("get_run_status", "get_task_result")
 ARGUMENT_LIMIT = 8192

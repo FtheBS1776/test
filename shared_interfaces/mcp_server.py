@@ -13,7 +13,7 @@ import os
 from pathlib import Path
 import types
 
-CONSUMER_SHA256 = "21f3fc657abb16c9ba7c9189f266cbdfeaec1dbf0ae2ca6d051caee1565ddd5d"
+CONSUMER_SHA256 = "40c54edf66f07f60bd0beaef5bb567ac15f4a08572ffe724d5cf77a2e023729c"
 SERVER_VERSION = "0.1.0-nonclaim"
 TRANSPORT_DISTRIBUTIONS = {
     "mcp": "2.3.0",

@@ -10,7 +10,7 @@ import json
 from pathlib import Path
 import types
 
-RUN_CONTROL_SHA256 = "ecc71b088e5a7e3c0bde33b53a7e850dd769daee5b301f2f116edf956599f2d4"
+RUN_CONTROL_SHA256 = "43958f98ce3dfd01de019df70bb14dfd9135f87f41b58171b3224a97bf8c2b65"
 NAME = "advance_run"
 TITLE = "Advance one Genie run step"
 ANNOTATIONS = {

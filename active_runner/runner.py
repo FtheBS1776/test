@@ -2,7 +2,7 @@
 import argparse, hashlib, json, sqlite3, sys
 from pathlib import Path
 source = Path(__file__).resolve().parents[1] / 'run_queue' / 'run_policy.py'
-QUEUE_SHA256 = 'e9105931aea517fe5bdcb9e1cf9065ab8b8d67cf6a91f4bb8765aefe1e5f3a63'
+QUEUE_SHA256 = 'c29a4a237e1d7c22d0674f44544dcd64abeb38320dd8aa2efca0419ede60d883'
 if hashlib.sha256(source.read_bytes()).hexdigest() != QUEUE_SHA256:
     raise ValueError('QUEUE_SOURCE_BINDING')
 sys.path.insert(0, str(source.parent))

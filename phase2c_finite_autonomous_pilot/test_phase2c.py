@@ -64,7 +64,7 @@ class Phase2CTests(unittest.TestCase):
             self.assertFalse(reply["evidence"]["allow_new_invocation"])
             self.assertEqual(reply["evidence"]["retry_count"], 0)
 
-    def test_reviewer_rejects_stale_or_mutated_candidate(self):
+    def test_reviewer_repairs_bound_schema_mismatch_but_rejects_hash_mismatch(self):
         from phase2b2s_attested_live_pilot.attested_worker import EXPECTED_RESULT
         hooks = batch.PilotHooks(Path("artifact"), Path("codex-home"))
         candidate = json.dumps(EXPECTED_RESULT, sort_keys=True, separators=(",", ":"))
@@ -73,12 +73,14 @@ class Phase2CTests(unittest.TestCase):
             "candidate_sha256": hashlib.sha256(candidate.encode()).hexdigest()})
         self.assertEqual(accepted["decision"], "ACCEPT")
         mutated = candidate.replace("false", "true")
-        rejected = hooks.reviewer({"token": value, "candidate": mutated,
+        repair = hooks.reviewer({"token": value, "candidate": mutated,
             "candidate_sha256": hashlib.sha256(mutated.encode()).hexdigest()})
-        self.assertEqual(rejected["decision"], "REJECT")
+        self.assertEqual(repair["decision"], "REPAIR")
+        self.assertEqual(repair["reason"], "BOUNDED_SCHEMA_MISMATCH")
         stale = hooks.reviewer({"token": value, "candidate": candidate,
             "candidate_sha256": "0" * 64})
         self.assertEqual(stale["decision"], "REJECT")
+        self.assertEqual(stale["reason"], "CANDIDATE_HASH_MISMATCH")
 
 
 if __name__ == "__main__":

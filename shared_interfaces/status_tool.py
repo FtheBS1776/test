@@ -10,7 +10,7 @@ import os
 from pathlib import Path
 import types
 
-STATUS_SHA256 = "717461b56e191ff011c9b91330d0051f05a0ca03143883566778092e9af2b18e"
+STATUS_SHA256 = "554c8b16e6635eef024e245eaf2e9a9a66c8841c690cc173e163cb4b757a91a6"
 RECORD_KEYS = {"queue", "run_id", "owned_root"}
 
 

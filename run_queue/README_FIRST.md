@@ -11,3 +11,10 @@ Host order: select task -> provision its bridge/journal/sink -> bridge.request -
 Useful workload compares two verified checkpoint manifests (INTEGRITY_COMPARISON_ONLY) and supplies a quickstart. Exact paths added/removed/changed/unchanged aid inspection; they do not establish semantic progress or truth. Comparison reuses the reviewed verifier and immutable bounded snapshots anchored to expected outer hashes. No archive extraction or execution. Source-pin checks concern owned-source integrity, not hostile check/use isolation.
 
 Local targeted checks: `python3.12 -B run_queue/test_policy.py`. Actual run limits2 tasks/3 reservations. No new paid provider, production deployment, main merge, promotion/freeze or EXP010 action. Finite Work host only.
+
+
+## Recovery candidate: monetary admission
+
+The current root README describes the repaired supported composition. Fresh `initialize` may accept the optional `cost_policy` documented there. Its mode and exact per-role quotes are persisted with the existing run policy; worker/repair call-count reservations remain unchanged. `admit_action` reserves an approved full-action upper bound in the same queue before hook entry. Unknown, unapproved, replayed and over-limit actions grant no entry. No automatic pricing lookup, invoice guarantee, reset, refund, external ledger or legacy schema migration is provided. Driver hook configuration must match the saved quote exactly; a new string claiming zero cost is insufficient.
+
+Provider spend controls are not interchangeable with immediate per-action admission. Current official OpenAI documentation describes hard limits with delayed enforcement and possible slight overshoot: https://developers.openai.com/api/docs/guides/spend-limits . Output caps include invisible/reasoning tokens: https://developers.openai.com/api/docs/guides/reasoning . These were read during this repair; they do not establish an enforceable upper bound for the current Codex CLI adapters, which stay unavailable. No provider costs or current prices were guessed.

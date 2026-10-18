@@ -13,7 +13,7 @@ import stat
 import sys
 import types
 
-FACADE_SHA256 = "37629d2ec2d8bdb88da66247c7093225e387b4d79220fb42b214cc01c8ef2619"
+FACADE_SHA256 = "c7bdd7b8b97077aeccb5831466a4d4071b391e5657a9cc449eb0d70a1ea84798"
 REGISTRY_LIMIT = 65536
 PROG = "python3 -B -m shared_interfaces.cli"
 

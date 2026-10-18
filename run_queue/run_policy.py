@@ -25,16 +25,22 @@ def valid_plan(p):
  h=p['input_sha256']
  if type(h) is not str or len(h)!=64 or any(c not in '0123456789abcdef' for c in h):raise ValueError('INPUT_HASH')
 
-def initialize(path,policy):
- if type(policy) is not dict or set(policy)!={'run_id','max_tasks','max_model_calls','effect_scope'}:raise ValueError('POLICY_FIELDS')
+def valid_policy(policy):
+ if type(policy) is not dict or set(policy) not in ({'run_id','max_tasks','max_model_calls','effect_scope'}, {'run_id','max_tasks','max_model_calls','effect_scope','cost_policy'}):raise ValueError('POLICY_FIELDS')
+ cost_policy(policy)
  b.ident(policy['run_id'])
  if any(type(policy[k]) is not int or not 1<=policy[k]<=8 for k in ('max_tasks','max_model_calls')):raise ValueError('POLICY_BOUNDS')
  if policy['effect_scope']!='owned-local-report-inbox':raise ValueError('EFFECT_SCOPE')
+
+
+def initialize(path,policy):
+ valid_policy(policy)
  with Path(path).open('xb'):pass
  with b.transaction(path) as db:
   db.execute('CREATE TABLE run(id INTEGER PRIMARY KEY CHECK(id=1),policy TEXT NOT NULL,state TEXT NOT NULL,stop_reason TEXT)')
   db.execute('CREATE TABLE entries(seq INTEGER PRIMARY KEY,task_id TEXT NOT NULL UNIQUE,plan TEXT NOT NULL,state TEXT NOT NULL,reason TEXT,completion TEXT)')
   db.execute('CREATE TABLE reservations(task_id TEXT NOT NULL,attempt INTEGER NOT NULL,slot_id TEXT NOT NULL UNIQUE,request TEXT NOT NULL,PRIMARY KEY(task_id,attempt))')
+  db.execute("CREATE TABLE cost_actions(action_id TEXT PRIMARY KEY,binding TEXT NOT NULL,max_micro_usd INTEGER NOT NULL CHECK(max_micro_usd>=0))")
   db.execute("INSERT INTO run VALUES(1,?,'RUNNING',NULL)",(b.canon(policy),))
 
 def control(db):
@@ -137,7 +143,85 @@ def stop(path,reason):
 def status(path):
  with b.transaction(path,False) as db:
   p,state,reason=control(db)
-  return {'run_id':p['run_id'],'state':state,'stop_reason':reason,'reserved_model_calls':db.execute('SELECT count(*) FROM reservations').fetchone()[0],'max_model_calls':p['max_model_calls'],'entries':[{'task_id':x[0],'state':x[1],'reason':x[2]} for x in db.execute('SELECT task_id,state,reason FROM entries ORDER BY seq')],'completion_scope':'historical readback; re-observe destination before relying on currentness','background_execution':False}
+  return {'cost_admission':cost_status(db,p),'run_id':p['run_id'],'state':state,'stop_reason':reason,'reserved_model_calls':db.execute('SELECT count(*) FROM reservations').fetchone()[0],'max_model_calls':p['max_model_calls'],'entries':[{'task_id':x[0],'state':x[1],'reason':x[2]} for x in db.execute('SELECT task_id,state,reason FROM entries ORDER BY seq')],'completion_scope':'historical readback; re-observe destination before relying on currentness','background_execution':False}
+
+# Monetary admission extends this queue's existing transaction owner. No second
+# database, refund/reset API, price service or invoice guarantee is introduced.
+COST_ROLES = {"author", "reviewer", "repair", "tool", "service", "runner"}
+COST_DEFAULT = {"mode": "DISABLE_ALL", "limit_micro_usd": 0, "authorization_ref": None, "quotes": {}}
+
+
+def cost_policy(policy):
+ value = policy.get("cost_policy", COST_DEFAULT)
+ if type(value) is not dict or set(value) != set(COST_DEFAULT):raise ValueError("COST_POLICY_FIELDS")
+ mode, limit, auth = value["mode"], value["limit_micro_usd"], value["authorization_ref"]
+ if mode == "DISABLE_ALL":
+  if type(limit) is not int or limit != 0 or auth is not None:raise ValueError("COST_POLICY_VALUES")
+ elif mode == "ENABLE_LIMITED":
+  if type(limit) is not int or not 0 < limit <= 10**15:raise ValueError("COST_POLICY_VALUES")
+  b.ident(auth)
+ elif mode == "ENABLE_ALL":
+  if limit is not None:raise ValueError("COST_POLICY_VALUES")
+  b.ident(auth)
+ else:raise ValueError("COST_POLICY_MODE")
+ quotes=value["quotes"]
+ if type(quotes) is not dict or any(type(k) is not str or k not in COST_ROLES for k in quotes):raise ValueError("COST_QUOTES")
+ for quote in quotes.values():
+  if type(quote) is not dict or set(quote)!={"max_micro_usd","quote_ref"}:raise ValueError("COST_QUOTES")
+  if type(quote["max_micro_usd"]) is not int or not 0 <= quote["max_micro_usd"] <= 10**15:raise ValueError("COST_QUOTES")
+  b.ident(quote["quote_ref"])
+ return dict(value)
+
+
+def cost_status(db, policy):
+ configured = cost_policy(policy)
+ columns = [r[1] for r in db.execute("PRAGMA table_info(cost_actions)")]
+ if columns != ["action_id", "binding", "max_micro_usd"]:
+  return {"status":"UNAVAILABLE", "reason":"LEGACY_COST_SCHEMA", "policy":configured}
+ return {"status":"PRESENT", "policy":configured,
+         "reserved_micro_usd":db.execute("SELECT coalesce(sum(max_micro_usd),0) FROM cost_actions").fetchone()[0],
+         "scope":"TRUSTED_HOST_UPPER_BOUNDS_NOT_PROVIDER_INVOICE"}
+
+
+def admit_action(path, token, role, operation_id, max_micro_usd, quote_ref):
+ """Reserve once before one hook. None/unknown cost never grants dispatch.
+
+ Bounds and quote provenance must be supplied by the trusted host from a
+ reviewed adapter contract. This function cannot authenticate a price claim.
+ """
+ def deny(reason):return {"action":"HOLD", "reason":reason, "allow_new_invocation":False, "preserve":True}
+ if (type(max_micro_usd) is not int or not 0 <= max_micro_usd <= 10**15):return deny("COST_BOUND_UNKNOWN_OR_INVALID")
+ if type(role) is not str or role not in COST_ROLES or type(quote_ref) is not str or not quote_ref.strip():return deny("COST_CONTEXT_INVALID")
+ b.ident(operation_id);b.ident(quote_ref)
+ keys={"run_id","task_id","input_sha256","attempt","slot_id","call_id"}
+ if type(token) is not dict or set(token)!=keys or type(token['attempt']) is not int:return deny("COST_TOKEN_INVALID")
+ token=json.loads(b.canon(token))
+ with b.transaction(path) as db:
+  policy,state,_ = control(db)
+  budget = cost_status(db,policy)
+  if budget['status'] != 'PRESENT':return deny("COST_SCHEMA_UNAVAILABLE")
+  row=db.execute("SELECT plan,state FROM entries WHERE task_id=?",(token['task_id'],)).fetchone()
+  reservation=db.execute("SELECT slot_id,request FROM reservations WHERE task_id=? AND attempt=?",(token['task_id'],token['attempt'])).fetchone()
+  if row is None or reservation is None:return deny("COST_RESERVATION_BINDING")
+  plan=json.loads(row[0]);request=json.loads(reservation[1])
+  expected={'run_id':policy['run_id'],'task_id':plan['task_id'],'input_sha256':plan['input_sha256'],
+            'attempt':request['attempt'],'slot_id':reservation[0],
+            'call_id':b.digest(b.canon({'kind':'host-invoke-v1','request':request}))}
+  if token != expected:return deny("COST_TOKEN_BINDING")
+  action_id=b.digest(b.canon({'token':token,'role':role,'operation_id':operation_id}))
+  binding=b.canon({'token':token,'role':role,'operation_id':operation_id,'max_micro_usd':max_micro_usd,'quote_ref':quote_ref})
+  old=db.execute('SELECT binding FROM cost_actions WHERE action_id=?',(action_id,)).fetchone()
+  if old:
+   if old!=(binding,):return deny("COST_ACTION_ALIAS")
+   return {"action":"RECONCILE_COST_ACTION", "reason":"COST_ACTION_ALREADY_RESERVED", "preserve":True, "allow_new_invocation":False}
+  if state!='RUNNING' or row[1]!='ACTIVE':return deny("COST_RUN_NOT_ACTIVE")
+  configured=budget['policy']
+  if max_micro_usd and configured['mode']=='DISABLE_ALL':return deny("COST_CALLS_DISABLED")
+  if configured['mode']=='ENABLE_LIMITED' and budget['reserved_micro_usd']+max_micro_usd>configured['limit_micro_usd']:return deny("COST_BUDGET_EXHAUSTED")
+  if configured['quotes'].get(role)!={'max_micro_usd':max_micro_usd,'quote_ref':quote_ref}:return deny("COST_QUOTE_NOT_APPROVED")
+  db.execute('INSERT INTO cost_actions VALUES(?,?,?)',(action_id,binding,max_micro_usd))
+  return {"action":"ADMIT_ONCE", "action_id":action_id, "reserved_micro_usd":max_micro_usd}
+
 
 def main():
  ap=argparse.ArgumentParser();ap.add_argument('database');ap.add_argument('operation',choices=['init','inspect','enqueue','next','reserve','hold','complete','stop','status']);a=ap.parse_args();x={} if a.operation in ('inspect','next','status') else json.load(sys.stdin)

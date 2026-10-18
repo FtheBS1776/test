@@ -1,7 +1,7 @@
 """Mutating current-host entry; no model calls, restart or safe retry."""
 import argparse,hashlib,json,sys,types
 from pathlib import Path
-PINS={'cli.py':'c0a35e699cc4ad2fd2e176fd8ab951fbab7f57f56c783230925d078b38ff8af4','session_driver.py':'89b0fd1ef48d5460dada5cc59b25072a10ec9b5c7049af25eabbb2d4464bf9d9'}
+PINS={'cli.py':'34cf1c27b3f1dbc683fc524d65f2ef415f1230d3b3825f1e006bfe8d3a152169','session_driver.py':'872903f1eaec93fce406662382fcadc896d28e8ce894cf60ae083d3e02dc5ab8'}
 def _load(name):
     folder=next(p for p in Path(__file__).resolve().parents if p.name=='shared_interfaces')
     source=folder/name

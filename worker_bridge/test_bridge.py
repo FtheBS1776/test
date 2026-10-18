@@ -1,6 +1,7 @@
 """Targeted identity, uncertainty and replay checks; no provider/model invocation."""
 import concurrent.futures,json,sqlite3,subprocess,sys,tempfile,shutil
 from pathlib import Path
+from contextlib import closing
 import bridge as b
 
 def main():
@@ -37,7 +38,7 @@ def main():
   assert proc.returncode==73 and b.status(db)['state']=='ACCEPTED';checks.append({'check':'lost_ack_preserves_pending','passed':True})
   proc=subprocess.run([sys.executable,'-B',str(Path(b.__file__)),str(db),'deliver','--sink',str(sink)],capture_output=True,text=True);assert proc.returncode==0;result=json.loads(proc.stdout);assert result=={'delivery':'DUPLICATE','completion':'CONFIRMED'}
   assert b.status(db,sink)['completion']=='CONFIRMED';checks.append({'check':'fresh_process_resume_one_destination_application','passed':True})
-  with sqlite3.connect(sink) as cx:assert cx.execute('SELECT count(*) FROM applications').fetchone()[0]==1
+  with closing(sqlite3.connect(sink)) as cx:assert cx.execute('SELECT count(*) FROM applications').fetchone()[0]==1
   sink.unlink();assert b.status(db,sink)['completion']=='UNKNOWN';checks.append({'check':'cached_completion_missing_destination_unknown','passed':True})
   reject('missing_sink_not_recreated',lambda:b.deliver(db,sink));assert not sink.exists()
   with b.transaction(db) as cx:cx.execute("UPDATE attempts SET review=? WHERE n=2",(b.canon({'decision':'ACCEPT','candidate_sha256':'b'*64,'attempt':2}),))
