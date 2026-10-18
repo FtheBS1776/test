@@ -794,3 +794,12 @@ stage build and one missing-root rejection only, or returns a bounded blocker.
 No installed replacement/registration, canonical first creation, binary upload,
 paid provider capacity, main merge, deployment or canonical-master mutation.
 Internal platform inference cost remains unknown; no total-cost-zero claim.
+
+Final full-delta git diff --check exits 2 solely on trailing spaces in numbered
+blank lines of verbatim v1 review source_evidence.txt. Original artifact bytes
+are preserved. Check excluding only that exact raw artifact passes (exit 0).
+Command/output/exit and scope retained in HOST_STAGE_WHITESPACE_CHECK_20261018.json
+and HOST_STAGE_PREPARATION_CHECKS_20261018.json; no global whitespace PASS claim.
+Raw check output is JSON-escaped to preserve exact trailing spaces without
+creating a second whitespace-bearing text artifact; initial capture attempt
+and its failed staged whitespace check are both retained in that JSON record.

@@ -29,5 +29,12 @@
     "Source version pins are not independent wheel artifact hash pins.",
     "Same assistant/tool ancestry; internal platform costs unknown.",
     "No installation, registration, canonical creation, paid capacity, science, main merge, deployment or master-roadmap mutation."
-  ]
+  ],
+  "diff_whitespace_check": {
+    "full_exit": 2,
+    "reason": "Trailing spaces on numbered empty lines in unchanged verbatim v1 review source excerpts. Raw evidence preserved.",
+    "scoped_exit": 0,
+    "only_excluded_path": "repair_validation/host_stage_plan_review_v1/source_evidence.txt",
+    "raw_output": "HOST_STAGE_WHITESPACE_CHECK_20261018.json"
+  }
 }
