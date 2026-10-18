@@ -1,0 +1,5 @@
+PASS AST-only inspection: 36 expected Windows distribution versions exactly equal the two supplied lockfile entry maps. This does not enumerate installed distributions or execute the acceptance step.
+PASS both package identity JSON templates declare version 0.2.0.
+PASS static path trace: entry main -> _load_runs -> load_live_runs -> _root; missing canonical root yields LIVE_STATE_UNAVAILABLE before transport/selftest calls.
+PASS static helper trace: child environment copies ambient environment, replaces PLUGIN_ROOT/PLUGIN_DATA, removes GENIE_PLUGIN_BUILD_SELFTEST; subprocess.run timeout=20, one executable, no stdio protocol payload, checks exit2/empty stdout/exact reason after rstrip CR/LF. Successful helper returns None.
+PASS module top-level read: test_frozen imports owner/execution_bridge and owner imports provisioner; no top-level begin/create_first_run call seen in these supplied modules. Definitions of those calls remain unexecuted.

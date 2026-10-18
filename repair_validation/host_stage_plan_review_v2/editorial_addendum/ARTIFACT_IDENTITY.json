@@ -1,0 +1,7 @@
+{
+  "archive": "host_stage_editorial_addendum_v8u7irzl.zip",
+  "sha256": "b47a5b0bafb791bd9cbfb08714ba757acbe058ad25873c0d7fccde48aaa251dd",
+  "final_plan_sha256": "7b83fce1abdad93ca075944c6872456cdbe38eaf86637875ecb616701edee73e",
+  "disposition": "NO_DEFECT_FOUND",
+  "scope": "One editorial correction only; all original static-review limits remain."
+}

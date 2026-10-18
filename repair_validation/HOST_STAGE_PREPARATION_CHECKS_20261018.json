@@ -1,0 +1,33 @@
+{
+  "classification": "DOCUMENTATION_AND_EVIDENCE_VALIDATION_NOT_HOST_EXECUTION",
+  "historical_manifest_comparisons": {
+    "count": 4,
+    "all_match": true,
+    "report": "HOST_UPGRADE_READINESS_20261018.json"
+  },
+  "protected_base": "ad508c63024087d0d38f489f6b42ee7c5f9af662",
+  "protected_selection": "Paths containing /trial/, or ending .sqlite, SOURCE_MANIFEST.json, VERIFICATION.json",
+  "protected_file_count": 356,
+  "protected_raw_bytes_equal": true,
+  "runtime_reference": "5327f897fd3874cf25326872730f68a0617333a2",
+  "existing_source_build_config_pin_files_compared": 192,
+  "existing_source_build_config_pin_bytes_equal": true,
+  "static_windows_lock_union_count": 36,
+  "static_windows_lock_union_matches_existing_closure": true,
+  "final_plan_sha256": "7b83fce1abdad93ca075944c6872456cdbe38eaf86637875ecb616701edee73e",
+  "review_sequence": [
+    "v1 DEFECT_FOUND: temp/cache direction and complete dependency closure",
+    "v2 NO_DEFECT_FOUND within static trusted-serial plan scope",
+    "editorial addendum NO_DEFECT_FOUND; exact final bytes bound"
+  ],
+  "review_archives_verified": true,
+  "host_build_or_probe_run": false,
+  "native_sdk_tests_rerun": false,
+  "limitations": [
+    "No independent host attestation or whole-machine write confinement.",
+    "Actual exact build runtime, wheel availability/provenance, local binary identity, preservation baseline and rejection probe are unestablished.",
+    "Source version pins are not independent wheel artifact hash pins.",
+    "Same assistant/tool ancestry; internal platform costs unknown.",
+    "No installation, registration, canonical creation, paid capacity, science, main merge, deployment or master-roadmap mutation."
+  ]
+}

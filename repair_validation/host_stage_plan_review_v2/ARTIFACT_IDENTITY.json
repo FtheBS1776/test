@@ -1,0 +1,66 @@
+{
+  "input_zip": "GENIE_HOST_STAGE_REVIEW_INPUT_v2_20261018.zip",
+  "input_sha256": "e4e835c1d2581d73c16560b7b8ac6787b1a7bb06ae7dfe401c6e9426cdb6c2f8",
+  "review_zip": "host_stage_plan_review_v2_yr59s5b4.zip",
+  "review_sha256": "2de4d87ce39a908518a83e14e6cfbbc87a66d92593b24eb5b1933d5037902a41",
+  "reviewed_plan_sha256": "184aa37fb1e1b1df3631402803d3644d5dde0d54875a9549e5155ba1c5d033fe",
+  "disposition": "NO_DEFECT_FOUND",
+  "scope": "Static trusted-serial-host stage plan only; no subject/host execution; same assistant ancestry. Final editorial correction has separate addendum.",
+  "retained_files": [
+    {
+      "path": "REVIEW.md",
+      "size": 10383,
+      "sha256": "003c38af6311c13731c387d1a56a46adf5f7ce32ad7442c568b1dd0a8e48f701"
+    },
+    {
+      "path": "ATTEMPTS.md",
+      "size": 1330,
+      "sha256": "07a7d11f5dc03e7309cd800afb63ade3f7ce5ea108ffeb8dcb8f9f2f6e121c25"
+    },
+    {
+      "path": "verification.py",
+      "size": 2383,
+      "sha256": "bdfe24d6be4b5a673415543b683eae5e2ed21f920b8d94ce36104b691f29f265"
+    },
+    {
+      "path": "verification.stdout.txt",
+      "size": 7370,
+      "sha256": "9fdcc2c0d8a82a2461303f4d2464ef4dd756e35ab513f7c31b3505f722d0a2ae"
+    },
+    {
+      "path": "verification.stderr.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "static_checks.py",
+      "size": 2686,
+      "sha256": "fb9a8339f7242e65c59dfd9d80483eb0b71fd28a0d5459db0b71271d1492b37f"
+    },
+    {
+      "path": "static_checks.stdout.txt",
+      "size": 9049,
+      "sha256": "b3ecd57fd61eb8f42641faabb77020992d967236d88602616a0efbf0ddc2b829"
+    },
+    {
+      "path": "static_checks.stderr.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "final_integrity.py",
+      "size": 1058,
+      "sha256": "c2d85551ecaa9ba799013b09f27dea55b39bba642ecb4c3cc6c601dbd2cd9925"
+    },
+    {
+      "path": "final_integrity.stdout.txt",
+      "size": 330,
+      "sha256": "0519e9b82251a932312a4fb403f67d05e3868a6a54be9c337a397606d1fa9b3c"
+    },
+    {
+      "path": "final_integrity.stderr.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

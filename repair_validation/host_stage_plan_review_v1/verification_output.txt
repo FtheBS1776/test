@@ -1,0 +1,6 @@
+PASS outer SHA256 84c4549a005746e3829219ea9a8422527bd08ee94d21345f6de5364515c4c698
+PASS safe regular unique paths, including NFC/casefold uniqueness; no symlinks, encrypted entries, or directory entries
+PASS ZIP CRC/lengths for 56 entries
+PASS manifest exact set and SHA256/lengths for 55 files (manifest excludes itself)
+manifest SHA256 a87f76cc40afe55b1b100ab9d9bb4bbbb30aa60a41576355de6b956f07475447
+PASS verified before initial extraction; extraction destination was newly exclusive.

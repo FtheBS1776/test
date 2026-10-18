@@ -758,3 +758,39 @@ legacy/canonical state locations, preserve all old bytes. Do not launch the
 fixture-backed binary or overwrite/import state to imitate a current live bind.
 Current candidate delivery/registration/installation is not established by this
 report and remains a separate action from this read-only inventory.
+
+
+2026-10-18 — reported upgrade readiness and isolated host-stage plan
+Four user-reported manifest hashes match preserved v0.1.1 Build A exactly,
+completing the five named payload comparisons including the prior executable.
+No explicit registration cwd; effective cwd UNKNOWN. Canonical/staging roots
+reportedly absent; legacy cache reportedly exists. Extra files/currentness and
+host authenticity remain unverified. No cloud access to or operation on laptop.
+Normalized report: repair_validation/HOST_UPGRADE_READINESS_20261018.json.
+Existing R09 correspondence updated; no second/master roadmap written.
+
+Stage-only selected build/probe plan: desktop_plugin/HOST_STAGE_PLAN_20261018.md.
+First cold-context static review DEFECT_FOUND: ambient temp/cache effects and
+expected-version subset did not enforce stated staging/dependency boundaries.
+Both corrected using process-local tool controls, wheel-only/no-deps exact lock
+install and complete installed-inventory gate, keeping the existing builder/spec.
+Single existing rejection helper retained with bounded raw-output capture; no
+CI-only main, historical preflight, owner creation, SDK tool or model invocation.
+Second cold-context static review NO_DEFECT_FOUND within trusted serial plan
+scope. One erroneous pywin32 duplicate parenthesis corrected, exact one-line
+delta verified separately; final disposition unchanged. All prior input/review
+attempts retained. Same model/tool ancestry, not independent host attestation.
+
+Four historical manifest comparisons/reference hash PASS; static exact Windows
+lock union = 36 PASS; 356 base paths selected by trial/store/verification suffix
+raw-byte predicate unchanged; existing source/build/config/pin bytes unchanged
+from tested runtime 5327f897. Review ZIP digests/CRC/path/manifest inventories
+verified. Details: repair_validation/HOST_STAGE_PREPARATION_CHECKS_20261018.json.
+No build, native/SDK/fixture/pilot or scientific suite rerun for this documentation
+and evidence-only update. Previous receipts retain exact original source scope.
+Actual laptop prerequisites/build/probe and fresh binary identity remain gates.
+Next eligible action: connected laptop follows exact final plan for an isolated
+stage build and one missing-root rejection only, or returns a bounded blocker.
+No installed replacement/registration, canonical first creation, binary upload,
+paid provider capacity, main merge, deployment or canonical-master mutation.
+Internal platform inference cost remains unknown; no total-cost-zero claim.

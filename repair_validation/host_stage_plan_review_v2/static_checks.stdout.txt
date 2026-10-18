@@ -1,0 +1,193 @@
+STATIC_LOCK_UNION_EQUALS_WINDOWS_TRANSPORT_PLUS_ACTION_BUILD_MAPPING_PASS 36
+{
+  "altgraph": "0.17.5",
+  "annotated-types": "0.8.0",
+  "anyio": "4.15.1",
+  "attrs": "26.1.0",
+  "cffi": "2.1.1",
+  "click": "8.5.0",
+  "cryptography": "50.0.2",
+  "h11": "0.16.0",
+  "httpcore2": "2.13.1",
+  "httpx2": "2.13.1",
+  "idna": "3.20",
+  "jsonschema": "4.26.0",
+  "jsonschema-specifications": "2025.9.1",
+  "mcp": "2.3.0",
+  "mcp-types": "2.3.0",
+  "opentelemetry-api": "1.45.1",
+  "packaging": "26.3",
+  "pefile": "2024.8.26",
+  "pycparser": "3.11",
+  "pydantic": "2.14.1",
+  "pydantic-core": "2.50.1",
+  "pyinstaller": "6.22.3",
+  "pyinstaller-hooks-contrib": "2026.8",
+  "pyjwt": "2.15.1",
+  "python-multipart": "0.0.32",
+  "pywin32": "312",
+  "pywin32-ctypes": "0.2.3",
+  "referencing": "0.37.0",
+  "rpds-py": "2026.9.1",
+  "setuptools": "84.0.0",
+  "sse-starlette": "3.5.0",
+  "starlette": "1.7.0",
+  "truststore": "0.10.4",
+  "typing-extensions": "4.16.0",
+  "typing-inspection": "0.4.4",
+  "uvicorn": "0.54.0"
+}
+DUPLICATE_IDENTICAL_LOCK_MEMBERS {}
+PYWIN32_OCCURRENCES [('desktop_plugin/windows-build.lock.txt', 8)]
+TOP_LEVEL_STRUCTURE desktop_plugin/test_frozen.py
+1 Import import asyncio
+2 Import import hashlib
+3 Import import json
+4 Import import os
+5 ImportFrom from pathlib import Path
+6 Import import shutil
+7 Import import subprocess
+8 Import import tempfile
+10 ImportFrom from desktop_plugin.live_state_windows import MARKER_NAME, MARKER_VALUE, candidate_live_root
+11 ImportFrom from standalone_app import owner, execution_bridge
+14 FunctionDef def _hash_tree(root):
+23 FunctionDef def _load_json(path):
+27 FunctionDef def _env(plugin_root, plugin_data, selftest=False):
+38 FunctionDef def _expect_reject(exe, plugin_root, plugin_data, reason):
+48 FunctionDef def _run_build_selftest(exe, plugin_root, plugin_data):
+58 AsyncFunctionDef async def _exercise(exe, plugin_root, plugin_data):
+100 Assign FIXTURE_RESULT = "NO MODEL CALL: fresh standalone-to-plugin composition fixture."
+103 FunctionDef def _write_marker(root, raw=None):
+108 FunctionDef def _create_and_drive_fixture():
+148 FunctionDef def main():
+245 If if __name__ == "__main__":
+TOP_LEVEL_STRUCTURE desktop_plugin/live_state_windows.py
+1 Expr """Fixed-root Windows binding for Genie's trusted-owned local read-only state.
+7 ImportFrom from __future__ import annotations
+9 Import import ctypes
+10 ImportFrom from ctypes import wintypes
+11 Import import json
+12 Import import os
+13 ImportFrom from pathlib import Path
+14 Import import re
+15 Import import uuid
+17 ImportFrom from shared_interfaces import cli
+19 Assign APP_DIR = "GenieReasoningEngine"
+20 Assign STATE_DIR = "state-v1"
+21 Assign MARKER_NAME = "GENIE_STATE.json"
+22 Assign REGISTRY_NAME = "REGISTRY.json"
+23 Assign MARKER_VALUE = {
+28 Assign MAX_JSON = 65536
+29 Assign DIRECT_CHILD = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$")
+30 Assign RESERVED = {
+35 Assign FOLDERID_LOCAL_APP_DATA = uuid.UUID("f1b32785-6fba-4fcf-9d55-7b8e7f157091")
+36 Assign RPC_E_CHANGED_MODE = 0x80010106
+37 Assign COINIT_APARTMENTTHREADED = 0x2
+40 ClassDef class LiveStateError(ValueError):
+44 ClassDef class _GUID(ctypes.Structure):
+53 FunctionDef def _u32(value):
+57 FunctionDef def _failed(hr):
+61 FunctionDef def _known_local_app_data():
+110 FunctionDef def candidate_live_root():
+115 FunctionDef def _strict_json(path, limit=MAX_JSON):
+144 FunctionDef def _root():
+162 FunctionDef def _direct_child(root, name, kind):
+185 FunctionDef def validate_state_root(root, marker_mode="required"):
+243 FunctionDef def load_live_runs():
+TOP_LEVEL_STRUCTURE shared_interfaces/cli.py
+1 Expr """Local read-only CLI for the unchanged, pinned shared Genie facade.
+6 Import import argparse
+7 Import import hashlib
+8 Import import json
+9 Import import math
+10 Import import os
+11 ImportFrom from pathlib import Path
+12 Import import stat
+13 Import import sys
+14 Import import types
+16 Assign FACADE_SHA256 = "c7bdd7b8b97077aeccb5831466a4d4071b391e5657a9cc449eb0d70a1ea84798"
+17 Assign REGISTRY_LIMIT = 65536
+18 Assign PROG = "python3 -B -m shared_interfaces.cli"
+21 ClassDef class _SourceError(ValueError):
+25 ClassDef class _HelpRequested(Exception):
+29 ClassDef class _ArgumentError(ValueError):
+33 FunctionDef def _load_facade():
+52 FunctionDef def _unique_object(pairs):
+61 FunctionDef def _invalid_constant(value):
+65 FunctionDef def _finite_float(value):
+72 FunctionDef def _nonblocking_opener(path, flags):
+78 FunctionDef def _string(value):
+84 FunctionDef def _read_registry(path):
+124 FunctionDef def _emit(value):
+131 ClassDef class _Parser(argparse.ArgumentParser):
+146 ClassDef class _Once(argparse.Action):
+153 FunctionDef def _parser():
+170 FunctionDef def main(argv=None):
+211 If if __name__ == "__main__":
+TOP_LEVEL_STRUCTURE standalone_app/owner.py
+1 Expr """Minimal trusted-local standalone owner over the existing Genie core.
+7 ImportFrom from __future__ import annotations
+9 Import import hashlib
+10 Import import json
+11 Import import os
+12 ImportFrom from pathlib import Path
+13 Import import types
+15 ImportFrom from desktop_plugin import live_state_windows as live
+16 ImportFrom from canonical_state_provisioner import provisioner_windows as provision
+18 Assign RUN_CONTROL_SHA256 = "43958f98ce3dfd01de019df70bb14dfd9135f87f41b58171b3224a97bf8c2b65"
+19 Assign QUEUE_NAME = "queue.sqlite"
+20 Assign OWNED_ROOT_NAME = "work"
+21 Assign REGISTRY_NAME = "REGISTRY.json"
+24 ClassDef class OwnerError(ValueError):
+28 FunctionDef def _load_control_chain():
+47 FunctionDef def _snapshot(value):
+60 FunctionDef def _precheck_spec(spec, runner):
+88 FunctionDef def _write_registry(workspace, run_name, run_id):
+113 FunctionDef def _live_runs():
+120 FunctionDef def create_first_run(spec):
+190 FunctionDef def status(run_name):
+208 FunctionDef def advance(run_name):
+228 FunctionDef def stop(run_name):
+TOP_LEVEL_STRUCTURE standalone_app/execution_bridge.py
+1 Expr """Provider-neutral standalone bridge over the accepted finite Genie driver.
+7 ImportFrom from __future__ import annotations
+9 Import import hashlib
+10 Import import json
+11 ImportFrom from pathlib import Path
+12 Import import types
+14 ImportFrom from desktop_plugin import live_state_windows as live
+16 Assign SESSION_DRIVER_SHA256 = "872903f1eaec93fce406662382fcadc896d28e8ce894cf60ae083d3e02dc5ab8"
+19 ClassDef class BridgeError(ValueError):
+23 FunctionDef def _load_driver():
+37 FunctionDef def drive(run_name, worker, reviewer, max_actions=64, notify=None, costs=None, materials=None):
+TOP_LEVEL_STRUCTURE canonical_state_provisioner/provisioner_windows.py
+1 Expr """One-time Windows namespace provisioner for trusted local Genie state.
+7 ImportFrom from __future__ import annotations
+9 Import import ctypes
+10 ImportFrom from ctypes import wintypes
+11 Import import json
+12 Import import os
+13 ImportFrom from pathlib import Path
+15 ImportFrom from desktop_plugin import live_state_windows as live
+17 Assign STAGING_DIR = ".state-v1.init"
+18 Assign MOVEFILE_WRITE_THROUGH = 0x00000008
+19 Assign INVALID_FILE_ATTRIBUTES = 0xFFFFFFFF
+20 Assign FILE_ATTRIBUTE_DIRECTORY = 0x00000010
+21 Assign FILE_ATTRIBUTE_REPARSE_POINT = 0x00000400
+22 Assign PUBLICATION_SCOPE = "FIXED_NAMESPACE_VISIBLE_PUBLICATION_NOT_CRASH_DURABILITY"
+25 ClassDef class ProvisionError(ValueError):
+29 FunctionDef def _kernel32():
+43 FunctionDef def _attributes(path):
+55 FunctionDef def _plain_directory(path, parent):
+73 FunctionDef def _fixed_paths(create_app):
+96 FunctionDef def _move_publish(staging, final):
+105 FunctionDef def _write_marker_exclusive(staging):
+123 FunctionDef def _validate(root, marker_mode):
+130 FunctionDef def _portable_binding(runs):
+145 ClassDef class ProvisioningSession:
+221 FunctionDef def begin():
+SOURCE_CONFIG desktop_plugin/package/plugin.json 295 9c0b65cb0f986d3cfba2b991db383458518cb462f93d7a035314928af10ffb72 {"$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json", "description": "Read bounded local Genie run diagnostics and confirmed accepted task results from existing Genie-owned local state without granting new authority.", "name": "genie-readonly", "version": "0.2.0"}
+SOURCE_CONFIG desktop_plugin/package/.codex-plugin/plugin.json 251 31e55602c11b0b1357bfa8aa739ab0bd61b854d78b9371f030240952e9f9fe86 {"description": "Read bounded local Genie run diagnostics and confirmed accepted task results from existing Genie-owned local state without granting new authority.", "mcpServers": "./.mcp.json", "name": "genie-readonly", "version": "0.2.0"}
+SOURCE_CONFIG desktop_plugin/package/mcp.json 221 f0b55b47f1577d197d83ff2b9ce97da5ee428e7625193c31e05564320399f1b6 {"$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json", "mcpServers": {"genie-readonly": {"command": "./bin/genie-mcp.exe", "cwd": "${PLUGIN_ROOT}", "type": "stdio"}}}
+SOURCE_CONFIG desktop_plugin/package/.mcp.json 144 2fb1fb8d99a453530908ba26100da9e9cd61d73be9d39613936a328934a28fc1 {"mcpServers": {"genie-readonly": {"args": [], "command": "./bin/genie-mcp.exe", "cwd": "${PLUGIN_ROOT}"}}}
+STATIC_SOURCE_ONLY_CHECKS_COMPLETED_NO_SUBJECT_IMPORT_OR_EXECUTION

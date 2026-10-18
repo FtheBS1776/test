@@ -1,0 +1,364 @@
+STATIC READ-ONLY SOURCE EVIDENCE; no subject execution
+
+
+desktop_plugin/HOST_STAGE_PLAN_20261018.md SHA256 1d4eb1f228312c1e26e9643001b2abc7b36d83628e890d452c89491965da7d6f
+  15: ## Allowed effects and preservation
+  16: 
+  17: Use only one NEW exclusive directory named `genie-repair-stage-20261018` within the currently selected owned host project. If it already exists, stop and preserve it. All checkout, virtual environment, build, archive, logs and result files must remain inside that directory. Never stage into the installed plugin or either state namespace.
+  18: 
+  19: An existing exact **CPython 3.12.10 x64** and Git are build prerequisites. If absent, return `BLOCKED_BUILD_RUNTIME` with the observed versions; do not install/download a runtime or change the machine. This is an engineering build prerequisite, not an end-user requirement for the self-contained application.
+  20: 
+  21: Public source/dependency downloads and the existing locked dependencies into the new private build venv are permitted as isolated repair preparation. Use public PyPI without credentials; if effective package-source configuration includes an unknown/private/billable source, stop rather than changing user configuration or using it. No global/user package install, configuration change, paid service, provider/model CLI, model-agent spawning, GitHub artifact upload, binary publication, scientific code or live pilot.
+  22: 
+  23: Preserve the installed v0.1.1 files, actual MCP registration, legacy cache and canonical namespace. Do not stop/restart the existing server, invoke its tools, import/migrate/copy its cache, create authoritative state, register/replace an installed package, or delete/clean up uncertain results. Do not print secrets or environment values; use the already configured legacy data location internally only.
+  24: 
+  25: ## Preparation sequence
+  26: 
+  27: 1. Check prerequisites and the exclusive-stage precondition. Within the new stage, clone without an initial checkout, then fetch/check out the exact source commit detached. Disable newline conversion for these Git operations using command-local settings; do not change global/user Git configuration. Verify exact HEAD and tree above, a clean tracked checkout, and raw worktree bytes against the recorded Git blobs (`hash-object --no-filters` versus `ls-tree`), not just normalized `git diff`. Stop on any mismatch, missing file, unexpected link or unresolved source. Do not edit source, pins or lockfiles.
+  28: 2. Read the verified `.github/actions/genie-windows-package/action.yml` and `desktop_plugin/genie_mcp.spec` before running anything. Reuse only the action's existing steps named **Create isolated exact build environment**, **Verify exact Windows runtime and build closures**, **Build self-contained Windows stdio executable**, **Assemble portable plus Codex-compatible plugin folder**, and **Record package identities**. Invoke the already verified 3.12.10 executable for the first venv-creation command; do not rely on an unverified default Python alias. These place their outputs within the staged checkout. Retain the exact dependency versions and 36-distribution acceptance comparison. Use no paid/private dependency source or credentials.
+  29: 3. Do **not** execute the full composite action, its historical-state preflight, or `desktop_plugin.test_frozen.main`. The latter is explicitly restricted to disposable Windows CI and acquires the canonical namespace. Never set/spoof `GITHUB_ACTIONS` or run owner/provisioner creation to make its assertions pass. Record this as a selected build subset, not a full new CI/frozen-lifecycle pass.
+  30: 4. Inspect the staged portable ZIP before any new binary launch: safe unique relative paths, no symlinks/traversal, clean CRC, and exactly the five package files (four manifests plus `bin/genie-mcp.exe`; directories may also be entries). Compare all four manifest bytes with verified source templates and require version `0.2.0`. Hash/size the EXE, ZIP and four manifests. Reuse the existing pinned `pyi-archive_viewer -l -b` archive inspection and the source harness's no-`seed_state`/no-`build_seed`/no-`.sqlite` entry assertions. Stop on mismatch; do not silently rebuild or relabel a binary. PyInstaller builds are not bit-for-bit reproducible; the old hosted EXE hash is not the expected new hash.
+  31: 
+  32: ## One missing-root probe, only if all checks pass
+  33: 
+  34: 5. Before entering the new binary, hash the installed five named files, actual registration file and existing legacy state files as raw bytes, with closed handles and without opening SQLite connections or invoking Genie. Keep private paths internally and report only relative identities/counts. Refuse unresolved links/locations or incomplete baseline capture; do not traverse outside the known legacy directory or invent an alternate path. Existing processes remain untouched. If this cannot be completed safely, preserve the stage and return `BLOCKED_PRESERVATION_BASELINE` without launching.
+  35: 6. Using the verified staged source's existing `candidate_live_root()` Windows Known Folder selection, recheck that both canonical `state-v1` and its sibling `.state-v1.init` are absent (including `lexists` checks for dangling links). Failure to resolve the native folder, any existing target, or an uncertain check stops the task. Do not substitute environment variables or a root override, call `begin()`/`create_first_run`, or create the parent application namespace.
+  36: 7. Import only the verified staged `desktop_plugin.test_frozen` module and reuse its existing `_expect_reject` helper **once** with the staged EXE, staged package directory, existing internally resolved legacy PLUGIN_DATA directory and reason `LIVE_STATE_UNAVAILABLE`. This helper uses a child-only environment and removes the build-selftest flag. Do not call that module's `main` or any other frozen fixture/helper. Required observation: exit2, empty stdout, and stderr exactly `GENIE_PLUGIN_REJECT:LIVE_STATE_UNAVAILABLE` apart from line endings. It must refuse missing live state despite the real old cache. No stdio SDK session or tool invocation is permitted in this task.
+  37: 8. Rehash the complete captured baseline and recheck canonical-root/staging absence. Any timeout, other output/status, input change, new state, uncertain termination or incomplete capture is `UNKNOWN_PRESERVE`, with no retry, cleanup, automatic restoration or registration. Preserve the new stage/logs for inspection. This is a trusted serial-host observation, not hostile-host, concurrency, whole-store rollback or process-tree confinement proof.
+  38: 
+  39: ## Return and stopping
+  40: 
+  41: Return one concise report with prerequisite versions, exact source commit/tree, raw-byte verification result, selected build steps, dependency closure result, package/config/EXE hashes and sizes, archive checks, exact one-probe stdout/stderr/exit/termination observation, baseline equality and namespace absence, stage location, and any blocked/unknown reason. Preserve all raw outputs locally in the new stage and redact secrets/private environment values from the report.
+  42: 
+  43: Only if all checks pass use `STAGED_ONLY_MISSING_ROOT_REJECTION_CONFIRMED`. This does not establish valid-state MCP calls, application installation, a published package, useful model reasoning or an invoice bound. Stop after the report. Actual replacement/registration and first canonical-run creation are separate actions under the standing no-deployment boundary; this preparation does not authorize them. All science/HOLD, no paid calls, no main merge, no master mutation and deduplication rules remain intact.
+
+.github/actions/genie-windows-package/action.yml SHA256 df720c988b13a0704f8021a11abd50ab1c945a4576bc2e8fde31bcbbd8f06290
+   6:     - name: Create isolated exact build environment
+   7:       shell: pwsh
+   8:       run: |
+   9:         python -m venv desktop_plugin/.venv
+  10:         $py = 'desktop_plugin/.venv/Scripts/python.exe'
+  11:         & $py -m pip install --disable-pip-version-check -r plugin_mcp_server/requirements.lock.txt -r desktop_plugin/windows-build.lock.txt
+  12:         & $py -m pip check
+  13:         & $py -m pip freeze
+  14: 
+  15:     - name: Verify exact Windows runtime and build closures
+  16:       shell: pwsh
+  17:       run: |
+  18:         $py = 'desktop_plugin/.venv/Scripts/python.exe'
+  19:         @'
+  20:         import importlib.metadata as md
+  21:         from shared_interfaces.mcp_server import required_transport_distributions
+  22:         expected = required_transport_distributions()
+  23:         expected.update({
+  24:             'altgraph': '0.17.5',
+  25:             'packaging': '26.3',
+  26:             'pefile': '2024.8.26',
+  27:             'pyinstaller': '6.22.3',
+  28:             'pyinstaller-hooks-contrib': '2026.8',
+  29:             'pywin32-ctypes': '0.2.3',
+  30:             'setuptools': '84.0.0',
+  31:         })
+  32:         mismatches = {
+  33:             name: (version, md.version(name))
+  34:             for name, version in expected.items()
+  35:             if md.version(name) != version
+  36:         }
+  37:         assert not mismatches, mismatches
+  38:         print('WINDOWS_PACKAGE_VERSION_CLOSURE_PASS', len(expected))
+  39:         '@ | & $py -
+  77:     - name: Build self-contained Windows stdio executable
+  78:       shell: pwsh
+  79:       run: |
+  80:         desktop_plugin/.venv/Scripts/pyinstaller.exe --clean --noconfirm --distpath desktop_plugin/build_dist --workpath desktop_plugin/build_work desktop_plugin/genie_mcp.spec
+  81: 
+  82:     - name: Assemble portable plus Codex-compatible plugin folder
+  83:       shell: pwsh
+  84:       run: |
+  85:         $root = 'desktop_plugin/staging/genie-readonly'
+  86:         New-Item -ItemType Directory -Force -Path "$root/bin" | Out-Null
+  87:         New-Item -ItemType Directory -Force -Path "$root/.codex-plugin" | Out-Null
+  88:         Copy-Item desktop_plugin/package/plugin.json "$root/plugin.json"
+  89:         Copy-Item desktop_plugin/package/mcp.json "$root/mcp.json"
+  90:         Copy-Item desktop_plugin/package/.codex-plugin/plugin.json "$root/.codex-plugin/plugin.json"
+  91:         Copy-Item desktop_plugin/package/.mcp.json "$root/.mcp.json"
+  92:         Copy-Item desktop_plugin/build_dist/genie-mcp.exe "$root/bin/genie-mcp.exe"
+  93:         Get-ChildItem -Force -Recurse $root | Select-Object FullName,Length
+  94: 
+  95:     - name: Exercise frozen plugin lifecycle, compatibility manifests and stdio tools
+  96:       shell: pwsh
+  97:       run: |
+  98:         $env:GENIE_PLUGIN_ROOT = (Resolve-Path 'desktop_plugin/staging/genie-readonly').Path
+  99:         desktop_plugin/.venv/Scripts/python.exe -B -m desktop_plugin.test_frozen
+ 100: 
+ 101:     - name: Record package identities
+ 102:       shell: pwsh
+ 103:       run: |
+ 104:         $exe = 'desktop_plugin/staging/genie-readonly/bin/genie-mcp.exe'
+ 105:         $exeHash = (Get-FileHash $exe -Algorithm SHA256).Hash.ToLower()
+ 106:         $exeSize = (Get-Item $exe).Length
+ 107:         Compress-Archive -Path 'desktop_plugin/staging/genie-readonly' -DestinationPath 'desktop_plugin/genie-readonly-windows.zip' -Force
+ 108:         $zipHash = (Get-FileHash 'desktop_plugin/genie-readonly-windows.zip' -Algorithm SHA256).Hash.ToLower()
+ 109:         $zipSize = (Get-Item 'desktop_plugin/genie-readonly-windows.zip').Length
+ 110:         Write-Output "GENIE_DESKTOP_EXE_SHA256=$exeHash"
+ 111:         Write-Output "GENIE_DESKTOP_EXE_BYTES=$exeSize"
+ 112:         Write-Output "GENIE_DESKTOP_ZIP_SHA256=$zipHash"
+ 113:         Write-Output "GENIE_DESKTOP_ZIP_BYTES=$zipSize"
+
+desktop_plugin/genie_mcp.spec SHA256 8da0f3137c031fc99e126778b35f8f8440c6d16a721d8956157455fc99646e59
+  24: # Runtime checks use importlib.metadata, so carry the exact reviewed metadata.
+  25: transport_distributions = [
+  26:     "mcp", "mcp-types", "annotated-types", "anyio", "attrs", "cffi", "click",
+  27:     "cryptography", "h11", "httpcore2", "httpx2", "idna", "jsonschema",
+  28:     "jsonschema-specifications", "opentelemetry-api", "pycparser", "pydantic",
+  29:     "pydantic-core", "PyJWT", "python-multipart", "referencing", "rpds-py",
+  30:     "sse-starlette", "starlette", "truststore", "typing-extensions",
+  31:     "typing-inspection", "uvicorn", "pywin32",
+  32: ]
+  33: for distribution in transport_distributions:
+  34:     datas += copy_metadata(distribution)
+  49: a = Analysis(
+  50:     [str(ROOT / "desktop_plugin" / "entry.py")],
+  51:     pathex=[str(ROOT)],
+  52:     binaries=[],
+  53:     datas=datas,
+  54:     hiddenimports=hiddenimports,
+  55:     hookspath=[],
+  56:     hooksconfig={},
+  57:     runtime_hooks=[],
+  58:     excludes=["mcp.cli", "typer"],
+  59:     noarchive=False,
+  60: )
+  61: pyz = PYZ(a.pure)
+  62: 
+  63: exe = EXE(
+  64:     pyz,
+  65:     a.scripts,
+  66:     a.binaries,
+  67:     a.datas,
+  68:     [],
+  69:     name="genie-mcp",
+  70:     debug=False,
+  71:     bootloader_ignore_signals=False,
+  72:     strip=False,
+  73:     upx=False,
+  74:     console=True,
+  75:     disable_windowed_traceback=False,
+  76:     argv_emulation=False,
+  77: )
+
+desktop_plugin/test_frozen.py SHA256 31fb64c4d72c70fc3a4c8a56e6e6ed1392822f2dbf6bed8d2af7fb411fee1345
+   1: import asyncio
+   2: import hashlib
+   3: import json
+   4: import os
+   5: from pathlib import Path
+   6: import shutil
+   7: import subprocess
+   8: import tempfile
+   9: 
+  10: from desktop_plugin.live_state_windows import MARKER_NAME, MARKER_VALUE, candidate_live_root
+  11: from standalone_app import owner, execution_bridge
+  27: def _env(plugin_root, plugin_data, selftest=False):
+  28:     env = dict(os.environ)
+  29:     env["PLUGIN_ROOT"] = str(plugin_root)
+  30:     env["PLUGIN_DATA"] = str(plugin_data)
+  31:     if selftest:
+  32:         env["GENIE_PLUGIN_BUILD_SELFTEST"] = "1"
+  33:     else:
+  34:         env.pop("GENIE_PLUGIN_BUILD_SELFTEST", None)
+  35:     return env
+  36: 
+  37: 
+  38: def _expect_reject(exe, plugin_root, plugin_data, reason):
+  39:     proc = subprocess.run(
+  40:         [str(exe)], cwd=plugin_root, env=_env(plugin_root, plugin_data),
+  41:         input=b"", stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=20)
+  42:     assert proc.returncode == 2, (proc.returncode, proc.stdout, proc.stderr)
+  43:     assert proc.stdout == b"", proc.stdout
+  44:     expected = f"GENIE_PLUGIN_REJECT:{reason}".encode("ascii")
+  45:     assert proc.stderr.rstrip(b"\r\n") == expected, proc.stderr
+ 148: def main():
+ 149:     # The real binary has no root override. This harness is deliberately limited
+ 150:     # to a disposable hosted Windows account, never a user's existing namespace.
+ 151:     assert os.name == "nt" and os.environ.get("GITHUB_ACTIONS") == "true", "EPHEMERAL_WINDOWS_CI_ONLY"
+ 152:     plugin_root = Path(os.environ["GENIE_PLUGIN_ROOT"]).resolve(strict=True)
+ 153:     exe = plugin_root / "bin" / "genie-mcp.exe"
+ 154:     assert exe.is_file(), exe
+ 155:     viewer = Path("desktop_plugin/.venv/Scripts/pyi-archive_viewer.exe").resolve(strict=True)
+ 156:     contents = subprocess.run([str(viewer), "-l", "-b", str(exe)], check=True,
+ 157:                               capture_output=True, text=True, timeout=30).stdout
+ 158:     normalized = contents.replace("\\", "/").lower()
+ 159:     assert "seed_state" not in normalized and "build_seed" not in normalized
+ 160:     assert ".sqlite" not in normalized, "BUNDLED_STORE_FORBIDDEN"
+ 161:     print("FROZEN_ARCHIVE_NO_SEED_OR_SQLITE_PASS")
+ 162:     manifest = _load_json(plugin_root / "plugin.json")
+ 163:     assert manifest["name"] == "genie-readonly" and manifest["version"] == "0.2.0"
+ 164:     compat = _load_json(plugin_root / ".codex-plugin" / "plugin.json")
+ 165:     assert compat["name"] == manifest["name"] and compat["version"] == manifest["version"]
+ 166:     assert compat["mcpServers"] == "./.mcp.json"
+ 167:     portable = _load_json(plugin_root / "mcp.json")["mcpServers"]["genie-readonly"]
+ 168:     legacy = _load_json(plugin_root / ".mcp.json")["mcpServers"]["genie-readonly"]
+ 169:     assert portable == {"type": "stdio", "command": "./bin/genie-mcp.exe", "cwd": "${PLUGIN_ROOT}"}
+ 170:     assert legacy == {"command": "./bin/genie-mcp.exe", "args": [], "cwd": "${PLUGIN_ROOT}"}
+ 171: 
+ 172:     live = candidate_live_root()
+ 173:     assert not os.path.lexists(live.parent), "REFUSE_EXISTING_APP_NAMESPACE"
+ 174:     with tempfile.TemporaryDirectory() as temporary:
+ 175:         scratch = Path(temporary)
+ 176:         plugin_data = scratch / "plugin-data"
+ 177:         cached = plugin_data / "state"
+ 178:         cached.mkdir(parents=True)
+ 179:         (cached / ".genie-state.json").write_text('{"state_format":1,"seeded_from":"retired-cache"}')
+ 180:         (cached / "REGISTRY.json").write_text("{}\n")
+ 181:         plugin_data_before = _hash_tree(plugin_data)
+ 182: 
+ 183:         # A convincing former cache cannot authorize fallback when live state is absent.
+ 184:         _expect_reject(exe, plugin_root, plugin_data, "LIVE_STATE_UNAVAILABLE")
+
+desktop_plugin/entry.py SHA256 edeb62130daf27a293fd550fbc42413ea03f3700701392607dcb84ac97a2d174
+  20: def _load_runs():
+  21:     try:
+  22:         return live.load_live_runs()
+  23:     except live.LiveStateError as exc:
+  24:         raise _BootstrapReject(str(exc)) from None
+  25:     except Exception:
+  26:         raise _BootstrapReject("LIVE_STATE_INVALID") from None
+  72: def main():
+  73:     try:
+  74:         runs = _load_runs()
+  75:         if os.environ.get(SELFTEST_ENV) == "1":
+  76:             _build_selftest(runs)
+  77:             return 0
+  78:         _run_transport(runs)
+  79:         return 0
+  80:     except _BootstrapReject as exc:
+  81:         # Fixed reason codes only: do not leak paths, result text, or internals.
+  82:         sys.stderr.write("GENIE_PLUGIN_REJECT:" + str(exc) + "\n")
+  83:         return 2
+  84:     except Exception:
+  85:         sys.stderr.write("GENIE_PLUGIN_FAILURE\n")
+  86:         return 2
+  87: 
+  88: 
+  89: if __name__ == "__main__":
+  90:     raise SystemExit(main())
+
+desktop_plugin/live_state_windows.py SHA256 c845ef22c21ffae25648806660e705fdd7406648ef7054b4309d52c3321bc221
+  61: def _known_local_app_data():
+  62:     if os.name != "nt":
+  63:         raise LiveStateError("LIVE_STATE_PLATFORM")
+  64:     try:
+  65:         ole32 = ctypes.OleDLL("ole32")
+  66:         shell32 = ctypes.OleDLL("shell32")
+  67:         ole32.CoInitializeEx.argtypes = [ctypes.c_void_p, wintypes.DWORD]
+  68:         ole32.CoInitializeEx.restype = ctypes.c_long
+  69:         ole32.CoUninitialize.argtypes = []
+  70:         ole32.CoUninitialize.restype = None
+  71:         ole32.CoTaskMemFree.argtypes = [ctypes.c_void_p]
+  72:         ole32.CoTaskMemFree.restype = None
+  73:         shell32.SHGetKnownFolderPath.argtypes = [
+  74:             ctypes.POINTER(_GUID), wintypes.DWORD, wintypes.HANDLE,
+  75:             ctypes.POINTER(ctypes.c_void_p),
+  76:         ]
+  77:         shell32.SHGetKnownFolderPath.restype = ctypes.c_long
+  78: 
+  79:         init_hr = ole32.CoInitializeEx(None, COINIT_APARTMENTTHREADED)
+  80:         init_code = _u32(init_hr)
+  81:         initialized_here = init_code in (0, 1)
+  82:         if _failed(init_hr) and init_code != RPC_E_CHANGED_MODE:
+  83:             raise ValueError("COM init")
+  84: 
+  85:         pointer = ctypes.c_void_p()
+  86:         try:
+  87:             guid = _GUID.from_buffer_copy(FOLDERID_LOCAL_APP_DATA.bytes_le)
+  88:             hr = shell32.SHGetKnownFolderPath(
+  89:                 ctypes.byref(guid), 0, None, ctypes.byref(pointer))
+  90:             if _failed(hr) or not pointer.value:
+  91:                 raise ValueError("known folder")
+  92:             text = ctypes.wstring_at(pointer.value)
+  93:             if not text or "\x00" in text:
+  94:                 raise ValueError("known folder text")
+  95:             base = Path(text).resolve(strict=True)
+  96:             if not base.is_dir():
+  97:                 raise ValueError("known folder type")
+  98:             return base
+  99:         finally:
+ 100:             if pointer.value:
+ 101:                 ole32.CoTaskMemFree(pointer)
+ 102:             if initialized_here:
+ 103:                 ole32.CoUninitialize()
+ 104:     except LiveStateError:
+ 105:         raise
+ 106:     except Exception:
+ 107:         raise LiveStateError("LIVE_STATE_PLATFORM") from None
+ 108: 
+ 109: 
+ 110: def candidate_live_root():
+ 111:     """Return the fixed lexical live root; do not create it."""
+ 112:     return _known_local_app_data() / APP_DIR / STATE_DIR
+ 144: def _root():
+ 145:     base = _known_local_app_data()
+ 146:     lexical = base / APP_DIR / STATE_DIR
+ 147:     try:
+ 148:         resolved = lexical.resolve(strict=True)
+ 149:         if not resolved.is_dir():
+ 150:             raise ValueError("root type")
+ 151:         resolved.relative_to(base)
+ 152:         # Fixed two-component namespace must not be redirected outside LocalAppData.
+ 153:         app = (base / APP_DIR).resolve(strict=True)
+ 154:         app.relative_to(base)
+ 155:         if resolved.parent != app or app.parent != base:
+ 156:             raise ValueError("root confinement")
+ 157:         return resolved
+ 158:     except Exception:
+ 159:         raise LiveStateError("LIVE_STATE_UNAVAILABLE") from None
+ 243: def load_live_runs():
+ 244:     """Validate fixed state binding and return detached absolute run records."""
+ 245:     return validate_state_root(_root(), marker_mode="required")
+
+standalone_app/owner.py SHA256 da9d2270b0c735638719f2a2b7bb6d5a97450bb8b864b086e365329d5eae7dd2
+   9: import hashlib
+  10: import json
+  11: import os
+  12: from pathlib import Path
+  13: import types
+  14: 
+  15: from desktop_plugin import live_state_windows as live
+  16: from canonical_state_provisioner import provisioner_windows as provision
+  17: 
+  18: RUN_CONTROL_SHA256 = "43958f98ce3dfd01de019df70bb14dfd9135f87f41b58171b3224a97bf8c2b65"
+  19: QUEUE_NAME = "queue.sqlite"
+  20: OWNED_ROOT_NAME = "work"
+  21: REGISTRY_NAME = "REGISTRY.json"
+  22: 
+  23: 
+  24: class OwnerError(ValueError):
+  25:     pass
+  26: 
+  27: 
+  28: def _load_control_chain():
+
+canonical_state_provisioner/provisioner_windows.py SHA256 88e1663f9587885592791658b1b7dc0d1016726ddd187696a721e22aa9f7b8dd
+ 221: def begin():
+ 222:     """Acquire the one fixed staging namespace or fail closed."""
+ 223:     base, app, final, staging = _fixed_paths(create_app=True)
+ 224:     if os.path.lexists(final):
+ 225:         raise ProvisionError("PROVISION_FINAL_EXISTS")
+ 226:     if os.path.lexists(staging):
+ 227:         raise ProvisionError("PROVISION_STAGING_EXISTS_PRESERVE")
+ 228:     try:
+ 229:         staging.mkdir(exist_ok=False)
+ 230:     except FileExistsError:
+ 231:         raise ProvisionError("PROVISION_STAGING_EXISTS_PRESERVE") from None
+ 232:     except Exception:
+ 233:         raise ProvisionError("PROVISION_STAGING_CREATE") from None
+ 234:     try:
+ 235:         exact = _plain_directory(staging, app)
+ 236:         if exact != staging:
+ 237:             raise ProvisionError("PROVISION_NAMESPACE_INVALID")
+ 238:     except ProvisionError:
+ 239:         # Do not delete a namespace object after exclusive creation if its
+ 240:         # identity is no longer exactly what this process created/expected.
+ 241:         raise
+ 242:     return ProvisioningSession(base, app, exact, final)

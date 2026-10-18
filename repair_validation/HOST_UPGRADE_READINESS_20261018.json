@@ -1,0 +1,53 @@
+{
+  "classification": "USER_REPORTED_UPGRADE_READINESS_NOT_INDEPENDENT_ATTESTATION",
+  "reported_date_local": "2026-10-18",
+  "files": [
+    {
+      "path": "plugin.json",
+      "reported_sha256": "7E8BDCC53C9A2C70AC8D863872D72C8192F3D5B0E684627800DC6854A25AF2FD",
+      "normalized_sha256": "7e8bdcc53c9a2c70ac8d863872d72c8192f3d5b0e684627800dc6854a25af2fd",
+      "expected_sha256": "7e8bdcc53c9a2c70ac8d863872d72c8192f3d5b0e684627800dc6854a25af2fd",
+      "match": true
+    },
+    {
+      "path": "mcp.json",
+      "reported_sha256": "01988257925720558F3D171A1B7611B86F464F304B579E60F25C5D7F19968133",
+      "normalized_sha256": "01988257925720558f3d171a1b7611b86f464f304b579e60f25c5d7f19968133",
+      "expected_sha256": "01988257925720558f3d171a1b7611b86f464f304b579e60f25c5d7f19968133",
+      "match": true
+    },
+    {
+      "path": ".mcp.json",
+      "reported_sha256": "84B460F3F2F878551D51504F93FBEB4409D07D422E41B78B61C16541DF0CDD75",
+      "normalized_sha256": "84b460f3f2f878551d51504f93fbeb4409d07d422e41b78b61c16541df0cdd75",
+      "expected_sha256": "84b460f3f2f878551d51504f93fbeb4409d07d422e41b78b61c16541df0cdd75",
+      "match": true
+    },
+    {
+      "path": ".codex-plugin/plugin.json",
+      "reported_sha256": "135D4A351B22189E397DD8AE9289847BC880C6D1D2648653F09284CB66B42545",
+      "normalized_sha256": "135d4a351b22189e397dd8ae9289847bc880c6d1d2648653f09284cb66b42545",
+      "expected_sha256": "135d4a351b22189e397dd8ae9289847bc880c6d1d2648653f09284cb66b42545",
+      "match": true
+    }
+  ],
+  "reference_path": "desktop_plugin/BUILD_REPRODUCIBILITY_NOTE_20261011.md",
+  "reference_sha256": "660eacc1bbf17325ccc787812fab23ec8892183e3fba58412ac11cd6dea1c8a1",
+  "registration_cwd_explicit_reported": false,
+  "effective_runtime_cwd": "UNKNOWN",
+  "canonical_state_v1_exists_reported": false,
+  "canonical_staging_exists_reported": false,
+  "legacy_plugin_data_state_exists_reported": true,
+  "effects_reported": {
+    "no_genie_tools_invoked": true,
+    "no_sqlite_opened": true,
+    "no_changes": true
+  },
+  "limits": [
+    "All five named historical payload identities now match as reported, including the previously compared executable.",
+    "Extra installed files, host authenticity, currentness, file locks and race freedom were not established.",
+    "Absence is user-reported path inventory; recheck through the existing Windows Known Folder selection before a native probe.",
+    "No permission to import old cache, replace installed software, register a new server or acquire canonical state is inferred.",
+    "No current v0.2.0 binary was delivered or installed."
+  ]
+}

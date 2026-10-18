@@ -1,0 +1,8 @@
+{
+  "input_zip": "GENIE_HOST_STAGE_REVIEW_INPUT_20261018.zip",
+  "input_sha256": "84c4549a005746e3829219ea9a8422527bd08ee94d21345f6de5364515c4c698",
+  "review_zip": "GENIE_HOST_STAGE_PLAN_REVIEW_20261018.zip",
+  "review_sha256": "318578a6b7efa046f94319de3b4ee37c5d9d1b832f29f2aba58b8cff222d0544",
+  "disposition": "DEFECT_FOUND",
+  "scope": "Static plan review; no subject/host execution; same assistant ancestry."
+}
