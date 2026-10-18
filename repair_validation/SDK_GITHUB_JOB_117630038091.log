@@ -1,0 +1,291 @@
+﻿2026-10-18T08:35:32.4639238Z Current runner version: '2.337.0'
+2026-10-18T08:35:32.4663333Z ##[group]Runner Image Provisioner
+2026-10-18T08:35:32.4664464Z Hosted Compute Agent
+2026-10-18T08:35:32.4665098Z Version: 20261012.601
+2026-10-18T08:35:32.4665765Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+2026-10-18T08:35:32.4666607Z Build Date: 2026-10-12T17:48:21Z
+2026-10-18T08:35:32.4667342Z Worker ID: {b052a6ad-4cf9-418d-b13c-20e3588a725d}
+2026-10-18T08:35:32.4668109Z Region: northcentralus
+2026-10-18T08:35:32.4668731Z Cloud: Azure
+2026-10-18T08:35:32.4669261Z ##[endgroup]
+2026-10-18T08:35:32.4670783Z ##[group]Operating System
+2026-10-18T08:35:32.4671432Z Ubuntu
+2026-10-18T08:35:32.4671937Z 24.04.5
+2026-10-18T08:35:32.4672543Z LTS
+2026-10-18T08:35:32.4673086Z ##[endgroup]
+2026-10-18T08:35:32.4673663Z ##[group]Runner Image
+2026-10-18T08:35:32.4674766Z Image: ubuntu-24.04
+2026-10-18T08:35:32.4675361Z Version: 20261012.334.1
+2026-10-18T08:35:32.4676758Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-18T08:35:32.4678415Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+2026-10-18T08:35:32.4679452Z ##[endgroup]
+2026-10-18T08:35:32.4680558Z ##[group]GITHUB_TOKEN Permissions
+2026-10-18T08:35:32.4682567Z Contents: read
+2026-10-18T08:35:32.4683156Z Metadata: read
+2026-10-18T08:35:32.4684525Z ##[endgroup]
+2026-10-18T08:35:32.4687014Z Secret source: Actions
+2026-10-18T08:35:32.4688116Z Cache mode: write
+2026-10-18T08:35:32.4689167Z Prepare workflow directory
+2026-10-18T08:35:32.5038468Z Prepare all required actions
+2026-10-18T08:35:32.5087063Z Getting action download info
+2026-10-18T08:35:32.7483317Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-18T08:35:32.8541896Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-10-18T08:35:33.0436808Z Complete job name: sdk-transport
+2026-10-18T08:35:33.1216243Z ##[group]Run actions/checkout@v4
+2026-10-18T08:35:33.1217160Z with:
+2026-10-18T08:35:33.1217617Z   repository: FtheBS1776/test
+2026-10-18T08:35:33.1221512Z   token: ***
+2026-10-18T08:35:33.1221950Z   ssh-strict: true
+2026-10-18T08:35:33.1222392Z   ssh-user: git
+2026-10-18T08:35:33.1222840Z   persist-credentials: true
+2026-10-18T08:35:33.1223333Z   clean: true
+2026-10-18T08:35:33.1223784Z   sparse-checkout-cone-mode: true
+2026-10-18T08:35:33.1224525Z   fetch-depth: 1
+2026-10-18T08:35:33.1224962Z   fetch-tags: false
+2026-10-18T08:35:33.1225417Z   show-progress: true
+2026-10-18T08:35:33.1225870Z   lfs: false
+2026-10-18T08:35:33.1226284Z   submodules: false
+2026-10-18T08:35:33.1226738Z   set-safe-directory: true
+2026-10-18T08:35:33.1227245Z   allow-unsafe-pr-checkout: false
+2026-10-18T08:35:33.1228014Z ##[endgroup]
+2026-10-18T08:35:33.2220385Z Syncing repository: FtheBS1776/test
+2026-10-18T08:35:33.2222393Z ##[group]Getting Git version info
+2026-10-18T08:35:33.2223178Z Working directory is '/home/runner/work/test/test'
+2026-10-18T08:35:33.2224782Z [command]/usr/bin/git version
+2026-10-18T08:35:33.2303663Z git version 2.55.0
+2026-10-18T08:35:33.2334982Z ##[endgroup]
+2026-10-18T08:35:33.2341657Z Temporarily overriding HOME='/home/runner/work/_temp/75d2ecc4-1456-4649-8447-ff70b28f037e' before making global git config changes
+2026-10-18T08:35:33.2343989Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-18T08:35:33.2349315Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/test/test
+2026-10-18T08:35:33.2403209Z Deleting the contents of '/home/runner/work/test/test'
+2026-10-18T08:35:33.2411923Z ##[group]Initializing the repository
+2026-10-18T08:35:33.2422189Z [command]/usr/bin/git init /home/runner/work/test/test
+2026-10-18T08:35:33.2533560Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-18T08:35:33.2535748Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-18T08:35:33.2537401Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-18T08:35:33.2538993Z hint: call:
+2026-10-18T08:35:33.2539680Z hint:
+2026-10-18T08:35:33.2540553Z hint: 	git config --global init.defaultBranch <name>
+2026-10-18T08:35:33.2541540Z hint:
+2026-10-18T08:35:33.2542461Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-18T08:35:33.2543985Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-18T08:35:33.2545478Z hint:
+2026-10-18T08:35:33.2546169Z hint: 	git branch -m <name>
+2026-10-18T08:35:33.2546978Z hint:
+2026-10-18T08:35:33.2547980Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-18T08:35:33.2549543Z Initialized empty Git repository in /home/runner/work/test/test/.git/
+2026-10-18T08:35:33.2552319Z [command]/usr/bin/git remote add origin https://github.com/FtheBS1776/test
+2026-10-18T08:35:33.2600989Z ##[endgroup]
+2026-10-18T08:35:33.2602300Z ##[group]Disabling automatic garbage collection
+2026-10-18T08:35:33.2604956Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-18T08:35:33.2639522Z ##[endgroup]
+2026-10-18T08:35:33.2640664Z ##[group]Setting up auth
+2026-10-18T08:35:33.2647312Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-18T08:35:33.2680523Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-18T08:35:33.3035620Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-18T08:35:33.3074693Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-18T08:35:33.3310328Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-18T08:35:33.3345784Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-18T08:35:33.3567864Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-18T08:35:33.3607670Z ##[endgroup]
+2026-10-18T08:35:33.3608525Z ##[group]Fetching the repository
+2026-10-18T08:35:33.3618103Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +98b8807d95a1231be35998adcee1072a4bd0e26e:refs/remotes/origin/repair/genie-recovery-validation-20261018
+2026-10-18T08:35:33.8823201Z From https://github.com/FtheBS1776/test
+2026-10-18T08:35:33.8846727Z  * [new ref]         98b8807d95a1231be35998adcee1072a4bd0e26e -> origin/repair/genie-recovery-validation-20261018
+2026-10-18T08:35:33.8870260Z ##[endgroup]
+2026-10-18T08:35:33.8871736Z ##[group]Determining the checkout info
+2026-10-18T08:35:33.8873389Z ##[endgroup]
+2026-10-18T08:35:33.8874820Z [command]/usr/bin/git sparse-checkout disable
+2026-10-18T08:35:33.8889788Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-18T08:35:33.8925838Z ##[group]Checking out the ref
+2026-10-18T08:35:33.8929838Z [command]/usr/bin/git checkout --progress --force -B repair/genie-recovery-validation-20261018 refs/remotes/origin/repair/genie-recovery-validation-20261018
+2026-10-18T08:35:33.9544550Z Switched to a new branch 'repair/genie-recovery-validation-20261018'
+2026-10-18T08:35:33.9552269Z branch 'repair/genie-recovery-validation-20261018' set up to track 'origin/repair/genie-recovery-validation-20261018'.
+2026-10-18T08:35:33.9558866Z ##[endgroup]
+2026-10-18T08:35:33.9603444Z [command]/usr/bin/git log -1 --format=%H
+2026-10-18T08:35:33.9631147Z 98b8807d95a1231be35998adcee1072a4bd0e26e
+2026-10-18T08:35:34.0025558Z ##[group]Run actions/setup-python@v5
+2026-10-18T08:35:34.0026937Z with:
+2026-10-18T08:35:34.0027902Z   python-version: 3.12.10
+2026-10-18T08:35:34.0029063Z   check-latest: false
+2026-10-18T08:35:34.0039953Z   token: ***
+2026-10-18T08:35:34.0040989Z   update-environment: true
+2026-10-18T08:35:34.0042171Z   allow-prereleases: false
+2026-10-18T08:35:34.0043327Z   freethreaded: false
+2026-10-18T08:35:34.0044546Z ##[endgroup]
+2026-10-18T08:35:34.1436729Z ##[group]Installed versions
+2026-10-18T08:35:34.1445996Z Version 3.12.10 was not found in the local cache
+2026-10-18T08:35:34.1625027Z (node:2278) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-18T08:35:34.1628643Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-18T08:35:34.7550329Z Version 3.12.10 is available for downloading
+2026-10-18T08:35:34.7552525Z Download from "https://github.com/actions/python-versions/releases/download/3.12.10-14343898437/python-3.12.10-linux-24.04-x64.tar.gz"
+2026-10-18T08:35:35.4515847Z Extract downloaded archive
+2026-10-18T08:35:35.4642616Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/9de296b4-6831-41b9-95d0-670bd12050da -f /home/runner/work/_temp/12e02727-fdef-49c5-9d92-78d23e375cb4
+2026-10-18T08:35:37.5061182Z Execute installation script
+2026-10-18T08:35:37.5159672Z Check if Python hostedtoolcache folder exist...
+2026-10-18T08:35:37.5160447Z Create Python 3.12.10 folder
+2026-10-18T08:35:37.5177451Z Copy Python binaries to hostedtoolcache folder
+2026-10-18T08:35:38.0206820Z Create additional symlinks (Required for the UsePythonVersion Azure Pipelines task and the setup-python GitHub Action)
+2026-10-18T08:35:38.0248510Z Upgrading pip...
+2026-10-18T08:35:40.4459914Z Looking in links: /tmp/tmptzqz2985
+2026-10-18T08:35:40.4465779Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.12.10/x64/lib/python3.12/site-packages (25.0.1)
+2026-10-18T08:35:41.5457605Z Collecting pip
+2026-10-18T08:35:41.5791892Z Downloading pip-26.2.1-py3-none-any.whl.metadata (4.6 kB)
+2026-10-18T08:35:41.5873882Z Downloading pip-26.2.1-py3-none-any.whl (1.8 MB)
+2026-10-18T08:35:41.6363007Z ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 50.7 MB/s eta 0:00:00
+2026-10-18T08:35:41.6363516Z 
+2026-10-18T08:35:41.6530677Z Installing collected packages: pip
+2026-10-18T08:35:41.6531823Z Attempting uninstall: pip
+2026-10-18T08:35:41.6554456Z Found existing installation: pip 25.0.1
+2026-10-18T08:35:41.6925811Z Uninstalling pip-25.0.1:
+2026-10-18T08:35:41.6984174Z Successfully uninstalled pip-25.0.1
+2026-10-18T08:35:42.6270377Z Successfully installed pip-26.2.1
+2026-10-18T08:35:42.6781993Z Create complete file
+2026-10-18T08:35:42.6822969Z Successfully set up CPython (3.12.10)
+2026-10-18T08:35:42.6823823Z ##[endgroup]
+2026-10-18T08:35:42.7001152Z ##[group]Run python -m pip install --disable-pip-version-check -r plugin_mcp_server/requirements.lock.txt
+2026-10-18T08:35:42.7002023Z [36;1mpython -m pip install --disable-pip-version-check -r plugin_mcp_server/requirements.lock.txt[0m
+2026-10-18T08:35:42.7002566Z [36;1mpython -m pip check[0m
+2026-10-18T08:35:42.7235611Z shell: /usr/bin/bash -e {0}
+2026-10-18T08:35:42.7235973Z env:
+2026-10-18T08:35:42.7236291Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.10/x64
+2026-10-18T08:35:42.7236844Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.10/x64/lib/pkgconfig
+2026-10-18T08:35:42.7237343Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.10/x64
+2026-10-18T08:35:42.7237815Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.10/x64
+2026-10-18T08:35:42.7238278Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.10/x64
+2026-10-18T08:35:42.7238726Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.10/x64/lib
+2026-10-18T08:35:42.7239107Z ##[endgroup]
+2026-10-18T08:35:43.1176544Z Collecting annotated-types==0.8.0 (from -r plugin_mcp_server/requirements.lock.txt (line 1))
+2026-10-18T08:35:43.1629197Z   Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+2026-10-18T08:35:43.1850779Z Collecting anyio==4.15.1 (from -r plugin_mcp_server/requirements.lock.txt (line 2))
+2026-10-18T08:35:43.1884408Z   Downloading anyio-4.15.1-py3-none-any.whl.metadata (4.7 kB)
+2026-10-18T08:35:43.2022295Z Collecting attrs==26.1.0 (from -r plugin_mcp_server/requirements.lock.txt (line 3))
+2026-10-18T08:35:43.2055185Z   Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+2026-10-18T08:35:43.3168420Z Collecting cffi==2.1.1 (from -r plugin_mcp_server/requirements.lock.txt (line 4))
+2026-10-18T08:35:43.3205035Z   Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.5 kB)
+2026-10-18T08:35:43.3463972Z Collecting click==8.5.0 (from -r plugin_mcp_server/requirements.lock.txt (line 5))
+2026-10-18T08:35:43.3498020Z   Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+2026-10-18T08:35:43.5565713Z Collecting cryptography==50.0.2 (from -r plugin_mcp_server/requirements.lock.txt (line 6))
+2026-10-18T08:35:43.5602018Z   Downloading cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (4.4 kB)
+2026-10-18T08:35:43.5977591Z Collecting h11==0.16.0 (from -r plugin_mcp_server/requirements.lock.txt (line 7))
+2026-10-18T08:35:43.6011405Z   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+2026-10-18T08:35:43.6124555Z Collecting httpcore2==2.13.1 (from -r plugin_mcp_server/requirements.lock.txt (line 8))
+2026-10-18T08:35:43.6157990Z   Downloading httpcore2-2.13.1-py3-none-any.whl.metadata (26 kB)
+2026-10-18T08:35:43.6326850Z Collecting httpx2==2.13.1 (from -r plugin_mcp_server/requirements.lock.txt (line 9))
+2026-10-18T08:35:43.6360403Z   Downloading httpx2-2.13.1-py3-none-any.whl.metadata (9.8 kB)
+2026-10-18T08:35:43.6501340Z Collecting idna==3.20 (from -r plugin_mcp_server/requirements.lock.txt (line 10))
+2026-10-18T08:35:43.6535584Z   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+2026-10-18T08:35:43.6726733Z Collecting jsonschema==4.26.0 (from -r plugin_mcp_server/requirements.lock.txt (line 11))
+2026-10-18T08:35:43.6761114Z   Downloading jsonschema-4.26.0-py3-none-any.whl.metadata (7.6 kB)
+2026-10-18T08:35:43.6895393Z Collecting jsonschema-specifications==2025.9.1 (from -r plugin_mcp_server/requirements.lock.txt (line 12))
+2026-10-18T08:35:43.6931022Z   Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+2026-10-18T08:35:43.7085002Z Collecting mcp==2.3.0 (from -r plugin_mcp_server/requirements.lock.txt (line 13))
+2026-10-18T08:35:43.7119495Z   Downloading mcp-2.3.0-py3-none-any.whl.metadata (6.6 kB)
+2026-10-18T08:35:43.7232858Z Collecting mcp-types==2.3.0 (from -r plugin_mcp_server/requirements.lock.txt (line 14))
+2026-10-18T08:35:43.7266003Z   Downloading mcp_types-2.3.0-py3-none-any.whl.metadata (1.9 kB)
+2026-10-18T08:35:43.7436788Z Collecting opentelemetry-api==1.45.1 (from -r plugin_mcp_server/requirements.lock.txt (line 15))
+2026-10-18T08:35:43.7471140Z   Downloading opentelemetry_api-1.45.1-py3-none-any.whl.metadata (1.4 kB)
+2026-10-18T08:35:43.7570795Z Collecting pycparser==3.11 (from -r plugin_mcp_server/requirements.lock.txt (line 16))
+2026-10-18T08:35:43.7603607Z   Downloading pycparser-3.11-py3-none-any.whl.metadata (8.2 kB)
+2026-10-18T08:35:43.8587687Z Collecting pydantic==2.14.1 (from -r plugin_mcp_server/requirements.lock.txt (line 17))
+2026-10-18T08:35:43.8625537Z   Downloading pydantic-2.14.1-py3-none-any.whl.metadata (133 kB)
+2026-10-18T08:35:44.5815314Z Collecting pydantic-core==2.50.1 (from -r plugin_mcp_server/requirements.lock.txt (line 18))
+2026-10-18T08:35:44.5853400Z   Downloading pydantic_core-2.50.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.5 kB)
+2026-10-18T08:35:44.6178110Z Collecting PyJWT==2.15.1 (from -r plugin_mcp_server/requirements.lock.txt (line 19))
+2026-10-18T08:35:44.6219707Z   Downloading pyjwt-2.15.1-py3-none-any.whl.metadata (3.5 kB)
+2026-10-18T08:35:44.6430955Z Collecting python-multipart==0.0.32 (from -r plugin_mcp_server/requirements.lock.txt (line 20))
+2026-10-18T08:35:44.6470915Z   Downloading python_multipart-0.0.32-py3-none-any.whl.metadata (2.1 kB)
+2026-10-18T08:35:44.6710624Z Collecting referencing==0.37.0 (from -r plugin_mcp_server/requirements.lock.txt (line 21))
+2026-10-18T08:35:44.6747719Z   Downloading referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
+2026-10-18T08:35:45.2801341Z Collecting rpds-py==2026.9.1 (from -r plugin_mcp_server/requirements.lock.txt (line 22))
+2026-10-18T08:35:45.2840092Z   Downloading rpds_py-2026.9.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+2026-10-18T08:35:45.6534520Z Collecting sse-starlette==3.5.0 (from -r plugin_mcp_server/requirements.lock.txt (line 23))
+2026-10-18T08:35:45.6571160Z   Downloading sse_starlette-3.5.0-py3-none-any.whl.metadata (15 kB)
+2026-10-18T08:35:45.6807910Z Collecting starlette==1.7.0 (from -r plugin_mcp_server/requirements.lock.txt (line 24))
+2026-10-18T08:35:45.6842734Z   Downloading starlette-1.7.0-py3-none-any.whl.metadata (6.6 kB)
+2026-10-18T08:35:45.7152330Z Collecting truststore==0.10.4 (from -r plugin_mcp_server/requirements.lock.txt (line 25))
+2026-10-18T08:35:45.7187891Z   Downloading truststore-0.10.4-py3-none-any.whl.metadata (4.4 kB)
+2026-10-18T08:35:45.7326884Z Collecting typing-extensions==4.16.0 (from -r plugin_mcp_server/requirements.lock.txt (line 26))
+2026-10-18T08:35:45.7361335Z   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+2026-10-18T08:35:45.7458919Z Collecting typing-inspection==0.4.4 (from -r plugin_mcp_server/requirements.lock.txt (line 27))
+2026-10-18T08:35:45.7492528Z   Downloading typing_inspection-0.4.4-py3-none-any.whl.metadata (2.6 kB)
+2026-10-18T08:35:45.7691235Z Collecting uvicorn==0.54.0 (from -r plugin_mcp_server/requirements.lock.txt (line 28))
+2026-10-18T08:35:45.7725886Z   Downloading uvicorn-0.54.0-py3-none-any.whl.metadata (6.6 kB)
+2026-10-18T08:35:45.8213317Z Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+2026-10-18T08:35:45.8267004Z Downloading anyio-4.15.1-py3-none-any.whl (132 kB)
+2026-10-18T08:35:45.8337014Z Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+2026-10-18T08:35:45.8391454Z Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (221 kB)
+2026-10-18T08:35:45.8462671Z Downloading click-8.5.0-py3-none-any.whl (125 kB)
+2026-10-18T08:35:45.8517253Z Downloading cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl (4.8 MB)
+2026-10-18T08:35:45.8766251Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.8/4.8 MB 217.8 MB/s  0:00:00
+2026-10-18T08:35:45.8802042Z Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+2026-10-18T08:35:45.8855134Z Downloading httpcore2-2.13.1-py3-none-any.whl (83 kB)
+2026-10-18T08:35:45.8908119Z Downloading httpx2-2.13.1-py3-none-any.whl (95 kB)
+2026-10-18T08:35:45.8960845Z Downloading idna-3.20-py3-none-any.whl (69 kB)
+2026-10-18T08:35:45.9012855Z Downloading jsonschema-4.26.0-py3-none-any.whl (90 kB)
+2026-10-18T08:35:45.9065776Z Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+2026-10-18T08:35:45.9116044Z Downloading mcp-2.3.0-py3-none-any.whl (368 kB)
+2026-10-18T08:35:45.9176901Z Downloading mcp_types-2.3.0-py3-none-any.whl (69 kB)
+2026-10-18T08:35:45.9232853Z Downloading opentelemetry_api-1.45.1-py3-none-any.whl (60 kB)
+2026-10-18T08:35:45.9287683Z Downloading pycparser-3.11-py3-none-any.whl (51 kB)
+2026-10-18T08:35:45.9339469Z Downloading pydantic-2.14.1-py3-none-any.whl (488 kB)
+2026-10-18T08:35:45.9408080Z Downloading pydantic_core-2.50.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.2 MB)
+2026-10-18T08:35:45.9516628Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 222.8 MB/s  0:00:00
+2026-10-18T08:35:45.9551216Z Downloading pyjwt-2.15.1-py3-none-any.whl (33 kB)
+2026-10-18T08:35:45.9602076Z Downloading python_multipart-0.0.32-py3-none-any.whl (30 kB)
+2026-10-18T08:35:45.9653676Z Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+2026-10-18T08:35:45.9722126Z Downloading rpds_py-2026.9.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (371 kB)
+2026-10-18T08:35:45.9799181Z Downloading sse_starlette-3.5.0-py3-none-any.whl (17 kB)
+2026-10-18T08:35:45.9850136Z Downloading starlette-1.7.0-py3-none-any.whl (78 kB)
+2026-10-18T08:35:45.9905841Z Downloading truststore-0.10.4-py3-none-any.whl (18 kB)
+2026-10-18T08:35:45.9957005Z Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+2026-10-18T08:35:46.0008919Z Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+2026-10-18T08:35:46.0065316Z Downloading uvicorn-0.54.0-py3-none-any.whl (87 kB)
+2026-10-18T08:35:46.1397032Z Installing collected packages: typing-extensions, truststore, rpds-py, python-multipart, PyJWT, pycparser, idna, h11, click, attrs, annotated-types, uvicorn, typing-inspection, referencing, pydantic-core, opentelemetry-api, httpcore2, cffi, anyio, starlette, pydantic, jsonschema-specifications, httpx2, cryptography, sse-starlette, mcp-types, jsonschema, mcp
+2026-10-18T08:35:47.9163762Z 
+2026-10-18T08:35:47.9192941Z Successfully installed PyJWT-2.15.1 annotated-types-0.8.0 anyio-4.15.1 attrs-26.1.0 cffi-2.1.1 click-8.5.0 cryptography-50.0.2 h11-0.16.0 httpcore2-2.13.1 httpx2-2.13.1 idna-3.20 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 mcp-2.3.0 mcp-types-2.3.0 opentelemetry-api-1.45.1 pycparser-3.11 pydantic-2.14.1 pydantic-core-2.50.1 python-multipart-0.0.32 referencing-0.37.0 rpds-py-2026.9.1 sse-starlette-3.5.0 starlette-1.7.0 truststore-0.10.4 typing-extensions-4.16.0 typing-inspection-0.4.4 uvicorn-0.54.0
+2026-10-18T08:35:48.2460228Z No broken requirements found.
+2026-10-18T08:35:48.2767202Z ##[group]Run python -B -m unittest -v plugin_mcp_server.test_mcp_server
+2026-10-18T08:35:48.2767745Z [36;1mpython -B -m unittest -v plugin_mcp_server.test_mcp_server[0m
+2026-10-18T08:35:48.2833298Z shell: /usr/bin/bash -e {0}
+2026-10-18T08:35:48.2833559Z env:
+2026-10-18T08:35:48.2833837Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.10/x64
+2026-10-18T08:35:48.2834538Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.10/x64/lib/pkgconfig
+2026-10-18T08:35:48.2834984Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.10/x64
+2026-10-18T08:35:48.2835399Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.10/x64
+2026-10-18T08:35:48.2835798Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.10/x64
+2026-10-18T08:35:48.2836195Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.10/x64/lib
+2026-10-18T08:35:48.2836547Z ##[endgroup]
+2026-10-18T08:35:48.5330385Z test_consumer_source_binding (plugin_mcp_server.test_mcp_server.Tests.test_consumer_source_binding) ... ok
+2026-10-18T08:35:49.2368335Z test_malformed_projection_fails_unknown (plugin_mcp_server.test_mcp_server.Tests.test_malformed_projection_fails_unknown) ... ok
+2026-10-18T08:35:49.2503180Z test_metadata_and_call_in_process (plugin_mcp_server.test_mcp_server.Tests.test_metadata_and_call_in_process) ... ok
+2026-10-18T08:35:49.3303084Z test_real_saved_status_read_only_in_process (plugin_mcp_server.test_mcp_server.Tests.test_real_saved_status_read_only_in_process) ... ok
+2026-10-18T08:35:50.2780980Z test_real_stdio_probe (plugin_mcp_server.test_mcp_server.Tests.test_real_stdio_probe) ... ok
+2026-10-18T08:35:51.4261796Z test_real_streamable_http_probe (plugin_mcp_server.test_mcp_server.Tests.test_real_streamable_http_probe) ... ok
+2026-10-18T08:35:51.4266615Z test_sdk_version_binding (plugin_mcp_server.test_mcp_server.Tests.test_sdk_version_binding) ... ok
+2026-10-18T08:35:51.4416898Z test_untrusted_result_is_not_duplicated_into_text_block (plugin_mcp_server.test_mcp_server.Tests.test_untrusted_result_is_not_duplicated_into_text_block) ... ok
+2026-10-18T08:35:51.4417965Z 
+2026-10-18T08:35:51.4418216Z ----------------------------------------------------------------------
+2026-10-18T08:35:51.4418802Z Ran 8 tests in 2.910s
+2026-10-18T08:35:51.4419030Z 
+2026-10-18T08:35:51.4419158Z OK
+2026-10-18T08:35:51.5358584Z Post job cleanup.
+2026-10-18T08:35:51.6564773Z (node:2397) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-18T08:35:51.6565729Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-18T08:35:51.6770643Z Post job cleanup.
+2026-10-18T08:35:51.7656602Z [command]/usr/bin/git version
+2026-10-18T08:35:51.7702788Z git version 2.55.0
+2026-10-18T08:35:51.7773209Z Temporarily overriding HOME='/home/runner/work/_temp/5eafafbd-5064-4801-8a49-21c2deac5474' before making global git config changes
+2026-10-18T08:35:51.7775077Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-18T08:35:51.7779095Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/test/test
+2026-10-18T08:35:51.7817910Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-18T08:35:51.7855521Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-18T08:35:51.8109339Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-18T08:35:51.8138372Z http.https://github.com/.extraheader
+2026-10-18T08:35:51.8150300Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-18T08:35:51.8190348Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-18T08:35:51.8442461Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-18T08:35:51.8484999Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-18T08:35:51.8904956Z Cleaning up orphan processes
+2026-10-18T08:35:51.9210083Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+

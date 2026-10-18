@@ -1,0 +1,466 @@
+﻿2026-10-18T08:35:32.5292491Z Current runner version: '2.337.0'
+2026-10-18T08:35:32.5325700Z ##[group]Runner Image Provisioner
+2026-10-18T08:35:32.5326928Z Hosted Compute Agent
+2026-10-18T08:35:32.5327783Z Version: 20261002.596
+2026-10-18T08:35:32.5328703Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+2026-10-18T08:35:32.5329823Z Build Date: 2026-10-02T22:28:27Z
+2026-10-18T08:35:32.5330864Z Worker ID: {afea7e89-f2c8-4638-90f5-f545859c1da6}
+2026-10-18T08:35:32.5331995Z Region: northcentralus
+2026-10-18T08:35:32.5332890Z Cloud: Azure
+2026-10-18T08:35:32.5333658Z ##[endgroup]
+2026-10-18T08:35:32.5335496Z ##[group]Operating System
+2026-10-18T08:35:32.5336454Z Microsoft Windows Server 2025
+2026-10-18T08:35:32.5337407Z 10.0.26100
+2026-10-18T08:35:32.5338156Z Datacenter
+2026-10-18T08:35:32.5338892Z ##[endgroup]
+2026-10-18T08:35:32.5339701Z ##[group]Runner Image
+2026-10-18T08:35:32.5340570Z Image: windows-2025-vs2026
+2026-10-18T08:35:32.5341584Z Version: 20261007.264.1
+2026-10-18T08:35:32.5344323Z Included Software: https://github.com/actions/runner-images/blob/win25-vs2026/20261007.264/images/windows/Windows2025-VS2026-Readme.md
+2026-10-18T08:35:32.5347268Z Image Release: https://github.com/actions/runner-images/releases/tag/win25-vs2026%2F20261007.264
+2026-10-18T08:35:32.5348925Z ##[endgroup]
+2026-10-18T08:35:32.5350629Z ##[group]GITHUB_TOKEN Permissions
+2026-10-18T08:35:32.5353146Z Contents: read
+2026-10-18T08:35:32.5354054Z Metadata: read
+2026-10-18T08:35:32.5354875Z ##[endgroup]
+2026-10-18T08:35:32.5357687Z Secret source: Actions
+2026-10-18T08:35:32.5359023Z Cache mode: write
+2026-10-18T08:35:32.5360040Z Prepare workflow directory
+2026-10-18T08:35:32.5809037Z Prepare all required actions
+2026-10-18T08:35:32.5881453Z Getting action download info
+2026-10-18T08:35:32.7545985Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-18T08:35:32.8962539Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-10-18T08:35:33.1780825Z Complete job name: windows-repair
+2026-10-18T08:35:33.3294068Z ##[group]Run actions/checkout@v4
+2026-10-18T08:35:33.3295068Z with:
+2026-10-18T08:35:33.3295493Z   repository: FtheBS1776/test
+2026-10-18T08:35:33.3299511Z   token: ***
+2026-10-18T08:35:33.3299922Z   ssh-strict: true
+2026-10-18T08:35:33.3300327Z   ssh-user: git
+2026-10-18T08:35:33.3300745Z   persist-credentials: true
+2026-10-18T08:35:33.3301207Z   clean: true
+2026-10-18T08:35:33.3302033Z   sparse-checkout-cone-mode: true
+2026-10-18T08:35:33.3302553Z   fetch-depth: 1
+2026-10-18T08:35:33.3302954Z   fetch-tags: false
+2026-10-18T08:35:33.3303367Z   show-progress: true
+2026-10-18T08:35:33.3303787Z   lfs: false
+2026-10-18T08:35:33.3304169Z   submodules: false
+2026-10-18T08:35:33.3304586Z   set-safe-directory: true
+2026-10-18T08:35:33.3305069Z   allow-unsafe-pr-checkout: false
+2026-10-18T08:35:33.3305837Z ##[endgroup]
+2026-10-18T08:35:33.4704076Z Syncing repository: FtheBS1776/test
+2026-10-18T08:35:33.4705811Z ##[group]Getting Git version info
+2026-10-18T08:35:33.4706473Z Working directory is 'D:\a\test\test'
+2026-10-18T08:35:33.5748791Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-10-18T08:35:33.9235935Z git version 2.56.0.windows.2
+2026-10-18T08:35:33.9288280Z ##[endgroup]
+2026-10-18T08:35:33.9308164Z Temporarily overriding HOME='D:\a\_temp\044c0d6d-e7e7-40ce-a40b-452b81f1f747' before making global git config changes
+2026-10-18T08:35:33.9309463Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-18T08:35:33.9318599Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\test\test
+2026-10-18T08:35:34.0027267Z Deleting the contents of 'D:\a\test\test'
+2026-10-18T08:35:34.0033467Z ##[group]Initializing the repository
+2026-10-18T08:35:34.0041956Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\test\test
+2026-10-18T08:35:34.1038954Z Initialized empty Git repository in D:/a/test/test/.git/
+2026-10-18T08:35:34.1099933Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/FtheBS1776/test
+2026-10-18T08:35:34.1838331Z ##[endgroup]
+2026-10-18T08:35:34.1839715Z ##[group]Disabling automatic garbage collection
+2026-10-18T08:35:34.1847292Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+2026-10-18T08:35:34.2253727Z ##[endgroup]
+2026-10-18T08:35:34.2254566Z ##[group]Setting up auth
+2026-10-18T08:35:34.2271255Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-10-18T08:35:34.2661498Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-10-18T08:35:35.7955280Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-18T08:35:35.8357397Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-10-18T08:35:36.4210829Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-18T08:35:36.4603413Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-10-18T08:35:36.9961476Z [command]"C:\Program Files\Git\bin\git.exe" config --local http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2026-10-18T08:35:37.0374535Z ##[endgroup]
+2026-10-18T08:35:37.0375414Z ##[group]Fetching the repository
+2026-10-18T08:35:37.0387711Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +98b8807d95a1231be35998adcee1072a4bd0e26e:refs/remotes/origin/repair/genie-recovery-validation-20261018
+2026-10-18T08:35:38.2219081Z From https://github.com/FtheBS1776/test
+2026-10-18T08:35:38.2220395Z  * [new ref]         98b8807d95a1231be35998adcee1072a4bd0e26e -> origin/repair/genie-recovery-validation-20261018
+2026-10-18T08:35:38.2257321Z ##[endgroup]
+2026-10-18T08:35:38.2257942Z ##[group]Determining the checkout info
+2026-10-18T08:35:38.2260380Z ##[endgroup]
+2026-10-18T08:35:38.2270056Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+2026-10-18T08:35:38.2813477Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+2026-10-18T08:35:38.3201430Z ##[group]Checking out the ref
+2026-10-18T08:35:38.3211028Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force -B repair/genie-recovery-validation-20261018 refs/remotes/origin/repair/genie-recovery-validation-20261018
+2026-10-18T08:35:38.6518094Z Switched to a new branch 'repair/genie-recovery-validation-20261018'
+2026-10-18T08:35:38.6582165Z branch 'repair/genie-recovery-validation-20261018' set up to track 'origin/repair/genie-recovery-validation-20261018'.
+2026-10-18T08:35:38.6634572Z ##[endgroup]
+2026-10-18T08:35:38.7162742Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+2026-10-18T08:35:38.7532677Z 98b8807d95a1231be35998adcee1072a4bd0e26e
+2026-10-18T08:35:38.8037897Z ##[group]Run actions/setup-python@v5
+2026-10-18T08:35:38.8038375Z with:
+2026-10-18T08:35:38.8038631Z   python-version: 3.12.10
+2026-10-18T08:35:38.8038931Z   check-latest: false
+2026-10-18T08:35:38.8042666Z   token: ***
+2026-10-18T08:35:38.8042913Z   update-environment: true
+2026-10-18T08:35:38.8043205Z   allow-prereleases: false
+2026-10-18T08:35:38.8043487Z   freethreaded: false
+2026-10-18T08:35:38.8043733Z ##[endgroup]
+2026-10-18T08:35:38.9689924Z ##[group]Installed versions
+2026-10-18T08:35:38.9746702Z (node:2432) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-18T08:35:38.9747450Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-18T08:35:38.9750249Z Successfully set up CPython (3.12.10)
+2026-10-18T08:35:38.9750795Z ##[endgroup]
+2026-10-18T08:35:39.0074508Z ##[group]Run python -c "import os,sys; assert os.name == 'nt'; print(sys.version)"
+2026-10-18T08:35:39.0075206Z [36;1mpython -c "import os,sys; assert os.name == 'nt'; print(sys.version)"[0m
+2026-10-18T08:35:39.0075633Z [36;1mgit rev-parse HEAD[0m
+2026-10-18T08:35:39.0075873Z [36;1mgit rev-parse 'HEAD^{tree}'[0m
+2026-10-18T08:35:39.0838758Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-10-18T08:35:39.0839223Z env:
+2026-10-18T08:35:39.0903533Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:35:39.0904132Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-10-18T08:35:39.0904606Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:35:39.0905019Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:35:39.0905466Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:35:39.0905779Z ##[endgroup]
+2026-10-18T08:35:40.1809576Z 3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]
+2026-10-18T08:35:40.2243491Z 98b8807d95a1231be35998adcee1072a4bd0e26e
+2026-10-18T08:35:40.2681885Z 47bd1c6c33ad4a295cde6d4e978a1ca51c9d9aa6
+2026-10-18T08:35:40.4299815Z ##[group]Run python -B -m unittest -v phase2c_finite_autonomous_pilot.test_phase2c phase2c_finite_autonomous_pilot.test_verify_readonly session_driver.test_r03_review_semantics session_driver.test_driver session_driver.test_protocol run_queue.test_cost_admission plugin_mcp_consumer.test_consumer plugin_mcp_consumer.test_repair standalone_app.test_repair_composition phase2b2s_attested_live_pilot.test_attested_worker canonical_state_provisioner.test_provisioner_windows desktop_plugin.test_live_state_windows standalone_app.test_owner standalone_app.test_cli_outcomes desktop_plugin.test_entry
+2026-10-18T08:35:40.4305085Z [36;1mpython -B -m unittest -v phase2c_finite_autonomous_pilot.test_phase2c phase2c_finite_autonomous_pilot.test_verify_readonly session_driver.test_r03_review_semantics session_driver.test_driver session_driver.test_protocol run_queue.test_cost_admission plugin_mcp_consumer.test_consumer plugin_mcp_consumer.test_repair standalone_app.test_repair_composition phase2b2s_attested_live_pilot.test_attested_worker canonical_state_provisioner.test_provisioner_windows desktop_plugin.test_live_state_windows standalone_app.test_owner standalone_app.test_cli_outcomes desktop_plugin.test_entry[0m
+2026-10-18T08:35:40.4383784Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-10-18T08:35:40.4384132Z env:
+2026-10-18T08:35:40.4384399Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:35:40.4384845Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-10-18T08:35:40.4385281Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:35:40.4385691Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:35:40.4386092Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:35:40.4386403Z ##[endgroup]
+2026-10-18T08:35:42.4733823Z test_each_worker_gets_distinct_ledger_and_exact_task_binding (phase2c_finite_autonomous_pilot.test_phase2c.Phase2CTests.test_each_worker_gets_distinct_ledger_and_exact_task_binding) ... ok
+2026-10-18T08:35:42.4739799Z test_plans_are_two_exact_single_attempt_task_bindings (phase2c_finite_autonomous_pilot.test_phase2c.Phase2CTests.test_plans_are_two_exact_single_attempt_task_bindings) ... ok
+2026-10-18T08:35:42.4742454Z test_reviewer_repairs_bound_schema_mismatch_but_rejects_hash_mismatch (phase2c_finite_autonomous_pilot.test_phase2c.Phase2CTests.test_reviewer_repairs_bound_schema_mismatch_but_rejects_hash_mismatch) ... ok
+2026-10-18T08:35:42.4873484Z test_worker_bound_and_unknown_are_fail_closed (phase2c_finite_autonomous_pilot.test_phase2c.Phase2CTests.test_worker_bound_and_unknown_are_fail_closed) ... ok
+2026-10-18T08:35:42.6907775Z test_default_inspection_preserves_every_input_byte_and_name (phase2c_finite_autonomous_pilot.test_verify_readonly.ReadonlyVerificationTests.test_default_inspection_preserves_every_input_byte_and_name) ... ok
+2026-10-18T08:35:42.8007335Z test_explicit_external_report_is_exclusive_and_input_is_unchanged (phase2c_finite_autonomous_pilot.test_verify_readonly.ReadonlyVerificationTests.test_explicit_external_report_is_exclusive_and_input_is_unchanged) ... ok
+2026-10-18T08:35:42.8592856Z test_external_symlink_to_input_cannot_overwrite (phase2c_finite_autonomous_pilot.test_verify_readonly.ReadonlyVerificationTests.test_external_symlink_to_input_cannot_overwrite) ... ok
+2026-10-18T08:35:42.9190014Z test_internal_report_paths_cannot_create_or_overwrite (phase2c_finite_autonomous_pilot.test_verify_readonly.ReadonlyVerificationTests.test_internal_report_paths_cannot_create_or_overwrite) ... ok
+2026-10-18T08:35:42.9866287Z test_invalid_copy_is_not_repaired_or_rewritten (phase2c_finite_autonomous_pilot.test_verify_readonly.ReadonlyVerificationTests.test_invalid_copy_is_not_repaired_or_rewritten) ... ok
+2026-10-18T08:35:43.7554695Z test_lost_review_ack_keeps_charge_and_stops_without_repair_invocation (session_driver.test_r03_review_semantics.R03ReviewSemanticsTests.test_lost_review_ack_keeps_charge_and_stops_without_repair_invocation) ... ok
+2026-10-18T08:35:44.6280261Z test_real_reviewer_accepts_valid_candidate (session_driver.test_r03_review_semantics.R03ReviewSemanticsTests.test_real_reviewer_accepts_valid_candidate) ... ok
+2026-10-18T08:35:50.2531137Z test_real_reviewer_invalid_candidates_hold_without_acceptance_or_new_call (session_driver.test_r03_review_semantics.R03ReviewSemanticsTests.test_real_reviewer_invalid_candidates_hold_without_acceptance_or_new_call) ... ok
+2026-10-18T08:35:51.0436789Z test_real_reviewer_repair_cannot_bypass_call_budget (session_driver.test_r03_review_semantics.R03ReviewSemanticsTests.test_real_reviewer_repair_cannot_bypass_call_budget) ... ok
+2026-10-18T08:35:52.3273982Z test_real_reviewer_repair_uses_only_existing_attempt_and_call_permission (session_driver.test_r03_review_semantics.R03ReviewSemanticsTests.test_real_reviewer_repair_uses_only_existing_attempt_and_call_permission) ... ok
+2026-10-18T08:35:54.2167733Z test_review_token_or_hash_mismatch_is_unknown_without_new_call (session_driver.test_r03_review_semantics.R03ReviewSemanticsTests.test_review_token_or_hash_mismatch_is_unknown_without_new_call) ... ok
+2026-10-18T08:35:54.8191051Z test_action_limit_preserves_reservation_without_reset (session_driver.test_driver.Tests.test_action_limit_preserves_reservation_without_reset) ... ok
+2026-10-18T08:35:55.2690125Z test_bool_token_rejected_before_any_event (session_driver.test_driver.Tests.test_bool_token_rejected_before_any_event) ... ok
+2026-10-18T08:35:55.7810570Z test_callback_commits_then_response_lost_no_retry (session_driver.test_driver.Tests.test_callback_commits_then_response_lost_no_retry) ... ok
+2026-10-18T08:35:56.2348056Z test_detached_action_cannot_replace_original_token (session_driver.test_driver.Tests.test_detached_action_cannot_replace_original_token) ... ok
+2026-10-18T08:35:56.7932221Z test_duplicate_submit_does_not_grant_review_hook (session_driver.test_driver.Tests.test_duplicate_submit_does_not_grant_review_hook) ... ok
+2026-10-18T08:35:57.2413791Z test_entire_worker_reply_before_any_event (session_driver.test_driver.Tests.test_entire_worker_reply_before_any_event) ... ok
+2026-10-18T08:35:57.3364571Z test_invalid_config_no_progression (session_driver.test_driver.Tests.test_invalid_config_no_progression) ... ok
+2026-10-18T08:35:58.1369495Z test_notification_failure_after_delivery_preserves_effect (session_driver.test_driver.Tests.test_notification_failure_after_delivery_preserves_effect) ... ok
+2026-10-18T08:35:59.4850134Z test_review_reply_bool_or_crossed_hash_no_review_effect (session_driver.test_driver.Tests.test_review_reply_bool_or_crossed_hash_no_review_effect) ... ok
+2026-10-18T08:36:00.1291253Z test_reviewer_exception_restart_reconcile (session_driver.test_driver.Tests.test_reviewer_exception_restart_reconcile) ... ok
+2026-10-18T08:36:00.6968272Z test_startup_review_no_reviewer (session_driver.test_driver.Tests.test_startup_review_no_reviewer) ... ok
+2026-10-18T08:36:01.1581224Z test_startup_waiting_no_worker (session_driver.test_driver.Tests.test_startup_waiting_no_worker) ... ok
+2026-10-18T08:36:01.5704044Z test_stdio_output_failure_no_retry (session_driver.test_driver.Tests.test_stdio_output_failure_no_retry) ... ok
+2026-10-18T08:36:04.4219251Z test_stdio_strict_protocol_no_resync (session_driver.test_driver.Tests.test_stdio_strict_protocol_no_resync) ... ok
+2026-10-18T08:36:05.0330681Z test_stopped_between_submission_and_review_no_hook (session_driver.test_driver.Tests.test_stopped_between_submission_and_review_no_hook) ... ok
+2026-10-18T08:36:06.6275038Z test_two_task_automatic_sequence (session_driver.test_driver.Tests.test_two_task_automatic_sequence) ... ok
+2026-10-18T08:36:06.7119299Z test_unconfirmed_task_complete_terminal (session_driver.test_driver.Tests.test_unconfirmed_task_complete_terminal) ... ok
+2026-10-18T08:36:07.2380591Z test_unknown_observation_no_submit (session_driver.test_driver.Tests.test_unknown_observation_no_submit) ... ok
+2026-10-18T08:36:07.7105667Z test_worker_exception_charged_no_retry (session_driver.test_driver.Tests.test_worker_exception_charged_no_retry) ... ok
+2026-10-18T08:36:08.1647496Z test_wrong_original_binding_rejected (session_driver.test_driver.Tests.test_wrong_original_binding_rejected) ... ok
+2026-10-18T08:36:08.9860892Z test_binary_stdio_round_trip (session_driver.test_protocol.Supplement.test_binary_stdio_round_trip) ... ok
+2026-10-18T08:36:11.5150831Z test_explicit_repair_fresh_bound_attempt_then_accept (session_driver.test_protocol.Supplement.test_explicit_repair_fresh_bound_attempt_then_accept) ... ok
+2026-10-18T08:36:13.3519381Z test_request_flush_failure_suppresses_further_writes (session_driver.test_protocol.Supplement.test_request_flush_failure_suppresses_further_writes) ... ok
+2026-10-18T08:36:14.4302336Z test_caller_cannot_substitute_a_zero_cost_quote_or_reinitialize_balance (run_queue.test_cost_admission.CostAdmissionTests.test_caller_cannot_substitute_a_zero_cost_quote_or_reinitialize_balance) ... ok
+2026-10-18T08:36:15.3367190Z test_default_unknown_author_cost_makes_zero_hook_calls (run_queue.test_cost_admission.CostAdmissionTests.test_default_unknown_author_cost_makes_zero_hook_calls) ... ok
+2026-10-18T08:36:15.7513455Z test_disabled_positive_cost_does_not_dispatch (run_queue.test_cost_admission.CostAdmissionTests.test_disabled_positive_cost_does_not_dispatch) ... ok
+2026-10-18T08:36:16.2411457Z test_enable_all_still_requires_known_bound_and_explicit_policy (run_queue.test_cost_admission.CostAdmissionTests.test_enable_all_still_requires_known_bound_and_explicit_policy) ... ok
+2026-10-18T08:36:16.7100630Z test_legacy_cost_schema_is_preserved_and_denied (run_queue.test_cost_admission.CostAdmissionTests.test_legacy_cost_schema_is_preserved_and_denied) ... ok
+2026-10-18T08:36:17.2633773Z test_limited_concurrent_roles_share_one_durable_budget (run_queue.test_cost_admission.CostAdmissionTests.test_limited_concurrent_roles_share_one_durable_budget) ... ok
+2026-10-18T08:36:17.7036314Z test_no_approved_zero_quote_means_no_free_call (run_queue.test_cost_admission.CostAdmissionTests.test_no_approved_zero_quote_means_no_free_call) ... ok
+2026-10-18T08:36:18.1742561Z test_replay_alias_and_wrong_token_grant_no_new_admission (run_queue.test_cost_admission.CostAdmissionTests.test_replay_alias_and_wrong_token_grant_no_new_admission) ... ok
+2026-10-18T08:36:18.1752284Z test_unbounded_live_adapters_stop_before_process_or_ledger_entry (run_queue.test_cost_admission.CostAdmissionTests.test_unbounded_live_adapters_stop_before_process_or_ledger_entry) ... ok
+2026-10-18T08:36:18.6528711Z test_unknown_hook_outcome_keeps_reserved_money_and_stable_call (run_queue.test_cost_admission.CostAdmissionTests.test_unknown_hook_outcome_keeps_reserved_money_and_stable_call) ... ok
+2026-10-18T08:36:19.3248983Z test_unknown_reviewer_cost_cannot_enter_reviewer (run_queue.test_cost_admission.CostAdmissionTests.test_unknown_reviewer_cost_cannot_enter_reviewer) ... ok
+2026-10-18T08:36:19.3365963Z test_adapter_source_binding (plugin_mcp_consumer.test_consumer.Tests.test_adapter_source_binding) ... ok
+2026-10-18T08:36:19.3446090Z test_argument_snapshot_and_strict_json (plugin_mcp_consumer.test_consumer.Tests.test_argument_snapshot_and_strict_json) ... ok
+2026-10-18T08:36:19.3525297Z test_bad_adapter_metadata_rejected (plugin_mcp_consumer.test_consumer.Tests.test_bad_adapter_metadata_rejected) ... ok
+2026-10-18T08:36:19.3603180Z test_correlation_mismatch_unknown_no_retry (plugin_mcp_consumer.test_consumer.Tests.test_correlation_mismatch_unknown_no_retry) ... ok
+2026-10-18T08:36:19.3686296Z test_duplicate_json_output_rejected (plugin_mcp_consumer.test_consumer.Tests.test_duplicate_json_output_rejected) ... ok
+2026-10-18T08:36:19.3769595Z test_invalid_call_no_delegation (plugin_mcp_consumer.test_consumer.Tests.test_invalid_call_no_delegation) ... ok
+2026-10-18T08:36:19.3849840Z test_malformed_outputs_unknown (plugin_mcp_consumer.test_consumer.Tests.test_malformed_outputs_unknown) ... ok
+2026-10-18T08:36:19.3928197Z test_one_delegation_and_complete_result (plugin_mcp_consumer.test_consumer.Tests.test_one_delegation_and_complete_result) ... ok
+2026-10-18T08:36:19.4010964Z test_tools_detached (plugin_mcp_consumer.test_consumer.Tests.test_tools_detached) ... ok
+2026-10-18T08:36:19.4092625Z test_tools_exact_projection (plugin_mcp_consumer.test_consumer.Tests.test_tools_exact_projection) ... ok
+2026-10-18T08:36:19.4176159Z test_untrusted_result_notice_required (plugin_mcp_consumer.test_consumer.Tests.test_untrusted_result_notice_required) ... ok
+2026-10-18T08:36:19.4255787Z test_exact_argument_bound_delegates_once_without_semantic_rewrite (plugin_mcp_consumer.test_repair.RepairTests.test_exact_argument_bound_delegates_once_without_semantic_rewrite) ... ok
+2026-10-18T08:36:19.4331995Z test_non_json_types_reject_before_adapter_entry (plugin_mcp_consumer.test_repair.RepairTests.test_non_json_types_reject_before_adapter_entry) ... ok
+2026-10-18T08:36:19.4411493Z test_oversized_utf8_arguments_reject_before_adapter_entry (plugin_mcp_consumer.test_repair.RepairTests.test_oversized_utf8_arguments_reject_before_adapter_entry) ... ok
+2026-10-18T08:36:19.5208076Z test_bad_source_pin_stops_before_binding_or_hook (standalone_app.test_repair_composition.CompositionTests.test_bad_source_pin_stops_before_binding_or_hook) ... ok
+2026-10-18T08:36:19.5993517Z test_binder_failure_does_not_fallback_or_invoke (standalone_app.test_repair_composition.CompositionTests.test_binder_failure_does_not_fallback_or_invoke) ... ok
+2026-10-18T08:36:20.4975348Z test_disposable_snapshot_is_inspectable_without_replay_or_currentness_claim (standalone_app.test_repair_composition.CompositionTests.test_disposable_snapshot_is_inspectable_without_replay_or_currentness_claim) ... ok
+2026-10-18T08:36:21.4216551Z test_exact_goal_materials_identity_and_saved_result_cross_one_driver (standalone_app.test_repair_composition.CompositionTests.test_exact_goal_materials_identity_and_saved_result_cross_one_driver) ... ok
+2026-10-18T08:36:21.5264979Z test_material_mismatch_or_missing_coverage_stops_before_reservation (standalone_app.test_repair_composition.CompositionTests.test_material_mismatch_or_missing_coverage_stops_before_reservation) ... ok
+2026-10-18T08:36:21.6907208Z test_operator_stop_requires_no_model_and_prevents_next_dispatch (standalone_app.test_repair_composition.CompositionTests.test_operator_stop_requires_no_model_and_prevents_next_dispatch) ... ok
+2026-10-18T08:36:22.2619963Z test_unknown_hook_remains_charged_and_is_not_reassigned (standalone_app.test_repair_composition.CompositionTests.test_unknown_hook_remains_charged_and_is_not_reassigned) ... ok
+2026-10-18T08:36:22.2625688Z test_command_binds_exact_empty_capability_operation (phase2b2s_attested_live_pilot.test_attested_worker.AttestedWorkerTests.test_command_binds_exact_empty_capability_operation) ... ok
+2026-10-18T08:36:22.2632805Z test_fresh_synthetic_plan_binds_exact_input (phase2b2s_attested_live_pilot.test_attested_worker.AttestedWorkerTests.test_fresh_synthetic_plan_binds_exact_input) ... ok
+2026-10-18T08:36:22.2648556Z test_logical_identity_binds_every_dispatch_token_field (phase2b2s_attested_live_pilot.test_attested_worker.AttestedWorkerTests.test_logical_identity_binds_every_dispatch_token_field) ... ok
+2026-10-18T08:36:22.2651366Z test_result_parser_rejects_duplicate_stale_or_malformed_output (phase2b2s_attested_live_pilot.test_attested_worker.AttestedWorkerTests.test_result_parser_rejects_duplicate_stale_or_malformed_output) ... ok
+2026-10-18T08:36:22.2654717Z test_semantic_request_contains_no_genie_authority_or_paths (phase2b2s_attested_live_pilot.test_attested_worker.AttestedWorkerTests.test_semantic_request_contains_no_genie_authority_or_paths) ... ok
+2026-10-18T08:36:22.2662442Z test_unknown_live_cost_stops_before_process_entry_or_ledger_creation (phase2b2s_attested_live_pilot.test_attested_worker.AttestedWorkerTests.test_unknown_live_cost_stops_before_process_entry_or_ledger_creation) ... ok
+2026-10-18T08:36:22.2762400Z test_worker_module_imports_no_genie_authority_surface (phase2b2s_attested_live_pilot.test_attested_worker.AttestedWorkerTests.test_worker_module_imports_no_genie_authority_surface) ... ok
+2026-10-18T08:36:22.2796365Z test_abandoned_staging_rejects_and_preserves (canonical_state_provisioner.test_provisioner_windows.Tests.test_abandoned_staging_rejects_and_preserves) ... ok
+2026-10-18T08:36:22.2924638Z test_app_directory_junction_rejects (canonical_state_provisioner.test_provisioner_windows.Tests.test_app_directory_junction_rejects) ... ok
+2026-10-18T08:36:22.2960935Z test_begin_is_fixed_and_second_begin_preserves (canonical_state_provisioner.test_provisioner_windows.Tests.test_begin_is_fixed_and_second_begin_preserves) ... ok
+2026-10-18T08:36:22.3006012Z test_concurrent_begin_has_one_winner (canonical_state_provisioner.test_provisioner_windows.Tests.test_concurrent_begin_has_one_winner) ... ok
+2026-10-18T08:36:22.3639662Z test_destination_appearing_before_publish_never_replaced (canonical_state_provisioner.test_provisioner_windows.Tests.test_destination_appearing_before_publish_never_replaced) ... ok
+2026-10-18T08:36:22.3679257Z test_existing_final_rejects_without_staging (canonical_state_provisioner.test_provisioner_windows.Tests.test_existing_final_rejects_without_staging) ... ok
+2026-10-18T08:36:22.3750470Z test_incomplete_publish_preserves_staging_without_marker (canonical_state_provisioner.test_provisioner_windows.Tests.test_incomplete_publish_preserves_staging_without_marker) ... ok
+2026-10-18T08:36:22.4496856Z test_post_move_validation_failure_is_committed_unverified (canonical_state_provisioner.test_provisioner_windows.Tests.test_post_move_validation_failure_is_committed_unverified) ... ok
+2026-10-18T08:36:22.5095616Z test_preseeded_marker_rejects_and_preserves (canonical_state_provisioner.test_provisioner_windows.Tests.test_preseeded_marker_rejects_and_preserves) ... ok
+2026-10-18T08:36:22.5715655Z test_reported_move_failure_is_unknown_and_preserves (canonical_state_provisioner.test_provisioner_windows.Tests.test_reported_move_failure_is_unknown_and_preserves) ... ok
+2026-10-18T08:36:22.6768872Z test_valid_publish_moves_once_and_remains_readable (canonical_state_provisioner.test_provisioner_windows.Tests.test_valid_publish_moves_once_and_remains_readable) ... ok
+2026-10-18T08:36:22.6827261Z test_marker_exact_shape (desktop_plugin.test_live_state_windows.Tests.test_marker_exact_shape) ... ok
+2026-10-18T08:36:22.6840939Z test_missing_root_rejects (desktop_plugin.test_live_state_windows.Tests.test_missing_root_rejects) ... ok
+2026-10-18T08:36:22.6917739Z test_native_known_folder_is_existing_absolute_directory (desktop_plugin.test_live_state_windows.Tests.test_native_known_folder_is_existing_absolute_directory) ... ok
+2026-10-18T08:36:22.7076057Z test_path_traversal_and_absolute_reject (desktop_plugin.test_live_state_windows.Tests.test_path_traversal_and_absolute_reject) ... ok
+2026-10-18T08:36:22.7729996Z test_valid_binding_reuses_existing_parser_and_reads_only (desktop_plugin.test_live_state_windows.Tests.test_valid_binding_reuses_existing_parser_and_reads_only) ... ok
+2026-10-18T08:36:22.7838575Z test_invalid_spec_does_not_acquire_staging (standalone_app.test_owner.Tests.test_invalid_spec_does_not_acquire_staging) ... ok
+2026-10-18T08:36:22.8792591Z test_partial_creation_failure_preserves_and_blocks_retry (standalone_app.test_owner.Tests.test_partial_creation_failure_preserves_and_blocks_retry) ... ok
+2026-10-18T08:36:23.0095384Z test_post_publish_binding_failure_preserves_final_and_blocks_recreate (standalone_app.test_owner.Tests.test_post_publish_binding_failure_preserves_final_and_blocks_recreate) ... ok
+2026-10-18T08:36:24.0353927Z test_published_run_drives_through_real_binder_and_shared_driver (standalone_app.test_owner.Tests.test_published_run_drives_through_real_binder_and_shared_driver) ... ok
+2026-10-18T08:36:24.0367962Z test_source_chain_rejects_controller_drift (standalone_app.test_owner.Tests.test_source_chain_rejects_controller_drift) ... ok
+2026-10-18T08:36:27.6421278Z test_successful_create_status_and_single_step_do_not_invoke_model (standalone_app.test_owner.Tests.test_successful_create_status_and_single_step_do_not_invoke_model) ... ok
+2026-10-18T08:36:27.6476180Z test_bad_json_is_rejected_before_owner_entry (standalone_app.test_cli_outcomes.CliOutcomeTests.test_bad_json_is_rejected_before_owner_entry) ... ok
+2026-10-18T08:36:27.7267364Z test_failure_after_stop_effect_is_unknown_not_bad_input (standalone_app.test_cli_outcomes.CliOutcomeTests.test_failure_after_stop_effect_is_unknown_not_bad_input) ... ok
+2026-10-18T08:36:27.7286994Z test_known_rejection_and_successful_stop_keep_their_meaning (standalone_app.test_cli_outcomes.CliOutcomeTests.test_known_rejection_and_successful_stop_keep_their_meaning) ... ok
+2026-10-18T08:36:27.7349381Z test_build_probe_requires_live_binding_and_cannot_bypass_it (desktop_plugin.test_entry.LiveEntryTests.test_build_probe_requires_live_binding_and_cannot_bypass_it) ... ok
+2026-10-18T08:36:27.7479947Z test_missing_or_invalid_live_state_never_uses_existing_cache (desktop_plugin.test_entry.LiveEntryTests.test_missing_or_invalid_live_state_never_uses_existing_cache) ... ok
+2026-10-18T08:36:27.7517418Z test_source_or_sdk_binding_failure_never_enters_stdio (desktop_plugin.test_entry.LiveEntryTests.test_source_or_sdk_binding_failure_never_enters_stdio) ... ok
+2026-10-18T08:36:27.7556360Z test_transport_failure_is_sanitized_without_retry (desktop_plugin.test_entry.LiveEntryTests.test_transport_failure_is_sanitized_without_retry) ... ok
+2026-10-18T08:36:27.7624576Z test_unexpected_binding_failure_is_sanitized_and_preserves_cache (desktop_plugin.test_entry.LiveEntryTests.test_unexpected_binding_failure_is_sanitized_and_preserves_cache) ... ok
+2026-10-18T08:36:27.7690165Z test_valid_binding_is_passed_to_transport_without_cache_selection (desktop_plugin.test_entry.LiveEntryTests.test_valid_binding_is_passed_to_transport_without_cache_selection) ... ok
+2026-10-18T08:36:27.7691691Z 
+2026-10-18T08:36:27.7691945Z ----------------------------------------------------------------------
+2026-10-18T08:36:27.7692514Z Ran 108 tests in 45.337s
+2026-10-18T08:36:27.7692756Z 
+2026-10-18T08:36:27.7692860Z OK
+2026-10-18T08:36:27.9790687Z ##[group]Run python -B run_queue/test_policy.py
+2026-10-18T08:36:27.9791341Z [36;1mpython -B run_queue/test_policy.py[0m
+2026-10-18T08:36:27.9791905Z [36;1mif ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }[0m
+2026-10-18T08:36:27.9792482Z [36;1mpython -B worker_bridge/test_bridge.py[0m
+2026-10-18T08:36:27.9793045Z [36;1mif ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }[0m
+2026-10-18T08:36:27.9878991Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-10-18T08:36:27.9879327Z env:
+2026-10-18T08:36:27.9879596Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:36:27.9880254Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-10-18T08:36:27.9880710Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:36:27.9881109Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:36:27.9881552Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:36:27.9881869Z ##[endgroup]
+2026-10-18T08:36:33.8883458Z {
+2026-10-18T08:36:33.8884328Z   "status": "PASS",
+2026-10-18T08:36:33.8884662Z   "count": 19,
+2026-10-18T08:36:33.8884945Z   "checks": [
+2026-10-18T08:36:33.8885196Z     {
+2026-10-18T08:36:33.8885472Z       "check": "bool_budget",
+2026-10-18T08:36:33.8885818Z       "rejected": true
+2026-10-18T08:36:33.8886096Z     },
+2026-10-18T08:36:33.8886326Z     {
+2026-10-18T08:36:33.8886621Z       "check": "incomplete_queue_preserved",
+2026-10-18T08:36:33.8887044Z       "rejected": true
+2026-10-18T08:36:33.8887329Z     },
+2026-10-18T08:36:33.8887621Z     {
+2026-10-18T08:36:33.8887937Z       "check": "explicit_queue_schema_inspection",
+2026-10-18T08:36:33.8888363Z       "passed": true
+2026-10-18T08:36:33.8888629Z     },
+2026-10-18T08:36:33.8888847Z     {
+2026-10-18T08:36:33.8889085Z       "check": "plan_alias",
+2026-10-18T08:36:33.8889396Z       "rejected": true
+2026-10-18T08:36:33.8889658Z     },
+2026-10-18T08:36:33.8889882Z     {
+2026-10-18T08:36:33.8890115Z       "check": "task_limit",
+2026-10-18T08:36:33.8890419Z       "rejected": true
+2026-10-18T08:36:33.8890676Z     },
+2026-10-18T08:36:33.8890884Z     {
+2026-10-18T08:36:33.8891169Z       "check": "concurrent_reservation_one_charge",
+2026-10-18T08:36:33.8891576Z       "passed": true
+2026-10-18T08:36:33.8891829Z     },
+2026-10-18T08:36:33.8892038Z     {
+2026-10-18T08:36:33.8892301Z       "check": "changed_duplicate_request",
+2026-10-18T08:36:33.8892675Z       "rejected": true
+2026-10-18T08:36:33.8892934Z     },
+2026-10-18T08:36:33.8893174Z     {
+2026-10-18T08:36:33.8893455Z       "check": "unregistered_task",
+2026-10-18T08:36:33.8894166Z       "rejected": true
+2026-10-18T08:36:33.8894442Z     },
+2026-10-18T08:36:33.8894649Z     {
+2026-10-18T08:36:33.8894881Z       "check": "wrong_input",
+2026-10-18T08:36:33.8895199Z       "rejected": true
+2026-10-18T08:36:33.8895466Z     },
+2026-10-18T08:36:33.8895697Z     {
+2026-10-18T08:36:33.8895960Z       "check": "wrong_run_reservation",
+2026-10-18T08:36:33.8896316Z       "rejected": true
+2026-10-18T08:36:33.8896574Z     },
+2026-10-18T08:36:33.8896785Z     {
+2026-10-18T08:36:33.8897113Z       "check": "uncertain_call_charged_no_refund_or_redispatch",
+2026-10-18T08:36:33.8897574Z       "passed": true
+2026-10-18T08:36:33.8897830Z     },
+2026-10-18T08:36:33.8898059Z     {
+2026-10-18T08:36:33.8898310Z       "check": "stopped_new_enqueue",
+2026-10-18T08:36:33.8898685Z       "rejected": true
+2026-10-18T08:36:33.8898957Z     },
+2026-10-18T08:36:33.8899175Z     {
+2026-10-18T08:36:33.8899499Z       "check": "scoped_hold_does_not_block_independent_task",
+2026-10-18T08:36:33.8899961Z       "passed": true
+2026-10-18T08:36:33.8900227Z     },
+2026-10-18T08:36:33.8900440Z     {
+2026-10-18T08:36:33.8900759Z       "check": "acceptance_without_destination_not_complete",
+2026-10-18T08:36:33.8901215Z       "passed": true
+2026-10-18T08:36:33.8901469Z     },
+2026-10-18T08:36:33.8901685Z     {
+2026-10-18T08:36:33.8904186Z       "check": "wrong_run_completion",
+2026-10-18T08:36:33.8904639Z       "rejected": true
+2026-10-18T08:36:33.8904911Z     },
+2026-10-18T08:36:33.8905129Z     {
+2026-10-18T08:36:33.8905413Z       "check": "completion_wrong_reserved_feedback",
+2026-10-18T08:36:33.8905825Z       "rejected": true
+2026-10-18T08:36:33.8906087Z     },
+2026-10-18T08:36:33.8906298Z     {
+2026-10-18T08:36:33.8906617Z       "check": "fresh_readback_completes_only_matching_task",
+2026-10-18T08:36:33.8907065Z       "passed": true
+2026-10-18T08:36:33.8907330Z     },
+2026-10-18T08:36:33.8907554Z     {
+2026-10-18T08:36:33.8907880Z       "check": "cached_completion_requires_fresh_destination",
+2026-10-18T08:36:33.8909295Z       "passed": true
+2026-10-18T08:36:33.8909583Z     },
+2026-10-18T08:36:33.8909815Z     {
+2026-10-18T08:36:33.8910225Z       "check": "exhausted_budget_still_allows_existing_task_reconciliation",
+2026-10-18T08:36:33.8910729Z       "passed": true
+2026-10-18T08:36:33.8910981Z     }
+2026-10-18T08:36:33.8911211Z   ]
+2026-10-18T08:36:33.8911428Z }
+2026-10-18T08:36:35.1528897Z {
+2026-10-18T08:36:35.1529320Z   "status": "PASS",
+2026-10-18T08:36:35.1529627Z   "checks": [
+2026-10-18T08:36:35.1529901Z     {
+2026-10-18T08:36:35.1530221Z       "check": "missing_ledger_no_provision",
+2026-10-18T08:36:35.1530662Z       "rejected": true
+2026-10-18T08:36:35.1530940Z     },
+2026-10-18T08:36:35.1531171Z     {
+2026-10-18T08:36:35.1531495Z       "check": "incomplete_provisioning_preserved",
+2026-10-18T08:36:35.1531959Z       "rejected": true
+2026-10-18T08:36:35.1532275Z     },
+2026-10-18T08:36:35.1532510Z     {
+2026-10-18T08:36:35.1532868Z       "check": "changed_reused_dependency_rejected",
+2026-10-18T08:36:35.1533307Z       "passed": true
+2026-10-18T08:36:35.1533586Z     },
+2026-10-18T08:36:35.1533808Z     {
+2026-10-18T08:36:35.1534356Z       "check": "task_alias",
+2026-10-18T08:36:35.1534681Z       "rejected": true
+2026-10-18T08:36:35.1534950Z     },
+2026-10-18T08:36:35.1535171Z     {
+2026-10-18T08:36:35.1535484Z       "check": "dispatch_replay_no_blind_redispatch",
+2026-10-18T08:36:35.1535884Z       "passed": true
+2026-10-18T08:36:35.1536141Z     },
+2026-10-18T08:36:35.1536350Z     {
+2026-10-18T08:36:35.1536615Z       "check": "candidate_before_agent_binding",
+2026-10-18T08:36:35.1537005Z       "rejected": true
+2026-10-18T08:36:35.1537266Z     },
+2026-10-18T08:36:35.1537473Z     {
+2026-10-18T08:36:35.1537708Z       "check": "cross_task_binding",
+2026-10-18T08:36:35.1538050Z       "rejected": true
+2026-10-18T08:36:35.1538323Z     },
+2026-10-18T08:36:35.1538536Z     {
+2026-10-18T08:36:35.1538778Z       "check": "cross_task_candidate",
+2026-10-18T08:36:35.1539182Z       "rejected": true
+2026-10-18T08:36:35.1539504Z     },
+2026-10-18T08:36:35.1539715Z     {
+2026-10-18T08:36:35.1539957Z       "check": "wrong_input_candidate",
+2026-10-18T08:36:35.1540322Z       "rejected": true
+2026-10-18T08:36:35.1540636Z     },
+2026-10-18T08:36:35.1540864Z     {
+2026-10-18T08:36:35.1541110Z       "check": "agent_alias",
+2026-10-18T08:36:35.1541423Z       "rejected": true
+2026-10-18T08:36:35.1541681Z     },
+2026-10-18T08:36:35.1541922Z     {
+2026-10-18T08:36:35.1542229Z       "check": "concurrent_same_candidate_one_result",
+2026-10-18T08:36:35.1542642Z       "passed": true
+2026-10-18T08:36:35.1542890Z     },
+2026-10-18T08:36:35.1543128Z     {
+2026-10-18T08:36:35.1543362Z       "check": "candidate_alias",
+2026-10-18T08:36:35.1543684Z       "rejected": true
+2026-10-18T08:36:35.1543953Z     },
+2026-10-18T08:36:35.1544194Z     {
+2026-10-18T08:36:35.1544456Z       "check": "cross_task_review",
+2026-10-18T08:36:35.1544823Z       "rejected": true
+2026-10-18T08:36:35.1545096Z     },
+2026-10-18T08:36:35.1545343Z     {
+2026-10-18T08:36:35.1545593Z       "check": "wrong_input_review",
+2026-10-18T08:36:35.1545954Z       "rejected": true
+2026-10-18T08:36:35.1546215Z     },
+2026-10-18T08:36:35.1546458Z     {
+2026-10-18T08:36:35.1546705Z       "check": "review_wrong_hash",
+2026-10-18T08:36:35.1548299Z       "rejected": true
+2026-10-18T08:36:35.1548714Z     },
+2026-10-18T08:36:35.1548953Z     {
+2026-10-18T08:36:35.1549211Z       "check": "unaccepted_delivery",
+2026-10-18T08:36:35.1549674Z       "rejected": true
+2026-10-18T08:36:35.1549953Z     },
+2026-10-18T08:36:35.1550169Z     {
+2026-10-18T08:36:35.1550414Z       "check": "stale_candidate",
+2026-10-18T08:36:35.1550747Z       "rejected": true
+2026-10-18T08:36:35.1551085Z     },
+2026-10-18T08:36:35.1551309Z     {
+2026-10-18T08:36:35.1551556Z       "check": "stale_review",
+2026-10-18T08:36:35.1551904Z       "rejected": true
+2026-10-18T08:36:35.1552437Z     },
+2026-10-18T08:36:35.1552648Z     {
+2026-10-18T08:36:35.1552882Z       "check": "review_alias",
+2026-10-18T08:36:35.1553235Z       "rejected": true
+2026-10-18T08:36:35.1553523Z     },
+2026-10-18T08:36:35.1553749Z     {
+2026-10-18T08:36:35.1554007Z       "check": "lost_ack_preserves_pending",
+2026-10-18T08:36:35.1554734Z       "passed": true
+2026-10-18T08:36:35.1555008Z     },
+2026-10-18T08:36:35.1555236Z     {
+2026-10-18T08:36:35.1555597Z       "check": "fresh_process_resume_one_destination_application",
+2026-10-18T08:36:35.1556132Z       "passed": true
+2026-10-18T08:36:35.1556394Z     },
+2026-10-18T08:36:35.1556652Z     {
+2026-10-18T08:36:35.1557002Z       "check": "cached_completion_missing_destination_unknown",
+2026-10-18T08:36:35.1557431Z       "passed": true
+2026-10-18T08:36:35.1557659Z     },
+2026-10-18T08:36:35.1557851Z     {
+2026-10-18T08:36:35.1558086Z       "check": "missing_sink_not_recreated",
+2026-10-18T08:36:35.1558489Z       "rejected": true
+2026-10-18T08:36:35.1558839Z     },
+2026-10-18T08:36:35.1559074Z     {
+2026-10-18T08:36:35.1559346Z       "check": "damaged_review_binding",
+2026-10-18T08:36:35.1559778Z       "rejected": true
+2026-10-18T08:36:35.1560091Z     },
+2026-10-18T08:36:35.1560324Z     {
+2026-10-18T08:36:35.1560628Z       "check": "bounded_repair_no_infinite_loop",
+2026-10-18T08:36:35.1561182Z       "passed": true
+2026-10-18T08:36:35.1561482Z     }
+2026-10-18T08:36:35.1561709Z   ],
+2026-10-18T08:36:35.1561971Z   "count": 25
+2026-10-18T08:36:35.1562233Z }
+2026-10-18T08:36:35.3253547Z Post job cleanup.
+2026-10-18T08:36:35.4704016Z (node:1864) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-18T08:36:35.4704857Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-18T08:36:35.5053762Z Post job cleanup.
+2026-10-18T08:36:35.7357437Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-10-18T08:36:35.7803894Z git version 2.56.0.windows.2
+2026-10-18T08:36:35.7891560Z Temporarily overriding HOME='D:\a\_temp\b5cf1fb0-f848-4afb-ad84-3f08912e45e0' before making global git config changes
+2026-10-18T08:36:35.7892890Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-18T08:36:35.7903977Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\test\test
+2026-10-18T08:36:35.8444347Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-10-18T08:36:35.9056340Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-10-18T08:36:36.5628022Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-18T08:36:36.6023634Z http.https://github.com/.extraheader
+2026-10-18T08:36:36.6079741Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all http.https://github.com/.extraheader
+2026-10-18T08:36:36.6515323Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-10-18T08:36:37.3298273Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-18T08:36:37.3851533Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-10-18T08:36:38.0290705Z Cleaning up orphan processes
+2026-10-18T08:36:38.1065239Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+

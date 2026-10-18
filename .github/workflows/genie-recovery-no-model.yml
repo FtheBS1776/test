@@ -34,6 +34,9 @@ jobs:
           session_driver.test_driver
           session_driver.test_protocol
           run_queue.test_cost_admission
+          run_queue.test_live_entry_denial
+          phase2b2m_alpha_live_pilot.test_alpha_exec_worker
+          phase2b2o_alpha_recovery_live.test_recovered_worker
           plugin_mcp_consumer.test_consumer
           plugin_mcp_consumer.test_repair
           standalone_app.test_repair_composition

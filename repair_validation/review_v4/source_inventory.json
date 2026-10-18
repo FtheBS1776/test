@@ -1,0 +1,518 @@
+[
+  {
+    "path": "active_runner/run_status.py",
+    "syntax": "PARSED",
+    "functions": [
+      "load_runner",
+      "readonly",
+      "schema",
+      "unknown",
+      "journal_readback",
+      "task_report",
+      "report",
+      "main"
+    ]
+  },
+  {
+    "path": "active_runner/runner.py",
+    "syntax": "PARSED",
+    "functions": [
+      "context",
+      "paths",
+      "ready",
+      "token",
+      "step",
+      "callback",
+      "main"
+    ]
+  },
+  {
+    "path": "canonical_state_provisioner/provisioner_windows.py",
+    "syntax": "PARSED",
+    "functions": [
+      "_kernel32",
+      "_attributes",
+      "_plain_directory",
+      "_fixed_paths",
+      "_move_publish",
+      "_write_marker_exclusive",
+      "_validate",
+      "_portable_binding",
+      "begin"
+    ]
+  },
+  {
+    "path": "desktop_plugin/entry.py",
+    "syntax": "PARSED",
+    "functions": [
+      "_load_runs",
+      "_build_selftest",
+      "_run_transport",
+      "main"
+    ]
+  },
+  {
+    "path": "desktop_plugin/live_state_windows.py",
+    "syntax": "PARSED",
+    "functions": [
+      "_u32",
+      "_failed",
+      "_known_local_app_data",
+      "candidate_live_root",
+      "_strict_json",
+      "_root",
+      "_direct_child",
+      "validate_state_root",
+      "load_live_runs"
+    ]
+  },
+  {
+    "path": "host_adapter/journal.py",
+    "syntax": "PARSED",
+    "functions": [
+      "provision",
+      "bound",
+      "begin",
+      "observe",
+      "status_db",
+      "status",
+      "main"
+    ]
+  },
+  {
+    "path": "phase2b2c_preflight/recovery_preflight.py",
+    "syntax": "PARSED",
+    "functions": [
+      "preflight_command_line",
+      "_binding",
+      "_model_inventory",
+      "_validate_preflight_inventory",
+      "_inventory_observation",
+      "_member_evidence",
+      "_failure_member_evidence",
+      "run_once"
+    ]
+  },
+  {
+    "path": "phase2b2l_alpha_isolation_preflight/alpha_isolation_preflight.py",
+    "syntax": "PARSED",
+    "functions": [
+      "command_line",
+      "child_environment",
+      "run_once"
+    ]
+  },
+  {
+    "path": "phase2b2m_alpha_live_pilot/alpha_exec_worker.py",
+    "syntax": "PARSED",
+    "functions": [
+      "sha256_bytes",
+      "file_sha256",
+      "logical_operation_id",
+      "child_environment",
+      "command_line",
+      "_validate_scratch",
+      "_parse_jsonl",
+      "_event_result",
+      "run_once"
+    ]
+  },
+  {
+    "path": "phase2b2p_capability_containment_repair/repair_contract.py",
+    "syntax": "PARSED",
+    "functions": [
+      "_sha256_file",
+      "validate_capability_snapshot",
+      "classify_attested_events",
+      "verify_member_accounting"
+    ]
+  },
+  {
+    "path": "phase2b2r_exact_codex_preflight/exact_codex_preflight.py",
+    "syntax": "PARSED",
+    "functions": [
+      "file_sha256",
+      "verify_artifact",
+      "logical_operation_id",
+      "child_environment",
+      "command_line",
+      "_bounded_stream",
+      "_write_bytes_once",
+      "run_once"
+    ]
+  },
+  {
+    "path": "phase2b2s_attested_live_pilot/attested_worker.py",
+    "syntax": "PARSED",
+    "functions": [
+      "logical_operation_id",
+      "command_line",
+      "_write_bytes_once",
+      "_assistant_result",
+      "run_once"
+    ]
+  },
+  {
+    "path": "phase2c_finite_autonomous_pilot/run_bounded_batch.py",
+    "syntax": "PARSED",
+    "functions": [
+      "_registry",
+      "_write_once",
+      "main"
+    ]
+  },
+  {
+    "path": "phase2c_finite_autonomous_pilot/verify_sealed.py",
+    "syntax": "PARSED",
+    "functions": [
+      "_sha",
+      "inspect_sealed",
+      "main"
+    ]
+  },
+  {
+    "path": "run_queue/run_policy.py",
+    "syntax": "PARSED",
+    "functions": [
+      "inspect",
+      "valid_plan",
+      "valid_policy",
+      "initialize",
+      "control",
+      "enqueue",
+      "next_task",
+      "reserve",
+      "hold",
+      "complete",
+      "stop",
+      "status",
+      "cost_policy",
+      "cost_status",
+      "admit_action",
+      "main"
+    ]
+  },
+  {
+    "path": "shared_interfaces/cli.py",
+    "syntax": "PARSED",
+    "functions": [
+      "_load_facade",
+      "_unique_object",
+      "_invalid_constant",
+      "_finite_float",
+      "_nonblocking_opener",
+      "_string",
+      "_read_registry",
+      "_emit",
+      "_parser",
+      "main"
+    ]
+  },
+  {
+    "path": "shared_interfaces/function_adapter.py",
+    "syntax": "PARSED",
+    "functions": [
+      "_load_source",
+      "_snapshot",
+      "_reject",
+      "_output"
+    ]
+  },
+  {
+    "path": "shared_interfaces/isolated_worker.py",
+    "syntax": "PARSED",
+    "functions": [
+      "_sha256",
+      "_canonical",
+      "_pairs",
+      "_constant",
+      "_strict_json",
+      "_reject",
+      "_unknown",
+      "_inside_repository",
+      "_has_link_component",
+      "_is_disposable_launcher_root",
+      "_check_claim_schema",
+      "_check_claim_file",
+      "_request_snapshot",
+      "_read_bounded",
+      "_write_stdin",
+      "_terminate",
+      "_communicate_bounded",
+      "deferred_codex_worker_plan"
+    ]
+  },
+  {
+    "path": "shared_interfaces/live_codex_worker.py",
+    "syntax": "PARSED",
+    "functions": [
+      "canonical",
+      "sha256_bytes",
+      "file_sha256",
+      "logical_operation_id",
+      "child_environment",
+      "command_line",
+      "_validate_scratch",
+      "_validate_inventory",
+      "_assistant_text",
+      "run_once"
+    ]
+  },
+  {
+    "path": "shared_interfaces/mcp_consumer.py",
+    "syntax": "PARSED",
+    "functions": [
+      "_load_adapter",
+      "_snapshot",
+      "_pairs",
+      "_constant",
+      "_decode_object",
+      "_unknown"
+    ]
+  },
+  {
+    "path": "shared_interfaces/mcp_controller.py",
+    "syntax": "PARSED",
+    "functions": [
+      "_load_controller_module",
+      "_snapshot",
+      "_reject",
+      "_unknown",
+      "_valid_result"
+    ]
+  },
+  {
+    "path": "shared_interfaces/mcp_controller_server.py",
+    "syntax": "PARSED",
+    "functions": [
+      "required_transport_distributions",
+      "_require_sdk",
+      "_load_consumer_module",
+      "_unknown",
+      "build_server_from_consumer",
+      "build_server",
+      "_parser",
+      "main"
+    ]
+  },
+  {
+    "path": "shared_interfaces/mcp_events.py",
+    "syntax": "PARSED",
+    "functions": [
+      "_load_events_module",
+      "_snapshot",
+      "_schema_hash",
+      "_reject",
+      "_unknown",
+      "_valid_result"
+    ]
+  },
+  {
+    "path": "shared_interfaces/mcp_events_server.py",
+    "syntax": "PARSED",
+    "functions": [
+      "required_transport_distributions",
+      "_require_sdk",
+      "_load_consumer_module",
+      "_unknown",
+      "_schema_hash",
+      "_valid_result",
+      "build_server_from_consumer",
+      "build_server",
+      "_parser",
+      "main"
+    ]
+  },
+  {
+    "path": "shared_interfaces/mcp_server.py",
+    "syntax": "PARSED",
+    "functions": [
+      "required_transport_distributions",
+      "_require_sdk",
+      "_load_consumer_module",
+      "build_server_from_consumer",
+      "build_server",
+      "serve_stdio",
+      "_parser",
+      "main"
+    ]
+  },
+  {
+    "path": "shared_interfaces/process_containment.py",
+    "syntax": "PARSED",
+    "functions": [
+      "_sha256",
+      "_strict_json",
+      "_has_link_component",
+      "_inside_repository",
+      "_is_probe_root",
+      "_reject",
+      "_unknown",
+      "_kernel32_path",
+      "_conhost_path",
+      "selected_runtime_profile"
+    ]
+  },
+  {
+    "path": "shared_interfaces/run_control.py",
+    "syntax": "PARSED",
+    "functions": [
+      "_reject",
+      "_unknown",
+      "_load_facade",
+      "_ident",
+      "_hash",
+      "_fields",
+      "_token",
+      "_request",
+      "_json_tree",
+      "_valid_response"
+    ]
+  },
+  {
+    "path": "shared_interfaces/run_events.py",
+    "syntax": "PARSED",
+    "functions": [
+      "_load_control",
+      "_reject",
+      "_unknown",
+      "_fields",
+      "_canonical",
+      "_snapshot",
+      "_object_schema"
+    ]
+  },
+  {
+    "path": "shared_interfaces/session_driver.py",
+    "syntax": "PARSED",
+    "functions": [
+      "_load_events",
+      "_copy",
+      "_unknown",
+      "_terminal",
+      "_running",
+      "_event_args",
+      "_applied",
+      "_admit",
+      "drive_run",
+      "_unique_object",
+      "_invalid_constant",
+      "serve_run"
+    ]
+  },
+  {
+    "path": "shared_interfaces/status_tool.py",
+    "syntax": "PARSED",
+    "functions": [
+      "_reject",
+      "_load_core",
+      "_result_unavailable",
+      "_task_result"
+    ]
+  },
+  {
+    "path": "shared_interfaces/windows_job.py",
+    "syntax": "PARSED",
+    "functions": [
+      "_require_windows",
+      "_kernel32",
+      "_winerror",
+      "_check_structure_layout"
+    ]
+  },
+  {
+    "path": "shared_interfaces/work_host.py",
+    "syntax": "PARSED",
+    "functions": [
+      "_load",
+      "_emit",
+      "main"
+    ]
+  },
+  {
+    "path": "standalone_app/cli.py",
+    "syntax": "PARSED",
+    "functions": [
+      "_stdin_object",
+      "_emit",
+      "_parser",
+      "main"
+    ]
+  },
+  {
+    "path": "standalone_app/execution_bridge.py",
+    "syntax": "PARSED",
+    "functions": [
+      "_load_driver",
+      "drive"
+    ]
+  },
+  {
+    "path": "standalone_app/owner.py",
+    "syntax": "PARSED",
+    "functions": [
+      "_load_control_chain",
+      "_snapshot",
+      "_precheck_spec",
+      "_write_registry",
+      "_live_runs",
+      "create_first_run",
+      "status",
+      "advance",
+      "stop"
+    ]
+  },
+  {
+    "path": "worker_bridge/bridge.py",
+    "syntax": "PARSED",
+    "functions": [
+      "canon",
+      "digest",
+      "ident",
+      "initialize",
+      "transaction",
+      "inspect",
+      "read",
+      "create",
+      "request",
+      "bind",
+      "response_binding",
+      "submit",
+      "review",
+      "effect_db",
+      "action_db",
+      "status",
+      "deliver",
+      "main"
+    ]
+  },
+  {
+    "path": "worker_bridge/reused/report_sink.py",
+    "syntax": "PARSED",
+    "functions": [
+      "canonical",
+      "valid",
+      "initialize",
+      "deliver",
+      "observe",
+      "main"
+    ]
+  },
+  {
+    "path": "worker_bridge/reused/stateful_subject.py",
+    "syntax": "PARSED",
+    "functions": [
+      "S",
+      "I",
+      "H",
+      "EID",
+      "connect",
+      "init",
+      "FP",
+      "activate",
+      "ack",
+      "apply",
+      "coherent"
+    ]
+  }
+]

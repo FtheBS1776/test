@@ -1,0 +1,87 @@
+test_build_probe_requires_live_binding_and_cannot_bypass_it (desktop_plugin.test_entry.LiveEntryTests.test_build_probe_requires_live_binding_and_cannot_bypass_it) ... FAIL
+test_missing_or_invalid_live_state_never_uses_existing_cache (desktop_plugin.test_entry.LiveEntryTests.test_missing_or_invalid_live_state_never_uses_existing_cache) ... 
+  test_missing_or_invalid_live_state_never_uses_existing_cache (desktop_plugin.test_entry.LiveEntryTests.test_missing_or_invalid_live_state_never_uses_existing_cache) (reason='LIVE_STATE_UNAVAILABLE') ... FAIL
+  test_missing_or_invalid_live_state_never_uses_existing_cache (desktop_plugin.test_entry.LiveEntryTests.test_missing_or_invalid_live_state_never_uses_existing_cache) (reason='LIVE_STATE_INVALID') ... FAIL
+  test_missing_or_invalid_live_state_never_uses_existing_cache (desktop_plugin.test_entry.LiveEntryTests.test_missing_or_invalid_live_state_never_uses_existing_cache) (reason='LIVE_STATE_PATH') ... FAIL
+test_source_or_sdk_binding_failure_never_enters_stdio (desktop_plugin.test_entry.LiveEntryTests.test_source_or_sdk_binding_failure_never_enters_stdio) ... FAIL
+test_transport_failure_is_sanitized_without_retry (desktop_plugin.test_entry.LiveEntryTests.test_transport_failure_is_sanitized_without_retry) ... FAIL
+test_unexpected_binding_failure_is_sanitized_and_preserves_cache (desktop_plugin.test_entry.LiveEntryTests.test_unexpected_binding_failure_is_sanitized_and_preserves_cache) ... FAIL
+test_valid_binding_is_passed_to_transport_without_cache_selection (desktop_plugin.test_entry.LiveEntryTests.test_valid_binding_is_passed_to_transport_without_cache_selection) ... FAIL
+
+======================================================================
+FAIL: test_build_probe_requires_live_binding_and_cannot_bypass_it (desktop_plugin.test_entry.LiveEntryTests.test_build_probe_requires_live_binding_and_cannot_bypass_it)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/27265db857a2/r03_isolated/desktop_plugin/test_entry.py", line 68, in test_build_probe_requires_live_binding_and_cannot_bypass_it
+    self.assertEqual(entry.main(), 2)
+AssertionError: 0 != 2
+
+======================================================================
+FAIL: test_missing_or_invalid_live_state_never_uses_existing_cache (desktop_plugin.test_entry.LiveEntryTests.test_missing_or_invalid_live_state_never_uses_existing_cache) (reason='LIVE_STATE_UNAVAILABLE')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/27265db857a2/r03_isolated/desktop_plugin/test_entry.py", line 39, in test_missing_or_invalid_live_state_never_uses_existing_cache
+    self.assertEqual(entry.main(), 2)
+AssertionError: 0 != 2
+
+======================================================================
+FAIL: test_missing_or_invalid_live_state_never_uses_existing_cache (desktop_plugin.test_entry.LiveEntryTests.test_missing_or_invalid_live_state_never_uses_existing_cache) (reason='LIVE_STATE_INVALID')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/27265db857a2/r03_isolated/desktop_plugin/test_entry.py", line 39, in test_missing_or_invalid_live_state_never_uses_existing_cache
+    self.assertEqual(entry.main(), 2)
+AssertionError: 0 != 2
+
+======================================================================
+FAIL: test_missing_or_invalid_live_state_never_uses_existing_cache (desktop_plugin.test_entry.LiveEntryTests.test_missing_or_invalid_live_state_never_uses_existing_cache) (reason='LIVE_STATE_PATH')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/27265db857a2/r03_isolated/desktop_plugin/test_entry.py", line 39, in test_missing_or_invalid_live_state_never_uses_existing_cache
+    self.assertEqual(entry.main(), 2)
+AssertionError: 0 != 2
+
+======================================================================
+FAIL: test_source_or_sdk_binding_failure_never_enters_stdio (desktop_plugin.test_entry.LiveEntryTests.test_source_or_sdk_binding_failure_never_enters_stdio)
+----------------------------------------------------------------------
+desktop_plugin.entry._BootstrapReject: TRANSPORT_RUNTIME
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/scratch/27265db857a2/r03_isolated/desktop_plugin/test_entry.py", line 76, in test_source_or_sdk_binding_failure_never_enters_stdio
+    with self.assertRaisesRegex(entry._BootstrapReject, "^TRANSPORT_BINDING$"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "^TRANSPORT_BINDING$" does not match "TRANSPORT_RUNTIME"
+
+======================================================================
+FAIL: test_transport_failure_is_sanitized_without_retry (desktop_plugin.test_entry.LiveEntryTests.test_transport_failure_is_sanitized_without_retry)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/27265db857a2/r03_isolated/desktop_plugin/test_entry.py", line 87, in test_transport_failure_is_sanitized_without_retry
+    serve.assert_called_once_with(server)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py", line 960, in assert_called_once_with
+    raise AssertionError(msg)
+AssertionError: Expected 'serve_stdio' to be called once. Called 0 times.
+
+======================================================================
+FAIL: test_unexpected_binding_failure_is_sanitized_and_preserves_cache (desktop_plugin.test_entry.LiveEntryTests.test_unexpected_binding_failure_is_sanitized_and_preserves_cache)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/27265db857a2/r03_isolated/desktop_plugin/test_entry.py", line 49, in test_unexpected_binding_failure_is_sanitized_and_preserves_cache
+    self.assertEqual(entry.main(), 2)
+AssertionError: 0 != 2
+
+======================================================================
+FAIL: test_valid_binding_is_passed_to_transport_without_cache_selection (desktop_plugin.test_entry.LiveEntryTests.test_valid_binding_is_passed_to_transport_without_cache_selection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/27265db857a2/r03_isolated/desktop_plugin/test_entry.py", line 59, in test_valid_binding_is_passed_to_transport_without_cache_selection
+    binder.assert_called_once_with()
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py", line 960, in assert_called_once_with
+    raise AssertionError(msg)
+AssertionError: Expected 'load_live_runs' to be called once. Called 0 times.
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.027s
+
+FAILED (failures=8)

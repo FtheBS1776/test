@@ -1,0 +1,16 @@
+test_bad_json_is_rejected_before_owner_entry (standalone_app.test_cli_outcomes.CliOutcomeTests.test_bad_json_is_rejected_before_owner_entry) ... ok
+test_failure_after_stop_effect_is_unknown_not_bad_input (standalone_app.test_cli_outcomes.CliOutcomeTests.test_failure_after_stop_effect_is_unknown_not_bad_input) ... FAIL
+test_known_rejection_and_successful_stop_keep_their_meaning (standalone_app.test_cli_outcomes.CliOutcomeTests.test_known_rejection_and_successful_stop_keep_their_meaning) ... ok
+
+======================================================================
+FAIL: test_failure_after_stop_effect_is_unknown_not_bad_input (standalone_app.test_cli_outcomes.CliOutcomeTests.test_failure_after_stop_effect_is_unknown_not_bad_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/27265db857a2/r03_isolated/standalone_app/test_cli_outcomes.py", line 32, in test_failure_after_stop_effect_is_unknown_not_bad_input
+    self.assertEqual(code, 3)
+AssertionError: 2 != 3
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.007s
+
+FAILED (failures=1)

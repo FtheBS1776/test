@@ -1,0 +1,8 @@
+{"os_name": "posix", "platform": "Linux-6.18.55-x86_64-with-glibc2.39", "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]", "source": "/workspace/scratch/27265db857a2/review_v4_separate/package/GENIE_REPAIR_REVIEW_INPUT_v4_20261018/source"}
+test_DEFECT_alpha_exec_bypasses_cost_gate_and_enters_ledger_and_popen (__main__.Review.test_DEFECT_alpha_exec_bypasses_cost_gate_and_enters_ledger_and_popen) ... DEFECT_REPRODUCED: unbounded alpha run_once reached real ledger claim and fake Popen boundary without cost admission
+ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.008s
+
+OK

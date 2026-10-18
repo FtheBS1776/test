@@ -1,0 +1,11 @@
+test_build_probe_requires_live_binding_and_cannot_bypass_it (desktop_plugin.test_entry.LiveEntryTests.test_build_probe_requires_live_binding_and_cannot_bypass_it) ... ok
+test_missing_or_invalid_live_state_never_uses_existing_cache (desktop_plugin.test_entry.LiveEntryTests.test_missing_or_invalid_live_state_never_uses_existing_cache) ... ok
+test_source_or_sdk_binding_failure_never_enters_stdio (desktop_plugin.test_entry.LiveEntryTests.test_source_or_sdk_binding_failure_never_enters_stdio) ... ok
+test_transport_failure_is_sanitized_without_retry (desktop_plugin.test_entry.LiveEntryTests.test_transport_failure_is_sanitized_without_retry) ... ok
+test_unexpected_binding_failure_is_sanitized_and_preserves_cache (desktop_plugin.test_entry.LiveEntryTests.test_unexpected_binding_failure_is_sanitized_and_preserves_cache) ... ok
+test_valid_binding_is_passed_to_transport_without_cache_selection (desktop_plugin.test_entry.LiveEntryTests.test_valid_binding_is_passed_to_transport_without_cache_selection) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.042s
+
+OK

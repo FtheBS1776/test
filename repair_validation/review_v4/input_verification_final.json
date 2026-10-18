@@ -1,0 +1,22 @@
+{
+  "archive": "/workspace/scratch/27265db857a2/GENIE_REPAIR_REVIEW_INPUT_v4_20261018.zip",
+  "expected_sha256": "acaa546b3aa8abab8947b821c6bbe5c2c9f962e05d02c763929e5ddf4a274b0d",
+  "actual_sha256": "acaa546b3aa8abab8947b821c6bbe5c2c9f962e05d02c763929e5ddf4a274b0d",
+  "archive_length": 138234,
+  "entry_count": 51,
+  "total_uncompressed": 388131,
+  "total_compressed_entries": 126164,
+  "maximum_entry_length": 25136,
+  "CRC": "all verified",
+  "path_duplicate_symlink_issues": [],
+  "manifests": [
+    {
+      "path": "GENIE_REPAIR_REVIEW_INPUT_v4_20261018/MANIFEST.json",
+      "sha256": "96a04051b84c6307589426c96c221c1c70c2aaa153bcecd46b885ef3e22d4373",
+      "verified_file_count": 50,
+      "declared_source_commit": "51ffb4274d91de9769cb45dc13ab9641abe9de4b",
+      "declared_source_tree": "d6e345245a2f018cd9bc42efed7c840a9fac3c98"
+    }
+  ],
+  "extracted_payload_byte_identity": "all verified"
+}

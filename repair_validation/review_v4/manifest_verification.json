@@ -1,0 +1,307 @@
+{
+  "manifest_sha256": "96a04051b84c6307589426c96c221c1c70c2aaa153bcecd46b885ef3e22d4373",
+  "files": [
+    {
+      "path": "README_FIRST.md",
+      "length": 782,
+      "sha256": "55ecc6cc196a89b3acac10825d97b4e1b65cc8bbcbfb2430d50afff008bb2750",
+      "ok": true
+    },
+    {
+      "path": "REVIEW_CONTRACT.md",
+      "length": 5464,
+      "sha256": "d9ff7b9d9dc254152962dcf1fc60f0cb7e1e1c0e0414f095f4b46de29c91cc3c",
+      "ok": true
+    },
+    {
+      "path": "source/.github/actions/genie-windows-package/action.yml",
+      "length": 5261,
+      "sha256": "df720c988b13a0704f8021a11abd50ab1c945a4576bc2e8fde31bcbbd8f06290",
+      "ok": true
+    },
+    {
+      "path": "source/.github/workflows/genie-desktop-plugin-nonclaim.yml",
+      "length": 1377,
+      "sha256": "bf87b37e034d1e91c9d86927b9bc4ff9d73b3546c909287d43b6b5412d974ef1",
+      "ok": true
+    },
+    {
+      "path": "source/.github/workflows/genie-recovery-no-model.yml",
+      "length": 2672,
+      "sha256": "bd0dcce75504f48c4b7c4c9223e20eb99e0ee276e9b99961a0d8252da999c08a",
+      "ok": true
+    },
+    {
+      "path": "source/active_runner/run_status.py",
+      "length": 8478,
+      "sha256": "554c8b16e6635eef024e245eaf2e9a9a66c8841c690cc173e163cb4b757a91a6",
+      "ok": true
+    },
+    {
+      "path": "source/active_runner/runner.py",
+      "length": 10583,
+      "sha256": "f683491cd184ac10e555ad41b96b44c9e690948de761653bc96894c43656dc86",
+      "ok": true
+    },
+    {
+      "path": "source/canonical_state_provisioner/provisioner_windows.py",
+      "length": 9196,
+      "sha256": "88e1663f9587885592791658b1b7dc0d1016726ddd187696a721e22aa9f7b8dd",
+      "ok": true
+    },
+    {
+      "path": "source/desktop_plugin/entry.py",
+      "length": 2760,
+      "sha256": "edeb62130daf27a293fd550fbc42413ea03f3700701392607dcb84ac97a2d174",
+      "ok": true
+    },
+    {
+      "path": "source/desktop_plugin/genie_mcp.spec",
+      "length": 2737,
+      "sha256": "8da0f3137c031fc99e126778b35f8f8440c6d16a721d8956157455fc99646e59",
+      "ok": true
+    },
+    {
+      "path": "source/desktop_plugin/live_state_windows.py",
+      "length": 8657,
+      "sha256": "c845ef22c21ffae25648806660e705fdd7406648ef7054b4309d52c3321bc221",
+      "ok": true
+    },
+    {
+      "path": "source/desktop_plugin/package/.codex-plugin/plugin.json",
+      "length": 251,
+      "sha256": "31e55602c11b0b1357bfa8aa739ab0bd61b854d78b9371f030240952e9f9fe86",
+      "ok": true
+    },
+    {
+      "path": "source/desktop_plugin/package/.mcp.json",
+      "length": 144,
+      "sha256": "2fb1fb8d99a453530908ba26100da9e9cd61d73be9d39613936a328934a28fc1",
+      "ok": true
+    },
+    {
+      "path": "source/desktop_plugin/package/mcp.json",
+      "length": 221,
+      "sha256": "f0b55b47f1577d197d83ff2b9ce97da5ee428e7625193c31e05564320399f1b6",
+      "ok": true
+    },
+    {
+      "path": "source/desktop_plugin/package/plugin.json",
+      "length": 295,
+      "sha256": "9c0b65cb0f986d3cfba2b991db383458518cb462f93d7a035314928af10ffb72",
+      "ok": true
+    },
+    {
+      "path": "source/desktop_plugin/windows-build.lock.txt",
+      "length": 300,
+      "sha256": "77a84f95acd75d3338fee829e0b310ff3358fbdf815a9622450200d08e35e047",
+      "ok": true
+    },
+    {
+      "path": "source/host_adapter/journal.py",
+      "length": 6338,
+      "sha256": "1d7825208cfac386acf0cd83b3505064de8c147ebb35fc6fe54864dd3950cc98",
+      "ok": true
+    },
+    {
+      "path": "source/phase2b2c_preflight/recovery_preflight.py",
+      "length": 15711,
+      "sha256": "0e418458b50beeb5d5c954ab37344eb96576e174c8a70dcf78b6019281913f8f",
+      "ok": true
+    },
+    {
+      "path": "source/phase2b2l_alpha_isolation_preflight/alpha_isolation_preflight.py",
+      "length": 4148,
+      "sha256": "423bcaf0c925d50a8b571b0fa5a044ffa76f81e9bbd6a6423930617db9d234c3",
+      "ok": true
+    },
+    {
+      "path": "source/phase2b2m_alpha_live_pilot/alpha_exec_worker.py",
+      "length": 14927,
+      "sha256": "644ea76b5c09fea1de50338751f68dc08efb050d371370c92a768552054d0021",
+      "ok": true
+    },
+    {
+      "path": "source/phase2b2p_capability_containment_repair/repair_contract.py",
+      "length": 7122,
+      "sha256": "4ae8051027da4e42f13405ea890c6ded0fa62bea52237260855d4d75f858c436",
+      "ok": true
+    },
+    {
+      "path": "source/phase2b2r_exact_codex_preflight/exact_codex_preflight.py",
+      "length": 11966,
+      "sha256": "316786642fe4b93838c988aa135350fbb179c3afac8cd707cb5c8eca23daf2c6",
+      "ok": true
+    },
+    {
+      "path": "source/phase2b2s_attested_live_pilot/attested_worker.py",
+      "length": 14639,
+      "sha256": "42874989baf7ebf4f4fa5878685b3ae6bf12fe50339d19975736685f7570cf76",
+      "ok": true
+    },
+    {
+      "path": "source/phase2c_finite_autonomous_pilot/run_bounded_batch.py",
+      "length": 8043,
+      "sha256": "0a9c4d48edf419816274892cf6b20b4017fd6b579d7f3dceb254f035df7c4591",
+      "ok": true
+    },
+    {
+      "path": "source/phase2c_finite_autonomous_pilot/verify_sealed.py",
+      "length": 6581,
+      "sha256": "e2ad049a229f1005aef353dd7cec8a6e92591efa26c8a7888486bfe619da23da",
+      "ok": true
+    },
+    {
+      "path": "source/plugin_mcp_server/requirements.lock.txt",
+      "length": 518,
+      "sha256": "32094c3926215c24d84b201fd19469bf4c8c87510e813872c687d755d1b8a9f0",
+      "ok": true
+    },
+    {
+      "path": "source/run_queue/run_policy.py",
+      "length": 15705,
+      "sha256": "c29a4a237e1d7c22d0674f44544dcd64abeb38320dd8aa2efca0419ede60d883",
+      "ok": true
+    },
+    {
+      "path": "source/shared_interfaces/cli.py",
+      "length": 7776,
+      "sha256": "34cf1c27b3f1dbc683fc524d65f2ef415f1230d3b3825f1e006bfe8d3a152169",
+      "ok": true
+    },
+    {
+      "path": "source/shared_interfaces/function_adapter.py",
+      "length": 5424,
+      "sha256": "36dbf3e9a9317e974c8f21a69555835c947f1fa73a1f2ff32e733f70ca478413",
+      "ok": true
+    },
+    {
+      "path": "source/shared_interfaces/isolated_worker.py",
+      "length": 21851,
+      "sha256": "2dbefdba3f5a46c853057ef6dbedec06cdfde2297959bc8bf3d7e8ef14b8cc4f",
+      "ok": true
+    },
+    {
+      "path": "source/shared_interfaces/live_codex_worker.py",
+      "length": 25136,
+      "sha256": "36c64d4bd550005b4c2ce02533086800961e3eb04ec7a7fcaf266fe757afc39d",
+      "ok": true
+    },
+    {
+      "path": "source/shared_interfaces/mcp_consumer.py",
+      "length": 6041,
+      "sha256": "40c54edf66f07f60bd0beaef5bb567ac15f4a08572ffe724d5cf77a2e023729c",
+      "ok": true
+    },
+    {
+      "path": "source/shared_interfaces/mcp_controller.py",
+      "length": 5511,
+      "sha256": "1cda693fa102eec2c0447299be5798ab25f45816f2bf7913677261f7b176e48a",
+      "ok": true
+    },
+    {
+      "path": "source/shared_interfaces/mcp_controller_server.py",
+      "length": 7199,
+      "sha256": "ac4890f77aa6c0adcbc0383a5b7a575f9bc9a874f96cdd13fc15f7607919f7c0",
+      "ok": true
+    },
+    {
+      "path": "source/shared_interfaces/mcp_events.py",
+      "length": 6225,
+      "sha256": "576f4acbf690c5d072e27023ae2d2e6435f1d609705357f0a4111abcf6984e5f",
+      "ok": true
+    },
+    {
+      "path": "source/shared_interfaces/mcp_events_server.py",
+      "length": 9526,
+      "sha256": "1634bc08c8f77b41e4ab901ffc4f62e40f727077fdb8b82eb5c48505b474c7db",
+      "ok": true
+    },
+    {
+      "path": "source/shared_interfaces/mcp_server.py",
+      "length": 8162,
+      "sha256": "0354efa7614da98d0078034a05b8586a4617bbb75dc8f9c004cf7515bb4b9ee4",
+      "ok": true
+    },
+    {
+      "path": "source/shared_interfaces/process_containment.py",
+      "length": 18890,
+      "sha256": "afae468fef8f31537706559e59e42cf3f2a8bfbebaac5ec74b9f837968311727",
+      "ok": true
+    },
+    {
+      "path": "source/shared_interfaces/run_control.py",
+      "length": 8267,
+      "sha256": "43958f98ce3dfd01de019df70bb14dfd9135f87f41b58171b3224a97bf8c2b65",
+      "ok": true
+    },
+    {
+      "path": "source/shared_interfaces/run_events.py",
+      "length": 8880,
+      "sha256": "b150fef78663421b3ddf3f88267e33c5adeea5615d86275d5be35b4c88f28871",
+      "ok": true
+    },
+    {
+      "path": "source/shared_interfaces/session_driver.py",
+      "length": 13071,
+      "sha256": "872903f1eaec93fce406662382fcadc896d28e8ce894cf60ae083d3e02dc5ab8",
+      "ok": true
+    },
+    {
+      "path": "source/shared_interfaces/status_tool.py",
+      "length": 11637,
+      "sha256": "c7bdd7b8b97077aeccb5831466a4d4071b391e5657a9cc449eb0d70a1ea84798",
+      "ok": true
+    },
+    {
+      "path": "source/shared_interfaces/windows_job.py",
+      "length": 13170,
+      "sha256": "a654ef455f5829a7894d6b01817a8e74c04c26f89d3c51afd38daca09be52ec0",
+      "ok": true
+    },
+    {
+      "path": "source/shared_interfaces/work_host.py",
+      "length": 2336,
+      "sha256": "2e59b39e18a25bc8531864969189659eadd472dce37b5ad47424cb6809158f1c",
+      "ok": true
+    },
+    {
+      "path": "source/standalone_app/cli.py",
+      "length": 2884,
+      "sha256": "913101a445f6e7603a6b1557f8569fcb74dc7b5a520032f5f925ee7323c718c0",
+      "ok": true
+    },
+    {
+      "path": "source/standalone_app/execution_bridge.py",
+      "length": 3894,
+      "sha256": "ec0100fd6211305184bb419c62ca216510a6ac196beea8ae9f5d07d4440786d9",
+      "ok": true
+    },
+    {
+      "path": "source/standalone_app/owner.py",
+      "length": 8609,
+      "sha256": "da9d2270b0c735638719f2a2b7bb6d5a97450bb8b864b086e365329d5eae7dd2",
+      "ok": true
+    },
+    {
+      "path": "source/worker_bridge/bridge.py",
+      "length": 10207,
+      "sha256": "6cbc9f8b0d6f2beb85e5e60927fbc3bf4ac21628daaf3f12c8aefd3780df4b89",
+      "ok": true
+    },
+    {
+      "path": "source/worker_bridge/reused/report_sink.py",
+      "length": 4119,
+      "sha256": "fe8f62eaeff8825319ea98fd76cd8bb92bc9099a5c4af24d33fecb8ac7eb4806",
+      "ok": true
+    },
+    {
+      "path": "source/worker_bridge/reused/stateful_subject.py",
+      "length": 5403,
+      "sha256": "8ea005246f66fd413f00bad6cf0714e5704c23cc4255881ce659e682ce740131",
+      "ok": true
+    }
+  ],
+  "unlisted": [],
+  "missing": []
+}

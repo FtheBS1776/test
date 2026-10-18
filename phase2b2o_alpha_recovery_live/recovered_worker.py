@@ -190,6 +190,19 @@ def _validate_scratch(working_directory, ledger_path, evidence_directory):
 def run_once(*, token, ledger_path, evidence_directory, executable, version,
              codex_home, working_directory, timeout_seconds=240):
     """Enter one repaired live operation; never replay after process entry."""
+    # The current Codex CLI profile has no reviewed, enforceable total-charge
+    # bound. Keep this public paid-capable path unavailable, even if a caller
+    # labels it free. A later bounded adapter must use this same queue owner.
+    from run_queue import run_policy as admission
+    denied = admission.admit_action(None, token, "author", "worker", None, None)
+    if denied["action"] != "ADMIT_ONCE":
+        return {"status": "REJECT", "reason": "LIVE_COST_BOUND_UNAVAILABLE",
+                "process_entry": False, "preserve": True,
+                "allow_new_invocation": False,
+                "evidence": {"process_entry": False, "retry_count": 0,
+                             "preserve": True, "allow_new_invocation": False}}
+
+
     executable = str(Path(executable).resolve())
     scratch, evidence_dir = _validate_scratch(
         working_directory, ledger_path, evidence_directory)

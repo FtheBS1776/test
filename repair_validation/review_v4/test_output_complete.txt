@@ -1,0 +1,32 @@
+{"os_name": "posix", "platform": "Linux-6.18.55-x86_64-with-glibc2.39", "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]", "source": "/workspace/scratch/27265db857a2/review_v4_separate/package/GENIE_REPAIR_REVIEW_INPUT_v4_20261018/source"}
+test_DEFECT_alpha_exec_bypasses_cost_gate_and_enters_ledger_and_popen (__main__.Review.test_DEFECT_alpha_exec_bypasses_cost_gate_and_enters_ledger_and_popen) ... DEFECT_REPRODUCED: unbounded alpha run_once reached real ledger claim and fake Popen boundary without cost admission
+ok
+test_authorized_repair_can_complete (__main__.Review.test_authorized_repair_can_complete) ... ok
+test_bad_owner_create_spec_does_not_acquire_staging (__main__.Review.test_bad_owner_create_spec_does_not_acquire_staging) ... ok
+test_default_unknown_cost_denies_hooks (__main__.Review.test_default_unknown_cost_denies_hooks) ... ok
+test_failed_sealed_inspection_preserves_input (__main__.Review.test_failed_sealed_inspection_preserves_input) ... ok
+test_live_binding_strict_names_and_no_mutation (__main__.Review.test_live_binding_strict_names_and_no_mutation) ... ok
+test_material_bridge_hashes_before_reservation_and_attaches_hooks (__main__.Review.test_material_bridge_hashes_before_reservation_and_attaches_hooks) ... ok
+test_mcp_strict_bound_and_reply_correlation (__main__.Review.test_mcp_strict_bound_and_reply_correlation) ... ok
+test_public_codex_entries_deny_before_effects (__main__.Review.test_public_codex_entries_deny_before_effects) ... ok
+test_publication_existing_final_is_preserved (__main__.Review.test_publication_existing_final_is_preserved) ... ok
+test_publication_failed_move_is_unknown_single_use (__main__.Review.test_publication_failed_move_is_unknown_single_use) ... ok
+test_publication_success_then_failed_validation_is_committed_unverified (__main__.Review.test_publication_success_then_failed_validation_is_committed_unverified) ... ok
+test_quote_exactness_and_shared_ceiling (__main__.Review.test_quote_exactness_and_shared_ceiling) ... ok
+test_reviewer_binding_and_unsupported_decision (__main__.Review.test_reviewer_binding_and_unsupported_decision) ... ok
+test_sdk_pin_failure_is_closed (__main__.Review.test_sdk_pin_failure_is_closed) ... COVERAGE_INDETERMINATE: pinned MCP SDK unavailable/mismatched; native transport not exercised
+ok
+test_source_pin_failure_blocks_bridge_owner_consumer (__main__.Review.test_source_pin_failure_blocks_bridge_owner_consumer) ... ok
+test_stop_blocks_after_progress_and_inflight_is_not_cancelled (__main__.Review.test_stop_blocks_after_progress_and_inflight_is_not_cancelled) ... ok
+test_stop_during_inflight_worker_prevents_reviewer_dispatch (__main__.Review.test_stop_during_inflight_worker_prevents_reviewer_dispatch) ... ok
+test_task_review_json_types_duplicates_and_binding (__main__.Review.test_task_review_json_types_duplicates_and_binding) ... ok
+test_unknown_worker_has_no_replay_or_refund (__main__.Review.test_unknown_worker_has_no_replay_or_refund) ... ok
+test_valid_accept_and_readonly_mcp (__main__.Review.test_valid_accept_and_readonly_mcp) ... ok
+test_worker_identity_mutants_do_not_accept (__main__.Review.test_worker_identity_mutants_do_not_accept) ... ok
+test_wrong_configured_run_identity_has_no_invocation (__main__.Review.test_wrong_configured_run_identity_has_no_invocation) ... ok
+test_zero_quote_must_be_approved_and_legacy_denies (__main__.Review.test_zero_quote_must_be_approved_and_legacy_denies) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 1.887s
+
+OK

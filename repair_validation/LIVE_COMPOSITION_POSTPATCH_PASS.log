@@ -1,0 +1,21 @@
+test_bad_json_is_rejected_before_owner_entry (standalone_app.test_cli_outcomes.CliOutcomeTests.test_bad_json_is_rejected_before_owner_entry) ... ok
+test_failure_after_stop_effect_is_unknown_not_bad_input (standalone_app.test_cli_outcomes.CliOutcomeTests.test_failure_after_stop_effect_is_unknown_not_bad_input) ... ok
+test_known_rejection_and_successful_stop_keep_their_meaning (standalone_app.test_cli_outcomes.CliOutcomeTests.test_known_rejection_and_successful_stop_keep_their_meaning) ... ok
+test_build_probe_requires_live_binding_and_cannot_bypass_it (desktop_plugin.test_entry.LiveEntryTests.test_build_probe_requires_live_binding_and_cannot_bypass_it) ... ok
+test_missing_or_invalid_live_state_never_uses_existing_cache (desktop_plugin.test_entry.LiveEntryTests.test_missing_or_invalid_live_state_never_uses_existing_cache) ... ok
+test_source_or_sdk_binding_failure_never_enters_stdio (desktop_plugin.test_entry.LiveEntryTests.test_source_or_sdk_binding_failure_never_enters_stdio) ... ok
+test_transport_failure_is_sanitized_without_retry (desktop_plugin.test_entry.LiveEntryTests.test_transport_failure_is_sanitized_without_retry) ... ok
+test_unexpected_binding_failure_is_sanitized_and_preserves_cache (desktop_plugin.test_entry.LiveEntryTests.test_unexpected_binding_failure_is_sanitized_and_preserves_cache) ... ok
+test_valid_binding_is_passed_to_transport_without_cache_selection (desktop_plugin.test_entry.LiveEntryTests.test_valid_binding_is_passed_to_transport_without_cache_selection) ... ok
+test_bad_source_pin_stops_before_binding_or_hook (standalone_app.test_repair_composition.CompositionTests.test_bad_source_pin_stops_before_binding_or_hook) ... ok
+test_binder_failure_does_not_fallback_or_invoke (standalone_app.test_repair_composition.CompositionTests.test_binder_failure_does_not_fallback_or_invoke) ... ok
+test_disposable_snapshot_is_inspectable_without_replay_or_currentness_claim (standalone_app.test_repair_composition.CompositionTests.test_disposable_snapshot_is_inspectable_without_replay_or_currentness_claim) ... ok
+test_exact_goal_materials_identity_and_saved_result_cross_one_driver (standalone_app.test_repair_composition.CompositionTests.test_exact_goal_materials_identity_and_saved_result_cross_one_driver) ... ok
+test_material_mismatch_or_missing_coverage_stops_before_reservation (standalone_app.test_repair_composition.CompositionTests.test_material_mismatch_or_missing_coverage_stops_before_reservation) ... ok
+test_operator_stop_requires_no_model_and_prevents_next_dispatch (standalone_app.test_repair_composition.CompositionTests.test_operator_stop_requires_no_model_and_prevents_next_dispatch) ... ok
+test_unknown_hook_remains_charged_and_is_not_reassigned (standalone_app.test_repair_composition.CompositionTests.test_unknown_hook_remains_charged_and_is_not_reassigned) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.612s
+
+OK

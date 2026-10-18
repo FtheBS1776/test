@@ -420,3 +420,186 @@ thread's self-review and passing tests do not satisfy that gate. The source-only
 review input is prepared for a separate reviewer. Apply review findings under the
 standing repair authorization; do not manufacture a review result or enable an
 unbounded provider route. Exact old six Windows failure traces remain unavailable.
+
+LIVE-STATE COMPOSITION / CLI OUTCOME FOLLOW-UP — 2026-10-18 UTC
+Existing scopes: R02/R08/R09/R10/R12/R15. No new phase or authority mechanism.
+
+Exact tested remote commit: 98b8807d95a1231be35998adcee1072a4bd0e26e
+Exact tested tree: 47bd1c6c33ad4a295cde6d4e978a1ca51c9d9aa6
+Matching local source commit: 4882efdabcd12ec30b55a6c35e0386643d4fb18d
+Run: https://github.com/FtheBS1776/test/actions/runs/39112037669
+Isolated branch: repair/genie-recovery-validation-20261018
+Subsequent local changes add captured evidence/documentation only.
+
+SAME-FUNCTION COMPARISON / SELECTION:
+- The v3 fixture entry copies historical seed to PLUGIN_DATA. This is useful
+  package-test behavior, not the standalone owner's current canonical state.
+- Existing fa4e291c live entry reads the fixed OS-selected canonical root,
+  refuses missing/invalid state and never seeds/copies/falls back. Select REUSE
+  of this operational route; adapt package imports to the current source tree.
+- Both now use the same maintained MCP stdio runner; extracted existing stdio
+  block into mcp_server.serve_stdio, used by server CLI and plugin entry.
+- Remove seed generation/bundling from the one shared Windows build action.
+  Keep portable + Codex-compatible manifest forms at existing live-source 0.2.0.
+  This source version is not release/promotion/installation authority.
+- Former fixture entry and five bootstrap methods are superseded, preserved
+  exactly in c1c0a396881c798cd7503135e8958128c93febca and the immutable v3 ZIP,
+  SHA256 ebf7a8d03af5fe8a849cbcc68a134aad3ad157f772e9830add40f2ce62bd1ab3.
+  Their historical negative/positive output remains in this repository. They
+  are retired from the active gate; their results are not renamed live evidence.
+
+NEGATIVE REPRODUCTIONS:
+- Before selection, six live-entry contract methods reported eight failing
+  subcases/assertions: the cache-backed entry did not consult the live binder.
+  These checks also exercised expected shared-transport delegation; missing
+  delegation is a composition mismatch, not proof of a paid/model invocation.
+- Existing CLI misclassified a lost acknowledgement after stop as bad input
+  (exit 2/REJECT). Reproduced with a fake stop, then with the real queue stop
+  committing STOPPED/HOST_ENDED before an injected OSError. Both old-CLI
+  reproductions failed the expected UNKNOWN assertion; raw outputs preserved.
+
+REPAIRS / CHECKED BEHAVIOR:
+- Missing/invalid live state rejects with fixed codes even if PLUGIN_DATA holds
+  a valid-looking former cache. No transport, self-test bypass, setup, root
+  override, automatic retry, copying or fallback is granted.
+- Standalone CLI distinguishes parsing rejection from unexpected failure after
+  owner entry. Post-entry failure is UNKNOWN/exit 3, preserve=true and
+  allow_new_invocation=false. Known deterministic rejection and successful stop
+  are retained. This does not turn every REJECT into UNKNOWN or REPAIR.
+- Standalone stdin parsing reuses the maintained registry decoder helpers.
+- Local: 16 owner/CLI/entry/composition tests PASS. Real-queue lost-stop-ack
+  test leaves STOPPED/HOST_ENDED with zero model reservations and one stop call.
+- Local pinned SDK regression plus entry tests: 14 PASS (proxy environment
+  removed only for loopback tests; no dependency or version changes).
+- Windows 2025, Python 3.12.10: 108 unittest methods PASS, zero skips.
+  R03 actual producer/parser/driver invalid paths and valid ACCEPT/REPAIR remain.
+- Existing queue 19 and bridge 25 checks PASS on Windows.
+- Ubuntu 24.04, Python 3.12.10: 8 MCP SDK tests PASS with the unchanged closure.
+
+COMPILED WHOLE-COMPOSITION CHECK (NO MODEL CALL):
+- Uses the actual OS Known Folder root on a disposable hosted Windows account;
+  harness refuses any pre-existing app namespace and is CI-only. No product
+  path override or model-supplied pathname is introduced.
+- Checks absent live state despite a valid-looking old cache, malformed/duplicate
+  markers, traversal and a junction escape. Rejection leaves all bytes intact.
+- Creates a NEW canonical run through the actual standalone owner/provisioner.
+  No historical store is copied into canonical state or the executable.
+- Shared bridge/driver performs deterministic author/reviewer fixture hooks for
+  one task; original material/token/candidate identity and saved result retained.
+  A second known task is deliberately unserved by max_model_calls=1.
+- Truthful terminal: STOP/CALL_BUDGET_EXHAUSTED, one workflow reservation,
+  one worker/reviewer hook each, zero reserved micro-USD, zero actual model calls.
+- Actual compiled SDK stdio client calls see the exact first result CONFIRMED
+  with untrusted-data labeling; the known unserved task returns UNKNOWN.
+  Unknown aliases/tasks retain REJECT. Repeated read calls do not modify live
+  state or PLUGIN_DATA. This is not actual LLM reasoning evidence.
+- PyInstaller archive listing: no seed_state/build_seed or .sqlite store entries.
+- FROZEN_ARCHIVE_NO_SEED_OR_SQLITE_PASS
+- FRESH_OWNER_BRIDGE_DRIVER_STOP_FIXTURE_PASS_NO_MODEL
+- DESKTOP_PLUGIN_LIVE_STATE_FROZEN_PASS_NO_MODEL
+
+Observed disposable build identities (not uploaded/installed/distributed):
+EXE_SHA256=decbecf784bc7f2be6a265f6a9f5808c6f338726380258a68884383c61d1a91f
+EXE_BYTES=22100879
+ZIP_SHA256=9837489409118aa1b089331050ef6b4198175b04bcd81007ca8d96fda94b87f1
+ZIP_BYTES=21806962
+PyInstaller freezing is packaging, not a governance freeze. No reproducibility,
+code-signing custody, production or actual user-host/CLI registration claim.
+
+Evidence files:
+repair_validation/LIVE_ENTRY_PREPATCH_FAILURE.log
+repair_validation/LIVE_ENTRY_POSTPATCH_PASS.log
+repair_validation/LIVE_ENTRY_SDK_POSTPATCH_PASS.log
+repair_validation/CLI_OUTCOME_PREPATCH_FAILURE.log
+repair_validation/CLI_QUEUE_ACK_PREPATCH_FAILURE.log
+repair_validation/LIVE_COMPOSITION_POSTPATCH_PASS.log
+repair_validation/WINDOWS_GITHUB_JOB_117630038317.log
+repair_validation/SDK_GITHUB_JOB_117630038091.log
+repair_validation/PACKAGE_GITHUB_JOB_117630038316.log
+GitHub decoded logs are newline-normalized captures, not signed remote receipts.
+
+PRIMARY-SOURCE CORRESPONDENCE RECHECK:
+https://learn.microsoft.com/windows/win32/api/shlobj_core/nf-shlobj_core-shgetknownfolderpath
+https://learn.microsoft.com/en-us/windows/win32/shell/known-folders
+https://learn.microsoft.com/en-us/windows/win32/fileio/moving-directories
+The current-user Known Folder API, COM/freeing obligations and same-drive,
+no-existing-directory publication requirements agree with the retained binder/
+provisioner. No crash durability or hostile-filesystem assurance is inferred.
+PyInstaller archive inspection correspondence:
+https://pyinstaller.org/en/stable/advanced-topics.html
+https://github.com/pyinstaller/pyinstaller/blob/develop/PyInstaller/utils/cliutils/archive_viewer.py
+The installed pinned archive-viewer CLI was exercised; no package upgrade.
+
+PRESERVATION / BOUNDARIES:
+All 353 protected historical files byte-identical to ad508c6; git diff --check PASS.
+Public repo and isolated branch rechecked before standard free Windows/Ubuntu
+runner use. No cache/artifact upload, paid capacity, model/provider calls, live
+pilot rerun, main merge, deployment, scientific execution, promotion, governance
+freeze or canonical master-roadmap mutation. All scoped HOLDs remain.
+Read-only GitHub query found zero workflow runs for the exact historical
+Phase2C head 8d2b7b27d987cac532f7711da10107eb21393e3c; this does not identify
+or erase the six historically reported local Windows cleanup errors.
+
+REMAINING REQUIRED GATE:
+Fresh independent review of the exact combined source. This thread's self-review
+and passing tests do not satisfy it. Source-only input is prepared without author
+tests, results, diffs or audits. Actual user-host compatibility and a permitted
+cost-bounded useful model task remain open; no unbounded provider route enabled.
+
+
+2026-10-18 UTC — v5 follow-up to separate-context v4 review
+Subject before repair: 51ffb4274d91de9769cb45dc13ab9641abe9de4b,
+tree d6e345245a2f018cd9bc42efed7c840a9fac3c98.
+The user granted standing delegation authorization in addition to standing
+repair authorization. No paid external calls/capacity or other exclusions lifted.
+
+Fresh source-only reviewer, no parent history: DEFECT_FOUND, F-01.
+Input ZIP SHA256 acaa546b3aa8abab8947b821c6bbe5c2c9f962e05d02c763929e5ddf4a274b0d.
+Complete review evidence ZIP SHA256
+b0e5b56a933104a24a635d67f0a7c4d1729161260be49a6b1a90fe6ea756e39e.
+Original report/test source/raw full output and verification copied byte-for-byte
+under repair_validation/review_v4. Complete ZIP retains original fresh stores.
+24 probe methods OK includes a deliberate passing defect reproduction; that is
+not a clean subject acceptance. Native Windows/SDK/build dynamically untested by
+that reviewer; same host/model family/common ancestry remain correlated limits.
+
+F-01: exported alpha run_once created a real CLAIMED operation row, wrote schema,
+and reached a fake Popen boundary before cost admission. No OS process/provider
+was launched. Same-function inspection found the recovery sibling likewise open.
+Small repair: reuse the existing run_queue.admit_action denial and existing
+LIVE_COST_BOUND_UNAVAILABLE response before file/ledger/native entry in both.
+No new budget state, service, authority or permissive quote path. Original and
+attested guards retained. Source parsers/history remain scoped historical code,
+not newly authorized provider paths. No blind REJECT-to-REPAIR translation.
+
+Regression run before source patch: 2 methods / four failed subcases, both missed
+paths reached actual CLAIMED rows and fake Popen; existing original/attested
+paths denied. Initial test harness used a mock accounting result that was not
+JSON serializable; its two errors are preserved separately and were corrected
+before the decisive baseline. No subject error is inferred from that harness.
+Logs: LIVE_ENTRY_COST_INITIAL_HARNESS_FAILURE.log and
+LIVE_ENTRY_COST_PREPATCH_FAILURE.log. Decisive baseline: four assertion failures.
+
+After source patch: python -B -m unittest -v
+run_queue.test_live_entry_denial
+phase2b2m_alpha_live_pilot.test_alpha_exec_worker
+phase2b2o_alpha_recovery_live.test_recovered_worker
+phase2b2s_attested_live_pilot.test_attested_worker
+run_queue.test_cost_admission session_driver.test_r03_review_semantics
+=> 36 methods PASS, zero skips, no model/provider call.
+Raw: repair_validation/LIVE_ENTRY_COST_POSTPATCH_PASS.log.
+New two-method regression covers all four adapters, verifies no schema/ledger
+creation or Job/Popen entry and unchanged bytes for a pre-existing uncertain
+claim plus evidence. Existing bounded ACCEPT/REPAIR and charged uncertainty
+checks remain passing. SHA256 search across tracked Python sources found no
+inbound source pins to either changed launcher; historical manifests untouched.
+Recovery Windows workflow includes both existing offline parser suites and the
+new shared regression; no live pilot/test or provider path is run.
+
+R13 cost capability recheck: official OpenAI Work usage/cost documentation says
+credit use and incremental charges depend on agreement, remaining allocation
+and overage settings. It does not establish this account's task-specific upper
+bound. Source: https://learn.chatgpt.com/docs/enterprise/chatgpt-work-usage-and-cost
+(accessed 2026-10-18). No zero-cost quote was invented and no paid/model adapter
+was enabled. This research does not establish an autonomous useful-task pass.
+Fresh review of repaired source and native no-model validation remain pending.
