@@ -352,3 +352,71 @@ No actual user-host/CLI registration was tested for the rebuilt executable.
 No actual permitted cost-bounded model workflow was run. Review the existing
 source candidate and then repair findings; an actual model path must still have
 a reviewed cost/exposure contract before entry. Preserve all scoped HOLDs.
+
+BOOTSTRAP IDENTITY FOLLOW-UP — 2026-10-18 UTC
+Scope: existing R09/R10 format/initialization repair; R02/R12/R15 decoder reuse.
+Previous records, negative evidence and binary identities above remain historical.
+
+Exact remotely tested commit: ad7489843b783045a9f92c34fa75cdd6210789bf
+Exact tested tree: 254b1a668b3f1a32f1f3449d082541bbbf3d1a2a
+Matching local source commit: 0a1898621fe571f8b805d0723d50b86dcedf4496
+Run: https://github.com/FtheBS1776/test/actions/runs/39110681311
+Isolated branch: repair/genie-recovery-validation-20261018
+Later local changes add documentation and captured logs only.
+
+Reproduction before patch: 3 test methods ran; 7 failing subcases.
+- Four invalid markers passed validation and reached mocked transport: boolean
+  true, float 1.0, duplicate state_format and duplicate seeded_from.
+- Three duplicate seed manifests passed integrity parsing and reached the mocked
+  copy boundary (duplicate seed_id, duplicate files, duplicate file-record path).
+  Their mocked copies could not create state and then returned INIT_UNKNOWN;
+  these three cases did NOT demonstrate transport entry.
+- The valid first/repeated-launch control passed.
+
+Repair: reuse shared_interfaces.cli's existing duplicate-key, nonfinite-constant
+and finite-float helpers for both bootstrap records. Require an exact integer
+state_format before accepting version 1. No new parser dependency, authority
+mechanism, state format, migration, cleanup, retry or paid route was introduced.
+
+After patch:
+- Local: 5 focused bootstrap identity/preservation methods PASS. All seven
+  invalid inputs reject before copy/transport; supplied bytes remain unchanged.
+  Valid first launch, repeated launch and uncertain-state preservation remain live.
+- Windows 2025 / Python 3.12.10: 104 unittest methods PASS, zero skips.
+  R03 producer/event/driver negative and valid paths remain in that suite.
+- Existing queue 19 checks and bridge 25 checks PASS on Windows.
+- Ubuntu 24.04 / Python 3.12.10: unchanged exact MCP 2.3.0 closure, 8 tests PASS.
+- Exact Windows package closure and rebuilt executable lifecycle PASS. The real
+  binary rejects true, 1.0 and duplicate state_format markers with the expected
+  sanitized failure and preserves every file in its disposable state directory.
+- 353 protected historical files byte-identical to base ad508c6.
+- git diff --check PASS.
+
+Negative/positive raw local output:
+repair_validation/BOOTSTRAP_IDENTITY_PREPATCH_FAILURE.log
+repair_validation/BOOTSTRAP_IDENTITY_POSTPATCH_PASS.log
+Captured decoded GitHub logs (newline-normalized):
+repair_validation/WINDOWS_GITHUB_JOB_117625978789.log
+repair_validation/SDK_GITHUB_JOB_117625978895.log
+repair_validation/PACKAGE_GITHUB_JOB_117625978925.log
+
+Disposable build identity; no binary upload, distribution, install or deployment:
+EXE_SHA256=9b79c3b6973e33157fdb98585cdf572b9a4a15eeda84394b5798787761563179
+EXE_BYTES=22134677
+ZIP_SHA256=e3c9469ebb804d68224cae96251ba011c9a3fa5753a618939ec8b0f1597fbeb8
+ZIP_BYTES=21838982
+PyInstaller freezing is a packaging operation, not a governance freeze.
+
+The repository was rechecked as PUBLIC before using the same standard free
+Windows/Ubuntu runners. No cache/artifact upload or model credentials were used.
+No paid call/capacity, live-pilot rerun, main merge, deployment, scientific
+execution, promotion, governance freeze or canonical master-roadmap mutation.
+
+Remaining limitations: local format guards do not establish authenticity,
+rollback/currentness or hostile-filesystem safety. Actual user-host/CLI
+registration and a permitted cost-bounded model workflow remain untested.
+Fresh independent review of the exact combined source is still required; this
+thread's self-review and passing tests do not satisfy that gate. The source-only
+review input is prepared for a separate reviewer. Apply review findings under the
+standing repair authorization; do not manufacture a review result or enable an
+unbounded provider route. Exact old six Windows failure traces remain unavailable.

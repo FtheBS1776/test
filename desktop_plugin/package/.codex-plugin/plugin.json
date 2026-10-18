@@ -1,6 +1,6 @@
 {
   "name": "genie-readonly",
-  "version": "0.1.1",
-  "description": "Read bounded local Genie run diagnostics and confirmed accepted task results without granting new authority.",
+  "version": "0.2.0",
+  "description": "Read bounded local Genie run diagnostics and confirmed accepted task results from existing Genie-owned local state without granting new authority.",
   "mcpServers": "./.mcp.json"
 }

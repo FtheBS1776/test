@@ -1,5 +1,5 @@
 name: Build and check Genie Windows package
-description: Existing exact no-model package recipe; does not upload or install the result.
+description: Shared exact no-model live-state package checks; no upload or installation.
 runs:
   using: composite
   steps:
@@ -74,73 +74,6 @@ runs:
         print('WINDOWS_SOURCE_AND_READONLY_CALL_CHAIN_PASS', len(sqlite_files), task_id)
         '@ | & $py -
 
-    - name: Prepare deterministic seed state with isolated UNKNOWN fixture
-      shell: pwsh
-      run: |
-        $py = 'desktop_plugin/.venv/Scripts/python.exe'
-        @'
-        import hashlib, json, shutil
-        from pathlib import Path
-        from run_queue import run_policy as q
-
-        source = Path('host_return/trial')
-        target = Path('desktop_plugin/build_seed')
-        if target.exists():
-            shutil.rmtree(target)
-        shutil.copytree(source, target)
-
-        registry_path = target / 'REGISTRY.json'
-        registry = json.loads(registry_path.read_text(encoding='utf-8'))
-        assert set(registry) == {'actual'}, registry
-
-        unknown_run = 'genie-plugin-unknown-fixture-20261011'
-        unknown_task = 'genie-known-unavailable-fixture-20261011'
-        unknown_queue = target / 'unknown_fixture.sqlite'
-        q.initialize(unknown_queue, {
-            'run_id': unknown_run,
-            'max_tasks': 1,
-            'max_model_calls': 1,
-            'effect_scope': 'owned-local-report-inbox',
-        })
-        assert q.enqueue(unknown_queue, {
-            'task_id': unknown_task,
-            'goal': 'synthetic-readonly-unknown-fixture',
-            'input_sha256': '0' * 64,
-            'max_attempts': 1,
-        }) == 'ENQUEUED'
-        unknown_root = target / 'unknown_fixture_work'
-        unknown_root.mkdir()
-        (unknown_root / '.fixture-root').write_text(
-            'synthetic UNKNOWN fixture root; no task ledger is provisioned\n',
-            encoding='utf-8')
-        registry['unknown-fixture'] = {
-            'queue': 'unknown_fixture.sqlite',
-            'run_id': unknown_run,
-            'owned_root': 'unknown_fixture_work',
-        }
-        registry_path.write_text(
-            json.dumps(registry, sort_keys=True, separators=(',', ':')) + '\n',
-            encoding='utf-8')
-
-        records = []
-        for path in sorted(target.rglob('*')):
-            if path.is_file() and path.name != 'SEED_MANIFEST.json':
-                raw = path.read_bytes()
-                records.append({
-                    'path': path.relative_to(target).as_posix(),
-                    'sha256': hashlib.sha256(raw).hexdigest(),
-                    'size': len(raw),
-                })
-        canonical = json.dumps(records, sort_keys=True, separators=(',', ':')).encode()
-        seed_id = 'desktop-plugin-seed-' + hashlib.sha256(canonical).hexdigest()[:20]
-        manifest = {'seed_id': seed_id, 'files': records}
-        (target / 'SEED_MANIFEST.json').write_text(
-            json.dumps(manifest, sort_keys=True, separators=(',', ':')) + '\n',
-            encoding='utf-8')
-        print('SEED_MANIFEST_PASS', seed_id, len(records))
-        print('UNKNOWN_FIXTURE_PASS', unknown_run, unknown_task)
-        '@ | & $py -
-
     - name: Build self-contained Windows stdio executable
       shell: pwsh
       run: |
@@ -163,7 +96,7 @@ runs:
       shell: pwsh
       run: |
         $env:GENIE_PLUGIN_ROOT = (Resolve-Path 'desktop_plugin/staging/genie-readonly').Path
-        desktop_plugin/.venv/Scripts/python.exe -B desktop_plugin/test_frozen.py
+        desktop_plugin/.venv/Scripts/python.exe -B -m desktop_plugin.test_frozen
 
     - name: Record package identities
       shell: pwsh

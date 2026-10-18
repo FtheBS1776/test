@@ -1,4 +1,16 @@
-# Genie local ChatGPT Desktop plugin package — NONCLAIM
+# Genie local Windows live-state plugin candidate — NONCLAIM
+
+The current operational entry reuses the live-state source from `fa4e291cfd1aa7147f39f359008f8d74a2f69798`, with package imports and the maintained shared MCP stdio runner. Read the root README for the one current source-candidate correspondence and `REPAIR_TEST_RESULTS.txt` for exact checks and limits.
+
+The plugin reads the fixed OS-selected `FOLDERID_LocalAppData/GenieReasoningEngine/state-v1` root created by the existing standalone owner. It does not create/copy/migrate/repair state and cannot fall back to bundled seed or `PLUGIN_DATA`. Missing/invalid state rejects with a fixed code. The same two read-only tools expose diagnostics and accepted data; they do not authorize new work or model calls. Standalone creation remains `python -m standalone_app.cli create`, with its existing policy, cost and one-shot preservation rules.
+
+The package retains portable and Codex-compatible manifest forms, source version 0.2.0. A no-model hosted build/test is not installation or compatibility on the user's machine. No model key, paid hosting, server deployment, promotion or governance freeze is introduced. Installation/connection still requires explicit user action; this candidate performs neither.
+
+The former fixture-backed entry and its repaired bootstrap tests are preserved exactly in commit `c1c0a396881c798cd7503135e8958128c93febca` and the v3 source ZIP. They are superseded for operation, not silently relabeled as live-state evidence. Current tests reject a convincing old cache when live state is missing and check the whole fresh-owner/driver/compiled-plugin route on a disposable hosted Windows account. The plugin has no arbitrary root override; the compiled harness refuses a pre-existing app namespace and is CI-only.
+
+## Historical fixture-backed package record (superseded)
+
+The following record describes its original source/binary, not the current live-state candidate.
 
 Status: **INTERNAL PACKAGE VERIFIED / FIXTURE-BACKED / NOT INSTALLED / NOT CONNECTED**.
 

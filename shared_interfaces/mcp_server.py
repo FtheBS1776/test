@@ -168,6 +168,19 @@ def build_server(runs):
     return build_server_from_consumer(consumer)
 
 
+def serve_stdio(server):
+    """Run the existing stdio transport for an already constructed server."""
+    import anyio
+    from mcp.server.stdio import stdio_server
+
+    async def arun():
+        async with stdio_server() as (read_stream, write_stream):
+            await server.run(read_stream, write_stream,
+                             server.create_initialization_options())
+
+    anyio.run(arun)
+
+
 def _parser():
     parser = argparse.ArgumentParser(allow_abbrev=False)
     parser.add_argument("--registry", required=True)
@@ -187,17 +200,7 @@ def main(argv=None):
     server = build_server(runs)
 
     if args.transport == "stdio":
-        import anyio
-        from mcp.server.stdio import stdio_server
-
-        async def arun():
-            async with stdio_server() as (read_stream, write_stream):
-                await server.run(
-                    read_stream,
-                    write_stream,
-                    server.create_initialization_options())
-
-        anyio.run(arun)
+        serve_stdio(server)
         return
 
     app = server.streamable_http_app(

@@ -1,0 +1,80 @@
+test_duplicate_seed_fields_reject_before_state_copy (desktop_plugin.test_bootstrap_identity.BootstrapIdentityTests.test_duplicate_seed_fields_reject_before_state_copy) ... 
+  test_duplicate_seed_fields_reject_before_state_copy (desktop_plugin.test_bootstrap_identity.BootstrapIdentityTests.test_duplicate_seed_fields_reject_before_state_copy) (manifest='{"seed_id":"other","seed_id":"seed","files":[{"path": "REGISTRY.json", "size": 3, "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"}]}') ... FAIL
+  test_duplicate_seed_fields_reject_before_state_copy (desktop_plugin.test_bootstrap_identity.BootstrapIdentityTests.test_duplicate_seed_fields_reject_before_state_copy) (manifest='{"seed_id":"seed","files":[],"files":[{"path": "REGISTRY.json", "size": 3, "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"}]}') ... FAIL
+  test_duplicate_seed_fields_reject_before_state_copy (desktop_plugin.test_bootstrap_identity.BootstrapIdentityTests.test_duplicate_seed_fields_reject_before_state_copy) (manifest='{"seed_id":"seed","files":[{"path":"wrong","path":"REGISTRY.json","size":3,"sha256":"ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"}]}') ... FAIL
+test_invalid_marker_never_enters_transport_or_reseeds (desktop_plugin.test_bootstrap_identity.BootstrapIdentityTests.test_invalid_marker_never_enters_transport_or_reseeds) ... 
+  test_invalid_marker_never_enters_transport_or_reseeds (desktop_plugin.test_bootstrap_identity.BootstrapIdentityTests.test_invalid_marker_never_enters_transport_or_reseeds) (marker='{"state_format":true,"seeded_from":"seed"}') ... FAIL
+  test_invalid_marker_never_enters_transport_or_reseeds (desktop_plugin.test_bootstrap_identity.BootstrapIdentityTests.test_invalid_marker_never_enters_transport_or_reseeds) (marker='{"state_format":1.0,"seeded_from":"seed"}') ... FAIL
+  test_invalid_marker_never_enters_transport_or_reseeds (desktop_plugin.test_bootstrap_identity.BootstrapIdentityTests.test_invalid_marker_never_enters_transport_or_reseeds) (marker='{"state_format":2,"state_format":1,"seeded_from":"seed"}') ... FAIL
+  test_invalid_marker_never_enters_transport_or_reseeds (desktop_plugin.test_bootstrap_identity.BootstrapIdentityTests.test_invalid_marker_never_enters_transport_or_reseeds) (marker='{"state_format":1,"seeded_from":"other","seeded_from":"seed"}') ... FAIL
+test_valid_first_launch_and_existing_state_preserve_identity (desktop_plugin.test_bootstrap_identity.BootstrapIdentityTests.test_valid_first_launch_and_existing_state_preserve_identity) ... ok
+
+======================================================================
+FAIL: test_duplicate_seed_fields_reject_before_state_copy (desktop_plugin.test_bootstrap_identity.BootstrapIdentityTests.test_duplicate_seed_fields_reject_before_state_copy) (manifest='{"seed_id":"other","seed_id":"seed","files":[{"path": "REGISTRY.json", "size": 3, "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"}]}')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/27265db857a2/r03_isolated/desktop_plugin/test_bootstrap_identity.py", line 95, in test_duplicate_seed_fields_reject_before_state_copy
+    self.assertEqual(error, "GENIE_PLUGIN_REJECT:SEED_INTEGRITY\n")
+AssertionError: 'GENIE_PLUGIN_REJECT:PLUGIN_STATE_INIT_UNKNOWN\n' != 'GENIE_PLUGIN_REJECT:SEED_INTEGRITY\n'
+- GENIE_PLUGIN_REJECT:PLUGIN_STATE_INIT_UNKNOWN
++ GENIE_PLUGIN_REJECT:SEED_INTEGRITY
+
+
+======================================================================
+FAIL: test_duplicate_seed_fields_reject_before_state_copy (desktop_plugin.test_bootstrap_identity.BootstrapIdentityTests.test_duplicate_seed_fields_reject_before_state_copy) (manifest='{"seed_id":"seed","files":[],"files":[{"path": "REGISTRY.json", "size": 3, "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"}]}')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/27265db857a2/r03_isolated/desktop_plugin/test_bootstrap_identity.py", line 95, in test_duplicate_seed_fields_reject_before_state_copy
+    self.assertEqual(error, "GENIE_PLUGIN_REJECT:SEED_INTEGRITY\n")
+AssertionError: 'GENIE_PLUGIN_REJECT:PLUGIN_STATE_INIT_UNKNOWN\n' != 'GENIE_PLUGIN_REJECT:SEED_INTEGRITY\n'
+- GENIE_PLUGIN_REJECT:PLUGIN_STATE_INIT_UNKNOWN
++ GENIE_PLUGIN_REJECT:SEED_INTEGRITY
+
+
+======================================================================
+FAIL: test_duplicate_seed_fields_reject_before_state_copy (desktop_plugin.test_bootstrap_identity.BootstrapIdentityTests.test_duplicate_seed_fields_reject_before_state_copy) (manifest='{"seed_id":"seed","files":[{"path":"wrong","path":"REGISTRY.json","size":3,"sha256":"ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"}]}')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/27265db857a2/r03_isolated/desktop_plugin/test_bootstrap_identity.py", line 95, in test_duplicate_seed_fields_reject_before_state_copy
+    self.assertEqual(error, "GENIE_PLUGIN_REJECT:SEED_INTEGRITY\n")
+AssertionError: 'GENIE_PLUGIN_REJECT:PLUGIN_STATE_INIT_UNKNOWN\n' != 'GENIE_PLUGIN_REJECT:SEED_INTEGRITY\n'
+- GENIE_PLUGIN_REJECT:PLUGIN_STATE_INIT_UNKNOWN
++ GENIE_PLUGIN_REJECT:SEED_INTEGRITY
+
+
+======================================================================
+FAIL: test_invalid_marker_never_enters_transport_or_reseeds (desktop_plugin.test_bootstrap_identity.BootstrapIdentityTests.test_invalid_marker_never_enters_transport_or_reseeds) (marker='{"state_format":true,"seeded_from":"seed"}')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/27265db857a2/r03_isolated/desktop_plugin/test_bootstrap_identity.py", line 74, in test_invalid_marker_never_enters_transport_or_reseeds
+    self.assertEqual(result, 2)
+AssertionError: 0 != 2
+
+======================================================================
+FAIL: test_invalid_marker_never_enters_transport_or_reseeds (desktop_plugin.test_bootstrap_identity.BootstrapIdentityTests.test_invalid_marker_never_enters_transport_or_reseeds) (marker='{"state_format":1.0,"seeded_from":"seed"}')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/27265db857a2/r03_isolated/desktop_plugin/test_bootstrap_identity.py", line 74, in test_invalid_marker_never_enters_transport_or_reseeds
+    self.assertEqual(result, 2)
+AssertionError: 0 != 2
+
+======================================================================
+FAIL: test_invalid_marker_never_enters_transport_or_reseeds (desktop_plugin.test_bootstrap_identity.BootstrapIdentityTests.test_invalid_marker_never_enters_transport_or_reseeds) (marker='{"state_format":2,"state_format":1,"seeded_from":"seed"}')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/27265db857a2/r03_isolated/desktop_plugin/test_bootstrap_identity.py", line 74, in test_invalid_marker_never_enters_transport_or_reseeds
+    self.assertEqual(result, 2)
+AssertionError: 0 != 2
+
+======================================================================
+FAIL: test_invalid_marker_never_enters_transport_or_reseeds (desktop_plugin.test_bootstrap_identity.BootstrapIdentityTests.test_invalid_marker_never_enters_transport_or_reseeds) (marker='{"state_format":1,"seeded_from":"other","seeded_from":"seed"}')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/27265db857a2/r03_isolated/desktop_plugin/test_bootstrap_identity.py", line 74, in test_invalid_marker_never_enters_transport_or_reseeds
+    self.assertEqual(result, 2)
+AssertionError: 0 != 2
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.018s
+
+FAILED (failures=7)

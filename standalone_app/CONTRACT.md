@@ -1,4 +1,4 @@
-> Current source candidate: selected reuse from fa4e291cfd1aa7147f39f359008f8d74a2f69798. Imports and transitive source pins are reconciled; queue policy validation is reused, and stop is exposed without a model. Use `python -m standalone_app.cli` from the repository root. Linux injected-state checks do not validate native Windows publication. See the current root README for evidence and limits.
+> Current source candidate: selected reuse from fa4e291cfd1aa7147f39f359008f8d74a2f69798. Imports and transitive source pins are reconciled; queue policy validation is reused, and stop is exposed without a model. Use `python -m standalone_app.cli` from the repository root. Native publication and current composition evidence are named in the root README; Linux injection alone never establishes Windows coverage.
 
 # Minimal standalone Genie owner — NONCLAIM contract
 
@@ -10,7 +10,8 @@ The unit supports only:
 
 1. creating the **first new canonical run** from trusted local policy/task data;
 2. reading its existing Genie status;
-3. advancing the existing Genie controller by exactly one governed step.
+3. advancing the existing Genie controller by exactly one governed step;
+4. stopping future dispatch through the existing queue without invoking a model.
 
 No model/provider is invoked by this unit. If the existing controller returns `INVOKE_WORKER`, that is an action/request for a later host/provider adapter; it is not executed here.
 
@@ -36,7 +37,7 @@ No alternate queue, ledger, worker, reviewer, completion, or STOP semantics are 
 
 It accepts **no filesystem path** and no provider/model configuration.
 
-Before acquiring the one-shot staging witness, the owner performs a bounded deterministic precheck. Plan validation delegates to the existing pure queue validator. The queue has no separate pure policy validator, so policy shape/bounds are mirrored only as a non-authorizing typo precheck; the existing queue `initialize` operation remains authoritative once staging is acquired.
+Before acquiring the one-shot staging witness, the owner performs a bounded deterministic precheck. Plan validation delegates to the existing pure queue validator. Policy precheck reuses the existing queue's pure `valid_policy` validator; `initialize` remains authoritative once staging is acquired.
 
 Creation sequence:
 
@@ -69,7 +70,9 @@ The returned `INVOKE_WORKER` token/request is data for a future separately revie
 
 ## CLI
 
-A minimal local CLI exposes `create`, `status`, and `advance` only. `create` reads its strict creation object from stdin; no pathname argument is accepted. `status`/`advance` accept only a run alias.
+A minimal local CLI exposes `create`, `status`, `advance`, and `stop`. `create` reads its strict creation object from stdin; no pathname argument is accepted. `status`/`advance` accept only a run alias.
+
+Unexpected failures after owner entry are UNKNOWN with preservation/no-new-invocation flags and exit 3, including a lost acknowledgement after a committed stop. Malformed stdin/arguments reject before entry; known deterministic owner rejections remain REJECT. Stdin decoding reuses the maintained strict registry parser helpers.
 
 The CLI is an engineering owner shell, not the final GUI/installer. It is intended to prove that the shared core can be operated without this chat before model-provider integration is added.
 

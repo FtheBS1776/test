@@ -41,8 +41,8 @@ jobs:
           canonical_state_provisioner.test_provisioner_windows
           desktop_plugin.test_live_state_windows
           standalone_app.test_owner
-          desktop_plugin.test_bootstrap_preservation
-          desktop_plugin.test_bootstrap_identity
+          standalone_app.test_cli_outcomes
+          desktop_plugin.test_entry
       - name: Existing queue and bridge checks
         run: |
           python -B run_queue/test_policy.py

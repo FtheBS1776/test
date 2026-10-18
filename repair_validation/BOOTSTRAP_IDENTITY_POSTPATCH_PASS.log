@@ -1,0 +1,10 @@
+test_duplicate_seed_fields_reject_before_state_copy (desktop_plugin.test_bootstrap_identity.BootstrapIdentityTests.test_duplicate_seed_fields_reject_before_state_copy) ... ok
+test_invalid_marker_never_enters_transport_or_reseeds (desktop_plugin.test_bootstrap_identity.BootstrapIdentityTests.test_invalid_marker_never_enters_transport_or_reseeds) ... ok
+test_valid_first_launch_and_existing_state_preserve_identity (desktop_plugin.test_bootstrap_identity.BootstrapIdentityTests.test_valid_first_launch_and_existing_state_preserve_identity) ... ok
+test_copy_failure_keeps_partial_bytes_and_blocks_reseed (desktop_plugin.test_bootstrap_preservation.BootstrapPreservationTests.test_copy_failure_keeps_partial_bytes_and_blocks_reseed) ... ok
+test_publish_failure_keeps_marker_and_blocks_reseed (desktop_plugin.test_bootstrap_preservation.BootstrapPreservationTests.test_publish_failure_keeps_marker_and_blocks_reseed) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.018s
+
+OK
