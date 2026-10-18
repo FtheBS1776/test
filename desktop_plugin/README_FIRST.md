@@ -8,6 +8,12 @@ The package retains portable and Codex-compatible manifest forms, source version
 
 The former fixture-backed entry and its repaired bootstrap tests are preserved exactly in commit `c1c0a396881c798cd7503135e8958128c93febca` and the v3 source ZIP. They are superseded for operation, not silently relabeled as live-state evidence. Current tests reject a convincing old cache when live state is missing and check the whole fresh-owner/driver/compiled-plugin route on a disposable hosted Windows account. The plugin has no arbitrary root override; the compiled harness refuses a pre-existing app namespace and is CI-only.
 
+## Actual host boundary — documentation checked 2026-10-18 UTC
+
+This package is a local Windows stdio process, not a remotely hosted connector. [Official desktop-only plugin guidance](https://developers.openai.com/plugins/deploy/desktop-only) requires local execution and a locally running desktop thread. [Current plugin guidance](https://learn.chatgpt.com/docs/plugins) says desktop-only plugins are unavailable on mobile. [MCP guidance](https://learn.chatgpt.com/docs/extend/mcp) documents local desktop configuration and warns that local transports may be unavailable to a cloud coordinator. These are product prerequisites, not evidence of this package working on a particular account or machine.
+
+The next compatibility observation must identify the actual Windows host/client version, exact reviewed package/config bytes, local execution/connection and the advertised two read-only tools. Preserve missing/invalid canonical-state rejection; do not seed a fixture, provision a replacement or use a root override to make a connection appear successful. This chat has no native user-computer access and exposes no Genie MCP tool. Hosted VM/SDK passes do not supply those missing observations. No installation, connection, binary publication, account change or remote hosting was performed here. This read-only plugin lane is separate from R13 model dispatch through the existing active host.
+
 ## Historical fixture-backed package record (superseded)
 
 The following record describes its original source/binary, not the current live-state candidate.

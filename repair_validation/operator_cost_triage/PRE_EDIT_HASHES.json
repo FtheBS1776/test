@@ -1,0 +1,49 @@
+{
+  "source_commit": "938322b7c454521559cf6e4bd9ca79035dfe34b8",
+  "files": {
+    "README.md": {
+      "sha256": "2913bd18c8a0064d7136bd46016dea0e8bacefa6162b12f577b7b9567d434db3",
+      "size": 26611
+    },
+    "worker_substitution/QUICKSTART.md": {
+      "sha256": "c17b10c868fe6b516f835f2a6d31e12e7ef1a706377755b400a79a9f5c429cd6",
+      "size": 13843
+    },
+    "worker_substitution/README_FIRST.md": {
+      "sha256": "93c5f02d603533f482a6a638593ce6443b2c0dfe931e69bcbe5432db2cec5660",
+      "size": 1916
+    },
+    "active_runner/README_FIRST.md": {
+      "sha256": "0227686bf52bcc348ce37449f4ae96450cc443cdbef522ad34ff3a53d7d85629",
+      "size": 2301
+    },
+    "active_runner/runner.py": {
+      "sha256": "f683491cd184ac10e555ad41b96b44c9e690948de761653bc96894c43656dc86",
+      "size": 10583
+    },
+    "run_queue/README_FIRST.md": {
+      "sha256": "14c2ebc642bb1487de4714c014dc0b803e1d61bf4fee7d3c45a896349dc9c970",
+      "size": 4561
+    },
+    "run_queue/OPERATOR_GUIDE.md": {
+      "sha256": "49271093ef09ea7a2715cc896e219ece2a5e565e6f3a301cb514be12470a475d",
+      "size": 3865
+    },
+    "run_queue/run_policy.py": {
+      "sha256": "c29a4a237e1d7c22d0674f44544dcd64abeb38320dd8aa2efca0419ede60d883",
+      "size": 15705
+    },
+    "session_driver/USAGE.md": {
+      "sha256": "ab7ec0c2543d1390a96f90a6ea4c311aa990b4a2edc6f34daa2a1f348de5c711",
+      "size": 6357
+    },
+    "session_driver/CONTRACT.md": {
+      "sha256": "4b227918a25425e2398220f1df2a767a3eb94fcb9cb51da221130873caf36ad1",
+      "size": 3869
+    },
+    "shared_interfaces/session_driver.py": {
+      "sha256": "872903f1eaec93fce406662382fcadc896d28e8ce894cf60ae083d3e02dc5ab8",
+      "size": 13071
+    }
+  }
+}

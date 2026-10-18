@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "outer_sha256": "e2fd22c1b50698de5afc4539e3604ff8207aca3b2012182ef30ee239625c10f5",
+  "zip_entry_count": 60,
+  "manifest_payload_count": 59,
+  "manifest_sha256": "42fa20de5fdaea750707a98079a5a438b38ad6cf03ae036929066df8b65e45c0",
+  "all_paths_canonical_unique": true,
+  "no_symlinks": true,
+  "crc_all_pass": true,
+  "manifest_lengths_hashes_exact_set": true,
+  "extracted_bytes_identical": true,
+  "source_commit_identity_only": "57b5da491562c0edd476596da74a2923eb472b8d",
+  "source_tree_identity_only": "42a16574860ae2d6b0f644c0ea6c81783fe17153",
+  "subject_identities": [
+    {
+      "path": "source/README.md",
+      "size": 27182,
+      "sha256": "8519432ecdcaeaf560adbf52d0bb6d29ff9d7630db92f6bfad911f3fa8ec60a0"
+    },
+    {
+      "path": "source/active_runner/README_FIRST.md",
+      "size": 2593,
+      "sha256": "276a0a4f4656fac8be29528fa050b5c59682a750702f17770fcc22408aad886f"
+    },
+    {
+      "path": "source/desktop_plugin/README_FIRST.md",
+      "size": 7920,
+      "sha256": "3a8299e6f182e2f3780b8aa96d4bf70949bac755d486f63691f8ed2232a9a6ae"
+    },
+    {
+      "path": "source/run_queue/README_FIRST.md",
+      "size": 5007,
+      "sha256": "40c8424b3212d11fbccb286660917134540734f323fa6db0fd4b3ad1f53dc890"
+    },
+    {
+      "path": "source/session_driver/USAGE.md",
+      "size": 7930,
+      "sha256": "7268bc97eae51376e2c5cea2599f2d8e93a5570907cfebcf30aa84e9a5c3f946"
+    },
+    {
+      "path": "source/worker_substitution/QUICKSTART.md",
+      "size": 15070,
+      "sha256": "843fbbfe56076d127e6a8f40eae0619906d09d4a9482a5d2e78311701c58a94a"
+    }
+  ]
+}
+{"initial_ordering_limitation_remains": true, "initial_second_archive_all_bytes_identical": true, "ordered_followup": "full archive manifest verification completed before creating second exclusive extraction", "second_extracted_files": 60, "status": "PASS"}

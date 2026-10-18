@@ -660,3 +660,76 @@ NO MODEL CALL in test receipts refers to subject-system hook/process effects,
 not a claim that ChatGPT repair/review inference has zero platform cost.
 Scoped HOLDs, immutable historical evidence, one admission owner, source pins,
 mandatory deduplication and all execution/governance exclusions remain intact.
+
+
+2026-10-18 UTC — operator cost/host correspondence follow-up to v5
+User authorized continuation; standing repair/delegation scope/exclusions intact.
+Internal read-only triage input HEAD 938322b7c454521559cf6e4bd9ca79035dfe34b8.
+Original triage files copied unchanged under repair_validation/operator_cost_triage.
+Complete fresh-store evidence ZIP GENIE_OPERATOR_COST_TRIAGE_20261018.zip, SHA256 395f3881d3daa7bee52252c275b5754b60c9d2d0da1e43c8d293d1307e8b252c.
+The probe used two exclusive fresh stores and no process/model/provider calls.
+Low-level runner emitted INVOKE_WORKER with one workflow reservation, zero cost
+records and no approved quote. An asserted-free admission denied; the current
+shared driver default denied with zero hooks. This establishes stale operator
+guidance, not a runtime driver bypass or new paid-model validation. Root current
+section already superseded older wording, so no controlling-policy bypass is
+inferred from its lower legacy sequence.
+
+Reconcile current root, quickstart, runner and queue guidance and driver USAGE:
+workflow offers and progress do not supply monetary permission. Reuse existing
+shared driver, saved approved role quotes and queue admission. Include costs in
+callable/stream examples; missing costs denies hook entry. Existing work_host CLI
+has no cost option and is not an alternative admitted model route. Reviewer
+monetary admission remains distinct from author-attempt slot counting.
+Runtime/token/queue/source pins and historical contracts/logs remain unchanged.
+The original quickstart's no-model fixture code block is byte-identical; it was
+not rerun. No tests were added that mirror documentation implementation, and no
+broad suite/build rerun is justified by these documentation-only changes.
+
+R09 and R13 are independent existing lanes: actual read-only Windows host/plugin
+observations do not enable model dispatch, and plugin installation is not a
+prerequisite for the existing active-host useful-task route. R13 still requires
+an actually permitted enforceable model-action cost bound; none was invented.
+Official OpenAI docs read 2026-10-18: desktop-only plugin requires local desktop
+execution; not available on mobile; local transport cloud access is conditional.
+https://developers.openai.com/plugins/deploy/desktop-only
+https://learn.chatgpt.com/docs/plugins
+https://learn.chatgpt.com/docs/extend/mcp
+These facts establish prerequisites, not user/account/device compatibility.
+Current tools expose no Genie MCP operation or native user-computer access.
+No plugin install/connection, binary publication, paid external capacity,
+scientific execution, master write, merge, deployment or promotion performed.
+Fresh separate-context operator-guidance review pending; native/SDK evidence
+retains its exact v5 tested-source scope. This is not a new roadmap or mechanism.
+
+
+Completed operator-guidance v6 review: NO_DEFECT_FOUND within six exact docs.
+Input SHA256 e2fd22c1b50698de5afc4539e3604ff8207aca3b2012182ef30ee239625c10f5.
+Reviewed local commit 57b5da491562c0edd476596da74a2923eb472b8d,
+tree 42a16574860ae2d6b0f644c0ea6c81783fe17153.
+Eight fresh fake-only scenarios PASS once, covering default/progress denial,
+approved vs unapproved zero, separate reviewer admission, charged uncertainty,
+legitimate REPAIR, stopped run and stream default denial. No subject mains,
+embedded fixture, model/provider/child process, workflow or native/SDK run.
+Reports/probe/raw outputs and integrity checks copied unchanged under
+repair_validation/operator_guidance_review_v6. Complete original review ZIP
+SHA256 40753f7a7a8cc76d92618ef412f2d13adc184d64675302a82fd3f9a2db84c336.
+
+Procedural limitation explicitly preserved: reviewer checked outer hash,
+safe paths, CRC and symlinks before initial extraction, but full manifest only
+after extraction (before subject review/import/execution). Initial commands
+are transcribed observations, not original raw stdout. Corrective follow-up
+verified the entire manifest directly from ZIP before a second exclusive
+extraction, with all 60 archive/initial/second files identical. This does not
+retroactively make the initial extraction compliant; original attempt retained.
+The result is a bounded separate-context documentation review, not strict-blind
+runtime review or independent evidence roots. Historical assertions embedded
+in exact documentation subjects are untrusted subject text, not proof.
+Native account/user-host, SDK/Windows compatibility, actual price provenance
+and useful-model task remain untested by this review. All current runtime,
+configuration, existing Python source and source-pin bytes match v5; v5 native
+and SDK receipts retain their original tested-source scope, not a new run.
+The original quickstart no-model fixture block is byte-identical and not rerun.
+No new subsystem, alternative roadmap, authority mechanism, paid capacity,
+installation/connection, binary publication, master write, scientific execution,
+main merge, deployment, promotion or governance freeze.

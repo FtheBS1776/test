@@ -1,10 +1,12 @@
 # Active-host runner CLI quickstart — NONCLAIM
 
+Current operation: read the root README recovery correspondence and [driver usage](../session_driver/USAGE.md). A low-level `INVOKE_WORKER` reserves a workflow attempt; it is not monetary admission or permission to invoke a model. Supported external worker/reviewer entry uses the existing shared driver with reviewed enforceable bounds and exact saved approved role quotes. Unknown/unapproved cost denies entry, including an asserted zero quote. Do not dispatch from a progress notification; the driver emits progress before admission. The preserved no-model CLI fixture below exercises protocol only and is not an alternative real-model launch route.
+
 Run from the repository root with Python 3.12 and the reviewed, pinned source files intact. No installs or provider keys are needed for this local fixture. Use a new disposable directory selected by `GENIE_CLI_DEMO_ROOT`; the script creates it exclusively and fails before overwriting an existing directory. It never resets a prior queue or closed run.
 
 The queue CLI is `python3.12 -B run_queue/run_policy.py QUEUE OPERATION`; `init` and `enqueue` take their policy/plan JSON directly on stdin. Runner syntax is `python3.12 -B active_runner/runner.py QUEUE RUN_ID OWNED_ROOT OPERATION`. Operations are `step`, `observe`, `submit`, `review`. Callback stdin contains `supplied` with the exact emitted token, plus operation fields; `token` is not the callback argument name. The token binds run, task, input hash, attempt, reservation slot and host call. Workers do not select destination paths.
 
-On a real `INVOKE_WORKER`, the active external Work host performs the model call once, records its observed accepted agent, and submits that agent's candidate. Python emits actions; it does not call a model. A separate root/controller content review must decide ACCEPT or REPAIR for the exact candidate hash. Model-produced text is not self-authorizing, and routing checks do not prove its correctness. A REPAIR may permit another bounded attempt; it does not refund the first reservation. Unknown launches consume their reservation and require reconciliation.
+For actual model work, the trusted external host enters its worker through the existing shared driver only after the original workflow action and queue-owned monetary admission both permit that exact entry. The driver records the bound host response and candidate. Python emits workflow actions; the low-level runner does not perform monetary admission or call a model. A separate root/controller content review must decide ACCEPT or REPAIR for the exact candidate hash. Model-produced text is not self-authorizing, and routing checks do not prove its correctness. A REPAIR may permit another bounded attempt; it does not refund the first reservation. Unknown launches consume their reservation and require reconciliation.
 
 **The following block is a deterministic NO MODEL CALL fixture.** The fake agent and candidate simulate host callbacks solely to exercise the CLI. It reserves one workflow slot, not one observed live model call; reservations measure neither tokens nor dollars. Fixture acceptance is an exact-byte controller check, not a model-quality evaluation. Real root-host worker substitution is separate evidence and cannot be established by running this block.
 
@@ -96,12 +98,12 @@ Every CLI call in the block is a fresh subprocess. Keep the resulting files for 
 
 | Response | Operator action |
 |---|---|
-| INVOKE_WORKER | Active trusted Work host may dispatch this newly reserved call once. Save the exact token. |
+| INVOKE_WORKER | Workflow offer only. Save the exact token; use the existing shared driver and approved cost contract before any external entry. |
 | RECONCILE_WORKER | Inspect the existing worker/journal; no new invocation permission. Even an UNKNOWN host outcome does not authorize relaunch. |
 | RECONCILE_HOST | Preserve and investigate existing reservation/call uncertainty; no new launch permission. |
 | RECONCILE_SETUP | Preserve the setup gap and inspect existing state; do not recreate files, reset the budget or relaunch. |
 | UNKNOWN | Preserve and investigate the reported partial/inconsistent state. Interrupted provisioning can appear here. |
-| REVIEW_CANDIDATE | Inspect exact candidate bytes/hash; root reviews content separately. |
+| REVIEW_CANDIDATE | Inspect exact candidate bytes/hash; any external reviewer entry also requires its own queue-owned monetary admission. |
 | TASK_COMPLETE | One task has exact fresh destination readback; call step to select remaining bounded work or persist STOP. |
 | RECONCILE_DESTINATION | Accepted work lacks confirmation; inspect destination without assuming completion. |
 | HOLD | Keep the task held; this runner has no implicit release/reset. |
@@ -114,7 +116,7 @@ For an actual host ending or authority/dependency boundary, the queue `stop` ope
 
 ## Existing helpers in a real bounded task
 
-Use the queue/runner recipe above for the saved plan, bounded permissions, candidate review and exact delivery. At a newly emitted INVOKE_WORKER, the active Work controller performs the real worker call once. The CLI cannot do this call. Save the original dispatch and the actual host tool evidence as a nonempty JSON object; an UNKNOWN invocation must stay UNKNOWN and be reconciled without relaunch. After observing an accepted agent, render the existing observe envelope with observe_payload.py, compare its exact token/outcome/agent/evidence against those saved facts, then pass that envelope to the existing runner observe operation. Rendering alone never records an observation or grants permission. Submit only the bound agent's candidate; root reviews exact content/hash and chooses ACCEPT or REPAIR. Step delivers/readbacks, selects any remaining authorized READY task or persists STOP. Respect the original task/call budget throughout.
+The queue/runner recipe above is the preserved no-model protocol exercise. For operational host calls, use [the shared driver](../session_driver/USAGE.md) with an authorized saved queue and reviewed `costs` matching its immutable approved role quotes. The driver admits author/repair and reviewer entries through the same queue owner before requesting actual host work. Missing quotes, unknown bounds and replay grant no entry. A new low-level INVOKE_WORKER or a progress message alone is insufficient. The CLI cannot perform a model call or supply a cost bound. Save the original dispatch and the actual host tool evidence as a nonempty JSON object; an UNKNOWN invocation must stay UNKNOWN and be reconciled without relaunch. After observing an accepted agent, render the existing observe envelope with observe_payload.py, compare its exact token/outcome/agent/evidence against those saved facts, then pass that envelope to the existing runner observe operation. Rendering alone never records an observation or grants permission. Submit only the bound agent's candidate; root reviews exact content/hash and chooses ACCEPT or REPAIR. Step delivers/readbacks, selects any remaining authorized READY task or persists STOP. Respect the original task/call budget throughout.
 
 The following command only renders this completed unit's historical envelope. It performs no model call or callback. Its run is closed; a rendered payload is not permission to reopen it:
 
