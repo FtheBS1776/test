@@ -1,0 +1,62 @@
+test_consumer_source_binding (plugin_mcp_server.test_mcp_server.Tests.test_consumer_source_binding) ... ok
+test_malformed_projection_fails_unknown (plugin_mcp_server.test_mcp_server.Tests.test_malformed_projection_fails_unknown) ... ok
+test_metadata_and_call_in_process (plugin_mcp_server.test_mcp_server.Tests.test_metadata_and_call_in_process) ... ok
+test_real_saved_status_read_only_in_process (plugin_mcp_server.test_mcp_server.Tests.test_real_saved_status_read_only_in_process) ... ok
+test_real_stdio_probe (plugin_mcp_server.test_mcp_server.Tests.test_real_stdio_probe) ... ok
+test_real_streamable_http_probe (plugin_mcp_server.test_mcp_server.Tests.test_real_streamable_http_probe) ... ERROR
+test_sdk_version_binding (plugin_mcp_server.test_mcp_server.Tests.test_sdk_version_binding) ... ok
+test_untrusted_result_is_not_duplicated_into_text_block (plugin_mcp_server.test_mcp_server.Tests.test_untrusted_result_is_not_duplicated_into_text_block) ... ok
+
+======================================================================
+ERROR: test_real_streamable_http_probe (plugin_mcp_server.test_mcp_server.Tests.test_real_streamable_http_probe)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/27265db857a2/r03_isolated/plugin_mcp_server/test_mcp_server.py", line 241, in test_real_streamable_http_probe
+    asyncio.run(run())
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/workspace/scratch/27265db857a2/r03_isolated/plugin_mcp_server/test_mcp_server.py", line 233, in run
+    async with Client(f"http://127.0.0.1:{port}/mcp") as client:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/27265db857a2/repair_sdk_env/lib/python3.12/site-packages/mcp/client/client.py", line 459, in __aenter__
+    session = await self._build_session(exit_stack)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/27265db857a2/repair_sdk_env/lib/python3.12/site-packages/mcp/client/client.py", line 432, in _build_session
+    dispatcher = await self._connect(exit_stack, self.mode, self.raise_exceptions)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/27265db857a2/repair_sdk_env/lib/python3.12/site-packages/mcp/client/client.py", line 102, in connect
+    read_stream, write_stream = await exit_stack.enter_async_context(transport)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/contextlib.py", line 659, in enter_async_context
+    result = await _enter(cm)
+             ^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/27265db857a2/repair_sdk_env/lib/python3.12/site-packages/mcp/client/streamable_http.py", line 752, in streamable_http_client
+    client = create_mcp_http_client()
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/27265db857a2/repair_sdk_env/lib/python3.12/site-packages/mcp/shared/_httpx_utils.py", line 64, in create_mcp_http_client
+    return httpx2.AsyncClient(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/27265db857a2/repair_sdk_env/lib/python3.12/site-packages/httpx2/_client.py", line 1512, in __init__
+    else self._init_proxy_transport(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/27265db857a2/repair_sdk_env/lib/python3.12/site-packages/httpx2/_client.py", line 1559, in _init_proxy_transport
+    return AsyncHTTPTransport(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/27265db857a2/repair_sdk_env/lib/python3.12/site-packages/httpx2/_transports/default.py", line 330, in __init__
+    raise ImportError(
+ImportError: Using SOCKS proxy, but the 'socksio' package is not installed. Make sure to install httpx using `pip install httpx[socks]`.
+
+----------------------------------------------------------------------
+Ran 8 tests in 3.025s
+
+FAILED (errors=1)

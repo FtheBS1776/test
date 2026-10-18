@@ -6,7 +6,7 @@ The transport accepts one trusted operator registry path at startup. The registr
 
 ## Source and version bindings
 
-- `shared_interfaces/mcp_consumer.py` SHA-256 must equal `21f3fc657abb16c9ba7c9189f266cbdfeaec1dbf0ae2ca6d051caee1565ddd5d`.
+- The historical accepted consumer SHA-256 was `21f3fc657abb16c9ba7c9189f266cbdfeaec1dbf0ae2ca6d051caee1565ddd5d`. This isolated recovery candidate requires `40c54edf66f07f60bd0beaef5bb567ac15f4a08572ffe724d5cf77a2e023729c`, matching the current server's source binding. Historical receipts remain tied to their original bytes; current test evidence is recorded in the root `REPAIR_TEST_RESULTS.txt`.
 - The complete reviewed 28-distribution MCP transport dependency closure is exact-pinned and runtime-checked, including `mcp==2.3.0`.
 - A source or dependency-closure mismatch fails closed before the server is constructed.
 

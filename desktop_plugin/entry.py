@@ -53,13 +53,23 @@ def _sha(path):
     return h.hexdigest()
 
 
+def _decode_json(raw):
+    # Reuse the maintained registry decoder's lexical checks for bootstrap
+    # records as well; schema/field checks remain with their existing owners.
+    from shared_interfaces import cli
+    return json.loads(raw.decode("utf-8", errors="strict"),
+                      object_pairs_hook=cli._unique_object,
+                      parse_constant=cli._invalid_constant,
+                      parse_float=cli._finite_float)
+
+
 def _read_seed_manifest(seed):
     path = seed / SEED_MANIFEST
     try:
         raw = path.read_bytes()
         if len(raw) > 1024 * 1024:
             raise ValueError("manifest bound")
-        value = json.loads(raw.decode("utf-8", errors="strict"))
+        value = _decode_json(raw)
         if (type(value) is not dict or set(value) != {"seed_id", "files"}
                 or type(value["seed_id"]) is not str or not value["seed_id"]
                 or type(value["files"]) is not list):
@@ -95,8 +105,9 @@ def _existing_state(state):
         raw = marker.read_bytes()
         if len(raw) > 4096:
             raise ValueError("marker bound")
-        value = json.loads(raw.decode("utf-8", errors="strict"))
+        value = _decode_json(raw)
         if (type(value) is not dict or set(value) != {"state_format", "seeded_from"}
+                or type(value["state_format"]) is not int
                 or value["state_format"] != STATE_FORMAT
                 or type(value["seeded_from"]) is not str or not value["seeded_from"]):
             raise ValueError("marker shape")

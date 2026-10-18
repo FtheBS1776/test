@@ -1,0 +1,648 @@
+﻿2026-10-18T08:02:50.3389640Z Current runner version: '2.337.0'
+2026-10-18T08:02:50.3423857Z ##[group]Runner Image Provisioner
+2026-10-18T08:02:50.3424546Z Hosted Compute Agent
+2026-10-18T08:02:50.3425002Z Version: 20261002.596
+2026-10-18T08:02:50.3425536Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+2026-10-18T08:02:50.3426107Z Build Date: 2026-10-02T22:28:27Z
+2026-10-18T08:02:50.3426646Z Worker ID: {0155020c-f11a-4b1b-9f4f-3c1a242878b8}
+2026-10-18T08:02:50.3427199Z Region: westus
+2026-10-18T08:02:50.3427611Z Cloud: Azure
+2026-10-18T08:02:50.3428032Z ##[endgroup]
+2026-10-18T08:02:50.3429143Z ##[group]Operating System
+2026-10-18T08:02:50.3429629Z Microsoft Windows Server 2025
+2026-10-18T08:02:50.3430138Z 10.0.26100
+2026-10-18T08:02:50.3430548Z Datacenter
+2026-10-18T08:02:50.3430987Z ##[endgroup]
+2026-10-18T08:02:50.3431405Z ##[group]Runner Image
+2026-10-18T08:02:50.3431858Z Image: windows-2025-vs2026
+2026-10-18T08:02:50.3432341Z Version: 20261007.264.1
+2026-10-18T08:02:50.3433530Z Included Software: https://github.com/actions/runner-images/blob/win25-vs2026/20261007.264/images/windows/Windows2025-VS2026-Readme.md
+2026-10-18T08:02:50.3434849Z Image Release: https://github.com/actions/runner-images/releases/tag/win25-vs2026%2F20261007.264
+2026-10-18T08:02:50.3435614Z ##[endgroup]
+2026-10-18T08:02:50.3436536Z ##[group]GITHUB_TOKEN Permissions
+2026-10-18T08:02:50.3438598Z Contents: read
+2026-10-18T08:02:50.3439140Z Metadata: read
+2026-10-18T08:02:50.3439566Z ##[endgroup]
+2026-10-18T08:02:50.3441451Z Secret source: Actions
+2026-10-18T08:02:50.3442195Z Cache mode: write
+2026-10-18T08:02:50.3442809Z Prepare workflow directory
+2026-10-18T08:02:50.3706022Z Prepare all required actions
+2026-10-18T08:02:50.3751049Z Getting action download info
+2026-10-18T08:02:50.6856889Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-18T08:02:50.8080200Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-10-18T08:02:51.0362068Z Complete job name: windows-package
+2026-10-18T08:02:51.2242915Z ##[group]Run actions/checkout@v4
+2026-10-18T08:02:51.2243890Z with:
+2026-10-18T08:02:51.2244236Z   repository: FtheBS1776/test
+2026-10-18T08:02:51.2247664Z   token: ***
+2026-10-18T08:02:51.2247998Z   ssh-strict: true
+2026-10-18T08:02:51.2248334Z   ssh-user: git
+2026-10-18T08:02:51.2248667Z   persist-credentials: true
+2026-10-18T08:02:51.2249042Z   clean: true
+2026-10-18T08:02:51.2249382Z   sparse-checkout-cone-mode: true
+2026-10-18T08:02:51.2249784Z   fetch-depth: 1
+2026-10-18T08:02:51.2250116Z   fetch-tags: false
+2026-10-18T08:02:51.2250450Z   show-progress: true
+2026-10-18T08:02:51.2250783Z   lfs: false
+2026-10-18T08:02:51.2251090Z   submodules: false
+2026-10-18T08:02:51.2251427Z   set-safe-directory: true
+2026-10-18T08:02:51.2252159Z   allow-unsafe-pr-checkout: false
+2026-10-18T08:02:51.2252771Z ##[endgroup]
+2026-10-18T08:02:51.3471816Z Syncing repository: FtheBS1776/test
+2026-10-18T08:02:51.3473263Z ##[group]Getting Git version info
+2026-10-18T08:02:51.3473837Z Working directory is 'D:\a\test\test'
+2026-10-18T08:02:51.4055392Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-10-18T08:02:52.1108166Z git version 2.56.0.windows.2
+2026-10-18T08:02:52.1151707Z ##[endgroup]
+2026-10-18T08:02:52.1167465Z Temporarily overriding HOME='D:\a\_temp\a2a889db-55cb-47f1-b2df-b077b0e4a291' before making global git config changes
+2026-10-18T08:02:52.1168660Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-18T08:02:52.1175466Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\test\test
+2026-10-18T08:02:52.3335956Z Deleting the contents of 'D:\a\test\test'
+2026-10-18T08:02:52.3340846Z ##[group]Initializing the repository
+2026-10-18T08:02:52.3348407Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\test\test
+2026-10-18T08:02:52.5682164Z Initialized empty Git repository in D:/a/test/test/.git/
+2026-10-18T08:02:52.5735273Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/FtheBS1776/test
+2026-10-18T08:02:52.6375741Z ##[endgroup]
+2026-10-18T08:02:52.6377665Z ##[group]Disabling automatic garbage collection
+2026-10-18T08:02:52.6378820Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+2026-10-18T08:02:52.6700532Z ##[endgroup]
+2026-10-18T08:02:52.6702103Z ##[group]Setting up auth
+2026-10-18T08:02:52.6712550Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-10-18T08:02:52.7046984Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-10-18T08:02:56.7940680Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-18T08:02:56.8312673Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-10-18T08:02:57.3765198Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-18T08:02:57.4074497Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-10-18T08:02:57.9332844Z [command]"C:\Program Files\Git\bin\git.exe" config --local http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2026-10-18T08:02:57.9700674Z ##[endgroup]
+2026-10-18T08:02:57.9701720Z ##[group]Fetching the repository
+2026-10-18T08:02:57.9717455Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +5b7085b0b5a97c21694d7d04d5bbf71287836bd8:refs/remotes/origin/repair/genie-recovery-validation-20261018
+2026-10-18T08:03:00.3439699Z From https://github.com/FtheBS1776/test
+2026-10-18T08:03:00.3440472Z  * [new ref]         5b7085b0b5a97c21694d7d04d5bbf71287836bd8 -> origin/repair/genie-recovery-validation-20261018
+2026-10-18T08:03:00.3472895Z ##[endgroup]
+2026-10-18T08:03:00.3473238Z ##[group]Determining the checkout info
+2026-10-18T08:03:00.3475144Z ##[endgroup]
+2026-10-18T08:03:00.3487338Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+2026-10-18T08:03:00.5857999Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+2026-10-18T08:03:00.6217565Z ##[group]Checking out the ref
+2026-10-18T08:03:00.6224956Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force -B repair/genie-recovery-validation-20261018 refs/remotes/origin/repair/genie-recovery-validation-20261018
+2026-10-18T08:03:01.2478598Z Switched to a new branch 'repair/genie-recovery-validation-20261018'
+2026-10-18T08:03:01.2646644Z branch 'repair/genie-recovery-validation-20261018' set up to track 'origin/repair/genie-recovery-validation-20261018'.
+2026-10-18T08:03:01.2689005Z ##[endgroup]
+2026-10-18T08:03:01.3725409Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+2026-10-18T08:03:01.6651658Z 5b7085b0b5a97c21694d7d04d5bbf71287836bd8
+2026-10-18T08:03:01.7054288Z ##[group]Run actions/setup-python@v5
+2026-10-18T08:03:01.7054580Z with:
+2026-10-18T08:03:01.7054759Z   python-version: 3.12.10
+2026-10-18T08:03:01.7054946Z   check-latest: false
+2026-10-18T08:03:01.7057183Z   token: ***
+2026-10-18T08:03:01.7057379Z   update-environment: true
+2026-10-18T08:03:01.7057572Z   allow-prereleases: false
+2026-10-18T08:03:01.7057745Z   freethreaded: false
+2026-10-18T08:03:01.7057910Z ##[endgroup]
+2026-10-18T08:03:01.8356470Z ##[group]Installed versions
+2026-10-18T08:03:01.8399912Z (node:8396) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-18T08:03:01.8400587Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-18T08:03:01.8402005Z Successfully set up CPython (3.12.10)
+2026-10-18T08:03:01.8414432Z ##[endgroup]
+2026-10-18T08:03:01.8937308Z Prepare all required actions
+2026-10-18T08:03:01.9129307Z ##[group]Run ./.github/actions/genie-windows-package
+2026-10-18T08:03:01.9129568Z env:
+2026-10-18T08:03:01.9129786Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:03:01.9130151Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-10-18T08:03:01.9130500Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:03:01.9130810Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:03:01.9131131Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:03:01.9131419Z ##[endgroup]
+2026-10-18T08:03:01.9181254Z ##[start-action display=Create isolated exact build environment;id=__self.__run]
+2026-10-18T08:03:01.9307678Z ##[group]Run python -m venv desktop_plugin/.venv
+2026-10-18T08:03:01.9308044Z [36;1mpython -m venv desktop_plugin/.venv[0m
+2026-10-18T08:03:01.9308386Z [36;1m$py = 'desktop_plugin/.venv/Scripts/python.exe'[0m
+2026-10-18T08:03:01.9308916Z [36;1m& $py -m pip install --disable-pip-version-check -r plugin_mcp_server/requirements.lock.txt -r desktop_plugin/windows-build.lock.txt[0m
+2026-10-18T08:03:01.9309390Z [36;1m& $py -m pip check[0m
+2026-10-18T08:03:01.9309582Z [36;1m& $py -m pip freeze[0m
+2026-10-18T08:03:02.6618591Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-10-18T08:03:02.6618898Z env:
+2026-10-18T08:03:02.6619126Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:03:02.6619482Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-10-18T08:03:02.6619825Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:03:02.6620131Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:03:02.6620460Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:03:02.6620699Z ##[endgroup]
+2026-10-18T08:03:14.8025914Z Collecting annotated-types==0.8.0 (from -r plugin_mcp_server/requirements.lock.txt (line 1))
+2026-10-18T08:03:14.8690715Z   Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+2026-10-18T08:03:14.9255245Z Collecting anyio==4.15.1 (from -r plugin_mcp_server/requirements.lock.txt (line 2))
+2026-10-18T08:03:14.9523019Z   Downloading anyio-4.15.1-py3-none-any.whl.metadata (4.7 kB)
+2026-10-18T08:03:15.0165330Z Collecting attrs==26.1.0 (from -r plugin_mcp_server/requirements.lock.txt (line 3))
+2026-10-18T08:03:15.0387131Z   Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+2026-10-18T08:03:15.3794285Z Collecting cffi==2.1.1 (from -r plugin_mcp_server/requirements.lock.txt (line 4))
+2026-10-18T08:03:15.4016419Z   Downloading cffi-2.1.1-cp312-cp312-win_amd64.whl.metadata (2.6 kB)
+2026-10-18T08:03:15.5680435Z Collecting click==8.5.0 (from -r plugin_mcp_server/requirements.lock.txt (line 5))
+2026-10-18T08:03:15.6028535Z   Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+2026-10-18T08:03:16.1596123Z Collecting cryptography==50.0.2 (from -r plugin_mcp_server/requirements.lock.txt (line 6))
+2026-10-18T08:03:16.1865121Z   Downloading cryptography-50.0.2-cp311-abi3-win_amd64.whl.metadata (4.4 kB)
+2026-10-18T08:03:16.2439320Z Collecting h11==0.16.0 (from -r plugin_mcp_server/requirements.lock.txt (line 7))
+2026-10-18T08:03:16.2665598Z   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+2026-10-18T08:03:16.3119444Z Collecting httpcore2==2.13.1 (from -r plugin_mcp_server/requirements.lock.txt (line 8))
+2026-10-18T08:03:16.3375237Z   Downloading httpcore2-2.13.1-py3-none-any.whl.metadata (26 kB)
+2026-10-18T08:03:16.3931806Z Collecting httpx2==2.13.1 (from -r plugin_mcp_server/requirements.lock.txt (line 9))
+2026-10-18T08:03:16.4152759Z   Downloading httpx2-2.13.1-py3-none-any.whl.metadata (9.8 kB)
+2026-10-18T08:03:16.4743312Z Collecting idna==3.20 (from -r plugin_mcp_server/requirements.lock.txt (line 10))
+2026-10-18T08:03:16.4959273Z   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+2026-10-18T08:03:16.6007668Z Collecting jsonschema==4.26.0 (from -r plugin_mcp_server/requirements.lock.txt (line 11))
+2026-10-18T08:03:16.6225444Z   Downloading jsonschema-4.26.0-py3-none-any.whl.metadata (7.6 kB)
+2026-10-18T08:03:16.8071504Z Collecting jsonschema-specifications==2025.9.1 (from -r plugin_mcp_server/requirements.lock.txt (line 12))
+2026-10-18T08:03:16.8316401Z   Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+2026-10-18T08:03:16.8868116Z Collecting mcp==2.3.0 (from -r plugin_mcp_server/requirements.lock.txt (line 13))
+2026-10-18T08:03:16.9095646Z   Downloading mcp-2.3.0-py3-none-any.whl.metadata (6.6 kB)
+2026-10-18T08:03:16.9632458Z Collecting mcp-types==2.3.0 (from -r plugin_mcp_server/requirements.lock.txt (line 14))
+2026-10-18T08:03:16.9864863Z   Downloading mcp_types-2.3.0-py3-none-any.whl.metadata (1.9 kB)
+2026-10-18T08:03:17.0368847Z Collecting opentelemetry-api==1.45.1 (from -r plugin_mcp_server/requirements.lock.txt (line 15))
+2026-10-18T08:03:17.0636424Z   Downloading opentelemetry_api-1.45.1-py3-none-any.whl.metadata (1.4 kB)
+2026-10-18T08:03:17.1175062Z Collecting pycparser==3.11 (from -r plugin_mcp_server/requirements.lock.txt (line 16))
+2026-10-18T08:03:17.1392466Z   Downloading pycparser-3.11-py3-none-any.whl.metadata (8.2 kB)
+2026-10-18T08:03:17.6001605Z Collecting pydantic==2.14.1 (from -r plugin_mcp_server/requirements.lock.txt (line 17))
+2026-10-18T08:03:17.6220145Z   Downloading pydantic-2.14.1-py3-none-any.whl.metadata (133 kB)
+2026-10-18T08:03:18.1445205Z Collecting pydantic-core==2.50.1 (from -r plugin_mcp_server/requirements.lock.txt (line 18))
+2026-10-18T08:03:18.1663746Z   Downloading pydantic_core-2.50.1-cp312-cp312-win_amd64.whl.metadata (6.7 kB)
+2026-10-18T08:03:18.2117509Z Collecting PyJWT==2.15.1 (from -r plugin_mcp_server/requirements.lock.txt (line 19))
+2026-10-18T08:03:18.2339949Z   Downloading pyjwt-2.15.1-py3-none-any.whl.metadata (3.5 kB)
+2026-10-18T08:03:18.2832719Z Collecting python-multipart==0.0.32 (from -r plugin_mcp_server/requirements.lock.txt (line 20))
+2026-10-18T08:03:18.3100019Z   Downloading python_multipart-0.0.32-py3-none-any.whl.metadata (2.1 kB)
+2026-10-18T08:03:18.6790179Z Collecting referencing==0.37.0 (from -r plugin_mcp_server/requirements.lock.txt (line 21))
+2026-10-18T08:03:18.7050840Z   Downloading referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
+2026-10-18T08:03:18.9326787Z Collecting rpds-py==2026.9.1 (from -r plugin_mcp_server/requirements.lock.txt (line 22))
+2026-10-18T08:03:18.9560237Z   Downloading rpds_py-2026.9.1-cp312-cp312-win_amd64.whl.metadata (4.2 kB)
+2026-10-18T08:03:19.0630965Z Collecting sse-starlette==3.5.0 (from -r plugin_mcp_server/requirements.lock.txt (line 23))
+2026-10-18T08:03:19.0851057Z   Downloading sse_starlette-3.5.0-py3-none-any.whl.metadata (15 kB)
+2026-10-18T08:03:19.3252934Z Collecting starlette==1.7.0 (from -r plugin_mcp_server/requirements.lock.txt (line 24))
+2026-10-18T08:03:19.3467785Z   Downloading starlette-1.7.0-py3-none-any.whl.metadata (6.6 kB)
+2026-10-18T08:03:19.5672837Z Collecting truststore==0.10.4 (from -r plugin_mcp_server/requirements.lock.txt (line 25))
+2026-10-18T08:03:19.5906588Z   Downloading truststore-0.10.4-py3-none-any.whl.metadata (4.4 kB)
+2026-10-18T08:03:19.6427097Z Collecting typing-extensions==4.16.0 (from -r plugin_mcp_server/requirements.lock.txt (line 26))
+2026-10-18T08:03:19.6643672Z   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+2026-10-18T08:03:19.7118074Z Collecting typing-inspection==0.4.4 (from -r plugin_mcp_server/requirements.lock.txt (line 27))
+2026-10-18T08:03:19.7335142Z   Downloading typing_inspection-0.4.4-py3-none-any.whl.metadata (2.6 kB)
+2026-10-18T08:03:19.7925256Z Collecting uvicorn==0.54.0 (from -r plugin_mcp_server/requirements.lock.txt (line 28))
+2026-10-18T08:03:19.8302322Z   Downloading uvicorn-0.54.0-py3-none-any.whl.metadata (6.6 kB)
+2026-10-18T08:03:19.8738302Z Collecting altgraph==0.17.5 (from -r desktop_plugin/windows-build.lock.txt (line 3))
+2026-10-18T08:03:19.9414808Z   Downloading altgraph-0.17.5-py2.py3-none-any.whl.metadata (7.5 kB)
+2026-10-18T08:03:19.9879182Z Collecting packaging==26.3 (from -r desktop_plugin/windows-build.lock.txt (line 4))
+2026-10-18T08:03:20.0093866Z   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+2026-10-18T08:03:20.0545678Z Collecting pefile==2024.8.26 (from -r desktop_plugin/windows-build.lock.txt (line 5))
+2026-10-18T08:03:20.0763152Z   Downloading pefile-2024.8.26-py3-none-any.whl.metadata (1.4 kB)
+2026-10-18T08:03:20.1408295Z Collecting pyinstaller==6.22.3 (from -r desktop_plugin/windows-build.lock.txt (line 6))
+2026-10-18T08:03:20.1624625Z   Downloading pyinstaller-6.22.3-py3-none-win_amd64.whl.metadata (8.5 kB)
+2026-10-18T08:03:20.2101061Z Collecting pyinstaller-hooks-contrib==2026.8 (from -r desktop_plugin/windows-build.lock.txt (line 7))
+2026-10-18T08:03:20.2314666Z   Downloading pyinstaller_hooks_contrib-2026.8-py3-none-any.whl.metadata (16 kB)
+2026-10-18T08:03:20.2799176Z Collecting pywin32==312 (from -r desktop_plugin/windows-build.lock.txt (line 8))
+2026-10-18T08:03:20.3013795Z   Downloading pywin32-312-cp312-cp312-win_amd64.whl.metadata (11 kB)
+2026-10-18T08:03:20.3456982Z Collecting pywin32-ctypes==0.2.3 (from -r desktop_plugin/windows-build.lock.txt (line 9))
+2026-10-18T08:03:20.3672106Z   Downloading pywin32_ctypes-0.2.3-py3-none-any.whl.metadata (3.9 kB)
+2026-10-18T08:03:20.4766806Z Collecting setuptools==84.0.0 (from -r desktop_plugin/windows-build.lock.txt (line 10))
+2026-10-18T08:03:20.4986399Z   Downloading setuptools-84.0.0-py3-none-any.whl.metadata (6.6 kB)
+2026-10-18T08:03:20.6981234Z Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+2026-10-18T08:03:20.7368264Z Downloading anyio-4.15.1-py3-none-any.whl (132 kB)
+2026-10-18T08:03:20.7935166Z Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+2026-10-18T08:03:20.8571459Z Downloading cffi-2.1.1-cp312-cp312-win_amd64.whl (185 kB)
+2026-10-18T08:03:20.9112067Z Downloading click-8.5.0-py3-none-any.whl (125 kB)
+2026-10-18T08:03:20.9969100Z Downloading cryptography-50.0.2-cp311-abi3-win_amd64.whl (3.8 MB)
+2026-10-18T08:03:21.1209375Z    ---------------------------------------- 3.8/3.8 MB 38.3 MB/s eta 0:00:00
+2026-10-18T08:03:21.1423942Z Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+2026-10-18T08:03:21.1849225Z Downloading httpcore2-2.13.1-py3-none-any.whl (83 kB)
+2026-10-18T08:03:21.2435187Z Downloading httpx2-2.13.1-py3-none-any.whl (95 kB)
+2026-10-18T08:03:21.9110507Z Downloading idna-3.20-py3-none-any.whl (69 kB)
+2026-10-18T08:03:21.9655855Z Downloading jsonschema-4.26.0-py3-none-any.whl (90 kB)
+2026-10-18T08:03:22.0019347Z Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+2026-10-18T08:03:22.0369281Z Downloading mcp-2.3.0-py3-none-any.whl (368 kB)
+2026-10-18T08:03:22.1238946Z Downloading mcp_types-2.3.0-py3-none-any.whl (69 kB)
+2026-10-18T08:03:22.1916748Z Downloading opentelemetry_api-1.45.1-py3-none-any.whl (60 kB)
+2026-10-18T08:03:22.2296671Z Downloading pycparser-3.11-py3-none-any.whl (51 kB)
+2026-10-18T08:03:22.2671193Z Downloading pydantic-2.14.1-py3-none-any.whl (488 kB)
+2026-10-18T08:03:22.3118692Z Downloading pydantic_core-2.50.1-cp312-cp312-win_amd64.whl (2.2 MB)
+2026-10-18T08:03:22.3442468Z    ---------------------------------------- 2.2/2.2 MB 59.7 MB/s eta 0:00:00
+2026-10-18T08:03:22.3658494Z Downloading pyjwt-2.15.1-py3-none-any.whl (33 kB)
+2026-10-18T08:03:22.4021152Z Downloading python_multipart-0.0.32-py3-none-any.whl (30 kB)
+2026-10-18T08:03:22.4402766Z Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+2026-10-18T08:03:22.4814579Z Downloading rpds_py-2026.9.1-cp312-cp312-win_amd64.whl (222 kB)
+2026-10-18T08:03:22.5198732Z Downloading sse_starlette-3.5.0-py3-none-any.whl (17 kB)
+2026-10-18T08:03:22.5574571Z Downloading starlette-1.7.0-py3-none-any.whl (78 kB)
+2026-10-18T08:03:22.5940448Z Downloading truststore-0.10.4-py3-none-any.whl (18 kB)
+2026-10-18T08:03:22.6641409Z Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+2026-10-18T08:03:22.7007005Z Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+2026-10-18T08:03:22.7412100Z Downloading uvicorn-0.54.0-py3-none-any.whl (87 kB)
+2026-10-18T08:03:22.7772083Z Downloading altgraph-0.17.5-py2.py3-none-any.whl (21 kB)
+2026-10-18T08:03:22.8158054Z Downloading packaging-26.3-py3-none-any.whl (129 kB)
+2026-10-18T08:03:22.8513348Z Downloading pefile-2024.8.26-py3-none-any.whl (74 kB)
+2026-10-18T08:03:22.8915008Z Downloading pyinstaller-6.22.3-py3-none-win_amd64.whl (1.5 MB)
+2026-10-18T08:03:22.9214766Z    ---------------------------------------- 1.5/1.5 MB 38.5 MB/s eta 0:00:00
+2026-10-18T08:03:22.9429443Z Downloading pyinstaller_hooks_contrib-2026.8-py3-none-any.whl (462 kB)
+2026-10-18T08:03:22.9871815Z Downloading pywin32-312-cp312-cp312-win_amd64.whl (6.9 MB)
+2026-10-18T08:03:23.1504251Z    ---------------------------------------- 6.9/6.9 MB 42.4 MB/s eta 0:00:00
+2026-10-18T08:03:23.1716163Z Downloading pywin32_ctypes-0.2.3-py3-none-any.whl (30 kB)
+2026-10-18T08:03:23.2110901Z Downloading setuptools-84.0.0-py3-none-any.whl (818 kB)
+2026-10-18T08:03:23.2350330Z    --------------------------------------- 818.2/818.2 kB 17.9 MB/s eta 0:00:00
+2026-10-18T08:03:23.3686318Z Installing collected packages: altgraph, typing-extensions, truststore, setuptools, rpds-py, pywin32-ctypes, pywin32, python-multipart, PyJWT, pycparser, pefile, packaging, idna, h11, click, attrs, annotated-types, uvicorn, typing-inspection, referencing, pyinstaller-hooks-contrib, pydantic-core, opentelemetry-api, httpcore2, cffi, anyio, starlette, pyinstaller, pydantic, jsonschema-specifications, httpx2, cryptography, sse-starlette, mcp-types, jsonschema, mcp
+2026-10-18T08:03:28.6964560Z Successfully installed PyJWT-2.15.1 altgraph-0.17.5 annotated-types-0.8.0 anyio-4.15.1 attrs-26.1.0 cffi-2.1.1 click-8.5.0 cryptography-50.0.2 h11-0.16.0 httpcore2-2.13.1 httpx2-2.13.1 idna-3.20 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 mcp-2.3.0 mcp-types-2.3.0 opentelemetry-api-1.45.1 packaging-26.3 pefile-2024.8.26 pycparser-3.11 pydantic-2.14.1 pydantic-core-2.50.1 pyinstaller-6.22.3 pyinstaller-hooks-contrib-2026.8 python-multipart-0.0.32 pywin32-312 pywin32-ctypes-0.2.3 referencing-0.37.0 rpds-py-2026.9.1 setuptools-84.0.0 sse-starlette-3.5.0 starlette-1.7.0 truststore-0.10.4 typing-extensions-4.16.0 typing-inspection-0.4.4 uvicorn-0.54.0
+2026-10-18T08:03:29.1702453Z No broken requirements found.
+2026-10-18T08:03:29.4852986Z altgraph==0.17.5
+2026-10-18T08:03:29.4853316Z annotated-types==0.8.0
+2026-10-18T08:03:29.4853579Z anyio==4.15.1
+2026-10-18T08:03:29.4853790Z attrs==26.1.0
+2026-10-18T08:03:29.4854006Z cffi==2.1.1
+2026-10-18T08:03:29.4854204Z click==8.5.0
+2026-10-18T08:03:29.4854421Z cryptography==50.0.2
+2026-10-18T08:03:29.4854648Z h11==0.16.0
+2026-10-18T08:03:29.4854849Z httpcore2==2.13.1
+2026-10-18T08:03:29.4855066Z httpx2==2.13.1
+2026-10-18T08:03:29.4855312Z idna==3.20
+2026-10-18T08:03:29.4855506Z jsonschema==4.26.0
+2026-10-18T08:03:29.4855777Z jsonschema-specifications==2025.9.1
+2026-10-18T08:03:29.4856064Z mcp==2.3.0
+2026-10-18T08:03:29.4856282Z mcp-types==2.3.0
+2026-10-18T08:03:29.4856528Z opentelemetry-api==1.45.1
+2026-10-18T08:03:29.4856780Z packaging==26.3
+2026-10-18T08:03:29.4856989Z pefile==2024.8.26
+2026-10-18T08:03:29.4857195Z pycparser==3.11
+2026-10-18T08:03:29.4857395Z pydantic==2.14.1
+2026-10-18T08:03:29.4857614Z pydantic_core==2.50.1
+2026-10-18T08:03:29.4857861Z pyinstaller==6.22.3
+2026-10-18T08:03:29.4858395Z pyinstaller-hooks-contrib==2026.8
+2026-10-18T08:03:29.4858728Z PyJWT==2.15.1
+2026-10-18T08:03:29.4858950Z python-multipart==0.0.32
+2026-10-18T08:03:29.4859185Z pywin32==312
+2026-10-18T08:03:29.4859392Z pywin32-ctypes==0.2.3
+2026-10-18T08:03:29.4859623Z referencing==0.37.0
+2026-10-18T08:03:29.4859832Z rpds-py==2026.9.1
+2026-10-18T08:03:29.4860039Z setuptools==84.0.0
+2026-10-18T08:03:29.4860257Z sse-starlette==3.5.0
+2026-10-18T08:03:29.4860804Z starlette==1.7.0
+2026-10-18T08:03:29.4861021Z truststore==0.10.4
+2026-10-18T08:03:29.4861682Z typing-inspection==0.4.4
+2026-10-18T08:03:29.4861986Z typing_extensions==4.16.0
+2026-10-18T08:03:29.4862234Z uvicorn==0.54.0
+2026-10-18T08:03:29.6050806Z ##[end-action id=__self.__run;outcome=success;conclusion=success;duration_ms=27686]
+2026-10-18T08:03:29.6053555Z ##[start-action display=Verify exact Windows runtime and build closures;id=__self.__run_2]
+2026-10-18T08:03:29.6158714Z ##[group]Run $py = 'desktop_plugin/.venv/Scripts/python.exe'
+2026-10-18T08:03:29.6159056Z [36;1m$py = 'desktop_plugin/.venv/Scripts/python.exe'[0m
+2026-10-18T08:03:29.6159282Z [36;1m@'[0m
+2026-10-18T08:03:29.6159447Z [36;1mimport importlib.metadata as md[0m
+2026-10-18T08:03:29.6159757Z [36;1mfrom shared_interfaces.mcp_server import required_transport_distributions[0m
+2026-10-18T08:03:29.6160100Z [36;1mexpected = required_transport_distributions()[0m
+2026-10-18T08:03:29.6160353Z [36;1mexpected.update({[0m
+2026-10-18T08:03:29.6160538Z [36;1m    'altgraph': '0.17.5',[0m
+2026-10-18T08:03:29.6160739Z [36;1m    'packaging': '26.3',[0m
+2026-10-18T08:03:29.6160947Z [36;1m    'pefile': '2024.8.26',[0m
+2026-10-18T08:03:29.6161139Z [36;1m    'pyinstaller': '6.22.3',[0m
+2026-10-18T08:03:29.6161365Z [36;1m    'pyinstaller-hooks-contrib': '2026.8',[0m
+2026-10-18T08:03:29.6161593Z [36;1m    'pywin32-ctypes': '0.2.3',[0m
+2026-10-18T08:03:29.6161792Z [36;1m    'setuptools': '84.0.0',[0m
+2026-10-18T08:03:29.6161972Z [36;1m})[0m
+2026-10-18T08:03:29.6162127Z [36;1mmismatches = {[0m
+2026-10-18T08:03:29.6162321Z [36;1m    name: (version, md.version(name))[0m
+2026-10-18T08:03:29.6162559Z [36;1m    for name, version in expected.items()[0m
+2026-10-18T08:03:29.6162787Z [36;1m    if md.version(name) != version[0m
+2026-10-18T08:03:29.6162989Z [36;1m}[0m
+2026-10-18T08:03:29.6163144Z [36;1massert not mismatches, mismatches[0m
+2026-10-18T08:03:29.6163421Z [36;1mprint('WINDOWS_PACKAGE_VERSION_CLOSURE_PASS', len(expected))[0m
+2026-10-18T08:03:29.6164034Z [36;1m'@ | & $py -[0m
+2026-10-18T08:03:29.6249804Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-10-18T08:03:29.6250076Z env:
+2026-10-18T08:03:29.6250291Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:03:29.6250659Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-10-18T08:03:29.6250999Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:03:29.6251313Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:03:29.6251626Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:03:29.6251875Z ##[endgroup]
+2026-10-18T08:03:29.9940652Z WINDOWS_PACKAGE_VERSION_CLOSURE_PASS 36
+2026-10-18T08:03:30.0616974Z ##[end-action id=__self.__run_2;outcome=success;conclusion=success;duration_ms=456]
+2026-10-18T08:03:30.0619373Z ##[start-action display=Preflight exact Genie source and real read-only calls on Windows;id=__self.__run_3]
+2026-10-18T08:03:30.0736103Z ##[group]Run $py = 'desktop_plugin/.venv/Scripts/python.exe'
+2026-10-18T08:03:30.0736664Z [36;1m$py = 'desktop_plugin/.venv/Scripts/python.exe'[0m
+2026-10-18T08:03:30.0737029Z [36;1m@'[0m
+2026-10-18T08:03:30.0737264Z [36;1mimport hashlib[0m
+2026-10-18T08:03:30.0737549Z [36;1mfrom pathlib import Path[0m
+2026-10-18T08:03:30.0737977Z [36;1mfrom shared_interfaces import cli, mcp_server, status_tool[0m
+2026-10-18T08:03:30.0738405Z [36;1m[0m
+2026-10-18T08:03:30.0738647Z [36;1mroot = Path('host_return/trial')[0m
+2026-10-18T08:03:30.0739047Z [36;1msqlite_files = sorted(root.rglob('*.sqlite'))[0m
+2026-10-18T08:03:30.0739676Z [36;1mbefore = {str(path): hashlib.sha256(path.read_bytes()).hexdigest() for path in sqlite_files}[0m
+2026-10-18T08:03:30.0740235Z [36;1m[0m
+2026-10-18T08:03:30.0740530Z [36;1mruns = cli._read_registry(root / 'REGISTRY.json')[0m
+2026-10-18T08:03:30.0741237Z [36;1mhost = status_tool.GenieStatusTools(runs)[0m
+2026-10-18T08:03:30.0742558Z [36;1mstatus = host.call('get_run_status', {'run_name': 'actual'})[0m
+2026-10-18T08:03:30.0743116Z [36;1massert status.get('status') == 'PASS', status[0m
+2026-10-18T08:03:30.0743504Z [36;1mconfirmed = [[0m
+2026-10-18T08:03:30.0743818Z [36;1m    item for item in status.get('tasks', [])[0m
+2026-10-18T08:03:30.0744195Z [36;1m    if isinstance(item, dict)[0m
+2026-10-18T08:03:30.0744572Z [36;1m    and isinstance(item.get('fresh_sink'), dict)[0m
+2026-10-18T08:03:30.0745029Z [36;1m    and item['fresh_sink'].get('status') == 'CONFIRMED'[0m
+2026-10-18T08:03:30.0745478Z [36;1m][0m
+2026-10-18T08:03:30.0745701Z [36;1massert confirmed, status[0m
+2026-10-18T08:03:30.0746023Z [36;1mtask_id = confirmed[0]['task_id'][0m
+2026-10-18T08:03:30.0746542Z [36;1mresult = host.call('get_task_result', {'run_name': 'actual', 'task_id': task_id})[0m
+2026-10-18T08:03:30.0747138Z [36;1massert result.get('status') == 'CONFIRMED', result[0m
+2026-10-18T08:03:30.0747708Z [36;1massert result.get('content_role') == 'UNTRUSTED_ACCEPTED_TASK_DATA', result[0m
+2026-10-18T08:03:30.0748190Z [36;1m[0m
+2026-10-18T08:03:30.0748449Z [36;1mserver = mcp_server.build_server(runs)[0m
+2026-10-18T08:03:30.0748815Z [36;1massert server is not None[0m
+2026-10-18T08:03:30.0749354Z [36;1mafter = {str(path): hashlib.sha256(path.read_bytes()).hexdigest() for path in sqlite_files}[0m
+2026-10-18T08:03:30.0749951Z [36;1massert after == before, (before, after)[0m
+2026-10-18T08:03:30.0750500Z [36;1mprint('WINDOWS_SOURCE_AND_READONLY_CALL_CHAIN_PASS', len(sqlite_files), task_id)[0m
+2026-10-18T08:03:30.0751337Z [36;1m'@ | & $py -[0m
+2026-10-18T08:03:30.0817083Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-10-18T08:03:30.0817374Z env:
+2026-10-18T08:03:30.0817606Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:03:30.0817985Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-10-18T08:03:30.0818353Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:03:30.0818674Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:03:30.0818977Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:03:30.0819221Z ##[endgroup]
+2026-10-18T08:03:31.3917602Z WINDOWS_SOURCE_AND_READONLY_CALL_CHAIN_PASS 5 genie-work-host-entry-20261010
+2026-10-18T08:03:31.5219688Z ##[end-action id=__self.__run_3;outcome=success;conclusion=success;duration_ms=1459]
+2026-10-18T08:03:31.5222029Z ##[start-action display=Prepare deterministic seed state with isolated UNKNOWN fixture;id=__self.__run_4]
+2026-10-18T08:03:31.5346495Z ##[group]Run $py = 'desktop_plugin/.venv/Scripts/python.exe'
+2026-10-18T08:03:31.5346866Z [36;1m$py = 'desktop_plugin/.venv/Scripts/python.exe'[0m
+2026-10-18T08:03:31.5347097Z [36;1m@'[0m
+2026-10-18T08:03:31.5347259Z [36;1mimport hashlib, json, shutil[0m
+2026-10-18T08:03:31.5347479Z [36;1mfrom pathlib import Path[0m
+2026-10-18T08:03:31.5347709Z [36;1mfrom run_queue import run_policy as q[0m
+2026-10-18T08:03:31.5347929Z [36;1m[0m
+2026-10-18T08:03:31.5348102Z [36;1msource = Path('host_return/trial')[0m
+2026-10-18T08:03:31.5348342Z [36;1mtarget = Path('desktop_plugin/build_seed')[0m
+2026-10-18T08:03:31.5348571Z [36;1mif target.exists():[0m
+2026-10-18T08:03:31.5348763Z [36;1m    shutil.rmtree(target)[0m
+2026-10-18T08:03:31.5348972Z [36;1mshutil.copytree(source, target)[0m
+2026-10-18T08:03:31.5349165Z [36;1m[0m
+2026-10-18T08:03:31.5349329Z [36;1mregistry_path = target / 'REGISTRY.json'[0m
+2026-10-18T08:03:31.5349631Z [36;1mregistry = json.loads(registry_path.read_text(encoding='utf-8'))[0m
+2026-10-18T08:03:31.5349937Z [36;1massert set(registry) == {'actual'}, registry[0m
+2026-10-18T08:03:31.5350158Z [36;1m[0m
+2026-10-18T08:03:31.5350362Z [36;1munknown_run = 'genie-plugin-unknown-fixture-20261011'[0m
+2026-10-18T08:03:31.5350684Z [36;1munknown_task = 'genie-known-unavailable-fixture-20261011'[0m
+2026-10-18T08:03:31.5351279Z [36;1munknown_queue = target / 'unknown_fixture.sqlite'[0m
+2026-10-18T08:03:31.5351531Z [36;1mq.initialize(unknown_queue, {[0m
+2026-10-18T08:03:31.5351734Z [36;1m    'run_id': unknown_run,[0m
+2026-10-18T08:03:31.5351924Z [36;1m    'max_tasks': 1,[0m
+2026-10-18T08:03:31.5352100Z [36;1m    'max_model_calls': 1,[0m
+2026-10-18T08:03:31.5352326Z [36;1m    'effect_scope': 'owned-local-report-inbox',[0m
+2026-10-18T08:03:31.5352554Z [36;1m})[0m
+2026-10-18T08:03:31.5352716Z [36;1massert q.enqueue(unknown_queue, {[0m
+2026-10-18T08:03:31.5352930Z [36;1m    'task_id': unknown_task,[0m
+2026-10-18T08:03:31.5353170Z [36;1m    'goal': 'synthetic-readonly-unknown-fixture',[0m
+2026-10-18T08:03:31.5353405Z [36;1m    'input_sha256': '0' * 64,[0m
+2026-10-18T08:03:31.5353593Z [36;1m    'max_attempts': 1,[0m
+2026-10-18T08:03:31.5353771Z [36;1m}) == 'ENQUEUED'[0m
+2026-10-18T08:03:31.5353975Z [36;1munknown_root = target / 'unknown_fixture_work'[0m
+2026-10-18T08:03:31.5354213Z [36;1munknown_root.mkdir()[0m
+2026-10-18T08:03:31.5354430Z [36;1m(unknown_root / '.fixture-root').write_text([0m
+2026-10-18T08:03:31.5354735Z [36;1m    'synthetic UNKNOWN fixture root; no task ledger is provisioned\n',[0m
+2026-10-18T08:03:31.5355026Z [36;1m    encoding='utf-8')[0m
+2026-10-18T08:03:31.5355218Z [36;1mregistry['unknown-fixture'] = {[0m
+2026-10-18T08:03:31.5355441Z [36;1m    'queue': 'unknown_fixture.sqlite',[0m
+2026-10-18T08:03:31.5355656Z [36;1m    'run_id': unknown_run,[0m
+2026-10-18T08:03:31.5355863Z [36;1m    'owned_root': 'unknown_fixture_work',[0m
+2026-10-18T08:03:31.5356068Z [36;1m}[0m
+2026-10-18T08:03:31.5356223Z [36;1mregistry_path.write_text([0m
+2026-10-18T08:03:31.5356504Z [36;1m    json.dumps(registry, sort_keys=True, separators=(',', ':')) + '\n',[0m
+2026-10-18T08:03:31.5356792Z [36;1m    encoding='utf-8')[0m
+2026-10-18T08:03:31.5356968Z [36;1m[0m
+2026-10-18T08:03:31.5357115Z [36;1mrecords = [][0m
+2026-10-18T08:03:31.5357305Z [36;1mfor path in sorted(target.rglob('*')):[0m
+2026-10-18T08:03:31.5357579Z [36;1m    if path.is_file() and path.name != 'SEED_MANIFEST.json':[0m
+2026-10-18T08:03:31.5357842Z [36;1m        raw = path.read_bytes()[0m
+2026-10-18T08:03:31.5358042Z [36;1m        records.append({[0m
+2026-10-18T08:03:31.5358267Z [36;1m            'path': path.relative_to(target).as_posix(),[0m
+2026-10-18T08:03:31.5358539Z [36;1m            'sha256': hashlib.sha256(raw).hexdigest(),[0m
+2026-10-18T08:03:31.5358774Z [36;1m            'size': len(raw),[0m
+2026-10-18T08:03:31.5358954Z [36;1m        })[0m
+2026-10-18T08:03:31.5359221Z [36;1mcanonical = json.dumps(records, sort_keys=True, separators=(',', ':')).encode()[0m
+2026-10-18T08:03:31.5359637Z [36;1mseed_id = 'desktop-plugin-seed-' + hashlib.sha256(canonical).hexdigest()[:20][0m
+2026-10-18T08:03:31.5359980Z [36;1mmanifest = {'seed_id': seed_id, 'files': records}[0m
+2026-10-18T08:03:31.5360242Z [36;1m(target / 'SEED_MANIFEST.json').write_text([0m
+2026-10-18T08:03:31.5360540Z [36;1m    json.dumps(manifest, sort_keys=True, separators=(',', ':')) + '\n',[0m
+2026-10-18T08:03:31.5360825Z [36;1m    encoding='utf-8')[0m
+2026-10-18T08:03:31.5361049Z [36;1mprint('SEED_MANIFEST_PASS', seed_id, len(records))[0m
+2026-10-18T08:03:31.5361371Z [36;1mprint('UNKNOWN_FIXTURE_PASS', unknown_run, unknown_task)[0m
+2026-10-18T08:03:31.5361636Z [36;1m'@ | & $py -[0m
+2026-10-18T08:03:31.5417659Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-10-18T08:03:31.5417935Z env:
+2026-10-18T08:03:31.5418157Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:03:31.5418508Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-10-18T08:03:31.5418861Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:03:31.5419162Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:03:31.5420095Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:03:31.5420343Z ##[endgroup]
+2026-10-18T08:03:31.8674355Z SEED_MANIFEST_PASS desktop-plugin-seed-18dbc31691b8a1da6626 33
+2026-10-18T08:03:31.8674880Z UNKNOWN_FIXTURE_PASS genie-plugin-unknown-fixture-20261011 genie-known-unavailable-fixture-20261011
+2026-10-18T08:03:31.9265951Z ##[end-action id=__self.__run_4;outcome=success;conclusion=success;duration_ms=404]
+2026-10-18T08:03:31.9268120Z ##[start-action display=Build self-contained Windows stdio executable;id=__self.__run_5]
+2026-10-18T08:03:31.9377217Z ##[group]Run desktop_plugin/.venv/Scripts/pyinstaller.exe --clean --noconfirm --distpath desktop_plugin/build_dist --workpath desktop_plugin/build_work desktop_plugin/genie_mcp.spec
+2026-10-18T08:03:31.9378155Z [36;1mdesktop_plugin/.venv/Scripts/pyinstaller.exe --clean --noconfirm --distpath desktop_plugin/build_dist --workpath desktop_plugin/build_work desktop_plugin/genie_mcp.spec[0m
+2026-10-18T08:03:31.9438029Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-10-18T08:03:31.9438324Z env:
+2026-10-18T08:03:31.9438558Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:03:31.9438916Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-10-18T08:03:31.9439442Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:03:31.9439755Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:03:31.9440054Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:03:31.9440293Z ##[endgroup]
+2026-10-18T08:03:32.4526235Z 178 INFO: PyInstaller: 6.22.3, contrib hooks: 2026.8
+2026-10-18T08:03:32.4528900Z 179 INFO: Python: 3.12.10
+2026-10-18T08:03:32.4760726Z 201 INFO: Platform: Windows-2025Server-10.0.26100-SP0
+2026-10-18T08:03:32.4761106Z 201 INFO: Python environment: D:\a\test\test\desktop_plugin\.venv
+2026-10-18T08:03:32.4791513Z 204 INFO: Removing temporary files and cleaning cache in C:\Users\runneradmin\AppData\Local\pyinstaller
+2026-10-18T08:03:32.4852873Z 210 INFO: Module search paths (PYTHONPATH):
+2026-10-18T08:03:32.4853292Z ['D:\\a\\test\\test\\desktop_plugin\\.venv\\Scripts\\pyinstaller.exe',
+2026-10-18T08:03:32.4853649Z  'C:\\hostedtoolcache\\windows\\Python\\3.12.10\\x64\\python312.zip',
+2026-10-18T08:03:32.4853976Z  'C:\\hostedtoolcache\\windows\\Python\\3.12.10\\x64\\DLLs',
+2026-10-18T08:03:32.4854302Z  'C:\\hostedtoolcache\\windows\\Python\\3.12.10\\x64\\Lib',
+2026-10-18T08:03:32.4854578Z  'C:\\hostedtoolcache\\windows\\Python\\3.12.10\\x64',
+2026-10-18T08:03:32.4854828Z  'D:\\a\\test\\test\\desktop_plugin\\.venv',
+2026-10-18T08:03:32.4855088Z  'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages',
+2026-10-18T08:03:32.4855392Z  'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\win32',
+2026-10-18T08:03:32.4855736Z  'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\win32\\lib',
+2026-10-18T08:03:32.4856072Z  'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\pythonwin',
+2026-10-18T08:03:32.4856365Z  'D:\\a\\test\\test\\desktop_plugin',
+2026-10-18T08:03:32.4856558Z  'D:\\a\\test\\test']
+2026-10-18T08:03:32.6944950Z 420 INFO: Appending 'datas' from .spec
+2026-10-18T08:03:32.7038754Z 429 INFO: checking Analysis
+2026-10-18T08:03:32.7039531Z 429 INFO: Building Analysis because Analysis-00.toc is non existent
+2026-10-18T08:03:32.7040355Z 429 INFO: Looking for Python shared library...
+2026-10-18T08:03:32.7040844Z 429 INFO: Using Python shared library: C:\hostedtoolcache\windows\Python\3.12.10\x64\python312.dll
+2026-10-18T08:03:32.7041416Z 429 INFO: Running Analysis Analysis-00.toc
+2026-10-18T08:03:32.7041764Z 429 INFO: Target bytecode optimization level: 0
+2026-10-18T08:03:32.7042020Z 429 INFO: Initializing module dependency graph...
+2026-10-18T08:03:32.7064477Z 431 INFO: Initializing module graph hook caches...
+2026-10-18T08:03:32.7167001Z 441 INFO: Analyzing modules for base_library.zip ...
+2026-10-18T08:03:33.8315709Z 1557 INFO: Processing standard module hook 'hook-encodings.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+2026-10-18T08:03:34.1751839Z 1901 INFO: Processing standard module hook 'hook-math.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+2026-10-18T08:03:35.2662745Z 2991 INFO: Processing standard module hook 'hook-pickle.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+2026-10-18T08:03:36.3201216Z 4044 INFO: Processing standard module hook 'hook-heapq.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+2026-10-18T08:03:36.7304232Z 4456 INFO: Caching module dependency graph...
+2026-10-18T08:03:36.7604241Z 4486 INFO: Analyzing D:\a\test\test\desktop_plugin\entry.py
+2026-10-18T08:03:36.8605778Z 4586 INFO: Processing standard module hook 'hook-pydantic.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+2026-10-18T08:03:37.1167068Z 4842 INFO: Processing pre-safe-import-module hook 'hook-typing_extensions.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+2026-10-18T08:03:37.1172289Z 4843 INFO: SetuptoolsInfo: initializing cached setuptools info...
+2026-10-18T08:03:37.6630308Z 5389 INFO: Processing standard module hook 'hook-multiprocessing.util.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+2026-10-18T08:03:37.8063917Z 5531 INFO: Processing standard module hook 'hook-xml.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+2026-10-18T08:03:38.0128606Z 5738 INFO: Processing standard module hook 'hook-_ctypes.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+2026-10-18T08:03:38.4213724Z 6146 INFO: Processing standard module hook 'hook-platform.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+2026-10-18T08:03:38.7095922Z 6433 INFO: Processing standard module hook 'hook-zoneinfo.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+2026-10-18T08:03:38.7335948Z 6458 INFO: Processing standard module hook 'hook-sysconfig.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+2026-10-18T08:03:39.4172527Z 7143 INFO: Processing standard module hook 'hook-anyio.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+2026-10-18T08:03:40.3567691Z 8082 INFO: Processing standard module hook 'hook-opentelemetry.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+2026-10-18T08:03:40.6153734Z 8340 INFO: Processing standard module hook 'hook-uvicorn.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+2026-10-18T08:03:41.5421337Z 9266 INFO: Processing standard module hook 'hook-difflib.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+2026-10-18T08:03:41.6661776Z 9391 INFO: Processing standard module hook 'hook-webbrowser.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+2026-10-18T08:03:42.5781305Z 10302 INFO: Processing pre-safe-import-module hook 'hook-backports.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+2026-10-18T08:03:42.5783175Z 10302 INFO: Setuptools: 'backports' appears to be a full setuptools-vendored copy - creating alias to 'setuptools._vendor.backports'!
+2026-10-18T08:03:42.5824639Z 10308 INFO: Processing standard module hook 'hook-setuptools.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+2026-10-18T08:03:42.5907678Z 10316 INFO: Processing pre-safe-import-module hook 'hook-distutils.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+2026-10-18T08:03:42.6107146Z 10336 INFO: Processing pre-safe-import-module hook 'hook-jaraco.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+2026-10-18T08:03:42.6108215Z 10336 INFO: Setuptools: 'jaraco' appears to be a full setuptools-vendored copy - creating alias to 'setuptools._vendor.jaraco'!
+2026-10-18T08:03:42.6181972Z 10344 INFO: Processing pre-safe-import-module hook 'hook-more_itertools.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+2026-10-18T08:03:42.6184011Z 10344 INFO: Setuptools: 'more_itertools' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.more_itertools'!
+2026-10-18T08:03:42.7248183Z 10449 INFO: Processing standard module hook 'hook-_osx_support.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+2026-10-18T08:03:42.7359700Z 10461 INFO: Processing pre-safe-import-module hook 'hook-packaging.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+2026-10-18T08:03:42.9509354Z 10676 INFO: Processing standard module hook 'hook-setuptools._vendor.jaraco.text.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+2026-10-18T08:03:42.9518760Z 10678 INFO: Processing pre-safe-import-module hook 'hook-importlib_resources.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+2026-10-18T08:03:43.4716408Z 11196 INFO: Processing pre-safe-import-module hook 'hook-tomli.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+2026-10-18T08:03:43.4717867Z 11196 INFO: Setuptools: 'tomli' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.tomli'!
+2026-10-18T08:03:43.8965786Z 11622 INFO: Processing pre-safe-import-module hook 'hook-wheel.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+2026-10-18T08:03:43.8967304Z 11622 INFO: Setuptools: 'wheel' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.wheel'!
+2026-10-18T08:03:44.1195106Z 11844 INFO: Processing standard module hook 'hook-cryptography.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+2026-10-18T08:03:45.4333589Z 13158 INFO: hook-cryptography: cryptography does not seem to be using dynamically linked OpenSSL.
+2026-10-18T08:03:45.5260270Z 13251 INFO: Processing standard module hook 'hook-pywintypes.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+2026-10-18T08:03:45.6697031Z 13394 INFO: Processing standard module hook 'hook-jsonschema.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+2026-10-18T08:03:45.8806129Z 13606 INFO: Processing standard module hook 'hook-jsonschema_specifications.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+2026-10-18T08:03:45.9934260Z 13719 INFO: Analyzing hidden import 'sqlite3'
+2026-10-18T08:03:45.9947926Z 13719 INFO: Processing standard module hook 'hook-sqlite3.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+2026-10-18T08:03:46.2062860Z 13931 INFO: Processing module hooks (post-graph stage)...
+2026-10-18T08:03:46.4991833Z 14224 WARNING: Hidden import "tzdata" not found!
+2026-10-18T08:03:46.8887186Z 14613 INFO: Performing binary vs. data reclassification (275 entries)
+2026-10-18T08:03:46.9021901Z 14627 INFO: Looking for ctypes DLLs
+2026-10-18T08:03:46.9248332Z 14650 INFO: Analyzing run-time hooks ...
+2026-10-18T08:03:46.9295995Z 14655 INFO: Including run-time hook 'pyi_rth_inspect.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+2026-10-18T08:03:46.9316938Z 14657 INFO: Including run-time hook 'pyi_rth_pkgutil.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+2026-10-18T08:03:46.9333008Z 14659 INFO: Including run-time hook 'pyi_rth_multiprocessing.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+2026-10-18T08:03:46.9349434Z 14659 INFO: Including run-time hook 'pyi_rth_setuptools.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+2026-10-18T08:03:46.9359241Z 14661 INFO: Including run-time hook 'pyi_rth_pywintypes.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\rthooks'
+2026-10-18T08:03:46.9366141Z 14661 INFO: Including run-time hook 'pyi_rth_cryptography_openssl.py' from 'D:\\a\\test\\test\\desktop_plugin\\.venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\rthooks'
+2026-10-18T08:03:46.9549848Z 14679 INFO: Creating base_library.zip...
+2026-10-18T08:03:46.9720794Z 14697 INFO: Looking for dynamic libraries
+2026-10-18T08:03:47.9806071Z 15705 INFO: Extra DLL search directories (AddDllDirectory): []
+2026-10-18T08:03:47.9806427Z 15705 INFO: Extra DLL search directories (PATH): []
+2026-10-18T08:03:49.0480025Z 16772 INFO: Warnings written to D:\a\test\test\desktop_plugin\build_work\genie_mcp\warn-genie_mcp.txt
+2026-10-18T08:03:49.1230886Z 16847 INFO: Graph cross-reference written to D:\a\test\test\desktop_plugin\build_work\genie_mcp\xref-genie_mcp.html
+2026-10-18T08:03:49.1559588Z 16881 INFO: checking PYZ
+2026-10-18T08:03:49.1560007Z 16881 INFO: Building PYZ because PYZ-00.toc is non existent
+2026-10-18T08:03:49.1560840Z 16881 INFO: Building PYZ (ZlibArchive) D:\a\test\test\desktop_plugin\build_work\genie_mcp\PYZ-00.pyz
+2026-10-18T08:03:49.8280944Z 17553 INFO: Building PYZ (ZlibArchive) D:\a\test\test\desktop_plugin\build_work\genie_mcp\PYZ-00.pyz completed successfully.
+2026-10-18T08:03:49.8583467Z 17582 INFO: checking PKG
+2026-10-18T08:03:49.8584530Z 17582 INFO: Building PKG because PKG-00.toc is non existent
+2026-10-18T08:03:49.8585025Z 17582 INFO: Building PKG (CArchive) genie-mcp.pkg
+2026-10-18T08:03:55.0329332Z 22758 INFO: Building PKG (CArchive) genie-mcp.pkg completed successfully.
+2026-10-18T08:03:55.0388394Z 22764 INFO: Bootloader D:\a\test\test\desktop_plugin\.venv\Lib\site-packages\PyInstaller\bootloader\Windows-64bit-intel\run.exe
+2026-10-18T08:03:55.0388919Z 22764 INFO: checking EXE
+2026-10-18T08:03:55.0389276Z 22764 INFO: Building EXE because EXE-00.toc is non existent
+2026-10-18T08:03:55.0389661Z 22764 INFO: Building EXE from EXE-00.toc
+2026-10-18T08:03:55.0391155Z 22764 INFO: Copying bootloader EXE to D:\a\test\test\desktop_plugin\build_dist\genie-mcp.exe
+2026-10-18T08:03:55.0409586Z 22766 INFO: Copying icon to EXE
+2026-10-18T08:03:55.0426745Z 22768 INFO: Copying 0 resources to EXE
+2026-10-18T08:03:55.0427132Z 22768 INFO: Embedding manifest in EXE
+2026-10-18T08:03:55.0442503Z 22770 INFO: Appending PKG archive to EXE
+2026-10-18T08:03:55.0549442Z 22781 INFO: Fixing EXE headers
+2026-10-18T08:03:55.1747265Z 22899 INFO: Building EXE from EXE-00.toc completed successfully.
+2026-10-18T08:03:55.1806690Z 22905 INFO: Build complete! The results are available in: D:\a\test\test\desktop_plugin\build_dist
+2026-10-18T08:03:55.3405226Z ##[end-action id=__self.__run_5;outcome=success;conclusion=success;duration_ms=23413]
+2026-10-18T08:03:55.3407638Z ##[start-action display=Assemble portable plus Codex-compatible plugin folder;id=__self.__run_6]
+2026-10-18T08:03:55.3514222Z ##[group]Run $root = 'desktop_plugin/staging/genie-readonly'
+2026-10-18T08:03:55.3514561Z [36;1m$root = 'desktop_plugin/staging/genie-readonly'[0m
+2026-10-18T08:03:55.3514895Z [36;1mNew-Item -ItemType Directory -Force -Path "$root/bin" | Out-Null[0m
+2026-10-18T08:03:55.3515283Z [36;1mNew-Item -ItemType Directory -Force -Path "$root/.codex-plugin" | Out-Null[0m
+2026-10-18T08:03:55.3515983Z [36;1mCopy-Item desktop_plugin/package/plugin.json "$root/plugin.json"[0m
+2026-10-18T08:03:55.3516490Z [36;1mCopy-Item desktop_plugin/package/mcp.json "$root/mcp.json"[0m
+2026-10-18T08:03:55.3516942Z [36;1mCopy-Item desktop_plugin/package/.codex-plugin/plugin.json "$root/.codex-plugin/plugin.json"[0m
+2026-10-18T08:03:55.3517369Z [36;1mCopy-Item desktop_plugin/package/.mcp.json "$root/.mcp.json"[0m
+2026-10-18T08:03:55.3517740Z [36;1mCopy-Item desktop_plugin/build_dist/genie-mcp.exe "$root/bin/genie-mcp.exe"[0m
+2026-10-18T08:03:55.3518145Z [36;1mGet-ChildItem -Force -Recurse $root | Select-Object FullName,Length[0m
+2026-10-18T08:03:55.3573701Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-10-18T08:03:55.3574019Z env:
+2026-10-18T08:03:55.3574244Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:03:55.3574619Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-10-18T08:03:55.3574977Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:03:55.3575290Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:03:55.3575588Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:03:55.3575830Z ##[endgroup]
+2026-10-18T08:03:55.6751713Z 
+2026-10-18T08:03:55.6813981Z [32;1mFullName                                                                      [0m[32;1m Length[0m
+2026-10-18T08:03:55.6814772Z [32;1m--------                                                                      [0m [32;1m------[0m
+2026-10-18T08:03:55.6815412Z D:\a\test\test\desktop_plugin\staging\genie-readonly\.codex-plugin             
+2026-10-18T08:03:55.6816091Z D:\a\test\test\desktop_plugin\staging\genie-readonly\bin                       
+2026-10-18T08:03:55.6816746Z D:\a\test\test\desktop_plugin\staging\genie-readonly\.mcp.json                 153
+2026-10-18T08:03:55.6817406Z D:\a\test\test\desktop_plugin\staging\genie-readonly\mcp.json                  231
+2026-10-18T08:03:55.6817917Z D:\a\test\test\desktop_plugin\staging\genie-readonly\plugin.json               263
+2026-10-18T08:03:55.6818319Z D:\a\test\test\desktop_plugin\staging\genie-readonly\.codex-plugin\plugin.json 219
+2026-10-18T08:03:55.6818725Z D:\a\test\test\desktop_plugin\staging\genie-readonly\bin\genie-mcp.exe         22134582
+2026-10-18T08:03:55.6818974Z 
+2026-10-18T08:03:55.7181823Z ##[end-action id=__self.__run_6;outcome=success;conclusion=success;duration_ms=377]
+2026-10-18T08:03:55.7184331Z ##[start-action display=Exercise frozen plugin lifecycle, compatibility manifests and stdio tools;id=__self.__run_7]
+2026-10-18T08:03:55.7288574Z ##[group]Run $env:GENIE_PLUGIN_ROOT = (Resolve-Path 'desktop_plugin/staging/genie-readonly').Path
+2026-10-18T08:03:55.7289104Z [36;1m$env:GENIE_PLUGIN_ROOT = (Resolve-Path 'desktop_plugin/staging/genie-readonly').Path[0m
+2026-10-18T08:03:55.7289573Z [36;1mdesktop_plugin/.venv/Scripts/python.exe -B desktop_plugin/test_frozen.py[0m
+2026-10-18T08:03:55.7344700Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-10-18T08:03:55.7344995Z env:
+2026-10-18T08:03:55.7345231Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:03:55.7345622Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-10-18T08:03:55.7345977Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:03:55.7346286Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:03:55.7346594Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:03:55.7346852Z ##[endgroup]
+2026-10-18T08:04:07.3528315Z DESKTOP_PLUGIN_FROZEN_PASS_WITH_UNKNOWN
+2026-10-18T08:04:07.5242800Z ##[end-action id=__self.__run_7;outcome=success;conclusion=success;duration_ms=11805]
+2026-10-18T08:04:07.5245039Z ##[start-action display=Record package identities;id=__self.__run_8]
+2026-10-18T08:04:07.5352116Z ##[group]Run $exe = 'desktop_plugin/staging/genie-readonly/bin/genie-mcp.exe'
+2026-10-18T08:04:07.5352698Z [36;1m$exe = 'desktop_plugin/staging/genie-readonly/bin/genie-mcp.exe'[0m
+2026-10-18T08:04:07.5353066Z [36;1m$exeHash = (Get-FileHash $exe -Algorithm SHA256).Hash.ToLower()[0m
+2026-10-18T08:04:07.5353357Z [36;1m$exeSize = (Get-Item $exe).Length[0m
+2026-10-18T08:04:07.5353870Z [36;1mCompress-Archive -Path 'desktop_plugin/staging/genie-readonly' -DestinationPath 'desktop_plugin/genie-readonly-windows.zip' -Force[0m
+2026-10-18T08:04:07.5354560Z [36;1m$zipHash = (Get-FileHash 'desktop_plugin/genie-readonly-windows.zip' -Algorithm SHA256).Hash.ToLower()[0m
+2026-10-18T08:04:07.5355038Z [36;1m$zipSize = (Get-Item 'desktop_plugin/genie-readonly-windows.zip').Length[0m
+2026-10-18T08:04:07.5355394Z [36;1mWrite-Output "GENIE_DESKTOP_EXE_SHA256=$exeHash"[0m
+2026-10-18T08:04:07.5355694Z [36;1mWrite-Output "GENIE_DESKTOP_EXE_BYTES=$exeSize"[0m
+2026-10-18T08:04:07.5355975Z [36;1mWrite-Output "GENIE_DESKTOP_ZIP_SHA256=$zipHash"[0m
+2026-10-18T08:04:07.5356302Z [36;1mWrite-Output "GENIE_DESKTOP_ZIP_BYTES=$zipSize"[0m
+2026-10-18T08:04:07.5413480Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-10-18T08:04:07.5413770Z env:
+2026-10-18T08:04:07.5413999Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:04:07.5414380Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-10-18T08:04:07.5414744Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:04:07.5415180Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:04:07.5415570Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-10-18T08:04:07.5415920Z ##[endgroup]
+2026-10-18T08:04:08.8929883Z GENIE_DESKTOP_EXE_SHA256=4cf1bd9bc085ed1bd940727114f6033aec5cd841eb9b4a6cc025737316f6d557
+2026-10-18T08:04:08.8937641Z GENIE_DESKTOP_EXE_BYTES=22134582
+2026-10-18T08:04:08.8939359Z GENIE_DESKTOP_ZIP_SHA256=607772eeceaa0715932c32877f8a957cde5ed46b2492da3845e14d245a37a315
+2026-10-18T08:04:08.8940999Z GENIE_DESKTOP_ZIP_BYTES=21839453
+2026-10-18T08:04:08.9428080Z ##[end-action id=__self.__run_8;outcome=success;conclusion=success;duration_ms=1418]
+2026-10-18T08:04:08.9603922Z Post job cleanup.
+2026-10-18T08:04:09.0806443Z (node:8588) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-18T08:04:09.0806996Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-18T08:04:09.1069469Z Post job cleanup.
+2026-10-18T08:04:09.2503964Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-10-18T08:04:09.2816331Z git version 2.56.0.windows.2
+2026-10-18T08:04:09.2875030Z Temporarily overriding HOME='D:\a\_temp\2080a5d7-3a33-469d-b4b4-1b7afc3e6f1b' before making global git config changes
+2026-10-18T08:04:09.2875925Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-18T08:04:09.2883891Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\test\test
+2026-10-18T08:04:09.3195040Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-10-18T08:04:09.3496533Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-10-18T08:04:09.8533258Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-18T08:04:09.8822104Z http.https://github.com/.extraheader
+2026-10-18T08:04:09.8866593Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all http.https://github.com/.extraheader
+2026-10-18T08:04:09.9214271Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-10-18T08:04:10.4198459Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-18T08:04:10.4497450Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-10-18T08:04:10.9288053Z Cleaning up orphan processes
+2026-10-18T08:04:10.9566932Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+

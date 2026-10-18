@@ -207,6 +207,22 @@ def main():
         assert after_second == before_second
         assert first.items() <= after_second.items()
 
+        # Exact format types and duplicate-field rejection must survive freezing.
+        # Mutate only this disposable launch state, preserving every rejected byte.
+        marker_path = state / ".genie-state.json"
+        valid_marker = marker_path.read_bytes()
+        for invalid in (
+            '{"state_format":true,"seeded_from":"seed"}',
+            '{"state_format":1.0,"seeded_from":"seed"}',
+            '{"state_format":2,"state_format":1,"seeded_from":"seed"}',
+        ):
+            marker_path.write_text(invalid, encoding="utf-8")
+            before_reject = _hash_tree(state)
+            _expect_partial_preserve(exe, plugin_root, data)
+            assert _hash_tree(state) == before_reject
+        marker_path.write_bytes(valid_marker)
+        assert _hash_tree(state) == after_second
+
         partial = Path(temp) / "partial"
         partial.mkdir()
         (partial / "state").mkdir()

@@ -1,0 +1,7 @@
+test_copy_failure_keeps_partial_bytes_and_blocks_reseed (desktop_plugin.test_bootstrap_preservation.BootstrapPreservationTests.test_copy_failure_keeps_partial_bytes_and_blocks_reseed) ... ok
+test_publish_failure_keeps_marker_and_blocks_reseed (desktop_plugin.test_bootstrap_preservation.BootstrapPreservationTests.test_publish_failure_keeps_marker_and_blocks_reseed) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.003s
+
+OK

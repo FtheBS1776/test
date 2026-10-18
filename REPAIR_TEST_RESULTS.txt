@@ -282,3 +282,73 @@ EXIT_CODE: 0
 
 COMMAND: git diff --check
 EXIT_CODE: 0
+
+CONTINUED REPAIR VALIDATION — 2026-10-18 UTC
+Scope: R06/R08/R09/R10/R15, no model/provider/scientific execution.
+Previous entries above are preserved predecessor evidence, not replaced results.
+
+Exact tested GitHub source commit: 5b7085b0b5a97c21694d7d04d5bbf71287836bd8
+Exact tested tree: 5fcf6272e5c35b0bbe2497bc0444938e111517de
+Matching local source commit: e96b08d (same tree; distinct author/history).
+Run: https://github.com/FtheBS1776/test/actions/runs/39109938855
+Branch: repair/genie-recovery-validation-20261018 (isolated; main untouched).
+Final report/log additions change documentation only relative to that tree.
+
+RESULTS:
+- Windows 2025, Python 3.12.10: 101 unittest methods PASS, zero skips.
+  Includes actual Windows publication, junction rejection, concurrent staging,
+  COM Known Folder read, preserve-on-failure and published-state full driver route.
+- Existing Windows queue script: 19 checks PASS.
+- Existing Windows bridge script: 25 checks PASS.
+- Ubuntu 24.04, Python 3.12.10, unchanged exact MCP 2.3.0 closure:
+  8 SDK transport tests PASS (in-process, stdio, loopback HTTP).
+- Windows pinned transport/build closure: 36 exact distributions verified.
+  Rebuilt executable: DESKTOP_PLUGIN_FROZEN_PASS_WITH_UNKNOWN.
+  Includes fresh/repeated launch, exact two tools, read-only result and untrusted
+  text label, UNKNOWN/missing identifiers, partial/abandoned state preservation.
+  "Frozen" here is the PyInstaller executable format, not a governance freeze.
+- New local bootstrap regression: interrupted copy reproduced FAIL before patch
+  (staging deleted); interrupted-copy and failed-publication tests both PASS after.
+- Local isolated SDK installation: pip check PASS. Initial HTTP case failed on
+  ambient SOCKS proxy dependency; all 8 PASS with proxy environment removed for
+  the loopback-only test process. No dependency/pin was relaxed or added.
+- Existing eight package script bodies compared byte-for-byte after YAML parsing:
+  reused unchanged through one composite action, not duplicated.
+- 353 protected historical files byte-compared with base ad508c6: UNCHANGED.
+- git diff --check: PASS.
+
+Job logs (captured decoded text, newline-normalized):
+repair_validation/WINDOWS_GITHUB_JOB_117623689497.log
+repair_validation/SDK_GITHUB_JOB_117623689355.log
+repair_validation/PACKAGE_GITHUB_JOB_117623689567.log
+Local negative and positive evidence:
+repair_validation/BOOTSTRAP_PREPATCH_FAILURE.log
+repair_validation/BOOTSTRAP_POSTPATCH_PASS.log
+repair_validation/SDK_LOCAL_PROXY_FAILURE.log
+repair_validation/SDK_LOCAL_LOOPBACK_PASS.log
+First Windows/SDK run logs remain alongside these predecessor records.
+
+Disposable build identities from final job; binaries not uploaded/distributed:
+EXE_SHA256=4cf1bd9bc085ed1bd940727114f6033aec5cd841eb9b4a6cc025737316f6d557
+EXE_BYTES=22134582
+ZIP_SHA256=607772eeceaa0715932c32877f8a957cde5ed46b2492da3845e14d245a37a315
+ZIP_BYTES=21839453
+These are observations of that build, not reproducibility or signed custody proof.
+The historical b3945f3... user CLI package remains distinct and unchanged.
+
+Runner boundary verified before use:
+GitHub repository metadata visibility=public; standard windows-2025/ubuntu-24.04
+runners only, no cache or artifact uploads, model credentials or paid fallback.
+Official pricing/scope checked: https://docs.github.com/en/billing/concepts/product-billing/github-actions
+Standard runner labels: https://docs.github.com/en/actions/reference/runners/github-hosted-runners
+No new paid capacity, billing changes, pilot rerun, main merge, deployment,
+scientific execution, promotion, governance freeze or master-roadmap write.
+
+LIMITATIONS / NEXT ELIGIBLE ACTION:
+Fresh independent review of the exact combined source remains pending. Same-thread
+self-review and hosted tests do not supply reviewer independence. Exact old six
+Windows failure traces remain unavailable; fresh PASS does not reconstruct them.
+No actual user-host/CLI registration was tested for the rebuilt executable.
+No actual permitted cost-bounded model workflow was run. Review the existing
+source candidate and then repair findings; an actual model path must still have
+a reviewed cost/exposure contract before entry. Preserve all scoped HOLDs.

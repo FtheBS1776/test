@@ -1,0 +1,14 @@
+test_copy_failure_keeps_partial_bytes_and_blocks_reseed (desktop_plugin.test_bootstrap_preservation.BootstrapPreservationTests.test_copy_failure_keeps_partial_bytes_and_blocks_reseed) ... FAIL
+
+======================================================================
+FAIL: test_copy_failure_keeps_partial_bytes_and_blocks_reseed (desktop_plugin.test_bootstrap_preservation.BootstrapPreservationTests.test_copy_failure_keeps_partial_bytes_and_blocks_reseed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/27265db857a2/r03_isolated/desktop_plugin/test_bootstrap_preservation.py", line 26, in test_copy_failure_keeps_partial_bytes_and_blocks_reseed
+    self.assertEqual(len(staged), 1)
+AssertionError: 0 != 1
+
+----------------------------------------------------------------------
+Ran 1 test in 0.002s
+
+FAILED (failures=1)
