@@ -1,0 +1,77 @@
+{
+  "classification": "USER_REPORTED_BLOCKED_HOST_ATTEMPT_NOT_INDEPENDENT_ATTESTATION",
+  "received_date_local": "2026-10-18",
+  "disposition": "BLOCKED_TASK_LOCAL_ENVIRONMENT",
+  "verified_plan_reported": {
+    "sha256": "7b83fce1abdad93ca075944c6872456cdbe38eaf86637875ecb616701edee73e",
+    "bytes": 14084,
+    "pinned_commit": "078da1587451bb57922e4fe431e644d42e5fca21",
+    "local_reference_matches": true
+  },
+  "stage_basename": "genie-repair-stage-20261018",
+  "stage_created_reported": true,
+  "stage_directory_checks_reported": {
+    "TEMP": true,
+    "TMP": true,
+    "TMPDIR": true,
+    "PYINSTALLER_CONFIG_DIR": true,
+    "ordinary_stage_local_directories": true
+  },
+  "bytecode_user_site_pip_configuration_controls_reported": "PASS",
+  "stop_reported": "PYTHONHOME and PYTHONPATH remained visible after attempted process-local removal",
+  "actual_removal_command": "NOT_SUPPLIED",
+  "actual_check_command": "NOT_SUPPLIED",
+  "powershell_version": "UNKNOWN",
+  "same_process_boundary_established": false,
+  "root_cause": "UNDETERMINED",
+  "not_reached_reported": [
+    "GetTempPathW",
+    "tempfile.gettempdir",
+    "Git/Python versions",
+    "bootstrap pip",
+    "source clone/commit/tree verification",
+    "dependencies",
+    "build",
+    "archive/package hashes"
+  ],
+  "probe_launches_reported": 0,
+  "source_clone_reported": false,
+  "build_commands_reported": false,
+  "protected_plugin_registration_legacy_canonical_writes_reported": false,
+  "other_effects_reported": "No plugin executable/tools, activation, registration changes, state creation/migration, dependency installation, science, pilot, merge, deployment or roadmap mutation.",
+  "cost_observation": {
+    "source_retrieval_service_reported": "Firecrawl",
+    "credits_reported_consumed": 1,
+    "included_allowance_status": "UNKNOWN",
+    "incremental_monetary_charge": "UNKNOWN",
+    "no_genie_provider_model_api_call_reported": true,
+    "disposition": "Preserve charged/consumed-unit observation; forbid further credit-consuming retrieval for this follow-up. No free/zero-total-cost claim."
+  },
+  "preserved_evidence_reported": [
+    "evidence/runtime-prerequisites.json",
+    "evidence/task-process.json",
+    "evidence/task-session-transcript.txt",
+    "evidence/plan-verification.json",
+    "source-downloads/HOST_STAGE_PLAN_20261018.md"
+  ],
+  "limits": [
+    "Host evidence files are not available to this cloud session; the report alone is not their byte verification.",
+    "Profile/project paths omitted from public repository; original report remains in chat.",
+    "No cause or feasible correction is established from visible variable names alone.",
+    "An existing stage must not be resumed or cleaned under the original exclusive-stage precondition.",
+    "No new runtime test, build, native compatibility or full cost-containment pass."
+  ],
+  "next_eligible_action": "Read-only inspection/redaction of existing host evidence; no cleanup retry or plan resume.",
+  "research_hypotheses": [
+    {
+      "hypothesis": "PowerShell 7.5 string binding can leave an empty environment entry after SetEnvironmentVariable(...,$null); provider $env assignment differs.",
+      "status": "POSSIBLE_NOT_DIAGNOSED",
+      "primary_source": "https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.5"
+    },
+    {
+      "hypothesis": "Cleanup and check may have used different processes, scopes or captured snapshots.",
+      "status": "POSSIBLE_NOT_DIAGNOSED",
+      "primary_source": "https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.5"
+    }
+  ]
+}

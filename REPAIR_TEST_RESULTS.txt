@@ -803,3 +803,31 @@ and HOST_STAGE_PREPARATION_CHECKS_20261018.json; no global whitespace PASS claim
 Raw check output is JSON-escaped to preserve exact trailing spaces without
 creating a second whitespace-bearing text artifact; initial capture attempt
 and its failed staged whitespace check are both retained in that JSON record.
+
+
+2026-10-18 — user-reported blocked host-stage attempt
+Pinned 14,084-byte plan reportedly matched 7b83fce1...edee73e exactly. Stage
+created; stage-local temp/cache and selected environment controls reportedly
+passed. PYTHONHOME/PYTHONPATH remained visible after attempted process-local
+removal, so operator stopped BLOCKED_TASK_LOCAL_ENVIRONMENT. No clone/build,
+probe (0), dependencies or runtime prerequisite/native path checks reached.
+No protected package/registration/cache/canonical write reported. Host evidence
+files remain on laptop, not independently read or byte-verified in this session.
+Normalized report: HOST_TASK_ENVIRONMENT_BLOCKER_20261018.json.
+
+Cost exception: source retrieval reportedly consumed ONE FIRECRAWL CREDIT.
+Preserve that consumption. Included allowance and incremental monetary charge
+UNKNOWN; no free/zero-cost claim. No Genie/provider/model API call was reported.
+The next evidence-only request needs no retrieval/network/credit service.
+
+Primary-source PowerShell 7.5 review identifies null/string empty-entry semantics
+and process inheritance as possible explanations; actual cleanup/check commands,
+shell version and same-process observations are absent. Root cause UNDETERMINED.
+No environment workaround, cleanup retry, new stage, build/probe permission or
+source repair is inferred. Existing pinned plan and review/evidence bytes remain
+unchanged. Next action: read/redact the four existing host evidence files using
+HOST_ENVIRONMENT_EVIDENCE_REQUEST_20261018.md; stop after the bounded report.
+No new runtime tests warranted for this attributed correspondence/docs update.
+JSON/report bindings, exact pinned-plan SHA256/length, attributed one-credit
+consumption/UNKNOWN charge, and docs/evidence-only changed-path checks PASS.
+Current-delta whitespace check PASS. No prior raw review artifact was edited.

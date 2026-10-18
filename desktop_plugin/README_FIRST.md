@@ -22,6 +22,8 @@ This narrows reported host identity/tool visibility for the historical fixture-b
 
 The next isolated preparation is specified in [HOST_STAGE_PLAN_20261018.md](HOST_STAGE_PLAN_20261018.md): use an existing exact build runtime, preserve the old installation/cache, build into a new project stage, then make one gated missing-root rejection probe. Missing prerequisites stop without global installation. This is preparation only; no current laptop build/probe result, package activation or canonical-state creation is established. Static review records and the first review's corrected findings are retained under `repair_validation/host_stage_plan_review_v1` and `repair_validation/host_stage_plan_review_v2`.
 
+The subsequent user-reported attempt created the exclusive stage, then stopped at `BLOCKED_TASK_LOCAL_ENVIRONMENT` because `PYTHONHOME` and `PYTHONPATH` remained visible after attempted removal. No clone, build or probe was reached. The original plan remains unchanged; do not resume or clean the occupied stage. The removal/check commands, shell version and process boundary are not supplied here, so the cause remains undetermined. The report also records one Firecrawl retrieval credit consumed; included allowance and monetary charge are UNKNOWN. See `repair_validation/HOST_TASK_ENVIRONMENT_BLOCKER_20261018.json` and [the read-only evidence request](HOST_ENVIRONMENT_EVIDENCE_REQUEST_20261018.md). No further credit-consuming retrieval is part of that request.
+
 ## Historical fixture-backed package record (superseded)
 
 The following record describes its original source/binary, not the current live-state candidate.
