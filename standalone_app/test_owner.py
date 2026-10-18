@@ -154,6 +154,42 @@ class Tests(unittest.TestCase):
             owner.RUN_CONTROL_SHA256 = original
         self.assertFalse(self.app().exists())
 
+    def test_published_run_drives_through_real_binder_and_shared_driver(self):
+        from standalone_app import execution_bridge
+        spec = _spec()
+        costs = {role: {"max_micro_usd": 0, "quote_ref": "NO_MODEL_FIXTURE"}
+                 for role in ("author", "reviewer", "repair")}
+        spec["policy"]["cost_policy"] = {
+            "mode": "DISABLE_ALL", "limit_micro_usd": 0,
+            "authorization_ref": None, "quotes": costs}
+        owner.create_first_run(spec)
+        seen = []
+
+        def worker(action):
+            seen.append(action)
+            self.assertEqual(action["task_materials"]["text"], "standalone-owner-input")
+            return {"token": action["token"], "outcome": "OBSERVED_ACCEPTED",
+                    "agent": "native-fixture", "evidence": {"scope": "NO_MODEL_CALL"},
+                    "text": "Native route fixture result"}
+
+        def reviewer(action):
+            self.assertEqual(action["token"], seen[0]["token"])
+            return {"token": action["token"], "candidate_hash": action["candidate_sha256"],
+                    "decision": "ACCEPT", "reason": "DETERMINISTIC_FIXTURE_ONLY"}
+
+        result = execution_bridge.drive("actual", worker, reviewer, costs=costs,
+                                        materials={"task-1": "standalone-owner-input"})
+        self.assertEqual((result["action"], result["reason"]), ("STOP", "ALL_TASKS_COMPLETE"))
+        self.assertEqual(result["counts"]["worker_hooks"], 1)
+        status = owner.status("actual")
+        self.assertEqual(status["tasks"][0]["fresh_sink"]["status"], "CONFIRMED")
+        before = status["queue_history"]["reserved_model_calls"]
+        again = execution_bridge.drive("actual", worker, reviewer, costs=costs,
+                                       materials={"task-1": "standalone-owner-input"})
+        self.assertEqual(again["action"], "STOP")
+        self.assertEqual(len(seen), 1)
+        self.assertEqual(owner.status("actual")["queue_history"]["reserved_model_calls"], before)
+
 
 if __name__ == "__main__":
     unittest.main()

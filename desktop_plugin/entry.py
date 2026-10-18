@@ -137,10 +137,8 @@ def _provision_state():
         raise
     except Exception:
         raise _BootstrapReject("PLUGIN_STATE_INIT_UNKNOWN") from None
-    finally:
-        if temporary.exists():
-            # Never try to merge/recover a partial initialization into state.
-            shutil.rmtree(temporary, ignore_errors=True)
+    # A successful move consumed staging. Any remaining staging is uncertain
+    # evidence: preserve it so the next launch refuses automatic reseeding.
     return _existing_state(state)
 
 
