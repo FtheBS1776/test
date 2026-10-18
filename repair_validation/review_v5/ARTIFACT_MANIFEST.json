@@ -1,0 +1,515 @@
+{
+  "classification": "REVIEW_ARTIFACT_INTEGRITY_ONLY",
+  "files": [
+    {
+      "path": "00_archive_verification.json",
+      "size": 5063,
+      "sha256": "0dfc26e677b18a492463a5baac4624f46366b5b90ea03788db5aa9cbdad272dd"
+    },
+    {
+      "path": "01_manifest_verification.json",
+      "size": 10923,
+      "sha256": "05296b8d5756c1111250e7c60a2e46d58928a539ead106bd22605cabd4d8eddd"
+    },
+    {
+      "path": "02_execution_metadata.json",
+      "size": 558,
+      "sha256": "ddf9719fdff25c8cebfa6dc257bc0b354e50934518c98796f899af9828f265d5"
+    },
+    {
+      "path": "REVIEW.md",
+      "size": 11189,
+      "sha256": "23f139f351e95acc13f51abbfdf5c888353f81036afcba6096f1b85d950794d1"
+    },
+    {
+      "path": "adversarial_review.py",
+      "size": 17713,
+      "sha256": "5e2d0da1db12bd772a242357e5121b3c050f783f8a870e33b7249dea2267172e"
+    },
+    {
+      "path": "attempt_01.stderr.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "attempt_01.stdout.jsonl",
+      "size": 14916,
+      "sha256": "00a5b9ee895aeffdf72854a045e418e4475691340ff6ba92da95d13f9da50977"
+    },
+    {
+      "path": "fresh_stores/binding/GENIE_STATE.json",
+      "size": 126,
+      "sha256": "1296c55211de5964b917b8ca0acd8f86c9222335092716fce8161026f85890fc"
+    },
+    {
+      "path": "fresh_stores/binding/REGISTRY.json",
+      "size": 81,
+      "sha256": "4e8bcaf21d351ddac957c4016964c34cd0d3c0a7d0ee90a23745a8d57d428efc"
+    },
+    {
+      "path": "fresh_stores/binding/queue.sqlite",
+      "size": 32,
+      "sha256": "f7a18b2e213e076bf6234453ca55a3398119ce49a8c8298311e543e92e29ab8f"
+    },
+    {
+      "path": "fresh_stores/costs/owned/0c0e7e35e86cbe1b5a30522effd310eb986cc8b8d039d3247b647588d0c9d81c/ac25ca17d58e571ed7506d82035ae848bec2ce3e41a86a159d4a0a13bf2f6b3a/inbox.sqlite",
+      "size": 24576,
+      "sha256": "72e695b10bbdf828a01917a84a2581325edbc1ac594ef3b07f91839ccc75529b"
+    },
+    {
+      "path": "fresh_stores/costs/owned/0c0e7e35e86cbe1b5a30522effd310eb986cc8b8d039d3247b647588d0c9d81c/ac25ca17d58e571ed7506d82035ae848bec2ce3e41a86a159d4a0a13bf2f6b3a/task.sqlite",
+      "size": 32768,
+      "sha256": "f2e15f622e289af8af6ef316499ae528c5d7e4816bb2afeefb9b61b76394d780"
+    },
+    {
+      "path": "fresh_stores/costs/queue.sqlite",
+      "size": 36864,
+      "sha256": "4780b5a4b5ee5056f151fca05f850854eabbbaeecadc686da6172a58c4256dde"
+    },
+    {
+      "path": "fresh_stores/default-denial/owned/0c0e7e35e86cbe1b5a30522effd310eb986cc8b8d039d3247b647588d0c9d81c/ac25ca17d58e571ed7506d82035ae848bec2ce3e41a86a159d4a0a13bf2f6b3a/inbox.sqlite",
+      "size": 24576,
+      "sha256": "72e695b10bbdf828a01917a84a2581325edbc1ac594ef3b07f91839ccc75529b"
+    },
+    {
+      "path": "fresh_stores/default-denial/owned/0c0e7e35e86cbe1b5a30522effd310eb986cc8b8d039d3247b647588d0c9d81c/ac25ca17d58e571ed7506d82035ae848bec2ce3e41a86a159d4a0a13bf2f6b3a/task.sqlite",
+      "size": 32768,
+      "sha256": "f2e15f622e289af8af6ef316499ae528c5d7e4816bb2afeefb9b61b76394d780"
+    },
+    {
+      "path": "fresh_stores/default-denial/queue.sqlite",
+      "size": 36864,
+      "sha256": "db1c31f85a91a4a7c73b5a47a8d79e2a0acbd6e158b7793e23b94b7584e377d0"
+    },
+    {
+      "path": "fresh_stores/driver-happy/owned/0c0e7e35e86cbe1b5a30522effd310eb986cc8b8d039d3247b647588d0c9d81c/ac25ca17d58e571ed7506d82035ae848bec2ce3e41a86a159d4a0a13bf2f6b3a/inbox.sqlite",
+      "size": 24576,
+      "sha256": "720f9dd935f05936848bf6d230f51eafd804e2ddb6ff66c1c3d146bbacfe06e5"
+    },
+    {
+      "path": "fresh_stores/driver-happy/owned/0c0e7e35e86cbe1b5a30522effd310eb986cc8b8d039d3247b647588d0c9d81c/ac25ca17d58e571ed7506d82035ae848bec2ce3e41a86a159d4a0a13bf2f6b3a/task.sqlite",
+      "size": 32768,
+      "sha256": "72e75cbf7f6fc8c2c8d77f0ccdb79a090358d95bf9f995e31713ffc5e77c819c"
+    },
+    {
+      "path": "fresh_stores/driver-happy/queue.sqlite",
+      "size": 36864,
+      "sha256": "3144b2da308e507e73ebac7bbf90db7ddee5235a98cc4dd60ff39467d9b95bd0"
+    },
+    {
+      "path": "fresh_stores/driver-hook-failure/owned/0c0e7e35e86cbe1b5a30522effd310eb986cc8b8d039d3247b647588d0c9d81c/ac25ca17d58e571ed7506d82035ae848bec2ce3e41a86a159d4a0a13bf2f6b3a/inbox.sqlite",
+      "size": 24576,
+      "sha256": "72e695b10bbdf828a01917a84a2581325edbc1ac594ef3b07f91839ccc75529b"
+    },
+    {
+      "path": "fresh_stores/driver-hook-failure/owned/0c0e7e35e86cbe1b5a30522effd310eb986cc8b8d039d3247b647588d0c9d81c/ac25ca17d58e571ed7506d82035ae848bec2ce3e41a86a159d4a0a13bf2f6b3a/task.sqlite",
+      "size": 32768,
+      "sha256": "f2e15f622e289af8af6ef316499ae528c5d7e4816bb2afeefb9b61b76394d780"
+    },
+    {
+      "path": "fresh_stores/driver-hook-failure/queue.sqlite",
+      "size": 36864,
+      "sha256": "cf509a3b46186d1102d98e944335ff237f8403270204e5c382b2666781f548ec"
+    },
+    {
+      "path": "fresh_stores/driver-stop-notify/owned/0c0e7e35e86cbe1b5a30522effd310eb986cc8b8d039d3247b647588d0c9d81c/ac25ca17d58e571ed7506d82035ae848bec2ce3e41a86a159d4a0a13bf2f6b3a/inbox.sqlite",
+      "size": 24576,
+      "sha256": "72e695b10bbdf828a01917a84a2581325edbc1ac594ef3b07f91839ccc75529b"
+    },
+    {
+      "path": "fresh_stores/driver-stop-notify/owned/0c0e7e35e86cbe1b5a30522effd310eb986cc8b8d039d3247b647588d0c9d81c/ac25ca17d58e571ed7506d82035ae848bec2ce3e41a86a159d4a0a13bf2f6b3a/task.sqlite",
+      "size": 32768,
+      "sha256": "f2e15f622e289af8af6ef316499ae528c5d7e4816bb2afeefb9b61b76394d780"
+    },
+    {
+      "path": "fresh_stores/driver-stop-notify/queue.sqlite",
+      "size": 36864,
+      "sha256": "cb4d2f2873cef640189d4457e621d908f2372f11d7541e319f13de1c6302e36b"
+    },
+    {
+      "path": "fresh_stores/driver-unsupported-decision/owned/0c0e7e35e86cbe1b5a30522effd310eb986cc8b8d039d3247b647588d0c9d81c/ac25ca17d58e571ed7506d82035ae848bec2ce3e41a86a159d4a0a13bf2f6b3a/inbox.sqlite",
+      "size": 24576,
+      "sha256": "72e695b10bbdf828a01917a84a2581325edbc1ac594ef3b07f91839ccc75529b"
+    },
+    {
+      "path": "fresh_stores/driver-unsupported-decision/owned/0c0e7e35e86cbe1b5a30522effd310eb986cc8b8d039d3247b647588d0c9d81c/ac25ca17d58e571ed7506d82035ae848bec2ce3e41a86a159d4a0a13bf2f6b3a/task.sqlite",
+      "size": 32768,
+      "sha256": "bcee7a505ba7f3ac03c97e1297822b95e42d37fb94c246406fb48d82d53c2aa6"
+    },
+    {
+      "path": "fresh_stores/driver-unsupported-decision/queue.sqlite",
+      "size": 36864,
+      "sha256": "39efb9d9c5e02cf763cf10c2c5178eb186dda35c85851f4f0d6d1a6a3a58f34f"
+    },
+    {
+      "path": "fresh_stores/driver-wrong-candidate-hash/owned/0c0e7e35e86cbe1b5a30522effd310eb986cc8b8d039d3247b647588d0c9d81c/ac25ca17d58e571ed7506d82035ae848bec2ce3e41a86a159d4a0a13bf2f6b3a/inbox.sqlite",
+      "size": 24576,
+      "sha256": "72e695b10bbdf828a01917a84a2581325edbc1ac594ef3b07f91839ccc75529b"
+    },
+    {
+      "path": "fresh_stores/driver-wrong-candidate-hash/owned/0c0e7e35e86cbe1b5a30522effd310eb986cc8b8d039d3247b647588d0c9d81c/ac25ca17d58e571ed7506d82035ae848bec2ce3e41a86a159d4a0a13bf2f6b3a/task.sqlite",
+      "size": 32768,
+      "sha256": "bcee7a505ba7f3ac03c97e1297822b95e42d37fb94c246406fb48d82d53c2aa6"
+    },
+    {
+      "path": "fresh_stores/driver-wrong-candidate-hash/queue.sqlite",
+      "size": 36864,
+      "sha256": "39efb9d9c5e02cf763cf10c2c5178eb186dda35c85851f4f0d6d1a6a3a58f34f"
+    },
+    {
+      "path": "fresh_stores/driver-wrong-token/owned/0c0e7e35e86cbe1b5a30522effd310eb986cc8b8d039d3247b647588d0c9d81c/ac25ca17d58e571ed7506d82035ae848bec2ce3e41a86a159d4a0a13bf2f6b3a/inbox.sqlite",
+      "size": 24576,
+      "sha256": "72e695b10bbdf828a01917a84a2581325edbc1ac594ef3b07f91839ccc75529b"
+    },
+    {
+      "path": "fresh_stores/driver-wrong-token/owned/0c0e7e35e86cbe1b5a30522effd310eb986cc8b8d039d3247b647588d0c9d81c/ac25ca17d58e571ed7506d82035ae848bec2ce3e41a86a159d4a0a13bf2f6b3a/task.sqlite",
+      "size": 32768,
+      "sha256": "f2e15f622e289af8af6ef316499ae528c5d7e4816bb2afeefb9b61b76394d780"
+    },
+    {
+      "path": "fresh_stores/driver-wrong-token/queue.sqlite",
+      "size": 36864,
+      "sha256": "cf509a3b46186d1102d98e944335ff237f8403270204e5c382b2666781f548ec"
+    },
+    {
+      "path": "fresh_stores/legacy/owned/0c0e7e35e86cbe1b5a30522effd310eb986cc8b8d039d3247b647588d0c9d81c/ac25ca17d58e571ed7506d82035ae848bec2ce3e41a86a159d4a0a13bf2f6b3a/inbox.sqlite",
+      "size": 24576,
+      "sha256": "72e695b10bbdf828a01917a84a2581325edbc1ac594ef3b07f91839ccc75529b"
+    },
+    {
+      "path": "fresh_stores/legacy/owned/0c0e7e35e86cbe1b5a30522effd310eb986cc8b8d039d3247b647588d0c9d81c/ac25ca17d58e571ed7506d82035ae848bec2ce3e41a86a159d4a0a13bf2f6b3a/task.sqlite",
+      "size": 32768,
+      "sha256": "f2e15f622e289af8af6ef316499ae528c5d7e4816bb2afeefb9b61b76394d780"
+    },
+    {
+      "path": "fresh_stores/legacy/queue.sqlite",
+      "size": 36864,
+      "sha256": "9fcce8dba47d40d6da898b855416ed2b0521dbef2cdef7d34e7e58a13c3b19ff"
+    },
+    {
+      "path": "fresh_stores/materials-bad/owned/0c0e7e35e86cbe1b5a30522effd310eb986cc8b8d039d3247b647588d0c9d81c/ac25ca17d58e571ed7506d82035ae848bec2ce3e41a86a159d4a0a13bf2f6b3a/inbox.sqlite",
+      "size": 24576,
+      "sha256": "720f9dd935f05936848bf6d230f51eafd804e2ddb6ff66c1c3d146bbacfe06e5"
+    },
+    {
+      "path": "fresh_stores/materials-bad/owned/0c0e7e35e86cbe1b5a30522effd310eb986cc8b8d039d3247b647588d0c9d81c/ac25ca17d58e571ed7506d82035ae848bec2ce3e41a86a159d4a0a13bf2f6b3a/task.sqlite",
+      "size": 32768,
+      "sha256": "72e75cbf7f6fc8c2c8d77f0ccdb79a090358d95bf9f995e31713ffc5e77c819c"
+    },
+    {
+      "path": "fresh_stores/materials-bad/queue.sqlite",
+      "size": 36864,
+      "sha256": "3144b2da308e507e73ebac7bbf90db7ddee5235a98cc4dd60ff39467d9b95bd0"
+    },
+    {
+      "path": "fresh_stores/publish-move-false/app/.state-v1.init/GENIE_STATE.json",
+      "size": 95,
+      "sha256": "07bfd4e09cc487b92a3881c551eb2a87ebea426ca73917e3f3ba323c13c3af8d"
+    },
+    {
+      "path": "fresh_stores/publish-post-move-validation-failure/app/state-v1/GENIE_STATE.json",
+      "size": 95,
+      "sha256": "07bfd4e09cc487b92a3881c551eb2a87ebea426ca73917e3f3ba323c13c3af8d"
+    },
+    {
+      "path": "fresh_stores/publish-success/app/state-v1/GENIE_STATE.json",
+      "size": 95,
+      "sha256": "07bfd4e09cc487b92a3881c551eb2a87ebea426ca73917e3f3ba323c13c3af8d"
+    },
+    {
+      "path": "fresh_stores/repair_then_accept/owned/0c0e7e35e86cbe1b5a30522effd310eb986cc8b8d039d3247b647588d0c9d81c/ac25ca17d58e571ed7506d82035ae848bec2ce3e41a86a159d4a0a13bf2f6b3a/inbox.sqlite",
+      "size": 24576,
+      "sha256": "720f9dd935f05936848bf6d230f51eafd804e2ddb6ff66c1c3d146bbacfe06e5"
+    },
+    {
+      "path": "fresh_stores/repair_then_accept/owned/0c0e7e35e86cbe1b5a30522effd310eb986cc8b8d039d3247b647588d0c9d81c/ac25ca17d58e571ed7506d82035ae848bec2ce3e41a86a159d4a0a13bf2f6b3a/task.sqlite",
+      "size": 32768,
+      "sha256": "f4b54663d9dff675d57c42df39054468bbaaf371fc15371836949dc56b698054"
+    },
+    {
+      "path": "fresh_stores/repair_then_accept/queue.sqlite",
+      "size": 36864,
+      "sha256": "5c99e520a49fc5aa8ef7f6c34d7ae849adf5af7f1e7b40ef152cfba386b9e015"
+    },
+    {
+      "path": "fresh_stores/sealed-failure/trial/TERMINAL.json",
+      "size": 20,
+      "sha256": "660c854dd58ecfcf4f8257637a7427ab453484621a0b61670ead36dba1d5aa96"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/MANIFEST.json",
+      "size": 9615,
+      "sha256": "c226049dd12f2c4a2b328f15815b0b179106d77617f92e460711134843d21124"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/README_FIRST.md",
+      "size": 782,
+      "sha256": "55ecc6cc196a89b3acac10825d97b4e1b65cc8bbcbfb2430d50afff008bb2750"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/REVIEW_CONTRACT.md",
+      "size": 5464,
+      "sha256": "d9ff7b9d9dc254152962dcf1fc60f0cb7e1e1c0e0414f095f4b46de29c91cc3c"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/.github/actions/genie-windows-package/action.yml",
+      "size": 5261,
+      "sha256": "df720c988b13a0704f8021a11abd50ab1c945a4576bc2e8fde31bcbbd8f06290"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/.github/workflows/genie-desktop-plugin-nonclaim.yml",
+      "size": 1377,
+      "sha256": "bf87b37e034d1e91c9d86927b9bc4ff9d73b3546c909287d43b6b5412d974ef1"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/.github/workflows/genie-recovery-no-model.yml",
+      "size": 2837,
+      "sha256": "61e54f92d8460b445c0ddba45124c969b7f4f1e7fb057eb683fa7e397c05c2fa"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/active_runner/run_status.py",
+      "size": 8478,
+      "sha256": "554c8b16e6635eef024e245eaf2e9a9a66c8841c690cc173e163cb4b757a91a6"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/active_runner/runner.py",
+      "size": 10583,
+      "sha256": "f683491cd184ac10e555ad41b96b44c9e690948de761653bc96894c43656dc86"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/canonical_state_provisioner/provisioner_windows.py",
+      "size": 9196,
+      "sha256": "88e1663f9587885592791658b1b7dc0d1016726ddd187696a721e22aa9f7b8dd"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/desktop_plugin/entry.py",
+      "size": 2760,
+      "sha256": "edeb62130daf27a293fd550fbc42413ea03f3700701392607dcb84ac97a2d174"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/desktop_plugin/genie_mcp.spec",
+      "size": 2737,
+      "sha256": "8da0f3137c031fc99e126778b35f8f8440c6d16a721d8956157455fc99646e59"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/desktop_plugin/live_state_windows.py",
+      "size": 8657,
+      "sha256": "c845ef22c21ffae25648806660e705fdd7406648ef7054b4309d52c3321bc221"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/desktop_plugin/package/.codex-plugin/plugin.json",
+      "size": 251,
+      "sha256": "31e55602c11b0b1357bfa8aa739ab0bd61b854d78b9371f030240952e9f9fe86"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/desktop_plugin/package/.mcp.json",
+      "size": 144,
+      "sha256": "2fb1fb8d99a453530908ba26100da9e9cd61d73be9d39613936a328934a28fc1"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/desktop_plugin/package/mcp.json",
+      "size": 221,
+      "sha256": "f0b55b47f1577d197d83ff2b9ce97da5ee428e7625193c31e05564320399f1b6"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/desktop_plugin/package/plugin.json",
+      "size": 295,
+      "sha256": "9c0b65cb0f986d3cfba2b991db383458518cb462f93d7a035314928af10ffb72"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/desktop_plugin/windows-build.lock.txt",
+      "size": 300,
+      "sha256": "77a84f95acd75d3338fee829e0b310ff3358fbdf815a9622450200d08e35e047"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/host_adapter/journal.py",
+      "size": 6338,
+      "sha256": "1d7825208cfac386acf0cd83b3505064de8c147ebb35fc6fe54864dd3950cc98"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/phase2b2c_preflight/recovery_preflight.py",
+      "size": 15711,
+      "sha256": "0e418458b50beeb5d5c954ab37344eb96576e174c8a70dcf78b6019281913f8f"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/phase2b2l_alpha_isolation_preflight/alpha_isolation_preflight.py",
+      "size": 4148,
+      "sha256": "423bcaf0c925d50a8b571b0fa5a044ffa76f81e9bbd6a6423930617db9d234c3"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/phase2b2m_alpha_live_pilot/alpha_exec_worker.py",
+      "size": 15667,
+      "sha256": "87c39fb01b1ba6a206b6ea286abc8d5586c8d4904ab9e2d6d2150c7c9f99d83a"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/phase2b2n_event_evidence_recovery/event_fixture.py",
+      "size": 2046,
+      "sha256": "94e31437758f393a2345534688e34aa0a9f9d23c2cf67c1f04c78ce2cea208dc"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/phase2b2n_event_evidence_recovery/recovery_preflight.py",
+      "size": 9113,
+      "sha256": "c7597afe505556eefee090d33bb696b17c1b871f31008c6392e080ee03377704"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/phase2b2o_alpha_recovery_live/recovered_worker.py",
+      "size": 15844,
+      "sha256": "b5e2b1e8be8a3e3e6adeef8ddc6480df2044686a5fc60005463433be8b7f9c3a"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/phase2b2p_capability_containment_repair/repair_contract.py",
+      "size": 7122,
+      "sha256": "4ae8051027da4e42f13405ea890c6ded0fa62bea52237260855d4d75f858c436"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/phase2b2r_exact_codex_preflight/exact_codex_preflight.py",
+      "size": 11966,
+      "sha256": "316786642fe4b93838c988aa135350fbb179c3afac8cd707cb5c8eca23daf2c6"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/phase2b2s_attested_live_pilot/attested_worker.py",
+      "size": 14639,
+      "sha256": "42874989baf7ebf4f4fa5878685b3ae6bf12fe50339d19975736685f7570cf76"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/phase2c_finite_autonomous_pilot/run_bounded_batch.py",
+      "size": 8043,
+      "sha256": "0a9c4d48edf419816274892cf6b20b4017fd6b579d7f3dceb254f035df7c4591"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/phase2c_finite_autonomous_pilot/verify_sealed.py",
+      "size": 6581,
+      "sha256": "e2ad049a229f1005aef353dd7cec8a6e92591efa26c8a7888486bfe619da23da"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/plugin_mcp_server/requirements.lock.txt",
+      "size": 518,
+      "sha256": "32094c3926215c24d84b201fd19469bf4c8c87510e813872c687d755d1b8a9f0"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/run_queue/run_policy.py",
+      "size": 15705,
+      "sha256": "c29a4a237e1d7c22d0674f44544dcd64abeb38320dd8aa2efca0419ede60d883"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/shared_interfaces/cli.py",
+      "size": 7776,
+      "sha256": "34cf1c27b3f1dbc683fc524d65f2ef415f1230d3b3825f1e006bfe8d3a152169"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/shared_interfaces/function_adapter.py",
+      "size": 5424,
+      "sha256": "36dbf3e9a9317e974c8f21a69555835c947f1fa73a1f2ff32e733f70ca478413"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/shared_interfaces/isolated_worker.py",
+      "size": 21851,
+      "sha256": "2dbefdba3f5a46c853057ef6dbedec06cdfde2297959bc8bf3d7e8ef14b8cc4f"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/shared_interfaces/live_codex_worker.py",
+      "size": 25136,
+      "sha256": "36c64d4bd550005b4c2ce02533086800961e3eb04ec7a7fcaf266fe757afc39d"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/shared_interfaces/mcp_consumer.py",
+      "size": 6041,
+      "sha256": "40c54edf66f07f60bd0beaef5bb567ac15f4a08572ffe724d5cf77a2e023729c"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/shared_interfaces/mcp_controller.py",
+      "size": 5511,
+      "sha256": "1cda693fa102eec2c0447299be5798ab25f45816f2bf7913677261f7b176e48a"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/shared_interfaces/mcp_controller_server.py",
+      "size": 7199,
+      "sha256": "ac4890f77aa6c0adcbc0383a5b7a575f9bc9a874f96cdd13fc15f7607919f7c0"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/shared_interfaces/mcp_events.py",
+      "size": 6225,
+      "sha256": "576f4acbf690c5d072e27023ae2d2e6435f1d609705357f0a4111abcf6984e5f"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/shared_interfaces/mcp_events_server.py",
+      "size": 9526,
+      "sha256": "1634bc08c8f77b41e4ab901ffc4f62e40f727077fdb8b82eb5c48505b474c7db"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/shared_interfaces/mcp_server.py",
+      "size": 8162,
+      "sha256": "0354efa7614da98d0078034a05b8586a4617bbb75dc8f9c004cf7515bb4b9ee4"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/shared_interfaces/process_containment.py",
+      "size": 18890,
+      "sha256": "afae468fef8f31537706559e59e42cf3f2a8bfbebaac5ec74b9f837968311727"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/shared_interfaces/run_control.py",
+      "size": 8267,
+      "sha256": "43958f98ce3dfd01de019df70bb14dfd9135f87f41b58171b3224a97bf8c2b65"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/shared_interfaces/run_events.py",
+      "size": 8880,
+      "sha256": "b150fef78663421b3ddf3f88267e33c5adeea5615d86275d5be35b4c88f28871"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/shared_interfaces/session_driver.py",
+      "size": 13071,
+      "sha256": "872903f1eaec93fce406662382fcadc896d28e8ce894cf60ae083d3e02dc5ab8"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/shared_interfaces/status_tool.py",
+      "size": 11637,
+      "sha256": "c7bdd7b8b97077aeccb5831466a4d4071b391e5657a9cc449eb0d70a1ea84798"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/shared_interfaces/windows_job.py",
+      "size": 13170,
+      "sha256": "a654ef455f5829a7894d6b01817a8e74c04c26f89d3c51afd38daca09be52ec0"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/shared_interfaces/work_host.py",
+      "size": 2336,
+      "sha256": "2e59b39e18a25bc8531864969189659eadd472dce37b5ad47424cb6809158f1c"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/standalone_app/cli.py",
+      "size": 2884,
+      "sha256": "913101a445f6e7603a6b1557f8569fcb74dc7b5a520032f5f925ee7323c718c0"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/standalone_app/execution_bridge.py",
+      "size": 3894,
+      "sha256": "ec0100fd6211305184bb419c62ca216510a6ac196beea8ae9f5d07d4440786d9"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/standalone_app/owner.py",
+      "size": 8609,
+      "sha256": "da9d2270b0c735638719f2a2b7bb6d5a97450bb8b864b086e365329d5eae7dd2"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/worker_bridge/bridge.py",
+      "size": 10207,
+      "sha256": "6cbc9f8b0d6f2beb85e5e60927fbc3bf4ac21628daaf3f12c8aefd3780df4b89"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/worker_bridge/reused/report_sink.py",
+      "size": 4119,
+      "sha256": "fe8f62eaeff8825319ea98fd76cd8bb92bc9099a5c4af24d33fecb8ac7eb4806"
+    },
+    {
+      "path": "input/GENIE_REPAIR_REVIEW_INPUT_v5_20261018/source/worker_bridge/reused/stateful_subject.py",
+      "size": 5403,
+      "sha256": "8ea005246f66fd413f00bad6cf0714e5704c23cc4255881ce659e682ce740131"
+    },
+    {
+      "path": "test_records.json",
+      "size": 19201,
+      "sha256": "3b1d8db71b954d198174dabe3a4fd37afcaceca5c4d59799c2da18b83e505019"
+    }
+  ]
+}

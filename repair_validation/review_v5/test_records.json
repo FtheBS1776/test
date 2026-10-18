@@ -1,0 +1,801 @@
+[
+  {
+    "label": "invalid_bound_None",
+    "value": {
+      "action": "HOLD",
+      "reason": "COST_BOUND_UNKNOWN_OR_INVALID",
+      "allow_new_invocation": false,
+      "preserve": true
+    }
+  },
+  {
+    "label": "invalid_bound_True",
+    "value": {
+      "action": "HOLD",
+      "reason": "COST_BOUND_UNKNOWN_OR_INVALID",
+      "allow_new_invocation": false,
+      "preserve": true
+    }
+  },
+  {
+    "label": "invalid_bound_-1",
+    "value": {
+      "action": "HOLD",
+      "reason": "COST_BOUND_UNKNOWN_OR_INVALID",
+      "allow_new_invocation": false,
+      "preserve": true
+    }
+  },
+  {
+    "label": "invalid_bound_1.1",
+    "value": {
+      "action": "HOLD",
+      "reason": "COST_BOUND_UNKNOWN_OR_INVALID",
+      "allow_new_invocation": false,
+      "preserve": true
+    }
+  },
+  {
+    "label": "invalid_bound_1000000000000001",
+    "value": {
+      "action": "HOLD",
+      "reason": "COST_BOUND_UNKNOWN_OR_INVALID",
+      "allow_new_invocation": false,
+      "preserve": true
+    }
+  },
+  {
+    "label": "cost_token_run_id",
+    "value": {
+      "action": "HOLD",
+      "reason": "COST_TOKEN_BINDING",
+      "allow_new_invocation": false,
+      "preserve": true
+    }
+  },
+  {
+    "label": "cost_token_task_id",
+    "value": {
+      "action": "HOLD",
+      "reason": "COST_RESERVATION_BINDING",
+      "allow_new_invocation": false,
+      "preserve": true
+    }
+  },
+  {
+    "label": "cost_token_input_sha256",
+    "value": {
+      "action": "HOLD",
+      "reason": "COST_TOKEN_BINDING",
+      "allow_new_invocation": false,
+      "preserve": true
+    }
+  },
+  {
+    "label": "cost_token_attempt",
+    "value": {
+      "action": "HOLD",
+      "reason": "COST_RESERVATION_BINDING",
+      "allow_new_invocation": false,
+      "preserve": true
+    }
+  },
+  {
+    "label": "cost_token_slot_id",
+    "value": {
+      "action": "HOLD",
+      "reason": "COST_TOKEN_BINDING",
+      "allow_new_invocation": false,
+      "preserve": true
+    }
+  },
+  {
+    "label": "cost_token_call_id",
+    "value": {
+      "action": "HOLD",
+      "reason": "COST_TOKEN_BINDING",
+      "allow_new_invocation": false,
+      "preserve": true
+    }
+  },
+  {
+    "label": "cost_quote_mismatch",
+    "value": {
+      "action": "HOLD",
+      "reason": "COST_QUOTE_NOT_APPROVED",
+      "allow_new_invocation": false,
+      "preserve": true
+    }
+  },
+  {
+    "label": "cost_quote_mismatch",
+    "value": {
+      "action": "HOLD",
+      "reason": "COST_QUOTE_NOT_APPROVED",
+      "allow_new_invocation": false,
+      "preserve": true
+    }
+  },
+  {
+    "label": "first_charge",
+    "value": {
+      "action": "ADMIT_ONCE",
+      "action_id": "8684f096c1f5509730b5c3bfcca6123ff9dc08095549506cc4f56092b6dbd9aa",
+      "reserved_micro_usd": 3
+    }
+  },
+  {
+    "label": "exact_cost_replay",
+    "value": {
+      "action": "RECONCILE_COST_ACTION",
+      "reason": "COST_ACTION_ALREADY_RESERVED",
+      "preserve": true,
+      "allow_new_invocation": false
+    }
+  },
+  {
+    "label": "cost_alias",
+    "value": {
+      "action": "HOLD",
+      "reason": "COST_ACTION_ALIAS",
+      "allow_new_invocation": false,
+      "preserve": true
+    }
+  },
+  {
+    "label": "shared_charge_reviewer",
+    "value": {
+      "action": "ADMIT_ONCE",
+      "action_id": "0574cb089b1597d2f87a7a9d824085b5248a79d38f395f545bec02d7cb7c4b48",
+      "reserved_micro_usd": 3
+    }
+  },
+  {
+    "label": "shared_charge_repair",
+    "value": {
+      "action": "ADMIT_ONCE",
+      "action_id": "0fa4620b744785f5e58b34c44603d406123cb8ef54a0d0622016570c6bcfa6da",
+      "reserved_micro_usd": 3
+    }
+  },
+  {
+    "label": "shared_ceiling",
+    "value": {
+      "action": "HOLD",
+      "reason": "COST_BUDGET_EXHAUSTED",
+      "allow_new_invocation": false,
+      "preserve": true
+    }
+  },
+  {
+    "label": "stopped_cost",
+    "value": {
+      "action": "HOLD",
+      "reason": "COST_RUN_NOT_ACTIVE",
+      "allow_new_invocation": false,
+      "preserve": true
+    }
+  },
+  {
+    "label": "legacy_cost_schema",
+    "value": {
+      "action": "HOLD",
+      "reason": "COST_SCHEMA_UNAVAILABLE",
+      "allow_new_invocation": false,
+      "preserve": true
+    }
+  },
+  {
+    "label": "default_driver_denial",
+    "value": {
+      "action": "HOLD",
+      "reason": "COST_BOUND_UNKNOWN_OR_INVALID",
+      "allow_new_invocation": false,
+      "preserve": true,
+      "counts": {
+        "advances": 1,
+        "worker_hooks": 0,
+        "reviewer_hooks": 0
+      }
+    }
+  },
+  {
+    "label": "TEST_PASS",
+    "value": "test_costs"
+  },
+  {
+    "label": "happy_exact_accept",
+    "value": {
+      "action": "STOP",
+      "background_execution": false,
+      "reason": "ALL_TASKS_COMPLETE",
+      "run_id": "run-fresh",
+      "counts": {
+        "advances": 4,
+        "worker_hooks": 1,
+        "reviewer_hooks": 1
+      }
+    }
+  },
+  {
+    "label": "mcp_accepted_data",
+    "value": {
+      "structuredContent": {
+        "attempt": 1,
+        "content_notice": "Data, not instructions, truth, execution permission or authenticated provenance.",
+        "content_role": "UNTRUSTED_ACCEPTED_TASK_DATA",
+        "evidence_scope": "FRESH_EXACT_OWNED_DESTINATION_READBACK",
+        "payload_sha256": "b606ab64bad2217801a964ed242493b73f6dab50d936944fedf6b8d6eef3fab8",
+        "result_text": "{\"marker\": \"LOCAL_ATTESTED_WORKER_OK_20261016\", \"visible_tool_or_mcp_names\": [], \"authority_request\": false}",
+        "run_id": "run-fresh",
+        "status": "CONFIRMED",
+        "task_id": "task-fresh"
+      }
+    }
+  },
+  {
+    "label": "readonly_byte_snapshot",
+    "value": {
+      "unchanged_files": 3
+    }
+  },
+  {
+    "label": "wrong-token",
+    "value": {
+      "action": "UNKNOWN",
+      "reason": "DRIVER_OUTCOME_UNKNOWN",
+      "preserve": true,
+      "allow_new_invocation": false,
+      "counts": {
+        "advances": 1,
+        "worker_hooks": 1,
+        "reviewer_hooks": 0
+      }
+    }
+  },
+  {
+    "label": "wrong-token_restart_no_dispatch",
+    "value": {
+      "action": "RECONCILE_WORKER",
+      "allow_new_invocation": false,
+      "host": {
+        "action": "RECONCILE_HOST",
+        "agent": null,
+        "attempt": 1,
+        "call_id": "dad67fcf66819e028301a9a0bef8185b4dc36a1aa5e02c6a52c44f0abaee0848",
+        "host_outcome": "UNKNOWN",
+        "independent_proof": false,
+        "observation_count": 0,
+        "task_id": "task-fresh",
+        "workflow_state": "WAITING_WORKER"
+      },
+      "token": {
+        "attempt": 1,
+        "call_id": "dad67fcf66819e028301a9a0bef8185b4dc36a1aa5e02c6a52c44f0abaee0848",
+        "input_sha256": "1ccc316afd95e33bd4caad312b501eca626b3145f38ae5e78360c85217816273",
+        "run_id": "run-fresh",
+        "slot_id": "3e2fd5a1bc1300d7e191cb96f2b686e07fc325534690ac1ea3abf0e41767a747",
+        "task_id": "task-fresh"
+      },
+      "counts": {
+        "advances": 1,
+        "worker_hooks": 0,
+        "reviewer_hooks": 0
+      }
+    }
+  },
+  {
+    "label": "unsupported-decision",
+    "value": {
+      "action": "UNKNOWN",
+      "reason": "DRIVER_OUTCOME_UNKNOWN",
+      "preserve": true,
+      "allow_new_invocation": false,
+      "counts": {
+        "advances": 2,
+        "worker_hooks": 1,
+        "reviewer_hooks": 1
+      }
+    }
+  },
+  {
+    "label": "unsupported-decision_restart_no_dispatch",
+    "value": {
+      "action": "RECONCILE_REVIEW",
+      "reason": "NO_SESSION_SUBMISSION",
+      "preserve": true,
+      "allow_new_invocation": false,
+      "counts": {
+        "advances": 1,
+        "worker_hooks": 0,
+        "reviewer_hooks": 0
+      }
+    }
+  },
+  {
+    "label": "wrong-candidate-hash",
+    "value": {
+      "action": "UNKNOWN",
+      "reason": "DRIVER_OUTCOME_UNKNOWN",
+      "preserve": true,
+      "allow_new_invocation": false,
+      "counts": {
+        "advances": 2,
+        "worker_hooks": 1,
+        "reviewer_hooks": 1
+      }
+    }
+  },
+  {
+    "label": "wrong-candidate-hash_restart_no_dispatch",
+    "value": {
+      "action": "RECONCILE_REVIEW",
+      "reason": "NO_SESSION_SUBMISSION",
+      "preserve": true,
+      "allow_new_invocation": false,
+      "counts": {
+        "advances": 1,
+        "worker_hooks": 0,
+        "reviewer_hooks": 0
+      }
+    }
+  },
+  {
+    "label": "hook-failure",
+    "value": {
+      "action": "UNKNOWN",
+      "reason": "DRIVER_OUTCOME_UNKNOWN",
+      "preserve": true,
+      "allow_new_invocation": false,
+      "counts": {
+        "advances": 1,
+        "worker_hooks": 1,
+        "reviewer_hooks": 0
+      }
+    }
+  },
+  {
+    "label": "hook-failure_restart_no_dispatch",
+    "value": {
+      "action": "RECONCILE_WORKER",
+      "allow_new_invocation": false,
+      "host": {
+        "action": "RECONCILE_HOST",
+        "agent": null,
+        "attempt": 1,
+        "call_id": "dad67fcf66819e028301a9a0bef8185b4dc36a1aa5e02c6a52c44f0abaee0848",
+        "host_outcome": "UNKNOWN",
+        "independent_proof": false,
+        "observation_count": 0,
+        "task_id": "task-fresh",
+        "workflow_state": "WAITING_WORKER"
+      },
+      "token": {
+        "attempt": 1,
+        "call_id": "dad67fcf66819e028301a9a0bef8185b4dc36a1aa5e02c6a52c44f0abaee0848",
+        "input_sha256": "1ccc316afd95e33bd4caad312b501eca626b3145f38ae5e78360c85217816273",
+        "run_id": "run-fresh",
+        "slot_id": "3e2fd5a1bc1300d7e191cb96f2b686e07fc325534690ac1ea3abf0e41767a747",
+        "task_id": "task-fresh"
+      },
+      "counts": {
+        "advances": 1,
+        "worker_hooks": 0,
+        "reviewer_hooks": 0
+      }
+    }
+  },
+  {
+    "label": "stop_before_hook",
+    "value": {
+      "action": "STOP",
+      "reason": "HOST_ENDED",
+      "preserve": true,
+      "allow_new_invocation": false,
+      "counts": {
+        "advances": 1,
+        "worker_hooks": 0,
+        "reviewer_hooks": 0
+      }
+    }
+  },
+  {
+    "label": "TEST_PASS",
+    "value": "test_driver"
+  },
+  {
+    "label": "review_valid",
+    "value": {
+      "token": {
+        "test": "opaque echo"
+      },
+      "candidate_hash": "b606ab64bad2217801a964ed242493b73f6dab50d936944fedf6b8d6eef3fab8",
+      "decision": "ACCEPT",
+      "reason": "BOUNDED_SCHEMA_MATCH_COMMON_CAUSE"
+    }
+  },
+  {
+    "label": "review_numeric_false",
+    "value": {
+      "token": {
+        "test": "opaque echo"
+      },
+      "candidate_hash": "d9d42a914bbe65be6bf1648867fb127c147ad74470f15fa26ffe5054e867b202",
+      "decision": "REPAIR",
+      "reason": "BOUNDED_SCHEMA_MISMATCH"
+    }
+  },
+  {
+    "label": "review_numeric_float",
+    "value": {
+      "token": {
+        "test": "opaque echo"
+      },
+      "candidate_hash": "45a1f52f58b1a4c7f7788147742cdda22afc2f71473cf14913c7f383e7c6bca0",
+      "decision": "REPAIR",
+      "reason": "BOUNDED_SCHEMA_MISMATCH"
+    }
+  },
+  {
+    "label": "review_visible_tools",
+    "value": {
+      "token": {
+        "test": "opaque echo"
+      },
+      "candidate_hash": "e64f3ede95a995c56ac211093affb218e5cc9038b8cf662a4d8e80749456517a",
+      "decision": "REPAIR",
+      "reason": "BOUNDED_SCHEMA_MISMATCH"
+    }
+  },
+  {
+    "label": "review_extra_field",
+    "value": {
+      "token": {
+        "test": "opaque echo"
+      },
+      "candidate_hash": "874cd4dab364e646dc4a0a4b97539d42f0d3b2c5473c493c9392118e7ffcb85b",
+      "decision": "REPAIR",
+      "reason": "BOUNDED_SCHEMA_MISMATCH"
+    }
+  },
+  {
+    "label": "review_duplicate",
+    "value": {
+      "token": {
+        "test": "opaque echo"
+      },
+      "candidate_hash": "5374a7f55abe7d126d99e3db37c8c1594ea56a53ce3e4801779166c2f98be368",
+      "decision": "REPAIR",
+      "reason": "BOUNDED_SCHEMA_MISMATCH"
+    }
+  },
+  {
+    "label": "review_nonfinite",
+    "value": {
+      "token": {
+        "test": "opaque echo"
+      },
+      "candidate_hash": "accc95a8a2cd2778770fb86f008578a67fda05287c060df5bd2e2160e36643b4",
+      "decision": "REPAIR",
+      "reason": "BOUNDED_SCHEMA_MISMATCH"
+    }
+  },
+  {
+    "label": "review_malformed",
+    "value": {
+      "token": {
+        "test": "opaque echo"
+      },
+      "candidate_hash": "021fb596db81e6d02bf3d2586ee3981fe519f275c0ac9ca76bbcf2ebb4097d96",
+      "decision": "REPAIR",
+      "reason": "BOUNDED_SCHEMA_MISMATCH"
+    }
+  },
+  {
+    "label": "review_nonobject",
+    "value": {
+      "token": {
+        "test": "opaque echo"
+      },
+      "candidate_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "decision": "REPAIR",
+      "reason": "BOUNDED_SCHEMA_MISMATCH"
+    }
+  },
+  {
+    "label": "review_binding_failure",
+    "value": {
+      "token": {},
+      "candidate_hash": "b606ab64bad2217801a964ed242493b73f6dab50d936944fedf6b8d6eef3fab8",
+      "decision": "REJECT",
+      "reason": "CANDIDATE_HASH_MISMATCH"
+    }
+  },
+  {
+    "label": "authorized_bounded_repair_then_accept",
+    "value": {
+      "action": "STOP",
+      "background_execution": false,
+      "reason": "ALL_TASKS_COMPLETE",
+      "run_id": "run-fresh",
+      "counts": {
+        "advances": 6,
+        "worker_hooks": 2,
+        "reviewer_hooks": 2
+      }
+    }
+  },
+  {
+    "label": "TEST_PASS",
+    "value": "test_deterministic_json"
+  },
+  {
+    "label": "material_pre_reservation_reject",
+    "value": "BRIDGE_MATERIALS_REQUIRED"
+  },
+  {
+    "label": "material_pre_reservation_reject",
+    "value": "BRIDGE_MATERIAL_BINDING"
+  },
+  {
+    "label": "material_pre_reservation_reject",
+    "value": "BRIDGE_MATERIAL_BINDING"
+  },
+  {
+    "label": "detached_materials_both_hooks",
+    "value": [
+      {
+        "text": "fresh task material",
+        "input_sha256": "1ccc316afd95e33bd4caad312b501eca626b3145f38ae5e78360c85217816273",
+        "content_role": "UNTRUSTED_TASK_INPUT"
+      },
+      {
+        "text": "fresh task material",
+        "input_sha256": "1ccc316afd95e33bd4caad312b501eca626b3145f38ae5e78360c85217816273",
+        "content_role": "UNTRUSTED_TASK_INPUT"
+      }
+    ]
+  },
+  {
+    "label": "TEST_PASS",
+    "value": "test_materials"
+  },
+  {
+    "label": "mcp_invalid",
+    "value": {
+      "structuredContent": {
+        "status": "REJECT",
+        "reason": "INVALID_TOOL_CALL"
+      }
+    }
+  },
+  {
+    "label": "mcp_invalid",
+    "value": {
+      "structuredContent": {
+        "status": "REJECT",
+        "reason": "INVALID_ARGUMENTS"
+      }
+    }
+  },
+  {
+    "label": "mcp_invalid",
+    "value": {
+      "structuredContent": {
+        "status": "REJECT",
+        "reason": "INVALID_ARGUMENTS"
+      }
+    }
+  },
+  {
+    "label": "function_json_reject",
+    "value": {
+      "type": "function_call_output",
+      "call_id": "fresh-call",
+      "output": "{\"reason\":\"INVALID_ARGUMENTS\",\"status\":\"REJECT\"}"
+    }
+  },
+  {
+    "label": "function_json_reject",
+    "value": {
+      "type": "function_call_output",
+      "call_id": "fresh-call",
+      "output": "{\"reason\":\"INVALID_ARGUMENTS\",\"status\":\"REJECT\"}"
+    }
+  },
+  {
+    "label": "function_json_reject",
+    "value": {
+      "type": "function_call_output",
+      "call_id": "fresh-call",
+      "output": "{\"reason\":\"INVALID_ARGUMENTS\",\"status\":\"REJECT\"}"
+    }
+  },
+  {
+    "label": "function_json_reject",
+    "value": {
+      "type": "function_call_output",
+      "call_id": "fresh-call",
+      "output": "{\"reason\":\"INVALID_ARGUMENTS\",\"status\":\"REJECT\"}"
+    }
+  },
+  {
+    "label": "mcp_reply_correlation",
+    "value": {
+      "structuredContent": {
+        "status": "UNKNOWN",
+        "reason": "MCP_CONSUMER_OUTCOME_UNKNOWN"
+      }
+    }
+  },
+  {
+    "label": "mcp_reply_duplicate",
+    "value": {
+      "structuredContent": {
+        "status": "UNKNOWN",
+        "reason": "MCP_CONSUMER_OUTCOME_UNKNOWN"
+      }
+    }
+  },
+  {
+    "label": "mcp_reply_unlabeled-data",
+    "value": {
+      "structuredContent": {
+        "status": "UNKNOWN",
+        "reason": "MCP_CONSUMER_OUTCOME_UNKNOWN"
+      }
+    }
+  },
+  {
+    "label": "native_sdk_coverage",
+    "value": {
+      "coverage": "INDETERMINATE",
+      "reason": "MCP_SDK_VERSION_BINDING"
+    }
+  },
+  {
+    "label": "TEST_PASS",
+    "value": "test_mcp_boundaries"
+  },
+  {
+    "label": "fixed_path_reject_../queue.sqlite",
+    "value": "LIVE_STATE_PATH"
+  },
+  {
+    "label": "fixed_path_reject_/queue.sqlite",
+    "value": "LIVE_STATE_PATH"
+  },
+  {
+    "label": "fixed_path_reject_NUL.sqlite",
+    "value": "LIVE_STATE_PATH"
+  },
+  {
+    "label": "fixed_path_reject_queue.sqlite:stream",
+    "value": "LIVE_STATE_PATH"
+  },
+  {
+    "label": "fixed_path_reject_work/../queue.sqlite",
+    "value": "LIVE_STATE_PATH"
+  },
+  {
+    "label": "fixed_path_reject_queue.sqlite.",
+    "value": "LIVE_STATE_PATH"
+  },
+  {
+    "label": "duplicate_marker_reject",
+    "value": "LIVE_STATE_INVALID"
+  },
+  {
+    "label": "native_windows_coverage",
+    "value": {
+      "coverage": "INDETERMINATE",
+      "reason": "LIVE_STATE_PLATFORM",
+      "os_name": "posix"
+    }
+  },
+  {
+    "label": "publication_move-false",
+    "value": {
+      "reason": "PUBLISH_UNKNOWN_PRESERVE",
+      "state": "UNKNOWN"
+    }
+  },
+  {
+    "label": "publication_post-move-validation-failure",
+    "value": {
+      "reason": "PUBLISHED_UNVERIFIED_PRESERVE",
+      "state": "PUBLISHED_UNVERIFIED"
+    }
+  },
+  {
+    "label": "publication_success",
+    "value": {
+      "status": "PUBLISHED",
+      "format": "GENIE_LOCAL_STATE_V1",
+      "run_names": [
+        "fresh"
+      ],
+      "scope": "FIXED_NAMESPACE_VISIBLE_PUBLICATION_NOT_CRASH_DURABILITY"
+    }
+  },
+  {
+    "label": "TEST_PASS",
+    "value": "test_fixed_binding_and_publication"
+  },
+  {
+    "label": "paid_gate_shared_interfaces.live_codex_worker",
+    "value": {
+      "status": "REJECT",
+      "reason": "LIVE_COST_BOUND_UNAVAILABLE",
+      "process_entry": false,
+      "preserve": true,
+      "allow_new_invocation": false,
+      "evidence": {
+        "process_entry": false,
+        "retry_count": 0,
+        "preserve": true,
+        "allow_new_invocation": false
+      }
+    }
+  },
+  {
+    "label": "paid_gate_phase2b2m_alpha_live_pilot.alpha_exec_worker",
+    "value": {
+      "status": "REJECT",
+      "reason": "LIVE_COST_BOUND_UNAVAILABLE",
+      "process_entry": false,
+      "preserve": true,
+      "allow_new_invocation": false,
+      "evidence": {
+        "process_entry": false,
+        "retry_count": 0,
+        "preserve": true,
+        "allow_new_invocation": false
+      }
+    }
+  },
+  {
+    "label": "paid_gate_phase2b2o_alpha_recovery_live.recovered_worker",
+    "value": {
+      "status": "REJECT",
+      "reason": "LIVE_COST_BOUND_UNAVAILABLE",
+      "process_entry": false,
+      "preserve": true,
+      "allow_new_invocation": false,
+      "evidence": {
+        "process_entry": false,
+        "retry_count": 0,
+        "preserve": true,
+        "allow_new_invocation": false
+      }
+    }
+  },
+  {
+    "label": "paid_gate_phase2b2s_attested_live_pilot.attested_worker",
+    "value": {
+      "status": "REJECT",
+      "reason": "LIVE_COST_BOUND_UNAVAILABLE",
+      "process_entry": false,
+      "preserve": true,
+      "allow_new_invocation": false,
+      "evidence": {
+        "process_entry": false,
+        "retry_count": 0,
+        "preserve": true,
+        "allow_new_invocation": false
+      }
+    }
+  },
+  {
+    "label": "TEST_PASS",
+    "value": "test_paid_entry_gates"
+  },
+  {
+    "label": "failed_sealed_inspection",
+    "value": "TERMINAL_INVARIANT"
+  },
+  {
+    "label": "TEST_PASS",
+    "value": "test_failed_sealed_inspection_readonly"
+  }
+]

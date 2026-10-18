@@ -603,3 +603,60 @@ bound. Source: https://learn.chatgpt.com/docs/enterprise/chatgpt-work-usage-and-
 (accessed 2026-10-18). No zero-cost quote was invented and no paid/model adapter
 was enabled. This research does not establish an autonomous useful-task pass.
 Fresh review of repaired source and native no-model validation remain pending.
+
+
+v5 native/SDK/package validation — completed 2026-10-18 UTC
+Remote exact commit: cba1d0db74e4a730fc556a6fd8b41102e0e55c01
+Tree: be7f76873b671e5e9719efc330000d261d23e605
+Matching local source: 5327f897fd3874cf25326872730f68a0617333a2
+Run: https://github.com/FtheBS1776/test/actions/runs/39113923479
+All three jobs SUCCESS, standard public-repository runners, no artifact/cache
+upload, model/provider credentials, live pilots or scientific execution.
+windows-repair job 117635682666: 120 unittest methods PASS, zero skips;
+existing 19 queue and 25 bridge checks PASS. New all-four-launcher denial and
+preserved-uncertainty checks included in the native Windows run.
+sdk-transport job 117635682877: 8 official pinned MCP SDK checks PASS.
+windows-package job 117635682975: exact 36-distribution closure PASS;
+read-only source chain PASS; seed/SQLite-free compiled archive PASS; fresh
+owner/provisioner -> shared bridge/driver -> CALL_BUDGET_EXHAUSTED stop ->
+compiled plugin reads PASS, no model/provider invocation.
+Observed disposable EXE SHA256
+8b1f27e65cc89de92da7e081dc173fa24ad6f190206d400e3a719b9a389f6a31
+bytes 22102246; observed disposable ZIP SHA256
+26495049caefed7cf9e39fa86bc431107f679c9ed254e9facfa819dfa548fe37
+bytes 21808424. Not uploaded/distributed/installed/deployed. These hashes do
+not prove signing, reproducibility, custody or user-host/CLI compatibility.
+Raw captures preserved under repair_validation with each job ID in filename;
+all CRLF/whitespace preserved. Diff whitespace checks exclude raw captures.
+All 353 protected historical files still match the original base byte-for-byte.
+Original v4 review copies byte-match the completed reviewer originals.
+A new fresh source-only context is reviewing v5 input SHA256
+c85056c21b14868eea476341bc64f9814dab8f70471eb79f9759499e65dcb51f;
+review result remains pending until its completed report is returned.
+
+
+Completed v5 separate-context result: NO_DEFECT_FOUND within bounded coverage.
+Eight independently created fake-only test groups PASS on one preserved attempt.
+Exact report/test/raw outputs copied unchanged to repair_validation/review_v5.
+Complete evidence ZIP SHA256
+4a1f551373a0ad53e6d71c0a1f674e2f65ee580b1f6bd3f1fef9a4fbd8d5c491.
+The reviewed source is exactly local 5327f89 / tree be7f7687, the same tree as
+remote cba1d0db tested by run 39113923479. Reviewer did not consume author tests,
+results, prior findings, original review or repository history. Its missing
+native Windows/exact SDK capabilities remain INDETERMINATE within that review;
+author native/SDK successes are separate evidence, not retroactive reviewer
+coverage. Same-host/model-family/common ancestry limits remain.
+No further concrete source defect was found in this bounded follow-up. This is
+not universal correctness, independent evidence roots or production acceptance.
+All changes since the reviewed/tested source checkpoint are evidence/docs only.
+No further broad test rerun is required absent another source change/failure.
+
+Standing repair/delegation permissions persist. Actual user-host connection and
+a useful bounded model task remain open. Native computer access is unavailable
+in the current tool surface; hosted VMs do not establish that user's machine.
+No account-specific total cost bound was established, and no supported external
+paid-capable model path is enabled. Host-platform billing was not measured;
+NO MODEL CALL in test receipts refers to subject-system hook/process effects,
+not a claim that ChatGPT repair/review inference has zero platform cost.
+Scoped HOLDs, immutable historical evidence, one admission owner, source pins,
+mandatory deduplication and all execution/governance exclusions remain intact.

@@ -1,0 +1,325 @@
+{
+  "source_commit": "5327f897fd3874cf25326872730f68a0617333a2",
+  "source_tree": "be7f76873b671e5e9719efc330000d261d23e605",
+  "manifest_sha256": "c226049dd12f2c4a2b328f15815b0b179106d77617f92e460711134843d21124",
+  "files": [
+    {
+      "path": "README_FIRST.md",
+      "sha256": "55ecc6cc196a89b3acac10825d97b4e1b65cc8bbcbfb2430d50afff008bb2750",
+      "size": 782,
+      "verified": true
+    },
+    {
+      "path": "REVIEW_CONTRACT.md",
+      "sha256": "d9ff7b9d9dc254152962dcf1fc60f0cb7e1e1c0e0414f095f4b46de29c91cc3c",
+      "size": 5464,
+      "verified": true
+    },
+    {
+      "path": "source/.github/actions/genie-windows-package/action.yml",
+      "sha256": "df720c988b13a0704f8021a11abd50ab1c945a4576bc2e8fde31bcbbd8f06290",
+      "size": 5261,
+      "verified": true
+    },
+    {
+      "path": "source/.github/workflows/genie-desktop-plugin-nonclaim.yml",
+      "sha256": "bf87b37e034d1e91c9d86927b9bc4ff9d73b3546c909287d43b6b5412d974ef1",
+      "size": 1377,
+      "verified": true
+    },
+    {
+      "path": "source/.github/workflows/genie-recovery-no-model.yml",
+      "sha256": "61e54f92d8460b445c0ddba45124c969b7f4f1e7fb057eb683fa7e397c05c2fa",
+      "size": 2837,
+      "verified": true
+    },
+    {
+      "path": "source/active_runner/run_status.py",
+      "sha256": "554c8b16e6635eef024e245eaf2e9a9a66c8841c690cc173e163cb4b757a91a6",
+      "size": 8478,
+      "verified": true
+    },
+    {
+      "path": "source/active_runner/runner.py",
+      "sha256": "f683491cd184ac10e555ad41b96b44c9e690948de761653bc96894c43656dc86",
+      "size": 10583,
+      "verified": true
+    },
+    {
+      "path": "source/canonical_state_provisioner/provisioner_windows.py",
+      "sha256": "88e1663f9587885592791658b1b7dc0d1016726ddd187696a721e22aa9f7b8dd",
+      "size": 9196,
+      "verified": true
+    },
+    {
+      "path": "source/desktop_plugin/entry.py",
+      "sha256": "edeb62130daf27a293fd550fbc42413ea03f3700701392607dcb84ac97a2d174",
+      "size": 2760,
+      "verified": true
+    },
+    {
+      "path": "source/desktop_plugin/genie_mcp.spec",
+      "sha256": "8da0f3137c031fc99e126778b35f8f8440c6d16a721d8956157455fc99646e59",
+      "size": 2737,
+      "verified": true
+    },
+    {
+      "path": "source/desktop_plugin/live_state_windows.py",
+      "sha256": "c845ef22c21ffae25648806660e705fdd7406648ef7054b4309d52c3321bc221",
+      "size": 8657,
+      "verified": true
+    },
+    {
+      "path": "source/desktop_plugin/package/.codex-plugin/plugin.json",
+      "sha256": "31e55602c11b0b1357bfa8aa739ab0bd61b854d78b9371f030240952e9f9fe86",
+      "size": 251,
+      "verified": true
+    },
+    {
+      "path": "source/desktop_plugin/package/.mcp.json",
+      "sha256": "2fb1fb8d99a453530908ba26100da9e9cd61d73be9d39613936a328934a28fc1",
+      "size": 144,
+      "verified": true
+    },
+    {
+      "path": "source/desktop_plugin/package/mcp.json",
+      "sha256": "f0b55b47f1577d197d83ff2b9ce97da5ee428e7625193c31e05564320399f1b6",
+      "size": 221,
+      "verified": true
+    },
+    {
+      "path": "source/desktop_plugin/package/plugin.json",
+      "sha256": "9c0b65cb0f986d3cfba2b991db383458518cb462f93d7a035314928af10ffb72",
+      "size": 295,
+      "verified": true
+    },
+    {
+      "path": "source/desktop_plugin/windows-build.lock.txt",
+      "sha256": "77a84f95acd75d3338fee829e0b310ff3358fbdf815a9622450200d08e35e047",
+      "size": 300,
+      "verified": true
+    },
+    {
+      "path": "source/host_adapter/journal.py",
+      "sha256": "1d7825208cfac386acf0cd83b3505064de8c147ebb35fc6fe54864dd3950cc98",
+      "size": 6338,
+      "verified": true
+    },
+    {
+      "path": "source/phase2b2c_preflight/recovery_preflight.py",
+      "sha256": "0e418458b50beeb5d5c954ab37344eb96576e174c8a70dcf78b6019281913f8f",
+      "size": 15711,
+      "verified": true
+    },
+    {
+      "path": "source/phase2b2l_alpha_isolation_preflight/alpha_isolation_preflight.py",
+      "sha256": "423bcaf0c925d50a8b571b0fa5a044ffa76f81e9bbd6a6423930617db9d234c3",
+      "size": 4148,
+      "verified": true
+    },
+    {
+      "path": "source/phase2b2m_alpha_live_pilot/alpha_exec_worker.py",
+      "sha256": "87c39fb01b1ba6a206b6ea286abc8d5586c8d4904ab9e2d6d2150c7c9f99d83a",
+      "size": 15667,
+      "verified": true
+    },
+    {
+      "path": "source/phase2b2n_event_evidence_recovery/event_fixture.py",
+      "sha256": "94e31437758f393a2345534688e34aa0a9f9d23c2cf67c1f04c78ce2cea208dc",
+      "size": 2046,
+      "verified": true
+    },
+    {
+      "path": "source/phase2b2n_event_evidence_recovery/recovery_preflight.py",
+      "sha256": "c7597afe505556eefee090d33bb696b17c1b871f31008c6392e080ee03377704",
+      "size": 9113,
+      "verified": true
+    },
+    {
+      "path": "source/phase2b2o_alpha_recovery_live/recovered_worker.py",
+      "sha256": "b5e2b1e8be8a3e3e6adeef8ddc6480df2044686a5fc60005463433be8b7f9c3a",
+      "size": 15844,
+      "verified": true
+    },
+    {
+      "path": "source/phase2b2p_capability_containment_repair/repair_contract.py",
+      "sha256": "4ae8051027da4e42f13405ea890c6ded0fa62bea52237260855d4d75f858c436",
+      "size": 7122,
+      "verified": true
+    },
+    {
+      "path": "source/phase2b2r_exact_codex_preflight/exact_codex_preflight.py",
+      "sha256": "316786642fe4b93838c988aa135350fbb179c3afac8cd707cb5c8eca23daf2c6",
+      "size": 11966,
+      "verified": true
+    },
+    {
+      "path": "source/phase2b2s_attested_live_pilot/attested_worker.py",
+      "sha256": "42874989baf7ebf4f4fa5878685b3ae6bf12fe50339d19975736685f7570cf76",
+      "size": 14639,
+      "verified": true
+    },
+    {
+      "path": "source/phase2c_finite_autonomous_pilot/run_bounded_batch.py",
+      "sha256": "0a9c4d48edf419816274892cf6b20b4017fd6b579d7f3dceb254f035df7c4591",
+      "size": 8043,
+      "verified": true
+    },
+    {
+      "path": "source/phase2c_finite_autonomous_pilot/verify_sealed.py",
+      "sha256": "e2ad049a229f1005aef353dd7cec8a6e92591efa26c8a7888486bfe619da23da",
+      "size": 6581,
+      "verified": true
+    },
+    {
+      "path": "source/plugin_mcp_server/requirements.lock.txt",
+      "sha256": "32094c3926215c24d84b201fd19469bf4c8c87510e813872c687d755d1b8a9f0",
+      "size": 518,
+      "verified": true
+    },
+    {
+      "path": "source/run_queue/run_policy.py",
+      "sha256": "c29a4a237e1d7c22d0674f44544dcd64abeb38320dd8aa2efca0419ede60d883",
+      "size": 15705,
+      "verified": true
+    },
+    {
+      "path": "source/shared_interfaces/cli.py",
+      "sha256": "34cf1c27b3f1dbc683fc524d65f2ef415f1230d3b3825f1e006bfe8d3a152169",
+      "size": 7776,
+      "verified": true
+    },
+    {
+      "path": "source/shared_interfaces/function_adapter.py",
+      "sha256": "36dbf3e9a9317e974c8f21a69555835c947f1fa73a1f2ff32e733f70ca478413",
+      "size": 5424,
+      "verified": true
+    },
+    {
+      "path": "source/shared_interfaces/isolated_worker.py",
+      "sha256": "2dbefdba3f5a46c853057ef6dbedec06cdfde2297959bc8bf3d7e8ef14b8cc4f",
+      "size": 21851,
+      "verified": true
+    },
+    {
+      "path": "source/shared_interfaces/live_codex_worker.py",
+      "sha256": "36c64d4bd550005b4c2ce02533086800961e3eb04ec7a7fcaf266fe757afc39d",
+      "size": 25136,
+      "verified": true
+    },
+    {
+      "path": "source/shared_interfaces/mcp_consumer.py",
+      "sha256": "40c54edf66f07f60bd0beaef5bb567ac15f4a08572ffe724d5cf77a2e023729c",
+      "size": 6041,
+      "verified": true
+    },
+    {
+      "path": "source/shared_interfaces/mcp_controller.py",
+      "sha256": "1cda693fa102eec2c0447299be5798ab25f45816f2bf7913677261f7b176e48a",
+      "size": 5511,
+      "verified": true
+    },
+    {
+      "path": "source/shared_interfaces/mcp_controller_server.py",
+      "sha256": "ac4890f77aa6c0adcbc0383a5b7a575f9bc9a874f96cdd13fc15f7607919f7c0",
+      "size": 7199,
+      "verified": true
+    },
+    {
+      "path": "source/shared_interfaces/mcp_events.py",
+      "sha256": "576f4acbf690c5d072e27023ae2d2e6435f1d609705357f0a4111abcf6984e5f",
+      "size": 6225,
+      "verified": true
+    },
+    {
+      "path": "source/shared_interfaces/mcp_events_server.py",
+      "sha256": "1634bc08c8f77b41e4ab901ffc4f62e40f727077fdb8b82eb5c48505b474c7db",
+      "size": 9526,
+      "verified": true
+    },
+    {
+      "path": "source/shared_interfaces/mcp_server.py",
+      "sha256": "0354efa7614da98d0078034a05b8586a4617bbb75dc8f9c004cf7515bb4b9ee4",
+      "size": 8162,
+      "verified": true
+    },
+    {
+      "path": "source/shared_interfaces/process_containment.py",
+      "sha256": "afae468fef8f31537706559e59e42cf3f2a8bfbebaac5ec74b9f837968311727",
+      "size": 18890,
+      "verified": true
+    },
+    {
+      "path": "source/shared_interfaces/run_control.py",
+      "sha256": "43958f98ce3dfd01de019df70bb14dfd9135f87f41b58171b3224a97bf8c2b65",
+      "size": 8267,
+      "verified": true
+    },
+    {
+      "path": "source/shared_interfaces/run_events.py",
+      "sha256": "b150fef78663421b3ddf3f88267e33c5adeea5615d86275d5be35b4c88f28871",
+      "size": 8880,
+      "verified": true
+    },
+    {
+      "path": "source/shared_interfaces/session_driver.py",
+      "sha256": "872903f1eaec93fce406662382fcadc896d28e8ce894cf60ae083d3e02dc5ab8",
+      "size": 13071,
+      "verified": true
+    },
+    {
+      "path": "source/shared_interfaces/status_tool.py",
+      "sha256": "c7bdd7b8b97077aeccb5831466a4d4071b391e5657a9cc449eb0d70a1ea84798",
+      "size": 11637,
+      "verified": true
+    },
+    {
+      "path": "source/shared_interfaces/windows_job.py",
+      "sha256": "a654ef455f5829a7894d6b01817a8e74c04c26f89d3c51afd38daca09be52ec0",
+      "size": 13170,
+      "verified": true
+    },
+    {
+      "path": "source/shared_interfaces/work_host.py",
+      "sha256": "2e59b39e18a25bc8531864969189659eadd472dce37b5ad47424cb6809158f1c",
+      "size": 2336,
+      "verified": true
+    },
+    {
+      "path": "source/standalone_app/cli.py",
+      "sha256": "913101a445f6e7603a6b1557f8569fcb74dc7b5a520032f5f925ee7323c718c0",
+      "size": 2884,
+      "verified": true
+    },
+    {
+      "path": "source/standalone_app/execution_bridge.py",
+      "sha256": "ec0100fd6211305184bb419c62ca216510a6ac196beea8ae9f5d07d4440786d9",
+      "size": 3894,
+      "verified": true
+    },
+    {
+      "path": "source/standalone_app/owner.py",
+      "sha256": "da9d2270b0c735638719f2a2b7bb6d5a97450bb8b864b086e365329d5eae7dd2",
+      "size": 8609,
+      "verified": true
+    },
+    {
+      "path": "source/worker_bridge/bridge.py",
+      "sha256": "6cbc9f8b0d6f2beb85e5e60927fbc3bf4ac21628daaf3f12c8aefd3780df4b89",
+      "size": 10207,
+      "verified": true
+    },
+    {
+      "path": "source/worker_bridge/reused/report_sink.py",
+      "sha256": "fe8f62eaeff8825319ea98fd76cd8bb92bc9099a5c4af24d33fecb8ac7eb4806",
+      "size": 4119,
+      "verified": true
+    },
+    {
+      "path": "source/worker_bridge/reused/stateful_subject.py",
+      "sha256": "8ea005246f66fd413f00bad6cf0714e5704c23cc4255881ce659e682ce740131",
+      "size": 5403,
+      "verified": true
+    }
+  ]
+}
