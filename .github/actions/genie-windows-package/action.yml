@@ -1,0 +1,181 @@
+name: Build and check Genie Windows package
+description: Existing exact no-model package recipe; does not upload or install the result.
+runs:
+  using: composite
+  steps:
+    - name: Create isolated exact build environment
+      shell: pwsh
+      run: |
+        python -m venv desktop_plugin/.venv
+        $py = 'desktop_plugin/.venv/Scripts/python.exe'
+        & $py -m pip install --disable-pip-version-check -r plugin_mcp_server/requirements.lock.txt -r desktop_plugin/windows-build.lock.txt
+        & $py -m pip check
+        & $py -m pip freeze
+
+    - name: Verify exact Windows runtime and build closures
+      shell: pwsh
+      run: |
+        $py = 'desktop_plugin/.venv/Scripts/python.exe'
+        @'
+        import importlib.metadata as md
+        from shared_interfaces.mcp_server import required_transport_distributions
+        expected = required_transport_distributions()
+        expected.update({
+            'altgraph': '0.17.5',
+            'packaging': '26.3',
+            'pefile': '2024.8.26',
+            'pyinstaller': '6.22.3',
+            'pyinstaller-hooks-contrib': '2026.8',
+            'pywin32-ctypes': '0.2.3',
+            'setuptools': '84.0.0',
+        })
+        mismatches = {
+            name: (version, md.version(name))
+            for name, version in expected.items()
+            if md.version(name) != version
+        }
+        assert not mismatches, mismatches
+        print('WINDOWS_PACKAGE_VERSION_CLOSURE_PASS', len(expected))
+        '@ | & $py -
+
+    - name: Preflight exact Genie source and real read-only calls on Windows
+      shell: pwsh
+      run: |
+        $py = 'desktop_plugin/.venv/Scripts/python.exe'
+        @'
+        import hashlib
+        from pathlib import Path
+        from shared_interfaces import cli, mcp_server, status_tool
+
+        root = Path('host_return/trial')
+        sqlite_files = sorted(root.rglob('*.sqlite'))
+        before = {str(path): hashlib.sha256(path.read_bytes()).hexdigest() for path in sqlite_files}
+
+        runs = cli._read_registry(root / 'REGISTRY.json')
+        host = status_tool.GenieStatusTools(runs)
+        status = host.call('get_run_status', {'run_name': 'actual'})
+        assert status.get('status') == 'PASS', status
+        confirmed = [
+            item for item in status.get('tasks', [])
+            if isinstance(item, dict)
+            and isinstance(item.get('fresh_sink'), dict)
+            and item['fresh_sink'].get('status') == 'CONFIRMED'
+        ]
+        assert confirmed, status
+        task_id = confirmed[0]['task_id']
+        result = host.call('get_task_result', {'run_name': 'actual', 'task_id': task_id})
+        assert result.get('status') == 'CONFIRMED', result
+        assert result.get('content_role') == 'UNTRUSTED_ACCEPTED_TASK_DATA', result
+
+        server = mcp_server.build_server(runs)
+        assert server is not None
+        after = {str(path): hashlib.sha256(path.read_bytes()).hexdigest() for path in sqlite_files}
+        assert after == before, (before, after)
+        print('WINDOWS_SOURCE_AND_READONLY_CALL_CHAIN_PASS', len(sqlite_files), task_id)
+        '@ | & $py -
+
+    - name: Prepare deterministic seed state with isolated UNKNOWN fixture
+      shell: pwsh
+      run: |
+        $py = 'desktop_plugin/.venv/Scripts/python.exe'
+        @'
+        import hashlib, json, shutil
+        from pathlib import Path
+        from run_queue import run_policy as q
+
+        source = Path('host_return/trial')
+        target = Path('desktop_plugin/build_seed')
+        if target.exists():
+            shutil.rmtree(target)
+        shutil.copytree(source, target)
+
+        registry_path = target / 'REGISTRY.json'
+        registry = json.loads(registry_path.read_text(encoding='utf-8'))
+        assert set(registry) == {'actual'}, registry
+
+        unknown_run = 'genie-plugin-unknown-fixture-20261011'
+        unknown_task = 'genie-known-unavailable-fixture-20261011'
+        unknown_queue = target / 'unknown_fixture.sqlite'
+        q.initialize(unknown_queue, {
+            'run_id': unknown_run,
+            'max_tasks': 1,
+            'max_model_calls': 1,
+            'effect_scope': 'owned-local-report-inbox',
+        })
+        assert q.enqueue(unknown_queue, {
+            'task_id': unknown_task,
+            'goal': 'synthetic-readonly-unknown-fixture',
+            'input_sha256': '0' * 64,
+            'max_attempts': 1,
+        }) == 'ENQUEUED'
+        unknown_root = target / 'unknown_fixture_work'
+        unknown_root.mkdir()
+        (unknown_root / '.fixture-root').write_text(
+            'synthetic UNKNOWN fixture root; no task ledger is provisioned\n',
+            encoding='utf-8')
+        registry['unknown-fixture'] = {
+            'queue': 'unknown_fixture.sqlite',
+            'run_id': unknown_run,
+            'owned_root': 'unknown_fixture_work',
+        }
+        registry_path.write_text(
+            json.dumps(registry, sort_keys=True, separators=(',', ':')) + '\n',
+            encoding='utf-8')
+
+        records = []
+        for path in sorted(target.rglob('*')):
+            if path.is_file() and path.name != 'SEED_MANIFEST.json':
+                raw = path.read_bytes()
+                records.append({
+                    'path': path.relative_to(target).as_posix(),
+                    'sha256': hashlib.sha256(raw).hexdigest(),
+                    'size': len(raw),
+                })
+        canonical = json.dumps(records, sort_keys=True, separators=(',', ':')).encode()
+        seed_id = 'desktop-plugin-seed-' + hashlib.sha256(canonical).hexdigest()[:20]
+        manifest = {'seed_id': seed_id, 'files': records}
+        (target / 'SEED_MANIFEST.json').write_text(
+            json.dumps(manifest, sort_keys=True, separators=(',', ':')) + '\n',
+            encoding='utf-8')
+        print('SEED_MANIFEST_PASS', seed_id, len(records))
+        print('UNKNOWN_FIXTURE_PASS', unknown_run, unknown_task)
+        '@ | & $py -
+
+    - name: Build self-contained Windows stdio executable
+      shell: pwsh
+      run: |
+        desktop_plugin/.venv/Scripts/pyinstaller.exe --clean --noconfirm --distpath desktop_plugin/build_dist --workpath desktop_plugin/build_work desktop_plugin/genie_mcp.spec
+
+    - name: Assemble portable plus Codex-compatible plugin folder
+      shell: pwsh
+      run: |
+        $root = 'desktop_plugin/staging/genie-readonly'
+        New-Item -ItemType Directory -Force -Path "$root/bin" | Out-Null
+        New-Item -ItemType Directory -Force -Path "$root/.codex-plugin" | Out-Null
+        Copy-Item desktop_plugin/package/plugin.json "$root/plugin.json"
+        Copy-Item desktop_plugin/package/mcp.json "$root/mcp.json"
+        Copy-Item desktop_plugin/package/.codex-plugin/plugin.json "$root/.codex-plugin/plugin.json"
+        Copy-Item desktop_plugin/package/.mcp.json "$root/.mcp.json"
+        Copy-Item desktop_plugin/build_dist/genie-mcp.exe "$root/bin/genie-mcp.exe"
+        Get-ChildItem -Force -Recurse $root | Select-Object FullName,Length
+
+    - name: Exercise frozen plugin lifecycle, compatibility manifests and stdio tools
+      shell: pwsh
+      run: |
+        $env:GENIE_PLUGIN_ROOT = (Resolve-Path 'desktop_plugin/staging/genie-readonly').Path
+        desktop_plugin/.venv/Scripts/python.exe -B desktop_plugin/test_frozen.py
+
+    - name: Record package identities
+      shell: pwsh
+      run: |
+        $exe = 'desktop_plugin/staging/genie-readonly/bin/genie-mcp.exe'
+        $exeHash = (Get-FileHash $exe -Algorithm SHA256).Hash.ToLower()
+        $exeSize = (Get-Item $exe).Length
+        Compress-Archive -Path 'desktop_plugin/staging/genie-readonly' -DestinationPath 'desktop_plugin/genie-readonly-windows.zip' -Force
+        $zipHash = (Get-FileHash 'desktop_plugin/genie-readonly-windows.zip' -Algorithm SHA256).Hash.ToLower()
+        $zipSize = (Get-Item 'desktop_plugin/genie-readonly-windows.zip').Length
+        Write-Output "GENIE_DESKTOP_EXE_SHA256=$exeHash"
+        Write-Output "GENIE_DESKTOP_EXE_BYTES=$exeSize"
+        Write-Output "GENIE_DESKTOP_ZIP_SHA256=$zipHash"
+        Write-Output "GENIE_DESKTOP_ZIP_BYTES=$zipSize"
+

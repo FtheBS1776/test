@@ -62,3 +62,14 @@ jobs:
           python -m pip check
       - name: No-model SDK transport checks
         run: python -B -m unittest -v plugin_mcp_server.test_mcp_server
+
+  windows-package:
+    runs-on: windows-2025
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.10'
+      - name: Reuse existing no-model package recipe without publication
+        uses: ./.github/actions/genie-windows-package
