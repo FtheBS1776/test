@@ -1,0 +1,48 @@
+{
+  "classification": "USER_REPORTED_EVIDENCE_FOLLOWUP_NOT_INDEPENDENT_ATTESTATION",
+  "received_date_local": "2026-10-18",
+  "predecessor_record": "HOST_TASK_ENVIRONMENT_BLOCKER_20261018.json",
+  "disposition": "BLOCKED_TASK_LOCAL_ENVIRONMENT",
+  "four_evidence_files_found_reported": true,
+  "recorded_wrapper_invocations_reported": [
+    "pwsh.dll -NoLogo -NoProfile -NoExit -File <stage>\\ops\\enter-task.ps1",
+    "& (Join-Path $PWD 'ops\\verify-prerequisites.ps1')"
+  ],
+  "exact_internal_removal_command": "UNKNOWN_NOT_RECORDED_IN_FOUR_FILES",
+  "exact_internal_check_command": "UNKNOWN_NOT_RECORDED_IN_FOUR_FILES",
+  "powershell_version_reported": "7.6.5",
+  "dotnet_version": "UNKNOWN",
+  "variables_reported": {
+    "PYTHONHOME": {
+      "present": true,
+      "empty_or_nonempty": "UNKNOWN",
+      "task_process_removed": false,
+      "runtime_prerequisites_absent": false
+    },
+    "PYTHONPATH": {
+      "present": true,
+      "empty_or_nonempty": "UNKNOWN",
+      "task_process_removed": false,
+      "runtime_prerequisites_absent": false
+    }
+  },
+  "process_relationship_reported": {
+    "startup_and_checker_same_pid": true,
+    "pid": 53688,
+    "support": "task-process.json and transcript",
+    "removal_itself_executed_in_that_process": "UNKNOWN",
+    "same_tool_invocation": "UNKNOWN",
+    "tool_call_identifiers_recorded": false
+  },
+  "root_cause": "UNDETERMINED",
+  "limits": [
+    "All host observations are user-reported; this cloud session has not read the host files.",
+    "Common startup/checker PID does not prove execution of unrecorded removal code or explain its result.",
+    "Presence with false removal/absence flags does not distinguish empty from populated entries.",
+    "Wrapper references identify candidate script files; they do not supply their contents or establish which bytes executed historically.",
+    "Original one-credit Firecrawl report and unknown monetary charge remain unchanged; no new cost receipt supplied.",
+    "No new build, probe, environment cleanup, source repair or occupied-stage resume authorized by this evidence request."
+  ],
+  "next_eligible_action": "Statically inspect and hash the two already named ops scripts and only necessary directly referenced local helpers; no execution or modifications.",
+  "source_build_runtime_tests": "NOT_RUN_NO_SOURCE_CHANGE"
+}

@@ -24,6 +24,8 @@ The next isolated preparation is specified in [HOST_STAGE_PLAN_20261018.md](HOST
 
 The subsequent user-reported attempt created the exclusive stage, then stopped at `BLOCKED_TASK_LOCAL_ENVIRONMENT` because `PYTHONHOME` and `PYTHONPATH` remained visible after attempted removal. No clone, build or probe was reached. The original plan remains unchanged; do not resume or clean the occupied stage. The removal/check commands, shell version and process boundary are not supplied here, so the cause remains undetermined. The report also records one Firecrawl retrieval credit consumed; included allowance and monetary charge are UNKNOWN. See `repair_validation/HOST_TASK_ENVIRONMENT_BLOCKER_20261018.json` and [the read-only evidence request](HOST_ENVIRONMENT_EVIDENCE_REQUEST_20261018.md). No further credit-consuming retrieval is part of that request.
 
+The subsequent four-file inspection reportedly records PowerShell `7.6.5` and the same PID for startup/checker, while exact internal cleanup/check expressions and empty versus nonempty entries remain UNKNOWN. The original blocker record is preserved; the narrower follow-up is `repair_validation/HOST_TASK_ENVIRONMENT_FOLLOWUP_20261018.json`. Next inspect the two named `ops` scripts as text only using the follow-up section of the existing evidence request. No cleanup retry or occupied-stage resume follows from a shared PID.
+
 ## Historical fixture-backed package record (superseded)
 
 The following record describes its original source/binary, not the current live-state candidate.
