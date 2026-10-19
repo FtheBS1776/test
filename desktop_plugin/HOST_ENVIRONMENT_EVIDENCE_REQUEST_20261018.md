@@ -1,48 +1,29 @@
-# Existing host evidence inspection only
+# Complete host startup-source review request — current next action
 
-The previous attempt stopped as BLOCKED_TASK_LOCAL_ENVIRONMENT. This follow-up uses existing repair authorization for read-only diagnosis. It does not resume the build plan, weaken the absence gate or retry environment cleanup. Reuse the existing evidence as input; preserve the attempted stage and its original files.
+The reported one-run synthetic test passed its exact success predicate on PowerShell 7.6.5 / .NET 10.0.11, exit 0 with empty stderr. This supports the provider-removal correction but does not validate the full startup/check scripts or the historical cause. The original pinned contracts/tests, failed attempts and diagnostic evidence remain unchanged. Prior versions of this request are retained in Git history; the completed four-file/excerpt inspections and synthetic test do not need repeating.
 
-Paste into the laptop chat with access to the previously reported stage:
+Use existing standing repair authorization to prepare only the private source input below. No repair application, startup/prerequisite execution or build is included. This reuses the existing scripts and artifact-review process, not a second launcher or authority service.
 
-```text
-Inspect ONLY the already preserved runtime-prerequisites.json, task-process.json, task-session-transcript.txt and plan-verification.json under the existing genie-repair-stage-20261018/evidence directory. Use the original verified raw plan already saved locally if needed; no retrieval or download is needed. If these are unavailable, return EVIDENCE_UNAVAILABLE without searching unrelated locations. Do not use Firecrawl, credit-consuming research/retrieval, paid APIs or a provider/model CLI.
-
-Return a small redacted report derived from the saved evidence:
-1. The exact cleanup and presence-check expressions for PYTHONHOME/PYTHONPATH, retaining method, arguments, scope and ordering but redacting any environment values/private paths. Do not execute expressions from the transcript.
-2. Recorded PowerShell/.NET versions, if any; otherwise UNKNOWN. Mark whether each variable was recorded ABSENT, PRESENT_EMPTY, PRESENT_NONEMPTY or UNKNOWN. Do not infer absence from null/empty display or print the values.
-3. Whether cleanup and checks demonstrably occurred in the same process/tool invocation, whether a fresh environment snapshot was read after cleanup, and whether Process versus User/Machine scope was checked. Cite only relevant saved evidence lines/fields; missing identity/order evidence is UNKNOWN. No environment dump, credentials or unrelated transcript content.
-4. Whether the recorded commands distinguish a PowerShell null-to-string/empty-entry issue, a different process/scope/snapshot, an actual error, or leave the cause undetermined. Report uncertainty instead of choosing a cause without evidence.
-5. The already recorded retrieval tool/service and consumed-credit receipt, with identifiers/secrets redacted. Preserve the reported one Firecrawl credit. Included allowance and incremental monetary charge remain UNKNOWN unless the existing receipt itself establishes them; no account/billing/network lookup.
-
-Do not change environment variables, files, settings, profiles or registration; create/reuse no build stage; install or download nothing; rerun no cleanup/version/Python/Git/probe tests; launch no Genie executable/tool, owner, provisioner, model, science or pilot. Leave the existing stage untouched and stop after the redacted report. This is evidence inspection only, not a cleanup workaround or authorization to proceed to the build.
-```
-
-Microsoft's PowerShell 7.5 environment-variable documentation distinguishes process inheritance, empty entries, and provider versus System.Environment null handling. Those are hypotheses to compare with the actual recorded commands, not a diagnosis or permission to execute a fix: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.5
-
-No laptop access or subject execution was performed in preparing this request. No second owner, launcher, roadmap, authority mechanism or cost service is introduced. Existing pinned stage plan, prior reviews and historical receipts remain unchanged.
-
-## Follow-up after the four-file inspection
-
-The user-reported follow-up found all four files, recorded PowerShell 7.6.5, and linked startup/checker observations to PID 53688. Internal removal/check expressions, empty versus populated entries, .NET version and tool-call identity remain UNKNOWN. This narrows the evidence gap without establishing the cause. The report is preserved separately in `repair_validation/HOST_TASK_ENVIRONMENT_FOLLOWUP_20261018.json`; the original blocker record remains unchanged.
-
-Next laptop prompt (replaces repeating the completed four-file inspection):
+## Laptop prompt
 
 ```text
-Within the existing blocked genie-repair-stage-20261018 folder, read these existing files as text only:
-ops\enter-task.ps1
-ops\verify-prerequisites.ps1
+Prepare a PRIVATE source-only review packet from the existing blocked stage. Do not execute or modify any source script or rerun the synthetic test. No network, Firecrawl, paid service, installation, model/API call, build, owner/provisioner, registration or application-state action.
 
-Do not execute or dot-source either script. Return each file's raw SHA-256 and byte length, plus line-numbered redacted excerpts showing the complete PYTHONHOME/PYTHONPATH removal and presence-check logic, relevant conditions/exception handling, and how *_removed / *_absent are computed. Preserve method, argument types and Process/User/Machine scope; do not expose environment values, credentials or private paths.
+Read the complete existing files as raw bytes:
+ops\enter-task.ps1 — expected 3188 bytes, SHA256 f9a1958ae123f0f7f583fa5671ce146bcdefd92a8746710fc2db631733fe2aec
+ops\verify-prerequisites.ps1 — expected 15874 bytes, SHA256 4d10b3930d0c3266880750161ddd7e8eff9b1a7e5832917268254aa8904e797d
 
-If a required expression is delegated, read only the directly referenced existing local helper(s) needed to resolve it, confined to the same stage's ops directory. Do not evaluate dynamic paths or follow links outside it. Report missing, linked, ambiguous or dynamic references as UNKNOWN rather than expanding the search. Hash and identify any helper read. If files cannot be safely resolved, return EVIDENCE_UNAVAILABLE.
+Verify both raw lengths/hashes. Mismatch, unresolved path or unexpected link: stop and report it, without changing anything or substituting another source version. Inspect as text for credentials, tokens or embedded actual environment-value dumps before packaging. If found, stop and report presence only; do not disclose them or silently redact/hash-relabel the source. Ordinary private paths may remain only in this private packet; do not publish it to GitHub or another service.
 
-Distinguish current script contents from proof of which bytes executed during the stopped attempt. Do not infer the historical removal call executed merely from the shared startup/checker PID.
+Include any necessary directly referenced existing script helpers confined to the same ops directory, as raw source only. Do not execute references, evaluate dynamic paths, traverse links or expand to unrelated files. List unresolved/dynamic/outside references explicitly as UNKNOWN. Do not include SQLite/state/cache files, transcripts, credentials, executables or unrelated inventory.
 
-No changes, environment edits, cleanup retry, stage reuse/resume, new stage, script execution, tests, builds, downloads, Firecrawl, credit-consuming services, provider/model CLI or Genie tool calls. Stop after the redacted static report.
+Create only a NEW exclusive sibling directory, genie-startup-review-input-20261019, in the same owned project. Existing directory means stop/preserve. Use supported New-Item -Path for directory creation, never -Force. Keep all new packet/log/archive outputs there; leave the old stage and successful diagnostic directory untouched.
+
+Make one data-only ZIP containing README_FIRST.md (verify digest/ZIP paths/CRC/manifest before extraction; execute no subject), MANIFEST.json (exclude itself; bind every other ZIP file by exact safe relative path, raw byte length and SHA256), and complete raw scripts preserving their relative structure under source/ops/. Include a small static report listing unresolved references and all process-scoped environment-removal calls/target expressions, including PIP_* cleanup; do not change them. Mark historical executed-byte identity UNKNOWN.
+
+Return the ZIP using one copyable JSON object with zip_sha256, zip_bytes and zip_base64. This is private text transport to this review chat, not publication. Preserve the local packet and originals. Stop after returning the packet; do not apply the proposed two-line repair or run anything from it.
 ```
 
-This reuses the original stage's existing setup/check scripts for diagnosis. No replacement launcher, authority mechanism or subsystem is proposed. The original pinned plan, prior input/review archives, historical receipts and all governance/HOLD boundaries remain intact. No additional source retrieval is necessary.
+## Subsequent eligible work
 
-## Current next step — 2026-10-19
-
-Both reported static script inspections are complete. Do not repeat the historical inspection prompts above. The reported excerpts and hashes are retained separately in `repair_validation/HOST_TASK_ENVIRONMENT_SCRIPT_REPORT_20261019.json`. Continue only with the focused correction/test contract in `HOST_ENVIRONMENT_CORRECTION_20261019.md`; it preserves the old scripts/stage and permits only one fresh synthetic-variable diagnostic. No actual Python-variable cleanup or build is included.
+Only after safe receipt/verification of the complete private source can the exact startup correction and same-function removal inventory be reviewed together. Preserve existing absence checks and stage/build owners; distinguish process removals from value-setting and User/Machine operations. New execution needs a concrete fresh-attempt contract and the existing stopping/cost/HOLD boundaries; this source packet grants none. Private full source must not be copied into the public repair repository.

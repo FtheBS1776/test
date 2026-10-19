@@ -30,6 +30,8 @@ The 2026-10-19 script-excerpt report now identifies the .NET `$null` removal cal
 
 The next synthetic attempt reportedly stopped before launch because its operator preparation used unsupported `New-Item -LiteralPath`; no diagnostic directory/files or test process were created. The pinned contract and test matched as reported and remain unchanged. The [directory-creation addendum](HOST_ENVIRONMENT_DIRECTORY_ADDENDUM_20261019.md) corrects that call to supported `-Path`, retains fresh-absence/no-Force and all child-process/cost gates, and permits one separately prepared diagnostic attempt. This is not a test pass or a complete wrapper audit.
 
+The subsequent native synthetic run reportedly returned `SYNTHETIC_SEMANTICS_CONFIRMED`, exit 0, empty stderr, one fresh process on PowerShell 7.6.5 / .NET 10.0.11. Seed controls and both provider absence checks passed; the .NET call left a present-empty entry. This is a scoped native API result, not a startup/build/package pass or proof of historical execution. The attributed receipt is `repair_validation/HOST_ENVIRONMENT_SYNTHETIC_RESULT_20261019.json`. Next prepare the complete private startup/check-script source packet using the [current evidence request](HOST_ENVIRONMENT_EVIDENCE_REQUEST_20261018.md); do not rerun the completed synthetic diagnostic.
+
 ## Historical fixture-backed package record (superseded)
 
 The following record describes its original source/binary, not the current live-state candidate.

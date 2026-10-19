@@ -1,0 +1,76 @@
+{
+  "classification": "USER_REPORTED_ONE_NATIVE_SYNTHETIC_TEST_NOT_INDEPENDENT_HOST_ATTESTATION",
+  "received_date_local": "2026-10-19",
+  "disposition": "SYNTHETIC_SEMANTICS_CONFIRMED",
+  "reported_pins": {
+    "contract": {
+      "path": "desktop_plugin/HOST_ENVIRONMENT_CORRECTION_20261019.md",
+      "bytes": 6693,
+      "sha256": "6c0ef0bcabc60c561bb98f4607f7031dafa59f6b6b2423955136129d58832a6b"
+    },
+    "test": {
+      "path": "desktop_plugin/test_environment_removal.ps1",
+      "bytes": 3074,
+      "sha256": "0037d07a71414c236dced24869efc4f498841e1d89e0eb0d923a0ac84333893a"
+    }
+  },
+  "local_pinned_bytes_match": true,
+  "reported_stdout_text": "{\"status\":\"SYNTHETIC_SEMANTICS_CONFIRMED\",\"powershell\":\"7.6.5\",\"dotnet\":\".NET 10.0.11\",\"process_id\":66156,\"dotnet_seeded\":true,\"dotnet_null_result\":\"PRESENT_EMPTY\",\"provider_seeded\":true,\"provider_absent\":true,\"provider_idempotent_absent\":true,\"final_absent\":true,\"error_kind\":null}",
+  "reported_stdout_ending": "CRLF",
+  "reconstructed_stdout_utf8_bytes": 284,
+  "reconstructed_stdout_sha256": "35d988fa2842d907b7b0bc4b7c7caf41c1dc1a14369fa6b90cb9bb6174937871",
+  "reconstruction_limit": "Digest/length computed from user-supplied stdout text plus reported CRLF, not from a directly read host evidence file.",
+  "reported_stderr_bytes": 0,
+  "reported_process": {
+    "exit_status": 0,
+    "termination": "EXITED",
+    "invocation_count": 1,
+    "fresh_process": true,
+    "child_pid": 66156,
+    "controller_pid": 44308,
+    "started_utc": "2026-10-19T16:01:27.1987747Z",
+    "ended_utc": "2026-10-19T16:01:27.7652654Z",
+    "powershell": "7.6.5",
+    "dotnet": ".NET 10.0.11",
+    "launch_error": null
+  },
+  "reported_stdout_fields": {
+    "status": "SYNTHETIC_SEMANTICS_CONFIRMED",
+    "powershell": "7.6.5",
+    "dotnet": ".NET 10.0.11",
+    "process_id": 66156,
+    "dotnet_seeded": true,
+    "dotnet_null_result": "PRESENT_EMPTY",
+    "provider_seeded": true,
+    "provider_absent": true,
+    "provider_idempotent_absent": true,
+    "final_absent": true,
+    "error_kind": null
+  },
+  "reported_launch_arguments": [
+    "-NoLogo",
+    "-NoProfile",
+    "-NonInteractive",
+    "-File",
+    ".\\test_environment_removal.ps1"
+  ],
+  "reported_child_environment": "Four temp/cache overrides applied only through ProcessStartInfo, all resolved within exclusive diagnostic directory.",
+  "reported_parent_synthetic_variable_absent_before_and_after": true,
+  "reported_real_python_parent_old_stage_registration_application_changes": false,
+  "reported_preserved_host_evidence": [
+    "evidence/process-metadata.json",
+    "evidence/task-stdout.txt",
+    "evidence/task-stderr.txt",
+    "evidence/source-verification.json"
+  ],
+  "meaning": "Reported native test demonstrates present-empty result for the exact method call and actual/idempotent provider removal of seeded synthetic data on the observed runtime.",
+  "remaining_limits": [
+    "Actual historical PYTHONHOME/PYTHONPATH entry values and executed startup bytes remain UNKNOWN.",
+    "No actual startup-script repair has been applied or composed startup/prerequisite test established.",
+    "Full host scripts remain unavailable to this cloud session; excerpts/hashes are not a complete executable subject.",
+    "No Git/Python build prerequisites, package build, candidate MCP invocation, installation or useful-model result follows.",
+    "Trusted-host/user-reported evidence; no hostile-host or OS-wide confinement attestation.",
+    "Prior reported one Firecrawl credit and UNKNOWN monetary charge preserved; no new monetary receipt."
+  ],
+  "next_eligible_action": "Private source-only review packet of complete original startup/check scripts with exact raw hashes and necessary local helpers; no source execution or new diagnostic run."
+}

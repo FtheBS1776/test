@@ -879,3 +879,26 @@ Normalized report: HOST_ENVIRONMENT_DIRECTORY_BLOCKER_20261019.json.
 Original contract/test raw hashes and sizes PASS. No native execution here.
 Next: one separately prepared corrected attempt under addendum, then stop.
 Prior Firecrawl credit and UNKNOWN charge preserved; no new cost receipt.
+
+
+2026-10-19 — reported native synthetic API test CONFIRMED
+User reports exact pinned contract6693/test3074 identities; local raw bytes
+still match. One fresh child PID66156/controller44308, PowerShell7.6.5/.NET10.0.11,
+2026-10-19T16:01:27.1987747Z to .7652654Z, EXITED exit0, stderr0 bytes.
+Reported stdout exact success predicate: both nonempty seed controls true,
+.NET null result PRESENT_EMPTY, provider/idempotent/final absence all true,
+error_kind null. Supplied JSON plus reported CRLF reconstructs 284 UTF8 bytes,
+SHA256 35d988fa2842d907b7b0bc4b7c7caf41c1dc1a14369fa6b90cb9bb6174937871.
+This is reconstruction from the user report, not a direct host-file digest.
+Reported child-only temp/cache overrides and unchanged parent/real variables,
+old stage/registration/application state. Native host files not read here.
+Receipt: HOST_ENVIRONMENT_SYNTHETIC_RESULT_20261019.json.
+
+Result supports targeted current-runtime semantics, not old-script executed
+bytes/entry values, complete startup repair, prerequisites/build, MCP package,
+installation, cost containment or useful-model operation. No test rerun needed.
+Next eligible action: private complete-source packet of existing startup/check
+scripts and necessary local helpers for exact patch/same-function review; source
+only, no repair application/execution or network. Private source not public Git.
+Prior failed attempts, pinned inputs/tests/reviews and all science/cost/HOLD
+boundaries preserved; prior one Firecrawl credit/UNKNOWN monetary charge remains.
