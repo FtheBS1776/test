@@ -1,3 +1,8 @@
+> Historical packet request. Superseded as the next action by the user's local
+> repair-ownership handoff and the reported sealed/runtime-blocked frontier.
+> Preserve this request as evidence; do not send private source/environment
+> values or repeat packet preparation. See HOST_RUNTIME_ACQUISITION_RESEARCH_20261019.md.
+
 # Complete host startup-source review request — current next action
 
 The reported one-run synthetic test passed its exact success predicate on PowerShell 7.6.5 / .NET 10.0.11, exit 0 with empty stderr. This supports the provider-removal correction but does not validate the full startup/check scripts or the historical cause. The original pinned contracts/tests, failed attempts and diagnostic evidence remain unchanged. Prior versions of this request are retained in Git history; the completed four-file/excerpt inspections and synthetic test do not need repeating.

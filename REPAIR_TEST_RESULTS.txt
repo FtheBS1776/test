@@ -902,3 +902,22 @@ scripts and necessary local helpers for exact patch/same-function review; source
 only, no repair application/execution or network. Private source not public Git.
 Prior failed attempts, pinned inputs/tests/reviews and all science/cost/HOLD
 boundaries preserved; prior one Firecrawl credit/UNKNOWN monetary charge remains.
+
+
+2026-10-19 — reported preparation sealed; R09 runtime gate remains blocked
+Attributed user report only; no host files/manifests read or rehashed here.
+Preservation MATCH: five installed files, registration and 34 legacy files
+unchanged/stable. Seal: five packet manifests, twelve anchors, ten ordinary roots.
+Supplied exact hashes retained in HOST_PREPARATION_SEAL_REPORT_20261019.json.
+No corrected-stage checkout/venv/dependency report/build/EXE/ZIP/probe observed.
+No build/probe success or canonical namespace observation inferred.
+Local owner supersedes private-source transport request; private values stay local.
+No completed native test, exhausted preparation or stopped branch rerun.
+Official Python docs/gallery and exact CPython tag build-layout source identify
+a potential isolated x64 NuGet 3.12.10 runtime. Research only: no archive download,
+extraction/execution, independent publisher hash/signature or compatibility pass.
+Next: existing local owner prepares/reviews a narrow acquisition amendment,
+explicitly preserving old plan/seals and all cost/state/science/deployment HOLDs.
+No runtime/version substitution, global install or master-roadmap mutation.
+Prior Firecrawl credit and UNKNOWN charge remain; no credit retrieval this turn.
+Documentation/JSON checks only; no runtime tests warranted by this change.

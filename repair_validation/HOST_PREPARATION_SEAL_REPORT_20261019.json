@@ -1,0 +1,46 @@
+{
+  "record_type": "attributed_user_report",
+  "date_utc": "2026-10-19",
+  "scope": "existing R09 host build prerequisite; correspondence only",
+  "status": "PREPARATION_SEALED_BLOCKED_RUNTIME",
+  "direct_host_file_verification_by_this_chat": false,
+  "preservation": {
+    "status": "PREPARATION_PRESERVATION_MATCH",
+    "installed_package_files_unchanged": 5,
+    "registration_unchanged": true,
+    "legacy_state_files_unchanged": 34,
+    "stable_during_hashing": true,
+    "manifest_sha256": "3890d07ee34c585ac147ea9415b741ecca0c0d7ff13b02ed5f0c271606522010"
+  },
+  "seal": {
+    "preparation_manifests_verified": 5,
+    "critical_anchors_verified": 12,
+    "ordinary_non_reparse_roots": 10,
+    "seal_sha256": "d09d75f71c1f189029c08d536e515719426e8b234daac34aea91d09ebacf126e",
+    "manifest_sha256": "0ffa2b9781bab666e8b2fca5d1059d65531068d472b4459691b5dbf3a4bd74c7"
+  },
+  "corrected_stage_artifacts_not_observed": [
+    "checkout",
+    "venv",
+    "dependency report",
+    "build directory",
+    "EXE",
+    "ZIP",
+    "probe evidence"
+  ],
+  "reported_preparation_operations": {
+    "directory_creation": "New-Item -Path; no -Force",
+    "scripts_git_python_tests_builds_downloads": false,
+    "activation_canonical_inspection_environment_changes_restoration_retries": false
+  },
+  "existing_plan_runtime_gate": "preexisting accessible CPython 3.12.10 x64 required; stopped",
+  "canonical_namespace": "UNKNOWN",
+  "build_and_probe_results": "UNKNOWN",
+  "limits": [
+    "Reported manifests and seals were not obtained or independently rehashed here.",
+    "No full private startup/checker patch or its validation results were supplied in this report.",
+    "Preservation does not establish runtime/build/probe success.",
+    "Completed diagnostics and preparation must not be duplicated.",
+    "Prior one Firecrawl credit and unknown monetary charge remain historical evidence."
+  ]
+}

@@ -30,7 +30,26 @@ The 2026-10-19 script-excerpt report now identifies the .NET `$null` removal cal
 
 The next synthetic attempt reportedly stopped before launch because its operator preparation used unsupported `New-Item -LiteralPath`; no diagnostic directory/files or test process were created. The pinned contract and test matched as reported and remain unchanged. The [directory-creation addendum](HOST_ENVIRONMENT_DIRECTORY_ADDENDUM_20261019.md) corrects that call to supported `-Path`, retains fresh-absence/no-Force and all child-process/cost gates, and permits one separately prepared diagnostic attempt. This is not a test pass or a complete wrapper audit.
 
-The subsequent native synthetic run reportedly returned `SYNTHETIC_SEMANTICS_CONFIRMED`, exit 0, empty stderr, one fresh process on PowerShell 7.6.5 / .NET 10.0.11. Seed controls and both provider absence checks passed; the .NET call left a present-empty entry. This is a scoped native API result, not a startup/build/package pass or proof of historical execution. The attributed receipt is `repair_validation/HOST_ENVIRONMENT_SYNTHETIC_RESULT_20261019.json`. Next prepare the complete private startup/check-script source packet using the [current evidence request](HOST_ENVIRONMENT_EVIDENCE_REQUEST_20261018.md); do not rerun the completed synthetic diagnostic.
+The subsequent native synthetic run reportedly returned `SYNTHETIC_SEMANTICS_CONFIRMED`, exit 0, empty stderr, one fresh process on PowerShell 7.6.5 / .NET 10.0.11. Seed controls and both provider absence checks passed; the .NET call left a present-empty entry. This is a scoped native API result, not a startup/build/package pass or proof of historical execution. The attributed receipt is `repair_validation/HOST_ENVIRONMENT_SYNTHETIC_RESULT_20261019.json`. The subsequent local-ownership handoff supersedes the private-packet request as the next action; keep full private scripts/environment values local. Do not rerun the completed synthetic diagnostic.
+
+## Current reported preparation frontier — 2026-10-19
+
+The local operator reports `PREPARATION_PRESERVATION_MATCH` and
+`PREPARATION_SEALED_BLOCKED_RUNTIME`: installed five-file package, registration
+and all 34 legacy-state files unchanged; five packet manifests, twelve critical
+anchors and ten ordinary roots verified. No corrected-stage checkout, venv,
+dependency report, build, EXE, ZIP or probe evidence was observed. These attributed
+results and supplied hashes are recorded in
+`repair_validation/HOST_PREPARATION_SEAL_REPORT_20261019.json`; this chat has not
+read the host manifests or verified the complete private wrapper patch.
+
+The existing plan remains blocked on its preexisting exact runtime requirement.
+Preserve sealed work and avoid duplicate preparation. [Runtime acquisition
+research](HOST_RUNTIME_ACQUISITION_RESEARCH_20261019.md) identifies an official
+exact-version NuGet candidate for a separately reviewed isolated acquisition
+amendment within the standing repair scope. No archive, runtime execution or
+build compatibility is established by that research. Canonical namespace and
+build/probe results remain UNKNOWN; all existing HOLDs remain.
 
 ## Historical fixture-backed package record (superseded)
 
