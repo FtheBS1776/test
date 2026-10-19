@@ -28,6 +28,8 @@ The subsequent four-file inspection reportedly records PowerShell `7.6.5` and th
 
 The 2026-10-19 script-excerpt report now identifies the .NET `$null` removal calls followed by actual absence checks. The proposed provider-assignment correction and one synthetic-variable-only test are in [HOST_ENVIRONMENT_CORRECTION_20261019.md](HOST_ENVIRONMENT_CORRECTION_20261019.md). This is a fragment-level correction/test candidate; original full host files and historical executed bytes remain unverified here. No original-stage retry or build continuation follows from this report. The normalized source report is `repair_validation/HOST_TASK_ENVIRONMENT_SCRIPT_REPORT_20261019.json`.
 
+The next synthetic attempt reportedly stopped before launch because its operator preparation used unsupported `New-Item -LiteralPath`; no diagnostic directory/files or test process were created. The pinned contract and test matched as reported and remain unchanged. The [directory-creation addendum](HOST_ENVIRONMENT_DIRECTORY_ADDENDUM_20261019.md) corrects that call to supported `-Path`, retains fresh-absence/no-Force and all child-process/cost gates, and permits one separately prepared diagnostic attempt. This is not a test pass or a complete wrapper audit.
+
 ## Historical fixture-backed package record (superseded)
 
 The following record describes its original source/binary, not the current live-state candidate.

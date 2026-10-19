@@ -1,0 +1,41 @@
+{
+  "classification": "USER_REPORTED_PREPARATION_BINDING_FAILURE_NOT_TEST_EXECUTION",
+  "received_date_local": "2026-10-19",
+  "disposition": "BLOCKED_BEFORE_TEST_LAUNCH",
+  "contract_reported_sha256": "6c0ef0bcabc60c561bb98f4607f7031dafa59f6b6b2423955136129d58832a6b",
+  "contract_reported_bytes": 6693,
+  "test_reported_sha256": "0037d07a71414c236dced24869efc4f498841e1d89e0eb0d923a0ac84333893a",
+  "test_reported_bytes": 3074,
+  "local_reference_bytes_match_reported_pins": true,
+  "preflight_passed_reported": [
+    "ordinary parent",
+    "diagnostic path absent",
+    "bundled runtime present",
+    "synthetic variable absent"
+  ],
+  "failed_preparation_fragment_reported": "$created = New-Item -ItemType Directory -LiteralPath $diagnosticRoot ...",
+  "binding_error_reported": "A parameter cannot be found that matches parameter name 'LiteralPath'.",
+  "diagnostic_directory_or_files_created_reported": false,
+  "test_process_reported": {
+    "stdout": "NOT_PRODUCED",
+    "stderr": "NOT_PRODUCED",
+    "exit_status": "NOT_STARTED",
+    "pid": "UNKNOWN",
+    "powershell_version": "UNKNOWN",
+    "dotnet_version": "UNKNOWN",
+    "termination_status": "NOT_STARTED",
+    "invocation_count": 0
+  },
+  "retry_made_reported": false,
+  "protected_environment_scripts_stage_registration_application_changes_reported": false,
+  "preparation_correction": "For New-Item only, replace -LiteralPath with -Path; retain fresh absent target, same intended filesystem directory, terminating errors and no -Force.",
+  "primary_source": "https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/new-item?view=powershell-7.6",
+  "limits": [
+    "Host report is attributed, not independent host/file attestation.",
+    "The prior review covered the pinned synthetic test and contract, not the unseen operator preparation implementation.",
+    "No complete preparation wrapper was supplied; this is an exact parameter correction only.",
+    "PowerShell/.NET version and synthetic behavior for the unstarted test remain UNKNOWN.",
+    "Prior one Firecrawl credit and UNKNOWN monetary charge remain preserved; no new cost receipt supplied."
+  ],
+  "next_eligible_action": "One newly prepared attempt after the documented parameter correction and fresh preflight; exactly one unchanged synthetic test launch if gates pass, then stop. No automatic retries."
+}

@@ -861,3 +861,21 @@ No old-stage cleanup/retry, actual Python cleanup, clone/build, candidate tool,
 state creation/migration, model/provider/science/pilot, binary distribution,
 installation, main merge, deployment or master-roadmap mutation. Prior one
 Firecrawl credit remains reported consumption; monetary/internal cost UNKNOWN.
+
+
+2026-10-19 — synthetic diagnostic blocked before directory creation/launch
+User-reported pinned contract6693/test3074 hashes match unchanged local files.
+Reported preflight passed; operator's New-Item -LiteralPath binding failed
+before directory/files or test launch. Test invocation count 0, NOT_STARTED;
+stdout/stderr not produced, PID/PowerShell/.NET UNKNOWN for that unstarted test.
+No retry or protected changes reported. This is operator preparation evidence,
+not failure/success of the unexecuted pinned test. Full wrapper unavailable.
+Microsoft New-Item 7.6 contract verified: supported Path parameter has literal
+behavior. Exact directory-call correction documented; retain absence/no-Force,
+all child-only environment and one-launch gates. No global parameter changes,
+new launcher, source-test edits, gate bypass or automatic retry. Prior static
+reviews retain original scope, not unseen wrapper validation.
+Normalized report: HOST_ENVIRONMENT_DIRECTORY_BLOCKER_20261019.json.
+Original contract/test raw hashes and sizes PASS. No native execution here.
+Next: one separately prepared corrected attempt under addendum, then stop.
+Prior Firecrawl credit and UNKNOWN charge preserved; no new cost receipt.
