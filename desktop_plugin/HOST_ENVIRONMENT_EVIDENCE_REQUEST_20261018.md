@@ -42,3 +42,7 @@ No changes, environment edits, cleanup retry, stage reuse/resume, new stage, scr
 ```
 
 This reuses the original stage's existing setup/check scripts for diagnosis. No replacement launcher, authority mechanism or subsystem is proposed. The original pinned plan, prior input/review archives, historical receipts and all governance/HOLD boundaries remain intact. No additional source retrieval is necessary.
+
+## Current next step — 2026-10-19
+
+Both reported static script inspections are complete. Do not repeat the historical inspection prompts above. The reported excerpts and hashes are retained separately in `repair_validation/HOST_TASK_ENVIRONMENT_SCRIPT_REPORT_20261019.json`. Continue only with the focused correction/test contract in `HOST_ENVIRONMENT_CORRECTION_20261019.md`; it preserves the old scripts/stage and permits only one fresh synthetic-variable diagnostic. No actual Python-variable cleanup or build is included.

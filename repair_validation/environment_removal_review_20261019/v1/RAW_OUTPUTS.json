@@ -1,0 +1,46 @@
+{
+  "files": [
+    {
+      "path": "01_stderr.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "utf8": ""
+    },
+    {
+      "path": "01_stdout.txt",
+      "size": 807,
+      "sha256": "d3d2a25822ee3afa69a6fc64099c4df7e8aba0471663fc23adb2dc954c6a587d",
+      "utf8": "INPUT /workspace/scratch/27265db857a2/GENIE_ENVIRONMENT_REMOVAL_REVIEW_INPUT_20261019.zip\nLENGTH 6697\nSHA256 7f7518ac03fa3f3d65da9d89ec91b4699bef3dd37d57a7012952505158ac862f\n'GENIE_ENVIRONMENT_REMOVAL_REVIEW_INPUT_20261019/HOST_ENVIRONMENT_CORRECTION_20261019.md' length=5923 compressed=2800 mode=0o600 CRC=0xeadd7203\n'GENIE_ENVIRONMENT_REMOVAL_REVIEW_INPUT_20261019/MANIFEST.json' length=655 compressed=355 mode=0o600 CRC=0x2235892d\n'GENIE_ENVIRONMENT_REMOVAL_REVIEW_INPUT_20261019/README_FIRST.md' length=270 compressed=205 mode=0o600 CRC=0xca06da3c\n'GENIE_ENVIRONMENT_REMOVAL_REVIEW_INPUT_20261019/REVIEW_CONTRACT.md' length=2306 compressed=1249 mode=0o600 CRC=0x6112ea7a\n'GENIE_ENVIRONMENT_REMOVAL_REVIEW_INPUT_20261019/test_environment_removal.ps1' length=3074 compressed=980 mode=0o600 CRC=0xf35a3d28\n"
+    },
+    {
+      "path": "02_stderr.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "utf8": ""
+    },
+    {
+      "path": "02_stdout.txt",
+      "size": 738,
+      "sha256": "a6ab002b480c4040fab1d711f08f44fdf61c7bfd8dd43c83e1f343e390bf1f23",
+      "utf8": "PATHS_UNIQUE_SAFE_ORDINARY true\nCRC_TEST None\nMANIFEST_RAW_BEGIN\n{\n  \"files\": [\n    {\n      \"path\": \"HOST_ENVIRONMENT_CORRECTION_20261019.md\",\n      \"size\": 5923,\n      \"sha256\": \"eb972434d914043954095b83341cf86df258f4a07fc591c60e1bce70e7db6287\"\n    },\n    {\n      \"path\": \"README_FIRST.md\",\n      \"size\": 270,\n      \"sha256\": \"0c0d3f533208a2603c6e89dbf62a63617d086d37299c69650d76ff277088eba4\"\n    },\n    {\n      \"path\": \"REVIEW_CONTRACT.md\",\n      \"size\": 2306,\n      \"sha256\": \"8c52e1aced3ee72993d43d34a6feeea9a19d23fe63332a711f9909171f8cd5cd\"\n    },\n    {\n      \"path\": \"test_environment_removal.ps1\",\n      \"size\": 3074,\n      \"sha256\": \"0037d07a71414c236dced24869efc4f498841e1d89e0eb0d923a0ac84333893a\"\n    }\n  ]\n}\n\nMANIFEST_RAW_END\n"
+    },
+    {
+      "path": "03_stderr.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "utf8": ""
+    },
+    {
+      "path": "03_stdout.txt",
+      "size": 3400,
+      "sha256": "6eb77cc80e022b7747aa5a247b14335638ecb70dbdb998cb06ccc9c1aac96b2b",
+      "utf8": "OUTER_SHA256_PASS 7f7518ac03fa3f3d65da9d89ec91b4699bef3dd37d57a7012952505158ac862f\nSAFE_UNIQUE_ORDINARY_MEMBERS_PASS 5; CRC_PASS\nEXACT_MANIFEST_SET_PASS 4 declared payload files plus MANIFEST.json\nFILE_PASS HOST_ENVIRONMENT_CORRECTION_20261019.md 5923 eb972434d914043954095b83341cf86df258f4a07fc591c60e1bce70e7db6287\nFILE_PASS README_FIRST.md 270 0c0d3f533208a2603c6e89dbf62a63617d086d37299c69650d76ff277088eba4\nFILE_PASS REVIEW_CONTRACT.md 2306 8c52e1aced3ee72993d43d34a6feeea9a19d23fe63332a711f9909171f8cd5cd\nFILE_PASS test_environment_removal.ps1 3074 0037d07a71414c236dced24869efc4f498841e1d89e0eb0d923a0ac84333893a\nEXTRACTED_TO_NEW_EXCLUSIVE_DIRECTORY /workspace/scratch/27265db857a2/environment_removal_cold_review_20261019\n\nREADME_FIRST.md BEGIN\n# Synthetic environment-removal test review\n\nVerify outer SHA256 and safe unique ordinary ZIP members/CRC/exact manifest lengths and hashes before extracting into a new exclusive review directory. Read REVIEW_CONTRACT.md. Manifest excludes itself. No subject execution.\n\nREADME_FIRST.md END\n\nREVIEW_CONTRACT.md BEGIN\n# Bounded static review\n\nOnly supplied source is the subject. No parent repo/history/memory/previous reviews/author results, no further delegation or remote lookup. Derive your own attack model. Static read/AST/text/ZIP checks only; do not execute/import subject, native PowerShell, build/install/model/provider/host work.\n\nSubject: test_environment_removal.ps1 plus HOST_ENVIRONMENT_CORRECTION_20261019.md. Intended task is one fresh existing PowerShell 7.6.5 synthetic-variable-only no-model diagnostic. Old blocked attempt and real Python variables must remain unchanged. Script may mutate only its fixed synthetic Process environment entry after refusing inherited collision; initial version/collision stops must not mutate it. Preserve exact three-argument method contrast, provider removal and idempotent actual absence checks, meaningful nonempty positive controls, no value leakage, truthful exit/output and unknown handling. No real PYTHONHOME/PYTHONPATH, User/Machine env, files, network, imports, external processes, old-script execution, stage/build/owner/model/science actions in the test. Host may acquire exact pinned test bytes directly without credit/credentials, create only one fresh exclusive sibling output directory and capture one fresh-process run. Stop on unavailable/runtime/policy/hash/collision/unknown/termination issues; no retries, bypass, old-stage resume or persistent change. Do not overclaim OS sandbox/no-machine-write or historical root-cause/full setup/runtime proof.\n\nThe current full old host scripts and historical executed bytes are unavailable; supplied prose fragments/claims are untrusted subject text, not attestation. Microsoft contract referenced by subject is a proposed expected runtime behavior: actual exact null overload behavior still requires the future host test. This review is static scope only, same assistant/tool ancestry, not host/runtime independence or execution authorization.\n\nReview actual code/data/control effects, positive/negative guards and source/contract consistency. Report bounded DEFECT_FOUND/NO_DEFECT_FOUND/INDETERMINATE with evidence and limits; do not expand into runtime audit or rewrite subject. Preserve verification source/raw output and attempts, untouched input, REVIEW.md; return a new manifest-bound ZIP plus SHA256.\n\nREVIEW_CONTRACT.md END\n"
+    },
+    {
+      "path": "attempts.md",
+      "size": 2346,
+      "sha256": "50f41158a128fa0f7786112de5c99eb66315db222e90ac62f49f1f390f93c41b",
+      "utf8": "# Verification and review attempts\n\nAll attempts completed normally (tool process exit 0). No subject execution occurred.\n\nSources 01\u201303 and their raw stdout are preserved from the tool transcript; empty stderr files record the observed lack of stderr. No verifier was retried.\n\n1. Read outer ZIP bytes with Python standard-library hashlib/pathlib/zipfile/stat, assert the supplied outer SHA256, enumerate all five member names, lengths, compressed lengths, mode bits and CRC fields. Output: input length 6697, outer SHA256 7f7518ac03fa3f3d65da9d89ec91b4699bef3dd37d57a7012952505158ac862f; five ordinary members, mode 0600.\n2. Read ZIP directly, reject duplicate/path-unsafe/nonordinary/encrypted members, read every member (CRC validation), run testzip (None), print the manifest. No extraction. Output: PATHS_UNIQUE_SAFE_ORDINARY true; CRC_TEST None; manifest as preserved in verified_input/MANIFEST.json.\n3. Repeat outer digest, member safety and CRC checks; verify exact manifest member set, all four declared lengths and SHA256 hashes directly from ZIP. Only after all passed, mkdir(exist_ok=False) a new exclusive review directory and write members. Source and raw stdout are preserved in 03_preextract_verifier.py and 03_stdout.txt (copied from the actual tool invocation/transcript); stderr was empty. This is the first and only extraction attempt. The recorded source intentionally refuses reuse of that directory and was not rerun.\n4. Read the two subject files in full as numbered text using pathlib, with no execution, imports of subject, or evaluation. Source line numbers in REVIEW.md refer to these exact bytes. Review manually traced normal, blocked, exception and cleanup paths.\n5. Package this report, untouched input, verified payload copies and evidence; verify each output manifest entry and ZIP member/CRC, then record output ZIP SHA256. This verifies packaging, not subject runtime behavior.\n\nNo failures, retries, remote access, broader repository/history/memory reads, author-result reads, delegation, host commands, PowerShell, installation, build, model/provider work, or subject imports/execution were performed. Python was used only for archive integrity, text reading and review-artifact creation. The outer digest authenticates agreement with the supplied expected digest, not authorship or historical execution.\n"
+    }
+  ]
+}

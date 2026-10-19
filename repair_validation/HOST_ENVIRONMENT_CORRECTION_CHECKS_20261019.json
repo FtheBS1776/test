@@ -1,0 +1,25 @@
+{
+  "classification": "SOURCE_REPAIR_FRAGMENT_AND_STATIC_TEST_REVIEW_NOT_HOST_PASS",
+  "test_file": "desktop_plugin/test_environment_removal.ps1",
+  "test_sha256": "0037d07a71414c236dced24869efc4f498841e1d89e0eb0d923a0ac84333893a",
+  "test_bytes": 3074,
+  "native_execution": "NOT_RUN_NO_USABLE_PWSH_COMMAND_IN_CLOUD_PATH",
+  "static_review_v1": "NO_DEFECT_FOUND",
+  "static_review_v2": "NO_DEFECT_FOUND",
+  "review_archives_digest_crc_path_manifest_checks": "PASS",
+  "reviewed_test_bytes_match_current": "PASS",
+  "original_pinned_plan_unchanged": "PASS",
+  "previous_tested_runtime_reference": "5327f897fd3874cf25326872730f68a0617333a2",
+  "existing_source_build_pin_files_compared": 192,
+  "existing_source_build_pin_bytes_equal": true,
+  "actual_full_host_startup_patch": "NOT_APPLIED_UNSEEN_FULL_SOURCE",
+  "historical_executed_host_script_bytes": "UNKNOWN",
+  "root_cause": "CURRENT_FRAGMENT_CONTRACT_MISMATCH_SUPPORTED_HISTORICAL_CAUSE_UNPROVEN",
+  "next_action": "One fresh synthetic-only host test, then stop; no real Python cleanup/build/old-stage resume.",
+  "limits": [
+    "Same assistant/tool ancestry, static scope only.",
+    "Actual null-overload/provider behavior, child-only overrides, process freshness, policy and capture untested.",
+    "No original-state/package/registration/canonical or cost-containment/Genie usefulness pass.",
+    "Prior reported Firecrawl credit remains consumed; monetary charge and internal inference cost UNKNOWN."
+  ]
+}

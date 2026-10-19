@@ -26,6 +26,8 @@ The subsequent user-reported attempt created the exclusive stage, then stopped a
 
 The subsequent four-file inspection reportedly records PowerShell `7.6.5` and the same PID for startup/checker, while exact internal cleanup/check expressions and empty versus nonempty entries remain UNKNOWN. The original blocker record is preserved; the narrower follow-up is `repair_validation/HOST_TASK_ENVIRONMENT_FOLLOWUP_20261018.json`. Next inspect the two named `ops` scripts as text only using the follow-up section of the existing evidence request. No cleanup retry or occupied-stage resume follows from a shared PID.
 
+The 2026-10-19 script-excerpt report now identifies the .NET `$null` removal calls followed by actual absence checks. The proposed provider-assignment correction and one synthetic-variable-only test are in [HOST_ENVIRONMENT_CORRECTION_20261019.md](HOST_ENVIRONMENT_CORRECTION_20261019.md). This is a fragment-level correction/test candidate; original full host files and historical executed bytes remain unverified here. No original-stage retry or build continuation follows from this report. The normalized source report is `repair_validation/HOST_TASK_ENVIRONMENT_SCRIPT_REPORT_20261019.json`.
+
 ## Historical fixture-backed package record (superseded)
 
 The following record describes its original source/binary, not the current live-state candidate.

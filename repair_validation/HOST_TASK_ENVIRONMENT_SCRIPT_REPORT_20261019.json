@@ -1,0 +1,43 @@
+{
+  "classification": "USER_REPORTED_STATIC_SCRIPT_EXCERPTS_NOT_COMPLETE_HOST_SOURCE",
+  "received_date_local": "2026-10-19",
+  "predecessor": "HOST_TASK_ENVIRONMENT_FOLLOWUP_20261018.json",
+  "reported_powershell": "7.6.5",
+  "reported_files": [
+    {
+      "path": "ops/enter-task.ps1",
+      "bytes": 3188,
+      "raw_sha256": "f9a1958ae123f0f7f583fa5671ce146bcdefd92a8746710fc2db631733fe2aec"
+    },
+    {
+      "path": "ops/verify-prerequisites.ps1",
+      "bytes": 15874,
+      "raw_sha256": "4d10b3930d0c3266880750161ddd7e8eff9b1a7e5832917268254aa8904e797d"
+    }
+  ],
+  "removal_excerpts_reported": {
+    "enter-task.ps1:40": "[Environment]::SetEnvironmentVariable('PYTHONPATH', $null, 'Process')",
+    "enter-task.ps1:41": "[Environment]::SetEnvironmentVariable('PYTHONHOME', $null, 'Process')"
+  },
+  "record_checks_reported": {
+    "enter-task.ps1:58": "python_path_removed = -not (Test-Path Env:PYTHONPATH)",
+    "enter-task.ps1:59": "python_home_removed = -not (Test-Path Env:PYTHONHOME)",
+    "verify-prerequisites.ps1:98": "python_home_absent = -not (Test-Path Env:PYTHONHOME)",
+    "verify-prerequisites.ps1:99": "python_path_absent = -not (Test-Path Env:PYTHONPATH)"
+  },
+  "control_flow_reported": {
+    "terminating_errors_and_strict_mode": true,
+    "startup_false_flags_recorded_without_explicit_stop": true,
+    "checker_false_flag_writes_blocker_then_throws": true,
+    "local_helper_delegation": false
+  },
+  "historical_executed_script_bytes": "UNKNOWN",
+  "full_files_available_in_cloud": false,
+  "raw_host_hashes_independently_verified_here": false,
+  "assessment": "Reported current startup uses a null/string method with documented empty-entry behavior in modern PowerShell, followed by an actual absence check. This is a concrete contract mismatch to correct; its exact host behavior and historical cause remain unexecuted/unproven here.",
+  "primary_source": "https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.6",
+  "proposed_correction": "Provider $env:NAME = $null plus immediate unchanged-strength absence gate; do not accept an empty present variable.",
+  "next_scope": "One fresh-process synthetic-variable-only PowerShell test. No actual PYTHONHOME/PYTHONPATH removal or setup/build retry.",
+  "cost": "Prior one Firecrawl credit preserved with UNKNOWN monetary charge; no Firecrawl or credit-consuming retrieval for this follow-up.",
+  "source_runtime_tests": "NOT_RUN_POWERSHELL_NOT_AVAILABLE_IN_CLOUD"
+}

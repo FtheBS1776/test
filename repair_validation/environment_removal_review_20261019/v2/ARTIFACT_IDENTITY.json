@@ -1,0 +1,6 @@
+{
+  "archive": "ENVIRONMENT_REMOVAL_STATIC_REVIEW_v2_20261019.zip",
+  "sha256": "391913dda3e9a365a0554ff292b03948a1d0d7702a4f4195b874c4df6ab31b9d",
+  "disposition": "NO_DEFECT_FOUND",
+  "scope": "Bounded static review only, same assistant/tool ancestry; no host/runtime attestation."
+}

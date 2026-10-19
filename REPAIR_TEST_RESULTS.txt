@@ -831,3 +831,33 @@ No new runtime tests warranted for this attributed correspondence/docs update.
 JSON/report bindings, exact pinned-plan SHA256/length, attributed one-credit
 consumption/UNKNOWN charge, and docs/evidence-only changed-path checks PASS.
 Current-delta whitespace check PASS. No prior raw review artifact was edited.
+
+
+2026-10-19 — reported host-script contract mismatch; synthetic test candidate
+Reported enter-task.ps1 3188 bytes f9a1958a...fe2aec and checker 15874 bytes
+4d10b393...04e797d are current host-file claims, not full cloud source or proof
+of historical execution. Their quoted method-null removal calls followed by
+actual absence tests match a documented modern PowerShell contract mismatch.
+PowerShell 7.6 primary documentation supports provider $env assignment removal;
+proposed exact two-line fragment plus immediate absence gate is documented,
+not applied to unseen full old scripts. Checker absence requirements retained.
+
+New focused test_environment_removal.ps1 uses only one synthetic Process variable,
+exact three-argument method, nonempty positive controls, provider removal and
+idempotent actual absence. Exact 7.6.5 version/collision gates; real Python and
+User/Machine values never touched. Fresh host launch must direct child-only
+temp/cache parameters into a new exclusive sibling diagnostic directory before
+startup; existing parent/old stage unchanged, unsupported launch stops.
+Cold-context static v1 review NO_DEFECT_FOUND; separate v2 launch-contract
+follow-up NO_DEFECT_FOUND. Same assistant/tool ancestry, no runtime attestation.
+All inputs/reviews/raw attempts retained; raw text escaped in JSON preserves
+bytes. Review archive digest/CRC/path/exact manifest checks PASS. Test bytes
+3074, SHA256 0037d07a71414c236dced24869efc4f498841e1d89e0eb0d923a0ac84333893a.
+Existing 192 selected source/build/pin files match tested runtime 5327f897;
+original 14,084-byte stage plan unchanged. No prior runtime/SDK/fixture rerun.
+No usable pwsh command in cloud PATH; NATIVE TEST NOT RUN. Next eligible action
+is exactly one fresh-process synthetic-only host test, stop after raw report.
+No old-stage cleanup/retry, actual Python cleanup, clone/build, candidate tool,
+state creation/migration, model/provider/science/pilot, binary distribution,
+installation, main merge, deployment or master-roadmap mutation. Prior one
+Firecrawl credit remains reported consumption; monetary/internal cost UNKNOWN.
